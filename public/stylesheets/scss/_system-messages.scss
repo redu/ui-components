@@ -1,0 +1,112 @@
+// ESTILOS DAS MENSAGENS DO SISTEMA
+// ------------
+
+// Estilos básicos das mensagens.
+.alert {
+  padding: 10px 35px 10px 10px;
+  margin-bottom: $baseLineHeight;  
+  background-color: $warningBackground;
+  border: 1px solid $warningBorder;
+  @include font-sans-serif;
+}
+
+.boxshadow .alert {
+  @include box-shadow(0px 2px 3px 1px rgba(0, 0, 0, 0.4));
+}
+
+.textshadow .alert {
+  text-shadow: $verticalWhiteShadow;
+}
+
+.borderradius .alert {
+  @include border-radius(5px);
+}
+
+.alert,
+.alert-heading {
+  color: $warningText;
+}
+
+.alert-heading {
+  margin: 0;
+}
+
+// Ajusta a posição do link de fechar.
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 18px;
+}
+
+// Estilos alternativos.
+// ----------------
+
+.alert-success {
+  background-color: $green1;
+  border-color: $successBorder;  
+}
+.alert-success,
+.alert-success .alert-heading {
+  color: $successText;
+}
+.alert-warning {
+  background-color: $warningBackground;
+  border-color: $warningBorder;
+}
+.alert-warning,
+.alert-warning .alert-heading {
+  color: $warningText;
+}
+.alert-info {
+  background-color: $infoBackground;
+  border-color: $infoBorder;
+}
+.alert-info,
+.alert-info .alert-heading {
+  color: $infoText;
+}
+.alert-busy {
+  background-color: $busyBackground;
+  border-color: $busyBorder;
+}
+.alert-busy,
+.alert-busy .alert-heading {
+  color: $busyText;
+}
+
+// ÍCONES CLOSE.
+// -----------
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: $baseLineHeight;
+  color: $black;
+  @include opacity(20);
+  &:hover {
+    color: $black;
+    text-decoration: none;
+    @include opacity(40);
+    cursor: pointer;
+  }
+}
+
+.textshadow .close {
+  text-shadow: $verticalWhiteShadow;
+}
+
+// Block alerts
+// ------------------------
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p,
+.alert-block > ul {
+  margin: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}

@@ -1,0 +1,499 @@
+/*
+ * Bootstrap v0.0.1
+ *
+ * Baseado no Bootstrap v2.0.1 do Twitter.
+ */
+/* line 17, scss/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+/* line 26, scss/_reset.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 35, scss/_reset.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 42, scss/_reset.scss */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 48, scss/_reset.scss */
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 53, scss/_reset.scss */
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* line 61, scss/_reset.scss */
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+/* line 67, scss/_reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 70, scss/_reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 77, scss/_reset.scss */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 91, scss/_reset.scss */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+/* line 97, scss/_reset.scss */
+button,
+input {
+  *overflow: visible;
+  line-height: normal;
+}
+
+/* line 102, scss/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 109, scss/_reset.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/* line 113, scss/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 120, scss/_reset.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 123, scss/_reset.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 38, scss/_filters.scss */
+.filter {
+  display: inline-block;
+  padding: 6px 10px 6px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  color: #4dadd6;
+  border: 1px solid #cccccc;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  *margin-left: .3em;
+}
+/* line 58, scss/_mixins.scss */
+.filter:first-child {
+  *margin-left: 0;
+}
+/* line 54, scss/_filters.scss */
+.filter :before {
+  float: left;
+  margin-right: 5px;
+}
+/* line 60, scss/_filters.scss */
+.filter:hover {
+  background-color: #dbeff7;
+  border-color: #73c3e6;
+  color: #158ac4;
+}
+/* line 14, scss/_filters.scss */
+.filter:hover .icon-teacher-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -160px -880px no-repeat;
+}
+/* line 17, scss/_filters.scss */
+.filter:hover .icon-tutor-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -160px -960px no-repeat;
+}
+/* line 20, scss/_filters.scss */
+.filter:hover .icon-member-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -160px -1040px no-repeat;
+}
+/* line 69, scss/_filters.scss */
+.filter.active, .filter:active {
+  border-color: #4dadd6;
+  background-color: #dbeff7;
+}
+/* line 76, scss/_filters.scss */
+.filter.active:active {
+  background-color: #f7f7f7;
+  color: #4dadd6;
+  border: 1px solid #cccccc;
+}
+/* line 14, scss/_filters.scss */
+.filter.active:active .icon-teacher-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -80px -880px no-repeat;
+}
+/* line 17, scss/_filters.scss */
+.filter.active:active .icon-tutor-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -80px -960px no-repeat;
+}
+/* line 20, scss/_filters.scss */
+.filter.active:active .icon-member-lightblue_16_18-before:before {
+  background: url("../images/new/icons-small.png") -80px -1040px no-repeat;
+}
+/* line 85, scss/_filters.scss */
+.filter:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 90, scss/_filters.scss */
+.textshadow .filter {
+  text-shadow: 0px 1px 0px white;
+}
+
+/* line 94, scss/_filters.scss */
+.borderradius .filter {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 98, scss/_filters.scss */
+.boxshadow .filter {
+  -webkit-box-shadow: inset 0px 1px 0px 0px white;
+  -moz-box-shadow: inset 0px 1px 0px 0px white;
+  box-shadow: inset 0px 1px 0px 0px white;
+}
+/* line 103, scss/_filters.scss */
+.boxshadow .filter.active, .boxshadow .filter:active {
+  -webkit-box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 109, scss/_filters.scss */
+.boxshadow .filter.active:active {
+  -webkit-box-shadow: inset 0px 1px 0px 0px white;
+  -moz-box-shadow: inset 0px 1px 0px 0px white;
+  box-shadow: inset 0px 1px 0px 0px white;
+}
+
+/* line 116, scss/_filters.scss */
+.cssgradients .filter {
+  background: -moz-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #f7f7f7), color-stop(100%, #e6e6e6));
+  background: -webkit-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -o-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6', GradientType=1), #f7f7f7, #e6e6e6;
+}
+/* line 121, scss/_filters.scss */
+.cssgradients .filter:hover, .cssgradients .filter.active, .cssgradients .filter:active {
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #dbeff7));
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
+  background: -o-linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
+  background: linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#dbeff7', GradientType=1), #f7f7f7, #dbeff7;
+}
+/* line 126, scss/_filters.scss */
+.cssgradients .filter.active:active {
+  background: -moz-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #f7f7f7), color-stop(100%, #e6e6e6));
+  background: -webkit-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -o-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  background: linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6', GradientType=1), #f7f7f7, #e6e6e6;
+}
+
+/* line 133, scss/_filters.scss */
+.no-cssgradients .filter {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
+}
+/* line 138, scss/_filters.scss */
+.no-cssgradients .filter:hover, .no-cssgradients .filter.active, .no-cssgradients .filter:active {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 );
+}
+/* line 143, scss/_filters.scss */
+.no-cssgradients .filter.active:active {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
+}
+
+/* line 4, scss/_filter-groups.scss */
+.filter-group {
+  position: relative;
+  *zoom: 1;
+  *margin-left: .3em;
+}
+/* line 15, scss/_mixins.scss */
+.filter-group:before, .filter-group:after {
+  display: table;
+  content: "";
+}
+/* line 19, scss/_mixins.scss */
+.filter-group:after {
+  clear: both;
+}
+/* line 58, scss/_mixins.scss */
+.filter-group:first-child {
+  *margin-left: 0;
+}
+
+/* line 11, scss/_filter-groups.scss */
+.filter-group + .filter-filter {
+  margin-left: 5px;
+}
+
+/* line 16, scss/_filter-groups.scss */
+.filter-toolbar {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+/* line 19, scss/_filter-groups.scss */
+.filter-toolbar .filter-group {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+/* line 26, scss/_filter-groups.scss */
+.filter-group .filter {
+  position: relative;
+  float: left;
+  margin-left: -1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 33, scss/_filter-groups.scss */
+.filter-group .filter:first-child {
+  margin-left: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* line 42, scss/_filter-groups.scss */
+.filter-group .filter:last-child {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 55, scss/_filter-groups.scss */
+.filter-group .filter:hover,
+.filter-group .filter:focus,
+.filter-group .filter:active,
+.filter-group .filter.active {
+  z-index: 2;
+}
+
+/* line 5, scss/_system-messages.scss */
+.alert {
+  padding: 10px 35px 10px 10px;
+  margin-bottom: 18px;
+  background-color: #ffdcdc;
+  border: 1px solid #ff6d6d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+}
+
+/* line 13, scss/_system-messages.scss */
+.boxshadow .alert {
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* line 17, scss/_system-messages.scss */
+.textshadow .alert {
+  text-shadow: 0px 1px 0px white;
+}
+
+/* line 21, scss/_system-messages.scss */
+.borderradius .alert {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 26, scss/_system-messages.scss */
+.alert,
+.alert-heading {
+  color: #c1272d;
+}
+
+/* line 30, scss/_system-messages.scss */
+.alert-heading {
+  margin: 0;
+}
+
+/* line 35, scss/_system-messages.scss */
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 18px;
+}
+
+/* line 45, scss/_system-messages.scss */
+.alert-success {
+  background-color: #e1f1e1;
+  border-color: #5fc080;
+}
+
+/* line 50, scss/_system-messages.scss */
+.alert-success,
+.alert-success .alert-heading {
+  color: #61a080;
+}
+
+/* line 53, scss/_system-messages.scss */
+.alert-warning {
+  background-color: #ffdcdc;
+  border-color: #ff6d6d;
+}
+
+/* line 58, scss/_system-messages.scss */
+.alert-warning,
+.alert-warning .alert-heading {
+  color: #c1272d;
+}
+
+/* line 61, scss/_system-messages.scss */
+.alert-info {
+  background-color: #dbeff7;
+  border-color: #73c3e6;
+}
+
+/* line 66, scss/_system-messages.scss */
+.alert-info,
+.alert-info .alert-heading {
+  color: #158ac4;
+}
+
+/* line 69, scss/_system-messages.scss */
+.alert-busy {
+  background-color: #ffeed7;
+  border-color: #ffa935;
+}
+
+/* line 74, scss/_system-messages.scss */
+.alert-busy,
+.alert-busy .alert-heading {
+  color: black;
+}
+
+/* line 81, scss/_system-messages.scss */
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+  color: black;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+/* line 88, scss/_system-messages.scss */
+.close:hover {
+  color: black;
+  text-decoration: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+}
+
+/* line 96, scss/_system-messages.scss */
+.textshadow .close {
+  text-shadow: 0px 1px 0px white;
+}
+
+/* line 102, scss/_system-messages.scss */
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* line 107, scss/_system-messages.scss */
+.alert-block > p,
+.alert-block > ul {
+  margin: 0;
+}
+
+/* line 110, scss/_system-messages.scss */
+.alert-block p + p {
+  margin-top: 5px;
+}

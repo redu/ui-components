@@ -1,0 +1,147 @@
+// ESTILOS DOS FILTROS.
+// -------------
+
+
+// Estilos do filtro no estado normal.
+@mixin filter-normal-state() {
+  background-color: $gray1;
+  color: $blue3;
+  border: 1px solid $gray4;
+}
+
+// Escolhe quais ícones usar (azul claro [-80px] ou escuro [-160px]).
+@mixin filter-icons($x: -80px) {
+  .icon-teacher-lightblue_16_18-before:before {
+    background: url("../images/new/icons-small.png") $x -880px no-repeat;
+  }
+  .icon-tutor-lightblue_16_18-before:before {
+    background: url("../images/new/icons-small.png") $x -960px no-repeat;
+  }
+  .icon-member-lightblue_16_18-before:before {
+    background: url("../images/new/icons-small.png") $x -1040px no-repeat;
+  }
+}
+
+// Cria um gradiente vertical de duas cores.
+@mixin filter-gradient-vertical($startColor, $endColor, $startColorPos: 0%, $endColorPos: 100%) {
+  background: -moz-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($startColorPos, $startColor), color-stop($endColorPos, $endColor));
+  background: -webkit-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -o-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -ms-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
+}
+
+
+// Base.
+.filter {
+  display: inline-block;
+  padding: 6px 10px 6px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  @include font-sans-serif;
+  // Estado normal.
+  @include filter-normal-state();
+
+  // Give IE7 some love.
+  @include reset-filter();
+  @include ie7-restore-left-whitespace();
+
+  :before {
+    // Para os ícones aparecerem na esquerda.
+    float: left;
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: $blue1;
+    border-color: $blue2;
+    color: $blue4;
+    // Ícones azul escuro.
+    @include filter-icons(-160px);
+  }
+
+  &.active,
+  &:active {
+    // Estado ativado ou pressionado do estado normal.
+    border-color: $blue3;
+    background-color: $blue1;
+  }
+
+  &.active {
+    &:active {
+      // Estado ativado e pressionado (volta ao estado normal)
+      @include filter-normal-state();
+      // Ícones azul claro.
+      @include filter-icons();
+    }
+  }
+
+  // Estado de focus para o teclado e acessibilidade.
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+.textshadow .filter {
+  text-shadow: $verticalWhiteShadow;
+}
+
+.borderradius .filter {
+  @include border-radius(4px);
+}
+
+.boxshadow .filter {
+  // Estado normal.
+  @include box-shadow(inset 0px 1px 0px 0px white);
+
+  &.active,
+  &:active {
+    // Estado ativado ou pressionado do estado normal.
+    @include box-shadow(inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5));
+  }
+
+  &.active {
+    &:active {
+      // Estado ativado e pressionado (volta ao estado normal)
+      @include box-shadow(inset 0px 1px 0px 0px white);
+    }
+  }
+}
+
+.cssgradients .filter {
+  @include filter-gradient-vertical($gray1, $gray3, 80%, 100%);
+
+  &:hover,
+  &.active,
+  &:active {
+    @include filter-gradient-vertical($gray1, $blue1, 0%, 100%);
+  }
+
+  &.active {
+    &:active {
+      @include filter-gradient-vertical($gray1, $gray3, 80%, 100%);
+    }
+  }
+}
+
+// Para o IE 8 e 9.
+.no-cssgradients .filter {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
+
+  &:hover,
+  &.active,
+  &:active {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 );
+  }
+
+  &.active {
+    &:active {
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
+    }
+  }
+}
