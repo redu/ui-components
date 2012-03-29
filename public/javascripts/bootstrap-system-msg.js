@@ -25,7 +25,7 @@
  /* ALERT CLASS DEFINITION
   * ====================== */
 
-  var dismiss = '[data-dismiss="alert"]'
+  var dismiss = '[data-dismiss="system-msg"]'
     , Alert = function ( el ) {
         $(el).bind('click', dismiss, this.close)
       }
@@ -49,7 +49,7 @@
 
       e && e.preventDefault()
 
-      $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
+      $parent.length || ($parent = $this.hasClass('system-msg') ? $this : $this.parent())
 
       $parent
         .trigger('close')
@@ -75,8 +75,8 @@
   $.fn.alert = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('alert')
-      if (!data) $this.data('alert', (data = new Alert(this)))
+        , data = $this.data('system-msg')
+      if (!data) $this.data('system-msg', (data = new Alert(this)))
       if (typeof option == 'string') data[option].call($this)
     })
   }
@@ -88,7 +88,7 @@
   * ============== */
 
   $(function () {
-    $('.alert .close').bind('click.alert.data-api', dismiss, Alert.prototype.close)
+    $('.system-msg .close').bind('click.system-msg.data-api', dismiss, Alert.prototype.close)
   })
 
 }( window.jQuery );

@@ -106,6 +106,17 @@
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
+// Cria um gradiente vertical de duas cores.
+@mixin filter-gradient-vertical($startColor, $endColor, $startColorPos: 0%, $endColorPos: 100%) {
+  background: -moz-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($startColorPos, $startColor), color-stop($endColorPos, $endColor));
+  background: -webkit-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -o-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: -ms-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  background: linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
+}
+
 
 
 // PROPRIEDADES CSS3 

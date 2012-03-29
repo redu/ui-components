@@ -51,9 +51,11 @@ $gray6: 				rgb(109, 110, 111) !default;
 // Tipografia.
 $baseFontSize:      	13px !default;
 $baseLineHeight:		18px !default;
+$baseFontFamily:        Arial, Helvetica, sans-serif !default;
 
 // Sombras de texto.
 $verticalWhiteShadow:	0px 1px 0px white;
+$negativeVerticalBlue4Shadow: 0px -1px 0px $blue4;
 
 // Mensagens do sistema.
 $warningText:               $red5;

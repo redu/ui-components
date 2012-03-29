@@ -1,0 +1,14 @@
+// Typography.scss
+// Cabeçalhos, texto do body, listas, código e mais para um sistema de tipografia versátil e durável.
+// ----------------------------------------------------------------------------------------
+
+
+// TEXTO DO BODY
+// ---------
+
+p {
+  margin: 0 0 $baseLineHeight / 2;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+}

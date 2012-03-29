@@ -131,7 +131,40 @@ textarea {
   vertical-align: top;
 }
 
-/* line 38, scss/_filters.scss */
+/* line 9, scss/_type.scss */
+p {
+  margin: 0 0 9px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 2, scss/_buttons.scss */
+.button {
+  display: inline-block;
+  padding: 6px 10px 6px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  color: #4dadd6;
+  border: 1px solid #cccccc;
+}
+
+/* line 16, scss/_buttons.scss */
+.borderradius .button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 27, scss/_filters.scss */
 .filter {
   display: inline-block;
   padding: 6px 10px 6px;
@@ -154,12 +187,12 @@ textarea {
 .filter:first-child {
   *margin-left: 0;
 }
-/* line 54, scss/_filters.scss */
+/* line 43, scss/_filters.scss */
 .filter :before {
   float: left;
   margin-right: 5px;
 }
-/* line 60, scss/_filters.scss */
+/* line 49, scss/_filters.scss */
 .filter:hover {
   background-color: #dbeff7;
   border-color: #73c3e6;
@@ -177,12 +210,12 @@ textarea {
 .filter:hover .icon-member-lightblue_16_18-before:before {
   background: url("../images/new/icons-small.png") -160px -1040px no-repeat;
 }
-/* line 69, scss/_filters.scss */
+/* line 58, scss/_filters.scss */
 .filter.active, .filter:active {
   border-color: #4dadd6;
   background-color: #dbeff7;
 }
-/* line 76, scss/_filters.scss */
+/* line 65, scss/_filters.scss */
 .filter.active:active {
   background-color: #f7f7f7;
   color: #4dadd6;
@@ -200,45 +233,45 @@ textarea {
 .filter.active:active .icon-member-lightblue_16_18-before:before {
   background: url("../images/new/icons-small.png") -80px -1040px no-repeat;
 }
-/* line 85, scss/_filters.scss */
+/* line 74, scss/_filters.scss */
 .filter:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-/* line 90, scss/_filters.scss */
+/* line 79, scss/_filters.scss */
 .textshadow .filter {
   text-shadow: 0px 1px 0px white;
 }
 
-/* line 94, scss/_filters.scss */
+/* line 83, scss/_filters.scss */
 .borderradius .filter {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
 
-/* line 98, scss/_filters.scss */
+/* line 87, scss/_filters.scss */
 .boxshadow .filter {
   -webkit-box-shadow: inset 0px 1px 0px 0px white;
   -moz-box-shadow: inset 0px 1px 0px 0px white;
   box-shadow: inset 0px 1px 0px 0px white;
 }
-/* line 103, scss/_filters.scss */
+/* line 92, scss/_filters.scss */
 .boxshadow .filter.active, .boxshadow .filter:active {
   -webkit-box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 109, scss/_filters.scss */
+/* line 98, scss/_filters.scss */
 .boxshadow .filter.active:active {
   -webkit-box-shadow: inset 0px 1px 0px 0px white;
   -moz-box-shadow: inset 0px 1px 0px 0px white;
   box-shadow: inset 0px 1px 0px 0px white;
 }
 
-/* line 116, scss/_filters.scss */
+/* line 105, scss/_filters.scss */
 .cssgradients .filter {
   background: -moz-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #f7f7f7), color-stop(100%, #e6e6e6));
@@ -248,7 +281,7 @@ textarea {
   background: linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6', GradientType=1), #f7f7f7, #e6e6e6;
 }
-/* line 121, scss/_filters.scss */
+/* line 110, scss/_filters.scss */
 .cssgradients .filter:hover, .cssgradients .filter.active, .cssgradients .filter:active {
   background: -moz-linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #dbeff7));
@@ -258,7 +291,7 @@ textarea {
   background: linear-gradient(top, #f7f7f7 0%, #dbeff7 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#dbeff7', GradientType=1), #f7f7f7, #dbeff7;
 }
-/* line 126, scss/_filters.scss */
+/* line 115, scss/_filters.scss */
 .cssgradients .filter.active:active {
   background: -moz-linear-gradient(top, #f7f7f7 80%, #e6e6e6 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #f7f7f7), color-stop(100%, #e6e6e6));
@@ -269,15 +302,15 @@ textarea {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6', GradientType=1), #f7f7f7, #e6e6e6;
 }
 
-/* line 133, scss/_filters.scss */
+/* line 122, scss/_filters.scss */
 .no-cssgradients .filter {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
 }
-/* line 138, scss/_filters.scss */
+/* line 127, scss/_filters.scss */
 .no-cssgradients .filter:hover, .no-cssgradients .filter.active, .no-cssgradients .filter:active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 );
 }
-/* line 143, scss/_filters.scss */
+/* line 132, scss/_filters.scss */
 .no-cssgradients .filter.active:active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
 }
@@ -360,7 +393,7 @@ textarea {
 }
 
 /* line 5, scss/_system-messages.scss */
-.alert {
+.system-msg {
   padding: 10px 35px 10px 10px;
   margin-bottom: 18px;
   background-color: #ffdcdc;
@@ -372,37 +405,37 @@ textarea {
 }
 
 /* line 13, scss/_system-messages.scss */
-.boxshadow .alert {
+.boxshadow .system-msg {
   -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.4);
 }
 
 /* line 17, scss/_system-messages.scss */
-.textshadow .alert {
+.textshadow .system-msg {
   text-shadow: 0px 1px 0px white;
 }
 
 /* line 21, scss/_system-messages.scss */
-.borderradius .alert {
+.borderradius .system-msg {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
 /* line 26, scss/_system-messages.scss */
-.alert,
-.alert-heading {
+.system-msg,
+.system-msg-heading {
   color: #c1272d;
 }
 
 /* line 30, scss/_system-messages.scss */
-.alert-heading {
+.system-msg-heading {
   margin: 0;
 }
 
 /* line 35, scss/_system-messages.scss */
-.alert .close {
+.system-msg .close {
   position: relative;
   top: -2px;
   right: -21px;
@@ -410,50 +443,50 @@ textarea {
 }
 
 /* line 45, scss/_system-messages.scss */
-.alert-success {
+.system-msg-success {
   background-color: #e1f1e1;
   border-color: #5fc080;
 }
 
 /* line 50, scss/_system-messages.scss */
-.alert-success,
-.alert-success .alert-heading {
+.system-msg-success,
+.system-msg-success .system-msg-heading {
   color: #61a080;
 }
 
 /* line 53, scss/_system-messages.scss */
-.alert-warning {
+.system-msg-warning {
   background-color: #ffdcdc;
   border-color: #ff6d6d;
 }
 
 /* line 58, scss/_system-messages.scss */
-.alert-warning,
-.alert-warning .alert-heading {
+.system-msg-warning,
+.system-msg-warning .system-msg-heading {
   color: #c1272d;
 }
 
 /* line 61, scss/_system-messages.scss */
-.alert-info {
+.system-msg-info {
   background-color: #dbeff7;
   border-color: #73c3e6;
 }
 
 /* line 66, scss/_system-messages.scss */
-.alert-info,
-.alert-info .alert-heading {
+.system-msg-info,
+.system-msg-info .system-msg-heading {
   color: #158ac4;
 }
 
 /* line 69, scss/_system-messages.scss */
-.alert-busy {
+.system-msg-busy {
   background-color: #ffeed7;
   border-color: #ffa935;
 }
 
 /* line 74, scss/_system-messages.scss */
-.alert-busy,
-.alert-busy .alert-heading {
+.system-msg-busy,
+.system-msg-busy .system-msg-heading {
   color: black;
 }
 
@@ -482,18 +515,70 @@ textarea {
 }
 
 /* line 102, scss/_system-messages.scss */
-.alert-block {
+.system-msg-block {
   padding-top: 14px;
   padding-bottom: 14px;
 }
 
 /* line 107, scss/_system-messages.scss */
-.alert-block > p,
-.alert-block > ul {
+.system-msg-block > p,
+.system-msg-block > ul {
   margin: 0;
 }
 
 /* line 110, scss/_system-messages.scss */
-.alert-block p + p {
+.system-msg-block p + p {
   margin-top: 5px;
+}
+
+/* line 114, scss/_system-messages.scss */
+.msg-block {
+  background-color: #dbeff7;
+  border-color: #73c3e6;
+  color: #158ac4;
+  overflow: hidden;
+  padding: 10px;
+}
+/* line 121, scss/_system-messages.scss */
+.msg-block .close {
+  right: 0;
+}
+/* line 125, scss/_system-messages.scss */
+.msg-block p {
+  padding-right: 40px;
+}
+/* line 129, scss/_system-messages.scss */
+.msg-block .button {
+  float: right;
+  color: white;
+  border: 1px solid #73c3e6;
+  background-color: #73c3e6;
+}
+
+/* line 137, scss/_system-messages.scss */
+.boxshadow .msg-block {
+  -webkit-box-shadow: 0 0 0 0 black;
+  -moz-box-shadow: 0 0 0 0 black;
+  box-shadow: 0 0 0 0 black;
+}
+
+/* line 141, scss/_system-messages.scss */
+.textshadow .msg-block .button {
+  text-shadow: 0px -1px 0px #158ac4;
+}
+
+/* line 145, scss/_system-messages.scss */
+.cssgradients .msg-block .button {
+  background: -moz-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #73c3e6), color-stop(100%, #158ac4));
+  background: -webkit-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
+  background: -o-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
+  background: -ms-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
+  background: linear-gradient(top, #73c3e6 50%, #158ac4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c3e6', endColorstr='#158ac4', GradientType=1), #73c3e6, #158ac4;
+}
+
+/* line 150, scss/_system-messages.scss */
+.no-cssgradients .msg-block .button {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
 }
