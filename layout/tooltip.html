@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tooltip</title>
+    <link href="../public/stylesheets/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../public/javascripts/modernizr.js" type="text/javascript"></script>
+    <script src="../public/javascripts/bootstrap-tooltip.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <link href="../public/javascripts/selectivizr.js" rel="stylesheet">
+    <![endif]-->
+    <script>
+      !function ($) {
+
+        $(function(){
+          $('a').tooltip()
+        })
+
+      }(window.jQuery)
+    </script>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet, consectetur <a href="#" rel="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam.">adipiscing</a> elit. Mauris ultrices porta nisl.</p>    
+  </body>
+</html>

@@ -10,8 +10,11 @@
 // Links
 
 
+// Branco.
+$white:					white !default;
+
 // Preto.
-$black:                 #000 !default;
+$black:                 black !default;
 
 // Azuis.
 $blue1:					rgb(219, 239, 247) !default;
@@ -73,3 +76,5 @@ $infoBorder:              $blue2;
 $busyText:                black;
 $busyBackground:          $orange1;
 $busyBorder:              $orange3;
+
+$zindexTooltip:         1020 !default;
