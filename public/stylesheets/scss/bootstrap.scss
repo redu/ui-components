@@ -11,9 +11,12 @@
 // CSS Reset.
 @import "reset";
 
+// Estrutura da página.
+@import "scaffolding";
+
 // Base CSS.
 @import "type";
-
+@import "code";
 
 // Botões.
 @import "buttons";
@@ -25,4 +28,6 @@
 // Mensagens do sistema.
 @import "system-messages";
 
+// Componentes: popovers.
 @import "tooltip";
+@import "popover";

@@ -1,4 +1,4 @@
-// ESTILOS DAS MENSAGENS DO SISTEMA
+// ESTILOS DAS MENSAGENS DO SISTEMA.
 // ------------
 
 // Estilos básicos das mensagens.
@@ -75,6 +75,20 @@
   color: $busyText;
 }
 
+.system-msg-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.system-msg-block > p,
+.system-msg-block > ul {
+  margin: 0;
+}
+.system-msg-block p + p {
+  margin-top: 5px;
+}
+
+
+
 // ÍCONES CLOSE.
 // -----------
 
@@ -97,19 +111,10 @@
   text-shadow: $verticalWhiteShadow;
 }
 
-// Block system-msgs
+
+
+// Mensagens em bloco.
 // ------------------------
-.system-msg-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-.system-msg-block > p,
-.system-msg-block > ul {
-  margin: 0;
-}
-.system-msg-block p + p {
-  margin-top: 5px;
-}
 
 .msg-block {
   background-color: $blue1;

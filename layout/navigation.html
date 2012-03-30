@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Navegação</title>
+    <link href="../public/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../public/stylesheets/icons.redu.css" rel="stylesheet">
+    <link href="../public/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
+    <script src="../public/javascripts/google-code-prettify/prettify.js"></script>
+    <script src="../public/javascripts/modernizr.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <link href="../public/javascripts/selectivizr.js" rel="stylesheet">
+    <![endif]-->
+  </head>
+  <body onload="prettyPrint()">
+    <div style="width: 960px; margin: 10px auto;">
+      <h1>Navegaçao</h1>
+      <h2>Filtros (Visão Geral)</h2>
+      <h2>Filtros</h2>
+      <h3>Grupos de filtros</h3>
+      <h4>Grupos de filtros</h4>
+      <p>Use grupos de filtros para juntar múltiplos filtros como um único componente composto. Construá-os com uma série de elementos <code>&lt;a&gt;</code> ou <code>&lt;button&gt;</code>.</p>
+      <h4>Melhores práticas</h4>
+      <p>Nós recomendamos os seguintes guidelines para usar o grupo de filtros e barra de filtros:</p>
+      <ul>
+        <li>Sempre use o mesmo elemento em um único grupo de filtros, <code>&lt;a&gt;</code> ou <code>&lt;button&gt;</code>.</li>
+        <li>Não misture filtros de cores diferentes no mesmo grupo de filtros.</li>
+        <li>Use ícones em adição ou ao invés de texto, mas inclua textos no alt e title onde apropriado.</li>
+      </ul>
+      <h4>Exemplo padrão</h4>
+      <p>Aqui é como o HTML se parece para um grupo de filtros padrão:</p>
+      <div class="filter-group" style="margin-bottom: 8px;">
+        <button class="filter">1</button>
+        <button class="filter">2</button>
+        <button class="filter">3</button>
+      </div>
+      <pre class="prettyprint linenums">
+        &lt;div class="filter-group"&gt;
+          &lt;button class="filter"&gt;1&lt;/button&gt;
+          &lt;button class="filter"&gt;2&lt;/button&gt;
+          &lt;button class="filter"&gt;3&lt;/button&gt;
+        &lt;/div&gt;</pre>
+      <h4>Exemplo de barra de filtros</h4>
+      <p>Combine conjuntos de <code>&lt;div class="filter-group"&gt;</code> em um <code>&lt;div class="filter-toolbar"&gt;</code> para componentes mais complexos.</p>
+      <div class="filter-toolbar">
+        <div class="filter-group">
+          <button class="filter">F</button>
+          <button class="filter">i</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter">l</button>
+          <button class="filter">i</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter">p</button>
+          <button class="filter">e</button>
+        </div>
+      </div>
+      <pre class="prettyprint linenums">
+        &lt;div class="filter-toolbar"&gt;
+          &lt;div class="filter-group"&gt;
+          ...
+          &lt;/div&gt;
+          &lt;div class="filter-group"&gt;
+          ...
+          &lt;/div&gt;
+        &lt;/div&gt;</pre>
+      <h4>Grupo de filtros do Redu</h4>
+      <p>O exemplo abaixo contrói o componente Filtro descrito na página 24 do G&E 1.3:</p> 
+      <div class="filter-group" style="margin-bottom: 8px;">
+        <button class="filter"><span class="icon-teacher-lightblue_16_18-before">100 professores</span></button>
+        <button class="filter active"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
+        <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
+      </div>
+      <pre class="prettyprint linenums">
+        &lt;div class="filter-group"&gt;
+          &lt;button class="filter"&gt;&lt;span class="icon-teacher-lightblue_16_18-before"&gt;100 professores&lt;/span&gt;&lt;/button&gt;
+          &lt;button class="filter active"&gt;&lt;span class="icon-tutor-lightblue_16_18-before"&gt;100 tutores&lt;/span&gt;&lt;/button&gt;
+          &lt;button class="filter"&gt;&lt;span class="icon-member-lightblue_16_18-before"&gt;100 alunos&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;</pre>
+      <p><strong>Observações:</strong></p>
+      <ul>
+        <li>Lembrar de usar a classe no span para exibir a versão azul claro do ícone.</li>
+        <li>Um filtro ativado deve ser marcado com <code>.active</code>.</li>
+      </ul>
+      <p><strong>Exemplo lado a lado da versão HTML com o original:</strong></p>
+      <div style="width: 834px; margin: 0 auto; overflow: hidden;">
+        <div style="width: 350px; float: left;">
+          <div class="filter-group" style="margin-bottom: 8px;">
+            <button class="filter"><span class="icon-teacher-lightblue_16_18-before">100 professores</span></button>
+            <button class="filter"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
+            <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
+          </div>
+          <div class="filter-group" style="margin-bottom: 8px;">
+            <button class="filter"><span class="icon-teacher-lightblue_16_18-before">100 professores</span></button>
+            <button class="filter"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
+            <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
+          </div>
+          <div class="filter-group">
+            <button class="filter"><span class="icon-teacher-lightblue_16_18-before">100 professores</span></button>
+            <button class="filter active"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
+            <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
+          </div>
+        </div>
+        <div style="width: 480px; float: right;">
+          <img src="../doc/images/filters.jpg" title="Filtros do G&E 1.3" />
+        </div>
+      </div>
+      <h4>Outros exemplos</h4>
+      <div class="filter-group">
+        <button class="filter">Forever alone</button>
+      </div>
+    </div>
+  </body>
+</html>

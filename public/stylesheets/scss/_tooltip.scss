@@ -1,4 +1,4 @@
-// TOOLTIP
+// TOOLTIP.
 // -------
 
 .tooltip {
@@ -15,10 +15,10 @@
   &.right  { margin-left:  2px; }
   &.bottom { margin-top:   2px; }
   &.left   { margin-left: -2px; }
-  &.top .tooltip-arrow    { @include popoverArrow-top(); }
-  &.left .tooltip-arrow   { @include popoverArrow-left(); }
-  &.bottom .tooltip-arrow { @include popoverArrow-bottom(); }
-  &.right .tooltip-arrow  { @include popoverArrow-right(); }
+  &.top .tooltip-arrow    { @include popoverArrow-top(5px, rgb(25, 25, 25)); }
+  &.left .tooltip-arrow   { @include popoverArrow-left(5px, rgb(25, 25, 25)); }
+  &.bottom .tooltip-arrow { @include popoverArrow-bottom(5px, rgb(25, 25, 25)); }
+  &.right .tooltip-arrow  { @include popoverArrow-right(5px, rgb(25, 25, 25)); }
 }
 .tooltip-inner {
   max-width: 200px;

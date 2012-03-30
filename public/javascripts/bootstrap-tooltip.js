@@ -45,8 +45,8 @@
       if (this.options.trigger != 'manual') {
         eventIn  = this.options.trigger == 'hover' ? 'mouseenter' : 'focus'
         eventOut = this.options.trigger == 'hover' ? 'mouseleave' : 'blur'
-        this.$element.on(eventIn, this.options.selector, $.proxy(this.enter, this))
-        this.$element.on(eventOut, this.options.selector, $.proxy(this.leave, this))
+        this.$element.bind(eventIn, this.options.selector, $.proxy(this.enter, this))
+        this.$element.bind(eventOut, this.options.selector, $.proxy(this.leave, this))
       }
 
       this.options.selector ?
@@ -133,6 +133,11 @@
         switch (inside ? placement.split(' ')[1] : placement) {
           case 'bottom':
             tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
+            // No caso específico do popover2.
+            if (this.$element.attr('data-original-title') == '' && this.$element.attr('rel') == 'popover') {
+              tp = {top: pos.top + pos.height, left: pos.left + pos.width - actualWidth}
+              $tip.find('.arrow').css({ left: '92%' })
+            } 
             break
           case 'top':
             tp = {top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}
@@ -266,5 +271,10 @@
   , title: ''
   , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
   }
+
+  $(document).ready(function(){
+      $('a[rel=tooltip]').tooltip()
+      // TODO: ajaxComplete?
+  });
 
 }( window.jQuery );

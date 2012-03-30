@@ -1,14 +1,14 @@
 // Mixins.scss
-// Snippets de CSS reusável para desenver rápido e manter o código legível.
+// Snippets de CSS reusável para desenvolver rápido e manter o código legível.
 // -----------------------------------------------------------------
 
 
-// MIXINS DE UTILIDADE
+// MIXINS DE UTILIDADE.
 // --------------------------------------------------
 
-// Clearfix
+// Clearfix.
 // --------
-// Para limpar floats like a boss h5bp.com/q
+// Para limpar floats like a boss h5bp.com/q.
 @mixin clearfix() {
   *zoom: 1;
   &:before,
@@ -21,12 +21,12 @@
   }
 }
 
-// Webkit-style focus
+// Webkit-style focus.
 // ------------------
 @mixin tab-focus() {
-  // Default
+  // Default.
   outline: thin dotted #333;
-  // Webkit
+  // Webkit.
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -39,10 +39,10 @@
   margin-right: auto;
 }
 
-// IE7 inline-block
+// IE7 inline-block.
 // ----------------
 @mixin ie7-inline-block() {
-  *display: inline; /* IE7 inline-block hack */
+  *display: inline; /* IE7 inline-block hack. */
   *zoom: 1;
 }
 
@@ -68,7 +68,7 @@
   }
 }
 
-// Shortcuts de dimensionamento.
+// Atalhos de dimensionamento.
 // -------------------------
 @mixin size($height: 5px, $width: 5px) {
   width: $width;
@@ -80,10 +80,10 @@
 
 
 
-// FONTS
+// FONTS.
 // --------------------------------------------------
 
-// Font Stacks
+// Pilhas de fonts.
 @mixin font-family-sans-serif {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -96,15 +96,46 @@
   @include font-family-sans-serif;
   @include font-shorthand($size, $weight, $lineHeight);
 }
+@mixin font-family-monospace {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
 
 
-// BACKGROUNDS
+// PROPRIEDADES CSS3.
 // --------------------------------------------------
 
-// Reseta filters para o IE.
-@mixin reset-filter() {
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+// Border Radius.
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
 }
+
+// Drop shadows.
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Background clipping.
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box".
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+}
+
+// Opacidade.
+@mixin opacity($opacity: 100) {
+  opacity: $opacity / 100;
+   filter: alpha(opacity=$opacity);
+}
+
+
+
+// BACKGROUNDS.
+// --------------------------------------------------
 
 // Cria um gradiente vertical de duas cores.
 @mixin filter-gradient-vertical($startColor, $endColor, $startColorPos: 0%, $endColorPos: 100%) {
@@ -117,63 +148,48 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
 }
 
+// Reseta o filtro para o IE.
+@mixin reset-filter() {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
 
 
-// PROPRIEDADES CSS3 
+
+// MIXINS DOS COMPONENTES.
 // --------------------------------------------------
 
-// Border Radius
-@mixin border-radius($radius: 5px) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-          border-radius: $radius;
-}
-
-// Drop shadows
-@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
-  -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-          box-shadow: $shadow;
-}
-
-// Opacidade.
-@mixin opacity($opacity: 100) {
-  opacity: $opacity / 100;
-   filter: alpha(opacity=$opacity);
-}
-
-// POPOVER ARROWS
+// SETAS POPOVER.
 // -------------------------
-// For tipsies and popovers
-@mixin popoverArrow-top($arrowWidth: 5px) {
+// Para tooltips e popovers.
+@mixin popoverArrow-top($arrowWidth: 5px, $borderColor: $gray6) {
   bottom: 0;
   left: 50%;
   margin-left: -$arrowWidth;
   border-left: $arrowWidth solid transparent;
   border-right: $arrowWidth solid transparent;
-  border-top: $arrowWidth solid $black;
+  border-top: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-left($arrowWidth: 5px) {
+@mixin popoverArrow-left($arrowWidth: 5px, $borderColor: $gray6) {
   top: 50%;
   right: 0;
   margin-top: -$arrowWidth;
   border-top: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid transparent;
-  border-left: $arrowWidth solid $black;
+  border-left: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-bottom($arrowWidth: 5px) {
+@mixin popoverArrow-bottom($arrowWidth: 5px, $borderColor: $gray6) {
   top: 0;
   left: 50%;
   margin-left: -$arrowWidth;
   border-left: $arrowWidth solid transparent;
   border-right: $arrowWidth solid transparent;
-  border-bottom: $arrowWidth solid $black;
+  border-bottom: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-right($arrowWidth: 5px) {
+@mixin popoverArrow-right($arrowWidth: 5px, $borderColor: $gray6) {
   top: 50%;
   left: 0;
   margin-top: -$arrowWidth;
   border-top: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid transparent;
-  border-right: $arrowWidth solid $black;
+  border-right: $arrowWidth solid $borderColor;
 }

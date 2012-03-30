@@ -1,0 +1,33 @@
+// Scaffolding
+// Estilos básicos e globais para gerar um sistema de grid, estrutura do layout e templates de páginas.
+// -------------------------------------------------------------------------------------------
+
+
+// ESTRUTURA DO LAYOUT.
+// -----------------
+
+.clearfix {
+  @include clearfix();
+}
+
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $white;
+}
+
+
+// LINKS.
+// -----
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+}

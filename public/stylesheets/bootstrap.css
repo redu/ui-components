@@ -131,6 +131,41 @@ textarea {
   vertical-align: top;
 }
 
+/* line 9, scss/_scaffolding.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 15, scss/_mixins.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+/* line 19, scss/_mixins.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 13, scss/_scaffolding.scss */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: black;
+  background-color: white;
+}
+
+/* line 26, scss/_scaffolding.scss */
+a {
+  color: #4dadd6;
+  text-decoration: none;
+}
+/* line 29, scss/_scaffolding.scss */
+a:hover {
+  color: #158ac4;
+  text-decoration: underline;
+}
+
 /* line 9, scss/_type.scss */
 p {
   margin: 0 0 9px;
@@ -139,7 +174,63 @@ p {
   line-height: 18px;
 }
 
-/* line 2, scss/_buttons.scss */
+/* line 7, scss/_code.scss */
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 12px;
+  color: #6d6e6f;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 16, scss/_code.scss */
+code {
+  padding: 3px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+
+/* line 24, scss/_code.scss */
+pre {
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 9px;
+  font-size: 12px;
+  line-height: 18px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+/* line 40, scss/_code.scss */
+pre.prettyprint {
+  margin-bottom: 18px;
+}
+/* line 45, scss/_code.scss */
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+/* line 54, scss/_code.scss */
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
+/* line 9, scss/_buttons.scss */
 .button {
   display: inline-block;
   padding: 6px 10px 6px;
@@ -157,7 +248,7 @@ p {
   border: 1px solid #cccccc;
 }
 
-/* line 16, scss/_buttons.scss */
+/* line 23, scss/_buttons.scss */
 .borderradius .button {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -349,7 +440,7 @@ p {
 .filter-toolbar .filter-group {
   display: inline-block;
   *display: inline;
-  /* IE7 inline-block hack */
+  /* IE7 inline-block hack. */
   *zoom: 1;
 }
 
@@ -490,7 +581,24 @@ p {
   color: black;
 }
 
-/* line 81, scss/_system-messages.scss */
+/* line 78, scss/_system-messages.scss */
+.system-msg-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* line 83, scss/_system-messages.scss */
+.system-msg-block > p,
+.system-msg-block > ul {
+  margin: 0;
+}
+
+/* line 86, scss/_system-messages.scss */
+.system-msg-block p + p {
+  margin-top: 5px;
+}
+
+/* line 95, scss/_system-messages.scss */
 .close {
   float: right;
   font-size: 20px;
@@ -500,7 +608,7 @@ p {
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-/* line 88, scss/_system-messages.scss */
+/* line 102, scss/_system-messages.scss */
 .close:hover {
   color: black;
   text-decoration: none;
@@ -509,29 +617,12 @@ p {
   cursor: pointer;
 }
 
-/* line 96, scss/_system-messages.scss */
+/* line 110, scss/_system-messages.scss */
 .textshadow .close {
   text-shadow: 0px 1px 0px white;
 }
 
-/* line 102, scss/_system-messages.scss */
-.system-msg-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-/* line 107, scss/_system-messages.scss */
-.system-msg-block > p,
-.system-msg-block > ul {
-  margin: 0;
-}
-
-/* line 110, scss/_system-messages.scss */
-.system-msg-block p + p {
-  margin-top: 5px;
-}
-
-/* line 114, scss/_system-messages.scss */
+/* line 119, scss/_system-messages.scss */
 .msg-block {
   background-color: #dbeff7;
   border-color: #73c3e6;
@@ -539,15 +630,15 @@ p {
   overflow: hidden;
   padding: 10px;
 }
-/* line 121, scss/_system-messages.scss */
+/* line 126, scss/_system-messages.scss */
 .msg-block .close {
   right: 0;
 }
-/* line 125, scss/_system-messages.scss */
+/* line 130, scss/_system-messages.scss */
 .msg-block p {
   padding-right: 40px;
 }
-/* line 129, scss/_system-messages.scss */
+/* line 134, scss/_system-messages.scss */
 .msg-block .button {
   float: right;
   color: white;
@@ -555,19 +646,19 @@ p {
   background-color: #73c3e6;
 }
 
-/* line 137, scss/_system-messages.scss */
+/* line 142, scss/_system-messages.scss */
 .boxshadow .msg-block {
   -webkit-box-shadow: 0 0 0 0 black;
   -moz-box-shadow: 0 0 0 0 black;
   box-shadow: 0 0 0 0 black;
 }
 
-/* line 141, scss/_system-messages.scss */
+/* line 146, scss/_system-messages.scss */
 .textshadow .msg-block .button {
   text-shadow: 0px -1px 0px #158ac4;
 }
 
-/* line 145, scss/_system-messages.scss */
+/* line 150, scss/_system-messages.scss */
 .cssgradients .msg-block .button {
   background: -moz-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #73c3e6), color-stop(100%, #158ac4));
@@ -578,7 +669,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c3e6', endColorstr='#158ac4', GradientType=1), #73c3e6, #158ac4;
 }
 
-/* line 150, scss/_system-messages.scss */
+/* line 155, scss/_system-messages.scss */
 .no-cssgradients .msg-block .button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
 }
@@ -623,7 +714,7 @@ p {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid black;
+  border-top: 5px solid #191919;
 }
 /* line 19, scss/_tooltip.scss */
 .tooltip.left .tooltip-arrow {
@@ -632,7 +723,7 @@ p {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid black;
+  border-left: 5px solid #191919;
 }
 /* line 20, scss/_tooltip.scss */
 .tooltip.bottom .tooltip-arrow {
@@ -641,7 +732,7 @@ p {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #191919;
 }
 /* line 21, scss/_tooltip.scss */
 .tooltip.right .tooltip-arrow {
@@ -650,7 +741,7 @@ p {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid black;
+  border-right: 5px solid #191919;
 }
 
 /* line 23, scss/_tooltip.scss */
@@ -682,4 +773,159 @@ p {
   -webkit-box-shadow: 0 0 3px #555555;
   -moz-box-shadow: 0 0 3px #555555;
   box-shadow: 0 0 3px #555555;
+}
+
+/* line 4, scss/_popover.scss */
+.popover {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  padding: 5px;
+}
+/* line 12, scss/_popover.scss */
+.popover.top {
+  margin-top: -5px;
+}
+/* line 13, scss/_popover.scss */
+.popover.right {
+  margin-left: 5px;
+}
+/* line 14, scss/_popover.scss */
+.popover.bottom {
+  margin-top: 5px;
+}
+/* line 15, scss/_popover.scss */
+.popover.left {
+  margin-left: -5px;
+}
+/* line 16, scss/_popover.scss */
+.popover.top .arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6d6e6f;
+}
+/* line 17, scss/_popover.scss */
+.popover.right .arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #6d6e6f;
+}
+/* line 18, scss/_popover.scss */
+.popover.bottom .arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #6d6e6f;
+}
+/* line 19, scss/_popover.scss */
+.popover.left .arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #6d6e6f;
+}
+/* line 20, scss/_popover.scss */
+.popover .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* line 26, scss/_popover.scss */
+.popover-inner {
+  padding: 1px;
+  width: 345px;
+  overflow: hidden;
+  background: #6d6e6f;
+}
+
+/* line 33, scss/_popover.scss */
+.no-title .popover-inner {
+  width: 400px;
+}
+
+/* line 38, scss/_popover.scss */
+.popover-title {
+  padding: 10px;
+  line-height: 1;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Museo Sans', sans-serif;
+  font-weight: 500;
+}
+
+/* line 48, scss/_popover.scss */
+.popover-content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+/* line 53, scss/_popover.scss */
+.popover-content p, .popover-content ul, .popover-content ol {
+  margin-bottom: 0;
+}
+
+/* line 58, scss/_popover.scss */
+.boxshadow .popover-inner {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* line 62, scss/_popover.scss */
+.boxshadow .popover-content {
+  -webkit-box-shadow: inset 0px 1px 0px 0px white;
+  -moz-box-shadow: inset 0px 1px 0px 0px white;
+  box-shadow: inset 0px 1px 0px 0px white;
+}
+
+/* line 67, scss/_popover.scss */
+.borderradius .popover-inner {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 70, scss/_popover.scss */
+.borderradius .popover-title {
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+/* line 73, scss/_popover.scss */
+.borderradius .popover-content {
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+/* line 76, scss/_popover.scss */
+.borderradius .no-title .popover-content {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 81, scss/_popover.scss */
+.textshadow .popover-inner {
+  text-shadow: 0px 1px 0px white;
 }
