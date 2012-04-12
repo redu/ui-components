@@ -14,6 +14,9 @@
     <!--[if (gte IE 6)&(lte IE 8)]>
       <link href="../public/javascripts/selectivizr.js" rel="stylesheet">
     <![endif]-->
+    <!--[if gte IE 9]>
+      <link href="../public/stylesheets/ie9.css" rel="stylesheet">
+    <![endif]-->
   </head>
   <body onload="prettyPrint()">
     <div style="width: 960px; margin: 10px auto;">
@@ -22,70 +25,48 @@
       <h2>Mensagens do sistema (sobrepostas)</h2>
       <h3>Exemplos de mensagens</h3>
       <p>Envolva sua mensagem e um ícone opcional de fechar em uma div com uma simples classe.</p>
-      <div class="system-msg">
-        <a data-dismiss="system-msg" class="close">×</a>
-        <strong>Padrão.</strong> Simples
-      </div>
-      <pre class="prettyprint linenums">
-        &lt;div class="system-msg"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;strong&gt;Padrão.&lt;/strong&gt; Simples
-        &lt;/div&gt;</pre>
-      <p>Extenda facilmente a mensagem com duas classes adicionais: <code>.msg-block</code> para mais padding e <code>.system-msg-heading</code> para o cabeçalho.</p>
-      <div class="system-msg system-msg-block">
-        <a data-dismiss="system-msg" class="close">×</a>
-        <h4 class="system-msg-heading">Padrão.</h4>
-        Simples
-      </div>
-      <pre class="prettyprint linenums">
-        &lt;div class="system-msg system-msg-block"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;h4 class="system-msg-heading"&gt;Padrão.&lt;/h4&gt;
-          Simples
-        &lt;/div&gt;</pre>
-      <h3>Alternativas contextuais</h3>
       <h4>Erro ou advertência</h4>
       <div class="system-msg system-msg-warning">
         <a data-dismiss="system-msg" class="close">×</a>
         <strong>Ops!</strong> Quando alguma coisa não funciona bem, este aviso é mostrado...
       </div>
       <pre class="prettyprint linenums">
-        &lt;div class="system-msg system-msg-warning"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;strong&gt;Ops!&lt;/strong&gt; Quando alguma coisa não funciona bem, este aviso é mostrado...
-        &lt;/div&gt;</pre>
+&lt;div class="system-msg system-msg-warning"&gt;
+  &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
+  &lt;strong&gt;Ops!&lt;/strong&gt; Quando alguma coisa não funciona bem, este aviso é mostrado...
+&lt;/div&gt;</pre>
       <h4>Sucesso</h4>
       <div class="system-msg system-msg-success">
         <a data-dismiss="system-msg" class="close">×</a>
         <strong>Muito bem!</strong> Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.
       </div>
       <pre class="prettyprint linenums">
-        &lt;div class="system-msg system-msg-success"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;strong&gt;Muito bem!&lt;/strong&gt; Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.
-        &lt;/div&gt;</pre>
+&lt;div class="system-msg system-msg-success"&gt;
+  &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
+  &lt;strong&gt;Muito bem!&lt;/strong&gt; Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.
+&lt;/div&gt;</pre>
       <h4>Informação</h4>
       <div class="system-msg system-msg-info">
         <a data-dismiss="system-msg" class="close">×</a>
         <strong>Aviso.</strong> Sr. usuário, há algo que você precisa saber, porém sem urgência.
       </div>
       <pre class="prettyprint linenums">
-        &lt;div class="system-msg system-msg-info"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;strong&gt;Aviso.&lt;/strong&gt; Sr. usuário, há algo que você precisa saber, porém sem urgência.
-        &lt;/div&gt;</pre>
+&lt;div class="system-msg system-msg-info"&gt;
+  &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
+  &lt;strong&gt;Aviso.&lt;/strong&gt; Sr. usuário, há algo que você precisa saber, porém sem urgência.
+&lt;/div&gt;</pre>
       <h4>Ocupado</h4>
       <div class="system-msg system-msg-busy">
         Lendo... carregando... processando...
       </div>
       <pre class="prettyprint linenums">
-        &lt;div class="system-msg system-msg-busy"&gt;
-          Lendo... carregando... processando...
-        &lt;/div&gt;</pre>
+&lt;div class="system-msg system-msg-busy"&gt;
+  Lendo... carregando... processando...
+&lt;/div&gt;</pre>
       <h3>Exemplo lado a lado da versão HTML com o original</h3>
       <div style="width: 1074px; margin: 0 auto;">
         <div style="width: 540px; float: left;">
-          <div style="width: 470px; margin: 0 auto;">
+          <div style="width: 471px; margin: 0 auto;">
             <div class="system-msg system-msg-warning">
               <a data-dismiss="system-msg" class="close">×</a>
               <strong>Ops!</strong> Quando alguma coisa não funciona bem, este aviso é mostrado...
@@ -97,13 +78,13 @@
               <strong>Muito bem!</strong> Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.
             </div>
           </div>
-          <div style="width: 479px; margin: 0 auto;">
+          <div style="width: 482px; margin: 0 auto;">
             <div class="system-msg system-msg-info">
               <a data-dismiss="system-msg" class="close">×</a>
               <strong>Aviso.</strong> Sr. usuário, há algo que você precisa saber, porém sem urgência.
             </div>
           </div>
-          <div style="width: 264px; margin: 0 auto;">
+          <div style="width: 239px; margin: 0 auto;">
             <div class="system-msg system-msg-busy">
               Lendo... carregando... processando...
             </div>
@@ -113,20 +94,20 @@
           <img src="../doc/images/system-messages.jpg" title="Mensagens do sistema" />
         </div>
         <div style="clear: both"></div>
-      </div>   
+      </div>
       <h2>Mensagens em bloco</h2>
       <h3>Exemplo padrão</h3>
       <div class="system-msg msg-block">
         <a data-dismiss="system-msg" class="close">×</a>
         <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
-        <button class="button">Ir para um outro lugar</button>
+        <a href="#" class="button" title="Ir para um outro lugar">Ir para um outro lugar</a>
       </div>
       <pre class="prettyprint linenums">
-        &lt;div class="system-msg msg-block"&gt;
-          &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
-          &lt;p&gt;&lt;strong&gt;Aviso.&lt;/strong&gt; Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.&lt;/p&gt;
-          &lt;button class="button"&gt;Ir para um outro lugar&lt;/button&gt;
-        &lt;/div&gt;</pre>
+&lt;div class="system-msg msg-block"&gt;
+  &lt;a data-dismiss="system-msg" class="close"&gt;×&lt;/a&gt;
+  &lt;p&gt;&lt;strong&gt;Aviso.&lt;/strong&gt; Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.&lt;/p&gt;
+  &lt;a href="#" class="button" title="Ir para um outro lugar"&gt;Ir para um outro lugar&lt;/a&gt;
+&lt;/div&gt;</pre>
       <h3>Exemplo lado a lado da versão HTML com o original</h3>
       <div style="width: 1074px; margin: 0 auto;">
         <div style="width: 540px; float: left;">
@@ -134,7 +115,7 @@
             <div class="system-msg msg-block">
               <a data-dismiss="system-msg" class="close">×</a>
               <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
-              <button class="button">Ir para um outro lugar</button>
+              <a href="#" class="button" title="Ir para um outro lugar">Ir para um outro lugar</a>
             </div>
           </div>
         </div>
@@ -149,7 +130,7 @@
       <h3>Exemplo padrão</h3>
       <p>Lorem ipsum dolor sit amet, consectetur <a href="#" rel="tooltip" title="Descrição secundária">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
       <pre class="prettyprint linenums">
-        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="tooltip" title="Descrição secundária"&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="tooltip" title="Descrição secundária"&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
       <ul>
         <li>O elemento com o tooltip deverá possuir o atributo <code>rel="tooltip"</code>.</li>
         <li>O texto exibido pelo tooltip deverá estar dentro do atributo <code>title</code>.</li>
@@ -158,21 +139,21 @@
       <h3>Elemento original</h3>
       <img src="../doc/images/popover.jpg" />
       <h3>Exemplo padrão</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur <a data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam." rel="popover" href="#" data-original-title="Título do popover">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur <a href="#" rel="popover" data-original-title="Título do popover"data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam.">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
       <pre class="prettyprint linenums">
-        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam." rel="popover" href="#" data-original-title="Título do popover"&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="popover" data-original-title="Título do popover"data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam."&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
       <ul>
         <li>O elemento com o popover deverá possuir o atributo <code>rel="popover"</code>.</li>
-        <li>O texto exibido pelo popover deverá estar dentro do atributo <code>data-content</code>.</li>
         <li>O título do popover deverá estar dentro do atributo <code>data-original-title</code>.</li>
+        <li>O texto exibido pelo popover deverá estar dentro do atributo <code>data-content</code>.</li>
       </ul>
       <h2>Popover2</h2>
       <h3>Elemento original</h3>
       <img src="../doc/images/popover2.jpg" />
-      <h3>Exemplo padrão</h3>   
-      <p>Lorem ipsum dolor sit amet, consectetur <a data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam." rel="popover" href="#">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
+      <h3>Exemplo padrão</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur <a href="#" rel="popover" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam.">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
       <pre class="prettyprint linenums">
-        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam." rel="popover" href="#"&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="popover" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam."&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
       <ul>
         <li>O elemento com o popover deverá possuir o atributo <code>rel="popover"</code>.</li>
         <li>O texto exibido pelo popover deverá estar dentro do atributo <code>data-content</code>.</li>

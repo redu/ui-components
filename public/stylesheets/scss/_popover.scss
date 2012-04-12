@@ -1,6 +1,7 @@
 // POPOVERS.
 // --------
 
+// Encapsulador do inner e da seta.
 .popover {
   font-family: $baseFontFamily;
   position: absolute;
@@ -9,75 +10,57 @@
   z-index: $zindexPopover;
   display: none;
   padding: 5px;
+
   &.top    { margin-top:  -5px; }
   &.right  { margin-left:  5px; }
   &.bottom { margin-top:   5px; }
   &.left   { margin-left: -5px; }
+
   &.top .arrow    { @include popoverArrow-top(); }
-  &.right .arrow  { @include popoverArrow-right(); }
-  &.bottom .arrow { @include popoverArrow-bottom(); }
-  &.left .arrow   { @include popoverArrow-left();  }
+  &.right .arrow  { @include popoverArrow-right(8px, $gray6, -2px); }
+  &.bottom .arrow { @include popoverArrow-bottom(8px, $gray6, -2px); }
+  &.left .arrow   { @include popoverArrow-left(8px, $gray6, -2px);  }
+
   .arrow {
     position: absolute;
-    width: 0;
-    height: 0;
+    @include square(0);
   }
 }
+
+// Encapsulador do título e conteúdo.
 .popover-inner {
   padding: 1px;
-  width: 345px;
+  width: 338px;
   overflow: hidden;
-  background: $gray6; // tem que ser a declaração de background completa pra fallback do IE.
-}
+  background: $gray6;
 
-.no-title .popover-inner {
-  // Largura pra o popover sem título.
-  width: 400px;
+  .borderradius & { @include border-radius(5px); }
+  .boxshadow    & { @include box-shadow(0 1px 5px 1px rgba(0, 0, 0, 0.4)); }
+  .textshadow   & { text-shadow: $verticalWhiteShadow; }
+  .no-title     & { width: 398px; }
 }
 
 .popover-title {
   padding: 10px;
-  line-height: 1;
   background-color: $gray1;
   border-bottom: 1px solid $gray3;
   margin: 0;
   font-size: 18px;
   font-family: 'Museo Sans', sans-serif;
   font-weight: 500;
+
+  .borderradius & { @include border-radius(5px 5px 0 0); }
 }
+
 .popover-content {
   @include font-sans-serif;
   padding: 10px;
   background-color: $gray1;
   @include background-clip(padding-box);
-  p, ul, ol {
-    margin-bottom: 0;
-  }
-}
 
-.boxshadow .popover-inner {
-  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.4));
-}
+  p, ul, ol { margin-bottom: 0; }
 
-.boxshadow .popover-content {
-  @include box-shadow(inset 0px 1px 0px 0px white);
-}
-
-.borderradius {
-  .popover-inner {
-    @include border-radius(5px);
-  }
-  .popover-title {
-    @include border-radius(5px 5px 0 0);
-  }
-  .popover-content {
-    @include border-radius(0 0 5px 5px);
-  }
-  .no-title .popover-content {
-    @include border-radius(5px);
-  }
-}
-
-.textshadow .popover-inner {
-  text-shadow: $verticalWhiteShadow;
+  .boxshadow              & { @include box-shadow(inset 0 1px 0 0 $white); }
+  .borderradius           & { @include border-radius(0 0 5px 5px); }
+  .borderradius .no-title & { @include border-radius(5px); }
 }

@@ -1,0 +1,53 @@
+// DROPDOWN MENUS.
+// --------------
+
+// O circunflexo faz o toggle ficar um pouco alto demais no IE7.
+.dropdown-toggle { *margin-bottom: -3px; }
+
+.dropdown-toggle:active,
+.open .dropdown-toggle { outline: 0; }
+
+// Dropdown seta/circunfelxo.
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  text-indent: -99999px;
+  *text-indent: 0; // Truque pro IE7.
+  vertical-align: top;
+  border-left:  4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top:   8px solid $gray5;
+  content: "\2193";
+
+  .open & {
+    border-top: none;
+    border-bottom: 8px solid $blue3;
+  }
+  .button-dropdown:hover & {
+    border-top-color: $blue4;
+    border-bottom-color: $blue4;
+  }
+}
+
+// O menu dropdown.
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: $zindexDropdown;
+  display: none; // None por padrão, mas block no abrir do menu.
+  min-width: 160px;
+  _width: 160px;
+  margin: 0; // Sobrescreve o padrão do ul.
+  list-style: none;
+  background-color: $gray1;
+  border: 1px solid $blue4;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+  .boxshadow & { @include box-shadow(0 1px 5px 1px rgba(0, 0, 0, .5)); }
+}

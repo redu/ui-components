@@ -6,6 +6,11 @@
 // MIXINS DE UTILIDADE.
 // --------------------------------------------------
 
+@mixin replacement() {
+  text-indent: -9999px;
+  display: inline-block;
+}
+
 // Clearfix.
 // --------
 // Para limpar floats like a boss h5bp.com/q.
@@ -70,7 +75,7 @@
 
 // Atalhos de dimensionamento.
 // -------------------------
-@mixin size($height: 5px, $width: 5px) {
+@mixin size($width: 5px, $height: 5px) {
   width: $width;
   height: $height;
 }
@@ -117,6 +122,11 @@
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
 }
+@mixin box-shadow-2($shadow1, $shadow2) {
+  -webkit-box-shadow: $shadow1, $shadow2;
+     -moz-box-shadow: $shadow1, $shadow2;
+          box-shadow: $shadow1, $shadow2;
+}
 
 // Background clipping.
 // Heads up: FF 3.6 and under need "padding" instead of "padding-box".
@@ -145,7 +155,15 @@
   background: -o-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
   background: -ms-linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
   background: linear-gradient(top, $startColor $startColorPos, $endColor $endColorPos);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}', GradientType=1), $startColor, $endColor; // IE9 and down
+}
+
+@mixin filter-gradient-vertical-3($color1, $color2, $color3, $color1Pos: 0%, $color2Pos: 50%, $color3Pos: 100%) {
+  background: -moz-linear-gradient(top, $color1 $color1Pos, $color2 $color2Pos, $color3 $color3Pos);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($color1Pos,$color1), color-stop($color2Pos,$color2), color-stop($color3Pos,$color3));
+  background: -webkit-linear-gradient(top, $color1 $color1Pos,$color2 $color2Pos,$color3 $color3Pos);
+  background: -o-linear-gradient(top, $color1 $color1Pos,$color2 $color2Pos,$color3 $color3Pos);
+  background: -ms-linear-gradient(top, $color1 $color1Pos,$color2 $color2Pos,$color3 $color3Pos);
+  background: linear-gradient(top, $color1 $color1Pos,$color2 $color2Pos,$color3 $color3Pos);
 }
 
 // Reseta o filtro para o IE.
@@ -161,7 +179,7 @@
 // SETAS POPOVER.
 // -------------------------
 // Para tooltips e popovers.
-@mixin popoverArrow-top($arrowWidth: 5px, $borderColor: $gray6) {
+@mixin popoverArrow-top($arrowWidth: 8px, $borderColor: $gray6) {
   bottom: 0;
   left: 50%;
   margin-left: -$arrowWidth;
@@ -169,25 +187,25 @@
   border-right: $arrowWidth solid transparent;
   border-top: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-left($arrowWidth: 5px, $borderColor: $gray6) {
+@mixin popoverArrow-left($arrowWidth: 8px, $borderColor: $gray6, $right: 0) {
   top: 50%;
-  right: 0;
+  right: $right;
   margin-top: -$arrowWidth;
   border-top: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid transparent;
   border-left: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-bottom($arrowWidth: 5px, $borderColor: $gray6) {
-  top: 0;
+@mixin popoverArrow-bottom($arrowWidth: 8px, $borderColor: $gray6, $top: 0) {
+  top: $top;
   left: 50%;
   margin-left: -$arrowWidth;
   border-left: $arrowWidth solid transparent;
   border-right: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid $borderColor;
 }
-@mixin popoverArrow-right($arrowWidth: 5px, $borderColor: $gray6) {
+@mixin popoverArrow-right($arrowWidth: 8px, $borderColor: $gray6, $left: 0) {
   top: 50%;
-  left: 0;
+  left: $left;
   margin-top: -$arrowWidth;
   border-top: $arrowWidth solid transparent;
   border-bottom: $arrowWidth solid transparent;

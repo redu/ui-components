@@ -1,6 +1,10 @@
 // TOOLTIP.
 // -------
 
+// Cor do fundo e da seta.
+$backgroundAndArrowColor: rgb(25, 25, 25);
+
+// Encapsulador do inner e da seta.
 .tooltip {
   font-family: $baseFontFamily;
   position: absolute;
@@ -10,34 +14,32 @@
   padding: 5px;
   font-size: 11px;
   @include opacity(0);
+
   &.in     { @include opacity(90); }
   &.top    { margin-top:  -2px; }
   &.right  { margin-left:  2px; }
   &.bottom { margin-top:   2px; }
   &.left   { margin-left: -2px; }
-  &.top .tooltip-arrow    { @include popoverArrow-top(5px, rgb(25, 25, 25)); }
-  &.left .tooltip-arrow   { @include popoverArrow-left(5px, rgb(25, 25, 25)); }
-  &.bottom .tooltip-arrow { @include popoverArrow-bottom(5px, rgb(25, 25, 25)); }
-  &.right .tooltip-arrow  { @include popoverArrow-right(5px, rgb(25, 25, 25)); }
+
+  &.top .tooltip-arrow    { @include popoverArrow-top(5px, $backgroundAndArrowColor); }
+  &.left .tooltip-arrow   { @include popoverArrow-left(5px, $backgroundAndArrowColor); }
+  &.bottom .tooltip-arrow { @include popoverArrow-bottom(5px, $backgroundAndArrowColor); }
+  &.right .tooltip-arrow  { @include popoverArrow-right(5px, $backgroundAndArrowColor); }
 }
+
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
   color: $white;
   text-align: center;
   text-decoration: none;
-  background-color: rgb(25, 25, 25);
+  background-color: $backgroundAndArrowColor;
+
+  .borderradius & { @include border-radius(3px); }
+  .boxshadow    & { @include box-shadow(0 0 3px 1px rgb(85, 85, 85)); }
 }
+
 .tooltip-arrow {
   position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.borderradius .tooltip-inner {
-  @include border-radius(3px);
-}
-
-.boxshadow .tooltip-inner {
-  @include box-shadow(0 0 3px rgb(85, 85, 85));
+  @include square(0);
 }

@@ -1,0 +1,10 @@
+.no-cssgradients .filter,
+.no-cssgradients .msg-block .button,
+.no-cssgradients .nav-bar-inner,
+.no-cssgradients .nav .active .button,
+.no-cssgradients .nav .active .button:hover,
+.no-cssgradients .nav .button:hover,
+.no-cssgradients .button:hover,
+.no-cssgradients .nav-bar-notification:nth-child(odd) {
+   filter: none;
+}

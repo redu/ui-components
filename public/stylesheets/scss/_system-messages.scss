@@ -4,118 +4,73 @@
 // Estilos básicos das mensagens.
 .system-msg {
   padding: 10px 35px 10px 10px;
-  margin-bottom: $baseLineHeight;  
+  margin-bottom: $baseLineHeight;
   background-color: $warningBackground;
   border: 1px solid $warningBorder;
-  @include font-sans-serif;
-}
-
-.boxshadow .system-msg {
-  @include box-shadow(0px 2px 3px 1px rgba(0, 0, 0, 0.4));
-}
-
-.textshadow .system-msg {
-  text-shadow: $verticalWhiteShadow;
-}
-
-.borderradius .system-msg {
-  @include border-radius(5px);
-}
-
-.system-msg,
-.system-msg-heading {
   color: $warningText;
-}
+  @include font-sans-serif;
 
-.system-msg-heading {
-  margin: 0;
-}
+  // Adiciona margin somente quando há mais de um parágrafo para espacar os mesmos.
+  > p, > ul { margin: 0; }
+  p + p { margin-top: 5px; }
 
-// Ajusta a posição do link de fechar.
-.system-msg .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 18px;
+  .boxshadow & { @include box-shadow(0 2px 5px 1px rgba(0, 0, 0, 0.4)); }
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+  .borderradius & { @include border-radius(5px); }
 }
 
 // Estilos alternativos.
-// ----------------
-
 .system-msg-success {
   background-color: $green1;
-  border-color: $successBorder;  
-}
-.system-msg-success,
-.system-msg-success .system-msg-heading {
+  border-color: $successBorder;
   color: $successText;
 }
+
 .system-msg-warning {
   background-color: $warningBackground;
   border-color: $warningBorder;
-}
-.system-msg-warning,
-.system-msg-warning .system-msg-heading {
   color: $warningText;
 }
+
 .system-msg-info {
   background-color: $infoBackground;
   border-color: $infoBorder;
-}
-.system-msg-info,
-.system-msg-info .system-msg-heading {
   color: $infoText;
 }
+
 .system-msg-busy {
   background-color: $busyBackground;
   border-color: $busyBorder;
-}
-.system-msg-busy,
-.system-msg-busy .system-msg-heading {
   color: $busyText;
+  padding: 5px 10px;
 }
 
-.system-msg-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-.system-msg-block > p,
-.system-msg-block > ul {
-  margin: 0;
-}
-.system-msg-block p + p {
-  margin-top: 5px;
-}
-
-
-
-// ÍCONES CLOSE.
-// -----------
-
+// Ícone de fechar.
 .close {
   float: right;
   font-size: 20px;
   font-weight: bold;
   line-height: $baseLineHeight;
-  color: $black;
-  @include opacity(20);
+  color: $gray5;
+
   &:hover {
-    color: $black;
+    color: $gray6;
     text-decoration: none;
-    @include opacity(40);
     cursor: pointer;
   }
+
+  // Ajusta a posição do link de fechar.
+  .system-msg & {
+    position: relative;
+    right: -21px;
+    line-height: 18px;
+  }
+  .msg-block & { right: 0; }
+
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
 }
 
-.textshadow .close {
-  text-shadow: $verticalWhiteShadow;
-}
-
-
-
-// Mensagens em bloco.
-// ------------------------
-
+// Mensagem em bloco.
 .msg-block {
   background-color: $blue1;
   border-color: $blue2;
@@ -123,12 +78,9 @@
   overflow: hidden;
   padding: 10px;
 
-  .close {
-    right: 0;
-  }
-
-  p {
+  > p {
     padding-right: 40px;
+    margin-bottom: 10px;
   }
 
   .button {
@@ -136,22 +88,16 @@
     color: white;
     border: 1px solid $blue2;
     background-color: $blue2;
+
+    .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+    .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 50%, 100%); }
+    .no-cssgradients & {
+      // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+     }
   }
-}
 
-.boxshadow .msg-block {
-  @include box-shadow(0 0 0 0 rgb(0, 0, 0));
-}
-
-.textshadow .msg-block .button {
-  text-shadow: $negativeVerticalBlue4Shadow;
-}
-
-.cssgradients .msg-block .button {
-  @include filter-gradient-vertical($blue2, $blue4, 50%, 100%);
-}
-
-// Para o IE 8 e 9.
-.no-cssgradients .msg-block .button {
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
+  // Remove o box shadow herdado do system-msg.
+  .boxshadow & { @include box-shadow(0 0 0 0 rgb(0, 0, 0)); }
 }

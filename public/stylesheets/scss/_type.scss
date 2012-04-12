@@ -3,6 +3,7 @@
 // ----------------------------------------------------------------------------------------
 
 
+
 // TEXTO DO BODY.
 // ---------
 
@@ -12,3 +13,29 @@ p {
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
 }
+
+
+
+// LISTAS.
+// -----
+
+// Listas ordenadas e não ordenadas.
+ul, ol {
+  padding: 0;
+  margin: 0 0 $baseLineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul { margin-bottom: 0; }
+ul { list-style: disc; }
+ol { list-style: decimal; }
+li { line-height: $baseLineHeight; }
+
+
+
+// MISC
+// ----
+
+// Ênfases.
+strong { font-weight: bold; }

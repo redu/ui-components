@@ -1,0 +1,298 @@
+// Balão vermelho que notifica as mensagens não lidas.
+.unread-marker {
+	position: absolute;
+	display: block;
+	background-color: $red2;
+	color: $white;
+	font-size: 11px;
+
+	.nav-bar & {
+		@include size(17px, 16px);
+		top: -7px;
+		right: 0;
+	}
+
+	.unread-notification & {
+		@include square(8px);
+		top: -4px;
+		left: -4px;
+
+		.boxshadow & { @include box-shadow(0 1px 0 $white); }
+	}
+
+	.textshadow & { text-shadow: 0 -1px 0 $red5; }
+
+	.borderradius & { @include border-radius(3px); }
+}
+
+// Deve-se adicionar o padding no topo sempre que a barra de navegação global estiver fixa no topo.
+body { padding-top: 40px; }
+
+
+// Encapsulador da barra de navegação.
+.nav-bar {
+	overflow: visible;
+  margin-bottom: $baseLineHeight;
+
+  // Fixa no topo.
+  &.nav-bar-fixed-top {
+		top: 0;
+		left: 0;
+		right: 0;
+		position: fixed;
+		z-index: $zindexFixedNavbar;
+
+		.nav-bar-inner {
+			padding-left: 0;
+			padding-right: 0;
+
+			.nav-bar-container { width: 960px; }
+			// No topo, remove as bordas.
+			.borderradius  & { @include border-radius(0); }
+		}
+	}
+}
+
+
+// Interior da barra.
+.nav-bar-inner {
+	height: 40px;
+	// 1px de padding top e bottom pra não cobrir a borda interna branca.
+	padding: 1px 20px;
+
+	// Borda branca interna e sombra.
+	.boxshadow & { @include box-shadow-2(inset 0 0 0 1px $white, 0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
+
+	// Quando não estiver fixa no topo.
+	.borderradius & { @include border-radius(12px); }
+
+	// Fundo com gradiente de 3 cores.
+	.cssgradients & { @include filter-gradient-vertical-3($gray2, $white, $gray2); }
+	.no-cssgradients & {
+		// http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+50,f0f0f0+100;Custom
+  	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 );
+  }
+}
+
+
+.nav-bar-container {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+
+	.button-toolbar {
+		margin: 5px 0 0 10px;
+		float: right;
+	}
+}
+
+
+// Logo.
+.nav-bar-brand {
+	display: block;
+	float: left;
+	@include replacement;
+	@include size(140px, 40px);
+	margin-right: 40px;
+	background-image: url("../images/new/redu-logo-nav-small-gray.png");
+
+	&:hover { background-image: url("../images/new/redu-logo-nav-small-color.png"); }
+}
+
+
+// Dropbox menu.
+.dropdown-menu {
+	color: $gray5;
+
+	.textshadow & { text-shadow: $verticalWhiteShadow; }
+
+	.arrow {
+		border-bottom: 7px solid $blue4;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    right: 15px;
+    top: -7px;
+		@include square(0);
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-bar-dropdown-menu-head { padding: 10px; }
+}
+
+
+// Perfil.
+.dropdown-menu.nav-bar-profile {
+	width: 200px;
+
+	li {
+		padding: 5px 10px;
+
+		&:hover { background: $blue1; }
+
+		a:before {
+			float: left;
+			margin-right: 7px;
+		}
+
+		.nav-bar-profile-item-edit {
+			float: right;
+			font-size: 11px;
+		}
+
+		// Normal padding esquerdo + largura do ícone + margin direita do ícone.
+		&:last-child { padding-left: 10px + 16px + 7px; }
+
+		.boxshadow &:hover { @include box-shadow(inset 0 0 0 1px $white); }
+
+		.borderradius &:last-child { @include border-radius(0 0 4px 4px); }
+	}
+}
+
+
+// Avise-me.
+.dropdown-menu.nav-bar-notifications {
+	width: 360px;
+
+	.nav-bar-notifications-invites {
+		float: right;
+	}
+
+	.nav-bar-dropdown-menu-bottom {
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		.button {
+			@include center-block;
+			width: 175px;
+		}
+	}
+}
+
+.nav-bar-notification {
+	overflow: hidden;
+	padding: 10px;
+
+	.cssgradients &:nth-child(odd) { @include filter-gradient-vertical($gray3, $gray2); }
+	.no-cssgradients &:nth-child(odd) {
+		// http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f0f0f0+100;Custom
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#f0f0f0',GradientType=0 );
+	}
+
+	&.unread-notification .notification-avatar { position: relative; }
+
+	// Distância entre o .timestamp e .actions + altura do .actions.
+	&.notification-with-action .notification-content { padding-bottom: 10px + 18px; }
+
+	&:hover { background: $blue1 !important; }
+
+	.boxshadow &:hover { @include box-shadow(inset 0 0 0 1px $white); }
+
+	.notification-avatar {
+		width: 32px;
+		margin-right: 10px;
+		float: left;
+	}
+
+	.notification-content {
+		float: right;
+		position: relative;
+		width: 298px;
+
+		p {
+			margin-bottom: 0;
+			color: $gray6;
+		}
+
+		.notification-timestamp { font-size: 11px; }
+
+		.notification-actions {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			font-size: 11px;
+		}
+	}
+}
+
+
+// Navegação.
+.nav {
+	float: left;
+	margin: 1px 10px 0 0;
+
+	a:hover { text-decoration: none; }
+
+	li {
+		display: block;
+		float: left;
+	}
+
+	li + li { margin-left: 1px; }
+
+	.active .button {
+		color: $white;
+
+		.textshadow & { text-shadow: $verticalBlue4Shadow; }
+
+		// Drop shadow azul interno no botão atual.
+		.boxshadow &,
+		.boxshadow &:hover { @include box-shadow-2(inset 0 1px 0 $blue2, inset 0 -1px 0 $blue3); }
+
+		// Drop shadow interno no :active.
+		.boxshadow &:active { @include box-shadow(inset 0 1px 2px 1px rgba(0, 0, 0, 0.5)); }
+
+		.cssgradients & { @include filter-gradient-vertical($blue4, $blue2, 30%, 100%); }
+		.cssgradients &:hover { @include filter-gradient-vertical($blue4, $blue2, 70%, 100%); }
+		.no-cssgradients & {
+			// http://www.colorzilla.com/gradient-editor/#158ac4+0,73c3e6+100;Custom
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3M2MzZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#158ac4', endColorstr='#73c3e6',GradientType=0 );
+		}
+		.no-cssgradients &:hover {
+			// http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+100;Custom
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+		}
+
+		background: $blue2;
+		&:active:hover {
+			background: $blue4;
+			border: none;
+		}
+	}
+
+	.button {
+		border: none;
+		padding: 10px;
+		font-family: "Museo Sans";
+		font-weight: 100;
+
+		.textshadow & { text-shadow: $verticalWhiteShadow; }
+
+		.borderradius & { @include border-radius(5px); }
+
+		.boxshadow & { @include box-shadow(0 0 0 0 $white); }
+		// Drop shadow branco interno no hover do botão normal.
+		.boxshadow &:hover { @include box-shadow-2(inset 0 1px 0 $white, inset 0 -1px 0 $gray4); }
+		// Drop shadow interno no :active.
+		.boxshadow &:active { @include box-shadow(inset 0 1px 2px 1px rgba(0, 0, 0, 0.5)); }
+
+		.cssgradients &:hover { @include filter-gradient-vertical($gray3, $white, 50%, 100%); }
+		.no-cssgradients &:hover {
+			// http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100;Custom
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E6E6E6', endColorstr='#ffffff',GradientType=0 );
+		}
+
+		background: transparent;
+		&:active:hover { background: $gray3; }
+	}
+}
