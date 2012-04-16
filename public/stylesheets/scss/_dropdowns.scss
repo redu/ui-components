@@ -24,7 +24,7 @@
     border-top: none;
     border-bottom: 8px solid $blue3;
   }
-  .button-dropdown:hover & {
+  .open:hover & {
     border-top-color: $blue4;
     border-bottom-color: $blue4;
   }

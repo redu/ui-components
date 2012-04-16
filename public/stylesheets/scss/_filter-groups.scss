@@ -16,10 +16,11 @@
     position: relative;
     float: left;
     margin-left: -1px;
-    @include border-radius(0);
+
+    .borderradius & { @include border-radius(0); }
   }
   // Define os vértices individualmente porque às vezes um único filtro pode estar dentro de um .filter-group e nós precisamos :first-child e :last-child para ambos casarem.
-  .filter:first-child {
+  .borderradius & .filter:first-child {
     margin-left: 0;
        -webkit-border-top-left-radius: 4px;
            -moz-border-radius-topleft: 4px;
@@ -28,7 +29,7 @@
         -moz-border-radius-bottomleft: 4px;
             border-bottom-left-radius: 4px;
   }
-  .filter:last-child {
+  .borderradius & .filter:last-child {
        -webkit-border-top-right-radius: 4px;
            -moz-border-radius-topright: 4px;
                border-top-right-radius: 4px;
@@ -38,13 +39,125 @@
   }
 }
 
-// Espaça uma série de grupos de filtros.
-.filter-group + .filter-group { margin-left: 5px; }
-
 // Opcional: agrupa múltiplos grupos de filtros juntos para uma barra de ferramentas.
 .filter-toolbar {
   margin-top: $baseLineHeight / 2;
   margin-bottom: $baseLineHeight / 2;
+  @include clearfix();
+
+  .filter {
+    padding: 16px 5px 3px;
+    min-width: 145px;
+
+    &:hover .icon-wall-lightblue_16_18-before:before { background-position: -160px -560px; }
+    &:hover .icon-contacts-lightblue_16_18-before:before { background-position: -160px -2400px; }
+    &:hover .icon-course-lightblue_16_18-before:before { background-position: -160px -80px; }
+    &:hover .icon-subject-lightblue_16_18-before:before { background-position: -160px -320px; }
+  }
+
+  .filter-title-wrapper {
+    margin-bottom: 2px;
+    padding-left: 10px;
+    overflow: hidden;
+
+    .caret {
+      float: right;
+      margin-top: 5px;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 10px 10px 11px;
+    left: 0;
+    min-width: 258px;
+
+    li {
+      font-size: 11px;
+      line-height: 11px;
+      color: $gray5;
+    }
+
+    > li > label,
+    .filter-level-1 > li > label { font-weight: bold; }
+
+    .filter-level-2 label:before {
+      content: "";
+      width: 8px;
+      height: 10px;
+      background: url("../images/new/icons-small.png") -560px -880px no-repeat;
+      float: left;
+      margin-right: 1px;
+    }
+
+    input[type=checkbox] { margin-right: 5px; }
+
+    label {
+      margin-top: 5px;
+      float: left;
+
+      &.checkbox-checked { color: $gray6; }
+      &[state="0"] { color: red; }
+      &[state="-1"] { color: yellow; }
+      &[state="1"] { color: green; }
+    }
+
+    .textshadow & { text-shadow: $verticalWhiteShadow; }
+  }
+
+  .filter-title {
+    float: left;
+
+    &:before {
+      float: left;
+      margin-right: 5px;
+    }
+  }
+
+  .filter-sub-title {
+    display: block;
+    color: $gray6;
+    font-size: 11px;
+    height: 11px;
+    line-height: 11px;
+  }
+
+  .filter-group {
+    float: left;
+
+    .arrow {
+      display: none;
+    }
+
+    &:first-child .filter {
+      width: 130px;
+    }
+
+    &.open .arrow {
+      border-bottom: 7px solid #158AC4;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      height: 0;
+      position: absolute;
+      right: 50%;
+      bottom: -10px;
+      width: 0;
+      display: block;
+    }
+  }
+  .filter-group + .filter-group { margin-left: -1px; }
+
+  .borderradius & .filter-group .filter { @include border-radius(0); }
+  .borderradius & .filter-group:first-child .filter {
+    margin-left: 0;
+       -webkit-border-top-left-radius: 10px;
+           -moz-border-radius-topleft: 10px;
+               border-top-left-radius: 10px;
+  }
+  .borderradius & .filter-group:last-child .filter {
+       -webkit-border-top-right-radius: 10px;
+           -moz-border-radius-topright: 10px;
+               border-top-right-radius: 10px;
+  }
 }
 
 // No hover/focus/active, traz o filtro para frente.

@@ -67,7 +67,7 @@
 // Separa o dropdown do botão.
 // ----------------------
 
-.button-group.open {
+.open {
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
   *z-index: $zindexDropdown;
@@ -83,7 +83,7 @@
   }
 }
 
-.borderradius .button-group.open .dropdown-menu {
+.borderradius .open .dropdown-menu {
   @include border-radius(5px);
 }
 
@@ -93,6 +93,6 @@
   margin-left: 0;
 }
 .button:hover .caret,
-.open.button-group .caret {
+.open .caret {
   @include opacity(100);
 }

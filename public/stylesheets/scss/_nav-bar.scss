@@ -84,6 +84,11 @@ body { padding-top: 40px; }
 	.button-toolbar {
 		margin: 5px 0 0 10px;
 		float: right;
+
+		.button-group:hover {
+			.icon-profile-2-lightblue_16_18-before:before { background-position: -400px -2320px; }
+			.icon-notify-lightblue_16_18-before:before { background-position: -560px -2080px; }
+		}
 	}
 }
 
@@ -92,7 +97,7 @@ body { padding-top: 40px; }
 .nav-bar-brand {
 	display: block;
 	float: left;
-	@include replacement;
+	@include text-replacement;
 	@include size(140px, 40px);
 	margin-right: 40px;
 	background-image: url("../images/new/redu-logo-nav-small-gray.png");

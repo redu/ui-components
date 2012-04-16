@@ -1,4 +1,3 @@
-
 // Breadcrumbs.scss
 // --------------------------------------------------------
 
@@ -31,7 +30,7 @@
 			width: 45px;
 
 			a {
-				@include replacement;
+				@include text-replacement;
 				@include size(16px, 18px);
 				margin-left: 0; // Remove o margin-left padrão.
 			}
@@ -95,7 +94,7 @@
 	a {
 		content: "";
 		background-image: url("../images/new/icons-mini-breadcrumbs.png");
-		@include replacement;
+		@include text-replacement;
 		@include size(32px, 34px);
 
 		&:before { float: left; }
