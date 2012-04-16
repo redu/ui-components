@@ -46,7 +46,7 @@
   border-bottom: 1px solid $gray3;
   margin: 0;
   font-size: 18px;
-  font-family: 'Museo Sans', sans-serif;
+  font-family: $museoSans;
   font-weight: 500;
 
   .borderradius & { @include border-radius(5px 5px 0 0); }
