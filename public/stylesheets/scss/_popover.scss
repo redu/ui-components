@@ -35,7 +35,7 @@
   background: $gray6;
 
   .borderradius & { @include border-radius(5px); }
-  .boxshadow    & { @include box-shadow(0 1px 5px 1px rgba(0, 0, 0, 0.4)); }
+  .boxshadow    & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.4)); }
   .textshadow   & { text-shadow: $verticalWhiteShadow; }
   .no-title     & { width: 398px; }
 }

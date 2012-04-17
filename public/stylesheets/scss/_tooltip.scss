@@ -36,7 +36,7 @@ $backgroundAndArrowColor: rgb(25, 25, 25);
   background-color: $backgroundAndArrowColor;
 
   .borderradius & { @include border-radius(3px); }
-  .boxshadow    & { @include box-shadow(0 0 3px 1px rgb(85, 85, 85)); }
+  .boxshadow    & { @include box-shadow(0 0 6px 1px rgb(85, 85, 85)); }
 }
 
 .tooltip-arrow {

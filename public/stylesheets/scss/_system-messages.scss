@@ -14,7 +14,7 @@
   > p, > ul { margin: 0; }
   p + p { margin-top: 5px; }
 
-  .boxshadow & { @include box-shadow(0 2px 5px 1px rgba(0, 0, 0, 0.4)); }
+  .boxshadow & { @include box-shadow(0 2px 10px 1px rgba(0, 0, 0, 0.4)); }
   .textshadow & { text-shadow: $verticalWhiteShadow; }
   .borderradius & { @include border-radius(5px); }
 }

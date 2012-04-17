@@ -61,7 +61,7 @@ body { padding-top: 40px; }
 	padding: 1px 20px;
 
 	// Borda branca interna e sombra.
-	.boxshadow & { @include box-shadow-2(inset 0 0 0 1px $white, 0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
+	.boxshadow & { @include box-shadow-2(inset 0 0 0 1px $white, 0 1px 8px 1px rgba(0, 0, 0, 0.4)); }
 
 	// Quando não estiver fixa no topo.
 	.borderradius & { @include border-radius(12px); }
@@ -252,7 +252,7 @@ body { padding-top: 40px; }
 		.boxshadow &:hover { @include box-shadow-2(inset 0 1px 0 $blue2, inset 0 -1px 0 $blue3); }
 
 		// Drop shadow interno no :active.
-		.boxshadow &:active { @include box-shadow(inset 0 1px 2px 1px rgba(0, 0, 0, 0.5)); }
+		.boxshadow &:active { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5)); }
 
 		.cssgradients & { @include filter-gradient-vertical($blue4, $blue2, 30%, 100%); }
 		.cssgradients &:hover { @include filter-gradient-vertical($blue4, $blue2, 70%, 100%); }
@@ -278,7 +278,8 @@ body { padding-top: 40px; }
 		border: none;
 		padding: 10px;
 		font-family: $museoSans;
-		font-weight: 100;
+		font-weight: 300;
+		font-size: 16px;
 
 		.textshadow & { text-shadow: $verticalWhiteShadow; }
 
@@ -288,7 +289,7 @@ body { padding-top: 40px; }
 		// Drop shadow branco interno no hover do botão normal.
 		.boxshadow &:hover { @include box-shadow-2(inset 0 1px 0 $white, inset 0 -1px 0 $gray4); }
 		// Drop shadow interno no :active.
-		.boxshadow &:active { @include box-shadow(inset 0 1px 2px 1px rgba(0, 0, 0, 0.5)); }
+		.boxshadow &:active { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5)); }
 
 		.cssgradients &:hover { @include filter-gradient-vertical($gray3, $white, 50%, 100%); }
 		.no-cssgradients &:hover {
