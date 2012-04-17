@@ -2,7 +2,7 @@
 // -------
 
 // Cor do fundo e da seta.
-$backgroundAndArrowColor: rgb(25, 25, 25);
+$backgroundAndArrowColor: rgba(25, 25, 25, 1);
 
 // Encapsulador do inner e da seta.
 .tooltip {
@@ -36,7 +36,7 @@ $backgroundAndArrowColor: rgb(25, 25, 25);
   background-color: $backgroundAndArrowColor;
 
   .borderradius & { @include border-radius(3px); }
-  .boxshadow    & { @include box-shadow(0 0 6px 1px rgb(85, 85, 85)); }
+  .boxshadow    & { @include box-shadow(0 0 6px 1px rgba(85, 85, 85, 1)); }
 }
 
 .tooltip-arrow {
