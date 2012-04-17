@@ -71,8 +71,8 @@
 		// A borda azul.
 		.borderradius &,
 		.borderradius & a { @include border-radius(5px); }
-		.boxshadow & { @include box-shadow(0 0 4px 1px $blue3); }
-		.boxshadow & a { @include box-shadow(inset 0 0 4px 1px $blue3); }
+		.boxshadow & { @include box-shadow(0 0 4px 1px $blue2); }
+		.boxshadow & a { @include box-shadow(inset 0 0 4px 1px $blue2); }
 		// Para o IE 8.
 		.no-borderradius & { border: 1px solid $blue3; }
 	}
