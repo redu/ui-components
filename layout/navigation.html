@@ -7,11 +7,12 @@
     <link href="../public/stylesheets/icons.redu.css" rel="stylesheet">
     <link href="../public/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
     <script src="../public/javascripts/google-code-prettify/prettify.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
     <script src="../public/javascripts/bootstrap-dropdown.js"></script>
     <script src="../public/javascripts/bootstrap-filter.js"></script>
     <script src="../public/javascripts/modernizr.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
+      <script src="../public/javascripts/selectivizr.js"></script>
     <![endif]-->
     <!--[if gte IE 9]>
       <link href="../public/stylesheets/ie9.css" rel="stylesheet">
@@ -115,7 +116,7 @@
                   <ul class="filter-level-2">
                     <li>
                       <input type="checkbox">
-                      <label class="icon-comment2-lightblue_16_18-before">Comentários</label>
+                      <label class="icon-comment2-gray_16_18-before">Comentários</label>
                     </li>
                     <li>
                       <input type="checkbox">
@@ -506,7 +507,7 @@
       <h4>Grupo de filtros do Redu</h4>
       <p>O exemplo abaixo contrói o componente Filtro descrito na página 24 do G&E 1.3:</p>
       <div class="filter-group" style="margin-bottom: 8px;">
-        <button class="filter"><span class="icon-teacher-lightblue_16_18-before">100 professores</span></button>
+        <button class="filter"><!-- <span class="icon-teacher-lightblue_16_18-before"> --><span class="icons-teacher-blue_16_18"></span>100 professores</button>
         <button class="filter filter-active"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
         <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
       </div>

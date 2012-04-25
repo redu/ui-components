@@ -3,20 +3,33 @@
   "use strict"
 
   var methods = {
-    // Verifica se todos os checkboxes "Todos" estão marcados.
-    checkFilterAll: function(event, filterToolBar, filterEverything) {
-      var allChecked = true
 
-      // Para todos os checkboxes "Todos".
-      filterToolBar.find('.filter-all > input[type="checkbox"]').each(function() {
-          allChecked = allChecked && $(this).prop("checked")
-          // Retorna falso caso algum esteja desmarcado.
-          return allChecked
+    // Verifica os irmãos do checkbox.
+    checkSiblings: function(checked, el) {
+      var parent = el.parent().parent(),
+          all = true
+
+      el.siblings().each(function() {
+        return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked)
       })
 
-      // Se todos estão marcados, ative o filtro "Tudo".
-      if (allChecked) {
-        filterEverything.addClass("filter-active")
+      if (all && checked) {
+        parent.children('input[type="checkbox"]').prop({
+          indeterminate: false,
+          checked: checked
+        })
+        methods.checkSiblings(checked, parent)
+
+      } else if (all && !checked) {
+        parent.children('input[type="checkbox"]').prop("checked", checked)
+        parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0))
+        methods.checkSiblings(checked, parent)
+
+      } else {
+        el.parents("li").children('input[type="checkbox"]').prop({
+          indeterminate: true,
+          checked: false
+        })
       }
     },
 
@@ -24,50 +37,17 @@
     // Fonte: http://css-tricks.com/indeterminate-checkboxes/
     changeCheckBox: function(event) {
       var checked = $(this).prop("checked"),
-          container = $(this).parent(),
-          siblings = container.siblings();
+          container = $(this).parent()
 
       container.find('input[type="checkbox"]').prop({
-          indeterminate: false,
-          checked: checked
-      });
+        indeterminate: false,
+        checked: checked
+      })
 
-      function checkSiblings(el) {
-        var parent = el.parent().parent(),
-            all = true;
+      methods.checkSiblings(checked, container)
 
-        el.siblings().each(function() {
-            return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
-        });
-
-        if (all && checked) {
-            parent.children('input[type="checkbox"]').each(function() {
-              $(this).prop({
-                indeterminate: false,
-                checked: checked
-              });
-
-              if ($(this).parent().hasClass("filter-all")) {
-                $(this).trigger("checkFilterAll", [event.data.filterToolBar, event.data.filterEverything])
-              }
-            })
-
-            checkSiblings(parent);
-        } else if (all && !checked) {
-            parent.children('input[type="checkbox"]').prop("checked", checked)
-            parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
-            checkSiblings(parent);
-        } else {
-            el.parents("li").children('input[type="checkbox"]').prop({
-                indeterminate: true,
-                checked: false
-            })
-        }
-      }
-
-      checkSiblings(container);
-
-      container.parents(".filter-level-1").find('input[type="checkbox"]').each(function() {
+      // Adiciona a classe que escurece o texto dos itens marcados.
+      event.data.filterGroup.find('input[type="checkbox"]').each(function() {
         var checkbox = $(this)
         if (checkbox.prop("checked") || checkbox.prop("indeterminate")) {
           checkbox.parent().addClass("filter-checked")
@@ -77,41 +57,22 @@
       })
 
       // Substitui o sub título do filtro.
-      $(this).trigger("replaceSubTitle", [$(this).parents(".filter-group"), event.data.filterEverything])
-
-      if (container.hasClass("filter-all")) {
-        // Caso "Todos", verifica se todos os outros estão marcados também.
-        $(this).trigger("checkFilterAll", [event.data.filterToolBar, event.data.filterEverything])
-      }
+      $(this).trigger("replaceSubTitle", [event.data.filterGroup])
     },
 
-    // Responsável por alternar o estado do filtro "Tudo".
-    filterEverything: function(event, filterGroup) {
-      var filter = filterGroup.find(".filter").first()
-
-      if (filter.hasClass("filter-active")) {
-        // Clica no checkbox "Todos" que estão desmarcados, para ativar o filtro.
-        filterGroup.siblings().each(function() {
-          $(this).find('.filter-all > input[type="checkbox"]').first().filter(function(index) {
-            return !this.checked
-          }).click().change()
-        })
-      } else {
-        // Clica no checkbox "Todos" que estão marcados, para desativar o filtro.
-        filterGroup.siblings().each(function() {
-          var filterAllCheckBox = $(this).find('.filter-all > input[type="checkbox"]').first()
-          if (filterAllCheckBox.prop("checked")) {
-            filterAllCheckBox.click().change()
-          }
-          if (filterAllCheckBox.prop("indeterminate")) {
-            filterAllCheckBox.click().click().change()
-          }
-        })
-      }
+    // Desmarca totalmente um filtro.
+    uncheckFilter: function(filterGroup) {
+      filterGroup.find(".filter").removeClass("filter-active")
+      filterGroup.find(".filter-sub-title").text("")
+      filterGroup.find("li").removeClass("filter-checked")
+      filterGroup.find('input[type="checkbox"]').prop({
+        checked: false,
+        indeterminate: false
+      })
     },
 
     // Substitui o sub título de um filtro de acordo com os checkboxes marcados.
-    replaceSubTitle: function(event, filterGroup, filterEverything) {
+    replaceSubTitle: function(event, filterGroup) {
       var checkedBoxes = filterGroup.find('input[type="checkbox"]:checked')
       var filter = filterGroup.find(".filter").first()
       var subTitleText = ""
@@ -150,13 +111,18 @@
         }
       }
 
+      // Adiciona a classe de filtro ativado.
       if (checkedBoxes.length >= 1) {
         filter.addClass("filter-active")
+        // Desmarca os outros filtros.
+        filterGroup.siblings().each(function() {
+          methods.uncheckFilter($(this))
+        })
       } else {
         filter.removeClass("filter-active")
-        filterEverything.removeClass("filter-active")
       }
 
+      // Trata os nomes grandes.
       if (subTitleText.length > 28) {
         subTitleText = subTitleText.substring(0, 24) + "..."
       }
@@ -168,39 +134,33 @@
       return this.each(function() {
         var filterToolBar = $(this)
         var filterEverything = filterToolBar.find(".filter-everything").first()
-
-        // Adiciona os eventos dos checkboxes.
-        filterToolBar.find('input[type="checkbox"]').each(function() {
-          var checkbox = $(this)
-
-          // Para os checkboxes "Todos".
-          if (checkbox.parent().hasClass("filter-all")) {
-            checkbox.bind("checkFilterAll.filterToolBar", methods.checkFilterAll)
-
-            if (checkbox.prop("checked")) {
-              checkbox.click()
-            }
-          }
-
-          checkbox.bind("replaceSubTitle.filterToolBar", methods.replaceSubTitle)
-          checkbox.bind("change", {
-              "filterToolBar": filterToolBar,
-              "filterEverything": filterEverything
-            }, methods.changeCheckBox)
-          checkbox.click(function(e) {
-            e.stopPropagation()
+        // O filtro "Tudo" começa ativo.
+        filterEverything.addClass("filter-active")
+        // No estado ativado, desabilita todos os outros filtros.
+        filterEverything.click(function(e) {
+          filterEverything.parent().siblings().each(function() {
+            methods.uncheckFilter($(this))
           })
         })
 
-
-        filterEverything.bind("filterEverything.filterToolBar", methods.filterEverything)
-        filterEverything.click(function(e) {
-            e.preventDefault()
-            filterEverything.trigger("filterEverything", [filterEverything.parents(".filter-group")])
+        // Para cada filtro.
+        filterToolBar.children().each(function() {
+          var filterGroup = $(this)
+          // Para cada checkbox.
+          filterGroup.find('input[type="checkbox"]').each(function() {
+            var checkbox = $(this)
+            // Inicia desmarcado.
+            checkbox.prop("checked", false)
+            // Vincula o evento de substituir o sub título do filtro.
+            checkbox.bind("replaceSubTitle.filterToolBar", methods.replaceSubTitle)
+            checkbox.bind("change", {"filterGroup": filterGroup}, methods.changeCheckBox)
           })
-        if (!filterEverything.hasClass("filter-active")) {
-          filterEverything.click()
-        }
+        })
+
+        // Impede que o dropdown feche ao ser clicado.
+        filterToolBar.find(".dropdown-menu").click(function(e) {
+          e.stopPropagation()
+        })
       })
     },
 

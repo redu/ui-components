@@ -107,9 +107,6 @@
     // Estado normal.
     @include box-shadow-2($topInset, $rightInset);
 
-    // O último elemento não tem o inset direito.
-    &:last-child { @include box-shadow-2($noInset, $topInset); }
-
     // Remove o inset direito e adiciona um inset baixo.
     &:hover { @include box-shadow-2($noInset, inset 0 -1px 0 0 $white); }
 
