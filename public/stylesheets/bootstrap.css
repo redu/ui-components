@@ -543,10 +543,11 @@ pre code {
 }
 /* line 82, scss/_filters.scss */
 .filter.filter-active, .filter.filter-active:hover, .filter:active, .open .filter, .open .filter:hover {
+  filter: none;
   border-color: #4dadd6;
   background: #dbeff7;
 }
-/* line 88, scss/_filters.scss */
+/* line 89, scss/_filters.scss */
 .filter.filter-active:active {
   background-color: #f7f7f7;
   color: #4dadd6;
@@ -564,53 +565,53 @@ pre code {
 .filter.filter-active:active .icon-member-lightblue_16_18-before:before {
   background: url("../images/new/icons-small.png") -80px -1040px no-repeat;
 }
-/* line 96, scss/_filters.scss */
+/* line 97, scss/_filters.scss */
 .filter:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 98, scss/_filters.scss */
+/* line 99, scss/_filters.scss */
 .textshadow .filter {
   text-shadow: 0 1px 0 white;
 }
-/* line 100, scss/_filters.scss */
+/* line 101, scss/_filters.scss */
 .borderradius .filter {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 102, scss/_filters.scss */
+/* line 103, scss/_filters.scss */
 .boxshadow .filter {
   -webkit-box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
   -moz-box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
   box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
 }
-/* line 110, scss/_filters.scss */
+/* line 111, scss/_filters.scss */
 .boxshadow .filter:last-child {
   -webkit-box-shadow: inset 0 0 0 0 white, inset 0 1px 0 0 white;
   -moz-box-shadow: inset 0 0 0 0 white, inset 0 1px 0 0 white;
   box-shadow: inset 0 0 0 0 white, inset 0 1px 0 0 white;
 }
-/* line 113, scss/_filters.scss */
+/* line 114, scss/_filters.scss */
 .boxshadow .filter:hover {
   -webkit-box-shadow: inset 0 0 0 0 white, inset 0 -1px 0 0 white;
   -moz-box-shadow: inset 0 0 0 0 white, inset 0 -1px 0 0 white;
   box-shadow: inset 0 0 0 0 white, inset 0 -1px 0 0 white;
 }
-/* line 117, scss/_filters.scss */
+/* line 118, scss/_filters.scss */
 .boxshadow .filter.filter-active, .boxshadow .filter:active {
   -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 120, scss/_filters.scss */
+/* line 121, scss/_filters.scss */
 .boxshadow .filter.filter-active:active {
   -webkit-box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
   -moz-box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
   box-shadow: inset 0 1px 0 0 white, inset -1px 0 0 0 white;
 }
-/* line 122, scss/_filters.scss */
+/* line 123, scss/_filters.scss */
 .boxshadow .open .filter {
   -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
@@ -729,21 +730,30 @@ pre code {
   min-width: 258px;
 }
 /* line 74, scss/_filter-groups.scss */
-.filter-toolbar .dropdown-menu a {
+.filter-toolbar .dropdown-menu li {
   font-size: 11px;
   line-height: 11px;
   color: #b3b3b3;
   font-weight: bold;
 }
 /* line 80, scss/_filter-groups.scss */
-.textshadow .filter-toolbar .dropdown-menu a {
+.filter-toolbar .dropdown-menu li.filter-checked {
+  color: #6d6e6f;
+}
+/* line 82, scss/_filter-groups.scss */
+.textshadow .filter-toolbar .dropdown-menu li {
   text-shadow: 0 1px 0 white;
 }
-/* line 83, scss/_filter-groups.scss */
-.filter-toolbar .dropdown-menu .filter-level-3 > li > a {
+/* line 86, scss/_filter-groups.scss */
+.filter-toolbar .dropdown-menu label + ul,
+.filter-toolbar .dropdown-menu li + li {
+  margin-top: 5px;
+}
+/* line 88, scss/_filter-groups.scss */
+.filter-toolbar .dropdown-menu .filter-level-3 li {
   font-weight: normal;
 }
-/* line 85, scss/_filter-groups.scss */
+/* line 90, scss/_filter-groups.scss */
 .filter-toolbar .dropdown-menu .filter-level-3 > li:before {
   content: "";
   width: 8px;
@@ -751,25 +761,22 @@ pre code {
   background: url("../images/new/icons-small.png") -560px -880px no-repeat;
   float: left;
   margin-right: 1px;
-  margin-left: 2px;
-  position: relative;
-  top: 5px;
 }
-/* line 98, scss/_filter-groups.scss */
+/* line 100, scss/_filter-groups.scss */
 .filter-toolbar .dropdown-menu .filter-level-2 > li,
 .filter-toolbar .dropdown-menu .filter-level-3 > li {
   margin-left: 0;
 }
-/* line 103, scss/_filter-groups.scss */
+/* line 105, scss/_filter-groups.scss */
 .filter-toolbar .filter-title {
   float: left;
 }
-/* line 106, scss/_filter-groups.scss */
+/* line 108, scss/_filter-groups.scss */
 .filter-toolbar .filter-title:before {
   float: left;
   margin-right: 5px;
 }
-/* line 112, scss/_filter-groups.scss */
+/* line 114, scss/_filter-groups.scss */
 .filter-toolbar .filter-sub-title {
   display: block;
   color: #6d6e6f;
@@ -777,19 +784,19 @@ pre code {
   height: 11px;
   line-height: 11px;
 }
-/* line 120, scss/_filter-groups.scss */
+/* line 122, scss/_filter-groups.scss */
 .filter-toolbar .filter-group {
   float: left;
 }
-/* line 123, scss/_filter-groups.scss */
+/* line 125, scss/_filter-groups.scss */
 .filter-toolbar .filter-group .arrow {
   display: none;
 }
-/* line 127, scss/_filter-groups.scss */
+/* line 129, scss/_filter-groups.scss */
 .filter-toolbar .filter-group:first-child .filter {
   width: 130px;
 }
-/* line 131, scss/_filter-groups.scss */
+/* line 133, scss/_filter-groups.scss */
 .filter-toolbar .filter-group.open .arrow {
   border-bottom: 7px solid #158AC4;
   border-left: 7px solid transparent;
@@ -801,31 +808,31 @@ pre code {
   width: 0;
   display: block;
 }
-/* line 143, scss/_filter-groups.scss */
+/* line 145, scss/_filter-groups.scss */
 .filter-toolbar .filter-group + .filter-group {
   margin-left: -1px;
 }
-/* line 145, scss/_filter-groups.scss */
+/* line 147, scss/_filter-groups.scss */
 .borderradius .filter-toolbar .filter-group .filter {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 146, scss/_filter-groups.scss */
+/* line 148, scss/_filter-groups.scss */
 .borderradius .filter-toolbar .filter-group:first-child .filter {
   margin-left: 0;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;
 }
-/* line 152, scss/_filter-groups.scss */
+/* line 154, scss/_filter-groups.scss */
 .borderradius .filter-toolbar .filter-group:last-child .filter {
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topright: 10px;
   border-top-right-radius: 10px;
 }
 
-/* line 163, scss/_filter-groups.scss */
+/* line 165, scss/_filter-groups.scss */
 .filter-group .filter:hover,
 .filter-group .filter:focus,
 .filter-group .filter:active,
@@ -1846,13 +1853,13 @@ body {
   border-top: none;
   border-bottom: 8px solid #4dadd6;
 }
-/* line 27, scss/_dropdowns.scss */
-.open:hover .caret {
+/* line 29, scss/_dropdowns.scss */
+.open:hover .caret, .filter:hover .caret, .button:hover .caret {
   border-top-color: #158ac4;
   border-bottom-color: #158ac4;
 }
 
-/* line 34, scss/_dropdowns.scss */
+/* line 36, scss/_dropdowns.scss */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -1871,7 +1878,7 @@ body {
   *border-right-width: 2px;
   *border-bottom-width: 2px;
 }
-/* line 52, scss/_dropdowns.scss */
+/* line 54, scss/_dropdowns.scss */
 .boxshadow .dropdown-menu {
   -webkit-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);

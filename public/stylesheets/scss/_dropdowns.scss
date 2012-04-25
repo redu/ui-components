@@ -24,7 +24,9 @@
     border-top: none;
     border-bottom: 8px solid $blue3;
   }
-  .open:hover & {
+  .open:hover &,
+  .filter:hover &,
+  .button:hover & {
     border-top-color: $blue4;
     border-bottom-color: $blue4;
   }

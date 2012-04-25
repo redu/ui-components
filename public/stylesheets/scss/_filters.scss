@@ -80,6 +80,7 @@
   &:active,
   .open &,
   .open &:hover {
+    filter: none;
     // Estado ativado ou pressionado do estado normal.
     border-color: $blue3;
     background: $blue1;
