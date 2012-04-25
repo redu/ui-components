@@ -8,61 +8,61 @@
 // --------------------------------------------------
 
 // Branco.
-$white:												rgba(255, 255, 255, 1) !default;
+$white:                       rgba(255, 255, 255, 1) !default;
 
 // Preto.
-$black:                 			rgba(  0,   0,   0, 1) !default;
+$black:                       rgba(  0,   0,   0, 1) !default;
 
 // Azuis.
-$blue1:												rgba(219, 239, 247, 1) !default;
-$blue2:												rgba(115, 195, 230, 1) !default;
-$blue3:												rgba( 77, 173, 214, 1) !default;
-$blue4: 											rgba( 21, 138, 196, 1) !default;
+$blue1:                       rgba(219, 239, 247, 1) !default;
+$blue2:                       rgba(115, 195, 230, 1) !default;
+$blue3:                       rgba( 77, 173, 214, 1) !default;
+$blue4:                       rgba( 21, 138, 196, 1) !default;
 
 // Verdes.
-$green1:											rgba(225, 241, 225, 1) !default;
-$green2:											rgba(171, 227, 133, 1) !default;
-$green3:											rgba( 95, 192, 128, 1) !default;
-$green4: 											rgba( 97, 160, 128, 1) !default;
+$green1:                      rgba(225, 241, 225, 1) !default;
+$green2:                      rgba(171, 227, 133, 1) !default;
+$green3:                      rgba( 95, 192, 128, 1) !default;
+$green4:                      rgba( 97, 160, 128, 1) !default;
 
 // Vermelhos.
-$red1: 												rgba(255, 220, 220, 1) !default;
-$red2: 												rgba(255, 109, 109, 1) !default;
-$red3: 												rgba(232,  59,  59, 1) !default;
-$red4: 												rgba(225,  39,  45, 1) !default;
-$red5: 												rgba(193,  39,  45, 1) !default;
+$red1:                        rgba(255, 220, 220, 1) !default;
+$red2:                        rgba(255, 109, 109, 1) !default;
+$red3:                        rgba(232,  59,  59, 1) !default;
+$red4:                        rgba(225,  39,  45, 1) !default;
+$red5:                        rgba(193,  39,  45, 1) !default;
 
 // Laranjas.
-$orange1: 										rgba(255, 238, 215, 1) !default;
-$orange2: 										rgba(255, 200,   0, 1) !default;
-$orange3: 										rgba(255, 169,  53, 1) !default;
-$orange4: 										rgba(255, 124,  53, 1) !default;
-$orange5: 										rgba(243,  94,   0, 1) !default;
-$orange6: 										rgba(243,  74,   0, 1) !default;
+$orange1:                     rgba(255, 238, 215, 1) !default;
+$orange2:                     rgba(255, 200,   0, 1) !default;
+$orange3:                     rgba(255, 169,  53, 1) !default;
+$orange4:                     rgba(255, 124,  53, 1) !default;
+$orange5:                     rgba(243,  94,   0, 1) !default;
+$orange6:                     rgba(243,  74,   0, 1) !default;
 
 // Cinzas.
-$gray1: 											rgba(247, 247, 247, 1) !default;
-$gray2: 											rgba(240, 240, 240, 1) !default;
-$gray3: 											rgba(230, 230, 230, 1) !default;
-$gray4: 											rgba(204, 204, 204, 1) !default;
-$gray5: 											rgba(179, 179, 179, 1) !default;
-$gray6: 											rgba(109, 110, 111, 1) !default;
+$gray1:                       rgba(247, 247, 247, 1) !default;
+$gray2:                       rgba(240, 240, 240, 1) !default;
+$gray3:                       rgba(230, 230, 230, 1) !default;
+$gray4:                       rgba(204, 204, 204, 1) !default;
+$gray5:                       rgba(179, 179, 179, 1) !default;
+$gray6:                       rgba(109, 110, 111, 1) !default;
 
 // Links.
-$linkColor:										$blue3;
-$linkColorHover:							$blue4;
+$linkColor:                   $blue3;
+$linkColorHover:              $blue4;
 
 // Tipografia.
-$baseFontSize:      					13px !default;
-$baseLineHeight:							18px !default;
-$baseFontFamily:        			"Helvetica Neue", Arial, sans-serif !default;
-$textColor:										$black !default;
-$museoSans:										museo-sans, "Helvetica Neue", Arial, sans-serif !default;
+$baseFontSize:                13px !default;
+$baseLineHeight:              18px !default;
+$baseFontFamily:              "Helvetica Neue", Arial, sans-serif !default;
+$textColor:                   $black !default;
+$museoSans:                   museo-sans, "Helvetica Neue", Arial, sans-serif !default;
 
 // Sombras de texto.
-$verticalWhiteShadow:					0  1px 0 $white;
-$verticalBlue4Shadow:					0  1px 0 $blue4;
-$negativeVerticalBlue4Shadow:	0 -1px 0 $blue4;
+$verticalWhiteShadow:         0  1px 0 $white;
+$verticalBlue4Shadow:         0  1px 0 $blue4;
+$negativeVerticalBlue4Shadow: 0 -1px 0 $blue4;
 
 
 
@@ -70,24 +70,24 @@ $negativeVerticalBlue4Shadow:	0 -1px 0 $blue4;
 // --------------------------------------------------
 
 // Mensagens do sistema.
-$warningText:               	$red5;
-$warningBackground:         	$red1;
-$warningBorder:             	$red2;
+$warningText:                 $red5;
+$warningBackground:           $red1;
+$warningBorder:               $red2;
 
-$successText:             		$green4;
-$successBackground:       		$green1;
-$successBorder:           		$green3;
+$successText:                 $green4;
+$successBackground:           $green1;
+$successBorder:               $green3;
 
-$infoText:                		$blue4;
-$infoBackground:          		$blue1;
-$infoBorder:              		$blue2;
+$infoText:                    $blue4;
+$infoBackground:              $blue1;
+$infoBorder:                  $blue2;
 
-$busyText:                		$black;
-$busyBackground:          		$orange1;
-$busyBorder:              		$orange3;
+$busyText:                    $black;
+$busyBackground:              $orange1;
+$busyBorder:                  $orange3;
 
 // Z-index lista mestra.
-$zindexDropdown:        			1000 !default;
-$zindexPopover:								1010 !default;
-$zindexTooltip:								1020 !default;
-$zindexFixedNavbar:     			1030 !default;
+$zindexDropdown:              1000 !default;
+$zindexPopover:               1010 !default;
+$zindexTooltip:               1020 !default;
+$zindexFixedNavbar:           1030 !default;
