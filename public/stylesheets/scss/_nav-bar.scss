@@ -1,4 +1,4 @@
-// Balão vermelho que notifica as mensagens não lidas.
+// Balão vermelho que notifica as mensagens que não foram lidas.
 .unread-marker {
 	position: absolute;
 	display: block;
@@ -22,7 +22,7 @@
 
 	.textshadow & { text-shadow: 0 -1px 0 $red5; }
 
-	.borderradius & { @include border-radius(3px); }
+ .borderradius & { @include border-radius(3px); }
 }
 
 // Deve-se adicionar o padding no topo sempre que a barra de navegação global estiver fixa no topo.
