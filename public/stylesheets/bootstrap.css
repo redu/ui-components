@@ -1903,3 +1903,196 @@ body {
   -moz-box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.5);
 }
+
+/* line 8, scss/_modal-window.scss */
+.modal-open .dropdown-menu {
+  z-index: 2050;
+}
+/* line 9, scss/_modal-window.scss */
+.modal-open .dropdown.open {
+  *z-index: 2050;
+}
+/* line 10, scss/_modal-window.scss */
+.modal-open .popover {
+  z-index: 2060;
+}
+/* line 11, scss/_modal-window.scss */
+.modal-open .tooltip {
+  z-index: 2070;
+}
+
+/* line 15, scss/_modal-window.scss */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #989898;
+}
+/* line 24, scss/_modal-window.scss */
+.modal-backdrop.fade {
+  opacity: 0;
+}
+
+/* line 28, scss/_modal-window.scss */
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+/* line 31, scss/_modal-window.scss */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+  overflow: auto;
+  width: 520px;
+  margin: -250px 0 0 -280px;
+  background-color: white;
+  border: 1px solid #6d6e6f;
+}
+/* line 42, scss/_modal-window.scss */
+.borderradius .modal {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+/* line 43, scss/_modal-window.scss */
+.boxshadow .modal {
+  -webkit-box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 44, scss/_modal-window.scss */
+.modal.fade {
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  top: -25%;
+}
+/* line 49, scss/_modal-window.scss */
+.modal.fade.in {
+  top: 50%;
+}
+
+/* line 52, scss/_modal-window.scss */
+.modal-header {
+  padding: 20px 20px 10px;
+}
+
+/* line 54, scss/_modal-window.scss */
+.modal-header-title {
+  color: #6d6e6f;
+  font-size: 21px;
+  font-family: museo-sans, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+/* line 63, scss/_modal-window.scss */
+.modal-header-subtitle,
+.modal-header-subtitle a {
+  color: #b3b3b3;
+}
+
+/* line 66, scss/_modal-window.scss */
+.modal-body {
+  padding: 0 20px 20px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* line 73, scss/_modal-window.scss */
+.modal-footer {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #e6e6e6;
+  *zoom: 1;
+}
+/* line 78, scss/_modal-window.scss */
+.borderradius .modal-footer {
+  -webkit-border-radius: 0 0 7px 7px;
+  -moz-border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
+}
+/* line 79, scss/_modal-window.scss */
+.boxshadow .modal-footer {
+  -webkit-box-shadow: inset 0 1px 0 white;
+  -moz-box-shadow: inset 0 1px 0 white;
+  box-shadow: inset 0 1px 0 white;
+}
+/* line 20, scss/_mixins.scss */
+.modal-footer:before, .modal-footer:after {
+  display: table;
+  content: "";
+}
+/* line 24, scss/_mixins.scss */
+.modal-footer:after {
+  clear: both;
+}
+/* line 81, scss/_modal-window.scss */
+.modal-footer .button {
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 4, scss/_component-animations.scss */
+.fade {
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+/* line 7, scss/_component-animations.scss */
+.fade.in {
+  opacity: 1;
+}
+
+/* line 10, scss/_component-animations.scss */
+.collapse {
+  -webkit-transition: height 0.35s ease;
+  -moz-transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+/* line 15, scss/_component-animations.scss */
+.collapse.in {
+  height: auto;
+}
+
+/* line 5, scss/_utilities.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 6, scss/_utilities.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 9, scss/_utilities.scss */
+.hide {
+  display: none;
+}
+
+/* line 10, scss/_utilities.scss */
+.show {
+  display: block;
+}
+
+/* line 13, scss/_utilities.scss */
+.invisible {
+  visibility: hidden;
+}

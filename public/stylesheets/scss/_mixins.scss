@@ -128,6 +128,15 @@
           box-shadow: $shadow1, $shadow2;
 }
 
+// Transições.
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
 // Background clipping.
 // Heads up: FF 3.6 and under need "padding" instead of "padding-box".
 @mixin background-clip($clip) {
