@@ -531,6 +531,13 @@
   background: url("../images/new/icons-small.png") -160px 0 no-repeat;
 }
 
+.icon-environment-gray_16_18-before:before {
+  content: "";
+  width: 16px;
+  height: 18px;
+  background-image: url("../images/new/icons-small.png");
+  background-position: 0 0;
+}
 .icon-environment-gray_16_18 { background-position: 0 0;}
 .icon-environment-gray_32_34-before {
   content: "";
@@ -1769,3 +1776,12 @@
 .icon-partner-lightblue_16_18-before:hover:before {
   background-position: -560px -2160px;
 }
+
+.icon-back-lightblue_8_10-before:before {
+  content: "";
+  width: 8px;
+  height: 10px;
+  background: url("../images/new/icons-oembed-nav.png") 0 0 no-repeat;
+  float: left;
+}
+.icon-back-lightblue_8_10-before:hover:before { background-position: 0 -20px; }

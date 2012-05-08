@@ -111,6 +111,12 @@ $icon-layout: smart;
   &:after { @extend .icon-confirm-green_16_18; }
 }
 
+// Seta azul do item ativo da navegação local.
+.icon-arrow-right-local-nav-lightblue-after {
+  &:after { @extend .icon-arrow-right-local-nav-lightblue; }
+  &:hover:after { @extend .icon-arrow-right-local-nav-blue; }
+}
+
 // Perfil.
 .icon-profile-lightblue_16_18-before {
   &:before { @extend .icon-profile-lightblue_16_18; }
@@ -174,6 +180,11 @@ $icon-layout: smart;
   &:before { @extend .icon-contacts-gray_16_18; }
 }
 
+// Colegas de classe.
+.icon-classmates-gray_16_18-before {
+  &:before { @extend .icon-classmates-gray_16_18; }
+}
+
 // Comentário.
 .icon-comment-gray_16_18-before {
   &:before { @extend .icon-comment-gray_16_18; }
@@ -220,7 +231,7 @@ a:hover,
   .icon-space-gray_32_34,
   .icon-space-lightblue_32_34 { @extend .icon-space-blue_32_34; }
 
-  // Aula.
+  // Aula
   .icon-subject-gray_32_34,
   .icon-subject-lightblue_32_34 { @extend .icon-subject-blue_32_34; }
 
@@ -237,6 +248,9 @@ a:hover,
   .icon-request-help-lightblue_16_18 { @extend .icon-request-help-blue_16_18; }
 
   // Luzes.
-  // TODO: Precisa de slices.
   .icon-lights-lightblue_16_18 { @extend .icon-lights-blue_16_18; }
+
+  // Setas.
+  .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
+  .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
 }

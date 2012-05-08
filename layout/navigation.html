@@ -27,7 +27,7 @@
       <h3>Menu da visão geral</h3>
       <div class="local-nav">
         <ul>
-          <li class="local-nav-active icon-home-white_blue_16_18-before">
+          <li class="local-nav-active icon-home-white_blue_16_18-before icon-arrow-right-local-nav-lightblue-after">
             <a href="#" title="Visão Geral">Visão Geral</a>
             <span class="label label-unread-message">+</span>
           </li>
@@ -53,11 +53,10 @@
         </ul>
       </div>
       <div style="background-color: #F7F7F7">
-
         <h3>Menu da disciplina</h3>
         <div class="local-nav">
           <ul>
-            <li class="local-nav-active icon-subject-white_blue_16_18-before">
+            <li class="local-nav-active icon-subject-white_blue_16_18-before icon-arrow-right-local-nav-lightblue-after">
               <a href="#" title="Aulas">Aulas</a>
               <span class="label label-unread-message">200+</span>
               <span class="label label-unread-help-request">99+</span>
@@ -75,31 +74,6 @@
               <span class="label label-unread-message">200+</span>
             </li>
           </ul>
-          <div class="local-nav-summary">
-            <span class="icon-environment-gray_16_18-before">Ambientes: 10</span>
-            <span class="icon-course-gray_16_18-before">Cursos matriculados: 50</span>
-            <div class="local-nav-separator"></div>
-            <span class="icon-contacts-gray_16_18-before">Contatos: 200</span>
-            <span class="icon-classmates-gray_16_18-before">Colegas de classe: 1.800</span>
-          </div>
-          <div class="local-nav-balloon">
-            <span class="arrow"></span>
-            <div class="local-nav-balloon-title">Você na disciplina</div>
-            <div class="local-nav-balloon-block">
-              <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
-              <div class="progress-wrapper">
-                <div class="progress">
-                  <div class="bar text-replacement" style="width: 20%;">20%</div>
-                </div>
-                <span class="pull-right">20%</span>
-              </div>
-            </div>
-            <div class="local-nav-separator"></div>
-            <div class="local-nav-balloon-block">
-              <span class="icon-comment-gray_16_18-before">Comentários: 200</span>
-              <span class="icon-request-help-gray_16_18-before">Dúvidas: 200</span>
-            </div>
-          </div>
         </div>
         <h3>Menu da aula</h3>
         <div class="local-nav">
@@ -125,59 +99,85 @@
               <span class="label label-unread-message">200+</span>
             </li>
           </ul>
-          <div class="local-nav-balloon">
-            <span class="arrow"></span>
-            <div class="local-nav-balloon-block">
-              <input type="checkbox" id="local-nav-input-1">
-              <label for="local-nav-input-1">Aula finalizada?</label>
-            </div>
-            <div class="local-nav-separator"></div>
-            <div class="local-nav-balloon-block">
-              <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
-              <div class="progress-wrapper">
-                <div class="progress">
-                  <div class="bar text-replacement" style="width: 20%;">20%</div>
-                </div>
-                <span class="pull-right">20%</span>
+        </div>
+        <div class="local-nav-summary">
+          <span class="icon-arrow-up-curly-gray"></span>
+          <span class="icon-environment-gray_16_18-before">Ambientes: 10</span>
+          <span class="icon-course-gray_16_18-before">Cursos matriculados: 50</span>
+          <div class="local-nav-separator"></div>
+          <span class="icon-contacts-gray_16_18-before">Contatos: 200</span>
+          <span class="icon-classmates-gray_16_18-before">Colegas de classe: 1.800</span>
+        </div>
+        <div class="local-nav-balloon">
+          <span class="arrow"></span>
+          <div class="local-nav-balloon-title">Você na disciplina</div>
+          <div class="local-nav-balloon-block">
+            <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="bar text-replacement" style="width: 20%;">20%</div>
               </div>
+              <span class="pull-right">20%</span>
             </div>
-            <div class="local-nav-separator"></div>
-            <div class="local-nav-balloon-block">
-              <span class="icon-content-gray_16_18-before">Módulo: 1 / 5</span>
-              <div class="progress-wrapper">
-                <div class="progress progress-mini">
-                  <div class="bar text-replacement" style="width: 20%;">20%</div>
-                </div>
-                <span class="pull-right">20%</span>
+          </div>
+          <div class="local-nav-separator"></div>
+          <div class="local-nav-balloon-block">
+            <span class="icon-comment-gray_16_18-before">Comentários: 200</span>
+            <span class="icon-request-help-gray_16_18-before">Dúvidas: 200</span>
+          </div>
+        </div>
+        <div class="local-nav-balloon">
+          <span class="arrow"></span>
+          <div class="local-nav-balloon-block">
+            <input type="checkbox" id="local-nav-input-1">
+            <label for="local-nav-input-1">Aula finalizada?</label>
+          </div>
+          <div class="local-nav-separator"></div>
+          <div class="local-nav-balloon-block">
+            <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="bar text-replacement" style="width: 20%;">20%</div>
               </div>
+              <span class="pull-right">20%</span>
             </div>
-            <div class="local-nav-separator"></div>
-            <div class="local-nav-balloon-block">
-              <select>
-                <option>1. Aula de vídeo</option>
-              </select>
-              <div class="subject-control">
-                <button class="button pull-left" rel="tooltip" title="Anterior">
-                    <span class="icon-arrow-left-lightblue_16_18">Anterior</span>
-                </button>
-                <button class="button pull-left" rel="tooltip" title="Próximo">
-                  <span class="icon-arrow-right-lightblue_16_18">Próximo</span>
-                </button>
+          </div>
+          <div class="local-nav-separator"></div>
+          <div class="local-nav-balloon-block">
+            <span class="icon-content-gray_16_18-before">Módulo: 1 / 5</span>
+            <div class="progress-wrapper">
+              <div class="progress progress-mini">
+                <div class="bar text-replacement" style="width: 20%;">20%</div>
               </div>
+              <span class="pull-right">20%</span>
             </div>
-            <div class="local-nav-separator"></div>
-            <div class="local-nav-balloon-block">
-              <div class="extra-control">
-                <button class="button pull-left" rel="tooltip" title="Comentários">
-                  <span class="icon-comment-lightblue_16_18">Comentários</span>
-                </button>
-                <button class="button pull-left" rel="tooltip" title="Dúvidas">
-                  <span class="icon-request-help-lightblue_16_18">Dúvidas</span>
-                </button>
-                <button class="button pull-left" rel="tooltip" title="Idéia">
-                  <span class="icon-comment-lightblue_16_18">Idéia</span>
-                </button>
-              </div>
+          </div>
+          <div class="local-nav-separator"></div>
+          <div class="local-nav-balloon-block">
+            <select>
+              <option>1. Aula de vídeo</option>
+            </select>
+            <div class="subject-control">
+              <button class="button pull-left" rel="tooltip" title="Anterior">
+                  <span class="icon-arrow-left-lightblue_16_18">Anterior</span>
+              </button>
+              <button class="button pull-left" rel="tooltip" title="Próximo">
+                <span class="icon-arrow-right-lightblue_16_18">Próximo</span>
+              </button>
+            </div>
+          </div>
+          <div class="local-nav-separator"></div>
+          <div class="local-nav-balloon-block">
+            <div class="extra-control">
+              <button class="button pull-left" rel="tooltip" title="Comentários">
+                <span class="icon-comment-lightblue_16_18">Comentários</span>
+              </button>
+              <button class="button pull-left" rel="tooltip" title="Dúvidas">
+                <span class="icon-request-help-lightblue_16_18">Dúvidas</span>
+              </button>
+              <button class="button pull-left" rel="tooltip" title="Luzes">
+                <span class="icon-lights-lightblue_16_18">Luzes</span>
+              </button>
             </div>
           </div>
         </div>

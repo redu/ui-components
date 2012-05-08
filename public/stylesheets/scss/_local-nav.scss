@@ -16,6 +16,7 @@ $localNavBalloonTrinagleHeight: 8px;
   li {
     padding: 7px 0 7px 7px;
     cursor: pointer;
+    position: relative;
 
     &:before { @include pseudo-before; }
 
@@ -34,6 +35,14 @@ $localNavBalloonTrinagleHeight: 8px;
       border-left: $activeItemBorder;
       border-bottom: $activeItemBorder;
 
+      // Não exibe a seta no IE, pois o gradiente é inconsistente.
+      .cssgradients &:after {
+        @include pseudo-after(0);
+        position: absolute;
+        top: 0;
+        right: -11px;
+      }
+
       a {
         color: $white;
         .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
@@ -44,7 +53,7 @@ $localNavBalloonTrinagleHeight: 8px;
       .no-cssgradients & {
           // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+80,158ac4+100;Custom
           background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 )";
       }
       .borderradius & { @include border-radius($itemBorderRadius 0 0 $itemBorderRadius); }
 
@@ -86,7 +95,6 @@ $localNavBalloonTrinagleHeight: 8px;
 }
 
 .local-nav-summary {
-  padding-top: 17px;
   background: $gray1;
 
   > span {
@@ -150,8 +158,8 @@ $localNavBalloonTrinagleHeight: 8px;
 
   label {
     color: $gray6;
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 12px;
     vertical-align: middle;
 
     &.local-nav-checked {
