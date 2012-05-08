@@ -1,4 +1,4 @@
-// MODALS
+// JANELAS MODAIS.
 // ------
 
 $modalBorderRadius: 7px;
@@ -43,7 +43,6 @@ $modalBorderRadius: 7px;
   .boxshadow & { @include box-shadow(0 4px 20px 1px rgba(0, 0, 0, 0.5)); }
   &.fade {
     @include transition(opacity .3s linear);
-    // @include transition(top .3s ease-out);
     top: -25%;
   }
   &.fade.in { top: 50%; }
@@ -62,14 +61,14 @@ $modalBorderRadius: 7px;
 .modal-header-subtitle,
 .modal-header-subtitle a { color: $gray5; }
 
-// Body (onde todo o conteúdo modal redimensiona)
+// Conteúdo.
 .modal-body {
   padding: 0 20px 20px;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 340px;
 }
 
-// Footer (for actions)
+// Rodapé (para as ações).
 .modal-footer {
   padding: 20px;
   background-color: $gray2;

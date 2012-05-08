@@ -1,0 +1,182 @@
+$itemBorderRadius: 5px;
+$activeItemBorder: 1px solid $blue3;
+$activeItemTriangleWidth: 11px;
+$activeItemTriangleHeight: 34px;
+$localNavBalloonTriangleWidth: 20px;
+$localNavBalloonTrinagleHeight: 8px;
+
+.local-nav {
+  width: 179px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    padding: 7px 0 7px 7px;
+    cursor: pointer;
+
+    &:before { @include pseudo-before; }
+
+    &:hover {
+      background-color: $blue1;
+
+      a { color: $blue4; }
+
+      .boxshadow & { @include box-shadow(0 1px 0 $white); }
+    }
+
+    .borderradius & { @include border-radius($itemBorderRadius); }
+
+    &.local-nav-active {
+      border-top: $activeItemBorder;
+      border-left: $activeItemBorder;
+      border-bottom: $activeItemBorder;
+
+      a {
+        color: $white;
+        .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+      }
+
+      .boxshadow & { @include box-shadow(inset 0 1px 0 0 $blue1); }
+      .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 60%, 100%); }
+      .no-cssgradients & {
+          // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+80,158ac4+100;Custom
+          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+      }
+      .borderradius & { @include border-radius($itemBorderRadius 0 0 $itemBorderRadius); }
+
+      &:hover {
+        border-color: $blue4;
+        .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 0%, 100%); }
+        .no-cssgradients & {
+          // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+50,158ac4+100;Custom
+          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#158ac4', endColorstr='#73c3e6',GradientType=0 );
+        }
+      }
+    }
+  }
+
+  li + li {
+    margin-top: 1px;
+  }
+
+  a:hover { text-decoration: none; }
+
+  .local-nav-level-2 {
+    color: $gray5;
+    padding-left: 17px;
+
+    &:hover a,
+    a { color: $gray5; }
+    a:before {
+      @include pseudo-before;
+    }
+  }
+}
+
+.local-nav-summary,
+.local-nav-balloon {
+  width: 160px;
+  color: $gray5;
+  font-size: 12px;
+}
+
+.local-nav-summary {
+  padding-top: 17px;
+  background: $gray1;
+
+  > span {
+    display: block;
+    &:before { @include pseudo-before; }
+  }
+  span + span { margin-top: 5px; }
+
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+.local-nav-separator {
+  height: 1px;
+  background: $gray3;
+  border-bottom: 1px solid $white;
+  margin: 10px 0;
+}
+
+.local-nav-balloon {
+  margin-top: $localNavBalloonTrinagleHeight;
+  background: $gray2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+
+  .borderradius & { @include border-radius(7px); }
+  .boxshadow & { @include box-shadow-2($verticalWhiteShadow, 0 -1px 0 $gray3); }
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+
+  .arrow {
+    border-bottom: $localNavBalloonTrinagleHeight solid $gray3;
+    border-left: ($localNavBalloonTriangleWidth / 2) solid rgba(255, 255, 255, 0);
+    border-right: ($localNavBalloonTriangleWidth / 2) solid rgba(255, 255, 255, 0);
+    @include square(0);
+    position: absolute;
+    top: -$localNavBalloonTrinagleHeight;
+    right: 50%;
+  }
+
+  select {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .button + .button { margin-left: 5px; }
+
+  .button span {
+    @include text-replacement;
+  }
+}
+
+.local-nav-balloon-title {
+  padding: 0 10px 10px;
+  font-family: $museoSans;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.local-nav-balloon-block {
+  padding: 0 10px 0;
+
+  label {
+    color: $gray6;
+    font-size: 13px;
+    line-height: 13px;
+    vertical-align: middle;
+
+    &.local-nav-checked {
+      font-weight: bold;
+      color: $green3;
+
+      &:after { @include pseudo-after(0); }
+    }
+  }
+
+  > span {
+    display: block;
+    &:before { @include pseudo-before; }
+  }
+  span + span { margin-top: 5px; }
+
+  .button > span { display: block }
+
+  .subject-control,
+  .extra-control {
+    margin: 0 auto;
+    @include clearfix;
+  }
+
+  // #botões * largura-botão + #espaços * largura-espaco.
+  .subject-control { width: 2 * (38px) + 1 * 5px; }
+  .extra-control { width: 3 * (38px) + 2 * 5px; }
+}

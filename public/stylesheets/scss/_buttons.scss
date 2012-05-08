@@ -42,12 +42,10 @@
 
 .button-dropdown {
   padding: 5px 5px 5px 10px;
-  height: 18px;
 
   .button-dropdown-icon {
     @include text-replacement;
     display: block;
-    @include size(16px, 18px);
     margin-right: 5px;
     float: left;
   }

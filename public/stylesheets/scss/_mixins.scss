@@ -11,6 +11,26 @@
   display: inline-block;
 }
 
+@mixin horizontal-list() {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+
+  li { float: left; }
+}
+
+@mixin pseudo-before($marginRight: 5px) {
+  content: "";
+  float: left;
+  margin-right: $marginRight;
+}
+
+@mixin pseudo-after($marginLeft: 5px) {
+  content: "";
+  float: right;
+  margin-left: $marginLeft;
+}
+
 // Clearfix.
 // --------
 // Para limpar floats like a boss h5bp.com/q.

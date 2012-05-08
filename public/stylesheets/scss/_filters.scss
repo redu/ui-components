@@ -9,14 +9,6 @@
   border: 1px solid $gray4;
 }
 
-// Escolhe quais ícones usar (azul claro [-80] ou escuro [-160]).
-@mixin filter-icons($x: -80px) {
-  .icon-teacher-lightblue_16_18-before:before { background: url("../images/new/icons-small.png") $x -880px no-repeat; }
-  .icon-tutor-lightblue_16_18-before:before   { background: url("../images/new/icons-small.png") $x -960px no-repeat; }
-  .icon-member-lightblue_16_18-before:before  { background: url("../images/new/icons-small.png") $x -1040px no-repeat; }
-}
-
-
 // Base.
 .filter {
   display: inline-block;
@@ -33,11 +25,7 @@
   @include reset-filter;
   @include ie7-restore-left-whitespace;
 
-  > span:before {
-    // Para os ícones aparecerem na esquerda.
-    float: left;
-    margin-right: 5px;
-  }
+  &:before { @include pseudo-before; }
 
   .cssgradients & {
     @include filter-gradient-vertical($gray1, $gray3, 20%, 100%);
@@ -71,8 +59,6 @@
     border-color: $blue2;
     color: $blue4;
     text-decoration: none;
-    // Ícones azul escuro.
-    @include filter-icons(-160px);
   }
 
   &.filter-active,
@@ -89,8 +75,6 @@
   &.filter-active:active {
     // Estado ativado e pressionado (volta ao estado normal)
     @include filter-normal-state;
-    // Ícones azul claro.
-    @include filter-icons;
   }
 
   // Estado de focus para o teclado e acessibilidade.

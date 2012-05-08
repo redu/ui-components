@@ -11,3 +11,6 @@
 
 // Visibilidade.
 .invisible { visibility: hidden; }
+
+// Substituição de texto.
+.text-replacement { @include text-replacement; }

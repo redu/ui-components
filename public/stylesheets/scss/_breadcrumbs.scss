@@ -1,72 +1,51 @@
 // Breadcrumbs.scss
 // --------------------------------------------------------
 
-
 // Breadcrumb menor.
 .breadcrumb {
-  list-style: none outside none;
-  margin: 0;
-  overflow: hidden;
+  @include horizontal-list;
+
+  a {
+    font-size: 11px;
+    text-decoration: none;
+  }
 
   li {
-    display: inline-block;
-    float: left;
-    font-size: 11px;
-
     // O separador.
     &:after {
-      content: "";
-      @include size(16px, 18px);
-      background: url("../images/new/icons-small.png") -560px -800px no-repeat;
-      float: right;
-      margin-left: 5px;
+      @include pseudo-after;
       margin-right: 5px;
     }
-    // Sem separador para o último item.
-    &:last-child:after { background: none; }
+
+    > :before { @include pseudo-before; }
 
     // Esconde o texto quando compactado.
     &.breadcumb-item-compact {
       width: 45px;
-
-      a {
-        @include text-replacement;
-        @include size(16px, 18px);
-        margin-left: 0; // Remove o margin-left padrão.
-      }
-    }
-
-    a {
-      text-decoration: none;
-      margin-left: 5px;
-
-      &:before { float: left; }
+      > * { @include text-replacement; }
     }
   }
 }
 
 // O breadcrumb grande de ícones.
 .breadcrumb-big {
-  list-style: none outside none;
-  margin: 0;
+  @include horizontal-list;
   padding: 2px 0;
-  overflow: hidden;
 }
 
 .breadcrumb-big li {
-  display: inline-block;
-  float: left;
   margin-left: 4px;
   margin-right: 4px;
+
+  span {
+    display: inline-block;
+    @include text-replacement;
+  }
 
   &.breadcrumb-big-item-active {
     border: 1px solid $white;
 
-    // Ícones azul claro.
-    .icon-environment-gray_32_34 { background-position: -400px 0; }
-    .icon-course-gray_32_34 { background-position: -400px -80px; }
-    .icon-space-gray_32_34 { background-position: -400px -160px; }
-    .icon-subject-gray_32_34 { background-position: -400px -320px; }
+    a { display: inline-block; }
 
     // A borda azul.
     .borderradius &,
@@ -77,48 +56,5 @@
     .no-borderradius & { border: 1px solid $blue3; }
   }
 
-  &.breadcrumb-big-item-disabled a {
-    cursor: default;
-
-    // Ícones cinza claro.
-    &.icon-environment-gray_32_34,
-    &.icon-environment-gray_32_34:hover { background-position: -560px 0; }
-    &.icon-course-gray_32_34,
-    &.icon-course-gray_32_34:hover { background-position: -560px -80px; }
-    &.icon-space-gray_32_34,
-    &.icon-space-gray_32_34:hover { background-position: -560px -160px; }
-    &.icon-subject-gray_32_34,
-    &.icon-subject-gray_32_34:hover { background-position: -560px -320px; }
-  }
-
-  a {
-    content: "";
-    background-image: url("../images/new/icons-mini-breadcrumbs.png");
-    @include text-replacement;
-    @include size(32px, 34px);
-
-    &:before { float: left; }
-
-    // Cinza escuro normal e azul escuro no hover.
-    &.icon-environment-gray_32_34 {
-      background-position: -320px 0;
-
-      &:hover { background-position: -480px 0; }
-    }
-    &.icon-course-gray_32_34 {
-       background-position: -320px -80px;
-
-      &:hover { background-position: -480px -80px; }
-    }
-    &.icon-space-gray_32_34 {
-      background-position: -320px -160px;
-
-      &:hover { background-position: -480px -160px; }
-    }
-    &.icon-subject-gray_32_34 {
-      background-position: -320px -320px;
-
-      &:hover { background-position: -480px -320px; }
-    }
-  }
+  &.breadcrumb-big-item-disabled a { cursor: default; }
 }

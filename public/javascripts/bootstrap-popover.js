@@ -98,8 +98,8 @@
   })
 
   $(document).ready(function(){
-      $('a[rel=popover][data-original-title]').popover()
-      $('a[rel=popover]').popover({placement: 'bottom'})
+      $('[rel=popover][data-original-title]').popover()
+      $('[rel=popover]').popover({placement: 'bottom'})
       // TODO: ajaxComplete?
   });
 

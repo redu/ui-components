@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>Navegação</title>
     <link href="../public/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="../public/stylesheets/icons.redu.css" rel="stylesheet">
+    <link href="../public/stylesheets/icons.css" rel="stylesheet">
     <link href="../public/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
     <script src="../public/javascripts/google-code-prettify/prettify.js"></script>
     <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
     <script src="../public/javascripts/bootstrap-dropdown.js"></script>
     <script src="../public/javascripts/bootstrap-filter.js"></script>
+    <script src="../public/javascripts/bootstrap-local-nav.js"></script>
+    <script src="../public/javascripts/bootstrap-tooltip.js"></script>
     <script src="../public/javascripts/modernizr.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="../public/javascripts/selectivizr.js"></script>
@@ -21,21 +23,180 @@
   <body onload="prettyPrint()">
     <div style="width: 960px; margin: 10px auto;">
       <h1>Navegaçao</h1>
+      <h2>Navegação local</h2>
+      <h3>Menu da visão geral</h3>
+      <div class="local-nav">
+        <ul>
+          <li class="local-nav-active icon-home-white_blue_16_18-before">
+            <a href="#" title="Visão Geral">Visão Geral</a>
+            <span class="label label-unread-message">+</span>
+          </li>
+          <li class="icon-wall-lightblue_16_18-before">
+            <a href="#" title="Meu Mural">Meu Mural</a>
+            <span class="label label-unread-message">5</span>
+          </li>
+          <li class="icon-message-lightblue_16_18-before">
+            <a href="#" title="Mensagens">Mensagens</a>
+            <span class="label label-unread-message">5</span>
+          </li>
+          <li class="icon-environment-lightblue_16_18-before">
+            <a href="#" title="Ambientes">Ambientes</a>
+            <span class="label label-unread-message">200+</span>
+            <span class="label label-unread-help-request">99+</span>
+          </li>
+          <li class="icon-manage-lightblue_16_18-before">
+            <a href="#" title="Configurações">Configurações</a>
+          </li>
+          <li class="icon-contacts-lightblue_16_18-before">
+            <a href="#" title="Minhas Conexões">Minhas Conexões</a>
+          </li>
+        </ul>
+      </div>
+      <div style="background-color: #F7F7F7">
+
+        <h3>Menu da disciplina</h3>
+        <div class="local-nav">
+          <ul>
+            <li class="local-nav-active icon-subject-white_blue_16_18-before">
+              <a href="#" title="Aulas">Aulas</a>
+              <span class="label label-unread-message">200+</span>
+              <span class="label label-unread-help-request">99+</span>
+            </li>
+            <li class="icon-wall-lightblue_16_18-before">
+              <a href="#" title="Mural">Mural</a>
+              <span class="label label-unread-message">5</span>
+            </li>
+            <li class="icon-file-lightblue_16_18-before">
+              <a href="#" title="Arquivos de Apoio">Arquivos de Apoio</a>
+              <span class="label label-unread-message">5</span>
+            </li>
+            <li class="icon-members-lightblue_16_18-before">
+              <a href="#" title="Membros">Membros</a>
+              <span class="label label-unread-message">200+</span>
+            </li>
+          </ul>
+          <div class="local-nav-summary">
+            <span class="icon-environment-gray_16_18-before">Ambientes: 10</span>
+            <span class="icon-course-gray_16_18-before">Cursos matriculados: 50</span>
+            <div class="local-nav-separator"></div>
+            <span class="icon-contacts-gray_16_18-before">Contatos: 200</span>
+            <span class="icon-classmates-gray_16_18-before">Colegas de classe: 1.800</span>
+          </div>
+          <div class="local-nav-balloon">
+            <span class="arrow"></span>
+            <div class="local-nav-balloon-title">Você na disciplina</div>
+            <div class="local-nav-balloon-block">
+              <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
+              <div class="progress-wrapper">
+                <div class="progress">
+                  <div class="bar text-replacement" style="width: 20%;">20%</div>
+                </div>
+                <span class="pull-right">20%</span>
+              </div>
+            </div>
+            <div class="local-nav-separator"></div>
+            <div class="local-nav-balloon-block">
+              <span class="icon-comment-gray_16_18-before">Comentários: 200</span>
+              <span class="icon-request-help-gray_16_18-before">Dúvidas: 200</span>
+            </div>
+          </div>
+        </div>
+        <h3>Menu da aula</h3>
+        <div class="local-nav">
+          <ul>
+            <li class="icon-subject-lightblue_16_18-before">
+              <a href="#" title="Aulas">Aulas</a>
+              <span class="label label-unread-message">200+</span>
+              <span class="label label-unread-help-request">99+</span>
+            </li>
+            <li class="local-nav-level-2">
+              <a href="#" title="Aulas" class="icon-arrow-right-squared-gray_16_18-before">1. Aula de vídeo lore...</a>
+            </li>
+            <li class="icon-wall-lightblue_16_18-before">
+              <a href="#" title="Mural">Mural</a>
+              <span class="label label-unread-message">5</span>
+            </li>
+            <li class="icon-file-lightblue_16_18-before">
+              <a href="#" title="Arquivos de Apoio">Arquivos de Apoio</a>
+              <span class="label label-unread-message">5</span>
+            </li>
+            <li class="icon-members-lightblue_16_18-before">
+              <a href="#" title="Membros">Membros</a>
+              <span class="label label-unread-message">200+</span>
+            </li>
+          </ul>
+          <div class="local-nav-balloon">
+            <span class="arrow"></span>
+            <div class="local-nav-balloon-block">
+              <input type="checkbox" id="local-nav-input-1">
+              <label for="local-nav-input-1">Aula finalizada?</label>
+            </div>
+            <div class="local-nav-separator"></div>
+            <div class="local-nav-balloon-block">
+              <span class="icon-subject-gray_16_18-before">Aulas: 4 / 20</span>
+              <div class="progress-wrapper">
+                <div class="progress">
+                  <div class="bar text-replacement" style="width: 20%;">20%</div>
+                </div>
+                <span class="pull-right">20%</span>
+              </div>
+            </div>
+            <div class="local-nav-separator"></div>
+            <div class="local-nav-balloon-block">
+              <span class="icon-content-gray_16_18-before">Módulo: 1 / 5</span>
+              <div class="progress-wrapper">
+                <div class="progress progress-mini">
+                  <div class="bar text-replacement" style="width: 20%;">20%</div>
+                </div>
+                <span class="pull-right">20%</span>
+              </div>
+            </div>
+            <div class="local-nav-separator"></div>
+            <div class="local-nav-balloon-block">
+              <select>
+                <option>1. Aula de vídeo</option>
+              </select>
+              <div class="subject-control">
+                <button class="button pull-left" rel="tooltip" title="Anterior">
+                    <span class="icon-arrow-left-lightblue_16_18">Anterior</span>
+                </button>
+                <button class="button pull-left" rel="tooltip" title="Próximo">
+                  <span class="icon-arrow-right-lightblue_16_18">Próximo</span>
+                </button>
+              </div>
+            </div>
+            <div class="local-nav-separator"></div>
+            <div class="local-nav-balloon-block">
+              <div class="extra-control">
+                <button class="button pull-left" rel="tooltip" title="Comentários">
+                  <span class="icon-comment-lightblue_16_18">Comentários</span>
+                </button>
+                <button class="button pull-left" rel="tooltip" title="Dúvidas">
+                  <span class="icon-request-help-lightblue_16_18">Dúvidas</span>
+                </button>
+                <button class="button pull-left" rel="tooltip" title="Idéia">
+                  <span class="icon-comment-lightblue_16_18">Idéia</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h2>Filtros (Visão Geral)</h2>
       <div class="filter-toolbar">
         <div class="filter-group">
-          <button class="filter filter-everything">
+          <button class="filter filter-everything icon-wall-lightblue_16_18-before">
             <div class="filter-title-wrapper">
-              <span class="filter-title icon-wall-lightblue_16_18-before">Tudo</span>
+              Tudo
             </div>
             <div class="filter-sub-title">
             </div>
           </button>
         </div>
         <div class="filter-group">
-          <button class="filter dropdown-toggle" data-toggle="dropdown">
+          <button class="filter dropdown-toggle icon-contacts-lightblue_16_18-before" data-toggle="dropdown">
             <div class="filter-title-wrapper">
-              <span class="filter-title icon-contacts-lightblue_16_18-before">Contatos</span>
+              Contatos
               <span class="caret"></span>
             </div>
             <div class="filter-sub-title">
@@ -44,15 +205,15 @@
           <div class="arrow"></div>
           <ul class="dropdown-menu filter-level-1">
             <li class="filter-all">
-              <input type="checkbox">
-              <label>Todos</label>
+              <input type="checkbox" id="contacts-1">
+              <label for="contacts-1">Todos</label>
             </li>
           </ul>
         </div>
         <div class="filter-group">
-          <button class="filter filter-courses dropdown-toggle" data-toggle="dropdown">
+          <button class="filter filter-courses dropdown-toggle icon-course-lightblue_16_18-before" data-toggle="dropdown">
             <div class="filter-title-wrapper">
-              <span class="filter-title icon-course-lightblue_16_18-before">Cursos</span>
+              Cursos
               <span class="caret"></span>
             </div>
             <div class="filter-sub-title">
@@ -62,34 +223,34 @@
           <div class="arrow"></div>
           <ul class="dropdown-menu filter-level-1">
             <li class="filter-all">
-              <input type="checkbox">
-              <label>Todos os cursos e disciplinas</label>
+              <input type="checkbox" id="courses-1">
+              <label for="courses-1">Todos os cursos e disciplinas</label>
               <ul class="filter-level-2">
                 <li>
-                  <input type="checkbox">
-                  <label>Curso Lorem Ipsum 1</label>
+                  <input type="checkbox" id="courses-2.1">
+                  <label for="courses-2.1">Curso Lorem Ipsum 1</label>
                   <ul class="filter-level-3">
-                    <li>
-                      <input type="checkbox">
-                      <label>Disciplina Vestibulum Scelerisque 1.1</label>
+                    <li class="icon-arrow-right-squared-gray_16_18-before">
+                      <input type="checkbox" id="courses-3.1">
+                      <label for="courses-3.1">Disciplina Vestibulum Scelerisque 1.1</label>
                     </li>
-                    <li>
-                      <input type="checkbox">
-                      <label>Disciplina Vestibulum Scelerisque 1.2</label>
+                    <li class="icon-arrow-right-squared-gray_16_18-before">
+                      <input type="checkbox" id="courses-3.2">
+                      <label for="courses-3.2">Disciplina Vestibulum Scelerisque 1.2</label>
                     </li>
-                    <li>
-                      <input type="checkbox">
-                      <label>Disciplina Vestibulum Scelerisque 1.3</label>
+                    <li class="icon-arrow-right-squared-gray_16_18-before">
+                      <input type="checkbox" id="courses-3.3">
+                      <label for="courses-3.3">Disciplina Vestibulum Scelerisque 1.3</label>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <input type="checkbox">
-                  <label>Curso Lorem Ipsum 2</label>
+                  <input type="checkbox" id="courses-2.2">
+                  <label for="courses-2.2">Curso Lorem Ipsum 2</label>
                   <ul class="filter-level-3">
-                    <li>
-                      <input type="checkbox">
-                      <label>Disciplina Vestibulum Scelerisque 2.1</label>
+                    <li class="icon-arrow-right-squared-gray_16_18-before">
+                      <input type="checkbox" id="courses-3.4">
+                      <label for="courses-3.4">Disciplina Vestibulum Scelerisque 2.1</label>
                     </li>
                   </ul>
                 </li>
@@ -98,9 +259,9 @@
           </ul>
         </div>
         <div class="filter-group">
-          <button class="filter dropdown-toggle" data-toggle="dropdown">
+          <button class="filter dropdown-toggle icon-subject-lightblue_16_18-before" data-toggle="dropdown">
             <div class="filter-title-wrapper">
-              <span class="filter-title icon-subject-lightblue_16_18-before">Aulas</span>
+              Aulas
               <span class="caret"></span>
             </div>
             <div class="filter-sub-title">
@@ -111,16 +272,16 @@
             <li>
               <ul class="filter-level-1">
                 <li class="filter-all">
-                  <input type="checkbox">
-                  <label>Todos</label>
+                  <input type="checkbox" id="subjects-1">
+                  <label for="subjects-1">Todos</label>
                   <ul class="filter-level-2">
                     <li>
-                      <input type="checkbox">
-                      <label class="icon-comment2-gray_16_18-before">Comentários</label>
+                      <input type="checkbox" id="subjects-2.1">
+                      <label for="subjects-2.1" class="icon-comment-gray_16_18-before">Comentários</label>
                     </li>
                     <li>
-                      <input type="checkbox">
-                      <label class="icon-request-help-gray_16_18-before">Dúvidas</label>
+                      <input type="checkbox" id="subjects-2.2">
+                      <label for="subjects-2.2" class="icon-request-help-gray_16_18-before">Dúvidas</label>
                     </li>
                   </ul>
                 </li>
@@ -146,7 +307,7 @@
               <div class="button-group">
                 <a class="button button-dropdown dropdown-toggle" data-toggle="dropdown" href="#">
                 <span class="unread-marker">5</span>
-                <span class="button-dropdown-icon icon-notify-lightblue_16_18-before">Avise-me</span>
+                <span class="button-dropdown-icon icon-notification-lightblue_16_18">Avise-me</span>
                 <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu nav-bar-notifications">
@@ -226,7 +387,7 @@
               </div>
               <div class="button-group">
                 <a class="button button-dropdown dropdown-toggle" data-toggle="dropdown" href="#">
-                <span class="button-dropdown-icon icon-profile-2-lightblue_16_18-before">Perfil</span>
+                <span class="button-dropdown-icon icon-profile-2-lightblue_16_18">Perfil</span>
                 <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu nav-bar-profile">
@@ -274,7 +435,7 @@
               <div class="button-group">
                 <a class="button button-dropdown dropdown-toggle" data-toggle="dropdown" href="#">
                 <span class="unread-marker">5</span>
-                <span class="button-dropdown-icon icon-notify-lightblue_16_18-before">Avise-me</span>
+                <span class="button-dropdown-icon-notify-lightblue_16_18-before">Avise-me</span>
                 <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu nav-bar-notifications">
@@ -354,7 +515,7 @@
               </div>
               <div class="button-group">
                 <a class="button button-dropdown dropdown-toggle" data-toggle="dropdown" href="#">
-                <span class="button-dropdown-icon icon-profile-2-lightblue_16_18-before">Perfil</span>
+                <span class="button-dropdown-icon-profile-2-lightblue_16_18-before">Perfil</span>
                 <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu nav-bar-profile">
@@ -389,20 +550,20 @@
       <h2>Breadcrumbs</h2>
       <h3>Exemplo de uso</h3>
       <ul class="breadcrumb">
-        <li class="breadcumb-item-compact">
-          <a href="#home" class="icon-home-lightblue_16_18-before" title="Home">Home</a>
+        <li class="icon-separator-arrow-right-gray_16_18-after breadcumb-item-compact">
+          <a href="#home" title="Home" class="icon-home-lightblue_16_18-before">Home</a>
+        </li>
+        <li class="icon-separator-arrow-right-gray_16_18-after">
+          <a href="#environment" title="Universidade Voluptat Metus" class="icon-environment-lightblue_16_18-before">Universidade Voluptat Metus</a>
+        </li>
+        <li class="icon-separator-arrow-right-gray_16_18-after">
+          <a href="#course" title="Curso Lorem Ipsum" class="icon-course-lightblue_16_18-before">Curso Lorem Ipsum</a>
+        </li>
+        <li class="icon-separator-arrow-right-gray_16_18-after">
+          <a href="#space" title="Disciplina Vestibulum Scelerisque" class="icon-space-lightblue_16_18-before">Disciplina Vestibulum Scelerisque</a>
         </li>
         <li>
-          <a href="#environment" class="icon-environment-lightblue_16_18-before" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
-        </li>
-        <li>
-          <a href="#course" class="icon-course-lightblue_16_18-before" title="Curso Lorem Ipsum">Curso Lorem Ipsum</a>
-        </li>
-        <li>
-          <a href="#space" class="icon-space-lightblue_16_18-before" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a>
-        </li>
-        <li>
-          <a href="#subject" class="icon-subject-lightblue_16_18-before" title="Módulo Lorem">Módulo Lorem</a>
+          <a href="#content" title="Módulo Lorem" class="icon-content-lightblue_16_18-before">Módulo Lorem</a>
         </li>
       </ul>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
@@ -431,17 +592,59 @@
         <li>Lembrar que o atributo <code>title</code> deve ser igual ao texto do link.</li>
       </ul>
       <ul class="breadcrumb-big">
-        <li>
-          <a href="#environment" class="icon-environment-gray_32_34" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
-        </li>
-        <li>
-          <a href="#course" class="icon-course-gray_32_34" title="Curso Lorem Ipsum">Curso Lorem Ipsum</a>
-        </li>
         <li class="breadcrumb-big-item-active">
-          <a href="#space" class="icon-space-gray_32_34" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a>
+          <a href="#environment" title="Universidade Voluptat Metus"><span class="icon-environment-lightblue_32_34">Universidade Voluptat Metus</span></a>
         </li>
         <li class="breadcrumb-big-item-disabled">
-          <a class="icon-subject-gray_32_34" title="Módulo">Módulo</a>
+          <span class="icon-course-lightgray_32_34" title="Curso">Curso</span>
+        </li>
+        <li class="breadcrumb-big-item-disabled">
+          <span class="icon-space-lightgray_32_34" title="Disciplina">Disciplina</span>
+        </li>
+        <li class="breadcrumb-big-item-disabled">
+          <span class="icon-subject-lightgray_32_34" title="Módulo">Módulo</span>
+        </li>
+      </ul>
+      <ul class="breadcrumb-big">
+        <li>
+          <a href="#environment" title="Universidade Voluptat Metus"><span class="icon-environment-gray_32_34">Universidade Voluptat Metus</span></a>
+        </li>
+        <li class="breadcrumb-big-item-active">
+          <a href="#course" title="Curso Lorem Ipsum"><span class="icon-course-lightblue_32_34">Curso Lorem Ipsum</span></a>
+        </li>
+        <li class="breadcrumb-big-item-disabled">
+          <span class="icon-space-lightgray_32_34" title="Disciplina">Disciplina</span>
+        </li>
+        <li class="breadcrumb-big-item-disabled">
+          <span class="icon-subject-lightgray_32_34" title="Módulo">Módulo</span>
+        </li>
+      </ul>
+      <ul class="breadcrumb-big">
+        <li>
+          <a href="#environment" title="Universidade Voluptat Metus"><span class="icon-environment-gray_32_34">Universidade Voluptat Metus</span></a>
+        </li>
+        <li>
+          <a href="#course" title="Curso Lorem Ipsum"><span class="icon-course-gray_32_34">Curso Lorem Ipsum</span></a>
+        </li>
+        <li class="breadcrumb-big-item-active">
+          <a href="#space" title="Disciplina Vestibulum Scelerisque"><span class="icon-space-lightblue_32_34">Disciplina Vestibulum Scelerisque</span></a>
+        </li>
+        <li class="breadcrumb-big-item-disabled">
+          <span class="icon-subject-lightgray_32_34" title="Módulo">Módulo</span>
+        </li>
+      </ul>
+      <ul class="breadcrumb-big">
+        <li>
+          <a href="#environment" title="Universidade Voluptat Metus"><span class="icon-environment-gray_32_34">Universidade Voluptat Metus</span></a>
+        </li>
+        <li>
+          <a href="#course" title="Curso Lorem Ipsum"><span class="icon-course-gray_32_34">Curso Lorem Ipsum</span></a>
+        </li>
+        <li>
+          <a href="#space" title="Disciplina Vestibulum Scelerisque"><span class="icon-space-gray_32_34">Disciplina Vestibulum Scelerisque</span></a>
+        </li>
+        <li class="breadcrumb-big-item-active">
+          <a href="#space" title="Módulo X"><span class="icon-subject-lightblue_32_34">Módulo X</span></a>
         </li>
       </ul>
       <pre style="margin-top: 10px;" class="prettyprint linenums">&lt;ul class="breadcrumb-big"&gt;
@@ -482,7 +685,7 @@
       <h4>Exemplo padrão</h4>
       <p>Aqui é como o HTML se parece para um grupo de filtros padrão:</p>
       <div class="filter-group" style="margin-bottom: 8px;">
-        <button class="filter">1</button>
+        <button class="filter icons-teacher-lightblue_16_18"><span class=""></span>1</button>
         <button class="filter">2</button>
         <button class="filter">3</button>
       </div>
@@ -507,9 +710,9 @@
       <h4>Grupo de filtros do Redu</h4>
       <p>O exemplo abaixo contrói o componente Filtro descrito na página 24 do G&E 1.3:</p>
       <div class="filter-group" style="margin-bottom: 8px;">
-        <button class="filter"><!-- <span class="icon-teacher-lightblue_16_18-before"> --><span class="icons-teacher-blue_16_18"></span>100 professores</button>
-        <button class="filter filter-active"><span class="icon-tutor-lightblue_16_18-before">100 tutores</span></button>
-        <button class="filter"><span class="icon-member-lightblue_16_18-before">100 alunos</span></button>
+        <button class="filter icon-teacher-lightblue_16_18-before">100 professores</button>
+        <button class="filter filter-active icon-tutor-lightblue_16_18-before">100 tutores</button>
+        <button class="filter icon-member-lightblue_16_18-before">100 alunos</button>
       </div>
       <pre class="prettyprint linenums">
 &lt;div class="filter-group"&gt;

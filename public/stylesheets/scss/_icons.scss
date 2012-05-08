@@ -1,0 +1,242 @@
+// Insere as dimensões do sprite.
+$icon-sprite-dimensions: true;
+// Tenta criar um arquivo de sprites de maneira inteligente.
+$icon-layout: smart;
+// Cria o arquivo de sprites.
+@import "icon/*.png";
+// Inclui as classes individuais de cada sprite automaticamente.
+@include all-icon-sprites;
+
+// As classes geradas automaticamente serão no estilo:
+//
+// .<nome-diretorio>-<nome-arquivo>
+// Exemplo: .icon-environment-gray_16_18
+//
+// Para que os sprites apareçam é preciso que o elemento que use as
+// classes geradas tenha um display block (ou inline-block),
+// portanto, atenção quando usá-los com spans.
+
+
+// ÍCONES COM PSEUDO ELEMENTOS:
+//
+// As classes que usam pseudo elementos devem ser escritas
+// manualmente seguindo o mesmo padrão:
+//
+// .<nome-diretorio>-<nome-arquivo>-<before|after> {
+//   &:before { @extend .<nome-diretorio>-<nome-arquivo>; }
+//   &:hover:before { @extend .<nome-diretorio>-<nome-arquivo-no-hover>; }
+// }
+//
+// As regras devem ser comentadas acima com o nome em português
+// descrito na página de Ícones do documento de
+// Guidelines & Elements.
+
+// Professor.
+.icon-teacher-lightblue_16_18-before {
+  &:before { @extend .icon-teacher-lightblue_16_18; }
+  &:hover:before { @extend .icon-teacher-blue_16_18; }
+}
+
+// Tutor.
+.icon-tutor-lightblue_16_18-before {
+  &:before { @extend .icon-tutor-lightblue_16_18; }
+  &:hover:before { @extend .icon-tutor-blue_16_18; }
+}
+
+// Aluno.
+.icon-member-lightblue_16_18-before {
+  &:before { @extend .icon-member-lightblue_16_18; }
+  &:hover:before { @extend .icon-member-blue_16_18; }
+}
+
+// Início/home.
+.icon-home-lightblue_16_18-before {
+  &:before { @extend .icon-home-lightblue_16_18; }
+  &:hover:before { @extend .icon-home-blue_16_18; }
+}
+.icon-home-white_blue_16_18-before {
+  &:before { @extend .icon-home-white_blue_16_18; }
+}
+
+// Ambiente virtual de aprendizagem.
+.icon-environment-lightblue_16_18-before {
+  &:before { @extend .icon-environment-lightblue_16_18; }
+  &:hover:before { @extend .icon-environment-blue_16_18; }
+}
+.icon-environment-white_blue_16_18-before {
+  &:before { @extend .icon-environment-white_blue_16_18; }
+}
+.icon-environment-gray_16_18-before {
+  &:before { @extend .icon-environment-gray_16_18; }
+}
+
+// Curso.
+.icon-course-lightblue_16_18-before {
+  &:before { @extend .icon-course-lightblue_16_18; }
+  &:hover:before { @extend .icon-course-blue_16_18; }
+}
+.icon-course-gray_16_18-before {
+  &:before { @extend .icon-course-gray_16_18; }
+}
+
+// Disciplina.
+.icon-space-lightblue_16_18-before {
+  &:before { @extend .icon-space-lightblue_16_18; }
+  &:hover:before { @extend .icon-space-blue_16_18; }
+}
+
+// Módulo.
+.icon-content-lightblue_16_18-before {
+  &:before { @extend .icon-content-lightblue_16_18; }
+  &:hover:before { @extend .icon-content-blue_16_18; }
+}
+.icon-content-gray_16_18-before {
+  &:before { @extend .icon-content-gray_16_18; }
+}
+
+// Setas.
+
+// Usada como separador dos itens do breadcrumb.
+.icon-separator-arrow-right-gray_16_18-after {
+  &:after { @extend .icon-separator-arrow-right-gray_16_18; }
+}
+
+// Usada nos itens de nível 3 do dropdown dos filtros da visão geral.
+.icon-arrow-right-squared-gray_16_18-before {
+  &:before { @extend .icon-arrow-right-squared-gray_16_18; }
+}
+
+// Seta de correto.
+.icon-confirm-green_16_18-after {
+  &:after { @extend .icon-confirm-green_16_18; }
+}
+
+// Perfil.
+.icon-profile-lightblue_16_18-before {
+  &:before { @extend .icon-profile-lightblue_16_18; }
+  &:hover:before { @extend .icon-profile-blue_16_18; }
+}
+
+// Mensagens.
+.icon-message-lightblue_16_18-before {
+  &:before { @extend .icon-message-lightblue_16_18; }
+  &:hover:before { @extend .icon-message-blue_16_18; }
+}
+.icon-message-white_blue_16_18-before {
+  &:before { @extend .icon-message-white_blue_16_18; }
+}
+
+// Parceiro.
+.icon-partner-lightblue_16_18-before {
+  &:before { @extend .icon-partner-lightblue_16_18; }
+  &:hover:before  { @extend .icon-partner-blue_16_18; }
+}
+
+// Configuração/gerenciamento.
+.icon-manage-lightblue_16_18-before {
+  &:before { @extend .icon-manage-lightblue_16_18; }
+  &:hover:before { @extend .icon-manage-blue_16_18; }
+}
+.icon-manage-white_blue_16_18-before {
+  &:before { @extend .icon-manage-white_blue_16_18; }
+}
+
+// Mural.
+.icon-wall-lightblue_16_18-before {
+  &:before { @extend .icon-wall-lightblue_16_18; }
+  &:hover:before { @extend .icon-wall-blue_16_18; }
+}
+.icon-wall-white_blue_16_18-before {
+  &:before { @extend .icon-wall-white_blue_16_18; }
+}
+
+// Aula.
+.icon-subject-lightblue_16_18-before {
+  &:before { @extend .icon-subject-lightblue_16_18; }
+  &:hover:before { @extend .icon-subject-blue_16_18; }
+}
+.icon-subject-white_blue_16_18-before {
+  &:before { @extend .icon-subject-white_blue_16_18; }
+}
+.icon-subject-gray_16_18-before {
+  &:before { @extend .icon-subject-gray_16_18; }
+}
+
+// Contatos.
+.icon-contacts-lightblue_16_18-before {
+  &:before { @extend .icon-contacts-lightblue_16_18; }
+  &:hover:before { @extend .icon-contacts-blue_16_18; }
+}
+.icon-contacts-white_blue_16_18-before {
+  &:before { @extend .icon-contacts-white_blue_16_18; }
+}
+.icon-contacts-gray_16_18-before {
+  &:before { @extend .icon-contacts-gray_16_18; }
+}
+
+// Comentário.
+.icon-comment-gray_16_18-before {
+  &:before { @extend .icon-comment-gray_16_18; }
+  // TODO: Hover de ícone gray6, esperando slices.
+}
+
+// Dúvida.
+.icon-request-help-gray_16_18-before {
+  &:before { @extend .icon-request-help-gray_16_18; }
+  // TODO: Hover de ícone gray6, esperando slices.
+}
+
+// Arquivo de apoio.
+.icon-file-lightblue_16_18-before {
+  &:before { @extend .icon-file-lightblue_16_18; }
+  &:hover:before { @extend .icon-file-blue_16_18; }
+}
+.icon-file-white_blue_16_18-before {
+  &:before { @extend .icon-file-white_blue_16_18; }
+}
+
+// Membros.
+.icon-members-lightblue_16_18-before {
+  &:before { @extend .icon-members-lightblue_16_18; }
+  &:hover:before { @extend .icon-members-blue_16_18; }
+}
+.icon-members-white_blue_16_18-before {
+  &:before { @extend .icon-members-white_blue_16_18; }
+}
+
+// Regras de hover para os ícones que não usam pseudo elementos.
+a:hover,
+.filter:hover,
+.button:hover {
+  // Ambiente virtual de aprendizagem.
+  .icon-environment-gray_32_34,
+  .icon-environment-lightblue_32_34 { @extend .icon-environment-blue_32_34; }
+
+  // Curso.
+  .icon-course-gray_32_34,
+  .icon-course-lightblue_32_34 { @extend .icon-course-blue_32_34; }
+
+  // Disciplina.
+  .icon-space-gray_32_34,
+  .icon-space-lightblue_32_34 { @extend .icon-space-blue_32_34; }
+
+  // Aula.
+  .icon-subject-gray_32_34,
+  .icon-subject-lightblue_32_34 { @extend .icon-subject-blue_32_34; }
+
+  // Avise-me.
+  .icon-notification-lightblue_16_18 { @extend .icon-notification-blue_16_18; }
+
+  // Perfil 2.
+  .icon-profile-2-lightblue_16_18 { @extend .icon-profile-2-blue_16_18; }
+
+  // Comentário.
+  .icon-comment-lightblue_16_18 { @extend .icon-comment-blue_16_18; }
+
+  // Dúvida.
+  .icon-request-help-lightblue_16_18 { @extend .icon-request-help-blue_16_18; }
+
+  // Luzes.
+  // TODO: Precisa de slices.
+  .icon-lights-lightblue_16_18 { @extend .icon-lights-blue_16_18; }
+}

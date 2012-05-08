@@ -273,7 +273,7 @@
   }
 
   $(document).ready(function(){
-      $('a[rel=tooltip]').tooltip()
+      $('[rel=tooltip]').tooltip()
       // TODO: ajaxComplete?
   });
 
