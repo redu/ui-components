@@ -15,6 +15,13 @@
     <!--[if gte IE 9]>
       <link href="../public/stylesheets/ie9.css" rel="stylesheet">
     <![endif]-->
+    <!--[if gte IE 9]>
+    <style type="text/css">
+      .gradient {
+         filter: none;
+      }
+    </style>
+    <![endif]-->
   </head>
   <body>
     <div style="width: 960px; margin: 10px auto;">
@@ -31,8 +38,14 @@
       <button class="button concave-important">Sucesso</button>
       <button class="button concave-important disabled">Sucesso</button>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;button class="button concave-default"&gt;Sucesso&lt;/button&gt;
-      &lt;button class="button concave-default disabled"&gt;Sucesso&lt;/button&gt;</pre>
+      &lt;button class="button concave-important"&gt;Sucesso&lt;/button&gt;
+      &lt;button class="button concave-important disabled"&gt;Sucesso&lt;/button&gt;</pre>
+      <button class="button concave-cancel">Perigo</button>
+      <button class="button concave-cancel disabled">Perigo</button>
+      <pre style="margin-top: 10px;" class="prettyprint linenums">
+      &lt;button class="button concave-cancel"&gt;Perigo&lt;/button&gt;
+      &lt;button class="button concave-cancel disabled"&gt;Perigo&lt;/button&gt;</pre>
+
 
     </div>
   </body>

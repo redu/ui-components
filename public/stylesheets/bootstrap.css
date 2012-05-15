@@ -384,7 +384,7 @@ pre code {
 /* line 10, scss/_buttons.scss */
 .button {
   display: inline-block;
-  padding: 5px 10px 6px;
+  padding: 6px 10px 6px;
   margin-bottom: 0;
   text-align: center;
   vertical-align: middle;
@@ -427,9 +427,9 @@ pre code {
   background: linear-gradient(top, #f7f7f7 90%, #dbeff7 100%);
 }
 /* line 29, scss/_buttons.scss */
-.no-cssgradients .button:hover {
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 );
+.button .no-cssgradients {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
 }
 /* line 35, scss/_buttons.scss */
 .boxshadow .button {
@@ -443,12 +443,21 @@ pre code {
   -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
+/* line 39, scss/_buttons.scss */
+.button:hover {
+  text-decoration: none;
+  filter: none;
+}
+/* line 44, scss/_buttons.scss */
+.button.disabled {
+  cursor: default;
+}
 
-/* line 40, scss/_buttons.scss */
+/* line 48, scss/_buttons.scss */
 .button-dropdown {
   padding: 5px 5px 5px 10px;
 }
-/* line 43, scss/_buttons.scss */
+/* line 51, scss/_buttons.scss */
 .button-dropdown .button-dropdown-icon {
   text-indent: -9999px;
   display: inline-block;
@@ -457,12 +466,12 @@ pre code {
   float: left;
 }
 
-/* line 51, scss/_buttons.scss */
+/* line 59, scss/_buttons.scss */
 .concave-button {
   border: 1px solid #73c3e6;
   color: white;
 }
-/* line 54, scss/_buttons.scss */
+/* line 62, scss/_buttons.scss */
 .cssgradients .concave-button {
   background: -moz-linear-gradient(top, #73c3e6 20%, #158ac4 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #73c3e6), color-stop(100%, #158ac4));
@@ -471,21 +480,26 @@ pre code {
   background: -ms-linear-gradient(top, #73c3e6 20%, #158ac4 100%);
   background: linear-gradient(top, #73c3e6 20%, #158ac4 100%);
 }
-/* line 55, scss/_buttons.scss */
+/* line 63, scss/_buttons.scss */
 .boxshadow .concave-button {
   -webkit-box-shadow: inset 0 1px 0 #dbeff7;
   -moz-box-shadow: inset 0 1px 0 #dbeff7;
   box-shadow: inset 0 1px 0 #dbeff7;
 }
-/* line 56, scss/_buttons.scss */
+/* line 64, scss/_buttons.scss */
 .textshadow .concave-button {
   text-shadow: 0 -1px 0 #158ac4;
 }
-/* line 58, scss/_buttons.scss */
+/* line 65, scss/_buttons.scss */
+.no-cssgradients .concave-button {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+}
+/* line 71, scss/_buttons.scss */
 .concave-button:hover {
   border-color: #158ac4;
 }
-/* line 60, scss/_buttons.scss */
+/* line 73, scss/_buttons.scss */
 .cssgradients .concave-button:hover {
   background: -moz-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #73c3e6), color-stop(100%, #158ac4));
@@ -494,42 +508,46 @@ pre code {
   background: -ms-linear-gradient(top, #73c3e6 50%, #158ac4 100%);
   background: linear-gradient(top, #73c3e6 50%, #158ac4 100%);
 }
-/* line 63, scss/_buttons.scss */
-.concave-button:active {
+/* line 74, scss/_buttons.scss */
+.no-cssgradients .concave-button:hover {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
+}
+/* line 81, scss/_buttons.scss */
+.concave-button:active, .concave-button:active:hover {
   border-color: #158ac4;
   background-color: #158ac4;
+  background-image: none;
 }
-/* line 65, scss/_buttons.scss */
-.boxshadow .concave-button:active {
-  -webkit-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+/* line 83, scss/_buttons.scss */
+.boxshadow .concave-button:active, .boxshadow .concave-button:active:hover {
+  -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 69, scss/_buttons.scss */
+/* line 88, scss/_buttons.scss */
 .concave-button:hover:active {
   color: #dbeff7;
 }
-/* line 73, scss/_buttons.scss */
+/* line 92, scss/_buttons.scss */
 .concave-button.disabled, .concave-button.disabled:hover {
   color: #e6e6e6;
   background: #73c3e6 !important;
   border-color: #73c3e6;
-  cursor: default;
 }
-/* line 78, scss/_buttons.scss */
+/* line 96, scss/_buttons.scss */
 .boxshadow .concave-button.disabled, .boxshadow .concave-button.disabled:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 85, scss/_buttons.scss */
+/* line 103, scss/_buttons.scss */
 .concave-default:hover {
   border-color: #73c3e6;
   color: #158ac4;
-  text-decoration: none;
 }
-/* line 89, scss/_buttons.scss */
+/* line 106, scss/_buttons.scss */
 .cssgradients .concave-default:hover {
   background: -moz-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, #dbeff7), color-stop(100%, #f7f7f7));
@@ -538,59 +556,52 @@ pre code {
   background: -ms-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
   background: linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
 }
-/* line 92, scss/_buttons.scss */
+/* line 107, scss/_buttons.scss */
+.no-cssgradients .concave-default:hover {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZWZmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbeff7', endColorstr='#f7f7f7',GradientType=0 );
+}
+/* line 114, scss/_buttons.scss */
 .concave-default:active {
-  border-color: #4dadd6;
+  background-color: #dbeff7;
+  background-image: none;
 }
-/* line 94, scss/_buttons.scss */
-.cssgradients .concave-default:active {
-  background: -moz-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, #dbeff7), color-stop(100%, #f7f7f7));
-  background: -webkit-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
-  background: -o-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
-  background: -ms-linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
-  background: linear-gradient(top, #dbeff7 90%, #f7f7f7 100%);
-}
-/* line 95, scss/_buttons.scss */
+/* line 117, scss/_buttons.scss */
 .boxshadow .concave-default:active {
-  -webkit-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 98, scss/_buttons.scss */
+/* line 120, scss/_buttons.scss */
 .concave-default:hover:active {
-  color: #158ac4;
+  background-color: #dbeff7;
+  background-image: none;
   border-color: #158ac4;
 }
-/* line 101, scss/_buttons.scss */
-.cssgradients .concave-default:hover:active {
-  background: -moz-linear-gradient(top, #dbeff7 50%, #f7f7f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbeff7), color-stop(100%, #f7f7f7));
-  background: -webkit-linear-gradient(top, #dbeff7 50%, #f7f7f7 100%);
-  background: -o-linear-gradient(top, #dbeff7 50%, #f7f7f7 100%);
-  background: -ms-linear-gradient(top, #dbeff7 50%, #f7f7f7 100%);
-  background: linear-gradient(top, #dbeff7 50%, #f7f7f7 100%);
-}
-/* line 104, scss/_buttons.scss */
+/* line 126, scss/_buttons.scss */
 .concave-default.disabled, .concave-default.disabled:hover {
   background: #f0f0f0;
+  filter: none;
   color: #b3b3b3;
   border-color: #e6e6e6;
-  cursor: default;
 }
-/* line 109, scss/_buttons.scss */
+/* line 131, scss/_buttons.scss */
+.textshadow .concave-default.disabled, .textshadow .concave-default.disabled:hover {
+  text-shadow: 0 1px 0 white;
+}
+/* line 132, scss/_buttons.scss */
 .boxshadow .concave-default.disabled, .boxshadow .concave-default.disabled:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 113, scss/_buttons.scss */
+/* line 136, scss/_buttons.scss */
 .concave-important {
   color: white;
   border-color: #5fc080;
 }
-/* line 116, scss/_buttons.scss */
+/* line 139, scss/_buttons.scss */
 .cssgradients .concave-important {
   background: -moz-linear-gradient(top, #abe385 50%, #5fc080 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #abe385), color-stop(100%, #5fc080));
@@ -599,27 +610,32 @@ pre code {
   background: -ms-linear-gradient(top, #abe385 50%, #5fc080 100%);
   background: linear-gradient(top, #abe385 50%, #5fc080 100%);
 }
-/* line 117, scss/_buttons.scss */
-.textshadow .concave-important {
-  text-shadow: 0 -1px 0 #61a080;
-}
-/* line 118, scss/_buttons.scss */
+/* line 140, scss/_buttons.scss */
 .boxshadow .concave-important {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 120, scss/_buttons.scss */
+/* line 141, scss/_buttons.scss */
+.textshadow .concave-important {
+  text-shadow: 0 -1px 0 #61a080;
+}
+/* line 142, scss/_buttons.scss */
+.no-cssgradients .concave-important {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzVmYzA4MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#abe385', endColorstr='#5fc080',GradientType=0 );
+}
+/* line 148, scss/_buttons.scss */
 .concave-important:hover {
   border-color: #61a080;
 }
-/* line 122, scss/_buttons.scss */
+/* line 150, scss/_buttons.scss */
 .boxshadow .concave-important:hover {
   -webkit-box-shadow: inset 0 1px 0 #e1f1e1;
   -moz-box-shadow: inset 0 1px 0 #e1f1e1;
   box-shadow: inset 0 1px 0 #e1f1e1;
 }
-/* line 123, scss/_buttons.scss */
+/* line 151, scss/_buttons.scss */
 .cssgradients .concave-important:hover {
   background: -moz-linear-gradient(top, #abe385 50%, #61a080 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #abe385), color-stop(100%, #61a080));
@@ -628,39 +644,103 @@ pre code {
   background: -ms-linear-gradient(top, #abe385 50%, #61a080 100%);
   background: linear-gradient(top, #abe385 50%, #61a080 100%);
 }
-/* line 126, scss/_buttons.scss */
+/* line 152, scss/_buttons.scss */
+.no-cssgradients .concave-important:hover {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzVmYzA4MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#abe385', endColorstr='#5fc080',GradientType=0 );
+}
+/* line 159, scss/_buttons.scss */
 .concave-important:active, .concave-important:hover:active {
   background: #61a080;
   border-color: #61a080;
 }
-/* line 129, scss/_buttons.scss */
+/* line 162, scss/_buttons.scss */
 .boxshadow .concave-important:active, .boxshadow .concave-important:hover:active {
-  -webkit-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 130, scss/_buttons.scss */
-.boxshadow .concave-important:active, .boxshadow .concave-important:hover:active {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-/* line 133, scss/_buttons.scss */
+/* line 165, scss/_buttons.scss */
 .concave-important:hover:active {
   color: #e1f1e1;
 }
-/* line 137, scss/_buttons.scss */
+/* line 169, scss/_buttons.scss */
 .concave-important.disabled, .concave-important.disabled:hover {
   background: #5fc080;
   border-color: #61a080;
   color: #e6e6e6;
-  cursor: default;
 }
-/* line 142, scss/_buttons.scss */
+/* line 173, scss/_buttons.scss */
 .boxshadow .concave-important.disabled, .boxshadow .concave-important.disabled:hover {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+/* line 177, scss/_buttons.scss */
+.concave-cancel {
+  border-color: #e83b3b;
+  color: white;
+}
+/* line 180, scss/_buttons.scss */
+.no-cssgradients .concave-cancel {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4M2IzYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2MxMjcyZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e83b3b', endColorstr='#c1272d',GradientType=0 );
+}
+/* line 185, scss/_buttons.scss */
+.cssgradients .concave-cancel {
+  background: -moz-linear-gradient(top, #e83b3b 20%, #c1272d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #e83b3b), color-stop(100%, #c1272d));
+  background: -webkit-linear-gradient(top, #e83b3b 20%, #c1272d 100%);
+  background: -o-linear-gradient(top, #e83b3b 20%, #c1272d 100%);
+  background: -ms-linear-gradient(top, #e83b3b 20%, #c1272d 100%);
+  background: linear-gradient(top, #e83b3b 20%, #c1272d 100%);
+}
+/* line 186, scss/_buttons.scss */
+.boxshadow .concave-cancel {
+  -webkit-box-shadow: inset 0 1px 0 #ff6d6d;
+  -moz-box-shadow: inset 0 1px 0 #ff6d6d;
+  box-shadow: inset 0 1px 0 #ff6d6d;
+}
+/* line 187, scss/_buttons.scss */
+.textshadow .concave-cancel {
+  text-shadow: 0 -1px 0 #c1272d;
+}
+/* line 189, scss/_buttons.scss */
+.concave-cancel:hover {
+  border-color: #c1272d;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4M2IzYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2MxMjcyZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e83b3b', endColorstr='#c1272d',GradientType=0 );
+}
+/* line 191, scss/_buttons.scss */
+.cssgradients .concave-cancel:hover {
+  background: -moz-linear-gradient(top, #e83b3b 50%, #c1272d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #e83b3b), color-stop(100%, #c1272d));
+  background: -webkit-linear-gradient(top, #e83b3b 50%, #c1272d 100%);
+  background: -o-linear-gradient(top, #e83b3b 50%, #c1272d 100%);
+  background: -ms-linear-gradient(top, #e83b3b 50%, #c1272d 100%);
+  background: linear-gradient(top, #e83b3b 50%, #c1272d 100%);
+}
+/* line 196, scss/_buttons.scss */
+.concave-cancel:active, .concave-cancel:active:hover {
+  background: #c1272d;
+  border-color: #c1272d;
+}
+/* line 199, scss/_buttons.scss */
+.boxshadow .concave-cancel:active, .boxshadow .concave-cancel:active:hover {
+  -webkit-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 4px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 202, scss/_buttons.scss */
+.concave-cancel:active:hover {
+  color: #ffdcdc;
+}
+/* line 204, scss/_buttons.scss */
+.concave-cancel.disabled, .concave-cancel.disabled:hover {
+  color: #cccccc;
+  background: #ff6d6d;
+  border-color: #e83b3b;
 }
 
 /* line 13, scss/_filters.scss */
