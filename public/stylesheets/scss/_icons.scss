@@ -117,6 +117,11 @@ $icon-layout: smart;
   &:hover:after { @extend .icon-arrow-right-local-nav-blue; }
 }
 
+// Seta usada no botão de paginação.
+.icon-arrow-down-pagination-gray_16_18-before {
+  &:before { @extend .icon-arrow-down-pagination-gray_16_18; }
+}
+
 // Perfil.
 .icon-profile-lightblue_16_18-before {
   &:before { @extend .icon-profile-lightblue_16_18; }

@@ -1,0 +1,7 @@
+.pagination {
+  text-align: center;
+  font-size: 0;
+
+  > .button:before { @include pseudo-before; }
+  .button + .button { margin-left: 5px; }
+}
