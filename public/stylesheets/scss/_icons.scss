@@ -215,6 +215,36 @@ $icon-layout: smart;
   &:before { @extend .icon-members-white_blue_16_18; }
 }
 
+// Conta.
+.icon-account-lightblue_16_18-before {
+  &:before { @extend .icon-account-lightblue_16_18; }
+  &:hover:before { @extend .icon-account-blue_16_18; }
+}
+
+// Plano.
+.icon-plan-lightblue_16_18-before {
+  &:before { @extend .icon-plan-lightblue_16_18; }
+  &:hover:before { @extend .icon-plan-blue_16_18; }
+}
+
+// Biografia.
+.sub-tab .icon-biography-lightblue_16_18-before {
+  &:before { @extend .icon-biography-lightblue_16_18; }
+  &:hover:before { @extend .icon-biography-blue_16_18; }
+}
+.sub-tab .active > .icon-biography-lightblue_16_18-before {
+  &:before { @extend .icon-biography-white_blue_16_18; }
+}
+
+// Currículo.
+.sub-tab .icon-curriculum-lightblue_16_18-before {
+  &:before { @extend .icon-curriculum-lightblue_16_18; }
+  &:hover:before { @extend .icon-curriculum-blue_16_18; }
+}
+.sub-tab .active > .icon-curriculum-lightblue_16_18-before {
+  &:before { @extend .icon-curriculum-white_blue_16_18; }
+}
+
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
 .filter:hover,
