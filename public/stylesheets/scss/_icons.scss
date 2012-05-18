@@ -250,6 +250,10 @@ a:hover,
   // Luzes.
   .icon-lights-lightblue_16_18 { @extend .icon-lights-blue_16_18; }
 
+  // Busca.
+  .icon-magnifier-gray_16_18,
+  .icon-magnifier-lightblue_16_18 { @extend .icon-magnifier-blue_16_18; }
+
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
   .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }

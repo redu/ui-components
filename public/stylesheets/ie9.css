@@ -9,6 +9,9 @@
 .no-cssgradients .local-nav li.local-nav-active,
 .no-cssgradients .local-nav li.local-nav-active:hover,
 .no-cssgradients .progress,
-.no-cssgradients .progress .bar {
-   filter: none;
-}
+.no-cssgradients .progress .bar,
+.no-cssgradients input,
+.no-cssgradients textarea,
+.no-cssgradients select,
+.no-cssgradients .option-list .append-area,
+.no-cssgradients .option-list .append-area:hover { filter: none; }

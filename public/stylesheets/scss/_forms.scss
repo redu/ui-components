@@ -1,0 +1,346 @@
+@import "compass/css3/images";
+
+// Tamanho máximo do campo padrão.
+$inputMaxWidth: 280px;
+// Tamanho dos rótulos.
+$controlLabelWidth: 160px;
+// Padding vertical do campo.
+$inputVerticalPadding: 6px;
+// Padding horizontal do campo.
+$inputHorizontalPadding: 10px;
+// Tamanho do campo: <tamanho máximo> - 2px (borda horizontal) - 2 * <padding horizontal>.
+$inputWidth: $inputMaxWidth - 2 - 2 * ($inputHorizontalPadding);
+
+// Usado no formulário de busca e elemento de opções de lista.
+@mixin input-append() {
+  @extend .clearfix;
+  position: relative;
+  display: inline-block;
+
+  // Um campo texto ou área de texto.
+  .input-area { float: left; }
+
+  // Área que fica sob o input-area do lado direito.
+  .append-area {
+    position: absolute;
+    right: 0;
+
+    // CSS3.
+    .borderradius & { @include border-radius(0 3px 3px 0); }
+    .cssgradients &,
+    .cssgradients &:hover { @include filter-gradient-vertical($white, $gray2); }
+    .no-cssgradients &,
+    .no-cssgradients &:hover {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 );
+    }
+  }
+
+  // Estados.
+  &:hover .append-area,
+  &:hover .input-area { border-color: $blue2; }
+
+}
+
+form {
+  // Faz todos os formulários terem espaço abaixo.
+  margin: 0 0 $baseLineHeight;
+
+  // CSS3.
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+// Formulário de busca.
+.form-search {
+  @include input-append;
+
+  .input-area {
+    // Calcula o padding direito necessário.
+    $searchButtonWidth: 38px;
+    $formSearchInputRightPadding: $searchButtonWidth +  $inputHorizontalPadding;
+    padding-right: $formSearchInputRightPadding;
+    width: 180px - $formSearchInputRightPadding;
+  }
+}
+
+fieldset {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+// Seta a fonte dos formulários.
+label,
+input,
+button,
+select,
+textarea { @include font-shorthand; } // Seta o tamanho, peso e altura de linha aqui.
+input,
+button,
+select,
+textarea { @include font-family-sans-serif; } // E somente seta a família da fonte aqui para aqueles que precisam (note que o label não está presente).
+
+// Identifica os controles por seus rótulos.
+label {
+  display: block;
+  margin-bottom: 7px;
+  color: $gray4;
+}
+
+// Campos, áreas de textos e selecionadores.
+input,
+textarea,
+select {
+  display: inline-block;
+  width: $inputWidth;
+  height: $baseLineHeight;
+  padding: $inputVerticalPadding $inputHorizontalPadding;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $gray6;
+  border: 1px solid $gray4;
+
+  // CSS3.
+  $transition: border linear .2s, box-shadow linear .2s;
+  @include transition($transition);
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+  .borderradius & { @include border-radius(3px); }
+  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
+  .cssgradients & { @include background-image(linear-gradient(bottom, white, mix(white, $gray3, 50%) 90%, $gray3)); }
+  .no-cssgradients & {
+    // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f2f2f2+10,ffffff+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 );
+  }
+
+  .input-success & { border-color: $green2; }
+  .input-error & { border-color: $red2; }
+
+  // Estados.
+  &:hover {
+    border-color: $blue2;
+    .input-success & { border-color: $green3; }
+    .input-error & { border-color: $red4; }
+  }
+  &:focus {
+    color: $black;
+    background: $white;
+    border-color: $blue2;
+    outline: 0;
+
+    .input-success & {
+      border-color: $green2;
+      .boxshadow & {
+        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $green2;
+        @include box-shadow($boxShadow);
+      }
+    }
+    .input-error & {
+      border-color: $red2;
+      .boxshadow & {
+        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $red2;
+        @include box-shadow($boxShadow);
+      }
+    }
+
+    .textshadow & { text-shadow: none; }
+    .boxshadow & {
+      $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $blue2;
+      @include box-shadow($boxShadow);
+    }
+  }
+}
+
+// Estados de desativados e somente leitura.
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background: $gray1;
+  cursor: not-allowed;
+
+  // CSS3.
+  .boxshadow & { @include box-shadow(none); }
+
+  // Estados.
+  &:hover { border-color: $gray4; }
+}
+
+// Cor de texto dos placeholders.
+input::-webkit-input-placeholder { color: $gray4; }
+input:-moz-placeholder { color: $gray4; }
+textarea::-webkit-input-placeholder { color: $gray4; }
+textarea:-moz-placeholder { color: $gray4; }
+
+.control-group {
+  margin-bottom: 20px;
+  .form-horizontal & { @include clearfix; }
+}
+
+.control-label {
+  &.input-focused { color: $blue2; }
+
+  .input-success & {
+    color: $green3;
+    &.input-focused { color: $green4; }
+  }
+  .input-error & {
+    color: $red2;
+    &.input-focused { color: $red5; }
+  }
+
+  .form-horizontal & {
+    float: left;
+    padding-top: 7px;
+    text-align: right;
+    width: $controlLabelWidth;
+  }
+}
+
+.controls {
+  margin-left: $controlLabelWidth + 20px;
+  @include clearfix;
+
+  > .radio:first-child,
+  > .checkbox:first-child { padding-top: 5px; }
+}
+
+.radio,
+.checkbox {
+  min-height: $baseLineHeight;
+  padding-left: $baseLineHeight;
+  width: $inputMaxWidth - $baseLineHeight;
+  margin-bottom: 2px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -($baseLineHeight);
+}
+
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  line-height: normal;
+  margin: 3px 0;
+  padding: 0;
+  width: auto;
+  color: $gray6;
+  *margin-top: 0; /* IE7. */
+  border: 0 \9; /* IE9 e abaixo. */
+
+  // CSS3.
+  .borderradius & { @include border-radius(0); }
+}
+
+// Contador de caracteres restantes.
+.character-count {
+  font-size: 11px;
+  margin: 1px 0 0 11px;
+  color: $gray5;
+  position: absolute;
+
+  .option-list & { bottom: -20px; }
+}
+
+// Faz a altura da área de texto se comportar direito.
+textarea {
+  height: auto;
+  resize: none;
+}
+
+// Seta a altura dos controles do selecionador e arquivo para ficar iguais ao dos campos de texto.
+select,
+input[type="file"] {
+  height: $baseLineHeight + 2 + 2 * ($inputVerticalPadding);
+  width: $inputWidth + 2 + 2 * ($inputHorizontalPadding);
+}
+
+input[type="file"] {
+  background: transparent;
+  width: auto;
+  border: none;
+  .boxshadow & { @include box-shadow(none); }
+}
+
+select {
+  // Selecionadores para data de aniversário.
+  .select-birthdate & {
+    width: 115px;
+    &:first-child { width: 70px; }
+    &:last-child { width: 85px; }
+  }
+}
+
+// Texto preto quando o radio ou checkbox forem selecionados.
+.checkbox-checked { color: $black; }
+
+// Tamanho alternativo para os campos.
+.input-big {
+  height: 28px;
+  font-size: 16px;
+}
+
+// Tamanhos variados para os campos.
+.input-3-col { width: $inputWidth - 2 * 60px; } // 160xp.
+.input-4-col { width: $inputWidth - 1 * 60px; } // 220xp.
+// O tamanho de 5 colunas (280px) é o padrão.
+.input-6-col { width: $inputWidth + 1 * 60px; } // 340xp.
+.input-7-col { width: $inputWidth + 2 * 60px; } // 400xp.
+.input-8-col { width: $inputWidth + 3 * 60px; } // 460xp.
+.input-9-col { width: $inputWidth + 4 * 60px; } // 520xp.
+
+// Elemento de lista de opções.
+.option-list {
+  @include input-append;
+  margin-left: 0;
+
+  .form-horizontal & { margin-left: 20px; }
+
+  .input-area {
+    // Calcula o padding direito necessário.
+    $appendAreaWidth: 28px;
+    $controlListTextareaRightPadding: $appendAreaWidth +  $inputHorizontalPadding;
+    padding-right: $controlListTextareaRightPadding;
+    width: 280px - $controlListTextareaRightPadding;
+  }
+
+  .append-area {
+    padding: 6px 7px 6px 6px;
+    border: 1px solid $gray4;
+    height: 107px;
+  }
+
+  input[type="checkbox"] { margin: 0; }
+}
+
+.option-list-checked {
+  .input-area {
+    .boxshadow & {
+      $rightSideWidth: 28px;
+      $boxShadow: -($rightSideWidth) 0 0 $white inset, 0 1px 0 $white inset;
+      @include box-shadow($boxShadow)
+    }
+    &:focus {
+      .boxshadow & {
+        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $blue2;
+      @include box-shadow($boxShadow);
+      }
+    }
+  }
+
+  .append-area {
+    background-color: $green2 !important;
+    background-image: none !important;
+
+    .no-cssgradients &,
+    .no-cssgradients &:hover { filter: none; }
+  }
+}
