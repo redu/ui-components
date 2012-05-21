@@ -98,7 +98,7 @@
         }, options)
 
       return this.each(function() {
-        $(this).find('input[type="text"], input[type="radio"], input[type="checkbox"], input[type="file"], textarea, select').each(function() {
+        $(this).find('input[type="text"], input[type="file"], textarea, select').each(function() {
           methods.focusLabel($(this), settings.controlLabelClass, settings.inputFocusedClass, settings.controlGroupClass)
         })
 
