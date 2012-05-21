@@ -215,6 +215,7 @@ textarea:-moz-placeholder { color: $gray4; }
   padding-left: $baseLineHeight;
   width: $inputMaxWidth - $baseLineHeight;
   margin-bottom: 2px;
+  color: $gray6;
 }
 
 .radio input[type="radio"],
@@ -233,7 +234,6 @@ input[type="radio"] {
   margin: 3px 0;
   padding: 0;
   width: auto;
-  color: $gray6;
   *margin-top: 0; /* IE7. */
   border: 0 \9; /* IE9 e abaixo. */
 
