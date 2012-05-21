@@ -17,6 +17,15 @@ $localNavBalloonTrinagleHeight: 8px;
     padding: 7px 0 7px 7px;
     cursor: pointer;
     position: relative;
+    font-size: 0;
+    height: 18px;
+
+    a {
+      font-size: $baseFontSize;
+      margin-right: 10px;
+    }
+
+    span + span { margin-left: 3px; }
 
     &:before { @include pseudo-before; }
 
