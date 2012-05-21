@@ -82,9 +82,8 @@
       font-size: 11px;
       line-height: 18px;
       color: $gray5;
-      font-weight: bold;
 
-      &.filter-checked { color: $gray6; }
+      &.filter-checked > label { color: $gray6; }
 
       .textshadow & { text-shadow: $verticalWhiteShadow; }
     }
@@ -94,12 +93,15 @@
 
     label:before { @include pseudo-before; }
 
-    .filter-level-3 li { font-weight: normal; }
-
     .filter-level-3 > li:before { @include pseudo-before(0); }
 
     .filter-level-2 > li,
     .filter-level-3 > li { margin-left: 0; }
+
+    .filter-level-2 > li > label,
+    .filter-all > label { font-weight: bold; }
+
+    .filter-all.filter-checked > label { color: $gray5; }
   }
 
   .filter-title { float: left; }
