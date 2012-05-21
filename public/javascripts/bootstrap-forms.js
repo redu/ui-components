@@ -165,4 +165,14 @@ $(function() {
   $("form:not(.form-search)").reduForm()
   $(".form-search").reduForm("search")
   $(".option-list").reduForm("optionList")
+
+  // Chamada para o placeholder_polyfill.
+  if ('placeholder' in $('<input>')[0]) {
+    // don't run the polyfill when the browser has native support
+    return;
+  }
+  $('input[placeholder], textarea[placeholder]').placeHolder({
+    visibleToScreenreaders : true, // set to false if the content of the placeholder is useless or doubling the content of the label
+    hideOnFocus : false // set to false if you want to mimic the behavior of mobile safari and chrome (remove label when typeed instead of onfocus)
+  });
 })

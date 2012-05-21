@@ -85,6 +85,7 @@ textarea { @include font-family-sans-serif; } // E somente seta a família da fo
 label {
   display: block;
   color: $gray4;
+  position: relative;
 
   .form-horizontal & { margin-bottom: 7px; }
 }
@@ -175,6 +176,25 @@ input::-webkit-input-placeholder { color: $gray4; }
 input:-moz-placeholder { color: $gray4; }
 textarea::-webkit-input-placeholder { color: $gray4; }
 textarea:-moz-placeholder { color: $gray4; }
+
+.placeholder {
+  position: absolute;
+  color: $gray4;
+  z-index:1;
+  padding: 8px 10px;
+
+  .form-horizontal & { left: 180px !important; }
+}
+
+.placeholder-hide-exept-screenreader {
+  padding: 0;
+  border: 0 ;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.placeholder-hide { display: none; }
 
 .control-group {
   margin-bottom: 20px;
