@@ -110,7 +110,10 @@
     background-color: $blue3;
     color: $white;
 
-    &:hover { color: $white; }
+    &:hover {
+      color: $white;
+      border-color: $blue4;
+    }
 
     .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
   }
