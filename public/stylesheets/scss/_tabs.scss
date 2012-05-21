@@ -21,19 +21,23 @@
     border: 1px solid $gray4;
 
     .borderradius & { @include border-radius(5px 5px 0 0); }
+
     .cssgradients & { @include background-image(linear-gradient(bottom, $gray3, mix($gray3, $gray1, 50%) 20%, $gray1)); }
+
     .no-cssgradients & {
       // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 );
     }
+
     .boxshadow & { @include box-shadow(0 1px 0 $white inset); }
 
     &:hover {
       border-color: $blue2;
-      z-index: 2;
+      z-index: 2; // Para a aba ficar na frente.
 
       .cssgradients & { @include background-image(linear-gradient(bottom, $blue1, $gray1)); }
+
       .no-cssgradients & {
         // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,dbeff7+100;Custom
         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -47,6 +51,7 @@
       width: 131px;
 
       &:hover { text-decoration: none; }
+
       &:before { @include pseudo-before; }
 
       .textshadow & { text-shadow: $verticalWhiteShadow; }
@@ -78,36 +83,9 @@
   }
 }
 
-.tab-content {
-  overflow: auto;
-  padding-top: 9px;
-}
-
-.tab-pane {
-  display: none;
-
-  &.active { display: block; }
-}
-
 .sub-tab {
-  margin: 0 auto;
-  width: 206px;
-  list-style: none;
-  @extend .clearfix;
-
-  li { float: left; }
-  li + li { margin-left: 5px; }
-}
-
-.sub-tab-content {
-  margin-top: 19px;
-  border-top: 1px solid $gray4;
-  padding-top: 20px;
-
-  .boxshadow & {
-    $boxShadow: 0 1px 0 $white inset, 0 9px 9px -9px $gray3 inset;
-    @include box-shadow($boxShadow);
-  }
+  text-align: center;
+  font-size: 0;
 }
 
 .button-sub-tab {
@@ -115,16 +93,19 @@
   border: 1px solid $gray3;
   padding: 2px 15px 2px 9px;
   background-color: $gray1;
-  float: left;
+  font-size: $baseFontSize;
+
+  & + & { margin-left: 5px; }
 
   &:before { @include pseudo-before(6px); }
+
   &:hover {
     text-decoration: none;
     background-color: $blue1;
     border-color: $blue2;
   }
 
-  .active > & {
+  &.active {
     border-color: $blue3;
     background-color: $blue3;
     color: $white;
@@ -135,5 +116,17 @@
   }
 
   .textshadow & { text-shadow: $verticalWhiteShadow; }
+
   .borderradius & { @include border-radius(11px); }
+}
+
+hr {
+  margin: 9px 0;
+  border-width: 1px 0 0;
+  border-top: 1px solid $gray3;
+
+  .boxshadow & {
+    $boxShadow: 0 1px 0 $white inset, 0 0 9px $gray4;
+    @include box-shadow($boxShadow);
+  }
 }

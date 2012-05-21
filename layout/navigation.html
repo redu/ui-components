@@ -12,7 +12,6 @@
     <script src="../public/javascripts/bootstrap-filter.js"></script>
     <script src="../public/javascripts/bootstrap-local-nav.js"></script>
     <script src="../public/javascripts/bootstrap-tooltip.js"></script>
-    <script src="../public/javascripts/bootstrap-tab.js"></script>
     <script src="../public/javascripts/modernizr.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="../public/javascripts/selectivizr.js"></script>
@@ -24,6 +23,7 @@
   <body onload="prettyPrint()">
     <div style="width: 960px; margin: 10px auto;">
       <h1>Navegaçao</h1>
+      <hr />
       <h2>Paginação</h2>
       <div class="pagination" style="margin-bottom: 10px;">
         <a href="#" class="button concave-default icon-arrow-down-pagination-gray_16_18-before">Mostrar mais...</a>
@@ -37,47 +37,23 @@
       <h2>Tabs e sub-tabs</h2>
       <ul class="nav-tabs">
         <li class="active">
-          <a href="#tab1" data-toggle="tab" class="icon-profile-lightblue_16_18-before">Perfil</a>
+          <a href="#tab1" class="icon-profile-lightblue_16_18-before">Perfil</a>
           <span class="legend">Subnível da aba</span>
         </li>
         <li>
-          <a href="#tab2" data-toggle="tab" class="icon-account-lightblue_16_18-before">Conta</a>
+          <a href="#tab2" class="icon-account-lightblue_16_18-before">Conta</a>
           <span class="legend">Subnível da aba</span>
         </li>
         <li>
-          <a href="#tab3" data-toggle="tab" class="icon-plan-lightblue_16_18-before">Planos</a>
+          <a href="#tab3" class="icon-plan-lightblue_16_18-before">Planos</a>
           <span class="legend">Subnível da aba</span>
         </li>
       </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id="tab1">
-
-          <ul class="sub-tab">
-            <li class="active">
-              <a href="#tab1-1" data-toggle="tab" class="button-sub-tab active icon-biography-lightblue_16_18-before">Biografia</a>
-            </li>
-            <li>
-              <a href="#tab1-2" data-toggle="tab" class="button-sub-tab icon-curriculum-lightblue_16_18-before">Currículo</a>
-            </li>
-          </ul>
-
-          <div class="sub-tab-content">
-            <div class="tab-pane active" id="tab1-1">
-              <p>Howdy, I'm in Section 1.1.</p>
-            </div>
-            <div class="tab-pane" id="tab1-2">
-              <p>Howdy, I'm in Section 1.2.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="tab-pane" id="tab2">
-          <p>Howdy, I'm in Section 2.</p>
-        </div>
-        <div class="tab-pane" id="tab3">
-          <p>Howdy, I'm in Section 3.</p>
-        </div>
+      <div class="sub-tab">
+        <a href="#tab1-1" class="active button-sub-tab icon-biography-white_blue_16_18-before">Biografia</a>
+        <a href="#tab1-2" class="button-sub-tab icon-curriculum-lightblue_16_18-before">Currículo</a>
       </div>
+      <hr />
       <h2>Navegação local</h2>
       <h3>Menu da visão geral</h3>
       <div class="local-nav">

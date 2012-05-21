@@ -233,20 +233,20 @@ $icon-layout: smart;
 }
 
 // Biografia.
-.sub-tab .icon-biography-lightblue_16_18-before {
+.icon-biography-lightblue_16_18-before {
   &:before { @extend .icon-biography-lightblue_16_18; }
   &:hover:before { @extend .icon-biography-blue_16_18; }
 }
-.sub-tab .active > .icon-biography-lightblue_16_18-before {
+.icon-biography-white_blue_16_18-before {
   &:before { @extend .icon-biography-white_blue_16_18; }
 }
 
 // Currículo.
-.sub-tab .icon-curriculum-lightblue_16_18-before {
+.icon-curriculum-lightblue_16_18-before {
   &:before { @extend .icon-curriculum-lightblue_16_18; }
   &:hover:before { @extend .icon-curriculum-blue_16_18; }
 }
-.sub-tab .active > .icon-curriculum-lightblue_16_18-before {
+.icon-curriculum-white_blue_16_18-before {
   &:before { @extend .icon-curriculum-white_blue_16_18; }
 }
 
