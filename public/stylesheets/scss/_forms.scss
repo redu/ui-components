@@ -84,8 +84,9 @@ textarea { @include font-family-sans-serif; } // E somente seta a família da fo
 // Identifica os controles por seus rótulos.
 label {
   display: block;
-  margin-bottom: 7px;
   color: $gray4;
+
+  .form-horizontal & { margin-bottom: 7px; }
 }
 
 // Campos, áreas de textos e selecionadores.
