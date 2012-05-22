@@ -14,28 +14,154 @@ p {
   line-height: $baseLineHeight;
 }
 
+h1, h2, h3, h4,h5, h6, h7 {
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
+
+h7 { font-family: $museoSlab; }
+
+h2, h3, h4, h5, h6 { font-weight: 500; }
+
+h1, h6 { font-weight: 100; }
+
+h1 {
+  font-size: 60px;
+  letter-spacing: -3px;
+  line-height: 56px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -2px;
+  line-height: 34px;
+  }
+
+h3 {
+  font-size:21px;
+  letter-spacing: -1px;
+  line-height: 21px;
+}
+
+h4 {
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 18px;
+}
+
+h5 {
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 18px;
+}
+
+h6 {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+h7 {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+h3 strong, h4 strong, h5 strong {
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 9px;
+}
 
 
 // LISTAS.
-// -----
+
+// INLINE LABELS
+
+.inl-label {
+  font-size: 11px;
+  line-height: 11px;
+  font-family: $baseFontFamily;
+  padding: 3px 5px 2px 5px;
+  .borderradius & { @include border-radius($radius: 3px); }
+}
+
+.news {
+  @extend .inl-label;
+  background: $gray3;
+  color: $blue3;
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+.notify-me {
+  @extend .inl-label;
+  color: $white;
+  background: $red2;
+  .textshadow & { text-shadow: 0 -1px 0 $red5; }
+}
+
+.online {
+  @extend .inl-label;
+  color: $green4;
+  background: $green1;
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+.doubts {
+  @extend .inl-label;
+  background: $orange3;
+  color: $white;
+  .textshadow & { text-shadow: 0 -1px 0 $orange5; }
+}
 
 // Listas ordenadas e não ordenadas.
 ul, ol {
   padding: 0;
   margin: 0 0 $baseLineHeight / 2 25px;
 }
+
 ul ul,
 ul ol,
 ol ol,
 ol ul { margin-bottom: 0; }
+
 ul { list-style: disc; }
+
 ol { list-style: decimal; }
+
 li { line-height: $baseLineHeight; }
 
+dt { font-weight: bold; }
 
+dl dd { margin-left: 18px; }
+
+li, dd {
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
 
 // MISC
 // ----
 
 // Ênfases.
 strong { font-weight: bold; }
+blockquote, q, .legend {
+  font-family: $baseFontFamily;
+  color: $gray5;
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+.legend, .link-secundary {
+  font-size: 11px;
+  line-height: 11px;
+}
+
+code {
+  color: $green4;
+  font-family: lucida console, Arial, sans-serif;
+}
+
+.link-name {
+  font-weight: bold;
+}
