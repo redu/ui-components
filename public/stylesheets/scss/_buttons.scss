@@ -60,7 +60,7 @@
   }
 }
 
-.primary {
+.button-primary {
   @extend .button;
   background-color: $blue2;
   border: 1px solid $blue2;
@@ -104,7 +104,7 @@
   }
 }
 
-.default {
+.button-default {
   @extend .button;
   &:hover {
     background-color: $blue1;
@@ -141,7 +141,7 @@
   }
 }
 
-.important {
+.button-sucess {
   @extend .button;
   background-color: $green2;
   color: white;
@@ -185,7 +185,7 @@
   }
 }
 
-.cancel {
+.button-danger {
     @extend .button;
     background-color: $red3;
     border-color: $red3;
@@ -223,5 +223,6 @@
       border-color: $red3;
       .boxshadow & { @include box-shadow(none); }
     }
-
 }
+
+a.button-sucess, a.button-danger, a.button-primary { color: white; }

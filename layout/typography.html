@@ -17,8 +17,10 @@
     <![endif]-->
   </head>
   <body onload="prettyPrint()">
-    <div style="margin-left: 100px; width: 800px;"><h1>Tipografia</h1>
+     <div style="width: 960px; margin: 0 auto;">
+      <h1>Tipografia</h1>
       <div>
+        <h5>Cabeçalhos</h5>
         <h1>Head 1</h1>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
         &lt;h1&gt;Head 1&lt;/h1&gt;</pre>
@@ -85,7 +87,6 @@
       </div>
       <div>
         <h5>Inline labels</h5>
-        <span class="inl-label">
           <span class="label-news">
             NOVIDADE
           </span>
@@ -114,49 +115,55 @@
           &lt;span class="label-doubts"&gt;
             DÚVIDAS
           &lt;/span&gt;</pre>
-        </span>
       </div>
       <div>
+        <h5> Link's Style</h5>
         <a href="http://www.redu.com.br">www.redu.com.br</a>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
         &lt;a href="http://www.redu.com.br"&gt;www.redu.com.br&lt;/a&gt;</pre>
+        <a href="#" class="link-name">Hyperlink de nome</a>
+        <pre style="margin-top: 10px;" class="prettyprint linenums">
+        &lt;a class="link-name"&gt;Hyperlink de nome&lt;/a&gt;</pre>
+        <a href="#" class="link-secundary">Hyperlink secundário, ação</a>
+        <pre style="margin-top: 10px;" class="prettyprint linenums">
+        &lt;a class="link-secundary"&gt;Hyperlink secundário&lt;/a&gt;</pre>
       </div>
       <div>
-        <p>Exemplo de um parágrafo de texto. A tipografia da interface utiliza uma altura de linha mínima de 18px (exceto em legendas e hyperlinks secundários dentro do menu), combinando com a altura dos ícones.<strong> Elemento em negrito – strong – serve para indicar importância adicional à sentença</strong>. <em>Ênfase é utilizada para reforçar uma idéia.</em></p>
+        <h5> Exemplo de parágrafo </h5>
+        <p>Exemplo de um parágrafo de texto. A tipografia da interface utiliza uma altura de linha mínima de 18px (exceto em legendas e hyperlinks secundários dentro do menu), combinando com a altura dos ícones.<strong>Elemento em negrito – strong – serve para indicar importância adicional à sentença</strong>.<em>Ênfase é utilizada para reforçar uma idéia.</em></p>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
-        &lt;p&gt;Exemplo de um parágrafo de texto. A tipografia da interface utiliza uma altura de linha mínima de 18px (exceto em legendas e hyperlinks secundários dentro do menu), combinando com a altura dos ícones.&lt;strong&gt; Elemento em negrito – strong – serve para indicar importância adicional à sentença&lt;/strong&gt;. &lt;em&gt;Ênfase é utilizada para reforçar uma idéia.&lt;/em&gt;&lt;/p&gt;</pre>
+        &lt;p&gt;Exemplo de um parágrafo de texto. A tipografia da interface utiliza uma altura de linha mínima de 18px (exceto em legendas e hyperlinks secundários dentro do menu), combinando com a altura dos ícones.&lt;strong&gt;Elemento em negrito – strong – serve para indicar importância adicional à sentença&lt;/strong&gt;.&lt;em&gt;Ênfase é utilizada para reforçar uma idéia.&lt;/em&gt;&lt;/p&gt;</pre>
       </div>
-      <div>Blockquote
+      <div>
+        <h5>Quotes</h5>
         <blockquote>— Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha.
         </blockquote>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
         &lt;blockquote&gt;— Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha. — Nome precedido por traço eme. Para quote de mais de uma linha.&lt;/blockquote&gt;</pre>
-      </div>
-        <q> — Nome precedido por traço eme. Para quote de uma linha.</q>
+        <q>— Nome precedido por traço eme. Para quote de uma linha.</q>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
-        &lt;q&gt; — Nome precedido por traço eme. Para quote de mais de uma linha.&lt;/q&gt;</pre>
+        &lt;q&gt;— Nome precedido por traço eme. Para quote de mais de uma linha.&lt;/q&gt;</pre>
       </div>
-      <div class="legend">
-      200 caracteres restantes (legenda)
-      <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;div class="legend"&gt; 200 caracteres restantes (legenda) &lt;/div&gt;</pre>
+      <div>
+        <h5>"Alone"</h5>
+        <span class="legend">
+          200 caracteres restantes (legenda)</span>
+        <pre style="margin-top: 10px;" class="prettyprint linenums">
+        &lt;div class="legend"&gt;200 caracteres restantes (legenda)&lt;/div&gt;</pre>
+        <code>@code {lucida console(reg);font-h:13px;line-h:18px;l-s:0;}</code>
+        <pre style="margin-top: 10px;" class="prettyprint linenums">
+      &lt;code&gt;@code {lucida console(reg);font-h:13px;line-h:18px;l-s:0;}&lt;/code&gt;</pre>
       </div>
-      <code>@code {lucida console(reg); font-h:13px; line-h:18px; l-s:0;}</code>
-      <pre style="margin-top: 10px;" class="prettyprint linenums">
-        &lt;code&gt; @code {lucida console(reg); font-h:13px; line-h:18px; l-s:0;} &lt;/code&gt;</pre>
-      <h3><strong>Hello :D I'm bold Haha</strong></h3>
-      <h4><strong>Me too :D</strong></h4>
-      <h5><strong>Me too</strong></h5>
-      <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;h3&gt;&lt;strong&gt;Hello :D I'm bold Haha&lt;/strong&gt;&lt;/h3&gt;
-      &lt;h4&gt;&lt;strong&gt;Me too :D &lt;/strong&gt;&lt;/h4&gt;
-      &lt;h5&gt;&lt;strong&gt;Me too &lt;/strong&gt;&lt;/h5&gt;</pre>
-      <a href="#" class="link-name">Hyperlink de nome</a>
-      <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;a class="link-name"&gt;Hyperlink de nome&lt;/a&gt;</pre>
-     <a href="#" class="link-secundary">Hyperlink secundário, ação </a>
-     <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;a class="link-secundary"&gt;Hyperlink secundário &lt;/a&gt;</pre>
+      <div>
+        <h5>Bold</h5>
+        <h3><strong>Hello :D I'm bold Haha</strong></h3>
+        <h4><strong>Me too :D</strong></h4>
+        <h5><strong>Me too</strong></h5>
+        <pre style="margin-top: 10px;" class="prettyprint linenums">
+        &lt;h3&gt;&lt;strong&gt;Hello :D I'm bold Haha&lt;/strong&gt;&lt;/h3&gt;
+        &lt;h4&gt;&lt;strong&gt;Me too :D&lt;/strong&gt;&lt;/h4&gt;
+        &lt;h5&gt;&lt;strong&gt;Me too&lt;/strong&gt;&lt;/h5&gt;</pre>
+      </div>
     </div>
   </body>
 </html>
