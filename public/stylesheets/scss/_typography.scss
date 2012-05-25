@@ -14,8 +14,8 @@ p {
   line-height: $baseLineHeight;
 }
 
-h1, h2, h3, h4,h5, h6, h7 {
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
+h1, h2, h3, h4, h5, h6, h7 {
+  margin-top:0;
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
@@ -58,7 +58,7 @@ h5 {
 
 h6 {
   font-size: 16px;
-  letter-spacing: 0;
+  letter-spacing: -1px;
   line-height: 18px;
 }
 
@@ -72,6 +72,7 @@ h3 strong, h4 strong, h5 strong {
   font-weight: 700;
   margin-top: 18px;
   margin-bottom: 9px;
+  display: inline-block;
 }
 
 
@@ -92,7 +93,6 @@ h3 strong, h4 strong, h5 strong {
   @extend .inl-label;
   background: $gray3;
   color: $blue3;
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
 }
 
 .label-notify-me {
@@ -106,7 +106,6 @@ h3 strong, h4 strong, h5 strong {
   @extend .inl-label;
   color: $green4;
   background: $green1;
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
 }
 
 .label-doubts {
@@ -137,22 +136,18 @@ dt { font-weight: bold; }
 
 dl dd { margin-left: 18px; }
 
-li, dd {
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
-}
-
 // MISC
 // ----
 
 // Ênfases.
 strong { font-weight: bold; }
+
 blockquote, q, .legend {
   font-family: $baseFontFamily;
   color: $gray5;
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
 }
 
-.legend, .link-secundary {
+.legend, .link-secondary {
   font-size: 11px;
   line-height: 11px;
 }

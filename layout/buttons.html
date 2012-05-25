@@ -8,20 +8,8 @@
     <link href="../public/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
     <script src="../public/javascripts/google-code-prettify/prettify.js"></script>
     <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../public/javascripts/bootstrap-button.js"></script>
     <script src="../public/javascripts/modernizr.js"></script>
-    <script type="text/javascript">
-      function desabilita(){
-        var href = document.getElementsByClassName("disabled");
-        var quantos = href.length;
-        for(var i =0; i < quantos; i++){
-        document.getElementsByClassName("disabled")[i].disabled = true;
-        document.getElementsByClassName("disabled")[i].removeAttribute("href");
-        };
-      return true;
-      } 
-    </script>
-
-
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="../public/javascripts/selectivizr.js"></script>
     <![endif]-->
@@ -36,7 +24,7 @@
     </style>
     <![endif]-->
   </head>
-  <body onload="desabilita();">
+  <body>
     <div style="width: 960px; margin: 0 auto;">
       <h1>Botões</h1>
       <h5>Botão Primário</h5>
@@ -51,12 +39,12 @@
       <pre style="margin-top: 10px;" class="prettyprint linenums">
       &lt;button class="button-default"&gt;Padrão&lt;/button&gt;
       &lt;button class="button-default disabled"&gt;Padrão&lt;/button&gt;</pre>
-      <h5>Botão Sucesso</h5>
-      <button class="button-sucess">Sucesso</button>
-      <button class="button-sucess disabled">Sucesso</button>
+      <h5>Botão successo</h5>
+      <button class="button-success">successo</button>
+      <button class="button-success disabled">successo</button>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;button class="button-sucess"&gt;Sucesso&lt;/button&gt;
-      &lt;button class="button-sucess disabled"&gt;Sucesso&lt;/button&gt;</pre>
+      &lt;button class="button-success"&gt;successo&lt;/button&gt;
+      &lt;button class="button-success disabled"&gt;successo&lt;/button&gt;</pre>
       <h5>Botão Perigo</h5>
       <button class="button-danger">Perigo</button>
       <button class="button-danger disabled">Perigo</button>
@@ -69,30 +57,30 @@
       <pre style="margin-top: 10px;" class="prettyprint linenums">
       &lt;button class="button-primary big"&gt;Primário&lt;/button&gt;
       &lt;button class="button-primary disabled big"&gt;Primário&lt;/button&gt;</pre>
-      <h5>Botão Sucesso Grande</h5>
-      <button class="button-sucess big">Sucesso</button>
-      <button class="button-sucess t disabled big">Sucesso</button>
+      <h5>Botão successo Grande</h5>
+      <button class="button-success big">successo</button>
+      <button class="button-success t disabled big">successo</button>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
-      &lt;button class="button-sucess big"&gt;Sucesso&lt;/button&gt;
-      &lt;button class="button-sucess disabled big"&gt;Sucesso&lt;/button&gt;</pre>
+      &lt;button class="button-success big"&gt;successo&lt;/button&gt;
+      &lt;button class="button-success disabled big"&gt;successo&lt;/button&gt;</pre>
       <h5>Links em forma de botão</h5>
       <a href="#" class="button-primary">Hi! I'm a link-button</a>
       <a href="#" class="button button-default">Hi! I'm a link-button</a>
-      <a href="#" class="button button-sucess">Hi! I'm a link-button</a>
+      <a href="#" class="button button-success">Hi! I'm a link-button</a>
       <a href="#" class="button button-danger">Hi! I'm a link-button</a>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
       &lt;a href="#" class="button button-primary"&mt;Hi! I'm a link-button&lt;/a&gt;
       &lt;a href="#" class="button button-default"&mt;Hi! I'm a link-button&lt;/a&gt;
-      &lt;a href="#" class="button-sucess"&mt;Hi! I'm a link-button&lt;/a&gt;
+      &lt;a href="#" class="button-success"&mt;Hi! I'm a link-button&lt;/a&gt;
       &lt;a href="#" class="button-danger"&mt;Hi! I'm a link-button&lt;/a&gt;</pre>
       <a href="http://www.facebook.com" class="button-primary disabled">Hi! I'm a disabled link-button</a>
       <a href="http://www.facebook.com" class="button button-default disabled">Hi! I'm a disabled link-button</a>
-      <a href="http://www.facebook.com" class="button button-sucess disabled">Hi! I'm a disabled link-button</a>
+      <a href="http://www.facebook.com" class="button button-success disabled">Hi! I'm a disabled link-button</a>
       <a href="http://www.facebook.com" class="button button-danger disabled">Hi! I'm a disabled link-button</a>
       <pre style="margin-top: 10px;" class="prettyprint linenums">
       &lt;a href="#" class="button button-primary disabled"&mt;Hi! I'm a disabled link-button&lt;/a&gt;
       &lt;a href="#" class="button button-default disabled"&mt;Hi! I'm a disabled link-button&lt;/a&gt;
-      &lt;a href="#" class="button-sucess disabled"&mt;Hi! I'm disabled alink-button&lt;/a&gt;
+      &lt;a href="#" class="button-success disabled"&mt;Hi! I'm disabled alink-button&lt;/a&gt;
       &lt;a href="#" class="button-danger disabled "&mt;Hi! I'm a disabled link-button&lt;/a&gt;</pre>
     </div>
   </body>
