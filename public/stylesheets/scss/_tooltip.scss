@@ -25,6 +25,8 @@ $backgroundAndArrowColor: rgba(25, 25, 25, 1);
   &.left .tooltip-arrow   { @include popoverArrow-left(5px, $backgroundAndArrowColor); }
   &.bottom .tooltip-arrow { @include popoverArrow-bottom(5px, $backgroundAndArrowColor); }
   &.right .tooltip-arrow  { @include popoverArrow-right(5px, $backgroundAndArrowColor); }
+
+  .textshadow & { text-shadow: none; }
 }
 
 .tooltip-inner {

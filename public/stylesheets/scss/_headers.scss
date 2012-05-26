@@ -1,0 +1,123 @@
+// Cabeçalhos.
+.header-list {
+  list-style: none;
+  margin: 0 0 20px;
+
+  li {
+    @extend .clearfix;
+    display: block;
+    border: 1px solid $white;
+    padding: 6px 18px 6px 20px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    // Borda arredondada no primeiro elemento.
+    &:first-child {
+      z-index: 3;
+
+      .borderradius & { @include border-radius(10px 10px 0 0); }
+    }
+
+    // O último elemento fica em azul claro (exceto quando for a página individual de uma aula).
+    &:last-child {
+      z-index: 1;
+
+      a {
+        color: $blue3;
+
+        &:hover { color: $blue4; }
+      }
+    }
+
+    &:hover {
+      border-color: $blue2;
+
+      a { color: $blue4; }
+    }
+
+    .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
+
+    // IE8.
+    .no-boxshadow & { border-color: $gray5; }
+
+    .cssgradients & { @include filter-gradient-vertical($white, $gray3); }
+
+    .no-cssgradients & {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 );
+    }
+  }
+
+  // Efeito de um em cima do outro com ajuda do z-index.
+  li + li { margin-top: -1px; }
+
+  a {
+    color: $gray5;
+    font-weight: bold;
+
+    &:hover { text-decoration: none; }
+
+    &:before { @include pseudo-before; }
+  }
+
+  // Cinza quando for a página individual de uma aula.
+  .header-list-subject:last-child {
+     a { color: $gray5; }
+
+    &:hover a { color: $blue4; }
+  }
+}
+
+// Ícones de avisos da direita.
+.header-list-item-info {
+  float: right;
+  font-size: 0;
+
+  span { vertical-align: bottom; }
+  span + span { margin-left: 5px; }
+}
+
+// Cabeçalhos (início).
+.header-breadcrumb {
+  @include horizontal-list;
+  display: inline-block;
+
+  &:before { @include pseudo-before(10px); }
+
+  a {
+    color: $gray5;
+
+    &:hover {
+      font-weight: 500;
+      color: $blue4;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    font-family: $museoSans;
+    font-weight: 100;
+    font-size: 21px;
+    line-height: 21px;
+    padding-top: 5px;
+
+    &:last-child a {
+      color: $blue3;
+      font-weight: 500;
+
+      &:hover { color: $blue4; }
+    }
+  }
+
+  // Separador.
+  li + li:before {
+    @include pseudo-before(7px);
+    color: $gray3;
+    margin-left: 6px;
+    content: "\002F"; // Caracter "/".
+  }
+}
+
+.header-breadcumb-item-light { font-weight: 100; }

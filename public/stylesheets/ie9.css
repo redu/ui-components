@@ -10,8 +10,15 @@
 .no-cssgradients .local-nav li.local-nav-active:hover,
 .no-cssgradients .progress,
 .no-cssgradients .progress .bar,
-.no-cssgradients input,
+.no-cssgradients input[type="text"],
 .no-cssgradients textarea,
 .no-cssgradients select,
+.no-cssgradients .button-primary,
+.no-cssgradients .button-primary:hover,
+.no-cssgradients .button-sucess,
+.no-cssgradients .button-sucess:hover,
+.no-cssgradients .button-danger,
+.no-cssgradients .button-danger:hover,
 .no-cssgradients .option-list .append-area,
-.no-cssgradients .option-list .append-area:hover { filter: none; }
+.no-cssgradients .option-list .append-area:hover,
+.no-cssgradients .header-list li { filter: none; }

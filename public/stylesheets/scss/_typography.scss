@@ -81,6 +81,7 @@ h3 strong, h4 strong, h5 strong {
 // INLINE LABELS
 
 .inl-label {
+  display: inline-block;
   font-size: 11px;
   line-height: 11px;
   font-family: $baseFontFamily;

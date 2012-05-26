@@ -61,7 +61,6 @@ $icon-layout: smart;
 // Ambiente virtual de aprendizagem.
 .icon-environment-lightblue_16_18-before {
   &:before { @extend .icon-environment-lightblue_16_18; }
-  &:hover:before { @extend .icon-environment-blue_16_18; }
 }
 .icon-environment-white_blue_16_18-before {
   &:before { @extend .icon-environment-white_blue_16_18; }
@@ -69,20 +68,44 @@ $icon-layout: smart;
 .icon-environment-gray_16_18-before {
   &:before { @extend .icon-environment-gray_16_18; }
 }
+.icon-environment-lightblue_16_18-before,
+.icon-environment-gray_16_18-before {
+  &:hover:before { @extend .icon-environment-blue_16_18; }
+}
+.header-list li:hover .icon-environment-gray_16_18-before:before {
+  @extend .icon-environment-blue_16_18;
+}
 
 // Curso.
 .icon-course-lightblue_16_18-before {
   &:before { @extend .icon-course-lightblue_16_18; }
-  &:hover:before { @extend .icon-course-blue_16_18; }
 }
 .icon-course-gray_16_18-before {
   &:before { @extend .icon-course-gray_16_18; }
+}
+.icon-course-lightblue_16_18-before,
+.icon-course-gray_16_18-before {
+  &:hover:before { @extend .icon-course-blue_16_18; }
+}
+.header-list li:hover .icon-course-gray_16_18-before:before,
+.header-list li:hover .icon-course-lightblue_16_18-before:before {
+  @extend .icon-course-blue_16_18;
 }
 
 // Disciplina.
 .icon-space-lightblue_16_18-before {
   &:before { @extend .icon-space-lightblue_16_18; }
+}
+.icon-space-gray_16_18-before {
+  &:before { @extend .icon-space-gray_16_18; }
+}
+.icon-space-lightblue_16_18-before,
+.icon-space-gray_16_18-before {
   &:hover:before { @extend .icon-space-blue_16_18; }
+}
+.header-list li:hover .icon-space-gray_16_18-before:before,
+.header-list li:hover .icon-space-lightblue_16_18-before:before {
+  @extend .icon-space-blue_16_18;
 }
 
 // Módulo.
@@ -136,6 +159,12 @@ $icon-layout: smart;
 .icon-message-white_blue_16_18-before {
   &:before { @extend .icon-message-white_blue_16_18; }
 }
+.icon-message-gray_32_34-before {
+  &:before { @extend .icon-message-gray_32_34; }
+}
+.header-breadcrumb.icon-message-gray_32_34-before {
+  &:hover:before { @extend .icon-message-blue_32_34; }
+}
 
 // Parceiro.
 .icon-partner-lightblue_16_18-before {
@@ -150,6 +179,12 @@ $icon-layout: smart;
 }
 .icon-manage-white_blue_16_18-before {
   &:before { @extend .icon-manage-white_blue_16_18; }
+}
+.icon-manage-gray_32_34-before {
+  &:before { @extend .icon-manage-gray_32_34; }
+}
+.header-breadcrumb.icon-manage-gray_32_34-before {
+  &:hover:before { @extend .icon-manage-blue_32_34; }
 }
 
 // Mural.
@@ -248,6 +283,24 @@ $icon-layout: smart;
 }
 .icon-curriculum-white_blue_16_18-before {
   &:before { @extend .icon-curriculum-white_blue_16_18; }
+}
+
+// Descrição.
+.icon-description-gray_16_18,
+.icon-description-lightblue_16_18 {
+  &:hover { @extend .icon-description-blue_16_18; }
+}
+
+// Marcadores.
+.icon-tag-gray_16_18,
+.icon-tag-lightblue_16_18 {
+  &:hover { @extend .icon-tag-blue_16_18; }
+}
+
+// Privado.
+.icon-private-gray_16_18,
+.icon-private-lightblue_16_18 {
+  &:hover { @extend .icon-private-blue_16_18; }
 }
 
 // Regras de hover para os ícones que não usam pseudo elementos.
