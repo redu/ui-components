@@ -21,6 +21,9 @@
 // Base CSS.
 @import "typography";
 
+// Utilitários.
+@import "utilities";
+
 // Botões.
 @import "button-groups";
 @import "buttons";
@@ -60,8 +63,6 @@
 @import "component-animations";
 @import "progress-bar";
 
-// Utilitários.
-@import "utilities";
 
 // Labels.
 @import "headers";
