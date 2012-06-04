@@ -14,9 +14,12 @@
 // Estrutura da página.
 @import "scaffolding";
 
+// Sistema de grids.
+@import "grid";
+@import "layout";
+
 // Base CSS.
 @import "typography";
-//@import "code"; // Somente utilizado para exemplificar o HTML.
 
 // Botões.
 @import "button-groups";

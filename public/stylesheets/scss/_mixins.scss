@@ -240,3 +240,73 @@
   border-bottom: $arrowWidth solid transparent;
   border-right: $arrowWidth solid $borderColor;
 }
+
+// Sistema de grids.
+@mixin container-fixed() {
+  width: $gridRowWidth;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix();
+}
+
+@mixin gridSystem-columns ($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $columns) {
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+}
+
+@mixin gridSystem-offset($gridColumnWidth, $gridGutterWidth, $columns) {
+  margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + ($gridGutterWidth * 2);
+}
+
+@mixin gridSystem-gridColumn($gridGutterWidth) {
+  float: left;
+  margin-left: $gridGutterWidth;
+}
+
+@mixin gridSystem-generate($gridColumns, $gridColumnWidth, $gridGutterWidth) {
+
+  .row {
+    margin-left: $gridGutterWidth * -1;
+    @include clearfix();
+  }
+
+  [class*="span"] {
+    @include gridSystem-gridColumn($gridGutterWidth);
+    @include background-clip(content-box);
+  }
+
+  // Colunas padrões.
+  .span1     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1); }
+  .span2     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 2); }
+  .span3     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 3); }
+  .span4     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 4); }
+  .span5     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 5); }
+  .span6     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 6); }
+  .span7     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 7); }
+  .span8     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 8); }
+  .span9     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 9); }
+  .span10    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 10); }
+  .span11    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 11); }
+  .span12    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12); }
+  .span13    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 13); }
+  .span14    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 14); }
+  .span15    { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 15); }
+  .span16,
+  .container { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 16); }
+
+  // Opções de colunas de deslocamento.
+  .offset1   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 1); }
+  .offset2   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 2); }
+  .offset3   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 3); }
+  .offset4   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 4); }
+  .offset5   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 5); }
+  .offset6   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 6); }
+  .offset7   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 7); }
+  .offset8   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 8); }
+  .offset9   { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 9); }
+  .offset10  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 10); }
+  .offset11  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 11); }
+  .offset12  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 12); }
+  .offset13  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 13); }
+  .offset14  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 14); }
+  .offset15  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 15); }
+}
