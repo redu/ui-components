@@ -8,15 +8,15 @@
 // ---------
 
 p {
-  margin: 0 0 $baseLineHeight / 2;
+  margin: 0;
   font-family: $baseFontFamily;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
+
+  & + & { margin-top: 5px; }
 }
 
-h1, h2, h3, h4, h5, h6, h7 {
-  margin-top:0;
-}
+h1, h2, h3, h4, h5, h6, h7 { margin: 0; }
 
 h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
 
