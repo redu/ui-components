@@ -7,7 +7,9 @@
 // --------------------------------------------------
 
 @mixin text-replacement() {
-  text-indent: -9999px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
   display: inline-block;
 }
 
@@ -19,16 +21,26 @@
   li { float: left; }
 }
 
-@mixin pseudo-before($marginRight: 5px) {
+@mixin pseudo-before($marginRight: 5px, $float: true) {
   content: "";
-  float: left;
+  display: inline-block;
+  vertical-align: text-bottom;
   margin-right: $marginRight;
+
+  @if ($float) {
+    float: left;
+  }
 }
 
-@mixin pseudo-after($marginLeft: 5px) {
+@mixin pseudo-after($marginLeft: 5px, $float: true) {
   content: "";
-  float: right;
+  display: inline-block;
+  vertical-align: text-bottom;
   margin-left: $marginLeft;
+
+  @if ($float) {
+    float: right;
+  }
 }
 
 // Clearfix.
