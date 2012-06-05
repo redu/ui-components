@@ -1,0 +1,307 @@
+.statuses .status {
+  overflow: hidden;
+  margin-top: 10px;
+
+  hr {
+    border-top: solid 1px $gray3;
+    border-bottom: solid 1px $white;
+    margin: 10px 0 0 0;
+    .textshadow & { text-shadow: transparent; }
+  }
+
+  .create-response {
+    margin-left: 42px;
+    display: none;
+    margin-top: 35px;
+    background-color: $gray2;
+    .borderradius & { @include border-radius(5px); }
+  }
+
+  .status-text {
+    img {
+      float: left;
+      width: 32px;
+      height: 34px;
+    }
+
+    &:after {
+    border-color: #F0F0F0 white;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    content: " ";
+    display: block;
+    float: left;
+    margin-left: 61px;
+    margin-top: -2px;
+    width: 0;
+    }
+
+    .link-name {
+      margin-left: 10px;
+    }
+
+    .status-info, .source-site { 
+    color: $gray5;
+    }
+
+    .date { 
+      display: block;
+      color: $gray4; 
+      margin-left: 44px;
+    }
+  }
+
+  .actions {
+    float: right;
+    margin-left: 42px;
+    margin-top: 10px;
+
+    li {
+      display: inline;
+      margin-right: 20px;
+      overflow: hidden; 
+      font-size: 11px;
+      a:before {
+        @include pseudo-before;
+      }
+    }
+  }
+
+  .status-content {
+    display: inline-block;
+    margin-left: 42px;
+    background-color: $gray2;
+    
+    .borderradius & { @include border-radius(5px); }
+
+    .post-text {
+      padding: 10px 10px;
+      clear: both;
+    }
+
+    form {
+      &:before { display: none; }
+
+      fieldset {
+        .post-preview {
+          padding: 10px 0 0 0;
+          overflow: hidden;
+
+          .post-body {
+            padding-left: 10px;
+            overflow: hidden;
+            display: block;
+
+            .close {
+              margin-top: 5px;
+              text-indent: -9999px;
+            }
+
+            .post-description, .source-site, .title { 
+                float: left;
+                display: block;
+                margin-right: 20px;
+            }
+            .source-site {
+              clear: both;
+            }
+          }
+
+          .preview {
+            float: left;
+            .thumbnail {
+              float: left;
+              float: left;
+              max-width: 100px;
+              min-height: 34px;
+              width: 100%;
+            }
+
+            .buttons-thumbnail {
+              display: block;
+              margin-left: 0;
+              clear: both;
+              padding-top: 10px;
+
+              .button-default {
+                line-height: 10px;
+
+                .arrow {
+                @extend .text-replacement;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .status-content, .create-response {
+    form {
+      margin-bottom: 0;
+      &:before {
+      border-color: #F0F0F0 white;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      content: " ";
+      display: block;
+      float: right;
+      margin-right: 40px;
+      margin-top: -10px;
+      width: 0;
+      }
+
+      fieldset {
+        padding: 10px;
+        clear: both;
+
+        textarea {
+          height: 16px;
+          width: 471px;
+          overflow: hidden;
+        }
+
+        label {
+          width: 18px;
+          float: left;
+          text-indent: -999px;
+        }
+
+        .status-buttons {
+          float: right;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .status-content {
+    form {
+      &:before { display: none; }
+    }
+  }
+
+  .responses {
+    overflow: hidden;
+    display: block;
+    clear: both;
+    margin-top: 10px;
+
+    .last-responses {
+      text-align: center;
+      p {
+        padding-top: 10px;
+      }
+    }
+
+    .all-responses {
+      text-align: center;
+      p {
+        margin: 0 auto;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+    }
+
+    &:before {
+    border-color: #F0F0F0 white;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    content: " ";
+    display: block;
+    float: left;
+    margin-left: 18px;
+    margin-top: -9px;
+    width: 0;
+    position: absolute;
+    }
+
+    .status-content {
+      display: block;
+
+      hr {
+        margin: 0;
+      }
+
+      margin-left: 0;
+      .status-text-response {
+        margin: 10px 0 0 10px;
+        img {
+        float: left;
+        width: 32px;
+        height: 34px;
+        }
+
+        .link-name {
+          margin-left: 10px;
+        }   
+
+        .status-info, .source-site { 
+          color: $gray5;
+        }
+
+        .date { 
+          display: block;
+          color: $gray4; 
+          margin-left: 44px;
+        }
+
+      }
+      .post-text {
+        padding: 0 10px 10px 10px;
+        .post-description {
+          margin-top: 0px;
+          margin-left: 42px;
+        }
+      }
+
+    }
+  }
+  .general-vision {
+    float: left;
+    display: block;
+    img {
+        float: left;
+        width: 32px;
+        height: 34px;
+    }
+    
+    .environment-name {
+      display: block;
+      float: left;
+      margin-left: 10px;
+    }
+    .course-name {
+      display: block;
+      margin-left: 42px;
+    }
+
+    .status-text {
+      clear: both;
+      float: left;
+      margin-left: 42px;
+      &:after {
+        display: none;
+      }
+      img {
+        float: left;
+        width: 32px;
+        height: 34px;
+      }
+      .link-name {
+        margin-left: 10px;
+      }
+
+      .status-info, .source-site { 
+        color: $gray5;
+      }
+
+      .date { 
+        display: block;
+        color: $gray4; 
+        margin-left: 44px;
+      }
+    }
+  }
+} 
+
+

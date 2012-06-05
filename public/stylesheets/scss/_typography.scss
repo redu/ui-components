@@ -131,6 +131,8 @@ ul { list-style: disc; }
 
 ol { list-style: decimal; }
 
+ul, ol, li { list-style: none outside none; }
+
 li { line-height: $baseLineHeight; }
 
 dt { font-weight: bold; }

@@ -297,6 +297,27 @@ $icon-layout: smart;
   &:hover { @extend .icon-tag-blue_16_18; }
 }
 
+// Responder.
+.icon-reply-gray_8_10-before {
+  &:before { @extend .icon-reply-gray_8_10;  }
+  &:hover:before { @extend .icon-reply-blue_8_10; }
+}
+.icon-reply-gray_16_18-before {
+  &:before { @extend .icon-reply-gray_16_18; }
+  &:hover:before { @extend .icon-reply-lightblue_16_18; }
+}
+
+// Fechar.
+.icon-close-gray_8_10 {
+  .disabled &:hover { @include icon-sprite(close-gray_8_10); }
+  &:hover { @extend .icon-close-red_8_10; }
+}
+
+.icon-close-gray_8_10-before {
+  &:before { @extend .icon-close-gray_8_10;  }
+  &:hover:before { @extend .icon-close-blue_8_10; }
+}
+
 // Privado.
 .icon-private-gray_16_18,
 .icon-private-lightblue_16_18 {
@@ -306,7 +327,7 @@ $icon-layout: smart;
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
 .filter:hover,
-.button:hover {
+.button-default:hover {
   // Ambiente virtual de aprendizagem.
   .icon-environment-gray_32_34,
   .icon-environment-lightblue_32_34 { @extend .icon-environment-blue_32_34; }
@@ -345,4 +366,11 @@ a:hover,
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
   .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
+  .icon-arrow-left-lightblue_8_10 { @extend .icon-arrow-left-blue_8_10; }
+  .icon-arrow-right-lightblue_8_10 { @extend .icon-arrow-right-blue_8_10; }
+  .icon-close-lightblue_8_10 { @extend .icon-close-red_8_10}
+}
+
+.button-default.disabled, .button-default.disabled:hover {
+  .icon-close-gray_8_10 { @extend .icon-close-gray-8_10; }
 }

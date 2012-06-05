@@ -1,1 +1,5 @@
 .sass-cache
+*~
+public/stylesheets/bootstrap.css
+public/stylesheets/icons.css
+public/images/new/icon-*.png
