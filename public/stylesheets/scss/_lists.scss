@@ -1,68 +1,79 @@
+.vision-at-environment {
+  margin: 0;
+  hr {
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+
 .statuses .status {
   overflow: hidden;
   margin-top: 10px;
 
+  .post-description {
+    .textshadow & { text-shadow: none; }
+    color: $gray6;
+  }
+
+  .date { 
+    color: $gray4;
+    font-size: 11px;
+    line-height: 11px;
+    display: block;
+  }
+
+  .status-info { color: $gray5; }
+
+  .close {text-indent: -9999px; }
+
   hr {
+    margin: 10px 0;
     border-top: solid 1px $gray3;
     border-bottom: solid 1px $white;
-    margin: 10px 0 0 0;
-    .textshadow & { text-shadow: transparent; }
+    .boxshadow & { @include box-shadow(none); }
   }
 
   .create-response {
     margin-left: 42px;
+    margin-top: 37px;
     display: none;
-    margin-top: 35px;
     background-color: $gray2;
     .borderradius & { @include border-radius(5px); }
   }
 
   .status-text {
+    overflow: hidden;
+    margin-bottom: 10px;
+
     img {
       float: left;
       width: 32px;
       height: 34px;
-    }
-
-    &:after {
-    border-color: #F0F0F0 white;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    content: " ";
-    display: block;
-    float: left;
-    margin-left: 61px;
-    margin-top: -2px;
-    width: 0;
-    }
-
-    .link-name {
-      margin-left: 10px;
-    }
-
-    .status-info, .source-site { 
-    color: $gray5;
-    }
-
-    .date { 
-      display: block;
-      color: $gray4; 
-      margin-left: 44px;
+      margin-right: 10px;
     }
   }
 
   .actions {
+    clear: both;
+    display: block;
     float: right;
-    margin-left: 42px;
-    margin-top: 10px;
-
+    padding-top: 10px;
+    margin-bottom: 10px;
     li {
       display: inline;
-      margin-right: 20px;
+      margin: 10px;
       overflow: hidden; 
       font-size: 11px;
       a:before {
         @include pseudo-before;
+        float: none;
+        margin-left: -12px;
+        margin-top: 4px;
       }
     }
   }
@@ -71,7 +82,20 @@
     display: inline-block;
     margin-left: 42px;
     background-color: $gray2;
-    
+
+    &:before {
+      border-color: #F0F0F0 white;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      content: " ";
+      display: block;
+      float: left;
+      margin-left: 18px;
+      margin-top: -9px;
+      width: 0;
+      position: absolute;
+    }
+
     .borderradius & { @include border-radius(5px); }
 
     .post-text {
@@ -79,81 +103,110 @@
       clear: both;
     }
 
-    form {
-      &:before { display: none; }
 
-      fieldset {
-        .post-preview {
-          padding: 10px 0 0 0;
+
+    .post-preview {
           overflow: hidden;
+          padding: 10px 10px 0 10px;
+
+          &.java-applet { padding: 0; }
 
           .post-body {
-            padding-left: 10px;
             overflow: hidden;
             display: block;
-
-            .close {
-              margin-top: 5px;
-              text-indent: -9999px;
-            }
-
-            .post-description, .source-site, .title { 
-                float: left;
-                display: block;
-                margin-right: 20px;
-            }
-            .source-site {
-              clear: both;
-            }
+            margin: 0 auto;
+            .source-site { color: $gray5; }
           }
 
           .preview {
             float: left;
+            max-width: 110px;
             .thumbnail {
-              float: left;
               float: left;
               max-width: 100px;
               min-height: 34px;
               width: 100%;
+              margin-right: 10px;
             }
 
             .buttons-thumbnail {
               display: block;
               margin-left: 0;
               clear: both;
+              width: 100px;
               padding-top: 10px;
-
               .button-default {
                 line-height: 10px;
+                .arrow { @extend .text-replacement; }
 
-                .arrow {
-                @extend .text-replacement;
+                &:hover {
+                  &.next .arrow { background-image: url("../images/new/icon/arrow-right-blue_8_10.png"); }
+                  &.last .arrow { background-image: url("../images/new/icon/arrow-left-blue_8_10.png"); }
+                  &.remove .arrow { background-image: url("../images/new/icon/close-red_8_10.png"); }
+                }
+
+                &.next .arrow {
+                  background-image: url("../images/new/icon/arrow-right-lightblue_8_10.png");
+                  background-repeat: no-repeat;
+                  width: 8px;
+                }
+                &.last .arrow {
+                  background-image: url("../images/new/icon/arrow-left-lightblue_8_10.png");
+                  background-repeat: no-repeat;
+                  width: 8px;
+                }
+
+                &.remove .arrow {
+                  background-image: url("../images/new/icon/close-lightblue_8_10.png");
+                  background-repeat: no-repeat;
+                  width: 8px;
+                }
+
+                &.disabled {
+                  &.next .arrow {
+                    background-image: url("../images/new/icon/arrow-right-gray_8_10.png");
+                    background-repeat: no-repeat;
+                    width: 8px;
+                  }
+                  &.last .arrow {
+                    background-image: url("../images/new/icon/arrow-left-gray_8_10.png");
+                    background-repeat: no-repeat;
+                    width: 8px;
+                  }
+
+                  &.remove .arrow {
+                    background-image: url("../images/new/icon/close-gray_8_10.png");
+                    background-repeat: no-repeat;
+                    width: 8px;
+                  }
                 }
               }
             }
           }
         }
+
+
+    .java-applet {
+      .icon {
+        @extend .text-replacement;
+        background: url("../images/new/icon/icon-applet.png");
+        width: 32px;
+        height: 34px;
+        float: left;
+        margin-right: 10px;
       }
     }
   }
+
   .status-content, .create-response {
     form {
       margin-bottom: 0;
-      &:before {
-      border-color: #F0F0F0 white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: right;
-      margin-right: 40px;
-      margin-top: -10px;
-      width: 0;
-      }
 
       fieldset {
         padding: 10px;
         clear: both;
+
+        .post-preview { padding: 0; }
 
         textarea {
           height: 16px;
@@ -167,139 +220,103 @@
           text-indent: -999px;
         }
 
-        .status-buttons {
-          float: right;
-          margin-top: 10px;
-        }
+        .status-buttons { float: right; }
       }
     }
   }
-  .status-content {
-    form {
-      &:before { display: none; }
-    }
-  }
 
+  .create-response {
+    &:before {
+      border-color: #F0F0F0 white;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      content: " ";
+      display: block;
+      float: right;
+      margin-right: -120px;
+      margin-top: -10px;
+      width: 0;
+    }
+    .status-buttons { margin-top: 10px; }
+  }
+  
   .responses {
     overflow: hidden;
     display: block;
     clear: both;
     margin-top: 10px;
+    padding: 10px 0;
 
-    .last-responses {
-      text-align: center;
-      p {
-        padding-top: 10px;
-      }
-    }
+    .last-responses { text-align: center; }
 
     .all-responses {
       text-align: center;
-      p {
+      .link-secondary {
+        display: block;
         margin: 0 auto;
-        padding-bottom: 10px;
-        padding-top: 10px;
       }
     }
 
     &:before {
-    border-color: #F0F0F0 white;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    content: " ";
-    display: block;
-    float: left;
-    margin-left: 18px;
-    margin-top: -9px;
-    width: 0;
-    position: absolute;
+      border-color: #F0F0F0 white;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      content: " ";
+      display: block;
+      float: left;
+      margin-left: 18px;
+      margin-top: -19px;
+      width: 0;
+      position: absolute;
     }
 
     .status-content {
       display: block;
-
-      hr {
-        margin: 0;
-      }
-
       margin-left: 0;
+      &:before { display: none; }
+
       .status-text-response {
-        margin: 10px 0 0 10px;
-        img {
-        float: left;
-        width: 32px;
-        height: 34px;
-        }
-
-        .link-name {
-          margin-left: 10px;
-        }   
-
-        .status-info, .source-site { 
-          color: $gray5;
-        }
-
-        .date { 
-          display: block;
-          color: $gray4; 
-          margin-left: 44px;
-        }
-
-      }
-      .post-text {
-        padding: 0 10px 10px 10px;
-        .post-description {
-          margin-top: 0px;
-          margin-left: 42px;
-        }
+        margin-bottom: 0;
+        padding: 0 10px;
       }
 
-    }
-  }
-  .general-vision {
-    float: left;
-    display: block;
-    img {
-        float: left;
-        width: 32px;
-        height: 34px;
+      .post-text { padding: 0 10px 0 52px; }
     }
     
-    .environment-name {
-      display: block;
+    .post-preview { padding: 0; }
+  }
+
+  &.general-vision {
+    float: left;
+    overflow: hidden;
+    margin-left: 0;
+    display: inline-block;
+
+    .status-info { color: $gray6; }
+
+    .link-name { &:before { @include pseudo-before(5px, false); } }
+
+    .actions { margin-bottom: 10px; }
+
+    .status-content { margin-left: 84px; }
+
+    img {
       float: left;
-      margin-left: 10px;
+      width: 32px;
+      height: 34px;
+      margin-right: 10px;
     }
-    .course-name {
-      display: block;
-      margin-left: 42px;
+
+    .create-response {
+      margin-bottom: 10px;
+      form { &:before { margin-right: -159px; } }
     }
 
     .status-text {
       clear: both;
       float: left;
       margin-left: 42px;
-      &:after {
-        display: none;
-      }
-      img {
-        float: left;
-        width: 32px;
-        height: 34px;
-      }
-      .link-name {
-        margin-left: 10px;
-      }
-
-      .status-info, .source-site { 
-        color: $gray5;
-      }
-
-      .date { 
-        display: block;
-        color: $gray4; 
-        margin-left: 44px;
-      }
+      &:after { display: none; }
     }
   }
 } 

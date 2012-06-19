@@ -36,6 +36,10 @@ $icon-layout: smart;
   &:before { @extend .icon-teacher-lightblue_16_18; }
   &:hover:before { @extend .icon-teacher-blue_16_18; }
 }
+.icon-teacher-gray_16_18-before {
+  &:before { @extend .icon-teacher-gray_16_18; }
+  &:hover:before { @extend .icon-teacher-blue_16_18; }
+}
 
 // Tutor.
 .icon-tutor-lightblue_16_18-before {
@@ -318,6 +322,10 @@ $icon-layout: smart;
   &:hover:before { @extend .icon-close-blue_8_10; }
 }
 
+.icon-close-gray_16_18 {
+  &:hover { @extend .icon-close-red_16_18; }
+}
+
 // Privado.
 .icon-private-gray_16_18,
 .icon-private-lightblue_16_18 {
@@ -373,4 +381,10 @@ a:hover,
 
 .button-default.disabled, .button-default.disabled:hover {
   .icon-close-gray_8_10 { @extend .icon-close-gray-8_10; }
+}
+
+//video
+.icon-video-gray_16_18-before {
+  &:before { @extend .icon-video-gray_16_18; }
+  &:hover:before { @extend .icon-video-blue_16_18;}
 }
