@@ -1,55 +1,41 @@
-// DROPDOWN MENUS.
-// --------------
+// ==========================================================================
+// Dropdowns
+// ==========================================================================
 
-// O circunflexo faz o toggle ficar um pouco alto demais no IE7.
-.dropdown-toggle { *margin-bottom: -3px; }
+// O bloco.
+.dropdown-menu {
+  background-color: $gray1;
+  position: absolute;
+  display: none;
+  z-index: $zindexDropdown;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  border: 1px solid $blue4;
+  list-style: none;
+
+  .boxshadow & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, .5)); }
+
+  .borderradius & { @include border-radius(5px); }
+
+  .filters-general-view & {
+    left: 0;
+    padding: 10px;
+    width: 300px;
+  }
+}
+
+// A seta.
+.dropdown-arrow {
+  position: absolute;
+  display: none;
+  z-index: $zindexDropdown + 1;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -10px;
+
+  .open & { display: inline-block; }
+}
 
 .dropdown-toggle:active,
 .open .dropdown-toggle { outline: 0; }
-
-// Dropdown seta/circunfelxo.
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  text-indent: -99999px;
-  *text-indent: 0; // Truque pro IE7.
-  vertical-align: top;
-  border-left:  4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top:   8px solid $blue3;
-  content: "\2193";
-
-  .open & {
-    border-top: none;
-    border-bottom: 8px solid $blue3;
-  }
-  .open:hover &,
-  .filter:hover &,
-  .button:hover & {
-    border-top-color: $blue4;
-    border-bottom-color: $blue4;
-  }
-}
-
-// O menu dropdown.
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: $zindexDropdown;
-  display: none; // None por padrão, mas block no abrir do menu.
-  min-width: 160px;
-  _width: 160px;
-  margin: 0; // Sobrescreve o padrão do ul.
-  list-style: none;
-  background-color: $gray1;
-  border: 1px solid $blue4;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
-
-  .boxshadow & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, .5)); }
-}
