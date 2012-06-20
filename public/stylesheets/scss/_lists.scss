@@ -20,11 +20,12 @@
     color: $gray6;
   }
 
-  .date { 
+  .date {
     color: $gray4;
     font-size: 11px;
     line-height: 11px;
     display: block;
+    margin-left: 42px;
   }
 
   .status-info { color: $gray5; }
@@ -62,15 +63,17 @@
     clear: both;
     display: block;
     float: right;
-    padding-top: 10px;
+    line-height: 11px;
+    margin-top: 6px;
     margin-bottom: 10px;
     li {
       display: inline;
       margin: 10px;
-      overflow: hidden; 
+      overflow: hidden;
       font-size: 11px;
       a:before {
         @include pseudo-before;
+        vertical-align: baseline;
         float: none;
         margin-left: -12px;
         margin-top: 4px;
@@ -103,11 +106,11 @@
       clear: both;
     }
 
-
-
     .post-preview {
           overflow: hidden;
-          padding: 10px 10px 0 10px;
+          padding: 10px 10px 10px 10px;
+
+          .title { margin-bottom: 10px; }
 
           &.java-applet { padding: 0; }
 
@@ -233,13 +236,13 @@
       content: " ";
       display: block;
       float: right;
-      margin-right: -120px;
+      margin-right: 40px;
       margin-top: -10px;
       width: 0;
     }
     .status-buttons { margin-top: 10px; }
   }
-  
+
   .responses {
     overflow: hidden;
     display: block;
@@ -247,14 +250,12 @@
     margin-top: 10px;
     padding: 10px 0;
 
+    .java-applet { margin-left: 42px; }
+
     .last-responses { text-align: center; }
 
     .all-responses {
       text-align: center;
-      .link-secondary {
-        display: block;
-        margin: 0 auto;
-      }
     }
 
     &:before {
@@ -282,7 +283,7 @@
 
       .post-text { padding: 0 10px 0 52px; }
     }
-    
+
     .post-preview { padding: 0; }
   }
 
@@ -319,6 +320,6 @@
       &:after { display: none; }
     }
   }
-} 
+}
 
 
