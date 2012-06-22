@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-popover.js v2.0.1
+ * bootstrap-popover.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#popovers
  * ===========================================================
  * Copyright 2012 Twitter, Inc.
@@ -18,13 +18,18 @@
  * =========================================================== */
 
 
-!function( $ ) {
+!function ($) {
 
- "use strict"
+  "use strict"; // jshint ;_;
+
+
+ /* POPOVER PUBLIC CLASS DEFINITION
+  * =============================== */
 
   var Popover = function ( element, options ) {
     this.init('popover', element, options)
   }
+
 
   /* NOTE: POPOVER EXTENDS BOOTSTRAP-TOOLTIP.js
      ========================================== */
@@ -40,11 +45,11 @@
 
       if (title == "") {
         $tip.find('.popover-title').remove()
-        $tip.addClass('no-title')
+        $tip.addClass('popover-no-title')
       } else {
-        $tip.find('.popover-title')[ $.type(title) == 'object' ? 'append' : 'html' ](title)
+        $tip.find('.popover-title')[this.isHTML(title) ? 'html' : 'text'](title)
       }
-      $tip.find('.popover-content > *')[ $.type(content) == 'object' ? 'append' : 'html' ](content)
+      $tip.find('.popover-content > *')[this.isHTML(content) ? 'html' : 'text'](content)
 
       $tip.removeClass('fade top bottom left right in')
     }
@@ -61,12 +66,10 @@
       content = $e.attr('data-content')
         || (typeof o.content == 'function' ? o.content.call($e[0]) :  o.content)
 
-      content = content.toString().replace(/(^\s*|\s*$)/, "")
-
       return content
     }
 
-  , tip: function() {
+  , tip: function () {
       if (!this.$tip) {
         this.$tip = $(this.options.template)
       }
@@ -79,7 +82,7 @@
  /* POPOVER PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.popover = function ( option ) {
+  $.fn.popover = function (option) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('popover')
@@ -94,13 +97,12 @@
   $.fn.popover.defaults = $.extend({} , $.fn.tooltip.defaults, {
     placement: 'right'
   , content: ''
-  , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+  , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h4 class="popover-title"></h4><div class="popover-content"><p></p></div></div></div>'
   })
 
-  $(document).ready(function(){
-      $('[rel=popover][data-original-title]').popover()
-      $('[rel=popover]').popover({placement: 'bottom'})
-      // TODO: ajaxComplete?
-  });
+}(window.jQuery);
 
-}( window.jQuery );
+$(function() {
+  $('[rel="popover"][data-original-title]').popover()
+  $('[rel="popover"]').popover({placement: 'bottom'})
+})

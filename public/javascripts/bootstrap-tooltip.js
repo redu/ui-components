@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-tooltip.js v2.0.1
+ * bootstrap-tooltip.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ===========================================================
@@ -18,14 +18,16 @@
  * limitations under the License.
  * ========================================================== */
 
-!function( $ ) {
 
-  "use strict"
+!function ($) {
+
+  "use strict"; // jshint ;_;
+
 
  /* TOOLTIP PUBLIC CLASS DEFINITION
   * =============================== */
 
-  var Tooltip = function ( element, options ) {
+  var Tooltip = function (element, options) {
     this.init('tooltip', element, options)
   }
 
@@ -33,7 +35,7 @@
 
     constructor: Tooltip
 
-  , init: function ( type, element, options ) {
+  , init: function (type, element, options) {
       var eventIn
         , eventOut
 
@@ -45,8 +47,8 @@
       if (this.options.trigger != 'manual') {
         eventIn  = this.options.trigger == 'hover' ? 'mouseenter' : 'focus'
         eventOut = this.options.trigger == 'hover' ? 'mouseleave' : 'blur'
-        this.$element.bind(eventIn, this.options.selector, $.proxy(this.enter, this))
-        this.$element.bind(eventOut, this.options.selector, $.proxy(this.leave, this))
+        this.$element.on(eventIn, this.options.selector, $.proxy(this.enter, this))
+        this.$element.on(eventOut, this.options.selector, $.proxy(this.leave, this))
       }
 
       this.options.selector ?
@@ -54,7 +56,7 @@
         this.fixTitle()
     }
 
-  , getOptions: function ( options ) {
+  , getOptions: function (options) {
       options = $.extend({}, $.fn[this.type].defaults, options, this.$element.data())
 
       if (options.delay && typeof options.delay == 'number') {
@@ -67,34 +69,28 @@
       return options
     }
 
-  , enter: function ( e ) {
+  , enter: function (e) {
       var self = $(e.currentTarget)[this.type](this._options).data(this.type)
 
-      if (!self.options.delay || !self.options.delay.show) {
-        self.show()
-      } else {
-        self.hoverState = 'in'
-        setTimeout(function() {
-          if (self.hoverState == 'in') {
-            self.show()
-          }
-        }, self.options.delay.show)
-      }
+      if (!self.options.delay || !self.options.delay.show) return self.show()
+
+      clearTimeout(this.timeout)
+      self.hoverState = 'in'
+      this.timeout = setTimeout(function() {
+        if (self.hoverState == 'in') self.show()
+      }, self.options.delay.show)
     }
 
-  , leave: function ( e ) {
+  , leave: function (e) {
       var self = $(e.currentTarget)[this.type](this._options).data(this.type)
 
-      if (!self.options.delay || !self.options.delay.hide) {
-        self.hide()
-      } else {
-        self.hoverState = 'out'
-        setTimeout(function() {
-          if (self.hoverState == 'out') {
-            self.hide()
-          }
-        }, self.options.delay.hide)
-      }
+      if (this.timeout) clearTimeout(this.timeout)
+      if (!self.options.delay || !self.options.delay.hide) return self.hide()
+
+      self.hoverState = 'out'
+      this.timeout = setTimeout(function() {
+        if (self.hoverState == 'out') self.hide()
+      }, self.options.delay.hide)
     }
 
   , show: function () {
@@ -133,11 +129,11 @@
         switch (inside ? placement.split(' ')[1] : placement) {
           case 'bottom':
             tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
-            // No caso específico do popover2.
+            // No caso especifico do popover2.
             if (this.$element.attr('data-original-title') == '' && this.$element.attr('rel') == 'popover') {
               tp = {top: pos.top + pos.height, left: pos.left + pos.width - actualWidth}
               $tip.find('.arrow').css({ left: '92%' })
-            } 
+            }
             break
           case 'top':
             tp = {top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}
@@ -157,9 +153,20 @@
       }
     }
 
+  , isHTML: function(text) {
+      // html string detection logic adapted from jQuery
+      return typeof text != 'string'
+        || ( text.charAt(0) === "<"
+          && text.charAt( text.length - 1 ) === ">"
+          && text.length >= 3
+        ) || /^(?:[^<]*<[\w\W]+>[^>]*$)/.exec(text)
+    }
+
   , setContent: function () {
       var $tip = this.tip()
-      $tip.find('.tooltip-inner').html(this.getTitle())
+        , title = this.getTitle()
+
+      $tip.find('.tooltip-inner')[this.isHTML(title) ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }
 
@@ -210,8 +217,6 @@
 
       title = $e.attr('data-original-title')
         || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
-
-      title = title.toString().replace(/(^\s*|\s*$)/, "")
 
       return title
     }
@@ -264,17 +269,16 @@
 
   $.fn.tooltip.defaults = {
     animation: true
-  , delay: 0
-  , selector: false
   , placement: 'bottom'
+  , selector: false
+  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
   , trigger: 'hover'
   , title: ''
-  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  , delay: 0
   }
 
-  $(document).ready(function(){
-      $('[rel=tooltip]').tooltip()
-      // TODO: ajaxComplete?
-  });
+}(window.jQuery);
 
-}( window.jQuery );
+$(function() {
+  $('[rel="tooltip"]').tooltip()
+})
