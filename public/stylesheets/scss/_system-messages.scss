@@ -1,103 +1,108 @@
-// ESTILOS DAS MENSAGENS DO SISTEMA.
-// ------------
+// ==========================================================================
+// Mensagens do sistema
+// ==========================================================================
 
-// Estilos básicos das mensagens.
-.system-msg {
-  padding: 10px 35px 10px 10px;
-  margin-bottom: $baseLineHeight;
-  background-color: $warningBackground;
-  border: 1px solid $warningBorder;
-  color: $warningText;
-  @include font-sans-serif;
+// Comum a todas as mensagens.
+.message-base {
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
 
-  // Adiciona margin somente quando há mais de um parágrafo para espacar os mesmos.
-  > p, > ul { margin: 0; }
-  p + p { margin-top: 5px; }
+  p { margin-bottom: 0; }
 
   .boxshadow & { @include box-shadow(0 2px 10px 1px rgba(0, 0, 0, 0.4)); }
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
+
   .borderradius & { @include border-radius(5px); }
 }
 
-// Estilos alternativos.
-.system-msg-success {
-  background-color: $green1;
-  border-color: $successBorder;
-  color: $successText;
-}
-
-.system-msg-warning {
-  background-color: $warningBackground;
-  border-color: $warningBorder;
-  color: $warningText;
-}
-
-.system-msg-info {
-  background-color: $infoBackground;
-  border-color: $infoBorder;
-  color: $infoText;
-}
-
-.system-msg-busy {
-  background-color: $busyBackground;
-  border-color: $busyBorder;
-  color: $busyText;
-  padding: 5px 10px;
-}
-
 // Ícone de fechar.
-.close {
+.message-close {
   float: right;
   font-size: 20px;
   font-weight: bold;
-  line-height: $baseLineHeight;
   color: $gray5;
+  margin-left: 10px;
 
   &:hover {
-    color: $gray6;
+    color: $red5;
     text-decoration: none;
     cursor: pointer;
   }
-
-  // Ajusta a posição do link de fechar.
-  .system-msg & {
-    position: relative;
-    right: -21px;
-    line-height: 18px;
-  }
-  .msg-block & { right: 0; }
-
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
 }
 
-// Mensagem em bloco.
-.msg-block {
+// Mensagem de alerta.
+.message-warning {
+  background-color: $red1;
+  border-color: $red2;
+  color: $red5;
+}
+
+// Mensagem de sucesso.
+.message-success {
+  background-color: $green1;
+  border-color: $green3;
+  color: $green4;
+}
+
+// Mensagem de informação.
+.message-info {
   background-color: $blue1;
   border-color: $blue2;
   color: $blue4;
-  overflow: hidden;
-  padding: 10px;
-
-  > p {
-    padding-right: 40px;
-    margin-bottom: 10px;
-  }
-
-  .button {
-    float: right;
-    color: white;
-    border: 1px solid $blue2;
-    background-color: $blue2;
-
-    .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
-    .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 50%, 100%); }
-    .no-cssgradients & {
-      // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+100;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 );
-     }
-  }
-
-  // Remove o box shadow herdado do system-msg.
-  .boxshadow & { @include box-shadow(0 0 0 0 $black); }
 }
+
+// Mensagem de ocupado.
+.message-busy {
+  background-color: $orange1;
+  border-color: $orange3;
+  color: $black;
+}
+
+// Mensagens do sistema (sobrepostas).
+// ==========================================================================
+
+// Comum a todas as mensagens do sistema.
+.system-message-base {
+  @include box-sizing(border-box);
+  text-align: center;
+  // Centraliza horizontalmente.
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  $width: 580px;
+  width: $width;
+  margin-left: -($width / 2);
+}
+
+.system-message {
+  @extend .message-base;
+  @extend .system-message-base;
+
+  &.message-busy {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+// Mensagens em bloco.
+// ==========================================================================
+
+// Mensagens em bloco.
+.message-block {
+  @extend .message-base;
+  overflow: hidden;
+
+  .boxshadow & { @include box-shadow(none); }
+}
+
+.message-block-content {
+  padding-right: 25px;
+
+  p {
+    margin-bottom: 0;
+
+    &:last-of-type { margin-bottom: 10px;}
+  }
+}
+
+.message-block-actions { text-align: right; }
