@@ -1,5 +1,37 @@
-.sass-cache
+# Várias extensões que são sempre ignoradas.
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
 *~
+*.sass-cache
+
+# SO e pastas de IDEs.
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+# Pastas a serem ignoradas.
+.hg
+.svn
+.CVS
+.idea
+
+# Arquivos gerados pelo Compass.
 public/stylesheets/bootstrap.css
 public/stylesheets/icons.css
+public/stylesheets/docs.css
 public/images/new/icon-*.png
