@@ -43,7 +43,7 @@
         , title = this.getTitle()
         , content = this.getContent()
 
-      if (title == "") {
+      if (title === "") {
         $tip.find('.popover-title').remove()
         $tip.addClass('popover-no-title')
       } else {
