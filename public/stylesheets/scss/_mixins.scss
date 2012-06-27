@@ -3,14 +3,39 @@
 // -----------------------------------------------------------------
 
 
+@mixin linkVisited($color) {
+  color: $color;
+
+  &:visited { color: $color; }
+}
+
+@mixin linkColor($color) {
+  @include linkVisited($color);
+
+  &:hover { color: $color; }
+}
+
+@mixin reduGradient($color1, $color2, $slider: 0.5) {
+  @if ($slider < 0.5) {
+    @include background-image(linear-gradient(bottom, $color1, $color2 ($slider * 2)));
+  }
+  @if ($slider == 0.5) {
+    @include background-image(linear-gradient(bottom, $color1, $color2));
+  }
+  @if ($slider > 0.5) {
+    @include background-image(linear-gradient(bottom, $color1 (1 - $slider), $color2));
+  }
+}
+
 // MIXINS DE UTILIDADE.
 // --------------------------------------------------
 
 @mixin text-replacement() {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
 }
 
 @mixin horizontal-list() {
@@ -24,7 +49,7 @@
 @mixin pseudo-before($marginRight: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: text-bottom;
+  vertical-align: bottom;
   margin-right: $marginRight;
 
   @if ($float) {
@@ -35,7 +60,7 @@
 @mixin pseudo-after($marginLeft: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: text-bottom;
+  vertical-align: bottom;
   margin-left: $marginLeft;
 
   @if ($float) {
@@ -132,6 +157,7 @@
 @mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
   @include font-family-sans-serif;
   @include font-shorthand($size, $weight, $lineHeight);
+  letter-spacing: normal;
 }
 @mixin font-family-monospace {
   font-family: Menlo, Monaco, "Courier New", monospace;
@@ -175,6 +201,13 @@
   -webkit-background-clip: $clip;
      -moz-background-clip: $clip;
           background-clip: $clip;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
 }
 
 // Opacidade.

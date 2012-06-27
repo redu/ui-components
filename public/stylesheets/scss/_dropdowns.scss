@@ -23,6 +23,11 @@
     padding: 10px;
     width: 300px;
   }
+
+  .open & {
+    display: block;
+    margin-top: 10px;
+  }
 }
 
 // A seta.

@@ -83,20 +83,26 @@ textarea { @include font-family-sans-serif; } // E somente seta a família da fo
 
 // Identifica os controles por seus rótulos.
 label {
-  display: block;
+  // display: block;
   color: $gray4;
   position: relative;
 
   .form-horizontal & { margin-bottom: 7px; }
 }
 
+input[type="text"],
+select { height: 30px; }
+
 // Campos, áreas de textos e selecionadores.
-input,
+input[type="text"],
+input[type="file"],
 textarea,
 select {
+  @include box-sizing(padding-box);
+  width: 100%;
   display: inline-block;
-  width: $inputWidth;
-  height: $baseLineHeight;
+  // width: $inputWidth;
+  // height: $baseLineHeight;
   padding: $inputVerticalPadding $inputHorizontalPadding;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
@@ -273,12 +279,12 @@ input[type="radio"] {
 
 // Faz a altura da área de texto se comportar direito.
 textarea {
+  resize: vertical;
   height: auto;
-  resize: none;
 }
 
 // Seta a altura dos controles do selecionador e arquivo para ficar iguais ao dos campos de texto.
-select,
+// select,
 input[type="file"] {
   height: $baseLineHeight + 2 + 2 * ($inputVerticalPadding);
   width: $inputWidth + 2 + 2 * ($inputHorizontalPadding);

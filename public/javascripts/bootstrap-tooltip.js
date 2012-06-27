@@ -131,7 +131,7 @@
             tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
             // No caso especifico do popover2.
             if (this.$element.attr('data-original-title') == '' && this.$element.attr('rel') == 'popover') {
-              tp = {top: pos.top + pos.height, left: pos.left + pos.width - actualWidth}
+              tp = {top: pos.top + pos.height, left: pos.left + pos.width - actualWidth + 20}
               $tip.find('.arrow').css({ left: '92%' })
             }
             break

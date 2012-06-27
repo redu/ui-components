@@ -1,20 +1,18 @@
-// Typography.scss
-// Cabeçalhos, texto do body, listas, código e mais para um sistema de tipografia versátil e durável.
-// ----------------------------------------------------------------------------------------
+// ==========================================================================
+// Tipografia
+// ==========================================================================
 
-
-
-// TEXTO DO BODY.
-// ---------
+// Parágrafo.
+// ==========================================================================
 
 p {
-  margin: 0;
-  font-family: $baseFontFamily;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  margin: 0 0 $baseLineHeight / 2;
 
   & + & { margin-top: 5px; }
 }
+
+// Cabeçalhos.
+// ==========================================================================
 
 h1, h2, h3, h4, h5, h6, h7 { margin: 0; }
 
@@ -63,6 +61,7 @@ h6 {
 }
 
 h7 {
+  display: block;
   font-size: 14px;
   letter-spacing: 0;
   line-height: 18px;
@@ -75,19 +74,19 @@ h3 strong, h4 strong, h5 strong {
   display: inline-block;
 }
 
-
-// LISTAS.
-
-// INLINE LABELS
+// Inline labels.
+// ==========================================================================
 
 .inl-label {
   display: inline-block;
   font-size: 11px;
   line-height: 11px;
-  font-family: $baseFontFamily;
   padding: 3px 5px 2px 5px;
   text-transform: uppercase;
-  .borderradius & { @include border-radius($radius: 3px); }
+
+  & + & { margin-left: 5px; }
+
+  .borderradius & { @include border-radius(3px); }
 }
 
 .label-news {
@@ -100,6 +99,7 @@ h3 strong, h4 strong, h5 strong {
   @extend .inl-label;
   color: $white;
   background: $red2;
+
   .textshadow & { text-shadow: 0 -1px 0 $red5; }
 }
 
@@ -113,11 +113,14 @@ h3 strong, h4 strong, h5 strong {
   @extend .inl-label;
   background: $orange3;
   color: $white;
+
   .textshadow & { text-shadow: 0 -1px 0 $orange5; }
 }
 
-// Listas ordenadas e não ordenadas.
-ul, ol {
+// Listas.
+// ==========================================================================
+
+ul, ol, dl {
   padding: 0;
   margin: 0 0 $baseLineHeight / 2 25px;
 }
@@ -139,27 +142,26 @@ dt { font-weight: bold; }
 
 dl dd { margin-left: 18px; }
 
-// MISC
-// ----
+// Outros.
+// ==========================================================================
 
-// Ênfases.
+// Negrito.
 strong { font-weight: bold; }
 
-blockquote, q, .legend {
-  font-family: $baseFontFamily;
-  color: $gray5;
-}
+// Citações.
+blockquote, q, .legend { color: $gray5; }
 
+// Legenda e link secundário.
 .legend, .link-secondary {
   font-size: 11px;
   line-height: 11px;
 }
 
+// Código.
 code {
   color: $green4;
-  font-family: "lucida console", "Courier", monospace;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
-.link-name {
-  font-weight: bold;
-}
+// Link de nome.
+.link-name { font-weight: bold; }

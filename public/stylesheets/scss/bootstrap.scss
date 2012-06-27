@@ -1,27 +1,18 @@
 /*!
- * Bootstrap v0.0.1
+ * Redu Bootstrap v0.0.1
  *
  * Baseado no Bootstrap v2.0.1 do Twitter.
  */
 
-// Variáveis core e mixins.
+@import "compass/css3/images";
+
 @import "variables";
 @import "mixins";
-
-// CSS Reset.
 @import "reset";
-
-// Estrutura da página.
 @import "scaffolding";
-
-// Sistema de grids.
 @import "grid";
 @import "layout";
-
-// Base CSS.
 @import "typography";
-
-// Utilitários.
 @import "utilities";
 
 // Botões.
@@ -30,7 +21,6 @@
 
 // Filtros.
 @import "filters";
-@import "filter-groups";
 
 // Mensagens do sistema.
 @import "system-messages";
@@ -43,10 +33,10 @@
 @import "breadcrumbs";
 
 // Navegação global.
-@import "nav-bar";
+@import "nav-global";
 
 // Navegação local.
-@import "local-nav";
+@import "nav-local";
 
 // Formulários.
 @import "forms";
@@ -61,8 +51,7 @@
 @import "dropdowns";
 @import "modal-window";
 @import "component-animations";
-@import "progress-bar";
-
+@import "progress-bars";
 
 // Labels.
 @import "headers";

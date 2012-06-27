@@ -37,11 +37,14 @@ $filterBoxShadow:
   @include filterCommon;
 
   .borderradius & {
+    // No meio.
     @include border-radius(0);
-
+    // Início.
     &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
-
+    // Fim.
     &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
+    // Sozinho.
+    &:first-child:last-child { @include border-radius($filterBorderRadius); }
   }
 
   .boxshadow & {
@@ -135,6 +138,10 @@ $filterBoxShadow:
 
 .filter-level-2,
 .filter-level-3 { margin: 0; }
+
+.filter-level-1,
+.filter-level-2,
+.filter-level-3 { list-style: none; }
 
 .filter-level-2-item,
 .filter-level-3-item { margin-top: 5px; }

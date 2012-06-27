@@ -1,5 +1,6 @@
-// Classes utilitárias.
-// ---------------
+// ==========================================================================
+// Utilitários
+// ==========================================================================
 
 // Floats rápidos.
 .pull-right { float: right; }
@@ -14,3 +15,8 @@
 
 // Substituição de texto.
 .text-replacement { @include text-replacement; }
+
+// Limpeza de floats.
+.clearfix { @include clearfix; }
+
+.link-container { cursor: pointer; }
