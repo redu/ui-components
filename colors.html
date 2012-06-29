@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Redu Bootstrap</title>
+    <title>Colors · Redu Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
     <meta name="author" content="Redu Educational Technologies">
@@ -19,7 +19,7 @@
         <div class="nav-global-container">
           <a class="nav-global-brand" href="http://www.redu.com.br" title="Redu">Redu</a>
           <div class="nav-global-buttons">
-            <a class="nav-global-button nav-global-button-active" href="index.html" title="Início">Início</a>
+            <a class="nav-global-button " href="index.html" title="Início">Início</a>
           </div>
           <div class="nav-global-buttons-dropdown button-toolbar">
             <div class="button-group">
@@ -77,47 +77,123 @@
     </div>
     <div class="container">
 <div class="row">
-  <div class="span3">
-    &nbsp;
-    <ul class="nav-local nav-local-fixed">
-      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
-        <a class="nav-local-link link-target" href="#download" title="Download">Download</a>
-      </li>
-      <li class="nav-local-item link-container">
-        <a class="nav-local-link link-target" href="#dependencies" title="Dependências">Dependências</a>
-      </li>
-    </ul>
-  </div>
-  <div class="span13">
+  <div class="span16">
     <div class="content">
-      <h1>Redu Bootstrap</h1>
-      <hr>
-      <div class="button-toolbar">
-        <a id="download" href="http://bit.ly/reduBootstrap" class="button-primary" title="Download"><h3>Download</h3></a>
+      <h2>Cores</h2>
+      <hr />
+      <div class="row">
+        <div class="span6">
+          <p>Para ficar mais fácil de usar cada cor sem precisar ficar lembrando dos valores RGB, cada cor foi armazenada dentro de uma variável, como mostrado ao lado:</p>
+          <h5>Arquivo:</h5>
+          <code>_variables.scss</code>
+        </div>
+        <div class="span10">
+          <div class="colors-box">
+            <div class="color-row">
+              <!-- Preto e branco. -->
+              <div class="color-box color-black text-white">
+                $black
+              </div>
+              <div class="color-box color-white">
+                $white
+              </div>
+            </div>
+            <!-- Azul. -->
+            <div class="color-row">
+              <div class="color-box color-blue1">
+                $blue1
+              </div>
+              <div class="color-box color-blue2">
+                $blue2
+              </div>
+              <div class="color-box color-blue3 text-white">
+                $blue3
+              </div>
+              <div class="color-box color-blue4 text-white">
+                $blue4
+              </div>
+            </div>
+            <!-- Verde. -->
+            <div class="color-row">
+              <div class="color-box color-green1">
+                $green1
+              </div>
+              <div class="color-box color-green2">
+                $green2
+              </div>
+              <div class="color-box color-green3 text-white">
+                $green3
+              </div>
+              <div class="color-box color-green4 text-white">
+                $green4
+              </div>
+            </div>
+            <!-- Vermelho. -->
+            <div class="color-row">
+              <div class="color-box color-red1">
+                $red1
+              </div>
+              <div class="color-box color-red2">
+                $red2
+              </div>
+              <div class="color-box color-red3 text-white">
+                $red3
+              </div>
+              <div class="color-box color-red4 text-white">
+                $red4
+              </div>
+              <div class="color-box color-red5 text-white">
+                $red5
+              </div>
+            </div>
+            <!-- Laranja. -->
+            <div class="color-row">
+              <div class="color-box color-orange1">
+                $orange1
+              </div>
+              <div class="color-box color-orange2">
+                $orange2
+              </div>
+              <div class="color-box color-orange3">
+                $orange3
+              </div>
+              <div class="color-box color-orange4 text-white">
+                $orange4
+              </div>
+              <div class="color-box color-orange5 text-white">
+                $orange5
+              </div>
+              <div class="color-box color-orange6 text-white">
+                $orange6
+              </div>
+            </div>
+            <!-- Cinza. -->
+            <div class="color-row">
+              <div class="color-box color-gray1">
+                $gray1
+              </div>
+              <div class="color-box color-gray2">
+                $gray2
+              </div>
+              <div class="color-box color-gray3">
+                $gray3
+              </div>
+              <div class="color-box color-gray4">
+                $gray4
+              </div>
+              <div class="color-box color-gray5">
+                $gray5
+              </div>
+              <div class="color-box color-gray6 text-white">
+
+                $gray6
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <hr>
-      <h4 id="dependencies">Dependências</h4>
-      <p>Antes de começar a utilizar o Redu Bootstrap, é preciso estar atento aos seguintes requsitios:</p>
-      <h5>jQuery</h5>
-      <p>O bootstrap faz uso do jQuery +1.7.</p>
-      <h5>Suporte específico ao +IE8</h5>
-      <p>Para incluir estilos específicos ao IE8 e versões posteriores (IE9 em diante), como por exemplo gradientes, é preciso que a tag <code>&lt;html&gt;</code> do documento seja definida da seguinte maneira:</p>
-<pre class="prettyprint linenums">
-&lt;!--[if IE 8]&gt;&lt;html class="ie8"&gt;&lt;![endif]--&gt;
-&lt;!--[if gt IE 8]&gt;&lt;html class="gt-ie8"&gt;&lt;![endif]--&gt;
-&lt;!--[if gt IE 8]&gt;&lt;!--&gt;&lt;html&gt;&lt;!--&lt;![endif]--&gt;</pre>
-      <p>Desta maneira, a classe <code>.ie8</code> será aplicada somente no IE8 e a classe <code>.gt-ie8</code> somente para versões acima do IE8. Nos outros navegadores, nenhuma classe será aplicada.</p>
-      <h5>Suporte a CSS3</h5>
-      <p>É preciso utilizar o <a href="http://modernizr.com/" title="Modernizr">Modernizr</a> para que, da mesma maneira das classes de suporte ao +IE8, ele adicione as devidas classes a tag <code>&lt;html&gt;</code> para identificar se o navegador tem suporte a algumas funcionalidades do CSS3.</p>
-      <h5>Suporte a seletores CSS3 para o IE8</h5>
-      <p>É preciso utilizar o <a href="http://selectivizr.com/" title="Selectivizr">Selectivizr</a> para que certas pseudo classes, como por exemplo <code>:first-child</code> e <code>:last-child</code>, funcionem no IE8.</p>
-      <h5>Suporte a fontes</h5>
-      <p>Para incluir fontes como a Museo Sans, é preciso adicionar o seguinte bloco para utilizar o <a href="https://typekit.com/" title="Typekit">Typekit</a>:</p>
-      <pre class="prettyprint linenums">
-&lt;script src="http://use.typekit.com/lpo4rgu.js"&gt;&lt;/script&gt;
-&lt;script&gt;try{Typekit.load();}catch(e){}&lt;/script&gt;</pre>
-      <p><span class="label-doubts">Atenção</span> Tanto o Selectivizr como o Typekit só funcionarão se o site estiver rodando em um servidor (pode ser localhost).</p>
     </div>
+    
   </div>
 </div>    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Redu Bootstrap</title>
+    <title>Grid · Redu Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
     <meta name="author" content="Redu Educational Technologies">
@@ -19,7 +19,7 @@
         <div class="nav-global-container">
           <a class="nav-global-brand" href="http://www.redu.com.br" title="Redu">Redu</a>
           <div class="nav-global-buttons">
-            <a class="nav-global-button nav-global-button-active" href="index.html" title="Início">Início</a>
+            <a class="nav-global-button " href="index.html" title="Início">Início</a>
           </div>
           <div class="nav-global-buttons-dropdown button-toolbar">
             <div class="button-group">
@@ -77,46 +77,108 @@
     </div>
     <div class="container">
 <div class="row">
-  <div class="span3">
-    &nbsp;
-    <ul class="nav-local nav-local-fixed">
-      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
-        <a class="nav-local-link link-target" href="#download" title="Download">Download</a>
-      </li>
-      <li class="nav-local-item link-container">
-        <a class="nav-local-link link-target" href="#dependencies" title="Dependências">Dependências</a>
-      </li>
-    </ul>
-  </div>
-  <div class="span13">
-    <div class="content">
-      <h1>Redu Bootstrap</h1>
-      <hr>
-      <div class="button-toolbar">
-        <a id="download" href="http://bit.ly/reduBootstrap" class="button-primary" title="Download"><h3>Download</h3></a>
+  <div class="span16">
+    <div class="content">      
+      <h2>Grid</h2>
+      <div class="row">
+        <div class="span6">
+          <p>O sistema de grid padrão utiliza 16 colunas, cada coluna com 40px de largura e 20px de espaçamento entre elas, totalizando 940px.</p>
+          <p>Basta usar as classes <code>span1...16</code>, dentro de uma <code>.row</code>, para escolher as larguras dos blocos.</p>
+        </div>
+        <div class="span10">
+          <h5>Arquivos:</h5>
+          <ul>
+            <li><code>_variables.scss</code>: configurações de largura de coluna, quantidade e espaçamento;</li>
+            <li><code>_mixins.scss</code>: funções que geram o sistema de grid;</li>
+            <li><code>_grid.scss</code>: chamada da função.</li>
+          </ul>
+        </div>
       </div>
-      <hr>
-      <h4 id="dependencies">Dependências</h4>
-      <p>Antes de começar a utilizar o Redu Bootstrap, é preciso estar atento aos seguintes requsitios:</p>
-      <h5>jQuery</h5>
-      <p>O bootstrap faz uso do jQuery +1.7.</p>
-      <h5>Suporte específico ao +IE8</h5>
-      <p>Para incluir estilos específicos ao IE8 e versões posteriores (IE9 em diante), como por exemplo gradientes, é preciso que a tag <code>&lt;html&gt;</code> do documento seja definida da seguinte maneira:</p>
-<pre class="prettyprint linenums">
-&lt;!--[if IE 8]&gt;&lt;html class="ie8"&gt;&lt;![endif]--&gt;
-&lt;!--[if gt IE 8]&gt;&lt;html class="gt-ie8"&gt;&lt;![endif]--&gt;
-&lt;!--[if gt IE 8]&gt;&lt;!--&gt;&lt;html&gt;&lt;!--&lt;![endif]--&gt;</pre>
-      <p>Desta maneira, a classe <code>.ie8</code> será aplicada somente no IE8 e a classe <code>.gt-ie8</code> somente para versões acima do IE8. Nos outros navegadores, nenhuma classe será aplicada.</p>
-      <h5>Suporte a CSS3</h5>
-      <p>É preciso utilizar o <a href="http://modernizr.com/" title="Modernizr">Modernizr</a> para que, da mesma maneira das classes de suporte ao +IE8, ele adicione as devidas classes a tag <code>&lt;html&gt;</code> para identificar se o navegador tem suporte a algumas funcionalidades do CSS3.</p>
-      <h5>Suporte a seletores CSS3 para o IE8</h5>
-      <p>É preciso utilizar o <a href="http://selectivizr.com/" title="Selectivizr">Selectivizr</a> para que certas pseudo classes, como por exemplo <code>:first-child</code> e <code>:last-child</code>, funcionem no IE8.</p>
-      <h5>Suporte a fontes</h5>
-      <p>Para incluir fontes como a Museo Sans, é preciso adicionar o seguinte bloco para utilizar o <a href="https://typekit.com/" title="Typekit">Typekit</a>:</p>
+      <div class="row grids">
+        <div class="span3 color-blue2"></div>
+        <div class="span13 color-blue2 text-white">a.v.a.s, cursos, disciplinas, aulas, perfis</div>
+      </div>
       <pre class="prettyprint linenums">
-&lt;script src="http://use.typekit.com/lpo4rgu.js"&gt;&lt;/script&gt;
-&lt;script&gt;try{Typekit.load();}catch(e){}&lt;/script&gt;</pre>
-      <p><span class="label-doubts">Atenção</span> Tanto o Selectivizr como o Typekit só funcionarão se o site estiver rodando em um servidor (pode ser localhost).</p>
+  &lt;div class="row"&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+    &lt;div class="span13"&gt;a.v.a.s, cursos, disciplinas, aulas, perfis&lt;/div&gt;
+  &lt;/div&gt;</pre>
+      <div class="row grids">
+        <div class="span3 color-green2"></div>
+        <div class="span10 color-green2">início</div>
+        <div class="span3 color-green2"></div>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+    &lt;div class="span10"&gt;início&lt;/div&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+      </div>
+      <div class="row example grids">
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+      </div>
+      <div class="row example grids">
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+      </div>
+      <div class="row example grids">
+        <span class="span8 color-gray2">8</span>
+        <span class="span8 color-gray2">8</span>
+      </div>
+      <h3>Deslocando as colunas</h3>
+      <p>Para deslocar as colunas de posição, basta usar as classes <code>offset1...15</code>.</p>
+      <div class="row example grids">
+        <span class="span4 color-gray2">4</span>
+        <span class="span6 offset6 color-gray2">6 offset 6</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span4"&gt;4&lt;/span&gt;
+    &lt;span class="span6 offset6"&gt;6 offset 6&lt;/span&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span3 offset3 color-gray2">3 offset 3</span>
+        <span class="span3 offset3 color-gray2">3 offset 3</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span3 offset3"&gt;3 offset 3&lt;/span&gt;
+    &lt;span class="span3 offset3"&gt;3 offset 3&lt;/span&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span13 offset3 color-gray2">13 offset 3</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span13 offset3"&gt;13 offset 3&lt;/span&gt;
+  &lt;/div&gt;</pre>
     </div>
   </div>
 </div>    </div>
