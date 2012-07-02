@@ -1,0 +1,600 @@
+<div class="row">
+  <div class="span3">
+    &nbsp;
+    <ul class="nav-local nav-local-fixed">
+      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
+        <a class="nav-local-link link-target" href="#list-course">Cursos</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-space">Disciplinas</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-subject">Módulos & disciplina</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-environment-course-space">AVA-cursos-disciplinas</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-button">Botão</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-mix">Mista</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span13">
+    <div class="content">
+      <h2>Listas</h2>
+      <div class="row">
+        <div class="span8">
+          <h5>Arquivo:</h5>
+          <p><code>_lists.scss</code></p>
+          <h5>Dependências:</h5>
+          <p><code>bootstrap-list.js</code></p>
+        </div>
+      </div>
+      <h3 id="list-course">Listas de cursos</h3>
+      <div class="row">
+        <div class="span13">
+          <ul class="list-course">
+            <li class="list-course-space-item" rel="tooltip" title="Exemplo de curso recém-criado">
+              <div class="list-course-space-gradient-top"></div>
+              <div class="list-course-space-header">
+                <div class="list-course-space-authoring">
+                  <h3>
+                    <a href="#" title="F" class="icon-course-lightblue_32_34-before list-course-space-link">F</a>
+                  </h3>
+                  <span class="legend">autor:</span>
+                  <a href="#" title="Filipe W. Lima" class="icon-teacher-gray_16_18-before link-name">Filipe W. Lima</a>
+                </div>
+              </div>
+              <div class="list-course-space-stats">
+                <span class="list-course-stat icon-space-gray_16_18-before">0 disciplinas</span><span class="list-course-stat icon-teacher-gray_16_18-before">0 professores</span><span class="list-course-stat icon-tutor-gray_16_18-before">0 tutores</span><span class="list-course-stat icon-member-gray_16_18-before">0 alunos</span>
+              </div>
+              <div class="list-course-space-gradient-bottom"></div>
+            </li>
+            <li class="list-course-space-item">
+              <div class="list-course-space-gradient-top"></div>
+              <div class="list-course-space-header">
+                <div class="list-course-space-authoring">
+                  <h3>
+                    <a href="#" title="Lorem ipsum dolor sit amet orci aliquam." class="icon-course-lightblue_32_34-before list-course-space-link">Lorem ipsum dolor sit amet orci aliquam.</a>
+                  </h3>
+                  <h6 class="list-course-hours">1.200 horas</h6>
+                  <span class="legend">autor:</span>
+                  <a href="#" title="Nome Sobrenome" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
+                </div>
+                <div class="list-course-space-labels">
+                  <span class="label-news" rel="tooltip" title="40 novos avisos">40</span><span class="label-doubts" rel="tooltip" title="40 novos pedidos de ajuda">40</span>
+                </div>
+              </div>
+              <div class="list-course-space-stats">
+                <span class="list-course-stat icon-space-gray_16_18-before">20 disciplinas</span><span class="list-course-stat icon-teacher-gray_16_18-before">100 professores</span><span class="list-course-stat icon-tutor-gray_16_18-before">100 tutores</span><span class="list-course-stat icon-member-gray_16_18-before">100 alunos</span>
+              </div>
+              <p class="list-course-space-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet lacus tempus scelerisque. Mauris iaculis aliquam gravida. In sem eros, suscipit nec ornare in, mollis eget felis. Lorem ipsum dolor sit amet, consectetur orci aliquam.</p>
+              <p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves">tags, tags, tags, tags, tags</p>
+              <span class="list-course-private icon-private-gray_16_18" rel="tooltip" title="Curso privado">Curso privado</span>
+              <div class="list-course-space-gradient-bottom"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <pre class="prettyprint linenums">
+&lt;ul class="list-course"&gt;
+  &lt;!-- FOR EACH COURSE --&gt;
+  &lt;li class="list-course-space-item"&gt;
+    &lt;div class="list-course-space-gradient-top"&gt;&lt;/div&gt;
+    &lt;div class="list-course-space-header"&gt;
+      &lt;div class="list-course-space-authoring"&gt;
+        &lt;h3&gt;
+          &lt;a class="list-course-space-link icon-course-lightblue_32_34-before" href="COURSE_LINK" title="COURSE_NAME"&gt;COURSE_NAME&lt;/a&gt;
+        &lt;/h3&gt;
+        &lt;!-- IF COURSE_HAS_HOURS --&gt;
+        &lt;h6 class="list-course-hours"&gt;COURSE_HOURS&lt;/h6&gt;
+        &lt;!-- END --&gt;
+        &lt;span class="legend"&gt;autor:&lt;/span&gt;
+        &lt;a class="link-name icon-teacher-gray_16_18-before" href="COURSE_AUTHOR_LINK" title="COURSE_AUTHOR_NAME"&gt;COURSE_AUTHOR_NAME&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- IF COURSE_HAS_ANY_NOTICE --&gt;
+      &lt;div class="list-course-space-labels"&gt;
+        &lt;!-- IF COURSE_HAS_ANY_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="NEW_NOTICES_AMOUNT novos avisos"&gt;NEW_NOTICES_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF COURSE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="NEW_DOUBTS_AMOUNT novos pedidos de ajuda"&gt;NEW_DOUBTS_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;
+      &lt;/div&gt;
+      &lt;!-- END --&gt;
+    &lt;/div&gt;
+    &lt;div class="list-course-space-stats"&gt;
+      &lt;span class="list-course-stat icon-space-gray_16_18-before"&gt;COURSE_SPACES_AMOUNT disciplinas&lt;/span&gt;&lt;span class="list-course-stat icon-teacher-gray_16_18-before"&gt;COURSE_TEACHERS_AMOUNT professores&lt;/span&gt;&lt;span class="list-course-stat icon-tutor-gray_16_18-before"&gt;COURSE_TUTORS_AMOUNT tutores&lt;/span&gt;&lt;span class="list-course-stat icon-member-gray_16_18-before"&gt;COURSE_MEMBERS_AMOUNT alunos&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;!-- IF COURSE_HAS_DESCRIPTION --&gt;
+    &lt;p class="list-course-space-description icon-description-gray_16_18-before" title="Descrição"&gt;COURSE_DESCRIPTION&lt;/p&gt;
+    &lt;!-- END --&gt;
+    &lt;!-- IF COURSE_HAS_TAGS --&gt;
+    &lt;p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves"&gt;COURSE_TAGS_COMMA_SEPARATED&lt;/p&gt;
+    &lt;!-- END --&gt;
+    &lt;!-- IF COURSE_IS_PRIVATE --&gt;
+    &lt;span class="list-course-private icon-private-gray_16_18" rel="tooltip" title="Curso privado"&gt;Curso privado&lt;/span&gt;
+    &lt;!-- END --&gt;
+    &lt;div class="list-course-space-gradient-bottom"&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+
+      <h3 id="list-space">Listas de disciplinas</h3>
+      <div class="row">
+        <div class="span13">
+          <ul class="list-space">
+            <li class="list-course-space-item">
+              <div class="list-course-space-gradient-top"></div>
+              <div class="list-course-space-header icon-course-lightgray_32_34-before">
+                <div class="list-course-space-authoring">
+                  <h3>
+                    <a href="#" title="Lorem ipsum dolor sit amet orci aliquam." class="icon-space-lightblue_32_34-before list-course-space-link">Lorem ipsum dolor sit amet orci aliquam.</a>
+                  </h3>
+                  <span class="legend">autor: </span><a href="#" title="Nome Sobrenome" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
+                </div>
+                <div class="list-course-space-labels">
+                  <span class="label-news" rel="tooltip" title="30 novos avisos">30</span><span class="label-doubts" rel="tooltip" title="20 novos pedidos de ajuda">20</span>
+                </div>
+              </div>
+              <div class="list-course-space-stats">
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-subject-lightblue_16_18-before" title="Aulas">Aulas:</a> 20 <span class="list-space-stats-blue" rel="tooltip" title="3 novas aulas">(+3)</span></span><span class="list-space-stat icon-request-help-lightorange_16_18-before">200 pedidos de ajuda <span class="list-space-stats-orange" rel="tooltip" title="20 novos pedidos de ajuda">(+20)</span></span>
+                </div>
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-wall-lightblue_16_18-before" title="Mural da disciplina">Mural da disciplina:</a> 20.000 conversas <span class="list-space-stats-blue" rel="tooltip" title="3 novas conversas">(+3)</span></span><span class="list-space-stat icon-reply-lightblue_16_18-before">20.000 respostas <span class="list-space-stats-blue" rel="tooltip" title="20 novas respostas">(+20)</span></span>
+                </div>
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-file-lightblue_16_18-before" title="Arquivos de apoio">Arquivos de apoio:</a> 200 arquivos <span class="list-space-stats-blue" rel="tooltip" title="4 novos arquivos">(+4)</span></span>
+                </div>
+              </div>
+              <p class="list-course-space-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet neque mattis lorem egestas tincidunt. Donec sed nunc quis felis elementum tincidunt. Donec turpis turpis, facilisis eu cras amet.</p>
+              <p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves">tags, tags, tags, tags, tags</p>
+              <div class="list-course-space-gradient-bottom"></div>
+            </li>
+            <li class="list-course-space-item" rel="tooltip" title="Exemplo de disciplina recém-criada">
+              <div class="list-course-space-gradient-top"></div>
+              <div class="list-course-space-header icon-course-lightgray_32_34-before">
+                <div class="pull-left">
+                  <h3>
+                    <a href="#" title="F" class="icon-space-lightblue_32_34-before list-course-space-link">F</a>
+                  </h3>
+                  <span class="legend">autor: </span><a href="#" title="Filipe W. Lima" class="icon-teacher-gray_16_18-before link-name">Filipe W. Lima</a>
+                </div>
+              </div>
+              <div class="list-course-space-stats">
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-subject-lightblue_16_18-before" title="Aulas">Aulas:</a> 0</span><span class="list-space-stat icon-request-help-gray_16_18-before">0 pedidos de ajuda</span>
+                </div>
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-wall-lightblue_16_18-before" title="Mural da disciplina">Mural da disciplina:</a> 0 conversas</span><span class="list-space-stat icon-reply-gray_16_18-before">0 respostas</span>
+                </div>
+                <div class="list-space-stats-row">
+                  <span class="list-space-stat"><a href="#" class="icon-file-lightblue_16_18-before" title="Arquivos de apoio">Arquivos de apoio:</a> 0 arquivos</span>
+                </div>
+              </div>
+              <div class="list-course-space-gradient-bottom"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <pre class="prettyprint linenums">
+&lt;ul class="list-space"&gt;
+  &lt;!-- FOR EACH SPACE --&gt;
+  &lt;li class="list-course-space-item"&gt;
+    &lt;div class="list-course-space-gradient-top"&gt;&lt;/div&gt;
+    &lt;div class="list-course-space-header icon-course-lightgray_32_34-before"&gt;
+      &lt;div class="list-course-space-authoring"&gt;
+        &lt;h3&gt;
+          &lt;a class="list-course-space-link icon-space-lightblue_32_34-before" href="SPACE_LINK" title="SPACE_NAME"&gt;SPACE_NAME&lt;/a&gt;
+        &lt;/h3&gt;
+        &lt;span class="legend"&gt;autor: &lt;/span&gt;&lt;a class="link-name icon-teacher-gray_16_18-before" href="SPACE_AUTHOR_LINK" title="SPACE_AUTHOR_NAME"&gt;SPACE_AUTHOR_NAME&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- IF SPACE_HAS_ANY_NOTICE --&gt;
+      &lt;div class="list-course-space-labels"&gt;
+        &lt;!-- IF SPACE_HAS_ANY_NEWS --&gt;&lt;span class="label-news" rel="tooltip" title="(NEW_SUBJECTS_AMOUNT + NEW_WALL_MESSAGES_AMOUNT + NEW_WALL_REPLIES_AMOUNT + NEW_FILES_AMOUNT) novos avisos"&gt;(NEW_SUBJECTS_AMOUNT + NEW_WALL_MESSAGES_AMOUNT + NEW_WALL_REPLIES_AMOUNT + NEW_FILES_AMOUNT)&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF SPACE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="NEW_DOUBTS_AMOUNT novos pedidos de ajuda"&gt;NEW_DOUBTS_AMOUNT&lt;/span&gt;
+        &lt;!-- END --&gt;
+      &lt;/div&gt;
+      &lt;!-- END --&gt;
+    &lt;/div&gt;
+    &lt;div class="list-course-space-stats"&gt;
+      &lt;div class="list-space-stats-row"&gt;
+        &lt;span class="list-space-stat"&gt;&lt;a href="SPACE_SUBJECTS_LINK" class="icon-subject-lightblue_16_18-before" title="Aulas"&gt;Aulas:&lt;/a&gt; SPACE_SUBJECTS_AMOUNT &lt;!-- IF SPACE_HAS_NEW_SUBJECTS --&gt;&lt;span class="list-space-stats-blue" rel="tooltip" title="NEW_SUBJECTS_AMOUNT novas aulas"&gt;(+NEW_SUBJECTS_AMOUNT)&lt;/span&gt;&lt;!-- END --&gt;&lt;/span&gt;&lt;span class="list-space-stat icon-request-help-lightorange_16_18-before"&gt;SPACE_DOUBTS_AMOUNT pedidos de ajuda &lt;!-- IF SPACE_HAS_NEW_DOUBTS --&gt;&lt;span class="list-space-stats-orange" rel="tooltip" title="NEW_DOUBTS_AMOUNT novos pedidos de ajuda"&gt;(+NEW_DOUBTS_AMOUNT)&lt;/span&gt;&lt;!-- END --&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="list-space-stats-row"&gt;
+        &lt;span class="list-space-stat"&gt;&lt;a href="SPACE_WALL_LINK" class="icon-wall-lightblue_16_18-before" title="Mural da disciplina"&gt;Mural da disciplina:&lt;/a&gt; SPACE_WALL_MESSAGES_AMOUNT conversas &lt;!-- IF SPACE_HAS_NEW_WALL_MESSAGES --&gt;&lt;span class="list-space-stats-blue" rel="tooltip" title="NEW_WALL_MESSAGES_AMOUNT novas conversas"&gt;(+NEW_WALL_MESSAGES_AMOUNT)&lt;/span&gt;&lt;!-- END --&gt;&lt;/span&gt;&lt;span class="list-space-stat icon-reply-lightblue_16_18-before"&gt;SPACE_WALL_REPLIES_AMOUNT respostas &lt;span class="list-space-stats-blue" rel="tooltip" title="NEW_WALL_REPLIES_AMOUNT novas respostas"&gt;(+NEW_WALL_REPLIES_AMOUNT)&lt;/span&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="list-space-stats-row"&gt;
+        &lt;span class="list-space-stat"&gt;&lt;a href="SPACE_FILES_LINK" class="icon-file-lightblue_16_18-before" title="Arquivos de apoio"&gt;Arquivos de apoio:&lt;/a&gt; SPACE_FILES_AMOUNT arquivos &lt;!-- IF SPACE_HAS_NEW_FILES --&gt;&lt;span class="list-space-stats-blue" rel="tooltip" title="NEW_FILES_AMOUNT novos arquivos"&gt;(+NEW_FILES_AMOUNT)&lt;/span&gt;&lt;!-- END --&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- IF SPACE_HAS_DESCRIPTION --&gt;
+    &lt;p class="list-course-space-description icon-description-gray_16_18-before" title="Descrição"&gt;SPACE_DESCRIPTION&lt;/p&gt;
+    &lt;!-- END --&gt;
+    &lt;!-- IF SPACE_HAS_TAGS --&gt;
+    &lt;p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves"&gt;SPACE_TAGS_COMMA_SEPARATED&lt;/p&gt;
+    &lt;!-- END --&gt;
+    &lt;div class="list-course-space-gradient-bottom"&gt;&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+
+      <h3 id="list-subject">Lista de m&oacute;dulos & aulas</h3>
+      <div class="row">
+        <div class="span13">
+          <ul class="list-subject">
+            <li class="list-subject-item">
+              <div class="list-subject-header">
+                <h4 class="list-subject-name">Lorem ipsum dolor sit amet1 consectetur adipiscing volutpat2</h4>
+                <div class="list-subject-header-info">
+                  <span class="label-news" rel="tooltip" title="5 novos avisos">5</span><!--
+                   --><span class="label-doubts" rel="tooltip" title="10 novos pedidos de ajuda">10</span><!--
+                   --><div class="progress-bar-mini progress-bar-total" rel="tooltip" title="25% cursado">
+                    <div class="progress-bar-completed" style="width: 25%;">25% cursado</div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-subject-body">
+                <p class="list-subject-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</p>
+                <ol class="list-button">
+                  <li class="list-button-item link-container">
+                    <a class="list-button-link link-target icon-text-page-lightblue_16_18-before" href="#list-course" title="Aula com página de texto">Aula com página de texto</a>
+                    <div class="list-lecture-info">
+                      <span class="icon-correct-green_8_10 text-replacement" rel="tooltip" title="Aula completada">Aula completada</span><span class="wall-stats icon-wall-gray_16_18-before" rel="tooltip" title="2000 avisos">2000</span><span class="request-help-stats icon-request-help-gray_16_18-before" rel="tooltip" title="1000 pedidos de ajuda">1000</span><span class="stars"><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span>
+                      </span>
+                    </div>
+                  </li>
+                  <li class="list-button-item link-container">
+                    <a class="list-button-link link-target icon-presentation-lightblue_16_18-before" href="#1" title="Aula com apresentação">Aula com apresentação</a>
+                    <div class="list-lecture-info">
+                      <span class="icon-correct-green_8_10 text-replacement" rel="tooltip" title="Aula completada">Aula completada</span><span class="wall-stats icon-wall-gray_16_18-before" rel="tooltip" title="2000 avisos">2000</span><span class="request-help-stats icon-request-help-gray_16_18-before" rel="tooltip" title="1000 pedidos de ajuda">1000</span><span class="stars"><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span>
+                      </span>
+                    </div>
+                  </li>
+                  <li class="list-button-item link-container">
+                    <a class="list-button-link link-target icon-exercise-lightblue_16_18-before" href="#1" title="Aula com exercícios">Aula com exercícios</a>
+                    <div class="list-lecture-info">
+                      <span class="icon-correct-green_8_10 text-replacement" rel="tooltip" title="Aula completada">Aula completada</span><span class="wall-stats icon-wall-gray_16_18-before" rel="tooltip" title="2000 avisos">2000</span><span class="request-help-stats icon-request-help-gray_16_18-before" rel="tooltip" title="1000 pedidos de ajuda">1000</span><span class="stars"><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span>
+                      </span>
+                    </div>
+                  </li>
+                  <li class="list-button-item link-container">
+                    <a class="list-button-link link-target icon-video-lightblue_16_18-before" href="#2" title="Aula de v&iacute;deo lorem ipsum">Aula de v&iacute;deo lorem ipsum</a>
+                    <div class="list-lecture-info">
+                      <span class="label-news" rel="tooltip" title="Nova aula">Novo</span><span class="wall-stats-new icon-wall-lightblue_16_18-before" rel="tooltip" title="100 avisos<br />5 novos avisos">+5</span><span class="request-help-stats-new icon-request-help-lightorange_16_18-before" rel="tooltip" title="100 pedidos de ajuda<br />10 novos pedidos">+10</span><span class="stars"><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-full-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span>
+                      </span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li class="list-subject-item" rel="tooltip" title="Módulo recém-criado, sem descrição e sem nenhuma aula">
+              <div class="list-subject-header">
+                <h4 class="list-subject-name">L</h4>
+                <div class="list-subject-header-info">
+                  <div class="progress-bar-mini progress-bar-total" rel="tooltip" title="0% cursado">
+                    <div class="progress-bar-completed" style="width: 0%;">0% cursado</div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-subject-body">
+
+              </div>
+            </li>
+            <li class="list-subject-item" rel="tooltip" title="Módulo recém-criado com nome gigante, sem descrição, com aula recém-criada de nome gigante">
+              <div class="list-subject-header">
+                <h4 class="list-subject-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</h4>
+                <div class="list-subject-header-info">
+                  <div class="progress-bar-mini progress-bar-total" rel="tooltip" title="0% cursado">
+                    <div class="progress-bar-completed" style="width: 0%;">0% cursado</div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-subject-body">
+                <ol class="list-button">
+                  <li class="list-button-item link-container">
+                    <a class="list-button-link link-target icon-text-page-lightblue_16_18-before" href="#1" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</a>
+                    <div class="list-lecture-info">
+                      <span class="label-news" rel="tooltip" title="Nova aula">Novo</span><span class="wall-stats icon-wall-gray_16_18-before" rel="tooltip" title="0 avisos">0</span><span class="request-help-stats icon-request-help-gray_16_18-before" rel="tooltip" title="0 pedidos de ajuda">0</span><span class="stars"><span class="star icon-star-empty-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span><span class="star icon-star-empty-gray_8_10"></span>
+                      </span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <pre class="prettyprint linenums">
+&lt;ul class="list-subject"&gt;
+  &lt;!-- FOR EACH SUBJECT --&gt;
+  &lt;li class="list-subject-item"&gt;
+    &lt;div class="list-subject-header"&gt;
+      &lt;h4 class="list-subject-name"&gt;SUBJECT_NAME&lt;/h4&gt;
+      &lt;div class="list-subject-header-info"&gt;
+        &lt;!-- IF SUBJECT_HAS_ANY_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="LECTURES_NEW_NOTICES_SUM novos avisos"&gt;LECTURES_NEW_NOTICES_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="LECTURES_NEW_DOUBTS_SUM novos pedidos de ajuda"&gt;LECTURES_NEW_DOUBTS_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;div class="progress-bar-mini progress-bar-total" rel="tooltip" title="SUBJECT_COMPLETITION_PERCENTAGE% cursado"&gt;
+          &lt;div class="progress-bar-completed" style="width: SUBJECT_COMPLETITION_PERCENTAGE%;"&gt;SUBJECT_COMPLETITION_PERCENTAGE% cursado&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="list-subject-body"&gt;
+      &lt;!-- IF SUBJECT_HAS_DESCRIPTION --&gt;
+      &lt;p class="list-subject-description icon-description-gray_16_18-before" title="Descrição"&gt;SUBJECT_DESCRIPTION&lt;/p&gt;
+      &lt;!-- END --&gt;
+      &lt;!-- IF SUBJECT_HAS_LECTURES --&gt;
+      &lt;ol class="list-button"&gt;
+        &lt;!-- FOR EACH LECTURE --&gt;
+        &lt;li class="list-button-item link-container"&gt;
+          &lt;!-- CHOOSE ICON DEPENDING LECTURE TYPE --&gt;
+          &lt;a class="list-button-link link-target icon-(text-page|presentation|exercise|video)-lightblue_16_18-before" href="LECTURE_LINK" title="LECTURE_NAME"&gt;LECTURE_NAME&lt;/a&gt;
+          &lt;div class="list-lecture-info"&gt;
+            &lt;!-- IF LECTURE_IS_NEW --&gt;&lt;span class="label-news" rel="tooltip" title="Nova aula"&gt;Novo&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_IS_COMPLETED --&gt;&lt;span class="icon-correct-green_8_10 text-replacement" rel="tooltip" title="Aula completada"&gt;Aula completada&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_HAS_NEW_NOTICES --&gt;&lt;span class="wall-stats-new icon-wall-lightblue_16_18-before" rel="tooltip" title="LECTURE_NOTICES_AMOUNT avisos&lt;br /&gt;LECTURE_NEW_NOTICES_AMOUNT novos avisos"&gt;+LECTURE_NEW_NOTICES_AMOUNT&lt;/span&gt;&lt;!-- ELSE --&gt;&lt;span class="wall-stats icon-wall-gray_16_18-before" rel="tooltip" title="LECTURE_NOTICES_AMOUNT avisos"&gt;LECTURE_NOTICES_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_HAS_NEW_DOUBTS --&gt;&lt;span class="request-help-stats-new icon-request-help-lightorange_16_18-before" rel="tooltip" title="LECTURE_DOUBTS_AMOUNT pedidos de ajuda&lt;br /&gt;LECTURE_NEW_DOUBTS_AMOUNT novos pedidos"&gt;+LECTURE_NEW_DOUBTS_AMOUNT&lt;/span&gt;&lt;!-- ELSE --&gt;&lt;span class="request-help-stats icon-request-help-gray_16_18-before" rel="tooltip" title="LECTURE_DOUBTS_AMOUNT pedidos de ajuda"&gt;LECTURE_DOUBTS_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;&lt;span class="stars"&gt;&lt;!-- PRINT AS MUCH FULL STARS AS LECTURE_RATE AND COMPLETE WITH EMPTY STARS TILL 5 --&gt;&lt;span class="star icon-star-full-gray_8_10"&gt;&lt;/span&gt;&lt;span class="star icon-star-full-gray_8_10"&gt;&lt;/span&gt;&lt;span class="star icon-star-full-gray_8_10"&gt;&lt;/span&gt;&lt;span class="star icon-star-full-gray_8_10"&gt;&lt;/span&gt;&lt;span class="star icon-star-empty-gray_8_10"&gt;&lt;!-- END --&gt;&lt;/span&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;!-- END --&gt;
+      &lt;/ol&gt;
+      &lt;!-- END --&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+
+      <h3 id="list-environment-course-space">Lista de ambientes-cursos-disciplinas</h3>
+      <div class="row">
+        <div class="span10 offset1">
+          <ul class="list-environment-course-space">
+            <li class="list-environment-course-space-item" >
+              <div class="list-environment-course-space-header">
+                <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
+                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                </a>
+                <h4 class="list-environment-course-space-title">
+                  <a class="list-environment-course-space-link" href="#" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
+                </h4>
+              </div>
+              <ul class="list-mix">
+                <li class="list-mix-item icon-course-lightgray_32_34-before">
+                  <div class="list-mix-inner">
+                    <button class="button-default button-dropdown">
+                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                    </button>
+                    <div class="list-mix-content">
+                      <div class="list-mix-header">
+                        <h5><a class="list-mix-title" href="#" title="Lorem ipsum dolor sit amet orci aliquam.">Lorem ipsum dolor sit amet orci aliquam.</a></h5>
+                        <span class="legend">2 disciplinas</span>
+                      </div>
+                      <ul class="list-mix-body list-space-mini">
+                        <li class="list-space-mini-item">
+                          <a href="#" class="icon-space-lightblue_16_18-before" title="Lorem ipsum dolor sit amet orci aliquam.">Lorem ipsum dolor sit amet orci aliquam.</a><span class="label-news" rel="tooltip" title="2 novos avisos">2</span><span class="label-doubts" rel="tooltip" title="4 novos pedidos de ajuda">4</span>
+                        </li>
+                        <li class="list-space-mini-item">
+                          <a href="#" class="icon-space-lightblue_16_18-before" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a><span class="label-news" rel="tooltip" title="3 novos avisos">3</span><span class="label-doubts" rel="tooltip" title="6 novos pedidos de ajuda">6</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list-mix-info">
+                      <span class="label-news" rel="tooltip" title="5 novos avisos">5</span><!--
+                       --><span class="label-doubts" rel="tooltip" title="10 novos pedidos de ajuda">10</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-mix-item icon-course-lightgray_32_34-before">
+                  <div class="list-mix-inner">
+                    <button class="button-default button-dropdown">
+                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                    </button>
+                    <div class="list-mix-content">
+                      <div class="list-mix-header">
+                        <h5><a class="list-mix-title" href="#" title="Curso Lorem Ipsum">Curso Lorem Ipsum</a></h5>
+                        <span class="legend">2 disciplinas</span>
+                      </div>
+                      <ul class="list-mix-body list-space-mini">
+                        <li class="list-space-mini-item">
+                          <a href="#" class="icon-space-lightblue_16_18-before" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a><span class="label-news" rel="tooltip" title="2 novos avisos">2</span><span class="label-doubts" rel="tooltip" title="4 novos pedidos de ajuda">4</span>
+                        </li>
+                        <li class="list-space-mini-item">
+                          <a href="#" class="icon-space-lightblue_16_18-before" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a><span class="label-news" rel="tooltip" title="3 novos avisos">3</span><span class="label-doubts" rel="tooltip" title="6 novos pedidos de ajuda">6</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list-mix-info">
+                      <span class="label-news" rel="tooltip" title="5 novos avisos">5</span><!--
+                       --><span class="label-doubts" rel="tooltip" title="10 novos pedidos de ajuda">10</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="list-environment-course-space-item" rel="tooltip" title="Exemplo de ambiente sem curso">
+              <div class="list-environment-course-space-header">
+                <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
+                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                </a>
+                <h4 class="list-environment-course-space-title">
+                  <a class="list-environment-course-space-link" href="#" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
+                </h4>
+              </div>
+            </li>
+            <li class="list-environment-course-space-item" rel="tooltip" title="Exemplo de ambiente com 1 curso sem disciplina">
+              <div class="list-environment-course-space-header">
+                <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
+                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                </a>
+                <h4 class="list-environment-course-space-title">
+                  <a class="list-environment-course-space-link" href="#" title="Lorem ipsum dolor sit amet orci aliquam.">Lorem ipsum dolor sit amet orci aliquam.</a>
+                </h4>
+              </div>
+              <ul class="list-mix">
+                <li class="list-mix-item icon-course-lightgray_32_34-before">
+                  <div class="list-mix-inner">
+                    <button class="button-default button-disabled button-dropdown">
+                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                    </button>
+                    <div class="list-mix-content">
+                      <div class="list-mix-header">
+                        <h5><a class="list-mix-title" href="#" title="Curso Lorem Ipsum">Curso Lorem Ipsum</a></h5>
+                        <span class="legend">0 disciplinas</span>
+                      </div>
+                    </div>
+                    <div class="list-mix-info">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <pre class="prettyprint linenums">
+&lt;ul class="list-environment-course-space"&gt;
+  &lt;!-- FOR EACH ENVIRONMENT --&gt;
+  &lt;li class="list-environment-course-space-item"&gt;
+    &lt;div class="list-environment-course-space-header"&gt;
+      &lt;a class="list-environment-course-space-image-link" href="ENVIRONMENT_LINK" title="ENVIRONMENT_NAME"&gt;
+        &lt;img src="ENVIRONMENT_IMAGE_LINK" alt="ENVIRONMENT_NAME" title="ENVIRONMENT_NAME" width="32" height="32" /&gt;
+      &lt;/a&gt;
+      &lt;h4 class="list-environment-course-space-title"&gt;
+        &lt;a class="list-environment-course-space-link" href="ENVIRONMENT_LINK" title="ENVIRONMENT_NAME"&gt;ENVIRONMENT_NAME&lt;/a&gt;
+      &lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;!-- IF ENVIRONMENT_HAS_COURSE --&gt;
+    &lt;ul class="list-mix"&gt;
+      &lt;!-- FOR EACH COURSE --&gt;
+      &lt;li class="icon-course-lightgray_32_34-before"&gt;
+        &lt;div class="list-mix-item"&gt;
+          &lt;!-- IF COURSE_HAS_SPACE --&gt;
+          &lt;button class="button-default button-dropdown"&gt;
+          &lt;!-- ELSE --&gt;
+          &lt;button class="button-default button-disabled button-dropdown"&gt;
+          &lt;!-- END --&gt;
+            &lt;span class="icon-arrow-down-lightblue_8_10 show"&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;div class="list-mix-content"&gt;
+            &lt;div class="list-mix-header"&gt;
+              &lt;h5"&gt;&lt;a class="list-mix-title" href="COURSE_LINK" title="COURSE_NAME"&gt;COURSE_NAME&lt;/a&gt;&lt;/h5&gt;
+              &lt;span class="legend"&gt;COURSE_SPACE_AMOUNT disciplinas&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;!-- IF COURSE_HAS_SPACE --&gt;
+            &lt;ul class="list-mix-body list-space-mini"&gt;
+              &lt;!-- FOR EACH SPACE --&gt;
+              &lt;li&gt;
+                &lt;a href="SPACE_LINK" class="icon-space-lightblue_16_18-before" title="SPACE_NAME"&gt;SPACE_NAME&lt;/a&gt;&lt;!-- IF SPACE_HAS_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="SPACE_NEW_NOTICES_AMOUNT novos avisos"&gt;SPACE_NEW_NOTICES_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF SPACE_HAS_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="SPACE_NEW_DOUBTS_AMOUNT novos pedidos de ajuda"&gt;SPACE_NEW_DOUBTS_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;
+              &lt;/li&gt;
+              &lt;!-- END --&gt;
+            &lt;/ul&gt;
+            &lt;!-- END --&gt;
+          &lt;/div&gt;
+          &lt;div class="list-mix-info"&gt;
+            &lt;!-- IF COURSE_HAS_ANY_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="SPACE_NEW_NOTICES_SUM_AMOUNT novos avisos"&gt;SPACE_NEW_NOTICES_SUM_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF COURSE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="SPACE_NEW_DOUBTS_SUM_AMOUNT novos pedidos de ajuda"&gt;SPACE_NEW_DOUBTS_SUM_AMOUNT&lt;/span&gt;&lt;!-- END --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;!-- END --&gt;
+    &lt;/ul&gt;
+    &lt;!-- END --&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+
+      <h3 id="list-button">Lista-bot&atilde;o</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Usado pela lista de módulos e aulas.</p>
+          <p>Depende do <code>bootstrap-list.js</code> para executar o comportamento de que quando um item da lista é clicado, o usuário é redirecionado para a URL do âncora com a classe <code>list-button-link</code>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10 offset1">
+          <ul class="list-button">
+            <li class="list-button-item link-container">
+              <a href="#list-mix" title="This is the list's hyperlink" class="list-button-link link-target">This is the list's hyperlink</a>
+            </li>
+            <li class="list-button-item link-container">
+              <a href="http://www.google.com" title="This is the list's hyperlink" class="list-button-link link-target">This is the list's hyperlink</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <pre class="prettyprint linenums">
+&lt;ul class="list-button"&gt;
+  &lt;!-- FOR EACH LIST ITEM --&gt;
+  &lt;li class="list-button-item link-container"&gt;
+    &lt;a href="ITEM_LINK" title="ITEM_NAME" class="list-button-link link-target"&gt;ITEM_NAME&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+
+      <h3 id="list-mix">Lista mista (bot&atilde;o e lista)</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Usado pela lista de ambientes-cursos-disciplinas.</p>
+          <p>Depende do <code>bootstrap-list.js</code> para executar o comportamento de que quando o botão dropdown de um item da lista é clicado, o bloco de classe <code>list-mix-body</code> é mostrado.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10 offset1">
+          <ul class="list-mix">
+            <li class="list-mix-item icon-course-lightgray_32_34-before">
+              <div class="list-mix-inner">
+                <button class="button-default button-dropdown">
+                  <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                </button>
+                <div class="list-mix-content">
+                  <div class="list-mix-header">
+                    <h5><a class="list-mix-title" href="#" title="Título do item">Título do item</a></h5>
+                    <span class="legend">Legenda</span>
+                  </div>
+                  <div class="list-mix-body">
+                    Este bloco aparece quando o botão for clicado.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-mix-item icon-course-lightgray_32_34-before">
+              <div class="list-mix-inner">
+                <button class="button-default button-disabled button-dropdown">
+                  <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                </button>
+                <div class="list-mix-content">
+                  <div class="list-mix-header">
+                    <h5><a class="list-mix-title" href="#" title="Título do item">Título do item</a></h5>
+                    <span class="legend">Legenda</span>
+                  </div>
+                  <div class="list-mix-body">
+                    Este bloco aparece quando o botão for clicado.
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <pre class="prettyprint linenums">
+&lt;ul class="list-mix"&gt;
+  &lt;!-- FOR EACH LIST ITEM --&gt;
+  &lt;li class="icon-XXX-lightgray_32_34-before"&gt;
+    &lt;div class="list-mix-item"&gt;
+      &lt;!-- ADD THE CLASS button-disabled TO THE BUTTON TO CANCEL THE DROPDOWN EFFECT --&gt;
+      &lt;button class="button-default button-dropdown"&gt;
+        &lt;span class="icon-arrow-down-lightblue_8_10 show"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="list-mix-content"&gt;
+        &lt;div class="list-mix-header"&gt;
+          &lt;h5&gt;&lt;a class="list-mix-title" href="ITEM_LINK" title="ITEM_NAME"&gt;ITEM_NAME&lt;/a&gt;&lt;/h5&gt;
+          &lt;span class="legend"&gt;ITEM_LEGEND&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="list-mix-body"&gt;
+          TO BE DISPLAYED WHEN DROPDOWN BUTTON IS CLICKED
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;!-- END --&gt;
+&lt;/ul&gt;</pre>
+    </div>
+  </div>
+</div>

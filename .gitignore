@@ -30,9 +30,11 @@ nbproject
 .CVS
 .idea
 
-# Arquivos gerados pelo Compass.
-public/stylesheets/bootstrap.css
-public/stylesheets/icons.css
-public/stylesheets/docs.css
-public/javascripts/bootstrap-redu*
-public/images/new/icon-*.png
+# Arquivos gerados automaticamente pelas ferramentas:
+# Compass.
+css/bootstrap-redu*.css
+img/icon-*
+# Grunt.
+js/bootstrap-redu*
+# Node.
+/*.html

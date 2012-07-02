@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="span16">
+    <div class="content">  
+      <h2>Janela modal</h2>
+      <div class="row">
+        <div class="span6">
+          <p>Você pode ativar as janelas modais na página sem a necessidade de escrever JavaScript. Apenas coloque <code>data-toggle="modal"</code> no elemento de controle e <code>href="#foo"</code> que corresponde ao id da janela modal, e quando clicado, ele irá abrir a janela modal.</p>
+        </div>
+        <div class="span6">
+          <div class="well">
+            <ul>
+              <li>Clique <a data-toggle="modal" href="#modal1">aqui</a> para abrir o exemplo 1 (só texto).</li>
+              <li>Clique <a data-toggle="modal" href="#modal2">aqui</a> para abrir o exemplo 2 (vídeo do YouTube).</li>
+              <li>Clique <a data-toggle="modal" href="#modal3">aqui</a> para abrir o exemplo 3 (muito texto).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_modal-window.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-modal.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <pre class="prettyprint linenums">
+  &lt;a data-toggle="modal" href="#MODAL_ID"&gt;Clique aqui&lt;/a&gt;
+
+  &lt;div class="modal hide fade" id="MODAL_ID"&gt;
+    &lt;div class="modal-header"&gt;
+      &lt;h3 class="modal-header-title"&gt;MODAL_TITLE&lt;/h3&gt;
+      &lt;!-- IF MODAL_HAS_SUBTITLE, DOESN'T NEED TO BE LINK BUT MUST HAVE THE CLASS modal-header-subtitle --&gt;
+      &lt;a class="modal-header-subtitle" href="MODAL_SUBTITLE_LINK" title="MODAL_SUBTITLE"&gt;MODAL_SUBTITLE&lt;/a&gt;
+      &lt;!-- END --&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-body"&gt;
+      MODAL_CONTENT
+    &lt;/div&gt;
+    &lt;div class="modal-footer"&gt;
+      &lt;!-- NEED TO HAVE THE ATTRIBUTE data-dismiss="modal" TO BE ABLE TO CLOSE THE MODAL --&gt;
+      &lt;button data-dismiss="modal" class="button-primary" title="Fechar"&gt;Fechar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+        </div>
+      </div>
+      <div>
+        <div class="modal hide fade" id="modal1">
+          <div class="modal-header">
+            <h3 class="modal-header-title">Título da janela modal</h3>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="button-default" title="Padrão">Padrão</a>
+            <a href="#" data-dismiss="modal" class="button-primary" title="Fechar">Fechar</a>
+          </div>
+        </div>
+
+        <div class="modal hide fade" id="modal2">
+          <div class="modal-header">
+            <h3 class="modal-header-title">Redu Experimento na Escola do Recife PE</h3>
+            <span class="modal-header-subtitle">www.youtube.com</span>
+          </div>
+          <div class="modal-body">
+            <iframe width="480" height="295" src="http://www.youtube.com/embed/2kq3kEOPyec" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="button-default" title="Fechar">Fechar</a>
+          </div>
+        </div>
+
+        <div class="modal hide fade" id="modal3">
+          <div class="modal-header">
+            <h3 class="modal-header-title">Redu Experimento na Escola do Recife PE</h3>
+            <a href="http://www.youtube.com" title="YouTube" class="modal-header-subtitle">www.youtube.com</a>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="button-default" title="Padrão">Padrão</a>
+            <a href="#" data-dismiss="modal" class="button-primary" title="Fechar">Fechar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

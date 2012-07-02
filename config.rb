@@ -3,11 +3,11 @@
 # Set this to the root of your project when deployed:
 environment = :development
 http_path = "/"
-css_dir = "public/stylesheets"
-sass_dir = "public/stylesheets/scss"
-images_dir = "public/images/new"
-javascripts_dir = "javascripts"
-http_generated_images_path = "../images/new"
+css_dir = "css"
+sass_dir = "css"
+images_dir = "img"
+javascripts_dir = "js"
+http_generated_images_path = "../img"
 asset_cache_buster :none
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

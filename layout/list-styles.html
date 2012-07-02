@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="ie8"><![endif]-->
-<!--[if gt IE 8]><html class="gt-ie8"><![endif]-->
+<!doctype html>
+<!--[if IE 8]><html class="ie8" lang="pt-br"><![endif]-->
+<!--[if gt IE 8]><html class="gt-ie8" lang="pt-br"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <title>Estilos de Lista</title>
-    <link href="../public/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="../public/stylesheets/icons.css" rel="stylesheet">
-    <link href="../public/javascripts/google-code-prettify/prettify.css" rel="stylesheet">
-    <script src="../public/javascripts/google-code-prettify/prettify.js"></script>
-    <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
-    <script src="../public/javascripts/modernizr.js"></script>
-    <script src="../public/javascripts/bootstrap-reply-status.js"></script>
-    <script src="../public/javascripts/bootstrap-all-responses.js"></script>
-    <!--[if (gte IE 6)&(lte IE 8)]>
-      <script src="../public/javascripts/selectivizr.js"></script>
-    <![endif]-->
-    <!--[if gte IE 9]>
-      <link href="../public/stylesheets/ie9.css" rel="stylesheet">
-    <![endif]-->
+    <link rel="stylesheet" href="../css/bootstrap-redu.css">
+    <link rel="stylesheet" href="../docs/assets/css/vendor/google-code-prettify.css" >
+    <script src="../js/vendor/modernizr.js"></script>
   </head>
-  <body style="width: 800px; margin: 0 auto;">
+  <body  onload="prettyPrint()" style="width: 800px; margin: 0 auto;">
     <div class="statuses">
       <h1>Listas</h1>
       <ol>
@@ -790,13 +779,13 @@
                       <ul class="buttons-thumbnail">
                         <!-- multiplos thumbanails -->
                         <!-- end multiplos thumbnails -->
-                        <li class="button-default disabled last">
+                        <li class="button-default button-disabled last">
                           <span class="arrow">A</span>
                         </li>
-                        <li class="button-default disabled next">
+                        <li class="button-default button-disabled next">
                           <span class="arrow">P</span>
                         </li>
-                        <li class="button-default disabled remove">
+                        <li class="button-default button-disabled remove">
                           <span class="arrow">R</span>
                         </li>
                       </ul>
@@ -1033,5 +1022,14 @@
           </div>
         </li>
     </ul>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
+    <script src="../docs/assets/js/vendor/google-code-prettify.js"></script>
+    <script src="../js/bootstrap-redu.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script src="../js/vendor/selectivizr.js"></script>
+    <![endif]-->
+    <script src="http://use.typekit.com/lpo4rgu.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
   </body>
 </html>
