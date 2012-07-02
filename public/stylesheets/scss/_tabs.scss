@@ -116,16 +116,3 @@
 
   .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
 }
-
-hr {
-  margin: 9px 0;
-  border-width: 1px 0 0;
-  border-top: 1px solid $gray3;
-
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white inset,
-      0 0 9px $gray4;
-    @include box-shadow($boxShadow);
-  }
-}
