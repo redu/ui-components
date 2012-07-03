@@ -7,6 +7,23 @@ $icon-layout: smart;
 // Inclui as classes individuais de cada sprite automaticamente.
 @include all-icon-sprites;
 
+.logo-redu-color_140_40, 
+.logo-redu-gray_140_40 { background: url('../img/logos.png') no-repeat; }
+
+.logo-redu-color_140_40 {
+  background-position: 0 0;
+  height: 40px;
+  width: 140px;
+}
+
+.logo-redu-gray_140_40 {
+  background-position: 0 -40px;
+  height: 40px;
+  width: 140px;
+}
+
+.logo-redu-gray_140_40:hover { @extend .logo-redu-color_140_40; }
+
 // As classes geradas automaticamente serão no estilo:
 //
 // .<nome-diretorio>-<nome-arquivo>

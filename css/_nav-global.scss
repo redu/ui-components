@@ -74,12 +74,8 @@ body { padding-top: 60px; }
 // Logo.
 .nav-global-brand {
   @include text-replacement;
-  @include size(140px, 40px);
   float: left;
   margin-right: 40px;
-  background-image: url("../images/new/redu-logo-nav-small-gray.png");
-
-  &:hover { background-image: url("../images/new/redu-logo-nav-small-color.png"); }
 }
 
 // Botões.
