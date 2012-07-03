@@ -35,7 +35,7 @@
     background-image: none !important;
     cursor: default;
 
-    .boxshadow & { @include box-shadow(none); }
+    .boxshadow & { @include box-shadow(none !important); }
   }
 
   .borderradius & { @include border-radius(4px); }
