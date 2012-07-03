@@ -29,3 +29,12 @@ nbproject
 .svn
 .CVS
 .idea
+
+# Arquivos gerados automaticamente pelas ferramentas:
+# Compass.
+css/bootstrap-redu*.css
+img/icon-*
+# Grunt.
+js/bootstrap-redu*
+# Node.
+/*.html

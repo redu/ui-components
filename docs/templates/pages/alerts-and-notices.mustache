@@ -1,0 +1,217 @@
+<div class="row">
+  <div class="span3">
+    &nbsp;
+    <ul class="nav-local nav-local-fixed">
+      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
+        <a class="nav-local-link link-target" href="#system-messages" title="Mensagens do sistema (sobrepostas)">Mensagens do sistema</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#message-block" title="Mensagens em bloco">Mensagens em bloco</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#tooltip" title="Tooltip">Tooltip</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#popover" title="Popover">Popover</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#popover-2" title="Popover 2">Popover 2</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span13">
+    <div class="content">
+      <h2>Alertas e avisos</h2>
+
+      <h3 id="system-messages">Mensagens do sistema (sobrepostas)</h3>
+
+      <div class="row">
+        <div class="span9">
+          <p>Estas mensagens aparecerão sobrepostas no topo da tela. Todas as mensagens levam a classe <code>.system-message</code>. Dependendo do tipo de mensagem, deve-se adicionar as classes <code>.message-warning</code>, <code>.message-success</code>, <code>.message-info</code> ou <code>.message-busy</code>.</p>
+          <p>Para ter as mensagens animadas quando forem fechadas, adicione as classes <code>.fade</code> e <code>.in</code>.</p>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_system-messages.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-system-message.js</code></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="system-message message-warning fade in">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <p><strong>Ops!</strong> Quando alguma coisa não funciona bem, este aviso é mostrado...</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="system-message message-success fade in">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <p><strong>Muito bem!</strong> Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="system-message message-info">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <p><strong>Aviso.</strong> Sr. usuário, há algo que você precisa saber, porém sem urgência.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="system-message message-busy"><p>Carregando...</p></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;div class="system-message message-(warning|success|info|busy) [fade in]"&gt;
+  &lt;!-- IF MESSAGE SHOULD HAVE A CLOSE BUTTON --&gt;
+  &lt;a data-dismiss="alert" class="message-close"&gt;×&lt;/a&gt;
+  &lt;!-- END --&gt;
+  &lt;p&gt;MESSAGE_CONTENT&lt;/p&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="message-block">Mensagens em bloco</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Diferentemente das mensagens do sistema, estas mensagens em bloco não ficam sobrepostas. Elas levam a classe <code>.message-block</code>. O conteúdo da mensagem deve ficar dentro da classe <code>.message-block-content</code>. Caso haja algum botão, ele deve ser colocado dentro da classe <code>.message-block-actions</code>.</p>
+        </div>
+        <div class="span7">
+          <p>Da mesma maneira das mensagens do sistema, dependendo do tipo de mensagem, deve-se adicionar as classes <code>.message-warning</code>, <code>.message-success</code>, <code>.message-info</code> ou <code>.message-busy</code>.</p>
+          <h5>Arquivo</h5>
+          <p><code>_system-messages.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-system-message.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <div class="message-block message-warning fade in">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <div class="message-block-content">
+              <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
+            </div>
+            <div class="message-block-actions">
+              <a href="#" class="button-danger" title="Ir para um outro lugar">Ir para um outro lugar</a>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="message-block message-success fade in">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <div class="message-block-content">
+              <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
+            </div>
+            <div class="message-block-actions">
+              <a href="#" class="button-success" title="Ir para um outro lugar">Ir para um outro lugar</a>
+            </div>
+          </div>
+        </div>
+        <div class="span5">
+          <div class="message-block message-info">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <div class="message-block-content">
+              <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
+            </div>
+            <div class="message-block-actions">
+              <a href="#" class="button-primary" title="Ir para um outro lugar">Ir para um outro lugar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <div class="message-block message-busy">
+            <a data-dismiss="alert" class="message-close">×</a>
+            <div class="message-block-content">
+              <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="prettyprint linenums">
+&lt;div class="message-block message-[warning|success|info|busy] [fade in]"&gt;
+  &lt;!-- IF MESSAGE SHOULD HAVE CLOSE BUTTON --&gt;
+  &lt;a data-dismiss="alert" class="message-close"&gt;×&lt;/a&gt;
+  &lt;!-- END --&gt;
+  &lt;div class="message-block-content"&gt;
+    MESSAGE_CONTENT
+  &lt;/div&gt;
+  &lt;div class="message-block-actions"&gt;
+    &lt;!-- POSSIBLY BUTTONS --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+      <h3 id="tooltip">Tooltip</h3>
+      <div class="row">
+        <div class="span9">
+          <p>O tooltip pode ser usado em qualquer elemento, basta adicionar os atributos <code>rel="tooltip"</code> e <code>title</code> com o texto a ser exibido.</p>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_tooltip.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-tooltip.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <div class="well">
+            <p>Lorem ipsum dolor sit amet, consectetur <a href="#" rel="tooltip" title="Descrição secundária">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
+          </div>
+          <pre class="prettyprint linenums">
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="tooltip" title="Descrição secundária"&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="popover">Popover</h3>
+      <div class="row">
+        <div class="span9">
+          <p>O popover pode ser usado em qualquer elemento, basta adicionar os atributos <code>rel="popover"</code>, <code>data-original-title</code> com o título e <code>data-content</code> com o conteúdo a ser exibido.</p>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_popover.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-popover.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <p class="well">Lorem ipsum dolor sit amet, consectetur <a href="#" rel="popover" data-original-title="Título do popover"data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam.">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
+          <pre class="prettyprint linenums">
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="popover" data-original-title="Título do popover" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam."&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="popover-2">Popover 2</h3>
+      <div class="row">
+        <div class="span9">
+          <p>Este popover segue o mesmo estilo do anterior, mas não necessita do atributo <code>data-original-title</code>.</p>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_popover.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code>bootstrap-popover.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <p class="well">Lorem ipsum dolor sit amet, consectetur <a href="#" rel="popover" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam.">adipiscing</a> elit. Mauris ultrices porta nisl.</p>
+          <pre class="prettyprint linenums">
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur &lt;a href="#" rel="popover" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Phasellus pulvinar euismod turpis nullam."&gt;adipiscing&lt;/a&gt; elit. Mauris ultrices porta nisl.&lt;/p&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

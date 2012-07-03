@@ -1,0 +1,85 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
+// Breadcrumb mini.
+// ==========================================================================
+
+.breadcrumb-mini {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+.breadcrumb-mini-item {
+  @extend .link-secondary;
+  float: left;
+
+  &:after { margin-right: 5px; }
+
+  &:last-child:after { display: none !important; }
+}
+
+.breadcrumb-mini-link {
+  float: left;
+
+  &:before { vertical-align: middle !important; }
+
+  .breadcrumb-mini-compact & {
+    @include text-replacement;
+
+    &:before { margin-right: 0 !important; }
+  }
+}
+
+// Breadcrumb de ícones.
+// ==========================================================================
+
+// Lista.
+.breadcrumb-icons {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+}
+
+// Item.
+.breadcrumb-icon-item {
+  float: left;
+  width: 40px;
+  text-align: center;
+}
+
+// Link.
+.breadcrumb-icon-link {
+  // Se estiver ativo, cria a borda azul.
+  .breadcrumb-icon-active & {
+    @include square(36px);
+    position: relative;
+    top: -1px;
+
+    .borderradius & { @include border-radius(5px); }
+
+    .boxshadow & {
+      $boxShadow:
+        0 0 4px 1px $blue2,
+        0 0 0 1px $white inset,
+        inset 0 0 4px 1px $blue2;
+      @include box-shadow($boxShadow);
+    }
+
+    // Borda azul para o IE8.
+    .ie8 & { border: 1px solid $blue3; }
+  }
+}
+
+// Ícone.
+.breadcrumb-icon {
+  @include text-replacement;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:before { margin-right: 0 !important; }
+
+  .breadcrumb-icon-active & { margin-top: 1px; }
+}

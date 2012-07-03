@@ -1,0 +1,28 @@
+// ==========================================================================
+// Scaffolding
+// ==========================================================================
+
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background-color: $white;
+
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+// Links.
+a {
+  display: inline-block;
+  color: $linkColor;
+  text-decoration: none;
+
+  &:visited { color: $linkColorVisited; }
+
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: underline;
+  }
+}

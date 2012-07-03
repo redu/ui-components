@@ -1,0 +1,22 @@
+// ==========================================================================
+// Utilitários
+// ==========================================================================
+
+// Floats rápidos.
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+// Alternando conteúdo.
+.hide { display: none; }
+.show { display: block; }
+
+// Visibilidade.
+.invisible { visibility: hidden; }
+
+// Substituição de texto.
+.text-replacement { @include text-replacement; }
+
+// Limpeza de floats.
+.clearfix { @include clearfix; }
+
+.link-container { cursor: pointer; }

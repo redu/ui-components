@@ -1,0 +1,600 @@
+// Insere as dimensões do sprite.
+$icon-sprite-dimensions: true;
+// Tenta criar um arquivo de sprites de maneira inteligente.
+$icon-layout: smart;
+// Cria o arquivo de sprites.
+@import "icon/*.png";
+// Inclui as classes individuais de cada sprite automaticamente.
+@include all-icon-sprites;
+
+// As classes geradas automaticamente serão no estilo:
+//
+// .<nome-diretorio>-<nome-arquivo>
+// Exemplo: .icon-environment-gray_16_18
+//
+// Para que os sprites apareçam é preciso que o elemento que use as
+// classes geradas tenha um display block (ou inline-block),
+// portanto, atenção quando usá-los com spans.
+
+
+// ÍCONES COM PSEUDO ELEMENTOS:
+//
+// As classes que usam pseudo elementos devem ser escritas
+// manualmente seguindo o mesmo padrão:
+//
+// .<nome-diretorio>-<nome-arquivo>-<before|after> {
+//   &:before { @extend .<nome-diretorio>-<nome-arquivo>; }
+//   &:hover:before { @extend .<nome-diretorio>-<nome-arquivo-no-hover>; }
+// }
+//
+// As regras devem ser comentadas acima com o nome em português
+// descrito na página de Ícones do documento de
+// Guidelines & Elements.
+
+[class*="icon-"][class*="-before"]:before { @include pseudo-before(5px, false); }
+[class*="icon-"][class*="-after"]:after { @include pseudo-after(5px, false); }
+
+// Professor.
+.icon-teacher-lightblue_16_18-before {
+  &:before { @extend .icon-teacher-lightblue_16_18; }
+}
+.icon-teacher-gray_16_18-before {
+  &:before { @extend .icon-teacher-gray_16_18; }
+}
+.icon-teacher-lightblue_16_18-before,
+a.icon-teacher-gray_16_18-before {
+  &:hover:before { @extend .icon-teacher-blue_16_18; }
+}
+.icon-teacher-gray_16_18-before {
+  &:before { @extend .icon-teacher-gray_16_18; }
+  &:hover:before { @extend .icon-teacher-blue_16_18; }
+}
+
+// Tutor.
+.icon-tutor-lightblue_16_18-before {
+  &:before { @extend .icon-tutor-lightblue_16_18; }
+  &:hover:before { @extend .icon-tutor-blue_16_18; }
+}
+.icon-tutor-gray_16_18-before {
+  &:before { @extend .icon-tutor-gray_16_18; }
+}
+
+// Aluno.
+.icon-member-lightblue_16_18-before {
+  &:before { @extend .icon-member-lightblue_16_18; }
+  &:hover:before { @extend .icon-member-blue_16_18; }
+}
+.icon-member-gray_16_18-before {
+  &:before { @extend .icon-member-gray_16_18; }
+}
+
+// Início/home.
+.icon-home-lightblue_16_18-before {
+  &:before { @extend .icon-home-lightblue_16_18; }
+  &:hover:before { @extend .icon-home-blue_16_18; }
+}
+.icon-home-white_blue_16_18-before {
+  &:before { @extend .icon-home-white_blue_16_18; }
+}
+
+// Ambiente virtual de aprendizagem.
+.icon-environment-lightblue_16_18-before {
+  &:before { @extend .icon-environment-lightblue_16_18; }
+}
+.icon-environment-white_blue_16_18-before {
+  &:before { @extend .icon-environment-white_blue_16_18; }
+}
+.icon-environment-gray_16_18-before {
+  &:before { @extend .icon-environment-gray_16_18; }
+}
+.icon-environment-lightblue_16_18-before,
+.header-list .icon-environment-gray_16_18-before {
+  &:hover:before { @extend .icon-environment-blue_16_18; }
+}
+.icon-environment-lightgray_32_34-before {
+  &:before { @extend .icon-environment-lightgray_32_34; }
+}
+.icon-environment-gray_32_34-before {
+  &:before { @extend .icon-environment-gray_32_34; }
+}
+.icon-environment-lightblue_32_34-before {
+  &:before { @extend .icon-environment-lightblue_32_34; }
+}
+.icon-environment-lightblue_32_34-before,
+.icon-environment-gray_32_34-before {
+  &:hover:before { @extend .icon-environment-blue_32_34; }
+}
+
+.list-mix li.icon-environment-gray_32_34-before:hover {
+  &:before { @extend .icon-environment-lightblue_32_34; }
+}
+.header-item:hover .icon-environment-gray_16_18-before:before,
+.header-item:hover .icon-environment-lightblue_16_18-before:before {
+  @extend .icon-environment-blue_16_18;
+}
+
+// Curso.
+.icon-course-lightblue_16_18-before {
+  &:before { @extend .icon-course-lightblue_16_18; }
+  .filter:hover &:before { @extend .icon-course-blue_16_18; }
+}
+h6.icon-course-gray_16_18-before {
+  &:before { @extend .icon-course-gray_16_18; }
+  &:hover:before { @extend .icon-course-gray_16_18; }
+}
+.icon-course-lightblue_16_18-before,
+.header-list .icon-course-gray_16_18-before {
+  &:hover:before { @extend .icon-course-blue_16_18; }
+}
+.icon-course-lightblue_32_34-before {
+  &:before { @extend .icon-course-lightblue_32_34; }
+}
+.icon-course-lightgray_32_34-before {
+  &:before { @extend .icon-course-lightgray_32_34; }
+}
+.icon-course-gray_32_34-before,
+.icon-course-lightblue_32_34-before {
+  &:hover:before { @extend .icon-course-blue_32_34; }
+}
+.list-mix .icon-course-lightgray_32_34-before:hover:before {
+  @extend .icon-course-blue_32_34;
+}
+.icon-course-gray_32_34-before {
+  &:before { @extend .icon-course-gray_32_34; }
+}
+.header-item:hover .icon-course-gray_16_18-before:before,
+.header-item:hover .icon-course-lightblue_16_18-before:before {
+  @extend .icon-course-blue_16_18;
+}
+
+// Disciplina.
+.icon-space-lightblue_16_18-before {
+  &:before { @extend .icon-space-lightblue_16_18; }
+}
+.icon-space-gray_16_18-before {
+  &:before { @extend .icon-space-gray_16_18; }
+}
+.icon-space-lightblue_16_18-before {
+  &:hover:before { @extend .icon-space-blue_16_18; }
+}
+.icon-space-lightblue_32_34-before {
+  &:before { @extend .icon-space-lightblue_32_34; }
+}
+.icon-space-lightgray_32_34-before {
+  &:before { @extend .icon-space-lightgray_32_34; }
+}
+.icon-space-gray_32_34-before {
+  &:before { @extend .icon-space-gray_32_34; }
+}
+.icon-space-gray_32_34-before,
+.icon-space-lightblue_32_34-before {
+  &:hover:before { @extend .icon-space-blue_32_34; }
+}
+.header-item:hover .icon-space-gray_16_18-before:before,
+.header-item:hover .icon-space-lightblue_16_18-before:before {
+  @extend .icon-space-blue_16_18;
+}
+
+// Módulo.
+.icon-content-lightblue_16_18-before {
+  &:before { @extend .icon-content-lightblue_16_18; }
+  &:hover:before { @extend .icon-content-blue_16_18; }
+}
+.icon-content-gray_16_18-before {
+  &:before { @extend .icon-content-gray_16_18; }
+}
+
+// Setas.
+
+// Usada como separador dos itens do breadcrumb.
+.icon-arrow-right-separator-gray_16_18-after {
+  &:after { @extend .icon-arrow-right-separator-gray_16_18; }
+}
+
+// Usada nos itens de nível 3 do dropdown dos filtros da visão geral.
+.icon-arrow-right-squared-gray_16_18-before {
+  &:before { @extend .icon-arrow-right-squared-gray_16_18; }
+}
+
+// Seta de correto/finalizado.
+.icon-correct-green_16_18-after {
+  &:after { @extend .icon-correct-green_16_18; }
+}
+.icon-correct-gray_16_18-before {
+  &:before { @extend .icon-correct-gray_16_18; }
+}
+
+// Seta azul do item ativo da navegação local.
+.icon-arrow-right-nav-local-lightblue_11_32-after {
+  &:after { @extend .icon-arrow-right-nav-local-lightblue_11_32; }
+  &:hover:after { @extend .icon-arrow-right-nav-local-blue_11_32; }
+}
+
+// Seta usada no botão de paginação.
+.icon-arrow-down-pagination-gray_16_18-before {
+  &:before { @extend .icon-arrow-down-pagination-gray_16_18; }
+  &:hover:before { @extend .icon-arrow-down-pagination-blue_16_18; }
+}
+
+// Seta baixo do botão dropdown.
+.icon-arrow-down-lightblue_8_10 {
+  .open & { @extend .icon-arrow-up-lightblue_8_10; }
+}
+.button-disabled .icon-arrow-down-lightblue_8_10,
+.button-disabled:hover .icon-arrow-down-lightblue_8_10 {
+  @extend .icon-arrow-down-gray_8_10;
+}
+
+// Perfil.
+.icon-profile-lightblue_16_18-before {
+  &:before { @extend .icon-profile-lightblue_16_18; }
+  &:hover:before { @extend .icon-profile-blue_16_18; }
+}
+
+// Mensagens.
+.icon-message-lightblue_16_18-before {
+  &:before { @extend .icon-message-lightblue_16_18; }
+  &:hover:before { @extend .icon-message-blue_16_18; }
+}
+.icon-message-white_blue_16_18-before {
+  &:before { @extend .icon-message-white_blue_16_18; }
+}
+.icon-message-gray_32_34-before {
+  &:before { @extend .icon-message-gray_32_34; }
+  .header-breadcrumb:hover &:before { @extend .icon-message-blue_32_34; }
+}
+
+// Parceiro.
+.icon-partner-lightblue_16_18-before {
+  &:before { @extend .icon-partner-lightblue_16_18; }
+  &:hover:before  { @extend .icon-partner-blue_16_18; }
+}
+
+// Configuração/gerenciamento.
+.icon-manage-lightblue_16_18-before {
+  &:before { @extend .icon-manage-lightblue_16_18; }
+  &:hover:before { @extend .icon-manage-blue_16_18; }
+}
+.icon-manage-white_blue_16_18-before {
+  &:before { @extend .icon-manage-white_blue_16_18; }
+}
+.icon-manage-gray_32_34-before {
+  &:before { @extend .icon-manage-gray_32_34; }
+  .header-breadcrumb:hover &:before { @extend .icon-manage-blue_32_34; }
+}
+
+// Mural.
+.icon-wall-lightblue_16_18-before {
+  &:before { @extend .icon-wall-lightblue_16_18; }
+  .filter:hover &:before { @extend .icon-wall-blue_16_18; }
+}
+.icon-wall-white_blue_16_18-before {
+  &:before { @extend .icon-wall-white_blue_16_18; }
+}
+.icon-wall-gray_16_18-before {
+  &:before { @extend .icon-wall-gray_16_18; }
+}
+.icon-wall-lightblue_16_18-before {
+  &:hover:before { @extend .icon-wall-blue_16_18; }
+}
+.wall-stats-new.icon-wall-lightblue_16_18-before {
+  &:hover:before { @extend .icon-wall-blue_16_18; }
+}
+
+// Aula.
+.icon-subject-lightblue_16_18-before {
+  &:before { @extend .icon-subject-lightblue_16_18; }
+  .filter:hover &:before { @extend .icon-subject-blue_16_18; }
+}
+.icon-subject-white_blue_16_18-before {
+  &:before { @extend .icon-subject-white_blue_16_18; }
+}
+.icon-subject-gray_16_18-before {
+  &:before { @extend .icon-subject-gray_16_18; }
+}
+.icon-subject-lightblue_16_18-before {
+  &:hover:before { @extend .icon-subject-blue_16_18; }
+}
+.icon-subject-lightblue_32_34-before {
+  &:before { @extend .icon-subject-lightblue_32_34; }
+}
+.icon-subject-lightgray_32_34-before {
+  &:before { @extend .icon-subject-lightgray_32_34; }
+}
+.icon-subject-gray_32_34-before {
+  &:before { @extend .icon-subject-gray_32_34; }
+}
+.icon-subject-gray_32_34-before,
+.icon-subject-lightblue_32_34-before {
+  &:hover:before { @extend .icon-subject-blue_32_34; }
+}
+
+// Contatos.
+.icon-contacts-lightblue_16_18-before {
+  &:before { @extend .icon-contacts-lightblue_16_18; }
+  &:hover:before,
+  .filter:hover &:before { @extend .icon-contacts-blue_16_18; }
+}
+.icon-contacts-white_blue_16_18-before {
+  &:before { @extend .icon-contacts-white_blue_16_18; }
+}
+.icon-contacts-gray_16_18-before {
+  &:before { @extend .icon-contacts-gray_16_18; }
+}
+
+// Colegas de classe.
+.icon-classmates-gray_16_18-before {
+  &:before { @extend .icon-classmates-gray_16_18; }
+}
+
+// Comentário.
+.icon-comment-gray_16_18-before {
+  &:before { @extend .icon-comment-gray_16_18; }
+}
+.icon-comment-lightblue_16_18-before {
+  &:before { @extend .icon-comment-lightblue_16_18; }
+  &:hover:before { @extend .icon-comment-blue_16_18; }
+}
+
+// Dúvida.
+.icon-request-help-gray_16_18-before {
+  &:before { @extend .icon-request-help-gray_16_18; }
+}
+.icon-request-help-orange_16_18-before {
+  &:before { @extend .icon-request-help-orange_16_18; }
+}
+.icon-request-help-lightorange_16_18-before {
+  &:before { @extend .icon-request-help-lightorange_16_18; }
+}
+.request-help-stats-new.icon-request-help-lightorange_16_18-before {
+  &:hover:before { @extend .icon-request-help-orange_16_18; }
+}
+.icon-request-help-lightblue_16_18-before {
+  &:before { @extend .icon-request-help-lightblue_16_18; }
+  &:hover:before { @extend .icon-request-help-blue_16_18; }
+}
+
+// Arquivo de apoio.
+.icon-file-lightblue_16_18-before {
+  &:before { @extend .icon-file-lightblue_16_18; }
+}
+.icon-file-white_blue_16_18-before {
+  &:before { @extend .icon-file-white_blue_16_18; }
+}
+.icon-file-lightblue_16_18-before {
+  &:hover:before { @extend .icon-file-blue_16_18; }
+}
+
+// Membros.
+.icon-members-lightblue_16_18-before {
+  &:before { @extend .icon-members-lightblue_16_18; }
+  &:hover:before { @extend .icon-members-blue_16_18; }
+}
+.icon-members-white_blue_16_18-before {
+  &:before { @extend .icon-members-white_blue_16_18; }
+}
+.icon-members-gray_16_18-before {
+  &:before { @extend .icon-members-gray_16_18; }
+}
+// Conta.
+.icon-account-lightblue_16_18-before {
+  &:before { @extend .icon-account-lightblue_16_18; }
+  &:hover:before { @extend .icon-account-blue_16_18; }
+}
+
+// Plano.
+.icon-plan-lightblue_16_18-before {
+  &:before { @extend .icon-plan-lightblue_16_18; }
+  &:hover:before { @extend .icon-plan-blue_16_18; }
+}
+
+// Biografia.
+.icon-biography-lightblue_16_18-before {
+  &:before { @extend .icon-biography-lightblue_16_18; }
+  &:hover:before { @extend .icon-biography-blue_16_18; }
+}
+.icon-biography-white_blue_16_18-before {
+  &:before { @extend .icon-biography-white_blue_16_18; }
+}
+
+// Currículo.
+.icon-curriculum-lightblue_16_18-before {
+  &:before { @extend .icon-curriculum-lightblue_16_18; }
+  &:hover:before { @extend .icon-curriculum-blue_16_18; }
+}
+.icon-curriculum-white_blue_16_18-before {
+  &:before { @extend .icon-curriculum-white_blue_16_18; }
+}
+
+// Descrição.
+.icon-description-gray_16_18,
+.icon-description-lightblue_16_18 {
+  &:hover { @extend .icon-description-blue_16_18; }
+}
+.icon-description-gray_16_18-before {
+  &:before { @include icon-sprite(description-gray_16_18); }
+}
+
+// Marcadores.
+.icon-tag-gray_16_18,
+.icon-tag-lightblue_16_18 {
+  &:hover { @extend .icon-tag-blue_16_18; }
+}
+.icon-tag-gray_16_18-before {
+  &:before {  @include icon-sprite(tag-gray_16_18); }
+}
+
+// Responder.
+.icon-reply-gray_8_10-before {
+  &:before { @extend .icon-reply-gray_8_10;  }
+  &:hover:before { @extend .icon-reply-blue_8_10; }
+}
+.icon-reply-gray_16_18-before {
+  &:before { @extend .icon-reply-gray_16_18; }
+  &:hover:before { @extend .icon-reply-lightblue_16_18; }
+}
+
+// Fechar.
+.icon-close-gray_8_10 {
+  .disabled &:hover { @include icon-sprite(close-gray_8_10); }
+  &:hover { @extend .icon-close-red_8_10; }
+}
+
+.icon-close-gray_8_10-before {
+  &:before { @extend .icon-close-gray_8_10;  }
+  &:hover:before { @extend .icon-close-blue_8_10; }
+}
+
+.icon-close-gray_16_18 {
+  &:hover { @extend .icon-close-red_16_18; }
+}
+
+// Privado.
+.icon-private-gray_16_18,
+.icon-private-lightblue_16_18 {
+  &:hover { @extend .icon-private-blue_16_18; }
+}
+
+// Respostas.
+.icon-reply-lightblue_16_18-before {
+  &:before { @extend .icon-reply-lightblue_16_18; }
+}
+.icon-reply-gray_16_18-before {
+  &:before { @extend .icon-reply-gray_16_18; }
+}
+
+// Vídeo.
+.icon-video-lightblue_16_18-before {
+  &:before {  @extend .icon-video-lightblue_16_18; }
+}
+.list-button li:hover .icon-video-lightblue_16_18-before {
+  &:before {  @extend .icon-video-blue_16_18; }
+}
+
+// Página de texto.
+.icon-text-page-lightblue_16_18-before {
+  &:before {  @extend .icon-text-page-lightblue_16_18; }
+}
+.list-button li:hover .icon-text-page-lightblue_16_18-before {
+  &:before {  @extend .icon-text-page-blue_16_18; }
+}
+
+// Apresentação.
+.icon-presentation-lightblue_16_18-before {
+  &:before {  @extend .icon-presentation-lightblue_16_18; }
+}
+.list-button li:hover .icon-presentation-lightblue_16_18-before {
+  &:before {  @extend .icon-presentation-blue_16_18; }
+}
+
+// Exercício.
+.icon-exercise-lightblue_16_18-before {
+  &:before {  @extend .icon-exercise-lightblue_16_18; }
+}
+.list-button li:hover .icon-exercise-lightblue_16_18-before {
+  &:before {  @extend .icon-exercise-blue_16_18; }
+}
+
+// Avise-me.
+.icon-notification-lightblue_16_18-before {
+  &:before { @extend .icon-notification-lightblue_16_18; }
+  &:hover:before { @extend .icon-notification-blue_16_18; }
+}
+
+// Perfil 2.
+.icon-profile-2-lightblue_16_18-before {
+  &:before { @extend .icon-profile-2-lightblue_16_18;}
+  &:hover:before { @extend .icon-profile-2-blue_16_18; }
+}
+
+// Wiki.
+.icon-wiki-lightblue_16_18-before {
+  &:before { @extend .icon-wiki-lightblue_16_18; }
+  &:hover:before { @extend .icon-wiki-blue_16_18; }
+}
+.icon-wiki-white_blue_16_18-before {
+  &:before { @extend .icon-wiki-white_blue_16_18; }
+}
+
+// Luzes.
+.icon-lights-lightblue_16_18-before {
+  &:before { @extend .icon-lights-lightblue_16_18; }
+  &:hover:before { @extend .icon-lights-blue_16_18; }
+}
+
+// Seta para esquerda.
+.icon-arrow-left-lightblue_16_18-before {
+  &:before { @extend .icon-arrow-left-lightblue_16_18; }
+  &:hover:before { @extend .icon-arrow-left-blue_16_18; }
+}
+
+// Seta para direita.
+.icon-arrow-right-lightblue_16_18-before {
+  &:before { @extend .icon-arrow-right-lightblue_16_18; }
+  &:hover:before { @extend .icon-arrow-right-blue_16_18; }
+}
+
+// Visto.
+.icon-seen-gray_16_18-before {
+  &:before { @extend .icon-seen-gray_16_18; }
+}
+
+// Lista.
+.icon-list-lightblue_16_18-before {
+  &:before { @extend .icon-list-lightblue_16_18; }
+  &:hover:before { @extend .icon-list-blue_16_18; }
+}
+
+// Regras de hover para os ícones que não usam pseudo elementos.
+a:hover,
+.filter:hover,
+.button-default:hover {
+  // Ambiente virtual de aprendizagem.
+  // .icon-environment-gray_32_34,
+  // .icon-environment-lightblue_32_34 { @extend .icon-environment-blue_32_34; }
+
+  // Curso.
+  .icon-course-gray_32_34,
+  .icon-course-lightblue_32_34 { @extend .icon-course-blue_32_34; }
+
+  // Disciplina.
+  .icon-space-gray_32_34,
+  .icon-space-lightblue_32_34 { @extend .icon-space-blue_32_34; }
+
+  // Aula
+  .icon-subject-gray_32_34,
+  .icon-subject-lightblue_32_34 { @extend .icon-subject-blue_32_34; }
+
+  // Comentário.
+  .icon-comment-lightblue_16_18 { @extend .icon-comment-blue_16_18; }
+
+  // Dúvida.
+  .icon-request-help-lightblue_16_18 { @extend .icon-request-help-blue_16_18; }
+
+  // Luzes.
+  .icon-lights-lightblue_16_18 { @extend .icon-lights-blue_16_18; }
+
+  // Busca.
+  .icon-magnifier-gray_16_18,
+  .icon-magnifier-lightblue_16_18 { @extend .icon-magnifier-blue_16_18; }
+
+  // Setas.
+  .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
+  .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
+  .icon-arrow-left-lightblue_8_10 { @extend .icon-arrow-left-blue_8_10; }
+  .icon-arrow-right-lightblue_8_10 { @extend .icon-arrow-right-blue_8_10; }
+  .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-down-blue_8_10; }
+  .open & .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-up-blue_8_10; }
+
+  .icon-close-lightblue_8_10 { @extend .icon-close_red_8_10}
+
+  .button-default.disabled, .button-default.disabled:hover {
+    .icon-close-gray_8_10 { @extend .icon-close-gray-8_10; }
+  }
+}
+
+//video
+.icon-video-gray_16_18-before {
+  &:before { @extend .icon-video-gray_16_18; }
+  &:hover:before { @extend .icon-video-blue_16_18;}
+}

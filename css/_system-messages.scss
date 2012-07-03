@@ -1,0 +1,108 @@
+// ==========================================================================
+// Mensagens do sistema
+// ==========================================================================
+
+// Comum a todas as mensagens.
+.message-base {
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+
+  p { margin-bottom: 0; }
+
+  .boxshadow & { @include box-shadow(0 2px 10px 1px rgba(0, 0, 0, 0.4)); }
+
+  .borderradius & { @include border-radius(5px); }
+}
+
+// Ícone de fechar.
+.message-close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: $gray5;
+  margin-left: 10px;
+
+  &:hover {
+    color: $red5;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// Mensagem de alerta.
+.message-warning {
+  background-color: $red1;
+  border-color: $red2;
+  color: $red5;
+}
+
+// Mensagem de sucesso.
+.message-success {
+  background-color: $green1;
+  border-color: $green3;
+  color: $green4;
+}
+
+// Mensagem de informação.
+.message-info {
+  background-color: $blue1;
+  border-color: $blue2;
+  color: $blue4;
+}
+
+// Mensagem de ocupado.
+.message-busy {
+  background-color: $orange1;
+  border-color: $orange3;
+  color: $black;
+}
+
+// Mensagens do sistema (sobrepostas).
+// ==========================================================================
+
+// Comum a todas as mensagens do sistema.
+.system-message-base {
+  @include box-sizing(border-box);
+  text-align: center;
+  // Centraliza horizontalmente.
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  $width: 580px;
+  width: $width;
+  margin-left: -($width / 2);
+}
+
+.system-message {
+  @extend .message-base;
+  @extend .system-message-base;
+
+  &.message-busy {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+// Mensagens em bloco.
+// ==========================================================================
+
+// Mensagens em bloco.
+.message-block {
+  @extend .message-base;
+  overflow: hidden;
+
+  .boxshadow & { @include box-shadow(none); }
+}
+
+.message-block-content {
+  padding-right: 25px;
+
+  p {
+    margin-bottom: 0;
+
+    &:last-of-type { margin-bottom: 10px;}
+  }
+}
+
+.message-block-actions { text-align: right; }

@@ -1,0 +1,149 @@
+// ==========================================================================
+// Filtros
+// ==========================================================================
+
+// Variáveis.
+// ==========================================================================
+
+// Tamanho da borda dos filtros normais.
+$filterBorderRadius: 4px;
+// Tamanho da borda dos filtros da visão geral.
+$filterGroupBorderRadius: 10px;
+// Sombras internas dos filtros.
+$filterBoxShadow:
+  0 1px 0 $white inset,
+  -1px 0 0 $white inset;
+
+// Mixins.
+// ==========================================================================
+
+// Comum a .filter e .filter-group.
+@mixin filterCommon() {
+  position: relative;
+
+  &:hover,
+  &:active { z-index: 1; }
+
+  & + & { margin-left: -1px; }
+}
+
+// Filtros.
+// ==========================================================================
+
+.filters { overflow: hidden; }
+
+.filter {
+  @extend .button-default;
+  @include filterCommon;
+
+  .borderradius & {
+    // No meio.
+    @include border-radius(0);
+    // Início.
+    &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
+    // Fim.
+    &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
+    // Sozinho.
+    &:first-child:last-child { @include border-radius($filterBorderRadius); }
+  }
+
+  .boxshadow & {
+    @include box-shadow($filterBoxShadow);
+
+    &:last-child { @include box-shadow(0 1px 0 $white inset); }
+  }
+
+  .filters & { float: left; }
+
+  // Filtros da visão geral.
+
+  .filters-general-view & {
+    padding: 16px 5px 3px;
+
+    .borderradius & { @include border-radius(0); }
+
+    .boxshadow & { @include box-shadow($filterBoxShadow); }
+  }
+
+  .filter-group:first-child & {
+    padding-right: 14px;
+    padding-bottom: 16px;
+
+    .filter-title { width: 111px; }
+
+    .borderradius & { @include border-radius($filterGroupBorderRadius 0 0 0); }
+  }
+
+  .filter-group:last-child & {
+    .boxshadow & { @include box-shadow(0 1px 0 $white inset); }
+
+    .borderradius & { @include border-radius(0 $filterGroupBorderRadius 0 0); }
+  }
+}
+
+// Estado ativo.
+.filter-active {
+  background: $blue1 !important;
+  border-color: $blue3;
+  z-index: 1;
+
+  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important); }
+
+  .no-boxshadow.ie8 & { filter: none; }
+}
+
+// Filtros (visão geral).
+// ==========================================================================
+
+.filters-general-view { @include clearfix; }
+
+.filter-group {
+  @include filterCommon;
+
+  .filters-general-view & { float: left; }
+}
+
+.filter-title {
+  display: inline-block;
+  margin-left: 10px;
+  width: 113px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.filter-sub-title {
+  @extend .legend;
+  @include size(135px, 11px);
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+}
+
+.filter-arrow { display: inline-block; }
+
+// Dropdown.
+
+.filter-label {
+  @extend .legend;
+  display: inline;
+  margin-left: 5px;
+
+  .filter-level-1-item.filter-checked > & { color: $gray5; }
+
+  .filter-checked > & { color: $gray6; }
+
+  .filter-level-1-item > &,
+  .filter-level-2-item > & { font-weight: bold; }
+}
+
+.filter-level-2,
+.filter-level-3 { margin: 0; }
+
+.filter-level-1,
+.filter-level-2,
+.filter-level-3 { list-style: none; }
+
+.filter-level-2-item,
+.filter-level-3-item { margin-top: 5px; }
+
+.filter-level-3-item:before { margin-right: -6px !important; }

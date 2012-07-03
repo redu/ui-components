@@ -1,0 +1,165 @@
+// ==========================================================================
+// Tipografia
+// ==========================================================================
+
+// Parágrafo.
+// ==========================================================================
+
+p {
+  margin: 0 0 $baseLineHeight / 2;
+
+  & + & { margin-top: 5px; }
+}
+
+// Cabeçalhos.
+// ==========================================================================
+
+h1, h2, h3, h4, h5, h6, h7 { margin: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
+
+h7 { font-family: $museoSlab; }
+
+h2, h3, h4, h5, h6, h7 { font-weight: 500; }
+
+h1, h6 { font-weight: 100; }
+
+h1 {
+  font-size: 60px;
+  letter-spacing: -3px;
+  line-height: 56px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -2px;
+  line-height: 34px;
+}
+
+h3 {
+  font-size:21px;
+  letter-spacing: -1px;
+  line-height: 21px;
+}
+
+h4 {
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 18px;
+}
+
+h5 {
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 18px;
+}
+
+h6 {
+  font-size: 16px;
+  letter-spacing: -1px;
+  line-height: 18px;
+}
+
+h7 {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+h3 strong, h4 strong, h5 strong {
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 9px;
+  display: inline-block;
+}
+
+// Inline labels.
+// ==========================================================================
+
+.inl-label {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 3px 5px 2px 5px;
+  text-transform: uppercase;
+
+  & + & { margin-left: 5px; }
+
+  .borderradius & { @include border-radius(3px); }
+}
+
+.label-news {
+  @extend .inl-label;
+  background: $gray3;
+  color: $blue3;
+}
+
+.label-notify-me {
+  @extend .inl-label;
+  color: $white;
+  background: $red2;
+
+  .textshadow & { text-shadow: 0 -1px 0 $red5; }
+}
+
+.label-online {
+  @extend .inl-label;
+  color: $green4;
+  background: $green1;
+}
+
+.label-doubts {
+  @extend .inl-label;
+  background: $orange3;
+  color: $white;
+
+  .textshadow & { text-shadow: 0 -1px 0 $orange5; }
+}
+
+// Listas.
+// ==========================================================================
+
+ul, ol, dl {
+  padding: 0;
+  margin: 0 0 $baseLineHeight / 2 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul { margin-bottom: 0; }
+
+ul { list-style: disc; }
+
+ol { list-style: decimal; }
+
+li { line-height: $baseLineHeight; }
+
+dt { font-weight: bold; }
+
+dl dd { margin-left: 18px; }
+
+// Outros.
+// ==========================================================================
+
+// Negrito.
+strong { font-weight: bold; }
+
+// Citações.
+blockquote, q, .legend { color: $gray5; }
+
+// Legenda e link secundário.
+.legend, .link-secondary {
+  font-size: 11px;
+  line-height: 11px;
+}
+
+// Código.
+code {
+  color: $green4;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+// Link de nome.
+.link-name { font-weight: bold; }

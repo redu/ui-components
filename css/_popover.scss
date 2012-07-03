@@ -1,0 +1,76 @@
+// ==========================================================================
+// Popover
+// ==========================================================================
+
+// Variáveis.
+// ==========================================================================
+
+// Tamanho da borda do popover.
+$popoverBorderRadius: 5px;
+
+// Encapsulador.
+.popover {
+  position: absolute;
+  z-index: $zindexPopover;
+  display: none;
+  top: 0;
+  left: 0;
+  padding: 5px;
+
+  &.top,
+  &.left { margin-top: -5px; }
+
+  &.right,
+  &.bottom { margin-left: 5px; }
+
+  &.top .arrow { @include popoverArrow-top(); }
+
+  &.right .arrow { @include popoverArrow-right(8px, $gray6, -2px); }
+
+  &.bottom .arrow { @include popoverArrow-bottom(8px, $gray6, -2px); }
+
+  &.left .arrow { @include popoverArrow-left(8px, $gray6, -2px); }
+
+  .arrow {
+    @include square(0);
+    position: absolute;
+  }
+}
+
+// Parte de dentro.
+.popover-inner {
+  padding: 1px;
+  width: 338px;
+  overflow: hidden;
+  background: $gray6;
+
+  .popover-no-title & { width: 398px; }
+
+  .borderradius & { @include border-radius($popoverBorderRadius); }
+
+  .boxshadow & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.4)); }
+}
+
+.popover-title {
+  padding: 10px;
+  background-color: $gray1;
+  border-bottom: 1px solid $gray3;
+
+  .borderradius & { @include border-radius($popoverBorderRadius $popoverBorderRadius 0 0); }
+}
+
+.popover-content {
+  @include background-clip(padding-box);
+  padding: 10px;
+  background-color: $gray1;
+
+  p,
+  ul,
+  ol { margin-bottom: 0; }
+
+  .boxshadow & { @include box-shadow(inset 0 1px 0 0 $white); }
+
+  .borderradius & { @include border-radius(0 0 $popoverBorderRadius $popoverBorderRadius); }
+
+  .borderradius .popover-no-title & { @include border-radius($popoverBorderRadius); }
+}

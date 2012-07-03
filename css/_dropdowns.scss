@@ -1,0 +1,46 @@
+// ==========================================================================
+// Dropdowns
+// ==========================================================================
+
+// O bloco.
+.dropdown-menu {
+  background-color: $gray1;
+  position: absolute;
+  display: none;
+  z-index: $zindexDropdown;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  border: 1px solid $blue4;
+  list-style: none;
+
+  .boxshadow & { @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, .5)); }
+
+  .borderradius & { @include border-radius(5px); }
+
+  .filters-general-view & {
+    left: 0;
+    padding: 10px;
+    width: 300px;
+  }
+
+  .open & {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+// A seta.
+.dropdown-arrow {
+  position: absolute;
+  display: none;
+  z-index: $zindexDropdown + 1;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -10px;
+
+  .open & { display: inline-block; }
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle { outline: 0; }

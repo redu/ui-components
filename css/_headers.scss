@@ -1,0 +1,226 @@
+// ==========================================================================
+// Cabeçalhos
+// ==========================================================================
+
+.header {
+  list-style: none;
+  margin: 0 0 20px;
+}
+
+// Link.
+.header-link {
+  @include linkVisited($gray5);
+  font-weight: bold;
+
+  &:hover { text-decoration: none; }
+
+  .header-item:last-child & { color: $blue3; }
+
+  .header-item:hover &,
+  .header-item:last-child &:hover,
+  .header-item-subject.header-item:last-child:hover & { color: $blue4; }
+
+  .header-item-subject.header-item:last-child & { color: $gray5; }
+}
+
+// Pequenos avisos.
+.header-info {
+  display: inline-block;
+  vertical-align: middle;
+
+  & + & { margin-left: 5px; }
+}
+
+// Item.
+.header-item {
+  @include clearfix;
+  display: block;
+  border: 1px solid $white;
+  padding: 6px 18px 6px 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  background-color: $gray3;
+
+  .ie8 & { border-color: $gray5; }
+
+  // Borda arredondada no primeiro elemento.
+  &:first-child {
+    z-index: 3;
+
+    .borderradius & { @include border-radius(10px 10px 0 0); }
+  }
+
+  // O último elemento fica em azul claro (exceto quando for a página individual de uma aula).
+  &:last-child { z-index: 1; }
+
+  &:hover { border-color: $blue2; }
+
+  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
+
+  .cssgradients & { @include reduGradient($white, $gray3); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  .ie8 &,
+  .ie8 &:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
+
+  // Efeito de um em cima do outro com ajuda do z-index.
+  & + & { margin-top: -1px; }
+}
+
+// Cabeçalhos (início).
+// ==========================================================================
+
+.header-breadcrumb {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+}
+
+.header-breadcrumb-item {
+  @extend h3;
+  float: left;
+  margin-top: 7px;
+
+  // Separador.
+  & + &:before {
+    margin-right: 7px !important;
+    font-weight: 300;
+    color: $gray3;
+    margin-left: 6px;
+    // Caracter "/".
+    content: "\002F";
+  }
+}
+
+.header-breadcrumb-item-light { font-weight: 100; }
+
+.header-bradcrumb-link {
+  font-weight: 300;
+
+  // Links em cinza.
+  .header-breadcrumb & { color: $gray5; }
+
+  // O último link em azul3.
+  .header-breadcrumb-item:last-child & { color: $blue3; }
+
+  // Ajusta o ícone que está no primeiro link.
+  .header-breadcrumb-item:first-child &:before {
+    float: left;
+    margin-right: 10px !important;
+    margin-top: -7px;
+  }
+
+  // Engrossa a fonte no último link e no hover.
+  .header-breadcrumb-item:last-child &,
+  &:hover { font-weight: 500; }
+
+  // Hover.
+  .header-breadcrumb-item:last-child &:hover,
+  &:hover {
+    color: $blue4;
+    text-decoration: none;
+  }
+}
+
+// Cabeçalhos de início grande.
+// ==========================================================================
+
+.header-breadcrumb-big {
+  @include clearfix;
+  list-style: none;
+  margin: 0 0 20px 0;
+}
+
+.header-breadcrumb-big-item {
+  @extend h2;
+  font-weight: 100;
+  float: left;
+
+  // Separador.
+  & + &:before {
+    margin-right: 11px !important;
+    color: $gray3;
+    margin-left: 11px;
+    // Caracter "/".
+    content: "\002F";
+  }
+}
+
+.header-bradcrumb-big-link {
+  @include linkVisited($gray5);
+
+  &:hover {
+    text-decoration: none;
+    color: $linkColorHover;
+  }
+
+  // Ajusta o ícone que está no primeiro link.
+  .header-breadcrumb-item:first-child &:before {
+    float: left;
+    margin-right: 10px !important;
+    margin-top: -7px;
+  }
+}
+
+// Cabeçalho de uma aula.
+// ==========================================================================
+
+.content-spacer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.lecture-data {
+  overflow: hidden;
+  margin: 0 20px;
+  padding-bottom: 10px;
+}
+
+.lecture-authoring {
+  overflow: hidden;
+  float: left;
+}
+
+.lecture-author-thumbnail {
+  @include square(32px);
+  float: left;
+}
+
+.lecture-authoring-info {
+  float: left;
+  margin-left: 8px;
+}
+
+.lecture-authoring-written-by {
+  @extend .legend;
+  display: block;
+}
+
+.lecture-stats {
+  float: right;
+  text-align: right;
+  margin-top: 7px;
+}
+
+.lecture-stars,
+.lecture-star { display: inline-block; }
+
+.lecture-star + .lecture-star { margin-left: 5px; }
+
+.lecture-stats-group {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.lecture-stat {
+  color: $gray5;
+
+  & + & { margin-left: 10px; }
+}
+
+.lecture-stats-group + .lecture-stars { margin-left: 20px; }

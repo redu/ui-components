@@ -1,0 +1,27 @@
+// LABELS.
+// ------
+
+// Base.
+.label {
+  padding: 3px 5px 2px;
+  font-size: 11px;
+  line-height: 11px;
+  display: inline-block;
+
+  .borderradius & { @include border-radius(3px); }
+}
+
+// Cores.
+.label-unread-message {
+  background-color: $gray3;
+  color: $blue3;
+
+  .textshadow & { text-shadow: $verticalWhiteShadow; }
+}
+
+.label-unread-help-request {
+  background-color: $orange3;
+  color: $white;
+
+  .textshadow & { text-shadow: 0 -1px 0 $orange5; }
+}

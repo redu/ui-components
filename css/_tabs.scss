@@ -1,0 +1,118 @@
+// ==========================================================================
+// Tabs.
+// ==========================================================================
+
+.tabs {
+  @include clearfix;
+  border-bottom: 1px solid $gray4;
+  list-style: none;
+  margin: 0 0 10px;
+  padding-left: 40px;
+
+  .boxshadow & {
+    $boxShadow:
+      0 1px 0 $white,
+      0 9px 9px -9px $gray3;
+    @include box-shadow($boxShadow);
+  }
+}
+
+.tab {
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 -1px -1px;
+  height: 30px;
+  border: 1px solid $gray4;
+
+  .borderradius & { @include border-radius(5px 5px 0 0); }
+
+  .cssgradients & { @include background-image(linear-gradient(bottom, $gray3, mix($gray3, $gray1) 20%, $gray1)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 ); }
+
+  .boxshadow & { @include box-shadow(0 1px 0 $white inset); }
+
+  &:hover {
+    border-color: $blue2;
+    z-index: 2; // Para a aba ficar na frente.
+
+    .cssgradients & { @include background-image(linear-gradient(bottom, $blue1, $gray1)); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,dbeff7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 ); }
+  }
+}
+
+// Título da aba.
+.tab-title {
+  padding: 6px 6px 6px 7px;
+  min-width: 131px;
+
+  &:hover { text-decoration: none; }
+
+  .tab-active & {
+    background-color: $white;
+    height: 25px;
+
+    .borderradius & { @include border-radius(5px 5px 0 0); }
+  }
+}
+
+// Sub-título da aba.
+.tab-sub-title {
+  @extend .legend;
+  position: absolute;
+  left: 7px + 16px + 5px;
+  bottom: -5px;
+  max-width: 102px;
+  display: none;
+
+  // Só aparece quando a aba está ativa.
+  .tab-active & { display: block; }
+}
+
+.tab-buttons {
+  text-align: center;
+  margin: 19px auto 20px;
+}
+
+.tab-button {
+  border: 1px solid $gray3;
+  padding: 2px 15px 2px 9px;
+
+  & + & { margin-left: 5px; }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $blue1;
+    border-color: $blue2;
+  }
+
+  .borderradius & { @include border-radius(11px); }
+}
+
+.tab-button-active {
+  border-color: $blue3;
+  background-color: $blue3;
+  color: $white;
+
+  &:hover {
+    color: $white;
+    background-color: $blue3;
+    border-color: $blue4;
+  }
+
+  &:visited { color: $white; }
+
+  .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+}

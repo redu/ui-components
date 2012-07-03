@@ -1,0 +1,273 @@
+// ==========================================================================
+// Botões
+// ==========================================================================
+
+// Comum a todos os botões.
+// ==========================================================================
+
+.button {
+  display: inline-block;
+  padding: 6px 10px 6px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+
+  & + & { margin-left: 5px; }
+
+  &:hover { text-decoration: none; }
+
+  .open > &,
+  &:active,
+  &:active:hover {
+    background-image: none !important;
+
+    .boxshadow & { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5) !important); }
+
+    .no-boxshadow.ie8 & { filter: none !important; }
+  }
+
+  &.button-disabled,
+  &.button-disabled:hover {
+    filter: none !important;
+    background-image: none !important;
+    cursor: default;
+
+    .boxshadow & { @include box-shadow(none !important); }
+  }
+
+  .borderradius & { @include border-radius(4px); }
+}
+
+// Botão grande.
+.button-big {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.button-dropdown {
+  padding: 5px 5px 5px 10px;
+
+  .button-dropdown-icon {
+    @include text-replacement;
+    display: block;
+    margin-right: 5px;
+    float: left;
+  }
+}
+
+// Botão padrão.
+// ==========================================================================
+
+.button-default {
+  @extend .button;
+  color: $blue3;
+  border-color: $gray4;
+
+  .cssgradients & { @include filter-gradient-vertical($gray1, $gray3, 60%, 100%); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f7f7f7+60,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  }
+
+  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 ); }
+
+  .boxshadow & { @include box-shadow(inset 0 1px 0 0 $white); }
+
+  &:hover {
+    border-color: $blue2;
+    color: $blue4;
+
+    .boxshadow & {
+      $boxShadow:
+        inset 0 1px 0 $white,
+        inset 0 -1px 0 $white;
+      @include box-shadow($boxShadow);
+    }
+
+    .cssgradients & { @include filter-gradient-vertical($gray1, $blue1); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,dbeff7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 ); }
+  }
+
+  .open &,
+  &:active,
+  &:active:hover { background-color: $blue1 !important; }
+
+  &:active:hover { border-color: $blue4; }
+
+  &.button-disabled, &.button-disabled:hover {
+    background-color: $gray2 !important;
+    color: $gray5;
+    border-color: $gray3;
+  }
+}
+
+// Botão primário.
+// ==========================================================================
+
+.button-primary {
+  @extend .button;
+  border-color: $blue2;
+
+  .boxshadow & { @include box-shadow(inset 0 1px 0 $blue1); }
+
+  .textshadow & { text-shadow: 0 -1px 0 $blue4; }
+
+  .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 40%, 100%); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#73c3e6+0,4d8ac4+40;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzRkOGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  }
+
+  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#4d8ac4',GradientType=0 ); }
+
+  &:hover {
+    border-color: $blue4;
+
+    .cssgradients & { @include filter-gradient-vertical($blue2, $blue4); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+50,158ac4+50;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    }
+
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
+  }
+
+  &:active {
+    border-color: $blue4;
+    background-color: $blue4 !important;
+  }
+
+  &:hover:active { color: $blue1; }
+
+  &.button-disabled, &.button-disabled:hover {
+    color: $gray3;
+    background-color: $blue2 !important;
+    border-color: $blue2;
+
+    &:visited { color: $gray3; }
+  }
+}
+
+// Botão de sucesso.
+// ==========================================================================
+
+.button-success {
+  @extend .button;
+  background-color: $green2;
+  border-color: $green3;
+
+  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
+
+  .textshadow & { text-shadow: 0 -1px 0 $green4; }
+
+  .cssgradients & { @include filter-gradient-vertical($green2, $green3); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#abe385+0,5fc080+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZmMwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abe385', endColorstr='#5fc080',GradientType=0 ); }
+
+  &:hover {
+    background-color: $green2;
+    border-color: $green4;
+
+    .boxshadow & { @include box-shadow(inset 0 1px 0 $green1); }
+
+    .cssgradients & { @include filter-gradient-vertical($green2, $green4); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#abe385+0,61a080+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MWEwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abe385', endColorstr='#61a080',GradientType=0 ); }
+  }
+
+  &:active {
+    background-color: $green4 !important;
+    border-color: $green4;
+  }
+
+  &:hover:active { color: $green1; }
+
+  &.button-disabled, &.button-disabled:hover {
+    background-color: $green3 !important;
+    border-color: $green4;
+    color: $gray3;
+
+    &:visited { color: $gray3; }
+  }
+}
+
+// Botão de perigo.
+// ==========================================================================
+
+.button-danger {
+    @extend .button;
+    background-color: $red3;
+    border-color: $red3;
+
+    .boxshadow & { @include box-shadow(inset 0 1px 0 $red1); }
+
+    .textshadow & { text-shadow: 0 -1px 0 $red5; }
+
+    .cssgradients & { @include filter-gradient-vertical($red2, $red5, 20%, 100%); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#ff6d6d+20,c1272d+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjZkNmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzEyNzJkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    }
+
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6d6d', endColorstr='#c1272d',GradientType=0 ); }
+
+    &:hover {
+      border-color: $red5;
+
+      .cssgradients & { @include filter-gradient-vertical($red2, $red5); }
+
+      .no-cssgradients.gt-ie8 & {
+        // http://www.colorzilla.com/gradient-editor/#ff6d6d+0,c1272d+100;Custom
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNmQ2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMTI3MmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      }
+
+       .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1272d', endColorstr='#ff6d6d',GradientType=0 ); }
+    }
+
+    &:active {
+      background-color: $red5 !important;
+      border-color: $red5;
+    }
+
+    &:active:hover { color: $red1; }
+
+    &.button-disabled, &.button-disabled:hover {
+      color: $gray4;
+      background-color: $red2 !important;
+      border-color: $red3;
+
+      &:visited { color: $gray4; }
+    }
+}
+
+.button-primary,
+.button-success,
+.button-danger {
+  color: $white;
+
+  &:visited,
+  &:hover { color: $white; }
+}
