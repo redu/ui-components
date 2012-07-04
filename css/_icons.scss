@@ -436,7 +436,7 @@ h6.icon-course-gray_16_18-before {
 
 // Fechar.
 .icon-close-gray_8_10 {
-  .disabled &:hover { @include icon-sprite(close-gray_8_10); }
+  .button-disabled &:hover { @include icon-sprite(close-gray_8_10); }
   &:hover { @extend .icon-close-red_8_10; }
 }
 
@@ -528,10 +528,20 @@ h6.icon-course-gray_16_18-before {
   &:hover:before { @extend .icon-arrow-left-blue_16_18; }
 }
 
+.icon-arrow-left-lightblue_8_10-before {
+  &:before { @extend .icon-arrow-left-lightblue_8_10; }
+  &:hover:before { @extend .icon-arrow-left-blue_8_10; }
+}
+
 // Seta para direita.
 .icon-arrow-right-lightblue_16_18-before {
   &:before { @extend .icon-arrow-right-lightblue_16_18; }
   &:hover:before { @extend .icon-arrow-right-blue_16_18; }
+}
+
+.icon-arrow-right-lightblue_8_10-before {
+  &:before { @extend .icon-arrow-right-lightblue_8_10; }
+  &:hover:before { @extend .icon-arrow-right-blue_8_10; }
 }
 
 // Visto.
@@ -586,12 +596,11 @@ a:hover,
   .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-down-blue_8_10; }
   .open & .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-up-blue_8_10; }
 
-  .icon-close-lightblue_8_10 { @extend .icon-close_red_8_10}
-
-  .button-default.disabled, .button-default.disabled:hover {
-    .icon-close-gray_8_10 { @extend .icon-close-gray-8_10; }
-  }
+  // Fechar
+  .icon-close-lightblue_8_10 { @extend .icon-close-red_8_10; }
 }
+
+.button-disabled:hover .icon-close-gray_8_10 { @extend .icon-close-gray_8_10; }
 
 //video
 .icon-video-gray_16_18-before {

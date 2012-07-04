@@ -1,63 +1,35 @@
-ol, ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  display: block;
-  line-height: 1;
-  list-style: none;
-  quotes: none;
-  content: '';
-  content: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-
+// ==========================================================================
+// Listas
+// ==========================================================================
 
 .icon-link {
   float: left;
   margin-right: 10px;
+  width: 32px;
 }
 
 hr {
-    margin: 10px 0;
-    border-top: solid 1px $gray3;
-    border-bottom: solid 1px $white;
-    .boxshadow & { @include box-shadow(none); }
+  margin: 10px 0;
+  border-left: none;
+  border-top: solid 1px $gray3;
+  border-bottom: solid 1px $white;
+  .boxshadow & { @include box-shadow(none); }
 }
-
-.vision-at-environment {
-  margin: 0;
-  hr {
-    clear: both;
-    overflow: hidden;
-    display: inline-block;
-    width: 100%;
-  }
-}
-
 
 .statuses .status {
   overflow: hidden;
-  .post-description {
-    color: $gray6;
-  }
-hr
-  .input-user, .post-description {
-    margin-right: 15px;
-  }
+  list-style: none;
 
-  .input-user {
-    margin-bottom: 10px;
-    .textshadow & { text-shadow: none; }
-  }
+  .post-description { color: $gray6; }
+
+  .input-user, .post-description { margin-right: 15px; }
+
+  .input-user { .textshadow & { text-shadow: none; } }
 
   .icon-link {
     margin-right: 10px;
     float: left;
+
     img {
       width: 32px;
       height: 32px;
@@ -77,11 +49,14 @@ hr
   .close {
     margin-left: 5px;
     text-indent: -9999px;
+    float: right;
   }
+
   hr {
     margin: 10px 0;
     border-top: solid 1px $gray3;
     border-bottom: solid 1px $white;
+
     .boxshadow & { @include box-shadow(none); }
   }
 
@@ -92,12 +67,11 @@ hr
     clear: both;
     display: none;
     background-color: $gray2;
+
     .borderradius & { @include border-radius(5px); }
   }
 
-  .status-text {
-    overflow: hidden;
-  }
+  .status-text { overflow: hidden; }
 
   .actions {
     clear: both;
@@ -105,11 +79,14 @@ hr
     float: right;
     line-height: 11px;
     margin-top: 10px;
+    margin-left: 0;
+
     li {
       display: inline;
       margin: 10px;
       overflow: hidden;
       font-size: 11px;
+
       a:before {
         @include pseudo-before;
         vertical-align: baseline;
@@ -123,12 +100,10 @@ hr
   .status-content {
     display: inline-block;
     margin-left: 42px;
-    margin-top: 10px;
+    margin-top: 2px;
     background-color: $gray2;
 
-    .status-content {
-      margin-top: 0;
-    }
+    .status-content { margin-top: 0; }
 
     &:before {
       border-color: #F0F0F0 white;
@@ -145,104 +120,49 @@ hr
 
     .borderradius & { @include border-radius(5px); }
 
-    .post-text {
-      padding: 10px 10px 10px 10px;
-    }
+    .post-text { padding: 10px 10px 10px 10px; }
 
     .post-preview {
-          overflow: hidden;
-          padding: 10px 10px 10px 10px;
+      overflow: hidden;
+      padding: 10px 10px 10px 10px;
 
-          .title { margin-bottom: 10px; }
+      &.java-applet { padding: 0; }
 
-          &.java-applet { padding: 0; }
+      .post-body {
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
 
-          .post-body {
-            overflow: hidden;
-            display: block;
-            margin: 0 auto;
-            .source-site { color: $gray5; }
-          }
+        .source-site { color: $gray5; }
+      }
 
-          .preview {
-            float: left;
-            max-width: 110px;
-            a.thumbnail {
-              height: 60px;
-            }
-            .thumbnail {
-              float: left;
-              max-width: 100px;
-              min-height: 34px;
-              width: 100%;
-              margin-right: 10px;
-            }
+      .input-user { margin-bottom: 10px; }
 
-            .buttons-thumbnail {
-              display: block;
-              margin-left: 0;
-              clear: both;
-              width: 100px;
-              padding-top: 10px;
-              .button-default {
-                line-height: 10px;
-                .arrow { @extend .text-replacement; }
+      .preview {
+        float: left;
+        max-width: 110px;
+        a.thumbnail { max-height: 60px; }
 
-                &:hover {
-                  &.next .arrow { background-image: url("../images/new/icon/arrow-right-blue_8_10.png"); }
-                  &.last .arrow { background-image: url("../images/new/icon/arrow-left-blue_8_10.png"); }
-                  &.remove .arrow { background-image: url("../images/new/icon/close-red_8_10.png"); }
-                }
+        .input-user { margin-bottom: 10px; }
 
-                &.next .arrow {
-                  background-image: url("../images/new/icon/arrow-right-lightblue_8_10.png");
-                  background-repeat: no-repeat;
-                  width: 8px;
-                }
-                &.last .arrow {
-                  background-image: url("../images/new/icon/arrow-left-lightblue_8_10.png");
-                  background-repeat: no-repeat;
-                  width: 8px;
-                }
-
-                &.remove .arrow {
-                  background-image: url("../images/new/icon/close-lightblue_8_10.png");
-                  background-repeat: no-repeat;
-                  width: 8px;
-                }
-
-                &.disabled {
-                  &.next .arrow {
-                    background-image: url("../images/new/icon/arrow-right-gray_8_10.png");
-                    background-repeat: no-repeat;
-                    width: 8px;
-                  }
-                  &.last .arrow {
-                    background-image: url("../images/new/icon/arrow-left-gray_8_10.png");
-                    background-repeat: no-repeat;
-                    width: 8px;
-                  }
-
-                  &.remove .arrow {
-                    background-image: url("../images/new/icon/close-gray_8_10.png");
-                    background-repeat: no-repeat;
-                    width: 8px;
-                  }
-                }
-              }
-            }
-          }
+        .thumbnail {
+          float: left;
+          max-width: 100px;
+          min-height: 34px;
+          width: 100%;
+          margin-right: 10px;
         }
 
+        .buttons-thumbnail {
+          display: block;
+          margin-left: 0;
+          clear: both;
+          width: 100px;
+          padding-top: 10px;
+          overflow: hidden;
 
-    .java-applet {
-      .icon {
-        @extend .text-replacement;
-        background: url("../images/new/icon/icon-applet.png");
-        width: 32px;
-        height: 32px;
-        float: left;
-        margin-right: 10px;
+          .button-default { float: left; }
+        }
       }
     }
   }
@@ -279,9 +199,7 @@ hr
   }
 
   .create-response {
-    textarea {
-      float: right;
-    }
+    textarea { float: right; }
 
     &:before {
       border-color: #F0F0F0 white;
@@ -294,6 +212,7 @@ hr
       margin-top: -10px;
       width: 0;
     }
+
     .status-buttons { margin-top: 10px; }
   }
 
@@ -304,17 +223,13 @@ hr
     margin-top: 10px;
     padding: 10px 0;
 
-    .close {
-      margin-right: 10px;
-    }
+    .close { margin-right: 10px; }
 
     .java-applet { margin-left: 42px; }
 
     .last-responses { text-align: center; }
 
-    .all-responses {
-      text-align: center;
-    }
+    .all-responses { text-align: center; }
 
     &:before {
       border-color:  #F0F0F0 $white;
@@ -332,6 +247,7 @@ hr
     .status-content {
       display: block;
       margin-left: 0;
+
       &:before { display: none; }
 
       .status-text-response {
@@ -349,9 +265,13 @@ hr
     overflow: hidden;
     margin-left: 0;
 
+    .status-text { margin-top: 10px; }
+
     hr {
-      .boxshadow & { @include box-shadow-2( 0 1px 0 $white inset, 0 0 9px rgb(240, 240, 240)); }
       margin: 20px 0;
+      clear: both;
+
+      .boxshadow & { @include box-shadow-2( 0 1px 0 $white inset, 0 0 9px rgb(240, 240, 240)); }
     }
 
     .course-name {
@@ -359,65 +279,68 @@ hr
       overflow: hidden;
     }
 
-    .status-info {
-
-      color: $gray6;
-    }
+    .status-info { color: $gray6; }
 
     .link-name { &:before { @include pseudo-before(5px, false); } }
 
-    .actions { margin-bottom: 0px; }
+    .actions { margin-bottom: 10px; }
 
-    .status-content {
-      margin-left: 84px;
-      margin-top: 10px;
-    }
+    .status-content { margin-left: 84px; }
 
     .create-response {
       clear: both;
+
       form { &:before { margin-right: -159px; } }
     }
 
     .status-text {
       margin-left: 42px;
       clear: both;
-      &:after { display: none; } }
+
+      &:after { display: none; }
+    }
+
   }
 }
 
 .courses-lists {
   padding: 26px 55px 26px 55px;
   background-color: $gray1;
+
+  ul, li, ol { list-style: none; }
+
  .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5)); }
+
  .borderradius & { @include border-radius(7px); }
+
  .course-item {
-    a {
+    .icon-link {
       width: 90px;
       height: 90px;
     }
 
-    hr {
-      margin: 5px;
-    }
+    hr { margin: 5px; }
 
     .body {
-      h4 {
-        display: inline;
-      }
-      .borderradius & { @include border-radius(5px); }
       overflow: hidden;
       padding: 5px;
       border-bottom: 1px solid transparent;
+
+      h4 { display: inline; }
+
+      .borderradius & { @include border-radius(5px); }
+
       &:hover {
-        .no-cssgradients.ie8 & {
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 );
-        }
+        border-bottom: 1px solid $gray3;
+
+        .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
+
         .no-cssgradients.gt-ie8 & {
           // http://www.colorzilla.com/gradient-editor/#ffffff+60,e6e6e6+100;Custom
           background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
         }
+
         .cssgradients & { @include filter-gradient-vertical($white, $gray2, 60%, 100%); }
-        border-bottom: 1px solid $gray3 ;
       }
     }
 
@@ -435,26 +358,17 @@ hr
       overflow: hidden;
       color: $gray5;
 
-      li {
-        float: left;
-      }
+      li { float: left; }
 
-      li + li {
-        margin-left: 50px;
-      }
-      h6 {
-        &:before {
-          @include pseudo-before;
-          float: none;
-        }
+      li + li { margin-left: 50px; }
+
+      h6 :before {
+        @include pseudo-before;
+        float: none;
       }
     }
   }
 }
-
-// ==========================================================================
-// Listas
-// ==========================================================================
 
 // Comum a lista de cursos/disciplinas.
 // ==========================================================================
