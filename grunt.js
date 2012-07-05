@@ -11,7 +11,7 @@ module.exports = function(grunt) {
   , 'js/bootstrap-link.js'
   , 'js/bootstrap-list.js'
   , 'js/bootstrap-button.js'
-  , 'js/bootstrap-reply-message.js'
+  , 'js/bootstrap-reply-status.js'
   ];
 
   grunt.initConfig({
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: files,
-      tasks: 'lint concat min'
+      tasks: 'lint concat'
     }
   });
 
