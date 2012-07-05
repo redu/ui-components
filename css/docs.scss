@@ -1,0 +1,221 @@
+@import "variables";
+@import "mixins";
+
+$contentSpacing: 20px;
+
+// Imagem de fundo.
+body { background-image: url("../docs/assets/img/texturetastic_gray.png"); }
+
+.container { margin-bottom: $contentSpacing; }
+
+// Fixa a navegação local.
+.nav-local-fixed { position: fixed; }
+
+section { margin-bottom: $contentSpacing; }
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p,
+h7 + p,
+pre + p { margin-top: $baseLineHeight / 2; }
+
+// Conteúdo.
+.content {
+  background-color: $white;
+  padding-top: $contentSpacing;
+  padding-bottom: $contentSpacing;
+
+  h3[id],
+  h4[id] { padding-top: 60px; }
+
+  > *:not(.row) { 
+    margin-left: $contentSpacing;
+    margin-right: $contentSpacing;
+  }
+
+  [class*="span"]:first-child > *:not(.row) { margin-left: $contentSpacing; }
+
+  [class*="span"]:last-child > *:not(select):not(label):not(.controls):not(input):not(.control-option-list) { margin-right: $contentSpacing; }
+
+  .nav-local,
+  .nav-local-general-stats,
+  .nav-local-balloon,
+  .filters-general-view { 
+    margin-left: 0 !important; 
+    margin-right: 0 !important;
+  }
+
+  > * + * { margin-top: $contentSpacing / 2; }
+  
+  .boxshadow & { 
+    $boxShadow:
+      0 -1px 0 $white,
+      0 0 0 1px rgb(203, 203, 203) inset;    
+    @include box-shadow($boxShadow); 
+  }
+
+  .borderradius & { @include border-radius(10px); }
+}
+
+.well-content {
+  background: rgb(246, 246, 246);
+  padding: 20px 0;
+}
+
+.well-nav-local {
+  height: 250px;
+  margin-top: -10px;
+}
+
+.well-base {
+  background: rgb(246, 246, 246);
+
+  .boxshadow & { @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05) inset); }
+
+  .borderradius & { @include border-radius(5px); }
+}
+
+code + .well-base {
+  .borderradius & { @include border-radius(0 5px 5px 5px); }
+}
+
+.well-paddless {
+  @extend .well-base;
+  padding: 5px 0;
+}
+
+.well {
+  @extend .well-base;
+  padding: 5px 5px;
+  text-align: center;
+
+  > *:not(form) {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+  }
+
+  form { text-align: left; }
+
+  > dl,
+  > p,
+  > blockquote
+  > ul,
+  > ol,
+  > li { text-align: left; }
+
+  .span16 > & { padding: 5px 0; }
+
+  & + & { margin-top: 10px; }
+}
+
+.well-base + pre { margin-top: 10px; }
+
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.colors-box {
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: none;
+}
+
+.color-row {
+  font-size: 15px;
+  font-family: Consolas, "Courier New", monospace;
+  color: $black;
+}
+
+.color-box {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 80px;
+  height: 73px;
+}
+
+.text-white { color: $white; }
+
+.color-white { background-color: $white; }
+.color-black { background-color: $black; }
+
+.color-blue1 { background-color: $blue1; }
+.color-blue2 { background-color: $blue2; }
+.color-blue3 { background-color: $blue3; }
+.color-blue4 { background-color: $blue4; }
+
+.color-green1 { background-color: $green1; }
+.color-green2 { background-color: $green2; }
+.color-green3 { background-color: $green3; }
+.color-green4 { background-color: $green4; }
+
+.color-red1 { background-color: $red1; }
+.color-red2 { background-color: $red2; }
+.color-red3 { background-color: $red3; }
+.color-red4 { background-color: $red4; }
+.color-red5 { background-color: $red5; }
+
+.color-orange1 { background-color: $orange1; }
+.color-orange2 { background-color: $orange2; }
+.color-orange3 { background-color: $orange3; }
+.color-orange4 { background-color: $orange4; }
+.color-orange5 { background-color: $orange5; }
+.color-orange6 { background-color: $orange6; }
+
+.color-gray1 { background-color: $gray1; }
+.color-gray2 { background-color: $gray2; }
+.color-gray3 { background-color: $gray3; }
+.color-gray4 { background-color: $gray4; }
+.color-gray5 { background-color: $gray5; }
+.color-gray6 { background-color: $gray6; }
+
+.system-message {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 0 !important;
+}
+
+.row.grids { text-shadow: none; }
+
+.row.grids [class*="span"] {
+  @include background-clip(padding-box);
+  padding-top: 40px;
+  height: 60px;
+  text-align: center;
+}
+
+.row.grids.example [class*="span"] {
+  padding-top: 0;
+  height: $baseLineHeight;
+}
+
+code {
+  background-color: #F7F7F9;
+  border: 1px solid #E1E1E8;
+  padding: 2px 4px;
+
+  &.doc {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.rounded {
+  padding: 20px 0;
+  border: 1px solid rgb(203, 203, 203);
+
+  .borderradius & { @include border-radius(10px); }
+}
+
+.progress-bar-mini + .progress-bar-mini,
+.progress-bar-medium + .progress-bar-medium,
+.progress-bar-large + .progress-bar-large { margin-top: 10px; }

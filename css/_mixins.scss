@@ -23,7 +23,7 @@
     @include background-image(linear-gradient(bottom, $color1, $color2));
   }
   @if ($slider > 0.5) {
-    @include background-image(linear-gradient(bottom, $color1 (1 - $slider), $color2));
+    @include background-image(linear-gradient(bottom, $color1 (($slider * 2) - 1), $color2));
   }
 }
 
@@ -141,27 +141,24 @@
 }
 
 
+// Fontes.
+// ==========================================================================
 
-// FONTS.
-// --------------------------------------------------
+@mixin font-family-sans-serif { font-family: $baseFontFamily; }
 
-// Pilhas de fonts.
-@mixin font-family-sans-serif {
-  font-family: $baseFontFamily;
-}
 @mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
   font-size: $size;
   font-weight: $weight;
   line-height: $lineHeight;
 }
+
 @mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
   @include font-family-sans-serif;
   @include font-shorthand($size, $weight, $lineHeight);
   letter-spacing: normal;
 }
-@mixin font-family-monospace {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-}
+
+@mixin font-family-monospace { font-family: $monospaceFontFamily; }
 
 
 // PROPRIEDADES CSS3.
@@ -314,10 +311,7 @@
     @include clearfix();
   }
 
-  [class*="span"] {
-    @include gridSystem-gridColumn($gridGutterWidth);
-    @include background-clip(content-box);
-  }
+  [class*="span"] { @include gridSystem-gridColumn($gridGutterWidth); }
 
   // Colunas padrões.
   .span1     { @include gridSystem-columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1); }
@@ -354,4 +348,26 @@
   .offset13  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 13); }
   .offset14  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 14); }
   .offset15  { @include gridSystem-offset($gridColumnWidth, $gridGutterWidth, 15); }
+}
+
+@mixin input-span($columns, $gridColumnWidth, $gridGutterWidth) {
+  width: (($gridColumnWidth) * $columns) + ($gridGutterWidth * ($columns - 1)) - 10;
+}
+
+@mixin grid-input($gridColumnWidth, $gridGutterWidth) {
+  textarea,
+  input[type="text"],
+  input[type="password"] {
+    // Sobrescreve o margin-left do sistema de grid.
+    margin-left: 0;
+  }
+
+  // Gera os .spanX.
+  $i: $gridColumns;
+  @while $i > 0 {
+    input.span#{$i},
+    textarea.span#{$i} { @include input-span($i, $gridColumnWidth, $gridGutterWidth); }
+
+    $i: $i - 1;
+  }
 }

@@ -56,10 +56,11 @@ $linkColorVisited:            $blue2;
 
 $baseFontSize:                13px !default;
 $baseLineHeight:              18px !default;
-$baseFontFamily:              "Helvetica Neue", Arial, sans-serif !default;
 $textColor:                   $black !default;
+$baseFontFamily:              "Helvetica Neue", Arial, sans-serif !default;
 $museoSans:                   museo-sans, $baseFontFamily;
 $museoSlab:                   museo-slab, Georgia, $baseFontFamily;
+$monospaceFontFamily:					"Lucida Console", Courier, monospace;
 
 // Outros.
 // ==========================================================================
