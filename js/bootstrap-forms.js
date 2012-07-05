@@ -4,149 +4,155 @@
 
   var methods = {
 
+    // Adiciona um contador de caracteres.
+    countChars: function(options) {
+      var settings = $.extend({
+        characterCounterTemplate: $('<span class="character-counter"></span>')
+      }, options);
+
+      return this.each(function() {
+        var control = $(this)
+          , controls = control.parent()
+          , maxLength = control.attr('maxlength')
+          , remainingCharsText = function(charCount) {
+            var charDifference = maxLength - charCount
+
+            if (charDifference <= 0) {
+              if (control.is('textarea')) {
+                // No IE o maxlength não funciona para as áreas de texto.
+                control.text(control.text().substring(0, maxLength))
+              }
+
+              return 'Nenhum caracter restante.'
+            } else if (charDifference === 1) {
+              return '1 caracter restante.'
+            } else {
+              return charDifference + ' caracteres restantes.'
+            }
+          }
+
+        control.on({
+          focusin: function() {
+            settings.characterCounterTemplate.text(remainingCharsText(control.val().length))
+            settings.characterCounterTemplate.appendTo(controls)
+          }
+        , focusout: function() { settings.characterCounterTemplate.remove() }
+        , keyup: function() { settings.characterCounterTemplate.text(remainingCharsText(control.val().length)) }
+        })
+      })
+    },
+
+    // Adições/remoções de classes para o controle lista de opções.
     optionList: function(options) {
         var settings = $.extend({
-          "optionListCheckedClass": "option-list-checked",
-          "optionListCheckbox": "option-list-checkbox",
-          "textAreaClass": "input-area",
-          "appendAreaClass": "append-area",
-          "blue2": "#73C3E6"
+          optionListCheckedClass: 'control-option-list-checked'
+        , optionListCheckbox: 'control-option-list-checkbox'
+        , textAreaClass: 'input-area'
+        , appendAreaClass: 'control-append-area'
+        , blue2: '#73C3E6'
         }, options)
 
       return this.each(function() {
-        var optionList = $(this),
-            textArea = optionList.children("." + settings.textAreaClass),
-            appendArea = optionList.children("." + settings.appendAreaClass),
-            checkbox = appendArea.children("." + settings.optionListCheckbox)
+        var optionList = $(this)
+          , textArea = optionList.children('.' + settings.textAreaClass)
+          , appendArea = optionList.children('.' + settings.appendAreaClass)
+          , checkbox = appendArea.children('.' + settings.optionListCheckbox)
 
-        textArea.height(appendArea.height())
 
-        if (checkbox.prop("checked")) {
+        // Adiciona a classe optionListCheckedClass quando o checkbox estiver marcardo.
+
+        if (checkbox.prop('checked')) {
           optionList.addClass(settings.optionListCheckedClass)
         }
 
-        checkbox.click(function() {
-          if (checkbox.prop("checked")) {
-            optionList.addClass(settings.optionListCheckedClass)
-          } else {
-            optionList.removeClass(settings.optionListCheckedClass)
-          }
+        checkbox.on('click', function() {
+          optionList.toggleClass(settings.optionListCheckedClass)
         })
 
-        textArea.focus(function() {
-          appendArea.css("border-color", settings.blue2)
-        }).blur(function() {
-          appendArea.css("border-color", "")
+        // Adiciona a borda blue2 ao botão quando o textarea está em foco.
+        textArea.on({
+          focusin: function() { appendArea.css('border-color', settings.blue2) }
+        , focusout: function() { appendArea.css('border-color', '') }
         })
       })
     },
 
+    // Adições/remoções de classes para o formulário de busca.
     search: function(options) {
         var settings = $.extend({
-          "iconMagnifierGray": "icon-magnifier-gray_16_18",
-          "iconMagnifierLightBlue": "icon-magnifier-lightblue_16_18",
-          "blue2": "#73C3E6"
+          iconMagnifierGray: 'icon-magnifier-gray_16_18'
+        , iconMagnifierLightBlue: 'icon-magnifier-lightblue_16_18'
+        , blue2: '#73C3E6'
+        , controlAreaClass: 'control-area'
+        , controlAppendAreaClass: 'control-append-area'
+        , searchIconClass: 'control-search-icon'
         }, options)
 
       return this.each(function() {
-        var form = $(this),
-            input = form.children('input[type="text"]'),
-            button = form.children('.button'),
-            icon = button.children("span")
+        var form = $(this)
+          , control = form.children('.' + settings.controlAreaClass)
+          , button = form.children('.' + settings.controlAppendAreaClass)
+          , icon = button.children('.' + settings.searchIconClass)
 
-        input.focus(function() {
-          icon.removeClass(settings.iconMagnifierGray)
-          icon.addClass(settings.iconMagnifierLightBlue)
-          button.css("border-color", settings.blue2)
-        }).blur(function() {
-          icon.removeClass(settings.iconMagnifierLightBlue)
-          icon.addClass(settings.iconMagnifierGray)
-          button.css("border-color", "")
+        control.on({
+          focusin: function() {
+            icon.removeClass(settings.iconMagnifierGray)
+            icon.addClass(settings.iconMagnifierLightBlue)
+            button.css('border-color', settings.blue2)
+          }
+        , focusout: function() {
+            icon.removeClass(settings.iconMagnifierLightBlue)
+            icon.addClass(settings.iconMagnifierGray)
+            button.css('border-color', '')
+          }
         })
-
       })
     },
 
-    // Adiciona/remove uma classe ao rótulo do controle que está em foco/fora de foco.
-    focusLabel: function(element, controlLabelClass, inputFocusedClass, controlGroupClass) {
-      var controlLabel = element.parents("." + controlGroupClass).children("." + controlLabelClass)
+    // Adiciona/remove uma classe ao label do controle que está em foco/fora de foco.
+    focusLabel: function(options) {
+      var settings = $.extend({
+        // Classe adicionada quando o controle está me foco.
+        controlFocusedClass: 'control-focused'
+        // Classe que identifica o container do controle.
+      , controlGroupClass: 'control-group'
+      }, options)
 
-      element.focus(function() {
-        controlLabel.addClass(inputFocusedClass)
-      }).blur(function() {
-        controlLabel.removeClass(inputFocusedClass)
+      return this.each(function() {
+        var control = $(this)
+          , controlGroup = control.parents('.' + settings.controlGroupClass)
+
+        control.on({
+          focus: function() { controlGroup.addClass(settings.controlFocusedClass) }
+        , blur: function() { controlGroup.removeClass(settings.controlFocusedClass) }
+        })
       })
     },
 
     // Adiciona/remove uma classe ao rótulo do checkbox/radio quando está selecionado/desmarcado.
-    darkenLabel: function(element, label, checkboxCheckedClass) {
-      if (element.prop("checked")) {
-        label.addClass(checkboxCheckedClass)
-        label.siblings(".radio").removeClass(checkboxCheckedClass)
-      } else {
-        label.removeClass(checkboxCheckedClass)
-      }
-    },
-
-    init: function(options) {
+    darkLabel: function(options) {
       var settings = $.extend({
-          "controlLabelClass":    "control-label",    // Classe que identifica o rótulo de um controle.
-          "inputFocusedClass":    "input-focused",    // Classe dada ao rótulo quando o controle está em foco.
-          "charCountClass":       "character-count",  // Classe que identifica o contador de caracteres.
-          "checkboxCheckedClass": "checkbox-checked", // Classe dada ao rótulo quando o controle está marcado.
-          "controlGroupClass":    "control-group"     // Classe que identifica o container do controle.
-        }, options)
+        // Classe adicionada quando o controle está marcado.
+        controlCheckedClass: 'control-checked'
+        // Classe que identifica um radio button.
+      , radioClass: 'radio'
+      , darkenLabel: function(label) {
+          label.toggleClass(settings.controlCheckedClass)
+          label.siblings('.' + settings.radioClass).removeClass(settings.controlCheckedClass)
+        }
+      }, options)
 
       return this.each(function() {
-        $(this).find('input[type="text"], input[type="file"], textarea, select').each(function() {
-          methods.focusLabel($(this), settings.controlLabelClass, settings.inputFocusedClass, settings.controlGroupClass)
-        })
+        var control = $(this)
+          , label = control.parent()
 
-        $(this).find('input[type="radio"], input[type="checkbox"]').each(function() {
-          var input = $(this),
-              label = input.parent()
+        if (control.prop('checked')) { label.addClass(settings.controlCheckedClass) }
 
-          if (input.prop("checked")) {
-            label.addClass(settings.checkboxCheckedClass)
-          }
-
-          input.change(function() {
-            methods.darkenLabel(input, label, settings.checkboxCheckedClass)
-          })
-        })
-
-        $(this).find('input[type="text"], textarea').each(function() {
-          var input = $(this),
-              hasMaxLength = input.attr("maxlength")
-
-          // Verifica se maxlength está definido.
-          if (typeof hasMaxLength != "undefined") {
-            var charLengthWrapper = input.siblings("." + settings.charCountClass)
-
-            charLengthWrapper.css("text-indent", "-9999px")
-            input.focus(function(e) {
-              charLengthWrapper.css("text-indent", "")
-            }).blur(function(e) {
-              charLengthWrapper.css("text-indent", "-9999px")
-            }).keyup(function() {
-              var charDifference = hasMaxLength - this.value.length,
-                  text = charDifference + " caracteres restantes."
-
-              if (charDifference === 1) {
-                text = "1 caracter restante."
-              } else if (charDifference <= 0) {
-                text = "Nenhum caracter restante."
-                // No IE o maxlength não funciona para as áreas de texto.
-                input.text(input.text().substring(0, hasMaxLength))
-              }
-
-              charLengthWrapper.text(text)
-            })
-          }
-        })
+        control.on('change', function() { settings.darkenLabel(label) })
       })
-    }
+    },
 
+    init: function() {}
   }
 
   $.fn.reduForm = function(method) {
@@ -162,17 +168,36 @@
 }) (window.jQuery)
 
 $(function() {
-  $("form:not(.form-search)").reduForm()
-  $(".form-search").reduForm("search")
-  $(".option-list").reduForm("optionList")
+  $('input[type="text"][maxlength], input[type="password"][maxlength], textarea[maxlength]').reduForm('countChars');
 
-  // Chamada para o placeholder_polyfill.
-  if ('placeholder' in $('<input>')[0]) {
-    // don't run the polyfill when the browser has native support
-    return;
+  $('input[type="text"], input[type="password"], input[type="file"], textarea, select').reduForm('focusLabel')
+
+  $('input[type="radio"], input[type="checkbox"]').reduForm('darkLabel')
+  
+  $(".form-search").reduForm("search")
+
+  $('.control-option-list').reduForm('optionList')
+
+  placeHolderConfig = {
+    // Nome da classe usada para estilizar o placeholder.
+    className: 'placeholder'
+    // Mostra o texto do placeholder para leitores de tela ou não.
+  , visibleToScreenreaders : false
+    // Classe usada para esconder visualmente o placeholder.
+  , visibleToScreenreadersHideClass : 'placeholder-hide-except-screenreader'
+    // Classe usada para esconder o placeholder de tudo.
+  , visibleToNoneHideClass : 'placeholder-hide'
+    // Ou esconde o placeholder no focus ou na hora de digitação.
+  , hideOnFocus : false
+    // Remove esta classe do label (para consertar labels escondidos).
+  , removeLabelClass : 'visuallyhidden'
+    // Substitui o label acima com esta classe.
+  , hiddenOverrideClass : 'visuallyhidden-with-placeholder'
+    // Permite a substituição do removeLabelClass com hiddenOverrideClass.
+  , forceHiddenOverride : true
+    // Aplica o polyfill até mesmo nos navegadores com suporte nativo.
+  , forceApply : false
+    // Inicia automaticamente.
+  , autoInit : true
   }
-  $('input[placeholder], textarea[placeholder]').placeHolder({
-    visibleToScreenreaders : true, // set to false if the content of the placeholder is useless or doubling the content of the label
-    hideOnFocus : false // set to false if you want to mimic the behavior of mobile safari and chrome (remove label when typeed instead of onfocus)
-  });
 })

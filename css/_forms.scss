@@ -1,200 +1,400 @@
-@import "compass/css3/images";
+// ==========================================================================
+// Formulários
+// ==========================================================================
 
-// Tamanho máximo do campo padrão.
-$inputMaxWidth: 280px;
-// Tamanho dos rótulos.
-$controlLabelWidth: 160px;
-// Padding vertical do campo.
-$inputVerticalPadding: 6px;
-// Padding horizontal do campo.
-$inputHorizontalPadding: 10px;
-// Tamanho do campo: <tamanho máximo> - 2px (borda horizontal) - 2 * <padding horizontal>.
-$inputWidth: $inputMaxWidth - 2 - 2 * ($inputHorizontalPadding);
+// Variáveis.
+// ==========================================================================
+
+// Padding vertical do input.
+$formControlVerticalPadding: 6px;
+// Padding horizontal do input.
+$formControlHorizontalPadding: 10px;
+// Top padding do label.
+$formLabelTopPadding: 7px;
+// Tamanho da borda arredondada dos controles.
+$formControlBorderRadius: 3px;
+
+
+// Mixins.
+// ==========================================================================
 
 // Usado no formulário de busca e elemento de opções de lista.
-@mixin input-append() {
-  @extend .clearfix;
+@mixin form-control-append() {
   position: relative;
-  display: inline-block;
 
-  // Um campo texto ou área de texto.
-  .input-area { float: left; }
+  &:hover .control-append-area,
+  &:hover .control-area { border-color: $blue2; }
 
-  // Área que fica sob o input-area do lado direito.
-  .append-area {
+  // Área que fica sob o controle, do lado direito.
+  .control-append-area {
+    @include box-sizing(border-box);
+    height: 100%;
     position: absolute;
     right: 0;
+    top: 0;
 
-    // CSS3.
-    .borderradius & { @include border-radius(0 3px 3px 0); }
-    .cssgradients &,
-    .cssgradients &:hover { @include filter-gradient-vertical($white, $gray2); }
-    .no-cssgradients &,
-    .no-cssgradients &:hover {
+    .borderradius & { @include border-radius(0 $formControlBorderRadius $formControlBorderRadius 0); }
+
+    .cssgradients & { @include reduGradient($white, $gray2); }
+
+    .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 );
     }
-  }
 
-  // Estados.
-  &:hover .append-area,
-  &:hover .input-area { border-color: $blue2; }
-
-}
-
-form {
-  // Faz todos os formulários terem espaço abaixo.
-  margin: 0 0 $baseLineHeight;
-
-  // CSS3.
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
-}
-
-// Formulário de busca.
-.form-search {
-  @include input-append;
-
-  .input-area {
-    // Calcula o padding direito necessário.
-    $searchButtonWidth: 38px;
-    $formSearchInputRightPadding: $searchButtonWidth +  $inputHorizontalPadding;
-    padding-right: $formSearchInputRightPadding;
-    width: 180px - $formSearchInputRightPadding;
+    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
   }
 }
+
+
+form { margin: 0; }
 
 fieldset {
-  border: 0 none;
+  border: 0;
   margin: 0;
   padding: 0;
 }
 
-// Seta a fonte dos formulários.
+// Encapsula o label e o contole.
+.control-group { & + & { margin-top: 20px; } }
+
+// Encapsula o label.
+.control-label { 
+  color: $gray5;
+
+  .control-focused & { color: $blue2; }
+
+  .control-success & { color: $green3; }
+
+  .control-error & {color: $red2; }
+
+  .control-focused.control-success & { color: $green4; }
+
+  .control-focused.control-error & {color: $red5; }
+
+  .form-horizontal & {
+    padding-top: $formLabelTopPadding;
+    text-align: right;
+  }
+}
+
+// Encapsula o controle.
+.controls { position: relative; }
+
+// Formulário horizontal.
+.form-horizontal {
+  .control-group {
+    @include clearfix;
+
+    .control-label,
+    .controls { float: left; }
+
+    .control-label { 
+      text-align: right;
+      padding-top: $formLabelTopPadding;
+      margin: 0 20px 0 0;
+    }
+
+    .controls { margin-left: 0; }
+  }
+}
+
+// Fonte dos formulários.
 label,
 input,
 button,
 select,
-textarea { @include font-shorthand; } // Seta o tamanho, peso e altura de linha aqui.
-input,
-button,
-select,
-textarea { @include font-family-sans-serif; } // E somente seta a família da fonte aqui para aqueles que precisam (note que o label não está presente).
-
-// Identifica os controles por seus rótulos.
-label {
-  // display: block;
-  color: $gray4;
-  position: relative;
-
-  .form-horizontal & { margin-bottom: 7px; }
+textarea { 
+  @include font-shorthand;
+  @include font-family-sans-serif;
 }
 
-input[type="text"],
-select { height: 30px; }
-
-// Campos, áreas de textos e selecionadores.
-input[type="text"],
-input[type="file"],
+// Resets de tamanho e tipo compartilhados.
+select,
 textarea,
-select {
-  @include box-sizing(padding-box);
-  width: 100%;
+input[type="text"],
+input[type="password"] {
+  @include box-sizing(border-box);
   display: inline-block;
-  // width: $inputWidth;
-  // height: $baseLineHeight;
-  padding: $inputVerticalPadding $inputHorizontalPadding;
+  border: 1px solid $gray4;
+  padding: $formControlVerticalPadding $formControlHorizontalPadding;
+  width: 100%;
+  color: $gray6;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
-  color: $gray6;
-  border: 1px solid $gray4;
 
-  // CSS3.
-  $transition: border linear .2s, box-shadow linear .2s;
-  @include transition($transition);
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
-  .borderradius & { @include border-radius(3px); }
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
-  .cssgradients & { @include background-image(linear-gradient(bottom, white, mix(white, $gray3, 50%) 90%, $gray3)); }
-  .no-cssgradients & {
-    // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f2f2f2+10,ffffff+100;Custom
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 );
+  .csstransitions & {
+    $transition: 
+      border linear .2s, 
+      box-shadow linear .2s;
+    @include transition($transition);
   }
 
-  .input-success & { border-color: $green2; }
-  .input-error & { border-color: $red2; }
+  .borderradius & { @include border-radius($formControlBorderRadius); }
 
-  // Estados.
+  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
+
+  .cssgradients & { @include reduGradient($white, $gray3, 0.8); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+40;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  }
+
+  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); }
+
+  .control-success & { border-color: $green2; }
+
+  .control-error & { border-color: $red2; }
+
   &:hover {
     border-color: $blue2;
-    .input-success & { border-color: $green3; }
-    .input-error & { border-color: $red4; }
+
+    .control-success & { border-color: $green3; }
+
+    .control-error & { border-color: $red4; }
   }
+
   &:focus {
     color: $black;
-    background: $white;
+    background-color: $white !important;
+    background-image: none !important;
     border-color: $blue2;
     outline: 0;
 
-    .input-success & {
-      border-color: $green2;
-      .boxshadow & {
-        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $green2;
-        @include box-shadow($boxShadow);
-      }
-    }
-    .input-error & {
-      border-color: $red2;
-      .boxshadow & {
-        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $red2;
-        @include box-shadow($boxShadow);
-      }
+    .ie8 & { filter: none; }
+
+    $boxShadowInsetNone: inset 0 0 0 rgba(0, 0, 0, 0);
+
+    .boxshadow & {
+      $boxShadow: 
+        $boxShadowInsetNone, 
+        0 0 6px 1px $blue2;
+      @include box-shadow($boxShadow);
     }
 
-    .textshadow & { text-shadow: none; }
-    .boxshadow & {
-      $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $blue2;
-      @include box-shadow($boxShadow);
+    .control-success & {
+      border-color: $green2;
+
+      .boxshadow & {
+        $boxShadow: 
+          $boxShadowInsetNone, 
+          0 0 6px 1px $green2;
+        @include box-shadow($boxShadow);
+      }
+    }
+    
+    .control-error & {
+      border-color: $red2;
+
+      .boxshadow & {
+        $boxShadow: 
+          $boxShadowInsetNone, 
+          0 0 6px 1px $red2;
+        @include box-shadow($boxShadow);
+      }
     }
   }
 }
 
-// Estados de desativados e somente leitura.
+// Reseta a altura já que as textareas tem linhas.
+textarea { 
+  height: auto; 
+  resize: vertical;
+}
+
+// Contador de caracteres restantes.
+.character-counter {
+  @extend .legend;
+  position: absolute;
+  left: 11px;
+  bottom: -16px;
+}
+
+// Posiciona os radios e checkboxes melhor.
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 3px 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+// Reseta a largura dos input buttons, radios e checkboxes.
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] { width: auto; }
+
+// Seta a altura do input file e select para combinar com os textos.
+select,
+input[type="file"] { line-height: 28px; }
+
+// Não fixa a altura do select de múltiplos elementos.
+select[multiple],
+select[size] { height: auto; }
+
+// Foco para select, file, radio e checkbox.
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  // Padrão.
+  outline: thin dotted #333;
+  // Webkit.
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Checkboxes e radios.
+// ==========================================================================
+
+// Indenta os labels para posicionar os radios/checkboxes.
+.control-radio,
+.control-checkbox {
+  display: block;
+  min-height: $baseLineHeight;
+  padding-left: 19px;
+  overflow: hidden;
+  color: $gray6;
+
+  .ie8 &,
+  .gt-ie8 & { padding-top: 2px; }
+
+  .control-inline & { 
+    padding-top: $formLabelTopPadding + 2px; 
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+
+.control-inline {
+  .control-radio + .control-radio,
+  .control-checkbox + .control-checkbox { margin-left: 5px; }
+}
+
+.control-radio + .control-radio,
+.control-checkbox + .control-checkbox { 
+  margin-top: 2px; 
+
+  .ie8 &,
+  .gt-ie8 & { margin-top: 0; }
+}
+
+.control-radio input[type="radio"],
+.control-checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -($baseLineHeight);
+  margin-right: 10px;
+
+  .ie8 &,
+  .gt-ie8 & { margin-top: -1px; }
+}
+
+// Move a lista de opções para baixo para alinhar com a label.
+.controls > .control-radio:first-child,
+.controls > .control-checkbox:first-child { padding-top: $formLabelTopPadding + 2px; }
+
+// Texto preto quando o radio ou checkbox forem selecionados.
+.control-checked { color: $black; }
+
+
+// Selects.
+// ==========================================================================
+
+// Selects para data.
+.control-select-date {
+  .controls { overflow: hidden; }
+
+  select { 
+    float: left;
+    // Mês.
+    width: 115px;
+
+    // Dia. 
+    &:first-child { width: 70px; }
+    
+    // Ano.
+    &:last-child { width: 85px; }
+  }
+
+  select + select { margin-left: 5px; }
+}
+
+
+// Tamanho dos inputs.
+// ==========================================================================
+
+// Tamanho alternativo para os campos.
+
+.control-big { 
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select,
+  .placeholder {
+    font-size: 16px; 
+    height: 42px;
+  }
+
+  .placeholder { top: 5px; }
+
+  .form-horizontal & .control-label { padding-top: 11px; }
+}
+
+@include grid-input($gridColumnWidth, $gridGutterWidth);
+
+
+// Estado desativado.
+// ==========================================================================
+
+// Estado de desativado e somente leitura.
 input[disabled],
 select[disabled],
 textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  background: $gray1;
   cursor: not-allowed;
+  background-color: $gray1 !important;
+  background-image: none !important;
 
-  // CSS3.
-  .boxshadow & { @include box-shadow(none); }
+  .ie8 & { filter: none !important; }
 
-  // Estados.
   &:hover { border-color: $gray4; }
+
+  .boxshadow & { @include box-shadow(none); }
 }
 
+
+// Placeholders.
+// ==========================================================================
+
 // Cor de texto dos placeholders.
+
 input::-webkit-input-placeholder { color: $gray4; }
+
 input:-moz-placeholder { color: $gray4; }
+
 textarea::-webkit-input-placeholder { color: $gray4; }
+
 textarea:-moz-placeholder { color: $gray4; }
+
+// Estilos do placeholder polyfill.
 
 .placeholder {
   position: absolute;
+  left: 0;
+  top: 0;
   color: $gray4;
-  z-index:1;
+  z-index: 1;
   padding: 8px 10px;
-
-  .form-horizontal & { left: 180px !important; }
 }
 
-.placeholder-hide-exept-screenreader {
+.placeholder-hide-except-screenreader {
   padding: 0;
-  border: 0 ;
+  border: 0;
   height: 1px;
   width: 1px;
   overflow: hidden;
@@ -202,172 +402,82 @@ textarea:-moz-placeholder { color: $gray4; }
 
 .placeholder-hide { display: none; }
 
-.control-group {
-  margin-bottom: 20px;
-  .form-horizontal & { @include clearfix; }
-}
 
-.control-label {
-  &.input-focused { color: $blue2; }
-
-  .input-success & {
-    color: $green3;
-    &.input-focused { color: $green4; }
-  }
-  .input-error & {
-    color: $red2;
-    &.input-focused { color: $red5; }
-  }
-
-  .form-horizontal & {
-    float: left;
-    padding-top: 7px;
-    text-align: right;
-    width: $controlLabelWidth;
-  }
-}
-
-.controls {
-  margin-left: $controlLabelWidth + 20px;
-  @include clearfix;
-
-  > .radio:first-child,
-  > .checkbox:first-child { padding-top: 5px; }
-}
-
-.radio,
-.checkbox {
-  min-height: $baseLineHeight;
-  padding-left: $baseLineHeight;
-  width: $inputMaxWidth - $baseLineHeight;
-  margin-bottom: 2px;
-  color: $gray6;
-}
-
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  float: left;
-  margin-left: -($baseLineHeight);
-}
-
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"] {
-  background-color: transparent;
-  cursor: pointer;
-  height: auto;
-  line-height: normal;
-  margin: 3px 0;
-  padding: 0;
-  width: auto;
-  *margin-top: 0; /* IE7. */
-  border: 0 \9; /* IE9 e abaixo. */
-
-  // CSS3.
-  .borderradius & { @include border-radius(0); }
-}
-
-// Contador de caracteres restantes.
-.character-count {
-  font-size: 11px;
-  margin: 1px 0 0 11px;
-  color: $gray5;
-  position: absolute;
-
-  .option-list & { bottom: -20px; }
-}
-
-// Faz a altura da área de texto se comportar direito.
-textarea {
-  resize: vertical;
-  height: auto;
-}
-
-// Seta a altura dos controles do selecionador e arquivo para ficar iguais ao dos campos de texto.
-// select,
-input[type="file"] {
-  height: $baseLineHeight + 2 + 2 * ($inputVerticalPadding);
-  width: $inputWidth + 2 + 2 * ($inputHorizontalPadding);
-}
+// Arquivo.
+// ==========================================================================
 
 input[type="file"] {
   background: transparent;
   width: auto;
   border: none;
+
   .boxshadow & { @include box-shadow(none); }
 }
 
-select {
-  // Selecionadores para data de aniversário.
-  .select-birthdate & {
-    width: 115px;
-    &:first-child { width: 70px; }
-    &:last-child { width: 85px; }
-  }
-}
 
-// Texto preto quando o radio ou checkbox forem selecionados.
-.checkbox-checked { color: $black; }
+// Lista de opções com texto.
+// ==========================================================================
 
-// Tamanho alternativo para os campos.
-.input-big {
-  height: 28px;
-  font-size: 16px;
-}
+.control-option-list {
+  @include form-control-append;
 
-// Tamanhos variados para os campos.
-.input-3-col { width: $inputWidth - 2 * 60px; } // 160xp.
-.input-4-col { width: $inputWidth - 1 * 60px; } // 220xp.
-// O tamanho de 5 colunas (280px) é o padrão.
-.input-6-col { width: $inputWidth + 1 * 60px; } // 340xp.
-.input-7-col { width: $inputWidth + 2 * 60px; } // 400xp.
-.input-8-col { width: $inputWidth + 3 * 60px; } // 460xp.
-.input-9-col { width: $inputWidth + 4 * 60px; } // 520xp.
-
-// Elemento de lista de opções.
-.option-list {
-  @include input-append;
-  margin-left: 0;
-
-  .form-horizontal & { margin-left: 20px; }
-
-  .input-area {
+  .control-area {
     // Calcula o padding direito necessário.
     $appendAreaWidth: 28px;
-    $controlListTextareaRightPadding: $appendAreaWidth +  $inputHorizontalPadding;
+    $controlListTextareaRightPadding: $appendAreaWidth +  $formControlHorizontalPadding;
     padding-right: $controlListTextareaRightPadding;
-    width: 280px - $controlListTextareaRightPadding;
   }
 
-  .append-area {
+  .control-append-area {
     padding: 6px 7px 6px 6px;
     border: 1px solid $gray4;
-    height: 107px;
   }
 
   input[type="checkbox"] { margin: 0; }
 }
 
-.option-list-checked {
-  .input-area {
+.control-option-list-checked {
+  .control-area {
     .boxshadow & {
       $rightSideWidth: 28px;
-      $boxShadow: -($rightSideWidth) 0 0 $white inset, 0 1px 0 $white inset;
+      $boxShadow: 
+        -($rightSideWidth) 0 0 $white inset
+      , 0 1px 0 $white inset;
       @include box-shadow($boxShadow)
     }
-    &:focus {
-      .boxshadow & {
-        $boxShadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 6px 1px $blue2;
+
+    .boxshadow &:focus {
+      $boxShadow: 
+        inset 0 0 0 rgba(0, 0, 0, 0)
+      , 0 0 6px 1px $blue2;
       @include box-shadow($boxShadow);
-      }
     }
   }
 
-  .append-area {
+  .control-append-area {
     background-color: $green2 !important;
     background-image: none !important;
 
-    .no-cssgradients &,
-    .no-cssgradients &:hover { filter: none; }
+    .ie8 & { filter: none !important; }
   }
+}
+
+
+// Formulário de busca.
+// ==========================================================================
+
+.form-search {
+  @include form-control-append;
+
+  .control-area {
+    // Calcula o padding direito necessário.
+    $searchButtonWidth: 38px;
+    $formSearchInputRightPadding: $searchButtonWidth +  $formControlHorizontalPadding;
+    padding-right: $formSearchInputRightPadding;
+  }
+}
+
+.control-search-icon {
+  @include text-replacement;
+  display: block;
 }
