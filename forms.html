@@ -8,17 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
     <meta name="author" content="Redu Educational Technologies">
-    <link rel="stylesheet" href="docs/assets/css/bootstrap-redu.min.css">
-    <link rel="stylesheet" href="docs/assets/css/docs.css">
-    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.css" >
-    <script src="docs/assets/js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-redu.min.css">
+    <link rel="stylesheet" href="docs/assets/css/docs.min.css">
+    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css" >
+    <script src="js/vendor/modernizr.js"></script>
   </head>
   <body data-spy="scroll" onload="prettyPrint()">
     <a href="https://github.com/redu/ui-components"><img style="position: absolute; top: 42px; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
     <div class="nav-global nav-global-fixed-top">
       <div class="nav-global-inner">
         <div class="nav-global-container">
-          <a class="nav-global-brand" href="http://www.redu.com.br" title="Redu">Redu</a>
+          <a class="nav-global-brand logo-redu-gray_140_40" href="http://www.redu.com.br" title="Redu">Redu</a>
           <div class="nav-global-buttons">
             <a class="nav-global-button " href="index.html" title="Início">Início</a>
           </div>
@@ -48,8 +48,8 @@
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="lists.html" title="Listas">Listas</a>
                   </li>
-                  <li class="nav-global-profile-item">
-                    <a title="Formulários">Formulários</a>
+                  <li class="nav-global-profile-item link-container">
+                    <a class="link-target" href="forms.html" title="Formulários">Formulários</a>
                   </li>
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="buttons.html" title="Botões">Botões</a>
@@ -78,288 +78,930 @@
     </div>
     <div class="container">
 <div class="row">
-  <div class="span16">
+  <div class="span3">
+    &nbsp;
+    <ul class="nav-local nav-local-fixed">
+      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
+        <a class="nav-local-link link-target" href="#forms" title="Tipos de formulários">Tipos de formulários</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#control-structure" title="Estrutura dos controles">Estrutura dos controles</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#input-text-password" title="Input text/password">Input text/password</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#textarea" title="Textarea">Textarea</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#placeholder-char-counter" title="Placeholder e contador">Placeholder e contador</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#validation" title="Validação">Validação</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#sizes" title="Tamanhos">Tamanhos</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#select" title="Select">Select</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#checkbox-radio" title="Checkbox/Radio">Checkbox/Radio</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#input-file" title="Input file">Input file</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#option-list" title="Lista de opções com texto">Lista de opções com texto</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#form-search" title="Busca">Busca</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span13">
     <div class="content">
-        <h1>Formulários</h1>
-        <form class="form-horizontal">
-          <div class="row">
-            <div class="span3">
-              <label for="input0x" class="control-label">Label</label>
-            </div>
-            <div class="span6">
-              <input type="text" id="input0x" placeholder="Sou um input sem o atributo maxlength">
-            </div>
-          </div>
-          <fieldset>
-            <div class="control-group">
-              <label for="input01" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input01" placeholder="Sou um input sem o atributo maxlength">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input02" class="control-label">Formulário desativado</label>
-              <div class="controls">
-                <input type="text" id="input02" placeholder="Estou desativado lá lá lá lá" disabled="disabled">
-              </div>
-            </div>
-            <div class="control-group input-error">
-              <label for="input03" class="control-label">Erro</label>
-              <div class="controls">
-                <input type="text" id="input03" placeholder="Tenho maxlength de 200" maxlength="200">
-                <p class="character-count">200 caracteres restantes.</p>
-              </div>
-            </div>
-            <div class="control-group input-success">
-              <label for="input04" class="control-label">Sucesso</label>
-              <div class="controls">
-                <input type="text" id="input04" placeholder="Tenho maxlength de 5" maxlength="5">
-                <p class="character-count">5 caracteres restantes.</p>
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input05" class="control-label">Área de texto</label>
-              <div class="controls">
-                <textarea id="input05" placeholder="Placeholderzinho..." rows="5"></textarea>
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input06" class="control-label">Área de texto</label>
-              <div class="controls">
-                <textarea id="input06" placeholder="Placeholderzinho..." rows="5" maxlength="5"></textarea>
-                <p class="character-count">5 caracteres restantes.</p>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Data de nascimento</label>
-              <div class="controls select-birthdate">
-                <select>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-                <select>
-                  <option>Janeiro</option>
-                  <option>Fevereiro</option>
-                </select>
-                <select>
-                  <option>2012</option>
-                  <option>2013</option>
-                </select>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Lista de opções</label>
-              <div class="controls">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Opção um;
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Opção dois;
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Opção quarto.
-                </label>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Lista de opções</label>
-              <div class="controls">
-                <label class="radio">
-                  <input type="radio" name="radio">
-                  Opção um;
-                </label>
-                <label class="radio">
-                  <input type="radio" name="radio">
-                  Opção dois;
-                </label>
-                <label class="radio">
-                  <input type="radio" name="radio">
-                  Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
-                </label>
-                <label class="radio">
-                  <input type="radio" name="radio">
-                  Opção quarto.
-                </label>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Arquivo</label>
-              <div class="controls">
-                <input type="file" class="file">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input07" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input07" placeholder="El godzilla" class="input-big">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input08" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input08" placeholder="3 col (160px)" class="input-3-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input09" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input09" placeholder="4 col (220px)" class="input-4-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input10" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input10" placeholder="5 col (280px)">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input11" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input11" placeholder="6 col (340px)" class="input-6-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input12" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input12" placeholder="7 col (400px)" class="input-7-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input13" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input13" placeholder="8 col (460px)" class="input-8-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="input14" class="control-label">Label</label>
-              <div class="controls">
-                <input type="text" id="input14" placeholder="9 col (520px)" class="input-9-col">
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="list-of-options-with-text" class="control-label">Lista de opções com texto</label>
-              <div class="controls option-list">
-                <textarea class="input-area" id="list-of-options-with-text" placeholder="Descrição" rows="5"maxlength="170"></textarea>
-                <p class="character-count">170 caracteres restantes.</p>
-                <div class="append-area">
-                  <input type="checkbox" class="option-list-checkbox">
+      <h2>Formulários</h2>
+      <h3 id="forms">Tipos de formulários</h3>
+      <div class="row">
+        <div class="span7">
+          <p>Os formulários podem tanto seguir uma linha vertical (controle abaixo do seu label) ou horizontal (controle e seu label lado-a-lado). O formulário padrão segue a linha vertical.</p>
+          <p>Adicionando <code>.form-horizontal</code> ao <code>&lt;form&gt;</code>, é possível construir um formulário do tipo horizontal. Usando as classes do sistema de grid é possível alinhar corretamente os labels e o controle.</p>
+        </div>
+        <div class="span6">
+          <h5>Arquivo</h5>
+          <p><code>_forms.scss</code></p>
+          <h5>Dependências</h5>
+          <ul>
+            <li><code rel="tooltip" title="Contador de caracteres; Labels escurecidos na marcação dos checkboxes/radios; Cor dos labels quando o controle está em foco; Comportamento do controle lista de opções e formulário de busca">bootstrap-forms.js</code></li>
+            <li><code rel="tooltip" title="Polyfill do placeholder para input texts e textareas para IE8 e IE9.">vendor/placeholder-polyfill.min.js</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <code>&lt;form&gt;</code>
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-1-1">Nome</label>
+                </div>
+                <div class="controls">
+                  <input type="text" id="input-1-1">
                 </div>
               </div>
-            </div>
-          </fieldset>
-        </form>
-        <form>
-          <div class="control-group">
-            <label for="input15" class="control-label">Label</label>
-            <input type="text" id="input15" placeholder="Sou um input sem o atributo maxlength">
-          </div>
-          <div class="control-group input-error">
-            <label for="input16" class="control-label">Erro</label>
-            <input type="text" id="input16" placeholder="Tenho maxlength de 200" maxlength="200">
-            <p class="character-count">200 caracteres restantes.</p>
-          </div>
-          <div class="control-group input-success">
-            <label for="input17" class="control-label">Erro</label>
-            <input type="text" id="input17" placeholder="Tenho maxlength de 200" maxlength="200">
-            <p class="character-count">200 caracteres restantes.</p>
-          </div>
-          <div class="control-group">
-            <label for="input18" class="control-label">Área de texto</label>
-            <textarea id="input18" placeholder="Placeholderzinho..." rows="5" maxlength="200"></textarea>
-            <p class="character-count">200 caracteres restantes.</p>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Data de nascimento</label>
-            <div class="select-birthdate">
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-              <select>
-                <option>Janeiro</option>
-                <option>Fevereiro</option>
-              </select>
-              <select>
-                <option>2012</option>
-                <option>2013</option>
-              </select>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Lista de opções</label>
-            <label class="checkbox">
-              <input type="checkbox">
-              Opção um;
-            </label>
-            <label class="checkbox">
-              <input type="checkbox">
-              Opção dois;
-            </label>
-            <label class="checkbox">
-              <input type="checkbox">
-              Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
-            </label>
-            <label class="checkbox">
-              <input type="checkbox">
-              Opção quarto.
-            </label>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Lista de opções</label>
-            <label class="radio">
-              <input type="radio" name="radio">
-              Opção um;
-            </label>
-            <label class="radio">
-              <input type="radio" name="radio">
-              Opção dois;
-            </label>
-            <label class="radio">
-              <input type="radio" name="radio">
-              Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
-            </label>
-            <label class="radio">
-              <input type="radio" name="radio">
-              Opção quarto.
-            </label>
-          </div>
-          <div class="control-group">
-            <label for="list-of-options-with-text-2" class="control-label">Lista de opções com texto</label>
-            <div class="controls option-list">
-              <textarea class="input-area" id="list-of-options-with-text-2" placeholder="Descrição" rows="5"maxlength="170"></textarea>
-              <p class="character-count">170 caracteres restantes.</p>
-              <div class="append-area">
-                <input type="checkbox" class="option-list-checkbox">
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-1-2">Sobrenome</label>
+                </div>
+                <div class="controls">
+                  <input type="text" id="input-1-2">
+                </div>
               </div>
-            </div>
+            </form>
           </div>
-        </form>
-        <form class="form-search">
-          <input type="text" size="16" id="appendedInput" placeholder="Digite sua pesquisa..." class="input-area">
-          <button type="submit" class="append-area button"><span class="icon-magnifier-gray_16_18 text-replacement">Search</span></button>
-        </form>
+        </div>
+        <div class="span7">
+          <code>&lt;form class="form-horizontal"&gt;</code>
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-2-1">Nome</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-2-1">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-2-2">Sobrenome</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-2-2">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+      
+      <h3 id="control-structure">Estrutura dos controles</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Cada controle do formulário deve estar encapsulado por um <code>.control-group</code>. Dentro dele deve ter dois blocos: <code>.control-label</code>, onde deve ficar o <code>&lt;label&gt;</code> do controle; e o <code>.controls</code> onde deve ficar o controle.</p>
+          <p>Lembrando que o <code>&lt;label&gt;</code> deve ter o atributo <code>for</code> com o mesmo id do que o elemento do controle. Desta maneira, o controle é selecionado quando seu label for clicado.</p>
+        </div>
+        <div class="span7">
+          <pre class="prettyprint linenums">
+&lt;div class="control-group"&gt;
+  &lt;div class="control-label"&gt;
+    &lt;label for="UNIQUE_ID"&gt;LABEL_TEXT&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="controls"&gt;
+    &lt;!-- ELEMENTO DE CONTROLE COM O MESMO id DO QUE O for DO LABEL --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="input-text-password">Input text/password</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Os controles de texto e senha não precisam de nada adicional.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <code>&lt;input type="text"&gt;</code>
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-3-1">Login</label>
+                </div>
+                <div class="controls">
+                  <input type="text" id="input-3-1">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-3-2">Senha</label>
+                </div>
+                <div class="controls">
+                  <input type="password" id="input-3-2">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <code>&lt;input type="password"&gt;</code>
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-4-1">Login</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-4-1">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-4-2">Senha</label>
+                </div>
+                <div class="controls span5">
+                  <input type="password" id="input-4-2">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="textarea">Textarea</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Os controles de área de texto não precisam de nada adicional.</p>
+          <p><span class="label-doubts">To do:</span> altura do textarea crescer automaticamente a medida que seja preciso de mais espaço.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <code>&lt;textarea&gt;</code>
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-5-1">Descrição</label>
+                </div>
+                <div class="controls">
+                  <textarea id="input-5-1"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-6-1">Descrição</label>
+                </div>
+                <div class="controls span5">
+                  <textarea id="input-6-1"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="placeholder-char-counter">Placeholder e contador</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Tanto os input text/password como o textarea podem levar o atributo <code>placeholder</code> com um texto, normalmente alguma explicação do que aquele controle quer saber, a ser exibido no controle. Quando o controle é selecionado, este texto desaparece para que o usuário possa digitar.</p>
+        </div>
+        <div class="span7">
+          <p>Também, tanto os input text/password como o textarea podem levar o atributo <code>maxlength</code> com um número indicando o número máximo de caracteres que é possível escrever no controle. Quando este atributo é usado, um pequeno contador de caracteres aparece abaixo do controle, indicando a quantidade de caracteres restantes.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <code>&lt;textarea maxlength="X"&gt;</code>
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-7-1">Login</label>
+                </div>
+                <div class="controls">
+                  <input type="text" id="input-7-1" maxlength="10" placeholder="Digite seu login">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-7-2">Senha</label>
+                </div>
+                <div class="controls">
+                  <input type="password" id="input-7-2" maxlength="8" placeholder="Digite sua senha">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-7-3">Descrição</label>
+                </div>
+                <div class="controls">
+                  <textarea id="input-7-3" maxlength="20" placeholder="Digite sua descricão"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <code>&lt;input type="text" placeholder="Lorem..."&gt;</code>
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-8-1">Login</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-8-1" maxlength="10" placeholder="Digite seu login">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-8-2">Senha</label>
+                </div>
+                <div class="controls span5">
+                  <input type="password" id="input-8-2" maxlength="8" placeholder="Digite sua senha">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-8-3">Descrição</label>
+                </div>
+                <div class="controls span5">
+                  <textarea id="input-8-3" maxlength="20" placeholder="Digite sua descricão"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="validation">Validação</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Adicionando <code>.control-success</code> ao <code>.control-group</code>, o label e seu controle se tornam verde. Isto pode ser usado para indicar sucesso ou similar.</p>
+        </div>
+        <div class="span7">
+          <p>Da mesma maneira, adicionando <code>.control-error</code>, o label e seu controle se tornam vermelho. Isto pode ser usado para indicar erro ou similar.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-9-1">Login</label>
+                </div>
+                <div class="controls">
+                  <input type="text" id="input-9-1" maxlength="10" placeholder="Digite seu login">
+                </div>
+              </div>
+              <div class="control-group control-error">
+                <div class="control-label">
+                  <label for="input-9-2">Senha</label>
+                </div>
+                <div class="controls">
+                  <input type="password" id="input-9-2" maxlength="8" placeholder="Digite sua senha">
+                </div>
+              </div>
+              <div class="control-group control-success">
+                <div class="control-label">
+                  <label for="input-9-3">Descrição</label>
+                </div>
+                <div class="controls">
+                  <textarea id="input-9-3" maxlength="20" placeholder="Digite sua descricão"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-10-1">Login</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-10-1" maxlength="10" placeholder="Digite seu login">
+                </div>
+              </div>
+              <div class="control-group control-error row">
+                <div class="control-label span2">
+                  <label for="input-10-2">Senha</label>
+                </div>
+                <div class="controls span5">
+                  <input type="password" id="input-10-2" maxlength="8" placeholder="Digite sua senha">
+                </div>
+              </div>
+              <div class="control-group control-success row">
+                <div class="control-label span2">
+                  <label for="input-10-3">Descrição</label>
+                </div>
+                <div class="controls span5">
+                  <textarea id="input-10-3" maxlength="20" placeholder="Digite sua descricão"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="sizes">Tamanhos</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Adicionando <code>.control-big</code> ao <code>.control-group</code>, os input text/password, textarea e selects aumentam de tamanho. Além disso, adicionando as classes do sistema de grid <code>.row</code> e <code>.span1-16</code> é possível modificar a largura do controle.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <div class="well">
+            <form class="form-horizontal">
+              <div class="control-group control-big row">
+                <div class="control-label span2">
+                  <label for="input-big">Big</label>
+                </div>
+                <div class="controls span3">
+                  <input type="text" id="input-big" maxlength="10" placeholder="160px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span4">Span4</label>
+                </div>
+                <div class="controls span4">
+                  <input type="text" id="input-span4" maxlength="10" placeholder="220px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span5">Span5</label>
+                </div>
+                <div class="controls span5">
+                  <input type="text" id="input-span5" maxlength="10" placeholder="280px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span6">Span6</label>
+                </div>
+                <div class="controls span6">
+                  <input type="text" id="input-span6" maxlength="10" placeholder="340px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span7">Span7</label>
+                </div>
+                <div class="controls span7">
+                  <input type="text" id="input-span7" maxlength="10" placeholder="400px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span8">Span8</label>
+                </div>
+                <div class="controls span8">
+                  <input type="text" id="input-span8" maxlength="10" placeholder="460px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span9">Span9</label>
+                </div>
+                <div class="controls span9">
+                  <input type="text" id="input-span9" maxlength="10" placeholder="520px">
+                </div>
+              </div>
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-span10">Span10</label>
+                </div>
+                <div class="controls span10">
+                  <input type="text" id="input-span10" maxlength="10" placeholder="580px">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="select">Select</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Os controles de select não necessitam de nada adicional.</p>
+        </div>
+        <div class="span7">
+          <p>Adicionando <code>.control-select-date</code> ao <code>.control-group</code> e utilizando três selects (para o dia, mês e ano), o controle pode ser usado como um selecionador de data.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-11-1">Cores</label>
+                </div>
+                <div class="controls">
+                  <select id="input-11-1">
+                    <option>Vermelho</option>
+                    <option>Azul</option>
+                    <option>Verde</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group control-select-date">
+                <div class="control-label">
+                  <label>Data de aniversário</label>
+                </div>
+                <div class="controls">
+                  <select>
+                    <option>1</option>
+                    <option>31</option>
+                  </select>
+                  <select>
+                    <option>Janeiro</option>
+                    <option>Dezembro</option>
+                  </select>
+                  <select>
+                    <option>2011</option>
+                    <option>2012</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <pre class="prettyprint linenums">
+&lt;select&gt;
+  &lt;!-- FOR EACH OPTION --&gt;
+  &lt;option&gt;OPTION_TEXT&lt;/option&gt;
+  &lt;!-- END --&gt;
+&lt;/select&gt;</pre>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-13-1">Cores</label>
+                </div>
+                <div class="controls span5">
+                  <select id="input-13-1">
+                    <option>Vermelho</option>
+                    <option>Azul</option>
+                    <option>Verde</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group control-select-date row">
+                <div class="control-label span2">
+                  <label for="input-14-1">Data de aniversário</label>
+                </div>
+                <div class="controls span5">
+                  <select id="input-14-1">
+                    <option>1</option>
+                    <option>31</option>
+                  </select>
+                  <select>
+                    <option>Janeiro</option>
+                    <option>Dezembro</option>
+                  </select>
+                  <select>
+                    <option>2011</option>
+                    <option>2012</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <pre class="prettyprint linenums">
+&lt;div class="control-group control-select-date"&gt;
+  &lt;div class="control-label"&gt;
+    &lt;label&gt;LABEL_DATE_TEXT&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="controls"&gt;
+    &lt;select&gt;
+      &lt;!-- FOR EACH DAY OF MONTH --&gt;
+      &lt;option&gt;DAY&lt;/option&gt;
+      &lt;!-- END --&gt;
+    &lt;/select&gt;
+    &lt;select&gt;
+      &lt;!-- FOR EACH MONTH --&gt;
+      &lt;option&gt;MONTH&lt;/option&gt;
+      &lt;!-- END --&gt;
+    &lt;/select&gt;
+    &lt;select&gt;
+      &lt;!-- FOR EACH YEAR --&gt;
+      &lt;option&gt;YEAR&lt;/option&gt;
+      &lt;!-- END --&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="checkbox-radio">Checkbox/Radio</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Os controles de checkbox/radio devem ser encapsulados por <code>.control-checkbox</code> e <code>.control-radio</code>, respectivamente.</p>
+        </div>
+        <div class="span7">
+          <p>Adicionando <code>.control-inline</code> ao <code>.control-group</code>, os checkboxes/radios ficam em linha.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label>Lista de opções</label>
+                </div>
+                <div class="controls">
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    Opção um;
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    Opção dois;
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    Opção quarto.
+                  </label>
+                </div>
+              </div>
+              <div class="control-group control-inline">
+                <div class="control-label">
+                  <label>Lista de opções</label>
+                </div>
+                <div class="controls">
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    1
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    2
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    3
+                  </label>
+                  <label class="control-checkbox">
+                    <input type="checkbox">
+                    4
+                  </label>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control-label">
+                  <label>Lista de opções</label>
+                </div>
+                <div class="controls">
+                  <label class="control-radio">
+                    <input type="radio" name="radio">
+                    Opção um;
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio" name="radio">
+                    Opção dois;
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio" name="radio">
+                    Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio" name="radio">
+                    Opção quarto.
+                  </label>
+                </div>
+              </div>
+              <div class="control-group control-inline">
+                <div class="control-label">
+                  <label>Lista de opções</label>
+                </div>
+                <div class="controls">
+                  <label class="control-radio">
+                    <input type="radio">
+                    1
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    2
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    3
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    4
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+                <div class="control-group row">
+                   <div class="control-label span2">
+                    <label>Lista de opções</label>
+                  </div>
+                  <div class="controls span5">
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      Opção um;
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      Opção dois;
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      Opção quarto.
+                    </label>
+                  </div>
+                </div>
+                <div class="control-group control-inline row">
+                  <div class="control-label span2">
+                    <label>Lista de opções</label>
+                  </div>
+                  <div class="controls span5">
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      1
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      2
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      3
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox">
+                      4
+                    </label>
+                  </div>
+                </div>
+                <div class="control-group row">
+                  <div class="control-label span2">
+                    <label>Lista de opções</label>
+                  </div>
+                  <div class="controls span5">
+                    <label class="control-radio">
+                      <input type="radio" name="radio">
+                      Opção um;
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="radio">
+                      Opção dois;
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="radio">
+                      Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="radio">
+                      Opção quarto.
+                    </label>
+                  </div>
+                </div>
+                <div class="control-group control-inline row">
+                <div class="control-label span2">
+                  <label>Lista de opções</label>
+                </div>
+                <div class="controls span5">
+                  <label class="control-radio">
+                    <input type="radio">
+                    1
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    2
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    3
+                  </label>
+                  <label class="control-radio">
+                    <input type="radio">
+                    4
+                  </label>
+                </div>
+              </div>
+              </form>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;div class="control-group [control-inline]"&gt;
+  &lt;div class="control-label"&gt;
+    &lt;label&gt;LABEL_TEXT&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="controls"&gt;
+    &lt;!-- FOR EACH CHECKBOX/RADIO --&gt;
+    &lt;label class="control-(checkbox|radio)"&gt;
+      &lt;input type="(checkbox|radio)"&gt;
+      CONTROL_TEXT
+    &lt;/label&gt;
+    &lt;!-- END --&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="input-file">Input file</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Os controles de input file não precisam de nada adicional.</p>
+          <p><span class="label-doubts">To do:</span> tentar estilizá-lo para que fique igual em todos os navegadores.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-15-1">Foto</label>
+                </div>
+                <div class="controls">
+                  <input type="file" id="input-15-1">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-16-1">Foto</label>
+                </div>
+                <div class="controls span5">
+                  <input type="file" id="input-16-1">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="option-list">Lista de opções com texto</h3>
+      <div class="row">
+        <div class="span13">
+          <p>Este controle é formado por um textarea e um checkbox. Todo o controle é encapsulado por <code>.control-option-list</code>. O textarea deve ter <code>.control-area</code> e o bloco com o checkbox <code>.control-append-area</code>, dentro dele o checkbox deve ter <code>.control-option-list-checkbox</code>.</p>
+          <p><span class="label-doubts">To do:</span> como se comportará em um POST.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <div class="well">
+            <form>
+              <div class="control-group">
+                <div class="control-label">
+                  <label for="input-17-1">List de opções com texto</label>
+                </div>
+                <div class="controls">
+                  <div class="control-option-list">
+                    <textarea class="control-area" id="input-17-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-append-area">
+                      <input type="checkbox" class="control-option-list-checkbox">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group row">
+                <div class="control-label span2">
+                  <label for="input-18-1">List de opções com texto</label>
+                </div>
+                <div class="controls span5">
+                  <div class="control-option-list">
+                    <textarea class="control-area" id="input-18-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-append-area">
+                      <input type="checkbox" class="control-option-list-checkbox">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;div class="control-option-list"&gt;
+  &lt;textarea class="control-area"&gt;&lt;/textarea&gt;
+  &lt;div class="control-append-area"&gt;
+    &lt;input class="control-option-list-checkbox" type="checkbox"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>            
+        </div>
+      </div>
+
+      <h3 id="form-search">Busca</h3>
+      <div class="row">
+        <div class="span6">
+          <p>Este elemento é um formulário único com a classe <code>.form-search</code>. Dentro deve haver um input text com <code>.control-area</code> e um botão com <code>.control-append-area</code>.</p>
+        </div>
+        <div class="span7">
+          <div class="well">
+            <form class="form-search">
+              <input class="control-area" type="text" placeholder="Digite sua pesquisa...">
+              <button class="control-append-area button-default" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18">Busca</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;form class="form-search"&gt;
+  &lt;input class="control-area" type="text" placeholder="Digite sua pesquisa..."&gt;
+  &lt;button class="control-append-area button-default" type="submit"&gt;
+    &lt;span class="control-search-icon icon-magnifier-gray_16_18"&gt;Busca&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;</pre>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="docs/assets/js/vendor/jquery.js"><\/script>')</script>
-    <script src="docs/assets/js/vendor/google-code-prettify.js"></script>
-    <script src="docs/assets/js/vendor/bootstrap-scrollspy.js"></script>
-    <script src="docs/assets/js/bootstrap-redu.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
+    <script src="docs/assets/js/vendor/google-code-prettify.min.js"></script>
+    <script src="docs/assets/js/vendor/bootstrap-scrollspy.min.js"></script>
+    <script src="js/bootstrap-redu.min.js"></script>
+    <script src="js/vendor/placeholder-polyfill.min.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
-      <script src="docs/assets/js/vendor/selectivizr.js"></script>
+      <script src="js/vendor/selectivizr.js"></script>
     <![endif]-->
     <script src="http://use.typekit.com/lpo4rgu.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
