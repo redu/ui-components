@@ -152,6 +152,35 @@
       })
     },
 
+    // Ajusta a altura do textarea de acordo com seu atributo rows.
+    resizeByRows: function(options) {
+      return this.each(function() {
+        var $textarea = $(this)
+          , rowsTemp = $textarea.attr('rows')
+          , rows = (rowsTemp !== '' ? parseInt(rowsTemp, 10) : 0)
+
+        if (rows !== 0) {
+          var pxToInt = function(value) {
+            if (typeof value !== 'undefined') {
+              return parseInt(value.replace('px', ''), 10)
+            } else {
+              return 0;
+            }
+          }
+
+          var lineHeight = pxToInt($textarea.css('line-height'))
+            , borderTop = pxToInt($textarea.css('border-top-width'))
+            , borderBottom = pxToInt($textarea.css('border-bottom-width'))
+            , marginTop = pxToInt($textarea.css('margin-top'))
+            , marginBottom = pxToInt($textarea.css('margin-bottom'))
+            , paddingTop = pxToInt($textarea.css('padding-top'))
+            , paddingBottom = pxToInt($textarea.css('padding-bottom'))
+
+          $textarea.height((rows * lineHeight) + borderTop + borderBottom + marginTop + marginBottom + paddingTop + paddingBottom)
+        }
+      })
+    },
+
     init: function() {}
   }
 
@@ -177,6 +206,12 @@ $(function() {
   $(".form-search").reduForm("search")
 
   $('.control-option-list').reduForm('optionList')
+
+  $('textarea[rows]').reduForm('resizeByRows')
+
+  // Plugins.
+  
+  $('textarea').autosize()
 
   placeHolderConfig = {
     // Nome da classe usada para estilizar o placeholder.
