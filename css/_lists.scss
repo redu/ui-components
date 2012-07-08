@@ -715,7 +715,7 @@ hr {
 .list-mix-content { max-width: 80%; }
 
 .list-mix-inner {
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   overflow: hidden;
 
   .button-dropdown,
@@ -765,6 +765,8 @@ hr {
   padding: 20px;
 
   a { color: $gray5; }
+
+  .list-mix-inner { padding-right: 10px; }
 }
 
 // Espaçamento dos itens.
