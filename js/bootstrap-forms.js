@@ -181,6 +181,46 @@
       })
     },
 
+    styleInputFile: function(options) {
+      var settings = $.extend({
+        buttonDefault: 'button-default'
+      , buttonText: 'Escolher arquivo'
+      , filePath: 'control-file-text'
+      , filePathText: 'Nenhum arquivo selecionado.'
+      , wrapper: 'control-file-wrapper'
+      }, options)
+
+      return this.each(function() {
+        var $input = $(this).css('opacity', 0)
+          , inputVal = $input.val()
+          , $button = $(document.createElement('a')).addClass(settings.buttonDefault).text(settings.buttonText)
+          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text(settings.filePathText)
+          , $wrapper = $(document.createElement('div')).addClass(settings.wrapper).append($button).append($filePath)
+          , $controlParent = $input.parent()
+
+        $wrapper.appendTo($controlParent)
+        // Ajusta a altura do pai.
+        $controlParent.height($wrapper.height())
+
+        // No FF, se um arquivo for escolhido e der refresh, o input mantém o valor.
+        if (inputVal !== '') {
+          $filePath.text(inputVal)
+        }
+
+        // Repassa o clique pro input file.
+        $button.on('click', function(e) {
+          e.preventDefault
+          $input.trigger('click')
+        })
+
+        // Repassa o nome do arquivo para o span.
+        $input.on('change', function() {
+          // Remove o 'C:\fakepath\' que alguns navegadores adicionam.
+          $filePath.text($(this).val().replace('C:\\fakepath\\', ''))
+        })
+      })
+    },
+
     init: function() {}
   }
 
@@ -209,8 +249,10 @@ $(function() {
 
   $('textarea[rows]').reduForm('resizeByRows')
 
+  $('input[type="file"]').reduForm('styleInputFile')
+
   // Plugins.
-  
+
   $('textarea').autosize()
 
   placeHolderConfig = {

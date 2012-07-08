@@ -226,10 +226,6 @@ input[type="button"],
 input[type="radio"],
 input[type="checkbox"] { width: auto; }
 
-// Seta a altura do input file e select para combinar com os textos.
-select,
-input[type="file"] { line-height: 28px; }
-
 // Não fixa a altura do select de múltiplos elementos.
 select[multiple],
 select[size] { height: auto; }
@@ -406,13 +402,18 @@ textarea:-moz-placeholder { color: $gray4; }
 // Arquivo.
 // ==========================================================================
 
-input[type="file"] {
-  background: transparent;
-  width: auto;
-  border: none;
+.control-file-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  .boxshadow & { @include box-shadow(none); }
+  .button-default + .control-file-text { margin-left: 10px; }
+
+  .button-default,
+  .control-file-text { vertical-align: middle; }
 }
+
+.control-file-text { color: $gray4; }
 
 
 // Lista de opções com texto.
