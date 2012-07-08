@@ -3,6 +3,9 @@
     &nbsp;
     <ul class="nav-local nav-local-fixed">
       <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
+        <a class="nav-local-link link-target" href="#ajax-spinners" title="AJAX spinners">AJAX spinners</a>
+      </li>
+      <li class="nav-local-item link-container">
         <a class="nav-local-link link-target" href="#system-messages" title="Mensagens do sistema (sobrepostas)">Mensagens do sistema</a>
       </li>
       <li class="nav-local-item link-container">
@@ -22,6 +25,43 @@
   <div class="span13">
     <div class="content">
       <h2>Alertas e avisos</h2>
+
+      <h3 id="ajax-spinners">AJAX spinners</h3>
+
+      <div class="row">
+        <div class="span9">
+          <p>Os spinners são usados em todos elementos <code>data-remote="true"</code> que fazem alguma requisição AJAX.</p>
+          <p>Botões com <code>.button-default</code>, <code>.button-primary</code>, <code>.button-danger</code> ou <code>.button-success</code> usarão os spinners circulares azul ou cinza, dependendo do botão.</p>
+          <p>Os links normais usarão o spinner circular cinza. Porém, se o link for um link secundário (com <code>.link-secondary</code>), o spinner utilizado será o horizontal azul.</p>
+        </div>
+        <div class="span4">
+          <h5>Arquivo</h5>
+          <p><code>_spinners.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code rel="tooltip" title="Inclusão dos spinners.">bootstrap-spinners.js</code></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <div class="well">
+            <div class="button-toolbar">
+              <button data-remote="true" class="button-primary">Botão primário</button>
+              <button data-remote="true" class="button-default icon-teacher-lightblue_16_18-before">Professor</button>
+              <button data-remote="true" class="button-danger">B<strong>o</strong>t<em>ã</em>o</button>
+              <button data-remote="true" class="button-success"><p>Parágrafo 1</p><p>Parágrafo 2</p></button>
+            </div>
+            <p>Este aqui é um exemplo do spinner para <a href="#" data-remote="true" class="link-secondary">links secundários</a>. Já esse são para <a href="#" data-remote="true">links normais</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;button data-remote="true" class="button-(primary|default|danger|success)"&gt;BUTTON_TEXT&lt;/button&gt;
+
+&lt;a href="LINK" data-remote="true" [class="link-secondary"]&gt;LINK_TEXT&lt;/a&gt;</pre>
+        </div>
+      </div>
 
       <h3 id="system-messages">Mensagens do sistema (sobrepostas)</h3>
 
@@ -215,3 +255,14 @@
     </div>
   </div>
 </div>
+
+<script>
+window.onload = function () {
+  prettyPrint()
+
+  $('[data-remote=true]').click(function(e) {
+    e.preventDefault
+    $.ajax({url: 'http://search.twitter.com/search.json?'})
+  })
+}
+</script>

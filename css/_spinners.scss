@@ -1,0 +1,27 @@
+// ==========================================================================
+// Spinners
+// ==========================================================================
+
+.spinner-base {
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: transparent;
+
+	&:hover { cursor: default; }
+
+	.textshadow & { text-shadow: none; }
+}
+
+.spinner-horizontal-blue,
+.spinner-horizontal-blue:hover,
+.spinner-horizontal-blue:visited {
+	@extend .spinner-base;
+  background-image: url('../img/spinner-blue-horiz.gif');
+}
+
+.spinner-circular-gray,
+.spinner-circular-gray:hover,
+.spinner-circular-gray:visited {
+	@extend .spinner-base;
+  background-image: url('../img/spinner-grey.gif');
+}
