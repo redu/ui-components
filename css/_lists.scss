@@ -71,7 +71,13 @@ hr {
     .borderradius & { @include border-radius(5px); }
   }
 
-  .status-text { overflow: hidden; }
+  .status-text {
+    overflow: hidden;
+    + .status-content {
+      margin-top: 2px;
+      margin-left: 42px;
+    }
+  }
 
   .actions {
     clear: both;
@@ -99,8 +105,8 @@ hr {
 
   .status-content {
     display: inline-block;
-    margin-left: 42px;
-    margin-top: 2px;
+    margin-left: 0;
+    margin-top: 10px;
     background-color: $gray2;
 
     .status-content { margin-top: 0; }
@@ -141,6 +147,7 @@ hr {
       .preview {
         float: left;
         max-width: 110px;
+        margin-right: 10px;
         a.thumbnail { max-height: 60px; }
 
         .input-user { margin-bottom: 10px; }
@@ -150,7 +157,6 @@ hr {
           max-width: 100px;
           min-height: 34px;
           width: 100%;
-          margin-right: 10px;
         }
 
         .buttons-thumbnail {
@@ -221,6 +227,7 @@ hr {
     display: block;
     clear: both;
     margin-top: 10px;
+    margin-left: 42px;
     padding: 10px 0;
 
     .close { margin-right: 10px; }
@@ -251,11 +258,13 @@ hr {
       &:before { display: none; }
 
       .status-text-response {
-        margin-bottom: 0;
-        padding: 0 10px;
+        margin: 0 10px;
       }
 
-      .post-text { padding: 0 10px 0 52px; }
+      .post-text {
+        padding: 0;
+        margin: 0 10px 0 52px;
+      }
     }
 
     .post-preview { padding: 0; }
@@ -270,6 +279,8 @@ hr {
     hr {
       margin: 20px 0;
       clear: both;
+      float: left;
+      width: 100%;
 
       .boxshadow & { @include box-shadow-2( 0 1px 0 $white inset, 0 0 9px rgb(240, 240, 240)); }
     }
@@ -282,8 +293,6 @@ hr {
     .status-info { color: $gray6; }
 
     .link-name { &:before { @include pseudo-before(5px, false); } }
-
-    .actions { margin-bottom: 10px; }
 
     .status-content { margin-left: 84px; }
 
@@ -321,7 +330,7 @@ hr {
 
     hr { margin: 5px; }
 
-    .body {
+    .course-space {
       overflow: hidden;
       padding: 5px;
       border-bottom: 1px solid transparent;
@@ -353,14 +362,14 @@ hr {
       line-height: 11px;
     }
 
-    .information {
+    .stats {
       margin-top: 10px;
       overflow: hidden;
       color: $gray5;
 
-      li { float: left; }
+      .stat { float: left; }
 
-      li + li { margin-left: 50px; }
+      .stat + .stat { margin-left: 50px; }
 
       h6 :before {
         @include pseudo-before;

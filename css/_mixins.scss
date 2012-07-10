@@ -170,6 +170,12 @@
      -moz-border-radius: $radius;
           border-radius: $radius;
 }
+// Regra ao utilizar bordas em apenas alguns lados do elemento
+@mixin border-radius-no-all($radius-side: 0px 0px 0px 0px) {
+   -webkit-border-radius: $radius-side;
+    border-radius: $radius-side;
+}
+
 
 // Drop shadows.
 @mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
