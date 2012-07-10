@@ -1,0 +1,172 @@
+table {
+	border-spacing: 0;
+	text-align: left;
+
+	tr {
+		&.even { background-color: $white; }
+
+	  &.odd { background-color: $gray1; }
+
+		th {
+			font-weight: normal;
+			min-width: 239px;
+			padding: 10px;
+			border: 1px solid $gray3;
+			border-top: 1px solid transparent;
+		}
+
+		&.even, &.odd { &:hover { background-color: $blue1; }	}
+	}
+
+	&.table-with-borderradius {
+		tr:nth-last-child(1) {
+			th {
+				&:last-child { .borderradius & { @include border-radius-no-all(0 0 7px 0); } }
+
+				&:first-child { .borderradius & { @include border-radius-no-all(0 0 0 7px); } }
+			}
+		}
+		thead {
+			tr:nth-last-child(1) {
+				th {
+					&:first-child { .borderradius & { @include border-radius-no-all(7px 0 0 0); } }
+					&:last-child { .borderradius & { @include border-radius-no-all(0 7px 0 0); } }
+				}
+			}
+		}
+		&.table-with-link {
+			tr {
+				.cssgradients & { @include filter-gradient-vertical($white, $gray2); }
+
+				.no-cssgradients.gt-ie8 & {
+    			// http://www.colorzilla.com/gradient-editor/#ffffff+0,f0f0f0+100;Custom
+    			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+				}
+
+  			.no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); }
+
+				&:hover {
+
+					th {
+						border-color: $blue2;
+					}
+					a {
+						color: $blue4;
+						text-decoration: underline;
+					}
+					.cssgradients & { @include filter-gradient-vertical($white, $blue1	); }
+				}
+					.no-cssgradients.gt-ie8 & {
+		  			// http://www.colorzilla.com/gradient-editor/#dbeff7+0,ffffff+100;Custom
+		  			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZWZmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+					}
+  				.no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbeff7', endColorstr='#ffffff',GradientType=0 );}
+
+				th {
+					padding: 0px;
+					&:first-child { border-right: none; }
+					&:last-child {
+						border-left: none;
+						a, a:hover {
+							text-decoration: none;
+							color: $black;
+						}
+				 	}
+				 	a {
+						min-width: 92%;
+						padding: 10px;
+					}
+				}
+			}
+
+			thead {
+				tr {
+					&:hover {
+						th {
+							border-color: $gray3;
+							border-bottom: 1px solid $white;
+						}
+					}
+					th {
+						background-color: $white;
+						padding: 10px;
+					}
+				}
+			}
+		}
+	}
+	&.table-without-borderradius {
+		th {
+			border-left: none;
+			border-right: none;
+		}
+		thead {
+			tr {
+				th {
+				border-bottom: 1px solid $gray3;
+				border-top: 1px solid $white;
+				background-color: $white;
+				}
+			}
+		}
+
+	}
+
+	thead {
+		tr {
+			&:hover { background-color: $gray2; }
+			th {
+				font-weight: bold;
+				border-bottom: 1px solid $white;
+				border-top: 1px solid $gray3;
+				color: $gray5;
+				background-color: $gray2;
+				padding: 10px;
+			}
+		}
+	}
+}
+
+.table-with-check-list {
+	fieldset {
+		.delete-msg{
+			float:	right;
+			margin-top: 10px;
+		}
+		table {
+			&.table-with-borderradius.table-with-link {
+				tr {
+					th {
+						padding: 0px;
+						&:first-child {
+							a, a:hover {
+								text-decoration: none;
+								color: $black;
+							}
+						}
+						&:last-child {
+							padding-right: 0px;
+							a {
+								float: left;
+								color: $blue2;
+								margin-right: 15px;
+							}
+							a:hover { color: $blue3; }
+					 	}
+						input {
+							float: right;
+							margin: -25px 10px 0 0 ;
+						}
+					}
+				}
+				thead {
+					tr {
+						th {
+							padding: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
