@@ -99,7 +99,41 @@ td {
 		border-bottom: $table-border-color-transparent;
 	}
 
-	tr {
+	tr:hover {
+		td {
+			border-color: $blue2;
+			border-right: $table-border-color-transparent;
+			border-left: $table-border-color-transparent;
+
+			&:first-child { border-left: 1px solid $blue2; }
+
+			&:last-child { border-right: 1px solid $blue2; }
+
+			.cssgradients & { @include filter-gradient-vertical($white, $blue1	); }
+
+			.no-cssgradients.gt-ie8 & {
+  			// http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
+  			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			}
+
+			.no-cssgradients.ie8 & { background-color: $blue1; }
+		}
+
+		a {
+			color: $blue4;
+			text-decoration: underline;
+		}
+	}
+
+	td {
+		border-left: $table-border-color-transparent;
+		border-right: $table-border-color-transparent;
+		position: relative;
+
+		&:first-child { border-left: $table-border-color; }
+
+		&:last-child { border-right: $table-border-color; }
+
 		.cssgradients & { @include filter-gradient-vertical($white, $gray2); }
 
 		.no-cssgradients.gt-ie8 & {
@@ -107,43 +141,7 @@ td {
 			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 		}
 
-		.no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); }
-
-		&:hover {
-
-			td {
-				border-color: $blue2;
-				border-right: $table-border-color-transparent;
-				border-left: $table-border-color-transparent;
-
-				&:first-child { border-left: 1px solid $blue2; }
-
-				&:last-child { border-right: 1px solid $blue2; }
-			}
-
-			a {
-				color: $blue4;
-				text-decoration: underline;
-			}
-
-			.cssgradients & { @include filter-gradient-vertical($white, $blue1	); }
-
-			.no-cssgradients.gt-ie8 & {
-  			// http://www.colorzilla.com/gradient-editor/#dbeff7+0,ffffff+100;Custom
-  			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZWZmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-			}
-
-			.no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbeff7', endColorstr='#ffffff',GradientType=0 );}
-		}
-	}
-
-	td {
-		border-left: $table-border-color-transparent;
-		border-right: $table-border-color-transparent;
-
-		&:first-child { border-left: $table-border-color; }
-
-		&:last-child { border-right: $table-border-color; }
+		.no-cssgradients.ie8 & { background-color: $gray2; }
 	}
 }
 
@@ -192,4 +190,4 @@ td {
 	margin-top: 10px;
 }
 
-.inbox-message-selected { background: $red1 !important; }
+.inbox-message-selected { td { background: $red1 !important; } }
