@@ -12,6 +12,7 @@ module.exports = function(grunt) {
   , 'js/bootstrap-list.js'
   , 'js/bootstrap-button.js'
   , 'js/bootstrap-reply-status.js'
+  , 'js/bootstrap-tables.js'
   ];
 
   grunt.initConfig({
