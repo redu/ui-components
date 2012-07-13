@@ -58,7 +58,7 @@
 
   .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
 
-  .cssgradients & { @include reduGradient($white, $gray3); }
+  .cssgradients & { @include reduGradient($gray3, $white); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
