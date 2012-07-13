@@ -52,6 +52,8 @@ td {
 
 	th {
 		border-top: $table-border-color;
+		border-left: $table-border-color;
+		border-bottom: 1px solid $white;
 
 		.boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
 
@@ -70,7 +72,6 @@ td {
 
 	td {
 		border-left: $table-border-color;
-		border-right: $table-border-color;
 	}
 
 	tr:last-child {
@@ -97,6 +98,7 @@ td {
 	th {
 		background-color: $white;
 		border-bottom: $table-border-color-transparent;
+		border-left: $table-border-color-transparent;
 	}
 
 	tr:hover {
@@ -167,6 +169,15 @@ td {
 
 .table-with-check-list {
 	input[type="checkbox"] { float: right; }
+
+
+	td {
+		border-width-left: 0;
+		border-width-right: 0;
+		&:first-child { border-width-right: 0; }
+
+		&:last-child { border-width-left: 0; }
+	}
 }
 
 .inbox-message-base,
