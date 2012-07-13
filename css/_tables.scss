@@ -18,13 +18,6 @@ table {
 	border-collapse: collapse;
 }
 
-tr {
-	&:nth-child(even) { background-color: $white; }
-  &:nth-child(odd) { background-color: $gray1; }
-
-	&:hover { background-color: $blue1; }
-}
-
 th {
 	font-weight: bold;
 	color: $gray5;
@@ -42,6 +35,14 @@ td {
 	&:first-child { border-left: $table-border-color; }
 
 	&:last-child { border-right: $table-border-color; }
+}
+
+td {
+	tr:nth-child(even) & { background-color: $white; }
+
+  tr:nth-child(odd) & { background-color: $gray1; }
+
+	tr:hover & { background-color: $blue1; }
 }
 
 // Tabela com borda arredondada.
@@ -130,7 +131,6 @@ td {
 	td {
 		border-left: $table-border-color-transparent;
 		border-right: $table-border-color-transparent;
-		position: relative;
 
 		&:first-child { border-left: $table-border-color; }
 
@@ -168,15 +168,25 @@ td {
 // ==========================================================================
 
 .table-with-check-list {
-	input[type="checkbox"] { float: right; }
-
 
 	td {
 		border-width-left: 0;
 		border-width-right: 0;
+
 		&:first-child { border-width-right: 0; }
 
 		&:last-child { border-width-left: 0; }
+	}
+}
+
+.form-checklist {
+	td {
+		input[type="checkbox"] { float: right; }
+	}
+
+	table + .button-toolbar {
+		text-align: right;
+		margin-top: 10px;
 	}
 }
 
@@ -196,9 +206,5 @@ td {
 	font-weight: normal;
 }
 
-.table-with-check-list + .button-toolbar {
-	text-align: right;
-	margin-top: 10px;
-}
-
-.inbox-message-selected { td { background: $red1 !important; } }
+.table-checkbox-selected td,
+.table-checkbox-selected:hover td { background: $red1 !important; }

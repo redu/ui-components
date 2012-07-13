@@ -107,53 +107,56 @@
       </tbody>
     </table>
     <h5 style="padding-bottom: 10px; padding-top: 10px">Tabelas com Bordas Arredondadas e Check-list</h5>
-    <form>
-      <table class="table-with-borderradius table-with-link table-with-check-list">
+    <form class="form-checklist">
+      <table class="table-with-borderradius table-with-link">
         <thead>
           <tr>
             <th>Assunto</th>
-            <th>X</th>
             <th>Enviada por</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr class="link-container">
             <td><a class="link-target inbox-message-unread" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
-            <td>A</td>
             <td>
               <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
-              <input type="checkbox" name="select-msg">
+            </td>
+            <td>
+              <input type="checkbox">
             </td>
           </tr>
           <tr class="link-container">
             <td><a class="link-target inbox-message-read" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
-            <td>A</td>
             <td>
               <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
-              <input type="checkbox" name="select-msg">
+            </td>
+            <td>
+              <input type="checkbox">
             </td>
           </tr>
           <tr class="link-container">
             <td><a class="link-target inbox-message-unread" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
-            <td>A</td>
             <td>
               <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
-              <input type="checkbox" name="select-msg">
+            </td>
+            <td>
+              <input type="checkbox">
             </td>
           </tr>
           <tr class="link-container">
             <td><a class="link-target inbox-message-read" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
-            <td>A</td>
             <td>
               <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
-              <input type="checkbox" name="select-msg">
+            </td>
+            <td>
+              <input type="checkbox">
             </td>
           </tr>
         </tbody>
       </table>
       <div class="button-toolbar">
-        <button class="button-danger delete-msg button-disabled">Deletar selecionados</button>
-        <button class="button-danger delete-msg">Deletar selecionados</button>
+        <input type="submit" class="button-danger" value="Deletar selecionados">
       </div>
     </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
