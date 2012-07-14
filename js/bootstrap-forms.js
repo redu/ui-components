@@ -215,8 +215,16 @@
 
         // Repassa o nome do arquivo para o span.
         $input.on('change', function() {
-          // Remove o 'C:\fakepath\' que alguns navegadores adicionam.
-          $filePath.text($(this).val().replace('C:\\fakepath\\', ''))
+          var value = $input.val()
+
+          if (value === '') {
+            value = settings.filePathText
+          } else {
+            // Remove o 'C:\fakepath\' que alguns navegadores adicionam.
+            value = value.replace('C:\\fakepath\\', '')
+          }
+
+          $filePath.text(value)
         })
       })
     },
