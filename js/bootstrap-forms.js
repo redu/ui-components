@@ -152,6 +152,117 @@
       })
     },
 
+    // Ajusta a altura do textarea de acordo com seu atributo rows.
+    resizeByRows: function(options) {
+      return this.each(function() {
+        var $textarea = $(this)
+          , rowsTemp = $textarea.attr('rows')
+          , rows = (rowsTemp !== '' ? parseInt(rowsTemp, 10) : 0)
+
+        if (rows !== 0) {
+          var pxToInt = function(value) {
+            if (typeof value !== 'undefined') {
+              return parseInt(value.replace('px', ''), 10)
+            } else {
+              return 0;
+            }
+          }
+
+          var lineHeight = pxToInt($textarea.css('line-height'))
+            , borderTop = pxToInt($textarea.css('border-top-width'))
+            , borderBottom = pxToInt($textarea.css('border-bottom-width'))
+            , marginTop = pxToInt($textarea.css('margin-top'))
+            , marginBottom = pxToInt($textarea.css('margin-bottom'))
+            , paddingTop = pxToInt($textarea.css('padding-top'))
+            , paddingBottom = pxToInt($textarea.css('padding-bottom'))
+
+          $textarea.height((rows * lineHeight) + borderTop + borderBottom + marginTop + marginBottom + paddingTop + paddingBottom)
+        }
+      })
+    },
+
+    styleInputFile: function(options) {
+      var settings = $.extend({
+        buttonDefault: 'button-default'
+      , buttonText: 'Escolher arquivo'
+      , filePath: 'control-file-text'
+      , filePathText: 'Nenhum arquivo selecionado.'
+      , wrapper: 'control-file-wrapper'
+      }, options)
+
+      return this.each(function() {
+        var $input = $(this).css('opacity', 0)
+          , inputVal = $input.val()
+          , $button = $(document.createElement('a')).addClass(settings.buttonDefault).text(settings.buttonText)
+          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text(settings.filePathText)
+          , $wrapper = $(document.createElement('div')).addClass(settings.wrapper).append($button).append($filePath)
+          , $controlParent = $input.parent()
+
+        $wrapper.appendTo($controlParent)
+        // Ajusta a altura do pai.
+        $controlParent.height($wrapper.height())
+
+        // No FF, se um arquivo for escolhido e der refresh, o input mantém o valor.
+        if (inputVal !== '') {
+          $filePath.text(inputVal)
+        }
+
+        // Repassa o clique pro input file.
+        $button.on('click', function(e) {
+          e.preventDefault
+          $input.trigger('click')
+        })
+
+        // Repassa o nome do arquivo para o span.
+        $input.on('change', function() {
+          var value = $input.val()
+
+          if (value === '') {
+            value = settings.filePathText
+          } else {
+            // Remove o 'C:\fakepath\' que alguns navegadores adicionam.
+            value = value.replace('C:\\fakepath\\', '')
+          }
+
+          $filePath.text(value)
+        })
+      })
+    },
+
+    // Abilita o submit quando pelo menos um checkbox esta marcado.
+    formChecklist: function(options) {
+      return this.each(function() {
+        var $form = $(this)
+          , $checkboxes = $form.find('input[type="checkbox"]')
+          , $submit = $form.find('input[type="submit"]')
+
+        // Desabilita o submit por padrão.
+        $submit.attr('disabled', 'disabled')
+
+        // Verifica inicialmente se existe algum checkbox marcardo.
+        // É o caso do refresh depois de marcar um checkbox.
+        if ($checkboxes.filter(':checked').length > 0) {
+          $submit.removeAttr('disabled')
+        }
+
+        $checkboxes.each(function() {
+          var $checkbox = $(this)
+
+          $checkbox.on('change', function() {
+            // Se o checkbox foi selecionado, abilita o submit.
+            if ($checkbox.is(':checked')) {
+              $submit.removeAttr('disabled')
+            } else {
+              // Se foi o último a ser desmarcado, desabilita o submit.
+              if ($checkboxes.filter(':checked').length === 0) {
+                $submit.attr('disabled', 'disabled')
+              }
+            }
+          })
+        })
+      })
+    },
+
     init: function() {}
   }
 
@@ -177,6 +288,16 @@ $(function() {
   $(".form-search").reduForm("search")
 
   $('.control-option-list').reduForm('optionList')
+
+  $('textarea[rows]').reduForm('resizeByRows')
+
+  $('input[type="file"]').reduForm('styleInputFile')
+
+  $('.form-checklist').reduForm('formChecklist')
+
+  // Plugins.
+
+  $('textarea').autosize()
 
   placeHolderConfig = {
     // Nome da classe usada para estilizar o placeholder.

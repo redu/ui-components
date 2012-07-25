@@ -28,6 +28,8 @@ pre + p { margin-top: $baseLineHeight / 2; }
   padding-top: $contentSpacing;
   padding-bottom: $contentSpacing;
 
+  p { margin-bottom: $baseLineHeight / 2; }
+
   h3[id],
   h4[id] { padding-top: 60px; }
 
@@ -38,7 +40,7 @@ pre + p { margin-top: $baseLineHeight / 2; }
 
   [class*="span"]:first-child > *:not(.row) { margin-left: $contentSpacing; }
 
-  [class*="span"]:last-child > *:not(select):not(label):not(.controls):not(input):not(.control-option-list) { margin-right: $contentSpacing; }
+  [class*="span"]:last-child > *:not(select):not(label):not(.controls):not(input):not(.control-option-list):not(.list-mix):not(.token-input-list) { margin-right: $contentSpacing; }
 
   .nav-local,
   .nav-local-general-stats,

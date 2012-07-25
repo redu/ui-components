@@ -226,10 +226,6 @@ input[type="button"],
 input[type="radio"],
 input[type="checkbox"] { width: auto; }
 
-// Seta a altura do input file e select para combinar com os textos.
-select,
-input[type="file"] { line-height: 28px; }
-
 // Não fixa a altura do select de múltiplos elementos.
 select[multiple],
 select[size] { height: auto; }
@@ -350,7 +346,8 @@ input[type="checkbox"]:focus {
 // ==========================================================================
 
 // Estado de desativado e somente leitura.
-input[disabled],
+input[disabled][type="text"]
+input[disabled][type="password"],
 select[disabled],
 textarea[disabled],
 input[readonly],
@@ -406,13 +403,18 @@ textarea:-moz-placeholder { color: $gray4; }
 // Arquivo.
 // ==========================================================================
 
-input[type="file"] {
-  background: transparent;
-  width: auto;
-  border: none;
+.control-file-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  .boxshadow & { @include box-shadow(none); }
+  .button-default + .control-file-text { margin-left: 10px; }
+
+  .button-default,
+  .control-file-text { vertical-align: middle; }
 }
+
+.control-file-text { color: $gray4; }
 
 
 // Lista de opções com texto.
@@ -480,4 +482,106 @@ input[type="file"] {
 .control-search-icon {
   @include text-replacement;
   display: block;
+}
+
+
+// Autocomplete.
+// ==========================================================================
+
+.control-autocomplete {
+  // Lista mista com os itens adicionados pelo autocomplete.
+  .list-mix-inner { 
+    padding-right: 26px; 
+    position: relative;
+  }
+
+  .control-autocomplete-dropdown + .list-mix { margin-top: 10px; }
+}
+
+// Dropdown.
+.control-autocomplete-dropdown {
+  @include box-sizing(border-box);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 35px;
+  background-color: $gray1;
+  border: 1px solid $gray6;
+  padding: 10px 0;
+  width: 100%;
+
+  .button { margin: 0 10px; }
+  
+  .borderradius & { @include border-radius(5px); }
+
+  .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4)) }
+}
+
+// Legendas do tipo "Buscando...".
+.control-autocomplete-hint { 
+  text-align: center; 
+  display: block;
+}
+
+// Lista de sugesões e escolhidos.
+.control-autocomplete-suggestions,
+.control-autocomplete-chosen {
+  list-style: none;
+  margin: 0;
+}
+
+// Sugestão.
+.control-autocomplete-suggestion {
+  color: $gray6;
+  cursor: pointer;
+  padding: 0 10px;
+  vertical-align: middle;
+
+  & + & { margin-top: 5px; }
+}
+
+.control-autocomplete-suggestion-selected { 
+  background-color: $white; 
+  color: $black;
+}
+
+.control-autocomplete-id,
+.control-autocomplete-mail { 
+  display: none;
+}
+
+// Thumbnail.
+.control-autocomplete-thumbnail { @include square(32px); }
+
+// Ícone de remover.
+.control-autocomplete-close { 
+  position: absolute;
+  right: 5px;
+  top: 30%;
+  cursor: pointer;
+}
+
+.control-autocomplete-thumbnail,
+.control-autocomplete-name,
+.control-autocomplete-added-info { vertical-align: middle; }
+
+// Encapsulador de nome e e-mail.
+.control-autocomplete-added-info { 
+  display: inline-block; 
+
+  .control-autocomplete-name,
+  .control-autocomplete-mail { display: block; }
+  
+  .control-autocomplete-name { color: $blue3; }
+}
+
+// E-mail.
+.control-autocomplete-mail { @extend .legend; }
+
+.control-autocomplete-thumbnail + .control-autocomplete-name,
+.control-autocomplete-thumbnail + .control-autocomplete-added-info { margin-left: 5px; }
+
+.token-input-list {
+  list-style: none;
+  margin: 0;
 }

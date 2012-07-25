@@ -30,7 +30,8 @@
   }
 
   &.button-disabled,
-  &.button-disabled:hover {
+  &.button-disabled:hover,
+  &:disabled {
     filter: none !important;
     background-image: none !important;
     cursor: default;
@@ -104,9 +105,11 @@
 
   &:active:hover { border-color: $blue4; }
 
-  &.button-disabled, &.button-disabled:hover {
+  &.button-disabled, 
+  &.button-disabled:hover,
+  &:disabled {
     background-color: $gray2 !important;
-    color: $gray5;
+    color: $gray5 !important;
     border-color: $gray3;
   }
 }
@@ -151,8 +154,10 @@
 
   &:hover:active { color: $blue1; }
 
-  &.button-disabled, &.button-disabled:hover {
-    color: $gray3;
+  &.button-disabled, 
+  &.button-disabled:hover,
+  &:disabled {
+    color: $gray3 !important;
     background-color: $blue2 !important;
     border-color: $blue2;
 
@@ -204,10 +209,12 @@
 
   &:hover:active { color: $green1; }
 
-  &.button-disabled, &.button-disabled:hover {
+  &.button-disabled, 
+  &.button-disabled:hover,
+  &:disabled {
     background-color: $green3 !important;
     border-color: $green4;
-    color: $gray3;
+    color: $gray4 !important;
 
     &:visited { color: $gray3; }
   }
@@ -254,8 +261,10 @@
 
     &:active:hover { color: $red1; }
 
-    &.button-disabled, &.button-disabled:hover {
-      color: $gray4;
+    &.button-disabled, 
+    &.button-disabled:hover,
+    &:disabled {
+      color: $gray4 !important;
       background-color: $red2 !important;
       border-color: $red3;
 
