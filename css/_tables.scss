@@ -14,8 +14,8 @@ $table-border-radius: 7px;
 
 table {
 	border-spacing: 0;
-	min-width: 100%;
 	border-collapse: collapse;
+	width: 100%;
 }
 
 th {
@@ -192,9 +192,7 @@ td {
 
 .inbox-message-base,
 .inbox-message-base:hover,
-.inbox-message-base:visited {
-	color: $black;
-}
+.inbox-message-base:visited { color: $black; }
 
 .inbox-message-unread {
 	@extend .inbox-message-base;

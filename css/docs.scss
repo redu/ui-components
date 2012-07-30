@@ -28,6 +28,8 @@ pre + p { margin-top: $baseLineHeight / 2; }
   padding-top: $contentSpacing;
   padding-bottom: $contentSpacing;
 
+  table { margin-bottom: 20px; }
+
   p { margin-bottom: $baseLineHeight / 2; }
 
   h3[id],

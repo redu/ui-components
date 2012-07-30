@@ -6,7 +6,7 @@
 
     init: function(options) {
       var settings = $.extend({
-          'checkboxSelected': 'table-checkbox-selected'
+          'checkboxSelectedClass': 'table-checkbox-selected'
         }, options)
 
       return this.each(function() {
@@ -14,11 +14,11 @@
             row = checkbox.parents('tr')
 
         if (checkbox.is(':checked')) {
-          row.addClass(settings.checkboxSelected)
+          row.addClass(settings.checkboxSelectedClass)
         }
 
         checkbox.on('change', function() {
-          row.toggleClass(settings.checkboxSelected)
+          row.toggleClass(settings.checkboxSelectedClass)
         })
       })
     }
