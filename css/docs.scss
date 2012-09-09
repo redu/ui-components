@@ -4,7 +4,10 @@
 $contentSpacing: 20px;
 
 // Imagem de fundo.
-body { background-image: url("../docs/assets/img/texturetastic_gray.png"); }
+body { 
+  padding-top: 60px;
+  background-image: url("../docs/assets/img/texturetastic_gray.png"); 
+}
 
 .container { margin-bottom: $contentSpacing; }
 
