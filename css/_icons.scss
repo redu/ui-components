@@ -51,6 +51,21 @@ $icon-layout: smart;
 [class*="icon-"][class*="-before"]:before { @include pseudo-before(5px, false); }
 [class*="icon-"][class*="-after"]:after { @include pseudo-after(5px, false); }
 
+// Mobilidade.
+.icon-mobile-darkgray_32_34-before {
+  &:before { @extend .icon-mobile-darkgray_32_34; }
+}
+
+// Termos de uso.
+.icon-terms-of-service-darkgray_32_34-before {
+  &:before { @extend .icon-terms-of-service-darkgray_32_34; }
+}
+
+// Política de privacidade.
+.icon-privacy-policy-darkgray_32_34-before {
+  &:before { @extend .icon-privacy-policy-darkgray_32_34; }
+}
+
 // Professor.
 .icon-teacher-lightblue_16_18-before {
   &:before { @extend .icon-teacher-lightblue_16_18; }
@@ -260,6 +275,9 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-message-gray_32_34; }
   .header-breadcrumb:hover &:before { @extend .icon-message-blue_32_34; }
 }
+.icon-message-darkgray_32_34-before {
+  &:before { @extend .icon-message-darkgray_32_34; }
+}
 
 // Parceiro.
 .icon-partner-lightblue_16_18-before {
@@ -421,6 +439,9 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-curriculum-white_blue_16_18-before {
   &:before { @extend .icon-curriculum-white_blue_16_18; }
+}
+.icon-curriculum-darkgray_32_34-before {
+  &:before { @extend .icon-curriculum-darkgray_32_34; }
 }
 
 // Descrição.
