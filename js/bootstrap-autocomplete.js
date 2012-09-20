@@ -39,7 +39,7 @@
         // Este evento será lançado quando nenhum resultado for encontrado.
         originalInput.on(settings.triggerInviteByMail, function() {
           var input = $.trim(control.find('#' + settings.tokenInputPrefix + originalInput.attr('id')).val())
-            , emailRegex = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/
+            , emailRegex = /^([a-zA-Z0-9])+@([a-zA-Z0-9])+\.([a-zA-Z])+([a-zA-Z])+/
 
           // Verifica se é um e-mail.
           if (emailRegex.test(input)) {
@@ -68,7 +68,7 @@
                 close.on('click', function(e) {
                   e.preventDefault
                   var item = $(this).parents('.' + settings.listMixItem)
-                  
+
                   item.remove()
                   // Remove o e-mail dos valores do input hidden.
                   inputInvites.val($.trim(inputInvites.val().replace(',', ' ').replace(input, '')).replace(' ', ',').replace(',,', ','))

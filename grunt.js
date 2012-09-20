@@ -13,6 +13,10 @@ module.exports = function(grunt) {
   , 'js/bootstrap-button.js'
   , 'js/bootstrap-reply-status.js'
   , 'js/bootstrap-tables.js'
+  , 'js/bootstrap-autocomplete.js'
+  , 'js/bootstrap-local-nav.js'
+  , 'js/bootstrap-modal-redu.js'
+  , 'js/bootstrap-spinners.js'
   ];
 
   grunt.initConfig({
