@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <title>Lists · Redu Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
+    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.3.">
     <meta name="author" content="Redu Educational Technologies">
-    <link rel="stylesheet" href="css/bootstrap-redu.min.css">
-    <link rel="stylesheet" href="docs/assets/css/docs.min.css">
-    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-redu-min.css">
+    <link rel="stylesheet" href="docs/assets/css/docs-min.css">
+    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body data-spy="scroll" onload="prettyPrint()">
@@ -42,8 +42,8 @@
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="typography.html" title="Tipografia">Tipografia</a>
                   </li>
-                  <li class="nav-global-profile-item">
-                    <a title="Tabela">Tabela</a>
+                  <li class="nav-global-profile-item link-container">
+                    <a class="link-target" href="tables.html" title="Tabela">Tabelas</a>
                   </li>
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="lists.html" title="Listas">Listas</a>
@@ -72,7 +72,7 @@
                 </ul>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -255,7 +255,7 @@
           </ul>
         </div>
       </div>
-      
+
       <pre class="prettyprint linenums">
 &lt;ul class="list-space"&gt;
   &lt;!-- FOR EACH SPACE --&gt;
@@ -383,7 +383,7 @@
           </ul>
         </div>
       </div>
-      
+
       <pre class="prettyprint linenums">
 &lt;ul class="list-subject"&gt;
   &lt;!-- FOR EACH SUBJECT --&gt;
@@ -426,7 +426,7 @@
             <li class="list-environment-course-space-item" >
               <div class="list-environment-course-space-header">
                 <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
-                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                  <img src="img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
                 </a>
                 <h4 class="list-environment-course-space-title">
                   <a class="list-environment-course-space-link" href="#" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
@@ -488,7 +488,7 @@
             <li class="list-environment-course-space-item" rel="tooltip" title="Exemplo de ambiente sem curso">
               <div class="list-environment-course-space-header">
                 <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
-                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                  <img src="img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
                 </a>
                 <h4 class="list-environment-course-space-title">
                   <a class="list-environment-course-space-link" href="#" title="Universidade Voluptat Metus">Universidade Voluptat Metus</a>
@@ -498,7 +498,7 @@
             <li class="list-environment-course-space-item" rel="tooltip" title="Exemplo de ambiente com 1 curso sem disciplina">
               <div class="list-environment-course-space-header">
                 <a class="list-environment-course-space-image-link" href="#" title="Universidade Voluptat Metus">
-                  <img src="docs/assets/img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
+                  <img src="img/thumbnail-missing-environment-32.png" alt="Universidade Voluptat Metus" title="Universidade Voluptat Metus" width="32" height="32" />
                 </a>
                 <h4 class="list-environment-course-space-title">
                   <a class="list-environment-course-space-link" href="#" title="Lorem ipsum dolor sit amet orci aliquam.">Lorem ipsum dolor sit amet orci aliquam.</a>
@@ -525,7 +525,7 @@
           </ul>
         </div>
       </div>
-      
+
       <pre class="prettyprint linenums">
 &lt;ul class="list-environment-course-space"&gt;
   &lt;!-- FOR EACH ENVIRONMENT --&gt;
@@ -596,7 +596,7 @@
           </ul>
         </div>
       </div>
-      
+
       <pre class="prettyprint linenums">
 &lt;ul class="list-button"&gt;
   &lt;!-- FOR EACH LIST ITEM --&gt;
@@ -651,7 +651,7 @@
           </ul>
         </div>
       </div>
-      
+
       <pre class="prettyprint linenums">
 &lt;ul class="list-mix"&gt;
   &lt;!-- FOR EACH LIST ITEM --&gt;
@@ -676,13 +676,16 @@
 &lt;/ul&gt;</pre>
     </div>
   </div>
-</div>    </div>
+</div>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
     <script src="docs/assets/js/vendor/google-code-prettify.min.js"></script>
     <script src="docs/assets/js/vendor/bootstrap-scrollspy.min.js"></script>
-    <script src="js/bootstrap-redu.min.js"></script>
+    <script src="js/vendor/jquery.tokeninput.js"></script>
+    <script src="js/vendor/jquery.autosize.min.js"></script>
     <script src="js/vendor/placeholder-polyfill.min.js"></script>
+    <script src="js/bootstrap-redu-min.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="js/vendor/selectivizr.js"></script>
     <![endif]-->

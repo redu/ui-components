@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <title>Modal · Redu Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
+    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.3.">
     <meta name="author" content="Redu Educational Technologies">
-    <link rel="stylesheet" href="css/bootstrap-redu.min.css">
-    <link rel="stylesheet" href="docs/assets/css/docs.min.css">
-    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-redu-min.css">
+    <link rel="stylesheet" href="docs/assets/css/docs-min.css">
+    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body data-spy="scroll" onload="prettyPrint()">
@@ -42,8 +42,8 @@
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="typography.html" title="Tipografia">Tipografia</a>
                   </li>
-                  <li class="nav-global-profile-item">
-                    <a title="Tabela">Tabela</a>
+                  <li class="nav-global-profile-item link-container">
+                    <a class="link-target" href="tables.html" title="Tabela">Tabelas</a>
                   </li>
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="lists.html" title="Listas">Listas</a>
@@ -72,61 +72,70 @@
                 </ul>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
     <div class="container">
 <div class="row">
   <div class="span16">
-    <div class="content">  
+    <div class="content">
       <h2>Janela modal</h2>
       <div class="row">
-        <div class="span6">
-          <p>Você pode ativar as janelas modais na página sem a necessidade de escrever JavaScript. Apenas coloque <code>data-toggle="modal"</code> no elemento de controle e <code>href="#foo"</code> que corresponde ao id da janela modal, e quando clicado, ele irá abrir a janela modal.</p>
-        </div>
-        <div class="span6">
-          <div class="well">
-            <ul>
-              <li>Clique <a data-toggle="modal" href="#modal1">aqui</a> para abrir o exemplo 1 (só texto).</li>
-              <li>Clique <a data-toggle="modal" href="#modal2">aqui</a> para abrir o exemplo 2 (vídeo do YouTube).</li>
-              <li>Clique <a data-toggle="modal" href="#modal3">aqui</a> para abrir o exemplo 3 (muito texto).</li>
-            </ul>
-          </div>
+        <div class="span12">
+          <p>O link que ativará a janela modal deverá possuir o atributo <code>data-toggle="modal"</code>. Além disso, deverá ter em seu atributo <code>href</code>, o mesmo id usado na janela modal. É desta maneira que o link saberá qual janela abrir.</p>
+          <p>A janela modal deverá ter, obrigatoriamente, as classes: <code>.modal</code> com os estilos principais e <code>.hide</code> para mantê-la escondida até ser chamada. Opcionalmente, adicionando as seguintes classes, temos: <code>.modal-grids-14</code> aumenta a largura da janela equivalente a 14 grids e <code>.modal-fill-height</code> preenche a altura da janela verticalmente, independentemente da altura do conteúdo.</p>
         </div>
         <div class="span4">
           <h5>Arquivo</h5>
           <p><code>_modal-window.scss</code></p>
           <h5>Dependência</h5>
-          <p><code>bootstrap-modal.js</code></p>
+          <ul>
+            <li><code rel="tooltip" title="Plugin to Twitter Bootstrap.">bootstrap-modal.js</code></li>
+            <li><code rel="tooltip" title="Redicionamento da altura da janela modal através do uso da classe modal-fill-height; Setas indicativas da barra de rolagem com a classe modal-scroll.">bootstrap-modal-redu.js</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span10">
+          <p>A estrutura interna da janela é formada por três partes básicas: <code>.modal-header</code> com o cabeçalho, <code>.modal-body</code> com o conteúdo e <code>.modal-footer</code> com o rodapé.</code></p>
+          <p>O cabeçalho é formado pelo título da janela <code>h3.header-title</code> e opcionalmente um sub-título <code>.header-subtitle</code> (ex: link). Adicionando a classe <code>.modal-header-gray</code> ele terá a mesma aparência cinza do rodapé.</p>
+          <p>Na área de conteúdo, adicionando <code>.modal-scroll</code>, uma seta aparecerá indicando a direção possível da barra de rolagem caso o conteúdo seja muito longo para a janela.</p>
+          <p>Normalmente o rodapé deverá conter algum botão com a opção de fechar a janela. Este elemento deverá ter o atributo <code>data-dismiss="modal"</code>.</p>
+        </div>
+        <div class="span6">
+          <h5>Exemplos</h5>
+          <ul>
+            <li>Clique <a data-toggle="modal" href="#modal1">aqui</a> para abrir o exemplo 1 (só texto).</li>
+            <li>Clique <a data-toggle="modal" href="#modal2">aqui</a> para abrir o exemplo 2 (vídeo do YouTube).</li>
+            <li>Clique <a data-toggle="modal" href="#modal3">aqui</a> para abrir o exemplo 3 (muito texto com <code>.modal-scroll</code>).</li>
+            <li>Clique <a data-toggle="modal" href="#modal4">aqui</a> para abrir o exemplo 4 (com <code>.modal-fill-height.modal-grids-14</code> e <code>.modal-header-gray</code>).</li>
+          </ul>
         </div>
       </div>
       <div class="row">
         <div class="span16">
           <pre class="prettyprint linenums">
-  &lt;a data-toggle="modal" href="#MODAL_ID"&gt;Clique aqui&lt;/a&gt;
+&lt;a href="#MODAL_ID" data-toggle="modal"&gt;Link para abrir a janela modal&lt;/a&gt;
 
-  &lt;div class="modal hide fade" id="MODAL_ID"&gt;
-    &lt;div class="modal-header"&gt;
-      &lt;h3 class="modal-header-title"&gt;MODAL_TITLE&lt;/h3&gt;
-      &lt;!-- IF MODAL_HAS_SUBTITLE, DOESN'T NEED TO BE LINK BUT MUST HAVE THE CLASS modal-header-subtitle --&gt;
-      &lt;a class="modal-header-subtitle" href="MODAL_SUBTITLE_LINK" title="MODAL_SUBTITLE"&gt;MODAL_SUBTITLE&lt;/a&gt;
-      &lt;!-- END --&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-body"&gt;
-      MODAL_CONTENT
-    &lt;/div&gt;
-    &lt;div class="modal-footer"&gt;
-      &lt;!-- NEED TO HAVE THE ATTRIBUTE data-dismiss="modal" TO BE ABLE TO CLOSE THE MODAL --&gt;
-      &lt;button data-dismiss="modal" class="button-primary" title="Fechar"&gt;Fechar&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</pre>
+&lt;div id="#MODAL_ID" class="modal hide [modal-fill-height] [modal-grids-14]"&gt;
+  &lt;div class="modal-header [modal-header-gray]"&gt;
+    &lt;h3 class="modal-title"&gt;Título&lt;/h3&gt;
+    &lt;a class="modal-subtitle" href="#"&gt;Sub-título&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body [modal-scroll]"&gt;
+    Conteúdo
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;button data-dismiss="modal" class="button-primary"&gt;Fechar&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
         </div>
       </div>
       <div>
-        <div class="modal hide fade" id="modal1">
+        <div class="modal hide" id="modal1">
           <div class="modal-header">
-            <h3 class="modal-header-title">Título da janela modal</h3>
+            <h3 class="modal-title">Título da janela modal</h3>
           </div>
           <div class="modal-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
@@ -137,10 +146,10 @@
           </div>
         </div>
 
-        <div class="modal hide fade" id="modal2">
+        <div class="modal hide" id="modal2">
           <div class="modal-header">
-            <h3 class="modal-header-title">Redu Experimento na Escola do Recife PE</h3>
-            <span class="modal-header-subtitle">www.youtube.com</span>
+            <h3 class="modal-title">Redu Experimento na Escola do Recife PE</h3>
+            <span class="modal-subtitle">www.youtube.com</span>
           </div>
           <div class="modal-body">
             <iframe width="480" height="295" src="http://www.youtube.com/embed/2kq3kEOPyec" frameborder="0" allowfullscreen></iframe>
@@ -150,15 +159,28 @@
           </div>
         </div>
 
-        <div class="modal hide fade" id="modal3">
+        <div class="modal hide" id="modal3">
           <div class="modal-header">
-            <h3 class="modal-header-title">Redu Experimento na Escola do Recife PE</h3>
-            <a href="http://www.youtube.com" title="YouTube" class="modal-header-subtitle">www.youtube.com</a>
+            <h3 class="modal-title">Redu Experimento na Escola do Recife PE</h3>
+            <a href="http://www.youtube.com" title="YouTube" class="modal-subtitle">www.youtube.com</a>
+          </div>
+          <div class="modal-body modal-scroll">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="button-default" title="Padrão">Padrão</a>
+            <a href="#" data-dismiss="modal" class="button-primary" title="Fechar">Fechar</a>
+          </div>
+        </div>
+
+        <div class="modal hide modal-fill-height modal-grids-14" id="modal4">
+          <div class="modal-header modal-header-gray">
+            <h3 class="modal-title">Título da janela modal</h3>
           </div>
           <div class="modal-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices porta nisl, at tempor nunc commodo eu. Sed sagittis ornare vehicula. Vestibulum dapibus massa at mi lobortis sagittis. Mauris vel leo nisi, imperdiet ornare risus. Vestibulum nec sapien purus. Etiam at arcu nulla. Phasellus pulvinar euismod turpis nullam. Donec malesuada sapien eros, et hendrerit ipsum. Vivamus at nulla at felis hendrerit.</p>
           </div>
           <div class="modal-footer">
@@ -169,13 +191,16 @@
       </div>
     </div>
   </div>
-</div>    </div>
+</div>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
     <script src="docs/assets/js/vendor/google-code-prettify.min.js"></script>
     <script src="docs/assets/js/vendor/bootstrap-scrollspy.min.js"></script>
-    <script src="js/bootstrap-redu.min.js"></script>
+    <script src="js/vendor/jquery.tokeninput.js"></script>
+    <script src="js/vendor/jquery.autosize.min.js"></script>
     <script src="js/vendor/placeholder-polyfill.min.js"></script>
+    <script src="js/bootstrap-redu-min.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="js/vendor/selectivizr.js"></script>
     <![endif]-->

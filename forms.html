@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <title>Forms · Redu Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.2.">
+    <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.3.">
     <meta name="author" content="Redu Educational Technologies">
-    <link rel="stylesheet" href="css/bootstrap-redu.min.css">
-    <link rel="stylesheet" href="docs/assets/css/docs.min.css">
-    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-redu-min.css">
+    <link rel="stylesheet" href="docs/assets/css/docs-min.css">
+    <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body data-spy="scroll" onload="prettyPrint()">
@@ -42,8 +42,8 @@
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="typography.html" title="Tipografia">Tipografia</a>
                   </li>
-                  <li class="nav-global-profile-item">
-                    <a title="Tabela">Tabela</a>
+                  <li class="nav-global-profile-item link-container">
+                    <a class="link-target" href="tables.html" title="Tabela">Tabelas</a>
                   </li>
                   <li class="nav-global-profile-item link-container">
                     <a class="link-target" href="lists.html" title="Listas">Listas</a>
@@ -72,7 +72,7 @@
                 </ul>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -133,8 +133,9 @@
           <p><code>_forms.scss</code></p>
           <h5>Dependências</h5>
           <ul>
-            <li><code rel="tooltip" title="Contador de caracteres; Labels escurecidos na marcação dos checkboxes/radios; Cor dos labels quando o controle está em foco; Comportamento do controle lista de opções e formulário de busca">bootstrap-forms.js</code></li>
-            <li><code rel="tooltip" title="Polyfill do placeholder para input texts e textareas para IE8 e IE9.">vendor/placeholder-polyfill.min.js</code></li>
+            <li><code rel="tooltip" title="Polyfill do placeholder para input texts e textareas para IE8 e IE9.">vendor/placeholder-polyfill.js</code></li>
+            <li><code rel="tooltip" title="Auto ajustamento da altura dos textareas.">vendor/jquery.autosize.js</code></li>
+            <li><code rel="tooltip" title="Contador de caracteres; Labels escurecidos na marcação dos checkboxes/radios; Cor dos labels quando o controle está em foco; Comportamento do controle lista de opções; formulário de busca; ajustamento da altura do textarea por rows e estilização do file input">bootstrap-forms.js</code></li>
           </ul>
         </div>
       </div>
@@ -264,8 +265,7 @@
       <h3 id="textarea">Textarea</h3>
       <div class="row">
         <div class="span13">
-          <p>Os controles de área de texto não precisam de nada adicional.</p>
-          <p><span class="label-doubts">To do:</span> altura do textarea crescer automaticamente a medida que seja preciso de mais espaço.</p>
+          <p>Os controles de área de texto não precisam de nada adicional. O número de linhas mostrado pelo textarea pode ser controlado pelo atributo <code>rows</code>. Caso o texto dentro do textarea cresça mais do o possível, o textarea irá automaticamente aumentar de tamanho.</p>
         </div>
       </div>
       <div class="row">
@@ -870,11 +870,10 @@
       <div class="row">
         <div class="span13">
           <p>Os controles de input file não precisam de nada adicional.</p>
-          <p><span class="label-doubts">To do:</span> tentar estilizá-lo para que fique igual em todos os navegadores.</p>
         </div>
       </div>
       <div class="row">
-        <div class="span6">
+        <div class="span5">
           <div class="well">
             <form>
               <div class="control-group">
@@ -888,14 +887,14 @@
             </form>
           </div>
         </div>
-        <div class="span7">
+        <div class="span8">
           <div class="well-paddless">
             <form class="form-horizontal">
               <div class="control-group row">
                 <div class="control-label span2">
                   <label for="input-16-1">Foto</label>
                 </div>
-                <div class="controls span5">
+                <div class="controls span6">
                   <input type="file" id="input-16-1">
                 </div>
               </div>
@@ -998,8 +997,10 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
     <script src="docs/assets/js/vendor/google-code-prettify.min.js"></script>
     <script src="docs/assets/js/vendor/bootstrap-scrollspy.min.js"></script>
-    <script src="js/bootstrap-redu.min.js"></script>
+    <script src="js/vendor/jquery.tokeninput.js"></script>
+    <script src="js/vendor/jquery.autosize.min.js"></script>
     <script src="js/vendor/placeholder-polyfill.min.js"></script>
+    <script src="js/bootstrap-redu-min.js"></script>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <script src="js/vendor/selectivizr.js"></script>
     <![endif]-->
