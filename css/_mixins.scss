@@ -377,3 +377,8 @@
     $i: $i - 1;
   }
 }
+
+// Retorna a largura de uma grid, dado seu número.
+@function grid-width($n) {
+  @return $n * $gridColumnWidth + ($n - 1) * $gridGutterWidth;
+}
