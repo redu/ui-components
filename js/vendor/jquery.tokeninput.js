@@ -263,6 +263,11 @@ $.TokenList = function (input, url_or_data, settings) {
             var next_token;
 
             switch(event.keyCode) {
+<<<<<<< HEAD
+=======
+                case KEY.LEFT:
+                case KEY.RIGHT:
+>>>>>>> df93c480ee485bd36b2f686fd0816dfa4fad71c5
                 case KEY.UP:
                 case KEY.DOWN:
                     if(!$(this).val()) {
@@ -271,22 +276,37 @@ $.TokenList = function (input, url_or_data, settings) {
 
                         if((previous_token.length && previous_token.get(0) === selected_token) || (next_token.length && next_token.get(0) === selected_token)) {
                             // Check if there is a previous/next token and it is selected
+<<<<<<< HEAD
                             if(event.keyCode === KEY.UP) {
+=======
+                            if(event.keyCode === KEY.LEFT || event.keyCode === KEY.UP) {
+>>>>>>> df93c480ee485bd36b2f686fd0816dfa4fad71c5
                                 deselect_token($(selected_token), POSITION.BEFORE);
                             } else {
                                 deselect_token($(selected_token), POSITION.AFTER);
                             }
+<<<<<<< HEAD
                         } else if((event.keyCode === KEY.UP) && previous_token.length) {
                             // We are moving left, select the previous token if it exists
                             select_token($(previous_token.get(0)));
                         } else if((event.keyCode === KEY.DOWN) && next_token.length) {
+=======
+                        } else if((event.keyCode === KEY.LEFT || event.keyCode === KEY.UP) && previous_token.length) {
+                            // We are moving left, select the previous token if it exists
+                            select_token($(previous_token.get(0)));
+                        } else if((event.keyCode === KEY.RIGHT || event.keyCode === KEY.DOWN) && next_token.length) {
+>>>>>>> df93c480ee485bd36b2f686fd0816dfa4fad71c5
                             // We are moving right, select the next token if it exists
                             select_token($(next_token.get(0)));
                         }
                     } else {
                         var dropdown_item = null;
 
+<<<<<<< HEAD
                         if(event.keyCode === KEY.DOWN) {
+=======
+                        if(event.keyCode === KEY.DOWN || event.keyCode === KEY.RIGHT) {
+>>>>>>> df93c480ee485bd36b2f686fd0816dfa4fad71c5
                             dropdown_item = $(selected_dropdown_item).next();
                         } else {
                             dropdown_item = $(selected_dropdown_item).prev();
