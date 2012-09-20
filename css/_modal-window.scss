@@ -2,7 +2,14 @@
 // Janela modal
 // ==========================================================================
 
-$modalWindowBorderRadius: 7px;
+// Variáveis.
+// ==========================================================================
+
+// Tamanho da borda arredondada.
+$modalBorderRadius: 7px;
+// Largura padrão.
+$modalWidth: 520px;
+
 
 // Recalcula o z-index onde apropriado.
 .modal-open {
@@ -15,6 +22,7 @@ $modalWindowBorderRadius: 7px;
 
 // Fundo.
 .modal-backdrop {
+  @include opacity(80);
   position: fixed;
   top: 0;
   right: 0;
@@ -22,63 +30,72 @@ $modalWindowBorderRadius: 7px;
   left: 0;
   z-index: $zindexModalBackdrop;
   background-color: rgb(152, 152, 152);
-
-  &.fade { opacity: 0; }
 }
-
-.modal-backdrop,
-.modal-backdrop.fade.in { @include opacity(80); }
 
 // Base modal.
 .modal {
   position: fixed;
-  top: 50%;
+  top: 80px;
   left: 50%;
   z-index: $zindexModal;
   overflow: auto;
-  width: 520px;
-  margin: -250px 0 0 -260px;
+  width: $modalWidth;
+  margin: 0 0 0 (- ($modalWidth / 2));
   background-color: $white;
   border: 1px solid $gray6;
 
-  &.fade {
-    @include transition(opacity .3s linear);
-    top: -25%;
-  }
-
-  &.fade.in { top: 50%; }
-
-  .borderradius & { @include border-radius($modalWindowBorderRadius); }
+  .borderradius & { @include border-radius($modalBorderRadius); }
 
   .boxshadow & { @include box-shadow(0 4px 20px 1px rgba(0, 0, 0, 0.5)); }
 }
 
+// Aumenta a largura para 14 grids.
+.modal-grids-14 {
+  $width: grid-width(14);
+  width: $width;
+  margin-left: (- ($width / 2));
+}
+
+// Cabeçalho.
 .modal-header { padding: 20px 20px 10px; }
 
-.modal-header-title { color: $gray6; }
+// Estilo cinza para o cabeçalho.
+.modal-header-gray {
+  background-color: $gray2;
+  border-bottom: 1px solid $gray3;
+  padding: 20px;
 
-.modal-header-subtitle,
-.modal-header-subtitle:hover { color: $gray5; }
+  .boxshadow & { @include box-shadow(0 -1px 0 $white inset); }
+}
+
+// Título.
+.modal-title { color: $gray6; }
+
+// Sub-título.
+.modal-subtitle,
+.modal-subtitle:hover { color: $gray5; }
 
 // Conteúdo.
 .modal-body {
   padding: 0 20px 20px;
   overflow-y: auto;
   max-height: 340px;
-
-  p { margin-bottom: 0; }
 }
 
-// Rodapé (para as ações).
+// A seta da barra de rolagem.
+.modal-scroll-arrow {
+  position: fixed;
+  font-size: 18px;
+  font-weight: bold;
+  color: $gray4;
+}
+
+// Rodapé.
 .modal-footer {
-  text-align: right;
   padding: 20px;
   background-color: $gray2;
   border-top: 1px solid $gray3;
-
-  .button + .button { margin-left: 5px; }
-
-  .borderradius & { @include border-radius(0 0 $modalWindowBorderRadius $modalWindowBorderRadius); }
+  text-align: right;
 
   .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
 }
