@@ -57,7 +57,11 @@ $modalWidth: 520px;
 }
 
 // Cabeçalho.
-.modal-header { padding: 20px 20px 10px; }
+.modal-header {
+  padding: 20px 20px 10px;
+
+  .borderradius & { @include border-radius($modalBorderRadius $modalBorderRadius 0 0); }
+}
 
 // Estilo cinza para o cabeçalho.
 .modal-header-gray {
@@ -98,4 +102,6 @@ $modalWidth: 520px;
   text-align: right;
 
   .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
+
+  .borderradius & { @include border-radius(0 0 $modalBorderRadius $modalBorderRadius); }
 }
