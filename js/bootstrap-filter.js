@@ -190,7 +190,6 @@
           , otherFilters = filter.siblings()
 
         filter.on('click', function(e) {
-          e.preventDefault()
           // Desativa os outros filtros.
           otherFilters.removeClass(settings.filterActiveClass)
           filter.toggleClass(settings.filterActiveClass)
