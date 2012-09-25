@@ -30,7 +30,7 @@
   , fillHeight: function(options) {
       var settings = $.extend({
           // Margem inferior.
-          bottomMargin: 80
+          bottomMargin: 20
         }, options)
 
       return this.each(function() {
