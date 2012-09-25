@@ -147,6 +147,7 @@
     .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
   }
 
+  .open &,
   &:active {
     border-color: $blue4;
     background-color: $blue4 !important;
@@ -202,6 +203,7 @@
     .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abe385', endColorstr='#61a080',GradientType=0 ); }
   }
 
+  .open &,
   &:active {
     background-color: $green4 !important;
     border-color: $green4;
@@ -254,6 +256,7 @@
        .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1272d', endColorstr='#ff6d6d',GradientType=0 ); }
     }
 
+    .open &,
     &:active {
       background-color: $red5 !important;
       border-color: $red5;

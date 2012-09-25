@@ -2,6 +2,10 @@
 // Dropdowns
 // ==========================================================================
 
+
+// Wrapper.
+.dropdown { position: relative; }
+
 // O bloco.
 .dropdown-menu {
   background-color: $gray1;
