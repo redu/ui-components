@@ -43,9 +43,15 @@
 }
 
 // Botão grande.
-.button-big {
+button.button-big {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 28px !important;
+}
+
+input.button-big {
+  font-size: 16px;
+  line-height: auto;
+  padding: 11px 10px;
 }
 
 .button-dropdown {
