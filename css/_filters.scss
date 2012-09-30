@@ -50,7 +50,7 @@ $filterBoxShadow:
   .boxshadow & {
     @include box-shadow($filterBoxShadow);
 
-    &:last-child { @include box-shadow(0 1px 0 $white inset); }
+    &:last-child { @include box-shadow; }
   }
 
   .filters & { float: left; }
@@ -75,7 +75,7 @@ $filterBoxShadow:
   }
 
   .filter-group:last-child & {
-    .boxshadow & { @include box-shadow(0 1px 0 $white inset); }
+    .boxshadow & { @include box-shadow; }
 
     .borderradius & { @include border-radius(0 $filterGroupBorderRadius 0 0); }
   }
@@ -95,7 +95,7 @@ $filterBoxShadow:
 // Filtros (visão geral).
 // ==========================================================================
 
-.filters-general-view { @include clearfix; }
+.filters-general-view { @include clear-fix; }
 
 .filter-group {
   @include filterCommon;

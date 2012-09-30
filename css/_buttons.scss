@@ -53,9 +53,9 @@
   @extend %button;
 
   .cssgradients & {
-    @include reduGradient($gray3, $gray1, 0.2);
+    @include redu-gradient($gray3, $gray1, 0.2);
 
-    &:hover { @include reduGradient($blue1, $gray1); }
+    &:hover { @include redu-gradient($blue1, $gray1); }
   }
 
   .no-cssgradients.gt-ie8 & {
@@ -80,7 +80,7 @@
   $disabled-color: $gray5;
   $disabled-border-color: $gray3;
   $disabled-background-color: $gray2;
-  @include button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão primário.
@@ -88,9 +88,9 @@
   @extend %button;
 
   .cssgradients & {
-    @include reduGradient($blue4, $blue2, 0.3);
+    @include redu-gradient($blue4, $blue2, 0.3);
 
-    &:hover { @include reduGradient($blue4, $blue2); }
+    &:hover { @include redu-gradient($blue4, $blue2); }
   }
 
   .no-cssgradients.gt-ie8 & {
@@ -117,7 +117,7 @@
   $disabled-color: $gray3;
   $disabled-border-color: $blue2;
   $disabled-background-color: $blue2;
-  @include button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de sucesso.
@@ -125,9 +125,9 @@
   @extend %button;
 
   .cssgradients & {
-    @include reduGradient($green3, $green2);
+    @include redu-gradient($green3, $green2);
 
-    &:hover { @include reduGradient($green4, $green2); }
+    &:hover { @include redu-gradient($green4, $green2); }
   }
 
   .no-cssgradients.gt-ie8 & {
@@ -154,7 +154,7 @@
   $disabled-color: $gray4;
   $disabled-border-color: $green4;
   $disabled-background-color: $green3;
-  @include button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de perigo.
@@ -162,9 +162,9 @@
   @extend %button;
 
   .cssgradients & {
-    @include reduGradient($red5, $red2, 0.4);
+    @include redu-gradient($red5, $red2, 0.4);
 
-    &:hover { @include reduGradient($red5, $red2); }
+    &:hover { @include redu-gradient($red5, $red2); }
   }
 
   .no-cssgradients.gt-ie8 & {
@@ -191,7 +191,7 @@
   $disabled-color: $gray4;
   $disabled-border-color: $red3;
   $disabled-background-color: $red2;
-  @include button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 

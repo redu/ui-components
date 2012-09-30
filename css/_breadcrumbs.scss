@@ -37,7 +37,7 @@
 
 // Lista.
 .breadcrumb-icons {
-  @include clearfix;
+  @include clear-fix;
   list-style: none;
   margin: 0;
   padding: 2px 0;
@@ -58,7 +58,7 @@
     position: relative;
     top: -1px;
 
-    .borderradius & { @include border-radius(5px); }
+    .borderradius & { @include border-radius; }
 
     .boxshadow & {
       $boxShadow:

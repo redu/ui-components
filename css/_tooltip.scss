@@ -12,7 +12,7 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 .tooltip {
   @include opacity(0);
   position: absolute;
-  z-index: $zindexTooltip;
+  z-index: $z-index-tooltip;
   display: block;
   visibility: visible;
   padding: 5px;
@@ -48,11 +48,11 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
   @include square(0);
   position: absolute;
 
-  .tooltip.top & { @include popoverArrow-top(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.top & { @include popover-arrow-top(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.left & { @include popoverArrow-left(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.left & { @include popover-arrow-left(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.bottom & { @include popoverArrow-bottom(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.bottom & { @include popover-arrow-bottom(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.right & { @include popoverArrow-right(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.right & { @include popover-arrow-right(5px, $tooltipBackgroundAndArrowColor); }
 }

@@ -30,7 +30,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   .borderradius & { @include border-radius($navLocalItemBorderRadius); }
 
   &:hover {
-    .cssgradients & { @include reduGradient($blue1, $white); }
+    .cssgradients & { @include redu-gradient($blue1, $white); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
@@ -63,7 +63,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   // Completa a borda no IE8.
   .ie8 & { border-right: $navLocalItemActiveBorder; }
 
-  .cssgradients & { @include reduGradient($blue4, $blue2, 0.2); }
+  .cssgradients & { @include redu-gradient($blue4, $blue2, 0.2); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#73c3e6+60,158ac4+100;Custom
@@ -80,7 +80,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   &:hover {
     .ie8 & { border-color: $blue4; }
 
-    .cssgradients & { @include reduGradient($blue4, $blue2); }
+    .cssgradients & { @include redu-gradient($blue4, $blue2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+100;Custom
@@ -94,16 +94,16 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   &:hover { text-decoration: none; }
 
   .nav-local-item-active & {
-    @include linkColor($white !important);
+    @include link-color($white !important);
 
     .textshadow & { text-shadow: 0 -1px 0 $blue4; }
   }
 
-  .nav-local-item:hover & { color: $linkColorHover; }
+  .nav-local-item:hover & { color: $link-color-hover; }
 }
 
 // Link para aulas.
-.nav-local-lecture-link { @include linkColor($gray5 !important); }
+.nav-local-lecture-link { @include link-color($gray5 !important); }
 
 .nav-local-link + .inl-label { margin-left: 10px; }
 
@@ -172,7 +172,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   font-size: 16px;
   letter-spacing: -1px;
   font-weight: 100;
-  font-family: $museoSans;
+  font-family: $museo-sans;
   color: $gray6;
   display: block;
   padding: 0 10px;

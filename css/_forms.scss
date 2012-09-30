@@ -27,7 +27,7 @@ $formControlBorderRadius: 3px;
 
   // Área que fica sob o controle, do lado direito.
   .control-append-area {
-    @include box-sizing(border-box);
+    @include box-sizing;
     height: 100%;
     position: absolute;
     right: 0;
@@ -35,7 +35,7 @@ $formControlBorderRadius: 3px;
 
     .borderradius & { @include border-radius(0 $formControlBorderRadius $formControlBorderRadius 0); }
 
-    .cssgradients & { @include reduGradient($white, $gray2); }
+    .cssgradients & { @include redu-gradient($white, $gray2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
@@ -84,7 +84,7 @@ fieldset {
 // Formulário horizontal.
 .form-horizontal {
   .control-group {
-    @include clearfix;
+    @include clear-fix;
 
     .control-label,
     .controls { float: left; }
@@ -106,7 +106,7 @@ button,
 select,
 textarea {
   @include font-shorthand;
-  @include font-family-sans-serif;
+  font-family: $base-font-family;
 }
 
 // Resets de tamanho e tipo compartilhados.
@@ -114,14 +114,14 @@ select,
 textarea,
 input[type="text"],
 input[type="password"] {
-  @include box-sizing(border-box);
+  @include box-sizing;
   display: inline-block;
   border: 1px solid $gray4;
   padding: $formControlVerticalPadding $formControlHorizontalPadding;
   width: 100%;
   color: $gray6;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 
   .csstransitions & {
     $transition:
@@ -134,7 +134,7 @@ input[type="password"] {
 
   .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
 
-  .cssgradients & { @include reduGradient($white, $gray3, 0.8); }
+  .cssgradients & { @include redu-gradient($white, $gray3, 0.8); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+40;Custom
@@ -249,7 +249,7 @@ input[type="checkbox"]:focus {
 .control-radio,
 .control-checkbox {
   display: block;
-  min-height: $baseLineHeight;
+  min-height: $base-line-height;
   padding-left: 19px;
   overflow: hidden;
   color: $gray6;
@@ -281,7 +281,7 @@ input[type="checkbox"]:focus {
 .control-radio input[type="radio"],
 .control-checkbox input[type="checkbox"] {
   float: left;
-  margin-left: -($baseLineHeight);
+  margin-left: -($base-line-height);
   margin-right: 10px;
 
   .ie8 &,
@@ -339,7 +339,7 @@ input[type="checkbox"]:focus {
   .form-horizontal & .control-label { padding-top: 11px; }
 }
 
-@include grid-input($gridColumnWidth, $gridGutterWidth);
+@include grid-input($grid-column-width, $grid-gutter-width);
 
 
 // Estado desativado.
@@ -500,7 +500,7 @@ textarea:-moz-placeholder { color: $gray4; }
 
 // Dropdown.
 .control-autocomplete-dropdown {
-  @include box-sizing(border-box);
+  @include box-sizing;
   position: absolute;
   z-index: 1;
   left: 0;
@@ -512,7 +512,7 @@ textarea:-moz-placeholder { color: $gray4; }
 
   .button { margin: 0 10px; }
 
-  .borderradius & { @include border-radius(5px); }
+  .borderradius & { @include border-radius; }
 
   .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4)) }
 }

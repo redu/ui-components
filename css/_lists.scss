@@ -68,7 +68,7 @@ hr {
     display: none;
     background-color: $gray2;
 
-    .borderradius & { @include border-radius(5px); }
+    .borderradius & { @include border-radius; }
   }
 
   .status-text {
@@ -124,7 +124,7 @@ hr {
       position: absolute;
     }
 
-    .borderradius & { @include border-radius(5px); }
+    .borderradius & { @include border-radius; }
 
     .post-text { padding: 10px 10px 10px 10px; }
 
@@ -342,7 +342,7 @@ hr {
 
       h4 { display: inline; }
 
-      .borderradius & { @include border-radius(5px); }
+      .borderradius & { @include border-radius; }
 
       &:hover {
         border-bottom: 1px solid $gray3;
@@ -578,7 +578,7 @@ hr {
     @include box-shadow($boxShadow);
   }
 
-  .borderradius & { @include border-radius(5px); }
+  .borderradius & { @include border-radius; }
 
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
 
@@ -788,7 +788,7 @@ hr {
 
 // Container no cabeçalho.
 .list-environment-course-space-header {
-  @include clearfix;
+  @include clear-fix;
   margin-bottom: 10px;
 }
 
@@ -847,7 +847,7 @@ hr {
 }
 
 .list-separator {
-  @include box-sizing(border-box);
+  @include box-sizing;
   height: 2px;
   background-color: $white;
   border-top: 1px solid $gray3;
@@ -859,7 +859,7 @@ hr {
     position: relative;
     top: -10px;
 
-    .cssgradients & { @include reduGradient($gray1, $white); }
+    .cssgradients & { @include redu-gradient($gray1, $white); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,f7f7f7+100;Custom
@@ -876,7 +876,7 @@ hr {
     position: relative;
     bottom: 8px;
 
-    .cssgradients & { @include reduGradient($white, $gray1) };
+    .cssgradients & { @include redu-gradient($white, $gray1) };
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,ffffff+100;Custom

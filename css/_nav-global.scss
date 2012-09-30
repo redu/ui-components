@@ -8,7 +8,7 @@
 // Encapsulador da barra.
 .nav-global {
   overflow: visible;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $base-line-height;
 }
 
 // Fixa a barra no topo.
@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: $zindexFixedNavbar;
+  z-index: $z-index-fixed-navbar;
 }
 
 // Interior da barra.
@@ -88,13 +88,13 @@
 .nav-global-button {
   float: left;
   padding: 10px;
-  font-family: $museoSans;
+  font-family: $museo-sans;
   font-weight: 300;
   font-size: 16px;
 
   & + & { margin-left: 1px; }
 
-  .borderradius & { @include border-radius(5px); }
+  .borderradius & { @include border-radius; }
 
   &:hover {
     color: $blue3;
@@ -138,7 +138,7 @@
     @include box-shadow($boxShadow);
   }
 
-  .cssgradients & { @include reduGradient($blue2, $blue4, 0.7); }
+  .cssgradients & { @include redu-gradient($blue2, $blue4, 0.7); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#158ac4+0,73c3e6+70;Custom
@@ -148,7 +148,7 @@
   .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#158ac4', endColorstr='#73c3e6',GradientType=0 ); }
 
   &:hover {
-    .cssgradients & { @include reduGradient($blue2, $blue4, 0.2); }
+    .cssgradients & { @include redu-gradient($blue2, $blue4, 0.2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#158ac4+60,73c3e6+100;Custom

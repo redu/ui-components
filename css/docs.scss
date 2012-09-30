@@ -23,7 +23,7 @@ h4 + p,
 h5 + p,
 h6 + p,
 h7 + p,
-pre + p { margin-top: $baseLineHeight / 2; }
+pre + p { margin-top: $base-line-height / 2; }
 
 // Conteúdo.
 .content {
@@ -33,7 +33,7 @@ pre + p { margin-top: $baseLineHeight / 2; }
 
   table { margin-bottom: 20px; }
 
-  p { margin-bottom: $baseLineHeight / 2; }
+  p { margin-bottom: $base-line-height / 2; }
 
   h3[id],
   h4[id] { padding-top: 60px; }
@@ -82,7 +82,7 @@ pre + p { margin-top: $baseLineHeight / 2; }
 
   .boxshadow & { @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05) inset); }
 
-  .borderradius & { @include border-radius(5px); }
+  .borderradius & { @include border-radius; }
 }
 
 code + .well-base {
@@ -200,7 +200,7 @@ pre {
 
 .row.grids.example [class*="span"] {
   padding-top: 0;
-  height: $baseLineHeight;
+  height: $base-line-height;
 }
 
 code {

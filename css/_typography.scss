@@ -16,9 +16,9 @@ p {
 
 h1, h2, h3, h4, h5, h6, h7 { margin: 0; }
 
-h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
+h1, h2, h3, h4, h5, h6 { font-family: $museo-sans; }
 
-h7 { font-family: $museoSlab; }
+h7 { font-family: $museo-slab; }
 
 h2, h3, h4, h5, h6, h7 { font-weight: 500; }
 
@@ -132,7 +132,7 @@ ul { list-style: disc; }
 
 ol { list-style: decimal; }
 
-li { line-height: $baseLineHeight; }
+li { line-height: $base-line-height; }
 
 dt { font-weight: bold; }
 

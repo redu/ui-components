@@ -4,10 +4,10 @@
 
 body {
   margin: 0;
-  font-family: $baseFontFamily;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
-  color: $textColor;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
   background-color: $white;
 
   .textshadow & { text-shadow: 0 1px 0 $white; }
@@ -16,13 +16,13 @@ body {
 // Links.
 a {
   display: inline-block;
-  color: $linkColor;
+  color: $link-color;
   text-decoration: none;
 
-  &:visited { color: $linkColorVisited; }
+  &:visited { color: $link-color-visited; }
 
   &:hover {
-    color: $linkColorHover;
+    color: $link-color-hover;
     text-decoration: underline;
   }
 }

@@ -13,11 +13,11 @@ $modalWidth: 520px;
 
 // Recalcula o z-index onde apropriado.
 .modal-open {
-  .dropdown-menu {  z-index: $zindexDropdown + $zindexModal; }
+  .dropdown-menu {  z-index: $z-index-dropdown + $z-index-modal; }
 
-  .popover       {  z-index: $zindexPopover  + $zindexModal; }
+  .popover       {  z-index: $z-index-popover  + $z-index-modal; }
 
-  .tooltip       {  z-index: $zindexTooltip  + $zindexModal; }
+  .tooltip       {  z-index: $z-index-tooltip  + $z-index-modal; }
 }
 
 // Fundo.
@@ -28,7 +28,7 @@ $modalWidth: 520px;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $zindexModalBackdrop;
+  z-index: $z-index-modal-backdrop;
   background-color: rgb(152, 152, 152);
 }
 
@@ -37,7 +37,7 @@ $modalWidth: 520px;
   position: fixed;
   top: 80px;
   left: 50%;
-  z-index: $zindexModal;
+  z-index: $z-index-modal;
   overflow: auto;
   width: $modalWidth;
   margin: 0 0 0 (- ($modalWidth / 2));

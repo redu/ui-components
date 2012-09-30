@@ -11,7 +11,7 @@ $popoverBorderRadius: 5px;
 // Encapsulador.
 .popover {
   position: absolute;
-  z-index: $zindexPopover;
+  z-index: $z-index-popover;
   display: none;
   top: 0;
   left: 0;
@@ -23,13 +23,13 @@ $popoverBorderRadius: 5px;
   &.right,
   &.bottom { margin-left: 5px; }
 
-  &.top .arrow { @include popoverArrow-top(); }
+  &.top .arrow { @include popover-arrow-top; }
 
-  &.right .arrow { @include popoverArrow-right(8px, $gray6, -2px); }
+  &.right .arrow { @include popover-arrow-right(8px, $gray6, -2px); }
 
-  &.bottom .arrow { @include popoverArrow-bottom(8px, $gray6, -2px); }
+  &.bottom .arrow { @include popover-arrow-bottom(8px, $gray6, -2px); }
 
-  &.left .arrow { @include popoverArrow-left(8px, $gray6, -2px); }
+  &.left .arrow { @include popover-arrow-left(8px, $gray6, -2px); }
 
   .arrow {
     @include square(0);

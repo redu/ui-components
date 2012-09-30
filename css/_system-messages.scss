@@ -12,7 +12,7 @@
 
   .boxshadow & { @include box-shadow(0 2px 10px 1px rgba(0, 0, 0, 0.4)); }
 
-  .borderradius & { @include border-radius(5px); }
+  .borderradius & { @include border-radius; }
 }
 
 // Ícone de fechar.
@@ -63,7 +63,7 @@
 
 // Comum a todas as mensagens do sistema.
 .system-message-base {
-  @include box-sizing(border-box);
+  @include box-sizing;
   text-align: center;
   // Centraliza horizontalmente.
   position: fixed;
