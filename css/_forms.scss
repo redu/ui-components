@@ -59,7 +59,7 @@ fieldset {
 .control-group { & + & { margin-top: 20px; } }
 
 // Encapsula o label.
-.control-label { 
+.control-label {
   color: $gray5;
 
   .control-focused & { color: $blue2; }
@@ -89,7 +89,7 @@ fieldset {
     .control-label,
     .controls { float: left; }
 
-    .control-label { 
+    .control-label {
       text-align: right;
       padding-top: $formLabelTopPadding;
       margin: 0 20px 0 0;
@@ -104,7 +104,7 @@ label,
 input,
 button,
 select,
-textarea { 
+textarea {
   @include font-shorthand;
   @include font-family-sans-serif;
 }
@@ -124,8 +124,8 @@ input[type="password"] {
   line-height: $baseLineHeight;
 
   .csstransitions & {
-    $transition: 
-      border linear .2s, 
+    $transition:
+      border linear .2s,
       box-shadow linear .2s;
     @include transition($transition);
   }
@@ -167,8 +167,8 @@ input[type="password"] {
     $boxShadowInsetNone: inset 0 0 0 rgba(0, 0, 0, 0);
 
     .boxshadow & {
-      $boxShadow: 
-        $boxShadowInsetNone, 
+      $boxShadow:
+        $boxShadowInsetNone,
         0 0 6px 1px $blue2;
       @include box-shadow($boxShadow);
     }
@@ -177,19 +177,19 @@ input[type="password"] {
       border-color: $green2;
 
       .boxshadow & {
-        $boxShadow: 
-          $boxShadowInsetNone, 
+        $boxShadow:
+          $boxShadowInsetNone,
           0 0 6px 1px $green2;
         @include box-shadow($boxShadow);
       }
     }
-    
+
     .control-error & {
       border-color: $red2;
 
       .boxshadow & {
-        $boxShadow: 
-          $boxShadowInsetNone, 
+        $boxShadow:
+          $boxShadowInsetNone,
           0 0 6px 1px $red2;
         @include box-shadow($boxShadow);
       }
@@ -198,8 +198,8 @@ input[type="password"] {
 }
 
 // Reseta a altura já que as textareas tem linhas.
-textarea { 
-  height: auto; 
+textarea {
+  height: auto;
   resize: vertical;
 }
 
@@ -257,8 +257,8 @@ input[type="checkbox"]:focus {
   .ie8 &,
   .gt-ie8 & { padding-top: 2px; }
 
-  .control-inline & { 
-    padding-top: $formLabelTopPadding + 2px; 
+  .control-inline & {
+    padding-top: $formLabelTopPadding + 2px;
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
@@ -271,8 +271,8 @@ input[type="checkbox"]:focus {
 }
 
 .control-radio + .control-radio,
-.control-checkbox + .control-checkbox { 
-  margin-top: 2px; 
+.control-checkbox + .control-checkbox {
+  margin-top: 2px;
 
   .ie8 &,
   .gt-ie8 & { margin-top: 0; }
@@ -303,14 +303,14 @@ input[type="checkbox"]:focus {
 .control-select-date {
   .controls { overflow: hidden; }
 
-  select { 
+  select {
     float: left;
     // Mês.
     width: 115px;
 
-    // Dia. 
+    // Dia.
     &:first-child { width: 70px; }
-    
+
     // Ano.
     &:last-child { width: 85px; }
   }
@@ -324,13 +324,13 @@ input[type="checkbox"]:focus {
 
 // Tamanho alternativo para os campos.
 
-.control-big { 
+.control-big {
   input[type="text"],
   input[type="password"],
   textarea,
   select,
   .placeholder {
-    font-size: 16px; 
+    font-size: 16px;
     height: 42px;
   }
 
@@ -442,14 +442,14 @@ textarea:-moz-placeholder { color: $gray4; }
   .control-area {
     .boxshadow & {
       $rightSideWidth: 28px;
-      $boxShadow: 
+      $boxShadow:
         -($rightSideWidth) 0 0 $white inset
       , 0 1px 0 $white inset;
       @include box-shadow($boxShadow)
     }
 
     .boxshadow &:focus {
-      $boxShadow: 
+      $boxShadow:
         inset 0 0 0 rgba(0, 0, 0, 0)
       , 0 0 6px 1px $blue2;
       @include box-shadow($boxShadow);
@@ -490,8 +490,8 @@ textarea:-moz-placeholder { color: $gray4; }
 
 .control-autocomplete {
   // Lista mista com os itens adicionados pelo autocomplete.
-  .list-mix-inner { 
-    padding-right: 26px; 
+  .list-mix-inner {
+    padding-right: 26px;
     position: relative;
   }
 
@@ -511,15 +511,15 @@ textarea:-moz-placeholder { color: $gray4; }
   width: 100%;
 
   .button { margin: 0 10px; }
-  
+
   .borderradius & { @include border-radius(5px); }
 
   .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4)) }
 }
 
 // Legendas do tipo "Buscando...".
-.control-autocomplete-hint { 
-  text-align: center; 
+.control-autocomplete-hint {
+  text-align: center;
   display: block;
 }
 
@@ -540,13 +540,13 @@ textarea:-moz-placeholder { color: $gray4; }
   & + & { margin-top: 5px; }
 }
 
-.control-autocomplete-suggestion-selected { 
-  background-color: $white; 
+.control-autocomplete-suggestion-selected {
+  background-color: $white;
   color: $black;
 }
 
 .control-autocomplete-id,
-.control-autocomplete-mail { 
+.control-autocomplete-mail {
   display: none;
 }
 
@@ -554,7 +554,7 @@ textarea:-moz-placeholder { color: $gray4; }
 .control-autocomplete-thumbnail { @include square(32px); }
 
 // Ícone de remover.
-.control-autocomplete-close { 
+.control-autocomplete-close {
   position: absolute;
   right: 5px;
   top: 30%;
@@ -566,12 +566,12 @@ textarea:-moz-placeholder { color: $gray4; }
 .control-autocomplete-added-info { vertical-align: middle; }
 
 // Encapsulador de nome e e-mail.
-.control-autocomplete-added-info { 
-  display: inline-block; 
+.control-autocomplete-added-info {
+  display: inline-block;
 
   .control-autocomplete-name,
   .control-autocomplete-mail { display: block; }
-  
+
   .control-autocomplete-name { color: $blue3; }
 }
 
