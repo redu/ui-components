@@ -38,7 +38,7 @@
   .borderradius & { @include border-radius(12px); }
 
   // Fundo com gradiente de 3 cores.
-  .cssgradients & { @include filter-gradient-vertical-3($gray2, $white, $gray2); }
+  .cssgradients & { @include background-image(linear-gradient($gray2, $white, $gray2)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+50,f0f0f0+100;Custom
@@ -211,7 +211,7 @@
   overflow: hidden;
   position: relative;
 
-  .cssgradients &:nth-child(odd) { @include filter-gradient-vertical($gray3, $gray2); }
+  .cssgradients &:nth-child(odd) { @include background-image(linear-gradient($gray3, $gray2)); }
 
   .no-cssgradients.gt-ie8 &:nth-child(odd) {
     // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f0f0f0+100;Custom

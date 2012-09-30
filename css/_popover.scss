@@ -60,7 +60,6 @@ $popoverBorderRadius: 5px;
 }
 
 .popover-content {
-  @include background-clip(padding-box);
   padding: 10px;
   background-color: $gray1;
 

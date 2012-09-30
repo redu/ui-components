@@ -282,7 +282,12 @@ hr {
       float: left;
       width: 100%;
 
-      .boxshadow & { @include box-shadow-2( 0 1px 0 $white inset, 0 0 9px rgb(240, 240, 240)); }
+      .boxshadow & {
+        $box-shadow:
+          0 1px 0 $white inset
+        , 0 0 9px rgb(240, 240, 240);
+        @include box-shadow($box-shadow);
+      }
     }
 
     .course-name {
@@ -349,7 +354,7 @@ hr {
           background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
         }
 
-        .cssgradients & { @include filter-gradient-vertical($white, $gray2, 60%, 100%); }
+        .cssgradients & { @include background-image(linear-gradient($white 60%, $gray2)); }
       }
     }
 

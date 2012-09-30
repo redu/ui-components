@@ -4,9 +4,9 @@
 $contentSpacing: 20px;
 
 // Imagem de fundo.
-body { 
+body {
   padding-top: 60px;
-  background-image: url("../docs/assets/img/texturetastic_gray.png"); 
+  background-image: url("../docs/assets/img/texturetastic_gray.png");
 }
 
 .container { margin-bottom: $contentSpacing; }
@@ -38,7 +38,7 @@ pre + p { margin-top: $baseLineHeight / 2; }
   h3[id],
   h4[id] { padding-top: 60px; }
 
-  > *:not(.row) { 
+  > *:not(.row) {
     margin-left: $contentSpacing;
     margin-right: $contentSpacing;
   }
@@ -50,18 +50,18 @@ pre + p { margin-top: $baseLineHeight / 2; }
   .nav-local,
   .nav-local-general-stats,
   .nav-local-balloon,
-  .filters-general-view { 
-    margin-left: 0 !important; 
+  .filters-general-view {
+    margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
   > * + * { margin-top: $contentSpacing / 2; }
-  
-  .boxshadow & { 
+
+  .boxshadow & {
     $boxShadow:
       0 -1px 0 $white,
-      0 0 0 1px rgb(203, 203, 203) inset;    
-    @include box-shadow($boxShadow); 
+      0 0 0 1px rgb(203, 203, 203) inset;
+    @include box-shadow($boxShadow);
   }
 
   .borderradius & { @include border-radius(10px); }
@@ -193,7 +193,6 @@ pre {
 .row.grids { text-shadow: none; }
 
 .row.grids [class*="span"] {
-  @include background-clip(padding-box);
   padding-top: 40px;
   height: 60px;
   text-align: center;

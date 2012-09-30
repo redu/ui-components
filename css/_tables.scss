@@ -112,7 +112,7 @@ td {
 
 			&:last-child { border-right: 1px solid $blue2; }
 
-			.cssgradients & { @include filter-gradient-vertical($white, $blue1	); }
+			.cssgradients & { @include background-image(linear-gradient($white, $blue1)); }
 
 			.no-cssgradients.gt-ie8 & {
   			// http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
@@ -136,7 +136,7 @@ td {
 
 		&:last-child { border-right: $table-border-color; }
 
-		.cssgradients & { @include filter-gradient-vertical($white, $gray2); }
+		.cssgradients & { @include background-image(linear-gradient($white, $gray2)); }
 
 		.no-cssgradients.gt-ie8 & {
 			// http://www.colorzilla.com/gradient-editor/#ffffff+0,f0f0f0+100;Custom
