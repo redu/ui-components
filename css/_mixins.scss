@@ -382,3 +382,59 @@
 @function grid-width($n) {
   @return $n * $gridColumnWidth + ($n - 1) * $gridGutterWidth;
 }
+
+// Estilo dos botões.
+@mixin button(
+    $color,
+    $border-color,
+    $box-shadow-color,
+    $hover-color,
+    $hover-border-color,
+    $active-border-color,
+    $active-background-color,
+    $hover-active-color,
+    $hover-active-border-color,
+    $disabled-color,
+    $disabled-border-color,
+    $disabled-background-color) {
+  color: $color;
+  border-color: $border-color;
+
+  .boxshadow & { @include box-shadow(inset 0 1px 0 $box-shadow-color); }
+
+  &:visited { color: $color; }
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-border-color;
+  }
+
+  .open > &,
+  .no-cssgradients.gt-ie8 .open > &,
+  &:active {
+    border-color: $active-border-color;
+    background-color: $active-background-color;
+    background-image: none;
+  }
+
+  .open > &:hover,
+  &:hover:active {
+    color: $hover-active-color;
+    border-color: $hover-active-border-color;
+    background-color: $active-background-color;
+  }
+
+  &.button-disabled,
+  &.button-disabled:hover,
+  &[disabled],
+  &[disabled]:hover,
+  .no-cssgradients.gt-ie8 &.button-disabled,
+  .no-cssgradients.gt-ie8 &[disabled] {
+    color: $disabled-color;
+    border-color: $disabled-border-color;
+    background-color: $disabled-background-color;
+    background-image: none;
+
+    .boxshadow & { @include box-shadow(none); }
+  }
+}
