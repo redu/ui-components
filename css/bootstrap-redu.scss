@@ -1,20 +1,32 @@
 /*!
- * Redu Bootstrap v0.0.1
+ * Redu Bootstrap v0.0.9
  *
- * Baseado no Bootstrap v2.0.1 do Twitter.
+ * Baseado no Bootstrap v2.1.1 do Twitter.
  */
 
 @import "compass/css3/images";
 
+// CSS reset (normalize).
+@import "reset";
+
+// Variáveis e mixins.
 @import "variables";
 @import "mixins";
-@import "icons";
-@import "reset";
+
+// Sistema de grids e estrutura da página.
 @import "scaffolding";
 @import "grid";
 @import "layout";
+
+// CSS base.
 @import "typography";
-@import "utilities";
+@import "tables";
+@import "forms";
+
+// Components comuns.
+@import "icons";
+@import "dropdowns";
+@import "component-animations";
 
 // Botões.
 @import "button-groups";
@@ -39,27 +51,26 @@
 // Navegação local.
 @import "nav-local";
 
-// Formulários.
-@import "forms";
-
-// Tabs e sub-tabs.
+// Tabs.
 @import "tabs";
 
 // Paginação.
 @import "pagination";
 
-// Outros.
-@import "dropdowns";
+// Janela modal.
 @import "modal-window";
-@import "component-animations";
+
+// Barras de progresso.
 @import "progress-bars";
+
+// Spinners.
 @import "spinners";
 
-// Labels.
+// Cabeçalhos.
 @import "headers";
 
 // Listas.
 @import "lists";
 
-// Tabelas
-@import "tables";
+// Classes de utilidade.
+@import "utilities";
