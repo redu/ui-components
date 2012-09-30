@@ -10,7 +10,7 @@ body {
   color: $textColor;
   background-color: $white;
 
-  .textshadow & { text-shadow: $verticalWhiteShadow; }
+  .textshadow & { text-shadow: 0 1px 0 $white; }
 }
 
 // Links.

@@ -114,5 +114,5 @@
 
   &:visited { color: $white; }
 
-  .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+  .textshadow & { text-shadow: 0 -1px 0 $blue4; }
 }

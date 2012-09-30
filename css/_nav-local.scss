@@ -96,7 +96,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   .nav-local-item-active & {
     @include linkColor($white !important);
 
-    .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+    .textshadow & { text-shadow: 0 -1px 0 $blue4; }
   }
 
   .nav-local-item:hover & { color: $linkColorHover; }
