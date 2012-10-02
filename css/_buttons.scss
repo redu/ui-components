@@ -71,8 +71,10 @@
   $color: $blue3;
   $border-color: $gray4;
   $box-shadow-color: $white;
+  $background-color: $gray1;
   $hover-color: $blue4;
   $hover-border-color: $blue2;
+  $hover-background-color: $blue1;
   $active-border-color: $blue3;
   $active-background-color: $blue1;
   $hover-active-color: $blue4;
@@ -80,7 +82,7 @@
   $disabled-color: $gray5;
   $disabled-border-color: $gray3;
   $disabled-background-color: $gray2;
-  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão primário.
@@ -108,8 +110,10 @@
   $color: $white;
   $border-color: $blue2;
   $box-shadow-color: $blue1;
+  $background-color: $blue2;
   $hover-color: $white;
   $hover-border-color: $blue4;
+  $hover-background-color: $blue4;
   $active-border-color: $blue4;
   $active-background-color: $blue4;
   $hover-active-color: $blue1;
@@ -117,7 +121,7 @@
   $disabled-color: $gray3;
   $disabled-border-color: $blue2;
   $disabled-background-color: $blue2;
-  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de sucesso.
@@ -145,8 +149,10 @@
   $color: $white;
   $border-color: $green3;
   $box-shadow-color: $green1;
+  $background-color: $green2;
   $hover-color: $white;
   $hover-border-color: $green4;
+  $hover-background-color: $green3;
   $active-border-color: $green4;
   $active-background-color: $green4;
   $hover-active-color: $green1;
@@ -154,7 +160,7 @@
   $disabled-color: $gray4;
   $disabled-border-color: $green4;
   $disabled-background-color: $green3;
-  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de perigo.
@@ -182,8 +188,10 @@
   $color: $white;
   $border-color: $red3;
   $box-shadow-color: $red1;
+  $background-color: $red2;
   $hover-color: $white;
   $hover-border-color: $red5;
+  $hover-background-color: $red4;
   $active-border-color: $red5;
   $active-background-color: $red5;
   $hover-active-color: $red1;
@@ -191,7 +199,7 @@
   $disabled-color: $gray4;
   $disabled-border-color: $red3;
   $disabled-background-color: $red2;
-  @include redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 

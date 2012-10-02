@@ -350,9 +350,10 @@
 //  $disabled-color: cor da fonte no estado desabilitado.
 //  $disabled-border-color: cor da borda no estado desabilitado.
 //  $disabled-background-color: cor do fundo no estado desabilitado.
-@mixin redu-button($color, $border-color, $box-shadow-color, $hover-color, $hover-border-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color) {
+@mixin redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color) {
   color: $color;
   border-color: $border-color;
+  background-color: $background-color;
 
   .boxshadow & { @include box-shadow(inset 0 1px 0 $box-shadow-color); }
 
@@ -361,6 +362,7 @@
   &:hover {
     color: $hover-color;
     border-color: $hover-border-color;
+    background-color: $hover-background-color;
   }
 
   .open > &,
