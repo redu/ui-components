@@ -48,6 +48,7 @@
         $submit
           .addClass(spinnerClass)
           .addClass(settings.buttonDisabled)
+          .data('spinnerClass', spinnerClass)
       }
 
       // Se for um botão.
