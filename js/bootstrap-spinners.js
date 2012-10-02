@@ -45,8 +45,9 @@
           spinnerClass = settings.spinnerCircularBlue
         }
 
-        $submit.addClass(spinnerClass)
-        $submit.prop('disabled', true)
+        $submit
+          .addClass(spinnerClass)
+          .addClass(settings.buttonDisabled)
       }
 
       // Se for um botão.
@@ -111,8 +112,9 @@
       if ($this.is('form')) {
         var $submit = $this.find('input:submit')
 
-        $submit.removeClass($submit.data('spinnerClass'))
-        $submit.prop('disabled', false)
+        $submit
+          .removeClass($submit.data('spinnerClass'))
+          .removeClass(settings.buttonDisabled)
       }
 
       // Se for um botão.
