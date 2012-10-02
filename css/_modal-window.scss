@@ -38,7 +38,6 @@ $modalWidth: 520px;
   top: 80px;
   left: 50%;
   z-index: $z-index-modal;
-  overflow: auto;
   width: $modalWidth;
   margin: 0 0 0 (- ($modalWidth / 2));
   background-color: $white;
