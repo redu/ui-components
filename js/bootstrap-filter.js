@@ -177,24 +177,6 @@
           e.stopPropagation()
         })
       })
-    },
-
-    // Alterna o estado de ativado dos filtros.
-    toggleState: function(options) {
-      var settings = $.extend({
-          filterActiveClass: 'filter-active'
-        }, options)
-
-      return this.each(function() {
-        var filter = $(this)
-          , otherFilters = filter.siblings()
-
-        filter.on('click', function(e) {
-          // Desativa os outros filtros.
-          otherFilters.removeClass(settings.filterActiveClass)
-          filter.toggleClass(settings.filterActiveClass)
-        })
-      })
     }
   }
 
@@ -211,8 +193,6 @@
 }) (window.jQuery)
 
 $(function() {
-  // Alterna o estado de ativado nos filtros sem dropdown.
-  $('.filter:not(.dropdown-toggle)').reduFilter('toggleState')
   // Adiciona os eventos dos filtros da visão geral.
   $('.filters-general-view').reduFilter()
 })
