@@ -56,7 +56,13 @@ fieldset {
 }
 
 // Encapsula o label e o contole.
-.control-group { & + & { margin-top: 20px; } }
+.control-group {
+  & + & { margin-top: 20px; }
+
+  .control-error { color: $red2; }
+
+  &.control-focused .control-error { color: $red5; }
+}
 
 // Encapsula o label.
 .control-label {
@@ -66,11 +72,11 @@ fieldset {
 
   .control-success & { color: $green3; }
 
-  .control-error & {color: $red2; }
+  .control-error & { color: $red2; }
 
   .control-focused.control-success & { color: $green4; }
 
-  .control-focused.control-error & {color: $red5; }
+  .control-focused.control-error & { color: $red5; }
 
   .form-horizontal & {
     padding-top: $formLabelTopPadding;
