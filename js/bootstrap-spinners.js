@@ -12,7 +12,7 @@
   , spinnerHorizontalBlue: 'spinner-horizontal-blue'
   , spinnerCircularGray: 'spinner-circular-gray'
   , spinnerCircularBlue: 'spinner-circular-blue'
-  , imgPath: 'img/'
+  , imgPath: 'images/'
   , spinnerCircularBlueGif: 'spinner-blue.gif'
   , spinnerCircularGrayGif: 'spinner-grey.gif'
   , spinnerCSS: {
@@ -47,8 +47,11 @@
 
         $submit
           .addClass(spinnerClass)
-          .addClass(settings.buttonDisabled)
+          .prop('disabled', true)
           .data('spinnerClass', spinnerClass)
+          .data('content', $submit.val())
+          .css({ 'width': $submit.outerWidth(), 'height': $submit.outerHeight() })
+          .val('')
       }
 
       // Se for um botão.
@@ -115,7 +118,8 @@
 
         $submit
           .removeClass($submit.data('spinnerClass'))
-          .removeClass(settings.buttonDisabled)
+          .prop('disabled', false)
+          .val($submit.data('content'))
       }
 
       // Se for um botão.
