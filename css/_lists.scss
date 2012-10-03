@@ -72,6 +72,7 @@ hr {
     form fieldset textarea { min-width: 100%; }
 
     .borderradius & { @include border-radius(5px); }
+  }
 
   .status-text {
     overflow: hidden;
