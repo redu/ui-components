@@ -12,7 +12,7 @@
   , spinnerHorizontalBlue: 'spinner-horizontal-blue'
   , spinnerCircularGray: 'spinner-circular-gray'
   , spinnerCircularBlue: 'spinner-circular-blue'
-  , imgPath: 'images/'
+  , imgPath: 'img/'
   , spinnerCircularBlueGif: 'spinner-blue.gif'
   , spinnerCircularGrayGif: 'spinner-grey.gif'
   , spinnerCSS: {
