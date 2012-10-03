@@ -255,7 +255,7 @@
   .boxshadow & {
     $box-shadow:
       0 1px 0 rgba(0, 0, 0, 0.1)
-    , 0 1px 0 rgb(98, 122, 173) inset;
+    , 0 1px 0 rgb(138, 156, 194) inset;
     @include box-shadow($box-shadow);
   }
 }
