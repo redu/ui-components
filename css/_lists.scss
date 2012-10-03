@@ -61,15 +61,17 @@ hr {
   }
 
   .create-response {
-    margin-top: 10px;
-    float: right;
-    margin-left: 42px;
+
+    float: none;
+    margin-top: 36px;
+    margin-left: 84px;
     clear: both;
     display: none;
     background-color: $gray2;
 
-    .borderradius & { @include border-radius; }
-  }
+    form fieldset textarea { min-width: 100%; }
+
+    .borderradius & { @include border-radius(5px); }
 
   .status-text {
     overflow: hidden;
@@ -187,7 +189,6 @@ hr {
           max-width: 1000px;
           overflow: hidden;
           height: 18px;
-          min-width: 716px;
         }
 
         label {
@@ -205,7 +206,6 @@ hr {
   }
 
   .create-response {
-    textarea { float: right; }
 
     &:before {
       border-color: #F0F0F0 white;
