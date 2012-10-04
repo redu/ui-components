@@ -294,10 +294,6 @@ input[type="checkbox"]:focus {
   .gt-ie8 & { margin-top: -1px; }
 }
 
-// Move a lista de opções para baixo para alinhar com a label.
-.controls > .control-radio:first-child,
-.controls > .control-checkbox:first-child { padding-top: $formLabelTopPadding + 2px; }
-
 // Texto preto quando o radio ou checkbox forem selecionados.
 .control-checked { color: $black; }
 
