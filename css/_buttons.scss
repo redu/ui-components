@@ -1,4 +1,4 @@
-// ==========================================================================
+﻿// ==========================================================================
 // Botões
 // ==========================================================================
 
@@ -207,7 +207,7 @@
 // Botões do Facebook.
 // ==========================================================================
 
-// Sombra externa inferior dos bot�es.
+// Sombra externa inferior dos botões.
 $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 
 // Comum.
@@ -240,7 +240,6 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 // Botão de cadastro.
 .facebook-sign-up-button {
   @extend %facebook-button;
-
   border-color: rgb(59, 110, 34) rgb(59, 110, 34) rgb(44, 81, 21);
   background-color: rgb(105, 167, 78);
 
