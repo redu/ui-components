@@ -1,7 +1,9 @@
  // Responder status
-$("a.reply-status, .cancel", ".statuses").live("click", function(e){
+$("a.reply-status, .cancel").live("click", function(e){
     e.preventDefault();
-    var $lalala = $(this).parents("ul:first");
-    $lalala.parents().next(".create-response").slideToggle(150, "swing");
-    $lalala.parents().next(".create-response").find("textarea").focus();
+
+    var $thais = $(this).parents("ul:first");
+
+    $thais.parents().next(".create-response").slideToggle(150, "swing");
+    $thais.parents().next(".create-response").find("textarea").focus();
 });

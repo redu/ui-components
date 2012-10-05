@@ -10,6 +10,10 @@ ul, li, ol { list-style: none; }
   width: 32px;
 }
 
+.icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
+  display: block;
+}
+
 hr {
   @include box-shadow(none);
   clear: both;
@@ -22,9 +26,10 @@ hr {
 .statuses {
   overflow: hidden;
 
-  .post-description { color: $gray6; }
+  .course-name { display: block; }
 
-  .input-user, .post-description { padding: 10px; }
+
+  .post-description { color: $gray6; }
 
   .input-user { .textshadow & { text-shadow: none; } }
 
@@ -32,7 +37,7 @@ hr {
     margin-right: 10px;
     float: left;
 
-    img {
+    img, .icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
       width: 32px;
       height: 32px;
     }
@@ -49,7 +54,6 @@ hr {
   .status-info { color: $gray5; }
 
   .close {
-    margin-left: 5px;
     text-indent: -9999px;
     float: right;
   }
@@ -105,7 +109,7 @@ hr {
       }
     }
   }
-  .teste { margin-left: 42px; }
+  .status-container { margin-left: 42px; }
   .status-content {
     @include border-radius;
     width: 100%;
@@ -201,18 +205,25 @@ hr {
           text-indent: -999px;
         }
 
+        .post-preview + hr { margin-bottom: 0; }
+
         .status-buttons {
           clear: both;
           float: right;
+          margin-top: 10px;
         }
       }
     }
   }
 
   .vision-at-environment {
-    .teste, .create-response { margin-left: 84px; }
+    .status-container, .create-response { margin-left: 84px; }
 
 
+    .course-name + .status-text {
+      margin-left: 42px;
+      margin-top: 10px;
+    }
   }
   .create-response {
 
@@ -239,7 +250,7 @@ hr {
     margin-left: 42px;
     padding: 10px 0;
 
-    .close { margin-right: 10px; }
+    .close { margin-right: 17px; }
 
     .java-applet { margin-left: 42px; }
 
@@ -282,8 +293,6 @@ hr {
   &.general-vision {
     overflow: hidden;
     margin-left: 0;
-
-    .status-text { margin-top: 10px; }
 
     hr {
       $box-shadow:
