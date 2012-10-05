@@ -2,6 +2,8 @@
 // Listas
 // ==========================================================================
 
+ul, li, ol { list-style: none; }
+
 .icon-link {
   float: left;
   margin-right: 10px;
@@ -10,19 +12,19 @@
 
 hr {
   @include box-shadow(none);
+  clear: both;
   margin: 10px 0;
   border-left: none;
   border-top: solid 1px $gray3;
   border-bottom: solid 1px $white;
 }
 
-.statuses .status {
+.statuses {
   overflow: hidden;
-  list-style: none;
 
   .post-description { color: $gray6; }
 
-  .input-user, .post-description { margin-right: 15px; }
+  .input-user, .post-description { padding: 10px; }
 
   .input-user { .textshadow & { text-shadow: none; } }
 
@@ -63,7 +65,7 @@ hr {
     @include border-radius;
     float: none;
     margin-top: 36px;
-    margin-left: 84px;
+    margin-left: 42px;
     clear: both;
     display: none;
     background-color: $gray2;
@@ -74,7 +76,7 @@ hr {
   .status-text {
     overflow: hidden;
     + .status-content {
-      margin-top: 2px;
+      margin-top: 6px;
       margin-left: 42px;
     }
   }
@@ -85,6 +87,7 @@ hr {
     float: right;
     line-height: 11px;
     margin-top: 10px;
+    padding-bottom: 10px;
     margin-left: 0;
 
     li {
@@ -102,9 +105,11 @@ hr {
       }
     }
   }
-
+  .teste { margin-left: 42px; }
   .status-content {
     @include border-radius;
+    width: 100%;
+    margin-left: 42px;
     display: inline-block;
     margin-left: 0;
     margin-top: 10px;
@@ -126,6 +131,8 @@ hr {
     }
 
     .post-text { padding: 10px 10px 10px 10px; }
+
+    .borderradius & { @include border-radius; }
 
     .post-preview {
       overflow: hidden;
@@ -202,6 +209,11 @@ hr {
     }
   }
 
+  .vision-at-environment {
+    .teste, .create-response { margin-left: 84px; }
+
+
+  }
   .create-response {
 
     &:before {
@@ -293,7 +305,7 @@ hr {
 
     .link-name { &:before { @include pseudo-before(5px, false); } }
 
-    .status-content { margin-left: 84px; }
+    .status-content { margin-left: 42px; }
 
     .create-response {
       clear: both;
@@ -318,6 +330,10 @@ hr {
   background-color: $gray1;
 
   ul, li, ol { list-style: none; }
+
+ .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5)); }
+
+ .borderradius & { @include border-radius(7px); }
 
  .course-item {
     .icon-link {
