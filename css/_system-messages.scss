@@ -5,13 +5,12 @@
 // Comum a todas as mensagens.
 .message-base {
   @include box-shadow(0 2px 10px 1px rgba(0, 0, 0, 0.4));
+  @include border-radius;
   padding: 10px;
   border-width: 1px;
   border-style: solid;
 
   p { margin-bottom: 0; }
-
-  .borderradius & { @include border-radius; }
 }
 
 // Ícone de fechar.

@@ -36,17 +36,14 @@ $filterBoxShadow:
   @extend .button-default;
   @include filterCommon;
   @include box-shadow($filterBoxShadow);
-
-  .borderradius & {
-    // No meio.
-    @include border-radius(0);
-    // Início.
-    &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
-    // Fim.
-    &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
-    // Sozinho.
-    &:first-child:last-child { @include border-radius($filterBorderRadius); }
-  }
+  // No meio.
+  @include border-radius(0);
+  // Início.
+  &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
+  // Fim.
+  &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
+  // Sozinho.
+  &:first-child:last-child { @include border-radius($filterBorderRadius); }
 
   &:last-child { @include box-shadow; }
 
@@ -57,23 +54,20 @@ $filterBoxShadow:
   .filters-general-view & {
     padding: 16px 5px 3px;
     @include box-shadow($filterBoxShadow);
-
-    .borderradius & { @include border-radius(0); }
+    @include border-radius(0);
   }
 
   .filter-group:first-child & {
+    @include border-radius($filterGroupBorderRadius 0 0 0);
     padding-right: 14px;
     padding-bottom: 16px;
 
     .filter-title { width: 111px; }
-
-    .borderradius & { @include border-radius($filterGroupBorderRadius 0 0 0); }
   }
 
   .filter-group:last-child & {
     @include box-shadow;
-
-    .borderradius & { @include border-radius(0 $filterGroupBorderRadius 0 0); }
+    @include border-radius(0 $filterGroupBorderRadius 0 0);
   }
 }
 

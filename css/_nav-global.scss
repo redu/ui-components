@@ -28,11 +28,10 @@
     0 -1px 0 $white inset,
     0 1px 8px 1px rgba(0, 0, 0, 0.4);
   @include box-shadow($boxShadow);
+  // Quando não estiver fixa no topo, ela tem borda arredondada.
+  @include border-radius(12px);
   height: 40px;
   padding: 1px 20px;
-
-  // Quando não estiver fixa no topo, ela tem borda arredondada.
-  .borderradius & { @include border-radius(12px); }
 
   // Fundo com gradiente de 3 cores.
   .cssgradients & { @include background-image(linear-gradient($gray2, $white, $gray2)); }
@@ -44,10 +43,9 @@
 
   // Se estiver fixa, remove as bordas arredondadas e o padding horizontal.
   .nav-global-fixed-top & {
+    @include border-radius(0);
     padding-left: 0;
     padding-right: 0;
-
-    .borderradius & { @include border-radius(0); }
   }
 }
 
@@ -81,6 +79,7 @@
 
 // Botão.
 .nav-global-button {
+  @include border-radius;
   float: left;
   padding: 10px;
   font-family: $museo-sans;
@@ -88,8 +87,6 @@
   font-size: 16px;
 
   & + & { margin-left: 1px; }
-
-  .borderradius & { @include border-radius; }
 
   &:hover {
     @include box-shadow(0 -1px 0 $gray4 inset);
@@ -105,9 +102,8 @@
   }
 
   &:hover:active {
+    @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5));
     background: $gray3 !important;
-
-    .boxshadow & { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5)); }
   }
 }
 

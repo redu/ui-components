@@ -58,15 +58,13 @@ td {
 		border-bottom: 1px solid $white;
 
 		&:first-child {
+			@include border-radius($table-border-radius 0 0 0);
 			border-left: $table-border-color;
-
-			.borderradius & { @include border-radius($table-border-radius 0 0 0); }
 		}
 
 		&:last-child {
+			@include border-radius(0 $table-border-radius 0 0);
 			border-right: $table-border-color;
-
-			.borderradius & { @include border-radius(0 $table-border-radius 0 0); }
 		}
 	}
 
@@ -77,15 +75,13 @@ td {
 	tr:last-child {
 		td {
 			&:first-child {
+				@include border-radius(0 0 0 $table-border-radius);
 				border-left: $table-border-color;
-
-				.borderradius & { @include border-radius(0 0 0 $table-border-radius); }
 			}
 
 			&:last-child {
+				@include border-radius(0 0 $table-border-radius 0);
 				border-right: $table-border-color;
-
-				.borderradius & { @include border-radius(0 0 $table-border-radius 0); }
 			}
 		}
 	}

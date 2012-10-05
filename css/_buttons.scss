@@ -5,6 +5,7 @@
 
 // Comum.
 %button {
+  @include border-radius(4px);
   display: inline-block;
   padding: 7px 10px;
   text-align: center;
@@ -24,8 +25,6 @@
 
     .cssgradients & { background-image: none; }
   }
-
-  .borderradius & { @include border-radius(4px); }
 }
 
 // Botão grande.

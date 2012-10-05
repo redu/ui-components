@@ -9,6 +9,7 @@
 // O bloco.
 .dropdown-menu {
   @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.5));
+  @include border-radius;
   background-color: $gray1;
   position: absolute;
   display: none;
@@ -18,8 +19,6 @@
   margin: 0;
   border: 1px solid $blue4;
   list-style: none;
-
-  .borderradius & { @include border-radius; }
 
   .filters-general-view & {
     left: 0;

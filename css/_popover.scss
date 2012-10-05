@@ -40,26 +40,25 @@ $popoverBorderRadius: 5px;
 // Parte de dentro.
 .popover-inner {
   @include box-shadow(0 1px 10px 1px rgba(0, 0, 0, 0.4));
+  @include border-radius($popoverBorderRadius);
   padding: 1px;
   width: 338px;
   overflow: hidden;
   background: $gray6;
 
   .popover-no-title & { width: 398px; }
-
-  .borderradius & { @include border-radius($popoverBorderRadius); }
 }
 
 .popover-title {
+  @include border-radius($popoverBorderRadius $popoverBorderRadius 0 0);
   padding: 10px;
   background-color: $gray1;
   border-bottom: 1px solid $gray3;
-
-  .borderradius & { @include border-radius($popoverBorderRadius $popoverBorderRadius 0 0); }
 }
 
 .popover-content {
   @include box-shadow(inset 0 1px 0 0 $white);
+  @include border-radius(0 0 $popoverBorderRadius $popoverBorderRadius);
   padding: 10px;
   background-color: $gray1;
 
@@ -67,7 +66,5 @@ $popoverBorderRadius: 5px;
   ul,
   ol { margin-bottom: 0; }
 
-  .borderradius & { @include border-radius(0 0 $popoverBorderRadius $popoverBorderRadius); }
-
-  .borderradius .popover-no-title & { @include border-radius($popoverBorderRadius); }
+  .popover-no-title & { @include border-radius($popoverBorderRadius); }
 }

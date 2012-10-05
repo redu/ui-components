@@ -22,12 +22,11 @@
 
 .progress-bar-total,
 .progress-bar-completed {
+  @include border-radius(3px);
   height: 5px;
 
   .progress-bar-thick &,
   &.progress-bar-thick { height: 10px; }
-
-  .borderradius & { @include border-radius(3px); }
 }
 
 // Barra de progresso total.

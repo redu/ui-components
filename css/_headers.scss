@@ -45,9 +45,8 @@
 
   // Borda arredondada no primeiro elemento.
   &:first-child {
+    @include border-radius(10px 10px 0 0);
     z-index: 3;
-
-    .borderradius & { @include border-radius(10px 10px 0 0); }
   }
 
   // O último elemento fica em azul claro (exceto quando for a página individual de uma aula).

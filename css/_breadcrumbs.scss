@@ -60,10 +60,9 @@
       0 0 0 1px $white inset,
       inset 0 0 4px 1px $blue2;
     @include box-shadow($boxShadow);
+    @include border-radius;
     position: relative;
     top: -1px;
-
-    .borderradius & { @include border-radius; }
   }
 }
 

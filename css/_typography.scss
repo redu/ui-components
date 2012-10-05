@@ -81,14 +81,13 @@ h5 strong { margin-top: 18px; }
 // ==========================================================================
 
 .inl-label {
+  @include border-radius(3px);
   font-size: 11px;
   line-height: 11px;
   padding: 3px 5px 2px 5px;
   text-transform: uppercase;
 
   & + & { margin-left: 5px; }
-
-  .borderradius & { @include border-radius(3px); }
 }
 
 .label-news {
