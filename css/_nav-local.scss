@@ -36,8 +36,6 @@ $navLocalItemActiveBorder: 1px solid $blue3;
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { background-color: $blue1; }
   }
 }
 
@@ -55,13 +53,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
     position: absolute;
     right: -11px;
     top: 0;
-
-    // Não exibe a aba no IE8.
-    .ie8 & { display: none; }
   }
-
-  // Completa a borda no IE8.
-  .ie8 & { border-right: $navLocalItemActiveBorder; }
 
   .cssgradients & { @include redu-gradient($blue4, $blue2, 0.2); }
 
@@ -70,16 +62,11 @@ $navLocalItemActiveBorder: 1px solid $blue3;
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiM3M2MzZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTU4YWM0IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   }
 
-  .no-cssgradients.ie8 &,
-  .no-cssgradients.ie8 &:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
-
   .boxshadow & { @include box-shadow(inset 0 1px 0 0 $blue1); }
 
   .borderradius & { @include border-radius($navLocalItemBorderRadius 0 0 $navLocalItemBorderRadius); }
 
   &:hover {
-    .ie8 & { border-color: $blue4; }
-
     .cssgradients & { @include redu-gradient($blue4, $blue2); }
 
     .no-cssgradients.gt-ie8 & {
@@ -146,11 +133,6 @@ $navLocalItemActiveBorder: 1px solid $blue3;
       0 1px 0 $white,
       0 -1px 0 $gray3;
     @include box-shadow($boxShadow);
-  }
-
-  .ie8 & {
-    border-top: 1px solid $gray3;
-    border-bottom: 1px solid $white;
   }
 
   .borderradius & { @include border-radius(7px); }

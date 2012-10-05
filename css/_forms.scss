@@ -41,8 +41,6 @@ $formControlBorderRadius: 3px;
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
   }
 }
 
@@ -147,8 +145,6 @@ input[type="password"] {
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
   }
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); }
-
   .control-success & { border-color: $green2; }
 
   .control-error & { border-color: $red2; }
@@ -167,8 +163,6 @@ input[type="password"] {
     background-image: none !important;
     border-color: $blue2;
     outline: 0;
-
-    .ie8 & { filter: none; }
 
     $boxShadowInsetNone: inset 0 0 0 rgba(0, 0, 0, 0);
 
@@ -260,7 +254,6 @@ input[type="checkbox"]:focus {
   overflow: hidden;
   color: $gray6;
 
-  .ie8 &,
   .gt-ie8 & { padding-top: 2px; }
 
   .control-inline & {
@@ -280,7 +273,6 @@ input[type="checkbox"]:focus {
 .control-checkbox + .control-checkbox {
   margin-top: 2px;
 
-  .ie8 &,
   .gt-ie8 & { margin-top: 0; }
 }
 
@@ -290,7 +282,6 @@ input[type="checkbox"]:focus {
   margin-left: -($base-line-height);
   margin-right: 10px;
 
-  .ie8 &,
   .gt-ie8 & { margin-top: -1px; }
 }
 
@@ -359,8 +350,6 @@ textarea[readonly] {
   cursor: not-allowed;
   background-color: $gray1 !important;
   background-image: none !important;
-
-  .ie8 & { filter: none !important; }
 
   &:hover { border-color: $gray4; }
 
@@ -462,8 +451,6 @@ textarea:-moz-placeholder { color: $gray4; }
   .control-append-area {
     background-color: $green2 !important;
     background-image: none !important;
-
-    .ie8 & { filter: none !important; }
   }
 }
 

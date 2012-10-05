@@ -67,9 +67,6 @@
         inset 0 0 4px 1px $blue2;
       @include box-shadow($boxShadow);
     }
-
-    // Borda azul para o IE8.
-    .ie8 & { border: 1px solid $blue3; }
   }
 }
 

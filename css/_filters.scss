@@ -88,8 +88,6 @@ $filterBoxShadow:
   z-index: 1;
 
   .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important); }
-
-  .no-boxshadow.ie8 & { filter: none; }
 }
 
 // Filtros (visão geral).
