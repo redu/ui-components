@@ -2,8 +2,8 @@
 $("a.reply-status, .cancel").live("click", function(e){
     e.preventDefault();
 
-    var $thais = $(this).parents("ul:first");
+    var $createResponse = $(this).parents("ul:first").next(".create-response");
 
-    $thais.parents().next(".create-response").slideToggle(150, "swing");
-    $thais.parents().next(".create-response").find("textarea").focus();
+    $createResponse.slideToggle(150, "swing");
+    $createResponse.find("textarea").focus();
 });
