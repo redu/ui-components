@@ -216,6 +216,10 @@ hr {
     }
   }
 
+  .status-container {
+    .responses { margin-left: 0; }
+  }
+
   .vision-at-environment {
     .status-container, .create-response { margin-left: 84px; }
 
@@ -250,7 +254,7 @@ hr {
     margin-left: 42px;
     padding: 10px 0;
 
-    .close { margin-right: 17px; }
+    .close { margin-right: 10px; }
 
     .java-applet { margin-left: 42px; }
 
