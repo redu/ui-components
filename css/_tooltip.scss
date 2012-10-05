@@ -31,6 +31,7 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 
 // Parte de dentro.
 .tooltip-inner {
+  @include box-shadow(0 0 6px 1px rgb(85, 85, 85));
   max-width: 200px;
   padding: 3px 8px;
   color: $white;
@@ -39,8 +40,6 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
   background-color: $tooltipBackgroundAndArrowColor;
 
   .borderradius & { @include border-radius(3px); }
-
-  .boxshadow & { @include box-shadow(0 0 6px 1px rgb(85, 85, 85)); }
 }
 
 // Seta.

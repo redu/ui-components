@@ -22,17 +22,14 @@
 
 // Interior da barra.
 .nav-global-inner {
+  // Borda branca interna e sombra.
+  $boxShadow:
+    0 1px 0 $white inset,
+    0 -1px 0 $white inset,
+    0 1px 8px 1px rgba(0, 0, 0, 0.4);
+  @include box-shadow($boxShadow);
   height: 40px;
   padding: 1px 20px;
-
-  // Borda branca interna e sombra.
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white inset,
-      0 -1px 0 $white inset,
-      0 1px 8px 1px rgba(0, 0, 0, 0.4);
-    @include box-shadow($boxShadow);
-  }
 
   // Quando não estiver fixa no topo, ela tem borda arredondada.
   .borderradius & { @include border-radius(12px); }
@@ -95,10 +92,9 @@
   .borderradius & { @include border-radius; }
 
   &:hover {
+    @include box-shadow(0 -1px 0 $gray4 inset);
     color: $blue3;
     text-decoration: none;
-
-    .boxshadow & { @include box-shadow(0 -1px 0 $gray4 inset); }
 
     .cssgradients & { @include background-image(linear-gradient(top, $gray3, $white)); }
 
@@ -124,8 +120,8 @@
 
   .textshadow & { text-shadow: 0 1px 0 $blue4; }
 
-  .boxshadow &,
-  .boxshadow &:hover {
+  &,
+  &:hover {
     $boxShadow:
       0 1px 0 $blue2 inset,
       0 -1px 0 $blue3 inset;
@@ -209,10 +205,9 @@
   }
 
   &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
     background-color: $blue1 !important;
     background-image: none !important;
-
-    .boxshadow & { @include box-shadow(0 0 0 1px $white inset); }
   }
 }
 
@@ -284,9 +279,8 @@
   }
 
   &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
     background-color: $blue1;
-
-    .boxshadow & { @include box-shadow(0 0 0 1px $white inset); }
   }
 }
 

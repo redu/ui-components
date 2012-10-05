@@ -9,11 +9,11 @@
 }
 
 hr {
+  @include box-shadow(none);
   margin: 10px 0;
   border-left: none;
   border-top: solid 1px $gray3;
   border-bottom: solid 1px $white;
-  .boxshadow & { @include box-shadow(none); }
 }
 
 .statuses .status {
@@ -53,11 +53,10 @@ hr {
   }
 
   hr {
+    @include box-shadow(none);
     margin: 10px 0;
     border-top: solid 1px $gray3;
     border-bottom: solid 1px $white;
-
-    .boxshadow & { @include box-shadow(none); }
   }
 
   .create-response {
@@ -278,17 +277,14 @@ hr {
     .status-text { margin-top: 10px; }
 
     hr {
+      $box-shadow:
+        0 1px 0 $white inset
+      , 0 0 9px rgb(240, 240, 240);
+      @include box-shadow($box-shadow);
       margin: 20px 0;
       clear: both;
       float: left;
       width: 100%;
-
-      .boxshadow & {
-        $box-shadow:
-          0 1px 0 $white inset
-        , 0 0 9px rgb(240, 240, 240);
-        @include box-shadow($box-shadow);
-      }
     }
 
     .course-name {
@@ -319,12 +315,11 @@ hr {
 }
 
 .courses-lists {
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
   padding: 26px 55px 26px 55px;
   background-color: $gray1;
 
   ul, li, ol { list-style: none; }
-
- .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5)); }
 
  .borderradius & { @include border-radius(7px); }
 
@@ -406,19 +401,17 @@ hr {
 }
 
 .list-course-space-gradient-top {
+  $boxShadow:
+    1px 0 0 $white inset,
+    0 1px 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
   .cssgradients & { @include background-image(linear-gradient(top, $gray2, $white 90%)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+90;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  }
-
-  .boxshadow & {
-    $boxShadow:
-      1px 0 0 $white inset,
-      0 1px 0 $white inset,
-      -1px 0 0 $white inset;
-    @include box-shadow($boxShadow);
   }
 
   .list-course-space-item:hover & {
@@ -432,18 +425,16 @@ hr {
 }
 
 .list-course-space-gradient-bottom {
+  $boxShadow:
+    1px 0 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray2, $white 90%)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#ffffff+10,f0f0f0+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjBmMGYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-  }
-
-  .boxshadow & {
-    $boxShadow:
-      1px 0 0 $white inset,
-      -1px 0 0 $white inset;
-    @include box-shadow($boxShadow);
   }
 
   .list-course-space-item:hover & {
@@ -557,17 +548,14 @@ hr {
 }
 
 .list-button-item {
+  $boxShadow:
+    0 1px 0 $white inset,
+    0 -1px 0 $white inset;
+  @include box-shadow($boxShadow);
   padding: 10px;
   border: 1px solid $gray4;
 
   > * { vertical-align: middle; }
-
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white inset,
-      0 -1px 0 $white inset;
-    @include box-shadow($boxShadow);
-  }
 
   .borderradius & { @include border-radius; }
 
@@ -716,6 +704,7 @@ hr {
 .list-mix-content { max-width: 80%; }
 
 .list-mix-inner {
+  @include box-shadow(0 1px 0 rgb(204, 204, 204));
   padding: 10px 0 10px 10px;
   overflow: hidden;
 
@@ -727,8 +716,6 @@ hr {
     margin-right: 10px;
     padding: 6px 10px;
   }
-
-  .boxshadow & { @include box-shadow(0 1px 0 rgb(204, 204, 204)); }
 
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
 
@@ -779,12 +766,11 @@ hr {
 
 // Link da imagem do ambiente.
 .list-environment-course-space-image-link {
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
   float: left;
   background-color: $white;
   padding: 2px;
   @include square(32px);
-
-  .boxshadow & { @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5)); }
 }
 
 // Link do título do ambiente.

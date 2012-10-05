@@ -119,6 +119,7 @@ textarea,
 input[type="text"],
 input[type="password"] {
   @include box-sizing;
+  @include box-shadow(inset 0 1px 0 $white);
   display: inline-block;
   border: 1px solid $gray4;
   padding: $formControlVerticalPadding $formControlHorizontalPadding;
@@ -135,8 +136,6 @@ input[type="password"] {
   }
 
   .borderradius & { @include border-radius($formControlBorderRadius); }
-
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
 
   .cssgradients & { @include redu-gradient($white, $gray3, 0.8); }
 
@@ -165,34 +164,25 @@ input[type="password"] {
     outline: 0;
 
     $boxShadowInsetNone: inset 0 0 0 rgba(0, 0, 0, 0);
-
-    .boxshadow & {
-      $boxShadow:
-        $boxShadowInsetNone,
-        0 0 6px 1px $blue2;
-      @include box-shadow($boxShadow);
-    }
+    $boxShadow:
+      $boxShadowInsetNone,
+      0 0 6px 1px $blue2;
+    @include box-shadow($boxShadow);
 
     .control-success & {
+      $boxShadow:
+        $boxShadowInsetNone,
+        0 0 6px 1px $green2;
+      @include box-shadow($boxShadow);
       border-color: $green2;
-
-      .boxshadow & {
-        $boxShadow:
-          $boxShadowInsetNone,
-          0 0 6px 1px $green2;
-        @include box-shadow($boxShadow);
-      }
     }
 
     .control-error & {
+      $boxShadow:
+        $boxShadowInsetNone,
+        0 0 6px 1px $red2;
+      @include box-shadow($boxShadow);
       border-color: $red2;
-
-      .boxshadow & {
-        $boxShadow:
-          $boxShadowInsetNone,
-          0 0 6px 1px $red2;
-        @include box-shadow($boxShadow);
-      }
     }
   }
 }
@@ -347,13 +337,12 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
+  @include box-shadow(none);
   cursor: not-allowed;
   background-color: $gray1 !important;
   background-image: none !important;
 
   &:hover { border-color: $gray4; }
-
-  .boxshadow & { @include box-shadow(none); }
 }
 
 
@@ -432,15 +421,13 @@ textarea:-moz-placeholder { color: $gray4; }
 
 .control-option-list-checked {
   .control-area {
-    .boxshadow & {
-      $rightSideWidth: 28px;
-      $boxShadow:
-        -($rightSideWidth) 0 0 $white inset
-      , 0 1px 0 $white inset;
-      @include box-shadow($boxShadow)
-    }
+    $rightSideWidth: 28px;
+    $boxShadow:
+      -($rightSideWidth) 0 0 $white inset
+    , 0 1px 0 $white inset;
+    @include box-shadow($boxShadow);
 
-    .boxshadow &:focus {
+    &:focus {
       $boxShadow:
         inset 0 0 0 rgba(0, 0, 0, 0)
       , 0 0 6px 1px $blue2;
@@ -491,6 +478,7 @@ textarea:-moz-placeholder { color: $gray4; }
 // Dropdown.
 .control-autocomplete-dropdown {
   @include box-sizing;
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4));
   position: absolute;
   z-index: 1;
   left: 0;
@@ -503,8 +491,6 @@ textarea:-moz-placeholder { color: $gray4; }
   .button { margin: 0 10px; }
 
   .borderradius & { @include border-radius; }
-
-  .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4)) }
 }
 
 // Legendas do tipo "Buscando...".

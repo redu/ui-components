@@ -19,11 +19,10 @@
   .open > &,
   .open > &:hover,
   &:active {
+    @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset);
     background-image: none;
 
     .cssgradients & { background-image: none; }
-
-    .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset); }
   }
 
   .borderradius & { @include border-radius(4px); }
@@ -229,7 +228,7 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     color: $color;
   }
 
-  .boxshadow &:active { @include box-shadow($facebook-button-box-shadow); }
+  &:active { @include box-shadow($facebook-button-box-shadow); }
 
   .textshadow & { text-shadow: none; }
 }
@@ -240,15 +239,12 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 // Botão de cadastro.
 .facebook-sign-up-button {
   @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(152, 192, 130) inset;
+  @include box-shadow($box-shadow);
   border-color: rgb(59, 110, 34) rgb(59, 110, 34) rgb(44, 81, 21);
   background-color: rgb(105, 167, 78);
-
-  .boxshadow & {
-    $box-shadow:
-      $facebook-button-box-shadow
-    , 0 1px 0 rgb(152, 192, 130) inset;
-    @include box-shadow($box-shadow);
-  }
 
   &:active {
     background: rgb(96, 153, 70);
@@ -259,15 +255,12 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 // Botão de login.
 .facebook-sign-in-button {
   @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(138, 156, 194) inset;
+  @include box-shadow($box-shadow);
   border-color: rgb(41, 68, 126) rgb(41, 68, 126) rgb(26, 53, 110);
   background-color: rgb(95, 120, 171);
-
-  .boxshadow & {
-    $box-shadow:
-      $facebook-button-box-shadow
-    , 0 1px 0 rgb(138, 156, 194) inset;
-    @include box-shadow($box-shadow);
-  }
 
   &:active {
     background: rgb(79, 106, 163);

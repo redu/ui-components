@@ -34,6 +34,7 @@
 // Item.
 .header-item {
   @include clear-fix;
+  @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4));
   display: block;
   border: 1px solid $white;
   padding: 6px 18px 6px 20px;
@@ -53,8 +54,6 @@
   &:last-child { z-index: 1; }
 
   &:hover { border-color: $blue2; }
-
-  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
 
   .cssgradients & { @include redu-gradient($gray3, $white); }
 

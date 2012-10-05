@@ -35,6 +35,7 @@ $filterBoxShadow:
 .filter {
   @extend .button-default;
   @include filterCommon;
+  @include box-shadow($filterBoxShadow);
 
   .borderradius & {
     // No meio.
@@ -47,11 +48,7 @@ $filterBoxShadow:
     &:first-child:last-child { @include border-radius($filterBorderRadius); }
   }
 
-  .boxshadow & {
-    @include box-shadow($filterBoxShadow);
-
-    &:last-child { @include box-shadow; }
-  }
+  &:last-child { @include box-shadow; }
 
   .filters & { float: left; }
 
@@ -59,10 +56,9 @@ $filterBoxShadow:
 
   .filters-general-view & {
     padding: 16px 5px 3px;
+    @include box-shadow($filterBoxShadow);
 
     .borderradius & { @include border-radius(0); }
-
-    .boxshadow & { @include box-shadow($filterBoxShadow); }
   }
 
   .filter-group:first-child & {
@@ -75,7 +71,7 @@ $filterBoxShadow:
   }
 
   .filter-group:last-child & {
-    .boxshadow & { @include box-shadow; }
+    @include box-shadow;
 
     .borderradius & { @include border-radius(0 $filterGroupBorderRadius 0 0); }
   }
@@ -83,11 +79,10 @@ $filterBoxShadow:
 
 // Estado ativo.
 .filter-active {
+  @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important);
   background: $blue1 !important;
   border-color: $blue3;
   z-index: 1;
-
-  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important); }
 }
 
 // Filtros (visão geral).

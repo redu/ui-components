@@ -55,18 +55,15 @@
   // Se estiver ativo, cria a borda azul.
   .breadcrumb-icon-active & {
     @include square(36px);
+    $boxShadow:
+      0 0 4px 1px $blue2,
+      0 0 0 1px $white inset,
+      inset 0 0 4px 1px $blue2;
+    @include box-shadow($boxShadow);
     position: relative;
     top: -1px;
 
     .borderradius & { @include border-radius; }
-
-    .boxshadow & {
-      $boxShadow:
-        0 0 4px 1px $blue2,
-        0 0 0 1px $white inset,
-        inset 0 0 4px 1px $blue2;
-      @include box-shadow($boxShadow);
-    }
   }
 }
 
