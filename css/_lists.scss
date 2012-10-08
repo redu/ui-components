@@ -2,8 +2,6 @@
 // Listas
 // ==========================================================================
 
-ul, li, ol { list-style: none; }
-
 .icon-link {
   float: left;
   margin-right: 10px;
@@ -24,6 +22,9 @@ hr {
 }
 
 .statuses {
+
+  ul, li, ol { list-style: none; }
+
   overflow: hidden;
 
   .course-name { display: block; }
