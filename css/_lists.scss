@@ -27,7 +27,7 @@ hr {
 
   overflow: hidden;
 
-  .course-name { display: block; }
+  .target { display: block; }
 
 
   .post-description { color: $gray6; }
@@ -225,7 +225,7 @@ hr {
     .status-container, .create-response { margin-left: 84px; }
 
 
-    .course-name + .status-text {
+    .target + .status-text {
       margin-left: 42px;
       margin-top: 10px;
     }
@@ -310,7 +310,7 @@ hr {
       width: 100%;
     }
 
-    .course-name {
+    .target {
       display: block;
       overflow: hidden;
     }
