@@ -17,4 +17,13 @@ $("a.cancel").live("click", function(e){
     $createResponse.slideToggle(150, "swing");
 });
 
+// Expandir o form para criação de status
+$(".status-buttons").hide();
 
+$(".create-status textarea").live("focus", function(e){
+  $(this).parents("form").find(".status-buttons").fadeIn();
+});
+
+$(".create-status .status-buttons .cancel").live("click", function(){
+  $(this).parents("form").find(".status-buttons").fadeOut();
+});

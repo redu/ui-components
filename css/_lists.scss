@@ -335,6 +335,12 @@ hr {
     }
 
   }
+
+  .create-status {
+    &.status-content { fieldset { height: 32px; } }
+  }
+
+    .status-buttons { float: right; margin: 0 10px 10px 0;}
 }
 
 .courses-lists {
@@ -401,6 +407,7 @@ hr {
       }
     }
   }
+
 }
 
 // Comum a lista de cursos/disciplinas.
