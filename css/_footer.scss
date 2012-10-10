@@ -1,0 +1,140 @@
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+
+// Variáveis
+// ==========================================================================
+
+// O valor da posição esquerda da logo.
+$footer-logo-left-position: 115px;
+
+
+// Técnica do sticky footer
+// ==========================================================================
+
+html,
+body { height: 100%; }
+
+.main-wrapper {
+  min-height: 100%;
+  margin: 0 auto (- $footer-height);
+}
+
+.footer-pusher { height: $footer-height; }
+
+
+// Wrapper de tudo.
+.footer {
+  @include box-sizing(border-box);
+  $box-shadow:
+    0 1px 0 $white inset
+  , 0 -1px 0 $white inset;
+  @include box-shadow($box-shadow);
+  height: $footer-height;
+  background-color: $gray3;
+  border-top: 1px rgb(178, 178, 178);
+
+  a:visited { color: $blue3; }
+
+  a:visited:hover { color: $blue4; }
+}
+
+
+// Logo do Redu Tech
+// ==========================================================================
+
+// Wrapper para o logo.
+.footer-logo-wrapper {
+  position: relative;
+  height: 125px;
+}
+
+// Link do logo.
+.footer-logo-link {
+  @include size(300px, 70px);
+  position: absolute;
+  top: 0;
+  left: (- $footer-logo-left-position);
+
+  &:hover { @include sprite-sprite(light-logo); }
+}
+
+// Imagem do logo.
+.footer-logo-img {
+  position: absolute;
+  left: $footer-logo-left-position;
+  top: 20px;
+}
+
+// CNPJ.
+.footer-cnpj {
+  font-size: 9px;
+  color: rgb(178, 178, 178);
+  position: absolute;
+  bottom: 0;
+}
+
+
+// Links de navegação
+// ==========================================================================
+
+.footer-navigation {
+  margin: 25px 0 0;
+  list-style: none;
+}
+
+
+// Redes sociais
+// ==========================================================================
+
+.footer-social-networks-legend {
+  margin-top: 40px;
+  height: 28px;
+
+  .legend {
+    display: inline-block;
+    max-width: 55px;
+  }
+}
+
+.footer-social-networks-legend +
+.footer-social-networks { margin-top: 5px; }
+
+.footer-social-networks-legend,
+.footer-social-networks { text-align: center; }
+
+.footer-social-network {
+  vertical-align: top;
+
+  & + & { margin-left: 10px; }
+}
+
+
+// Contato
+// ==========================================================================
+
+.footer-contact {
+  margin-top: 25px;
+  text-align: right;
+
+  h3 + .legend { margin-top: 10px; }
+
+  &:hover {
+    @include sprite-sprite(light-talk-to-us);
+    display: block;
+
+    .legend { color: $gray6; }
+
+    a { color: $blue4; }
+
+    .footer-talk-to-us-balloons {
+      @include sprite-sprite(talk-to-us_hover);
+      display: block;
+    }
+  }
+
+  a:hover { text-decoration: none; }
+}
+
+.footer-talk-to-us-balloons { display: block; }

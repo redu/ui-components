@@ -81,3 +81,6 @@ $grid-columns:                16 !default;
 $grid-column-width:           40px !default;
 $grid-gutter-width:           20px !default;
 $grid-row-width:              ($grid-columns * $grid-column-width) + ($grid-gutter-width * ($grid-columns - 1));
+
+// Rodapé
+$footer-height:               140px !default;

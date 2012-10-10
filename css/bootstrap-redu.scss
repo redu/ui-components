@@ -17,11 +17,15 @@
 @import "scaffolding";
 @import "grid";
 @import "layout";
+@import "sprites";
 
 // CSS base.
 @import "typography";
 @import "tables";
 @import "forms";
+
+// Rodapé.
+@import "footer";
 
 // Components comuns.
 @import "icons";
