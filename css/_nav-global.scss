@@ -109,12 +109,11 @@
 
 // Botão ativo.
 .nav-global-button-active {
+  @include text-shadow(0 1px 0 $blue4);
   color: $white;
 
   &:hover,
   &:visited { color: $white; }
-
-  .textshadow & { text-shadow: 0 1px 0 $blue4; }
 
   &,
   &:hover {

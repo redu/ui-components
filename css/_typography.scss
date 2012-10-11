@@ -98,10 +98,9 @@ h5 strong { margin-top: 18px; }
 
 .label-notify-me {
   @extend .inl-label;
+  @include text-shadow(0 -1px 0 $red5);
   color: $white;
   background: $red2;
-
-  .textshadow & { text-shadow: 0 -1px 0 $red5; }
 }
 
 .label-online {
@@ -112,10 +111,9 @@ h5 strong { margin-top: 18px; }
 
 .label-doubts {
   @extend .inl-label;
+  @include text-shadow(0 -1px 0 $orange5);
   background: $orange3;
   color: $white;
-
-  .textshadow & { text-shadow: 0 -1px 0 $orange5; }
 }
 
 

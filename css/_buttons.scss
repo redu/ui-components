@@ -87,6 +87,7 @@
 // Botão primário.
 .button-primary {
   @extend %button;
+  @include text-shadow(0 -1px 0 $blue4);
 
   .cssgradients & {
     @include redu-gradient($blue4, $blue2, 0.3);
@@ -104,7 +105,6 @@
     }
   }
 
-  .textshadow & { text-shadow: 0 -1px 0 $blue4; }
 
   $color: $white;
   $border-color: $blue2;
@@ -126,6 +126,7 @@
 // Botão de sucesso.
 .button-success {
   @extend %button;
+  @include text-shadow(0 -1px 0 $green4);
 
   .cssgradients & {
     @include redu-gradient($green3, $green2);
@@ -143,7 +144,6 @@
     }
   }
 
-  .textshadow & { text-shadow: 0 -1px 0 $green4; }
 
   $color: $white;
   $border-color: $green3;
@@ -165,6 +165,7 @@
 // Botão de perigo.
 .button-danger {
   @extend %button;
+  @include text-shadow(0 -1px 0 $red5);
 
   .cssgradients & {
     @include redu-gradient($red5, $red2, 0.4);
@@ -182,7 +183,6 @@
     }
   }
 
-  .textshadow & { text-shadow: 0 -1px 0 $red5; }
 
   $color: $white;
   $border-color: $red3;
@@ -210,6 +210,7 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 
 // Comum.
 %facebook-button {
+  @include text-shadow(none);
   $color: $white;
   display: inline-block;
   border-style: solid;
@@ -229,7 +230,6 @@ $facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 
   &:active { @include box-shadow($facebook-button-box-shadow); }
 
-  .textshadow & { text-shadow: none; }
 }
 
 .facebook-sign-up,

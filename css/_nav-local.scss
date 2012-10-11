@@ -78,9 +78,8 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   &:hover { text-decoration: none; }
 
   .nav-local-item-active & {
+    @include text-shadow(0 -1px 0 $blue4);
     @include link-color($white !important);
-
-    .textshadow & { text-shadow: 0 -1px 0 $blue4; }
   }
 
   .nav-local-item:hover & { color: $link-color-hover; }

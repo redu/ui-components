@@ -91,6 +91,7 @@
 }
 
 .tab-button-active {
+  @include text-shadow(0 -1px 0 $blue4);
   border-color: $blue3;
   background-color: $blue3;
   color: $white;
@@ -102,6 +103,4 @@
   }
 
   &:visited { color: $white; }
-
-  .textshadow & { text-shadow: 0 -1px 0 $blue4; }
 }

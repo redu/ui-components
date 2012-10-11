@@ -3,13 +3,12 @@
 // ==========================================================================
 
 %spinner-base {
+  @include text-shadow(none);
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: transparent !important;
 
 	&:hover { cursor: default; }
-
-	.textshadow & { text-shadow: none; }
 }
 
 .spinner-horizontal-blue,

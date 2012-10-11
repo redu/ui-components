@@ -3,14 +3,13 @@
 // ==========================================================================
 
 body {
+  @include text-shadow;
   margin: 0;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
   color: $text-color;
   background-color: $white;
-
-  .textshadow & { text-shadow: 0 1px 0 $white; }
 }
 
 // Links.

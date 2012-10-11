@@ -32,7 +32,7 @@ hr {
 
   .post-description { color: $gray6; }
 
-  .input-user { .textshadow & { text-shadow: none; } }
+  .input-user { @include text-shadow(none); }
 
   .icon-link {
     margin-right: 10px;

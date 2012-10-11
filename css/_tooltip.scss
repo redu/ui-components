@@ -11,6 +11,7 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 // Encapsulador.
 .tooltip {
   @include opacity(0);
+  @include text-shadow(none);
   position: absolute;
   z-index: $z-index-tooltip;
   display: block;
@@ -25,8 +26,6 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 
   &.right,
   &.bottom { margin-left: 2px; }
-
-  .textshadow & { text-shadow: none; }
 }
 
 // Parte de dentro.
