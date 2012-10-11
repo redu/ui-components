@@ -18,7 +18,7 @@ $("a.cancel").live("click", function(e){
 });
 
 // Expandir o form para criação de status
-$(".status-buttons").hide();
+$(".create-status .status-buttons").hide();
 
 $(".create-status textarea").live("focus", function(e){
   $(this).parents("form").find(".status-buttons").fadeIn();

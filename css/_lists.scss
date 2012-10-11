@@ -221,7 +221,7 @@ hr {
     .responses { margin-left: 0; }
   }
 
-  .vision-at-environment {
+  .with-target {
     .status-container, .create-response { margin-left: 84px; }
 
 
@@ -295,52 +295,18 @@ hr {
     .post-preview { padding: 0; }
   }
 
-  &.general-vision {
-    overflow: hidden;
-    margin-left: 0;
-
-    hr {
-      $box-shadow:
-        0 1px 0 $white inset
-      , 0 0 9px rgb(240, 240, 240);
-      @include box-shadow($box-shadow);
-      margin: 20px 0;
-      clear: both;
-      float: left;
-      width: 100%;
-    }
-
-    .target {
-      display: block;
-      overflow: hidden;
-    }
-
-    .status-info { color: $gray6; }
-
-    .link-name { &:before { @include pseudo-before(5px, false); } }
-
-    .status-content { margin-left: 42px; }
-
-    .create-response {
-      clear: both;
-
-      form { &:before { margin-right: -159px; } }
-    }
-
-    .status-text {
-      margin-left: 42px;
-      clear: both;
-
-      &:after { display: none; }
-    }
-
-  }
-
   .create-status {
     &.status-content { fieldset { height: 32px; } }
-  }
 
-    .status-buttons { float: right; margin: 0 10px 10px 0;}
+    .status-buttons {
+      float: right;
+      margin: 0 10px 10px 0;
+
+      input {
+        float: right;
+        margin-left: 5px; }
+    }
+  }
 }
 
 .courses-lists {
