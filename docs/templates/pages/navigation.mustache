@@ -34,7 +34,7 @@
   <div class="span13">
     <div class="content">
       <h2>Navegação</h2>
-      
+
       <h3 id="navigation-global">Navegação global</h3>
       <div class="row">
         <div class="span6">
@@ -644,7 +644,8 @@
       <div class="row">
         <div class="span13">
           <p>Estas abas são englobadas por um bloco de classe <code>.tabs</code>. Cada aba deve ficar dentro de uma classe <code>.tab</code>. A aba que estiver ativa no momento deve ter também a classe <code>.tab-active</code>.</p>
-          <p>O título da aba é um link com a classe <code>.tab-title</code> que deve ter também a classe do ícone (<code>.icon-xxx-lightblue_16_18-before</code>). Existe também um elemento de classe <code>.tab-sub-title</code> com um texto que só é exibido pela aba que está ativa.</p>
+          <p>O título da aba é um link com a classe <code>.tab-title</code> que deve ter também a classe do ícone (<code>.icon-xxx-lightblue_16_18-before</code>). Existe também um elemento de classe <code>.tab-sub-title.legend</code> com um texto que só é exibido pela aba que está ativa.</p>
+          <p>Adicionando a classe <code>.tabs-big</code> ao <code>.tabs</code>, as abas aumentam de tamanho.</p>
           <p>Os botões abaixo das abas devem estar englobados por um bloco com a classe <code>.tab-buttons</code>. Cada botão deve ter a classe <code>.tab-button</code> e a classe do ícone (<code>.icon-xxx-lightblue_16_18-before</code>). O botão que estiver ativo no momento deve ter também a classe <code>.tab-button-active</code> e a classe do ícone deve ser branca (<code>.icon-xxx-white_blue_16_18-before</code>).</p>
         </div>
       </div>
@@ -657,21 +658,36 @@
           <ul class="tabs">
             <li class="tab tab-active">
               <a href="#" class="tab-title icon-profile-lightblue_16_18-before" title="Perfil">Perfil</a>
-              <span class="tab-sub-title">Subnível da aba</span>
+              <span class="tab-sub-title legend">Subnível da aba</span>
             </li>
             <li class="tab">
               <a href="#" class="tab-title icon-account-lightblue_16_18-before" title="Conta">Conta</a>
-              <span class="tab-sub-title">Subnível da aba</span>
+              <span class="tab-sub-title legend">Subnível da aba</span>
             </li>
             <li class="tab">
               <a href="#" class="tab-title icon-plan-lightblue_16_18-before" title="Planos">Planos</a>
-              <span class="tab-sub-title">Subnível da aba</span>
+              <span class="tab-sub-title legend">Subnível da aba</span>
             </li>
           </ul>
           <div class="tab-buttons">
             <a href="#" class="tab-button tab-button-active icon-biography-white_blue_16_18-before" title="Biografia">Biografia</a><a href="#" class="tab-button icon-curriculum-lightblue_16_18-before" title="Currículo">Currículo</a>
           </div>
           <hr />
+
+          <ul class="tabs tabs-big">
+            <li class="tab tab-active">
+              <a href="#" class="tab-title icon-profile-lightblue_16_18-before" title="Perfil">Perfil</a>
+              <span class="tab-sub-title legend">Subnível da aba</span>
+            </li>
+            <li class="tab">
+              <a href="#" class="tab-title icon-account-lightblue_16_18-before" title="Conta">Conta</a>
+              <span class="tab-sub-title legend">Subnível da aba</span>
+            </li>
+            <li class="tab">
+              <a href="#" class="tab-title icon-plan-lightblue_16_18-before" title="Planos">Planos</a>
+              <span class="tab-sub-title legend">Subnível da aba</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="row">
