@@ -149,7 +149,7 @@
 
 // Define um gradiente vertical com as regras do Redu.
 //  $color1: cor inferior.
-//  $color2: cor superaior.
+//  $color2: cor superior.
 //  $slider: valor do slider.
 @mixin redu-gradient($color1, $color2, $slider: 0.5) {
   @if ($slider < 0.5) {
@@ -167,6 +167,14 @@
 //  $text-shadow: os valores para a sombra de texto.
 @mixin text-shadow($text-shadow: 0 1px 0 $white) {
   .textshadow { text-shadow: $text-shadow; }
+}
+
+// Gradiente já com classe prefixada do Modernizr.
+//  $color1: cor inferior.
+//  $color2: cor superior.
+//  $slider: valor do slider.
+@mixin gradient($color1, $color2, $slider: 0.5) {
+  .cssgradients & { @include redu-gradient($color1, $color2, $slider: 0.5); }
 }
 
 
