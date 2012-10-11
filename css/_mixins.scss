@@ -166,7 +166,7 @@
 // Text-shadow.
 //  $text-shadow: os valores para a sombra de texto.
 @mixin text-shadow($text-shadow: 0 1px 0 $white) {
-  .textshadow { text-shadow: $text-shadow; }
+  .textshadow & { text-shadow: $text-shadow; }
 }
 
 // Gradiente já com classe prefixada do Modernizr.
