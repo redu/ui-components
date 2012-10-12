@@ -177,6 +177,17 @@
   .cssgradients & { @include redu-gradient($color1, $color2, $slider: 0.5); }
 }
 
+// Função calc().
+//  $property: a propriedade a ser usada.
+//  $expression: a expressão a ser calculada.
+//  $older-browser-value: o valor da propriedade para navegadores sem calc().
+@mixin calc($property, $expression, $older-browser-value) {
+  #{$property}: $older-browser-value;
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
 
 // Mixins dos sistema de grids.
 // ==========================================================================
