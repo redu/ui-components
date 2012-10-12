@@ -417,3 +417,52 @@
     background-image: none;
   }
 }
+
+// Dado uma lista, organiza seus itens em colunas de tamanhos iguais.
+//  $list-item-class: o nome da classe do item da lista.
+//  $gutter: o espaçamento esquerdo entre cada item.
+//  $columns: a quantidade de colunas desejada.
+@mixin list-column($list-item-class, $gutter: 10px, $columns: 2) {
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+
+  & > .#{$list-item-class} {
+    $old-browser-value: percentage(((100 / $columns) - 1) / 100) + 1;
+    // Calcula a porcentagem de largura de cada item, levando em consideração
+    // também os espaçamentos esquerdos.
+    $expression: "(100% - ((#{$columns} - 1) * #{$gutter})) / #{$columns}";
+    @include calc("width", $expression, $old-browser-value);
+    margin-left: $gutter;
+    float: left;
+
+    // Remove o espaçamento do primeiro e cada ($columns+1)-ésimo item.
+    &:first-child,
+    &:nth-child(#{$columns}n+#{$columns+1}) { margin-left: 0; }
+  }
+}
+
+// Dado uma lista, adiciona uma linha separadora depois de cada $n-ésimo item.
+//  $list-item-class: o nome da classe do item da lista.
+//  $n: a ordem do item em que o separador será incluído.
+//  $margin-bottom: o tamanho do espaçamento entre linhas.
+//  $color: a cor do separador.
+@mixin list-column-separator($list-item-class, $n: 2, $margin-bottom: 10px, $color: $gray3) {
+  & > .#{$list-item-class} {
+    &:nth-child(#{$n}n+#{$n}) {
+      margin-bottom: $margin-bottom;
+      position: relative;
+
+      &:after {
+        background-color: $color;
+        bottom: (- ($margin-bottom / 2));
+        content: "";
+        display: block;
+        height: 1px;
+        right: 0;
+        position: absolute;
+        width: (100% * $n) + 50;
+      }
+    }
+  }
+}
