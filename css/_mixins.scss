@@ -420,14 +420,16 @@
 
 // Dado uma lista, organiza seus itens em colunas de tamanhos iguais.
 //  $list-item-class: o nome da classe do item da lista.
-//  $gutter: o espaçamento esquerdo entre cada item.
 //  $columns: a quantidade de colunas desejada.
-@mixin list-column($list-item-class, $gutter: 10px, $columns: 2) {
+//  $gutter: o espaçamento esquerdo entre cada item.
+@mixin list-column($list-item-class, $columns: 2, $gutter: 10px) {
   overflow: hidden;
+  padding-bottom: 1px;
   list-style: none;
   margin: 0;
 
   & > .#{$list-item-class} {
+    @include box-sizing(border-box);
     $old-browser-value: percentage(((100 / $columns) - 1) / 100) + 1;
     // Calcula a porcentagem de largura de cada item, levando em consideração
     // também os espaçamentos esquerdos.
@@ -435,6 +437,7 @@
     @include calc("width", $expression, $old-browser-value);
     margin-left: $gutter;
     float: left;
+    position: relative;
 
     // Remove o espaçamento do primeiro e cada ($columns+1)-ésimo item.
     &:first-child,
@@ -462,6 +465,12 @@
         right: 0;
         position: absolute;
         width: (100% * $n) + 50;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        &:after { content: none; }
       }
     }
   }

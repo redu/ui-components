@@ -850,3 +850,155 @@ hr {
     }
   }
 }
+
+
+// Lista de colunas.
+// ==========================================================================
+
+.list-1-column { @include list-column("general-list-item", 1); }
+
+.list-1-column-separator { @include list-column-separator("general-list-item", 1); }
+
+.list-2-columns { @include list-column("general-list-item"); }
+
+.list-2-columns-separator { @include list-column-separator("general-list-item"); }
+
+.list-3-columns { @include list-column("general-list-item", 3); }
+
+.list-3-columns-separator { @include list-column-separator("general-list-item", 3); }
+
+
+// Lista genérica (Ambientes que Participo, Ambientes de Aprendizado,
+// REA [em início], REA, REA [aplicativos favoritos]).
+// ==========================================================================
+
+// Item da lista.
+.general-list-item {
+  padding: 5px;
+  color: $gray5;
+
+  // Botão no canto inferior direito.
+  .general-list-item-footer +
+  .button-default {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  &:hover {
+    @include border-radius;
+    @include box-shadow(0 1px 0 $gray4);
+    @include gradient($gray3, $gray1, 0.2);
+
+    &,
+    .legend { color: $gray6; }
+
+    // Mostra o ícone de fechar e o botão.
+    .general-list-item-close,
+    .general-list-item-footer +
+    .button-default { display: block; }
+  }
+}
+
+// Título.
+.general-list-item-title {
+  font: 500 18px/18px $museo-sans;
+  letter-spacing: -1px;
+}
+
+// Link (dentro do título).
+.general-list-item-title-link {
+  &,
+  &:visited { color: $black; }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+
+  &[class*="icon-"][class*="-before"]:before { margin-right: 7px; }
+}
+
+.general-list-item-title +
+.general-list-item-body { margin-top: 10px; }
+
+// Corpo.
+.general-list-item-body { @include clear-fix; }
+
+// Colunas.
+.general-list-item-column {
+  float: left;
+
+  .general-list-item-title +
+  .legend { margin-top: 5px; }
+
+  .legend { display: block; }
+
+  .legend +
+  .legend { margin-top: 3px; }
+
+  .legend +
+  .general-list-item-counters { margin-top: 10px; }
+
+  .legend +
+  .button-default { margin-top: 5px; }
+
+  & +
+  & { margin-left: 10px; }
+}
+
+// Lista de contadores.
+.general-list-item-counters {
+  margin: 0;
+  list-style: none;
+  @include clear-fix;
+}
+
+// Contadores.
+.general-list-item-counter {
+  float: left;
+  font: 100 16px/18px $museo-sans;
+
+  & +
+  & { margin-left: 20px; }
+}
+
+.general-list-item-body +
+.general-list-item-footer { margin-top: 5px; }
+
+// Rodapé.
+.general-list-item-footer {
+  @include clear-fix;
+
+  .general-list-item-stars,
+  .general-list-item-counters { float: left; }
+
+  .general-list-item-stars +
+  .general-list-item-counters { margin-left: 12px; }
+}
+
+// Estrelas.
+.general-list-item-stars {
+  margin: 0;
+  list-style: none;
+  @include clear-fix;
+  width: 88px;
+}
+
+// Estrela.
+.general-list-item-star {
+  float: left;
+
+  & +
+  & { margin-left: 2px; }
+}
+
+// Ícone de fechar.
+.general-list-item-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}

@@ -616,8 +616,13 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Especialista.
-.icon-specialist-lightgray_16_18-before {
-  &:before { @extend .icon-specialist-lightgray_16_18; }
+.icon-specialist-gray_16_18-before {
+  &:before { @extend .icon-specialist-gray_16_18; }
+}
+
+// Administrador / Gestor.
+.icon-administrator-gray_16_18-before {
+  &:before { @extend .icon-administrator-gray_16_18; }
 }
 
 
