@@ -217,3 +217,23 @@
 }
 
 .lecture-stats-group + .lecture-stars { margin-left: 20px; }
+
+
+// Títulos dos Portais (Ambientes, Aplicativos).
+// ==========================================================================
+
+.portal-title {
+  &,
+  &:visited { color: $gray5; }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+
+  &:before {
+    margin-right: 10px;
+    float: left;
+  }
+}
