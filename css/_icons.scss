@@ -593,6 +593,34 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-list-blue_16_18; }
 }
 
+// Portal de Aplicativos.
+.icon-apps-portal-gray_48_50-before {
+  &:before { @extend .icon-apps-portal-gray_48_50; }
+  &:hover:before { @extend .icon-apps-portal-halfgray_halfblue_48_50; }
+}
+.icon-apps-portal-lightblue_16_18-before {
+  &:before { @extend .icon-apps-portal-lightblue_16_18; }
+  &:hover:before { @extend .icon-apps-portal-blue_16_18; }
+}
+
+// Recursos Educacionais Abertos.
+.icon-oer-lightblue_16_18-before {
+  &:before { @extend .icon-oer-lightblue_16_18; }
+  &:hover:before { @extend .icon-oer-blue_16_18; }
+}
+
+// Favoritos.
+.icon-favorite-lightblue_16_18-before {
+  &:before { @extend .icon-favorite-lightblue_16_18; }
+  &:hover:before { @extend .icon-favorite-blue_16_18; }
+}
+
+// Especialista.
+.icon-specialist-lightgray_16_18-before {
+  &:before { @extend .icon-specialist-lightgray_16_18; }
+}
+
+
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
 .filter:hover,
