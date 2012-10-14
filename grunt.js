@@ -17,6 +17,7 @@ module.exports = function(grunt) {
   , 'js/bootstrap-local-nav.js'
   , 'js/bootstrap-modal-redu.js'
   , 'js/bootstrap-spinners.js'
+  , 'js/bootstrap-search-form.js'
   ];
 
   grunt.initConfig({
