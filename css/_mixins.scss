@@ -428,7 +428,7 @@
   list-style: none;
   margin: 0;
 
-  & > .#{$list-item-class} {
+  & > li {
     @include box-sizing(border-box);
     $old-browser-value: percentage(((100 / $columns) - 1) / 100) + 1;
     // Calcula a porcentagem de largura de cada item, levando em consideração
@@ -441,7 +441,7 @@
 
     // Remove o espaçamento do primeiro e cada ($columns+1)-ésimo item.
     &:first-child,
-    &:nth-child(#{$columns}n+#{$columns+1}) { margin-left: 0; }
+    &:nth-of-type(#{$columns}n+#{$columns+1}) { margin-left: 0; }
   }
 }
 
@@ -451,8 +451,8 @@
 //  $margin-bottom: o tamanho do espaçamento entre linhas.
 //  $color: a cor do separador.
 @mixin list-column-separator($list-item-class, $n: 2, $margin-bottom: 10px, $color: $gray3) {
-  & > .#{$list-item-class} {
-    &:nth-child(#{$n}n+#{$n}) {
+  & > li {
+    &:nth-of-type(#{$n}n+#{$n}) {
       margin-bottom: $margin-bottom;
       position: relative;
 
