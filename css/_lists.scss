@@ -80,6 +80,7 @@ hr {
 
   .status-text {
     overflow: hidden;
+
     + .status-content {
       margin-top: 6px;
       margin-left: 42px;
@@ -94,7 +95,7 @@ hr {
     float: right;
     line-height: 11px;
     margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-left: 0;
 
     li {
@@ -298,7 +299,7 @@ hr {
   }
 
   .create-status {
-    &.status-content { fieldset { height: 32px; } }
+    &.status-content { fieldset { height: 100%; } }
 
     .status-buttons {
       float: right;
@@ -306,7 +307,8 @@ hr {
 
       input {
         float: right;
-        margin-left: 5px; }
+        margin-left: 5px;
+      }
     }
   }
 }

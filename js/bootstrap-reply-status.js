@@ -17,13 +17,17 @@ $("a.cancel").live("click", function(e){
     $createResponse.slideToggle(150, "swing");
 });
 
-// Expandir o form para criação de status
-$(".create-status .status-buttons").hide();
+$(function() {
+  // Expandir o form para criação de status
+  $(".create-status .status-buttons").hide();
 
-$(".create-status textarea").live("focus", function(e){
-  $(this).parents("form").find(".status-buttons").fadeIn();
-});
+  $(".create-status textarea").live("focus", function(e){
+    $(this).parents("form").find(".status-buttons").fadeIn();
+     $(this).parents("form").find("textarea").css("height","122");
+  });
 
-$(".create-status .status-buttons .cancel").live("click", function(){
-  $(this).parents("form").find(".status-buttons").fadeOut();
-});
+  $(".create-status .status-buttons .cancel").live("click", function(){
+    $(this).parents("form").find(".status-buttons").fadeOut();
+     $(this).parents("form").find("textarea").css("height","32");
+  });
+})
