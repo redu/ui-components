@@ -710,9 +710,8 @@ a:hover,
 }
 
 // Agrupamento
-.icon-grouping-gray_16_18-before,
-.icon-grouping-gray_16_18 {
-  &:hover { @extend .icon-grouping-gray_16_18; }
+.icon-grouping-gray_16_18-before {
+  &:before { @extend .icon-grouping-gray_16_18; }
 }
 
 // Conexões
