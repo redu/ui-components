@@ -279,6 +279,12 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-message-darkgray_32_34; }
 }
 
+// Mensagens Enviadas.
+.icon-sent-message-gray_32_34-before {
+  &:before { @extend .icon-sent-message-gray_32_34; }
+  .header-breadcrumb:hover &:before { @extend .icon-sent-message-blue_32_34; }
+}
+
 // Parceiro.
 .icon-partner-lightblue_16_18-before {
   &:before { @extend .icon-partner-lightblue_16_18; }
@@ -308,12 +314,17 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-wall-gray_16_18-before {
   &:before { @extend .icon-wall-gray_16_18; }
+  &:before:hover { @extend .icon-wall-blue_16_18; }
 }
 .icon-wall-lightblue_16_18-before {
   &:hover:before { @extend .icon-wall-blue_16_18; }
 }
 .wall-stats-new.icon-wall-lightblue_16_18-before {
   &:hover:before { @extend .icon-wall-blue_16_18; }
+}
+.icon-wall-gray_32_34-before {
+  &:before { @extend .icon-wall-gray_32_34; }
+  &:before:hover { @extend .icon-wall-blue_32_34; }
 }
 
 // Aula.
@@ -615,9 +626,22 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-favorite-blue_16_18; }
 }
 
+.icon-favorite-gray_32_34 {
+  &:before { @extend .icon-favorite-gray_32_34; }
+  &:hover:before { @extend .icon-favorite-blue_32_34; }
+}
+
+.icon-favorite-blue_32_34 {
+  &:before { @extend .icon-favorite-blue_32_34; }
+}
+
 // Especialista.
 .icon-specialist-gray_16_18-before {
   &:before { @extend .icon-specialist-gray_16_18; }
+}
+
+.icon-specialist-gray_32_34-before {
+  &:before { @extend .icon-specialist-gray_32_34; }
 }
 
 // Administrador / Gestor.
@@ -686,7 +710,20 @@ a:hover,
 }
 
 // Agrupamento
-.icon-grouping-gray_16_16-before,
-.icon-grouping-gray_16_16 {
-  &:hover { @extend .icon-grouping-gray_16_16; }
+.icon-grouping-gray_16_18-before,
+.icon-grouping-gray_16_18 {
+  &:hover { @extend .icon-grouping-gray_16_18; }
 }
+
+// Conexões
+.icon-connections-gray_32_34 {
+  &:hover { @extend .icon-connections-blue_32_34; }
+}
+
+// Instituição
+.icon-connections-gray_32_34 {
+  &:hover { @extend .icon-institution-blue_32_34; }
+}
+
+
+
