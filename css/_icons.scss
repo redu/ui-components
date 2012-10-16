@@ -684,3 +684,9 @@ a:hover,
   &:before { @extend .icon-video-gray_16_16; }
   &:hover:before { @extend .icon-video-blue_16_16;}
 }
+
+// Agrupamento
+.icon-grouping-gray_16_16-before,
+.icon-grouping-gray_16_16 {
+  &:hover { @extend .icon-grouping-gray_16_16; }
+}
