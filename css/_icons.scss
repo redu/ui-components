@@ -299,21 +299,21 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Mural.
-.icon-wall-lightblue_16_18-before {
-  &:before { @extend .icon-wall-lightblue_16_18; }
-  .filter:hover &:before { @extend .icon-wall-blue_16_18; }
+.icon-wall-lightblue_16_16-before {
+  &:before { @extend .icon-wall-lightblue_16_16; }
+  .filter:hover &:before { @extend .icon-wall-blue_16_16; }
 }
-.icon-wall-white_blue_16_18-before {
-  &:before { @extend .icon-wall-white_blue_16_18; }
+.icon-wall-white_blue_16_16-before {
+  &:before { @extend .icon-wall-white_blue_16_16; }
 }
 .icon-wall-gray_16_18-before {
   &:before { @extend .icon-wall-gray_16_18; }
 }
-.icon-wall-lightblue_16_18-before {
-  &:hover:before { @extend .icon-wall-blue_16_18; }
+.icon-wall-lightblue_16_16-before {
+  &:hover:before { @extend .icon-wall-blue_16_16; }
 }
-.wall-stats-new.icon-wall-lightblue_16_18-before {
-  &:hover:before { @extend .icon-wall-blue_16_18; }
+.wall-stats-new.icon-wall-lightblue_16_16-before {
+  &:hover:before { @extend .icon-wall-blue_16_16; }
 }
 
 // Aula.
@@ -502,11 +502,11 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Vídeo.
-.icon-video-lightblue_16_18-before {
-  &:before {  @extend .icon-video-lightblue_16_18; }
+.icon-video-lightblue_16_16-before {
+  &:before {  @extend .icon-video-lightblue_16_16; }
 }
-.list-button li:hover .icon-video-lightblue_16_18-before {
-  &:before {  @extend .icon-video-blue_16_18; }
+.list-button li:hover .icon-video-lightblue_16_16-before {
+  &:before {  @extend .icon-video-blue_16_16; }
 }
 
 // Página de texto.
@@ -680,7 +680,7 @@ a:hover,
 .button-disabled:hover .icon-close-gray_8_10 { @extend .icon-close-gray_8_10; }
 
 //video
-.icon-video-gray_16_18-before {
-  &:before { @extend .icon-video-gray_16_18; }
-  &:hover:before { @extend .icon-video-blue_16_18;}
+.icon-video-gray_16_16-before {
+  &:before { @extend .icon-video-gray_16_16; }
+  &:hover:before { @extend .icon-video-blue_16_16;}
 }
