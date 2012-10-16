@@ -7,7 +7,7 @@ $icon-layout: smart;
 // Inclui as classes individuais de cada sprite automaticamente.
 @include all-icon-sprites;
 
-.logo-redu-color_140_40, 
+.logo-redu-color_140_40,
 .logo-redu-gray_140_40 { background: url('../img/logos.png') no-repeat; }
 
 .logo-redu-color_140_40 {
@@ -592,6 +592,45 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-list-lightblue_16_18; }
   &:hover:before { @extend .icon-list-blue_16_18; }
 }
+
+// Portal de Aplicativos.
+.icon-apps-portal-gray_48_50-before {
+  &:before { @extend .icon-apps-portal-gray_48_50; }
+  &:hover:before { @extend .icon-apps-portal-halfgray_halfblue_48_50; }
+}
+.icon-apps-portal-lightblue_16_18-before {
+  &:before { @extend .icon-apps-portal-lightblue_16_18; }
+  &:hover:before { @extend .icon-apps-portal-blue_16_18; }
+}
+
+// Recursos Educacionais Abertos.
+.icon-oer-lightblue_16_18-before {
+  &:before { @extend .icon-oer-lightblue_16_18; }
+  &:hover:before { @extend .icon-oer-blue_16_18; }
+}
+
+// Favoritos.
+.icon-favorite-lightblue_16_18-before {
+  &:before { @extend .icon-favorite-lightblue_16_18; }
+  &:hover:before { @extend .icon-favorite-blue_16_18; }
+}
+
+// Especialista.
+.icon-specialist-gray_16_18-before {
+  &:before { @extend .icon-specialist-gray_16_18; }
+}
+
+// Administrador / Gestor.
+.icon-administrator-gray_16_18-before {
+  &:before { @extend .icon-administrator-gray_16_18; }
+}
+
+// Busca.
+.icon-magnifier-lightblue_16_18-before {
+  &:before { @extend .icon-magnifier-lightblue_16_18; }
+  &:hover:before { @extend .icon-magnifier-blue_16_18; }
+}
+
 
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,

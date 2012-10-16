@@ -13,11 +13,11 @@ $modalWidth: 520px;
 
 // Recalcula o z-index onde apropriado.
 .modal-open {
-  .dropdown-menu {  z-index: $zindexDropdown + $zindexModal; }
+  .dropdown-menu {  z-index: $z-index-dropdown + $z-index-modal; }
 
-  .popover       {  z-index: $zindexPopover  + $zindexModal; }
+  .popover       {  z-index: $z-index-popover  + $z-index-modal; }
 
-  .tooltip       {  z-index: $zindexTooltip  + $zindexModal; }
+  .tooltip       {  z-index: $z-index-tooltip  + $z-index-modal; }
 }
 
 // Fundo.
@@ -28,25 +28,22 @@ $modalWidth: 520px;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $zindexModalBackdrop;
+  z-index: $z-index-modal-backdrop;
   background-color: rgb(152, 152, 152);
 }
 
 // Base modal.
 .modal {
+  @include box-shadow(0 4px 20px 1px rgba(0, 0, 0, 0.5));
+  @include border-radius($modalBorderRadius);
   position: fixed;
   top: 80px;
   left: 50%;
-  z-index: $zindexModal;
-  overflow: auto;
+  z-index: $z-index-modal;
   width: $modalWidth;
   margin: 0 0 0 (- ($modalWidth / 2));
   background-color: $white;
   border: 1px solid $gray6;
-
-  .borderradius & { @include border-radius($modalBorderRadius); }
-
-  .boxshadow & { @include box-shadow(0 4px 20px 1px rgba(0, 0, 0, 0.5)); }
 }
 
 // Aumenta a largura para 14 grids.
@@ -57,15 +54,17 @@ $modalWidth: 520px;
 }
 
 // Cabeçalho.
-.modal-header { padding: 20px 20px 10px; }
+.modal-header {
+  @include border-radius($modalBorderRadius $modalBorderRadius 0 0);
+  padding: 20px 20px 10px;
+}
 
 // Estilo cinza para o cabeçalho.
 .modal-header-gray {
+  @include box-shadow(0 -1px 0 $white inset);
   background-color: $gray2;
   border-bottom: 1px solid $gray3;
   padding: 20px;
-
-  .boxshadow & { @include box-shadow(0 -1px 0 $white inset); }
 }
 
 // Título.
@@ -92,10 +91,10 @@ $modalWidth: 520px;
 
 // Rodapé.
 .modal-footer {
+  @include box-shadow(inset 0 1px 0 $white);
+  @include border-radius(0 0 $modalBorderRadius $modalBorderRadius);
   padding: 20px;
   background-color: $gray2;
   border-top: 1px solid $gray3;
   text-align: right;
-
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
 }

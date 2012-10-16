@@ -1,51 +1,39 @@
-// ==========================================================================
+﻿// ==========================================================================
 // Botões
 // ==========================================================================
 
-// Comum a todos os botões.
-// ==========================================================================
 
-.button {
+// Comum.
+%button {
+  @include border-radius(4px);
   display: inline-block;
-  padding: 6px 10px 6px;
+  padding: 7px 10px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
   border-width: 1px;
   border-style: solid;
-  outline: none;
-
-  & + & { margin-left: 5px; }
+  line-height: 16px;
 
   &:hover { text-decoration: none; }
 
   .open > &,
-  &:active,
-  &:active:hover {
-    background-image: none !important;
+  .open > &:hover,
+  &:active {
+    @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset);
+    background-image: none;
 
-    .boxshadow & { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5) !important); }
-
-    .no-boxshadow.ie8 & { filter: none !important; }
+    .cssgradients & { background-image: none; }
   }
-
-  &.button-disabled,
-  &.button-disabled:hover,
-  &:disabled {
-    filter: none !important;
-    background-image: none !important;
-    cursor: default;
-
-    .boxshadow & { @include box-shadow(none !important); }
-  }
-
-  .borderradius & { @include border-radius(4px); }
 }
 
 // Botão grande.
 .button-big {
   font-size: 16px;
-  line-height: 28px;
+  font-weight: lighter;
+  line-height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .button-dropdown {
@@ -60,307 +48,221 @@
 }
 
 // Botão padrão.
-// ==========================================================================
-
 .button-default {
-  @extend .button;
-  color: $blue3;
-  border-color: $gray4;
+  @extend %button;
 
-  .cssgradients & { @include filter-gradient-vertical($gray1, $gray3, 60%, 100%); }
+  .cssgradients & {
+    @include redu-gradient($gray3, $gray1, 0.2);
+
+    &:hover { @include redu-gradient($blue1, $gray1); }
+  }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f7f7f7+60,e6e6e6+100;Custom
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-  }
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 ); }
-
-  .boxshadow & { @include box-shadow(inset 0 1px 0 0 $white); }
-
-  &:hover {
-    border-color: $blue2;
-    color: $blue4;
-
-    .boxshadow & {
-      $boxShadow:
-        inset 0 1px 0 $white,
-        inset 0 -1px 0 $white;
-      @include box-shadow($boxShadow);
-    }
-
-    .cssgradients & { @include filter-gradient-vertical($gray1, $blue1); }
-
-    .no-cssgradients.gt-ie8 & {
+    &:hover {
       // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,dbeff7+100;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 ); }
   }
 
-  .open &,
-  &:active,
-  &:active:hover { background-color: $blue1 !important; }
-
-  &:active:hover { border-color: $blue4; }
-
-  &.button-disabled,
-  &.button-disabled:hover,
-  &:disabled {
-    background-color: $gray2 !important;
-    color: $gray5 !important;
-    border-color: $gray3;
-  }
+  $color: $blue3;
+  $border-color: $gray4;
+  $box-shadow-color: $white;
+  $background-color: $gray1;
+  $hover-color: $blue4;
+  $hover-border-color: $blue2;
+  $hover-background-color: $blue1;
+  $active-border-color: $blue3;
+  $active-background-color: $blue1;
+  $hover-active-color: $blue4;
+  $hover-active-border-color: $blue4;
+  $disabled-color: $gray5;
+  $disabled-border-color: $gray3;
+  $disabled-background-color: $gray2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão primário.
-// ==========================================================================
-
 .button-primary {
-  @extend .button;
-  border-color: $blue2;
+  @extend %button;
+  @include text-shadow(0 -1px 0 $blue4);
 
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $blue1); }
+  .cssgradients & {
+    @include redu-gradient($blue4, $blue2, 0.3);
 
-  .textshadow & { text-shadow: 0 -1px 0 $blue4; }
-
-  .cssgradients & { @include filter-gradient-vertical($blue2, $blue4, 40%, 100%); }
+    &:hover { @include redu-gradient($blue4, $blue2); }
+  }
 
   .no-cssgradients.gt-ie8 & {
-    // http://www.colorzilla.com/gradient-editor/#73c3e6+0,4d8ac4+40;Custom
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzRkOGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  }
+    // http://www.colorzilla.com/gradient-editor/#73c3e6+1,158ac4+41;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQxJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#4d8ac4',GradientType=0 ); }
-
-  &:hover {
-    border-color: $blue4;
-
-    .cssgradients & { @include filter-gradient-vertical($blue2, $blue4); }
-
-    .no-cssgradients.gt-ie8 & {
+    &:hover {
       // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+50,158ac4+50;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
   }
 
-  &:active {
-    border-color: $blue4;
-    background-color: $blue4 !important;
-  }
 
-  &:hover:active { color: $blue1; }
-
-  &.button-disabled,
-  &.button-disabled:hover,
-  &:disabled {
-    color: $gray3 !important;
-    background-color: $blue2 !important;
-    border-color: $blue2;
-
-    &:visited { color: $gray3; }
-  }
+  $color: $white;
+  $border-color: $blue2;
+  $box-shadow-color: $blue1;
+  $background-color: $blue2;
+  $hover-color: $white;
+  $hover-border-color: $blue4;
+  $hover-background-color: $blue4;
+  $active-border-color: $blue4;
+  $active-background-color: $blue4;
+  $hover-active-color: $blue1;
+  $hover-active-border-color: $blue4;
+  $disabled-color: $gray3;
+  $disabled-border-color: $blue2;
+  $disabled-background-color: $blue2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de sucesso.
-// ==========================================================================
-
 .button-success {
-  @extend .button;
-  background-color: $green2;
-  border-color: $green3;
+  @extend %button;
+  @include text-shadow(0 -1px 0 $green4);
 
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
+  .cssgradients & {
+    @include redu-gradient($green3, $green2);
 
-  .textshadow & { text-shadow: 0 -1px 0 $green4; }
-
-  .cssgradients & { @include filter-gradient-vertical($green2, $green3); }
+    &:hover { @include redu-gradient($green4, $green2); }
+  }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#abe385+0,5fc080+100;Custom
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZmMwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  }
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZmMwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abe385', endColorstr='#5fc080',GradientType=0 ); }
-
-  &:hover {
-    background-color: $green2;
-    border-color: $green4;
-
-    .boxshadow & { @include box-shadow(inset 0 1px 0 $green1); }
-
-    .cssgradients & { @include filter-gradient-vertical($green2, $green4); }
-
-    .no-cssgradients.gt-ie8 & {
+    &:hover {
       // http://www.colorzilla.com/gradient-editor/#abe385+0,61a080+100;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MWEwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MWEwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abe385', endColorstr='#61a080',GradientType=0 ); }
   }
 
-  &:active {
-    background-color: $green4 !important;
-    border-color: $green4;
-  }
 
-  &:hover:active { color: $green1; }
-
-  &.button-disabled,
-  &.button-disabled:hover,
-  &:disabled {
-    background-color: $green3 !important;
-    border-color: $green4;
-    color: $gray4 !important;
-
-    &:visited { color: $gray3; }
-  }
+  $color: $white;
+  $border-color: $green3;
+  $box-shadow-color: $green1;
+  $background-color: $green2;
+  $hover-color: $white;
+  $hover-border-color: $green4;
+  $hover-background-color: $green3;
+  $active-border-color: $green4;
+  $active-background-color: $green4;
+  $hover-active-color: $green1;
+  $hover-active-border-color: $green4;
+  $disabled-color: $gray4;
+  $disabled-border-color: $green4;
+  $disabled-background-color: $green3;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
 // Botão de perigo.
-// ==========================================================================
-
 .button-danger {
-    @extend .button;
-    background-color: $red3;
-    border-color: $red3;
+  @extend %button;
+  @include text-shadow(0 -1px 0 $red5);
 
-    .boxshadow & { @include box-shadow(inset 0 1px 0 $red1); }
+  .cssgradients & {
+    @include redu-gradient($red5, $red2, 0.4);
 
-    .textshadow & { text-shadow: 0 -1px 0 $red5; }
+    &:hover { @include redu-gradient($red5, $red2); }
+  }
 
-    .cssgradients & { @include filter-gradient-vertical($red2, $red5, 20%, 100%); }
-
-    .no-cssgradients.gt-ie8 & {
-      // http://www.colorzilla.com/gradient-editor/#ff6d6d+20,c1272d+100;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjZkNmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzEyNzJkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-    }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6d6d', endColorstr='#c1272d',GradientType=0 ); }
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#ff6d6d+20,c1272d+100;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjZkNmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzEyNzJkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
 
     &:hover {
-      border-color: $red5;
-
-      .cssgradients & { @include filter-gradient-vertical($red2, $red5); }
-
-      .no-cssgradients.gt-ie8 & {
-        // http://www.colorzilla.com/gradient-editor/#ff6d6d+0,c1272d+100;Custom
-        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNmQ2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMTI3MmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-      }
-
-       .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1272d', endColorstr='#ff6d6d',GradientType=0 ); }
+      // http://www.colorzilla.com/gradient-editor/#ff6d6d+0,c1272d+100;Custom
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNmQ2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMTI3MmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
+  }
 
-    &:active {
-      background-color: $red5 !important;
-      border-color: $red5;
-    }
 
-    &:active:hover { color: $red1; }
-
-    &.button-disabled,
-    &.button-disabled:hover,
-    &:disabled {
-      color: $gray4 !important;
-      background-color: $red2 !important;
-      border-color: $red3;
-
-      &:visited { color: $gray4; }
-    }
+  $color: $white;
+  $border-color: $red3;
+  $box-shadow-color: $red1;
+  $background-color: $red2;
+  $hover-color: $white;
+  $hover-border-color: $red5;
+  $hover-background-color: $red4;
+  $active-border-color: $red5;
+  $active-background-color: $red5;
+  $hover-active-color: $red1;
+  $hover-active-border-color: $red5;
+  $disabled-color: $gray4;
+  $disabled-border-color: $red3;
+  $disabled-background-color: $red2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
 }
 
-.button-primary,
-.button-success,
-.button-danger {
-  color: $white;
 
-  &:visited,
-  &:hover { color: $white; }
-}
+// Botões do Facebook.
+// ==========================================================================
 
-// Login com conta do Facebook
-// ===========================
+// Sombra externa inferior dos botões.
+$facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 
-.uibutton {
-    position: relative;
-    z-index: 1;
-    overflow: visible;
-    display: inline-block;
-    padding: 0.3em 0.6em 0.375em;
-    margin-top: 20px;
-    margin-left: 5px;
-    border: 1px solid #999;
-    border-bottom-color: #888;
+// Comum.
+%facebook-button {
+  @include text-shadow(none);
+  $color: $white;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px 7px;
+  color: $color;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-weight: bold;
+  line-height: 13px;
+  cursor: pointer;
+
+  &:hover,
+  &:visited {
     text-decoration: none;
-    text-align: center;
-    font: bold 11px/normal 'lucida grande', tahoma, verdana, arial, sans-serif;
-    white-space: nowrap;
-    cursor: pointer;
-    /* outline: none; */
-    color: #333;
-    background-color: #eee;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f6f6), to(#e4e4e3));
-    background-image: -moz-linear-gradient(#f5f6f6, #e4e4e3);
-    background-image: -o-linear-gradient(#f5f6f6, #e4e4e3);
-    background-image: linear-gradient(#f5f6f6, #e4e4e3);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f5f6f6', EndColorStr='#e4e4e3'); /* for IE 6 - 9 */
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-    /* IE hacks */
-    zoom: 1;
-    *display: inline;
+    color: $color;
+  }
 
-    .textshadow & { text-shadow: none; };
+  &:active { @include box-shadow($facebook-button-box-shadow); }
+
 }
 
-.uibutton:hover,
-.uibutton:focus,
-.uibutton:active {
-    border-color: #777 #777 #666;
-    text-decoration: none;
+.facebook-sign-up,
+.facebook-sign-in { text-align: center; }
+
+// Botão de cadastro.
+.facebook-sign-up-button {
+  @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(152, 192, 130) inset;
+  @include box-shadow($box-shadow);
+  border-color: rgb(59, 110, 34) rgb(59, 110, 34) rgb(44, 81, 21);
+  background-color: rgb(105, 167, 78);
+
+  &:active {
+    background: rgb(96, 153, 70);
+    border-bottom-color: rgb(59, 110, 34);
+  }
 }
 
-.uibutton:active {
-    border-color: #aaa;
-    background: #ddd;
-    filter: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
+// Botão de login.
+.facebook-sign-in-button {
+  @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(138, 156, 194) inset;
+  @include box-shadow($box-shadow);
+  border-color: rgb(41, 68, 126) rgb(41, 68, 126) rgb(26, 53, 110);
+  background-color: rgb(95, 120, 171);
 
-.uibutton::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-
-.uibutton.large {
-    font-size: 13px;
-}
-
-.uibutton.confirm {
-    border-color: #29447e #29447e #1a356e;
-    color: #fff;
-    background-color: #5B74A8;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#637bad), to(#5872a7));
-    background-image: -moz-linear-gradient(#637bad, #5872a7);
-    background-image: -o-linear-gradient(#637bad, #5872a7);
-    background-image: linear-gradient(#637bad, #5872a7);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#637bad', EndColorStr='#5872a7'); /* for IE 6 - 9 */
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
-    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
-}
-
-.uibutton.confirm:active {
-    border-color: #29447E;
-    background: #4F6AA3;
-    filter: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+  &:active {
+    background: rgb(79, 106, 163);
+    border-bottom-color: rgb(41, 68, 126);
+  }
 }

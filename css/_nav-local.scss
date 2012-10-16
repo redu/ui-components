@@ -20,6 +20,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
 
 // Item.
 .nav-local-item {
+  @include border-radius($navLocalItemBorderRadius);
   padding: $navLocalItemPadding 0 $navLocalItemPadding $navLocalItemPadding;
   width: 170px - $navLocalItemPadding;
 
@@ -27,22 +28,20 @@ $navLocalItemActiveBorder: 1px solid $blue3;
 
   .inl-label + .inl-label { margin-left: 3px; }
 
-  .borderradius & { @include border-radius($navLocalItemBorderRadius); }
-
   &:hover {
-    .cssgradients & { @include reduGradient($blue1, $white); }
+    .cssgradients & { @include redu-gradient($blue1, $white); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { background-color: $blue1; }
   }
 }
 
 // Item ativo.
 .nav-local-item-active {
+  @include box-shadow(inset 0 1px 0 0 $blue1);
+  @include border-radius($navLocalItemBorderRadius 0 0 $navLocalItemBorderRadius);
   position: relative;
   z-index: 1;
   width: 180px - $navLocalItemPadding;
@@ -55,32 +54,17 @@ $navLocalItemActiveBorder: 1px solid $blue3;
     position: absolute;
     right: -11px;
     top: 0;
-
-    // Não exibe a aba no IE8.
-    .ie8 & { display: none; }
   }
 
-  // Completa a borda no IE8.
-  .ie8 & { border-right: $navLocalItemActiveBorder; }
-
-  .cssgradients & { @include reduGradient($blue4, $blue2, 0.2); }
+  .cssgradients & { @include redu-gradient($blue4, $blue2, 0.2); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#73c3e6+60,158ac4+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiM3M2MzZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTU4YWM0IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
   }
 
-  .no-cssgradients.ie8 &,
-  .no-cssgradients.ie8 &:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
-
-  .boxshadow & { @include box-shadow(inset 0 1px 0 0 $blue1); }
-
-  .borderradius & { @include border-radius($navLocalItemBorderRadius 0 0 $navLocalItemBorderRadius); }
-
   &:hover {
-    .ie8 & { border-color: $blue4; }
-
-    .cssgradients & { @include reduGradient($blue4, $blue2); }
+    .cssgradients & { @include redu-gradient($blue4, $blue2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+100;Custom
@@ -94,16 +78,15 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   &:hover { text-decoration: none; }
 
   .nav-local-item-active & {
-    @include linkColor($white !important);
-
-    .textshadow & { text-shadow: $negativeVerticalBlue4Shadow; }
+    @include text-shadow(0 -1px 0 $blue4);
+    @include link-color($white !important);
   }
 
-  .nav-local-item:hover & { color: $linkColorHover; }
+  .nav-local-item:hover & { color: $link-color-hover; }
 }
 
 // Link para aulas.
-.nav-local-lecture-link { @include linkColor($gray5 !important); }
+.nav-local-lecture-link { @include link-color($gray5 !important); }
 
 .nav-local-link + .inl-label { margin-left: 10px; }
 
@@ -133,6 +116,11 @@ $navLocalItemActiveBorder: 1px solid $blue3;
 // ==========================================================================
 
 .nav-local-balloon {
+  $boxShadow:
+    0 1px 0 $white,
+    0 -1px 0 $gray3;
+  @include box-shadow($boxShadow);
+  @include border-radius(7px);
   color: $gray5;
   font-size: 12px;
   background-color: $gray2;
@@ -140,20 +128,6 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   position: relative;
 
   .button:before { margin-right: 0 !important; }
-
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white,
-      0 -1px 0 $gray3;
-    @include box-shadow($boxShadow);
-  }
-
-  .ie8 & {
-    border-top: 1px solid $gray3;
-    border-bottom: 1px solid $white;
-  }
-
-  .borderradius & { @include border-radius(7px); }
 }
 
 .nav-local + .nav-local-balloon,
@@ -172,7 +146,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   font-size: 16px;
   letter-spacing: -1px;
   font-weight: 100;
-  font-family: $museoSans;
+  font-family: $museo-sans;
   color: $gray6;
   display: block;
   padding: 0 10px;

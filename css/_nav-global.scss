@@ -8,7 +8,7 @@
 // Encapsulador da barra.
 .nav-global {
   overflow: visible;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $base-line-height;
 }
 
 // Fixa a barra no topo.
@@ -17,42 +17,35 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: $zindexFixedNavbar;
+  z-index: $z-index-fixed-navbar;
 }
 
 // Interior da barra.
 .nav-global-inner {
+  // Borda branca interna e sombra.
+  $boxShadow:
+    0 1px 0 $white inset,
+    0 -1px 0 $white inset,
+    0 1px 8px 1px rgba(0, 0, 0, 0.4);
+  @include box-shadow($boxShadow);
+  // Quando não estiver fixa no topo, ela tem borda arredondada.
+  @include border-radius(12px);
   height: 40px;
   padding: 1px 20px;
 
-  // Borda branca interna e sombra.
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white inset,
-      0 -1px 0 $white inset,
-      0 1px 8px 1px rgba(0, 0, 0, 0.4);
-    @include box-shadow($boxShadow);
-  }
-
-  // Quando não estiver fixa no topo, ela tem borda arredondada.
-  .borderradius & { @include border-radius(12px); }
-
   // Fundo com gradiente de 3 cores.
-  .cssgradients & { @include filter-gradient-vertical-3($gray2, $white, $gray2); }
+  .cssgradients & { @include background-image(linear-gradient($gray2, $white, $gray2)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+50,f0f0f0+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   }
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); }
-
   // Se estiver fixa, remove as bordas arredondadas e o padding horizontal.
   .nav-global-fixed-top & {
+    @include border-radius(0);
     padding-left: 0;
     padding-right: 0;
-
-    .borderradius & { @include border-radius(0); }
   }
 }
 
@@ -86,21 +79,19 @@
 
 // Botão.
 .nav-global-button {
+  @include border-radius;
   float: left;
   padding: 10px;
-  font-family: $museoSans;
+  font-family: $museo-sans;
   font-weight: 300;
   font-size: 16px;
 
   & + & { margin-left: 1px; }
 
-  .borderradius & { @include border-radius(5px); }
-
   &:hover {
+    @include box-shadow(0 -1px 0 $gray4 inset);
     color: $blue3;
     text-decoration: none;
-
-    .boxshadow & { @include box-shadow(0 -1px 0 $gray4 inset); }
 
     .cssgradients & { @include background-image(linear-gradient(top, $gray3, $white)); }
 
@@ -108,54 +99,44 @@
       // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E6E6E6', endColorstr='#ffffff',GradientType=0 ); }
   }
 
   &:hover:active {
+    @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5));
     background: $gray3 !important;
-
-    .ie8 & { filter: none; }
-
-    .boxshadow & { @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5)); }
   }
 }
 
 // Botão ativo.
 .nav-global-button-active {
+  @include text-shadow(0 1px 0 $blue4);
   color: $white;
 
   &:hover,
   &:visited { color: $white; }
 
-  .textshadow & { text-shadow: $verticalBlue4Shadow; }
-
-  .boxshadow &,
-  .boxshadow &:hover {
+  &,
+  &:hover {
     $boxShadow:
       0 1px 0 $blue2 inset,
       0 -1px 0 $blue3 inset;
     @include box-shadow($boxShadow);
   }
 
-  .cssgradients & { @include reduGradient($blue2, $blue4, 0.7); }
+  .cssgradients & { @include redu-gradient($blue2, $blue4, 0.7); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#158ac4+0,73c3e6+70;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
   }
 
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#158ac4', endColorstr='#73c3e6',GradientType=0 ); }
-
   &:hover {
-    .cssgradients & { @include reduGradient($blue2, $blue4, 0.2); }
+    .cssgradients & { @include redu-gradient($blue2, $blue4, 0.2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#158ac4+60,73c3e6+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzNjM2U2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c3e6', endColorstr='#158ac4',GradientType=0 ); }
   }
 
   &:hover:active { background: $blue4 !important; }
@@ -211,22 +192,17 @@
   overflow: hidden;
   position: relative;
 
-  .cssgradients &:nth-child(odd) { @include filter-gradient-vertical($gray3, $gray2); }
+  .cssgradients &:nth-child(odd) { @include background-image(linear-gradient($gray3, $gray2)); }
 
   .no-cssgradients.gt-ie8 &:nth-child(odd) {
     // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f0f0f0+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   }
 
-  .no-cssgradients.ie8 &:nth-child(odd) { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#e6e6e6',GradientType=0 ); }
-
   &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
     background-color: $blue1 !important;
     background-image: none !important;
-
-    .ie8 & { filter: none !important; }
-
-    .boxshadow & { @include box-shadow(0 0 0 1px $white inset); }
   }
 }
 
@@ -298,9 +274,8 @@
   }
 
   &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
     background-color: $blue1;
-
-    .boxshadow & { @include box-shadow(0 0 0 1px $white inset); }
   }
 }
 

@@ -45,6 +45,7 @@
           , e = $.Event('show')
 
         this.$element.trigger(e)
+        this.$element.trigger('fitContent.redu')
 
         if (this.isShown || e.isDefaultPrevented()) return
 

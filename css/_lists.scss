@@ -8,29 +8,37 @@
   width: 32px;
 }
 
+.icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
+  display: block;
+}
+
 hr {
+  @include box-shadow(none);
+  clear: both;
   margin: 10px 0;
   border-left: none;
   border-top: solid 1px $gray3;
   border-bottom: solid 1px $white;
-  .boxshadow & { @include box-shadow(none); }
 }
 
-.statuses .status {
+.statuses {
+
+  ul, li, ol { list-style: none; }
+
   overflow: hidden;
-  list-style: none;
+
+  .target { display: block; }
+
 
   .post-description { color: $gray6; }
 
-  .input-user, .post-description { margin-right: 15px; }
-
-  .input-user { .textshadow & { text-shadow: none; } }
+  .input-user { @include text-shadow(none); }
 
   .icon-link {
     margin-right: 10px;
     float: left;
 
-    img {
+    img, .icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
       width: 32px;
       height: 32px;
     }
@@ -47,35 +55,37 @@ hr {
   .status-info { color: $gray5; }
 
   .close {
-    margin-left: 5px;
     text-indent: -9999px;
     float: right;
   }
 
   hr {
+    @include box-shadow(none);
     margin: 10px 0;
     border-top: solid 1px $gray3;
     border-bottom: solid 1px $white;
-
-    .boxshadow & { @include box-shadow(none); }
   }
 
   .create-response {
-    margin-top: 10px;
-    float: right;
+    @include border-radius;
+    float: none;
+    margin-top: 36px;
     margin-left: 42px;
     clear: both;
     display: none;
     background-color: $gray2;
 
-    .borderradius & { @include border-radius(5px); }
+    form fieldset textarea { min-width: 100%; }
   }
 
   .status-text {
     overflow: hidden;
+
     + .status-content {
-      margin-top: 2px;
+      margin-top: 6px;
       margin-left: 42px;
+
+    .target { display: inline; }
     }
   }
 
@@ -85,6 +95,7 @@ hr {
     float: right;
     line-height: 11px;
     margin-top: 10px;
+    padding-bottom: 20px;
     margin-left: 0;
 
     li {
@@ -102,8 +113,11 @@ hr {
       }
     }
   }
-
+  .status-container { margin-left: 42px; }
   .status-content {
+    @include border-radius;
+    width: 100%;
+    margin-left: 42px;
     display: inline-block;
     margin-left: 0;
     margin-top: 10px;
@@ -124,9 +138,9 @@ hr {
       position: absolute;
     }
 
-    .borderradius & { @include border-radius(5px); }
-
     .post-text { padding: 10px 10px 10px 10px; }
+
+    .borderradius & { @include border-radius; }
 
     .post-preview {
       overflow: hidden;
@@ -187,7 +201,6 @@ hr {
           max-width: 1000px;
           overflow: hidden;
           height: 18px;
-          min-width: 716px;
         }
 
         label {
@@ -196,16 +209,31 @@ hr {
           text-indent: -999px;
         }
 
+        .post-preview + hr { margin-bottom: 0; }
+
         .status-buttons {
           clear: both;
           float: right;
+          margin-top: 10px;
         }
       }
     }
   }
 
+  .status-container {
+    .responses { margin-left: 0; }
+  }
+
+  .with-target {
+    .status-container, .create-response { margin-left: 84px; }
+
+
+    .target + .status-text {
+      margin-left: 42px;
+      margin-top: 10px;
+    }
+  }
   .create-response {
-    textarea { float: right; }
 
     &:before {
       border-color: #F0F0F0 white;
@@ -270,49 +298,24 @@ hr {
     .post-preview { padding: 0; }
   }
 
-  &.general-vision {
-    overflow: hidden;
-    margin-left: 0;
+  .create-status {
+    &.status-content { fieldset { height: 100%; } }
 
-    .status-text { margin-top: 10px; }
+    .status-buttons {
+      float: right;
+      margin: 0 10px 10px 0;
 
-    hr {
-      margin: 20px 0;
-      clear: both;
-      float: left;
-      width: 100%;
-
-      .boxshadow & { @include box-shadow-2( 0 1px 0 $white inset, 0 0 9px rgb(240, 240, 240)); }
+      input {
+        float: right;
+        margin-left: 5px;
+      }
     }
-
-    .course-name {
-      display: block;
-      overflow: hidden;
-    }
-
-    .status-info { color: $gray6; }
-
-    .link-name { &:before { @include pseudo-before(5px, false); } }
-
-    .status-content { margin-left: 84px; }
-
-    .create-response {
-      clear: both;
-
-      form { &:before { margin-right: -159px; } }
-    }
-
-    .status-text {
-      margin-left: 42px;
-      clear: both;
-
-      &:after { display: none; }
-    }
-
   }
 }
 
 .courses-lists {
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
+  @include border-radius(7px);
   padding: 26px 55px 26px 55px;
   background-color: $gray1;
 
@@ -331,25 +334,22 @@ hr {
     hr { margin: 5px; }
 
     .course-space {
+      @include border-radius;
       overflow: hidden;
       padding: 5px;
       border-bottom: 1px solid transparent;
 
       h4 { display: inline; }
 
-      .borderradius & { @include border-radius(5px); }
-
       &:hover {
         border-bottom: 1px solid $gray3;
-
-        .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
 
         .no-cssgradients.gt-ie8 & {
           // http://www.colorzilla.com/gradient-editor/#ffffff+60,e6e6e6+100;Custom
           background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
         }
 
-        .cssgradients & { @include filter-gradient-vertical($white, $gray2, 60%, 100%); }
+        .cssgradients & { @include background-image(linear-gradient($white 60%, $gray2)); }
       }
     }
 
@@ -377,6 +377,7 @@ hr {
       }
     }
   }
+
 }
 
 // Comum a lista de cursos/disciplinas.
@@ -402,21 +403,17 @@ hr {
 }
 
 .list-course-space-gradient-top {
+  $boxShadow:
+    1px 0 0 $white inset,
+    0 1px 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
   .cssgradients & { @include background-image(linear-gradient(top, $gray2, $white 90%)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+90;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  }
-
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#ffffff',GradientType=0 ); }
-
-  .boxshadow & {
-    $boxShadow:
-      1px 0 0 $white inset,
-      0 1px 0 $white inset,
-      -1px 0 0 $white inset;
-    @include box-shadow($boxShadow);
   }
 
   .list-course-space-item:hover & {
@@ -426,26 +423,20 @@ hr {
       // http://www.colorzilla.com/gradient-editor/#dbeff7+0,ffffff+90;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZWZmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DBEFF7', endColorstr='#ffffff',GradientType=0 ); }
   }
 }
 
 .list-course-space-gradient-bottom {
+  $boxShadow:
+    1px 0 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray2, $white 90%)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#ffffff+10,f0f0f0+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjBmMGYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-  }
-
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); }
-
-  .boxshadow & {
-    $boxShadow:
-      1px 0 0 $white inset,
-      -1px 0 0 $white inset;
-    @include box-shadow($boxShadow);
   }
 
   .list-course-space-item:hover & {
@@ -455,8 +446,6 @@ hr {
       // http://www.colorzilla.com/gradient-editor/#ffffff+10,dbeff7+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGJlZmY3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#DBEFF7',GradientType=0 ); }
   }
 }
 
@@ -561,19 +550,15 @@ hr {
 }
 
 .list-button-item {
+  $boxShadow:
+    0 1px 0 $white inset,
+    0 -1px 0 $white inset;
+  @include box-shadow($boxShadow);
+  @include border-radius;
   padding: 10px;
   border: 1px solid $gray4;
 
   > * { vertical-align: middle; }
-
-  .boxshadow & {
-    $boxShadow:
-      0 1px 0 $white inset,
-      0 -1px 0 $white inset;
-    @include box-shadow($boxShadow);
-  }
-
-  .borderradius & { @include border-radius(5px); }
 
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
 
@@ -581,8 +566,6 @@ hr {
     // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   }
-
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 ); }
 
   &:hover {
     border-color: $blue3;
@@ -595,8 +578,6 @@ hr {
       // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,e9f3f7+80,dbeff7+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2U5ZjNmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#dbeff7',GradientType=0 ); }
   }
 
   & + & { margin-top: 5px; }
@@ -658,10 +639,9 @@ hr {
 
 // Bloco com a descrição do módulo.
 .list-subject-body {
+  @include border-radius(7px);
   border: 1px solid $gray2;
   padding: 11px 20px 10px;
-
-  .borderradius & { @include border-radius(7px); }
 }
 
 .list-subject-description { margin-bottom: 20px; }
@@ -724,6 +704,8 @@ hr {
 .list-mix-content { max-width: 80%; }
 
 .list-mix-inner {
+  @include box-shadow(0 1px 0 rgb(204, 204, 204));
+  @include border-radius(7px);
   padding: 10px 0 10px 10px;
   overflow: hidden;
 
@@ -736,18 +718,12 @@ hr {
     padding: 6px 10px;
   }
 
-  .boxshadow & { @include box-shadow(0 1px 0 rgb(204, 204, 204)); }
-
   .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   }
-
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e6e6e6',GradientType=0 ); }
-
-  .borderradius & { @include border-radius(7px); }
 }
 
 .list-mix-title {
@@ -783,18 +759,17 @@ hr {
 
 // Container no cabeçalho.
 .list-environment-course-space-header {
-  @include clearfix;
+  @include clear-fix;
   margin-bottom: 10px;
 }
 
 // Link da imagem do ambiente.
 .list-environment-course-space-image-link {
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
   float: left;
   background-color: $white;
   padding: 2px;
   @include square(32px);
-
-  .boxshadow & { @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5)); }
 }
 
 // Link do título do ambiente.
@@ -842,7 +817,7 @@ hr {
 }
 
 .list-separator {
-  @include box-sizing(border-box);
+  @include box-sizing;
   height: 2px;
   background-color: $white;
   border-top: 1px solid $gray3;
@@ -854,14 +829,12 @@ hr {
     position: relative;
     top: -10px;
 
-    .cssgradients & { @include reduGradient($gray1, $white); }
+    .cssgradients & { @include redu-gradient($gray1, $white); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,f7f7f7+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 ); }
   }
 
   &:after {
@@ -871,13 +844,163 @@ hr {
     position: relative;
     bottom: 8px;
 
-    .cssgradients & { @include reduGradient($white, $gray1) };
+    .cssgradients & { @include redu-gradient($white, $gray1) };
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,ffffff+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=0 ); }
   }
+}
+
+
+// Lista de colunas.
+// ==========================================================================
+
+.list-1-column { @include list-column("general-list-item", 1); }
+
+.list-1-column-separator { @include list-column-separator("general-list-item", 1); }
+
+.list-2-columns { @include list-column("general-list-item"); }
+
+.list-2-columns-separator { @include list-column-separator("general-list-item"); }
+
+.list-3-columns { @include list-column("general-list-item", 3); }
+
+.list-3-columns-separator { @include list-column-separator("general-list-item", 3); }
+
+
+// Lista genérica (Ambientes que Participo, Ambientes de Aprendizado,
+// REA [em início], REA, REA [aplicativos favoritos]).
+// ==========================================================================
+
+// Item da lista.
+.general-list-item {
+  padding: 5px;
+  color: $gray5;
+
+  // Botão no canto inferior direito.
+  .general-list-item-footer +
+  .button-default {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  &:hover {
+    @include border-radius;
+    @include box-shadow(0 1px 0 $gray4);
+    @include gradient($gray3, $gray1, 0.2);
+
+    &,
+    .legend { color: $gray6; }
+
+    // Mostra o ícone de fechar e o botão.
+    .general-list-item-close,
+    .general-list-item-footer +
+    .button-default { display: block; }
+  }
+}
+
+// Título.
+.general-list-item-title {
+  font: 500 18px/18px $museo-sans;
+  letter-spacing: -1px;
+}
+
+// Link (dentro do título).
+.general-list-item-title-link {
+  &,
+  &:visited { color: $black; }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+
+  &[class*="icon-"][class*="-before"]:before { margin-right: 7px; }
+}
+
+.general-list-item-title +
+.general-list-item-body { margin-top: 10px; }
+
+// Corpo.
+.general-list-item-body { @include clear-fix; }
+
+// Colunas.
+.general-list-item-column {
+  float: left;
+
+  .general-list-item-title +
+  .legend { margin-top: 5px; }
+
+  .legend { display: block; }
+
+  .legend +
+  .legend { margin-top: 3px; }
+
+  .legend +
+  .general-list-item-counters { margin-top: 10px; }
+
+  .legend +
+  .button-default { margin-top: 5px; }
+
+  & +
+  & { margin-left: 10px; }
+}
+
+// Lista de contadores.
+.general-list-item-counters {
+  margin: 0;
+  list-style: none;
+  @include clear-fix;
+}
+
+// Contadores.
+.general-list-item-counter {
+  float: left;
+  font: 100 16px/18px $museo-sans;
+
+  & +
+  & { margin-left: 20px; }
+}
+
+.general-list-item-body +
+.general-list-item-footer { margin-top: 5px; }
+
+// Rodapé.
+.general-list-item-footer {
+  @include clear-fix;
+
+  .general-list-item-stars,
+  .general-list-item-counters { float: left; }
+
+  .general-list-item-stars +
+  .general-list-item-counters { margin-left: 12px; }
+}
+
+// Estrelas.
+.general-list-item-stars {
+  margin: 0;
+  list-style: none;
+  @include clear-fix;
+  width: 88px;
+}
+
+// Estrela.
+.general-list-item-star {
+  float: left;
+
+  & +
+  & { margin-left: 2px; }
+}
+
+// Ícone de fechar.
+.general-list-item-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
 }

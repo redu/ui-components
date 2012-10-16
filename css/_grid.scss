@@ -1,1 +1,9 @@
-@include gridSystem-generate($gridColumns, $gridColumnWidth, $gridGutterWidth);
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+
+@include grid-system-generate($grid-columns, $grid-column-width, $grid-gutter-width);
+
+// Desloca o grid pra metade do gutter esquerdo.
+.alpha-half { margin-left: 10px; }

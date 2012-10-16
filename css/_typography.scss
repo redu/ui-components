@@ -2,7 +2,8 @@
 // Tipografia
 // ==========================================================================
 
-// Parágrafo.
+
+// Parágrafo
 // ==========================================================================
 
 p {
@@ -11,18 +12,24 @@ p {
   & + & { margin-top: 5px; }
 }
 
-// Cabeçalhos.
+
+// Cabeçalhos
 // ==========================================================================
 
-h1, h2, h3, h4, h5, h6, h7 { margin: 0; }
+h1, h2, h3, h4, h5, h6, h7 {
+  margin: 0;
+  text-rendering: optimizelegibility;
+}
 
-h1, h2, h3, h4, h5, h6 { font-family: $museoSans; }
+h1, h2, h3, h4, h5, h6 { font-family: $museo-sans; }
 
-h7 { font-family: $museoSlab; }
+h7 { font-family: $museo-slab; }
 
-h2, h3, h4, h5, h6, h7 { font-weight: 500; }
+h1 { font-weight: 100; }
 
-h1, h6 { font-weight: 100; }
+h2, h3, h4, h5, h7 { font-weight: 500; }
+
+h6 { font-weight: 300; }
 
 h1 {
   font-size: 60px;
@@ -37,7 +44,7 @@ h2 {
 }
 
 h3 {
-  font-size:21px;
+  font-size: 21px;
   letter-spacing: -1px;
   line-height: 26px;
 }
@@ -48,43 +55,39 @@ h4 {
   line-height: 21px;
 }
 
-h5 {
-  font-size: 16px;
-  line-height: 18px;
-}
-
-h6 {
-  font-size: 16px;
-  line-height: 18px;
-}
+h5,
+h6 { font-size: 16px; }
 
 h7 {
   display: block;
   font-size: 14px;
   letter-spacing: 0;
-  line-height: 18px;
 }
 
-h3 strong, h4 strong, h5 strong {
-  font-weight: 700;
-  margin-top: 18px;
+h3 strong,
+h4 strong,
+h5 strong {
   margin-bottom: 9px;
   display: inline-block;
 }
 
-// Inline labels.
+h3 strong { margin-top: 28px; }
+
+h4 strong,
+h5 strong { margin-top: 18px; }
+
+
+// Rótulos
 // ==========================================================================
 
 .inl-label {
-  display: inline-block;
+  @include border-radius(3px);
   font-size: 11px;
   line-height: 11px;
   padding: 3px 5px 2px 5px;
   text-transform: uppercase;
 
   & + & { margin-left: 5px; }
-
-  .borderradius & { @include border-radius(3px); }
 }
 
 .label-news {
@@ -95,10 +98,9 @@ h3 strong, h4 strong, h5 strong {
 
 .label-notify-me {
   @extend .inl-label;
+  @include text-shadow(0 -1px 0 $red5);
   color: $white;
   background: $red2;
-
-  .textshadow & { text-shadow: 0 -1px 0 $red5; }
 }
 
 .label-online {
@@ -109,18 +111,19 @@ h3 strong, h4 strong, h5 strong {
 
 .label-doubts {
   @extend .inl-label;
+  @include text-shadow(0 -1px 0 $orange5);
   background: $orange3;
   color: $white;
-
-  .textshadow & { text-shadow: 0 -1px 0 $orange5; }
 }
 
-// Listas.
+
+// Listas
 // ==========================================================================
 
-ul, ol, dl {
+ul,
+ol {
   padding: 0;
-  margin: 0;
+  list-style-position: inside;
 }
 
 ul ul,
@@ -128,36 +131,32 @@ ul ol,
 ol ol,
 ol ul { margin-bottom: 0; }
 
-ul { list-style: disc; }
-
-ol { list-style: decimal; }
-
-li { line-height: $baseLineHeight; }
-
 dt { font-weight: bold; }
 
 dl dd { margin-left: 18px; }
 
-// Outros.
+
+// Outros
 // ==========================================================================
 
-// Negrito.
+// Negrito
 strong { font-weight: bold; }
 
-// Citações.
+// Citações
 blockquote, q, .legend { color: $gray5; }
 
-// Legenda e link secundário.
-.legend, .link-secondary {
+// Legenda e link secundário
+.legend,
+.link-secondary {
   font-size: 11px;
   line-height: 11px;
 }
 
-// Código.
+// Código
 code {
   color: $green4;
-  font-family: "Lucida Console", Courier, monospace;
+  font-family: $monospace-font-family;
 }
 
-// Link de nome.
+// Link de nome
 .link-name { font-weight: bold; }

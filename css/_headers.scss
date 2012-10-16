@@ -9,7 +9,7 @@
 
 // Link.
 .header-link {
-  @include linkVisited($gray5);
+  @include link-visited($gray5);
   font-weight: bold;
 
   &:hover { text-decoration: none; }
@@ -33,7 +33,8 @@
 
 // Item.
 .header-item {
-  @include clearfix;
+  @include clear-fix;
+  @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4));
   display: block;
   border: 1px solid $white;
   padding: 6px 18px 6px 20px;
@@ -42,13 +43,10 @@
   cursor: pointer;
   background-color: $gray3;
 
-  .ie8 & { border-color: $gray5; }
-
   // Borda arredondada no primeiro elemento.
   &:first-child {
+    @include border-radius(10px 10px 0 0);
     z-index: 3;
-
-    .borderradius & { @include border-radius(10px 10px 0 0); }
   }
 
   // O último elemento fica em azul claro (exceto quando for a página individual de uma aula).
@@ -56,17 +54,12 @@
 
   &:hover { border-color: $blue2; }
 
-  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.4)); }
-
-  .cssgradients & { @include reduGradient($gray3, $white); }
+  .cssgradients & { @include redu-gradient($gray3, $white); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   }
-
-  .ie8 &,
-  .ie8 &:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
 
   // Efeito de um em cima do outro com ajuda do z-index.
   & + & { margin-top: -1px; }
@@ -76,7 +69,7 @@
 // ==========================================================================
 
 .header-breadcrumb {
-  @include clearfix;
+  @include clear-fix;
   list-style: none;
   margin: 0;
 }
@@ -131,7 +124,7 @@
 // ==========================================================================
 
 .header-breadcrumb-big {
-  @include clearfix;
+  @include clear-fix;
   list-style: none;
   margin: 0 0 20px 0;
 }
@@ -152,11 +145,11 @@
 }
 
 .header-bradcrumb-big-link {
-  @include linkVisited($gray5);
+  @include link-visited($gray5);
 
   &:hover {
     text-decoration: none;
-    color: $linkColorHover;
+    color: $link-color-hover;
   }
 
   // Ajusta o ícone que está no primeiro link.
@@ -224,3 +217,23 @@
 }
 
 .lecture-stats-group + .lecture-stars { margin-left: 20px; }
+
+
+// Títulos dos Portais (Ambientes, Aplicativos).
+// ==========================================================================
+
+.portal-title {
+  &,
+  &:visited { color: $gray5; }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+
+  &:before {
+    margin-right: 10px;
+    float: left;
+  }
+}

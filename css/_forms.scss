@@ -27,22 +27,19 @@ $formControlBorderRadius: 3px;
 
   // Área que fica sob o controle, do lado direito.
   .control-append-area {
-    @include box-sizing(border-box);
+    @include box-sizing;
+    @include border-radius(0 $formControlBorderRadius $formControlBorderRadius 0);
     height: 100%;
     position: absolute;
     right: 0;
     top: 0;
 
-    .borderradius & { @include border-radius(0 $formControlBorderRadius $formControlBorderRadius 0); }
-
-    .cssgradients & { @include reduGradient($white, $gray2); }
+    .cssgradients & { @include redu-gradient($white, $gray2); }
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
       background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
-
-    .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); }
   }
 }
 
@@ -56,21 +53,27 @@ fieldset {
 }
 
 // Encapsula o label e o contole.
-.control-group { & + & { margin-top: 20px; } }
+.control-group {
+  & + & { margin-top: 20px; }
+
+  .control-error { color: $red2; }
+
+  &.control-focused .control-error { color: $red5; }
+}
 
 // Encapsula o label.
-.control-label { 
+.control-label {
   color: $gray5;
 
   .control-focused & { color: $blue2; }
 
   .control-success & { color: $green3; }
 
-  .control-error & {color: $red2; }
+  .control-error & { color: $red2; }
 
   .control-focused.control-success & { color: $green4; }
 
-  .control-focused.control-error & {color: $red5; }
+  .control-focused.control-error & { color: $red5; }
 
   .form-horizontal & {
     padding-top: $formLabelTopPadding;
@@ -84,12 +87,12 @@ fieldset {
 // Formulário horizontal.
 .form-horizontal {
   .control-group {
-    @include clearfix;
+    @include clear-fix;
 
     .control-label,
     .controls { float: left; }
 
-    .control-label { 
+    .control-label {
       text-align: right;
       padding-top: $formLabelTopPadding;
       margin: 0 20px 0 0;
@@ -104,9 +107,9 @@ label,
 input,
 button,
 select,
-textarea { 
+textarea {
   @include font-shorthand;
-  @include font-family-sans-serif;
+  font-family: $base-font-family;
 }
 
 // Resets de tamanho e tipo compartilhados.
@@ -114,34 +117,30 @@ select,
 textarea,
 input[type="text"],
 input[type="password"] {
-  @include box-sizing(border-box);
+  @include box-sizing;
+  @include box-shadow(inset 0 1px 0 $white);
+  @include border-radius($formControlBorderRadius);
   display: inline-block;
   border: 1px solid $gray4;
   padding: $formControlVerticalPadding $formControlHorizontalPadding;
   width: 100%;
   color: $gray6;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 
   .csstransitions & {
-    $transition: 
-      border linear .2s, 
+    $transition:
+      border linear .2s,
       box-shadow linear .2s;
     @include transition($transition);
   }
 
-  .borderradius & { @include border-radius($formControlBorderRadius); }
-
-  .boxshadow & { @include box-shadow(inset 0 1px 0 $white); }
-
-  .cssgradients & { @include reduGradient($white, $gray3, 0.8); }
+  .cssgradients & { @include redu-gradient($white, $gray3, 0.8); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+40;Custom
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
   }
-
-  .no-cssgradients.ie8 & { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); }
 
   .control-success & { border-color: $green2; }
 
@@ -162,44 +161,33 @@ input[type="password"] {
     border-color: $blue2;
     outline: 0;
 
-    .ie8 & { filter: none; }
-
     $boxShadowInsetNone: inset 0 0 0 rgba(0, 0, 0, 0);
-
-    .boxshadow & {
-      $boxShadow: 
-        $boxShadowInsetNone, 
-        0 0 6px 1px $blue2;
-      @include box-shadow($boxShadow);
-    }
+    $boxShadow:
+      $boxShadowInsetNone,
+      0 0 6px 1px $blue2;
+    @include box-shadow($boxShadow);
 
     .control-success & {
+      $boxShadow:
+        $boxShadowInsetNone,
+        0 0 6px 1px $green2;
+      @include box-shadow($boxShadow);
       border-color: $green2;
-
-      .boxshadow & {
-        $boxShadow: 
-          $boxShadowInsetNone, 
-          0 0 6px 1px $green2;
-        @include box-shadow($boxShadow);
-      }
     }
-    
-    .control-error & {
-      border-color: $red2;
 
-      .boxshadow & {
-        $boxShadow: 
-          $boxShadowInsetNone, 
-          0 0 6px 1px $red2;
-        @include box-shadow($boxShadow);
-      }
+    .control-error & {
+      $boxShadow:
+        $boxShadowInsetNone,
+        0 0 6px 1px $red2;
+      @include box-shadow($boxShadow);
+      border-color: $red2;
     }
   }
 }
 
 // Reseta a altura já que as textareas tem linhas.
-textarea { 
-  height: auto; 
+textarea {
+  height: auto;
   resize: vertical;
 }
 
@@ -249,16 +237,15 @@ input[type="checkbox"]:focus {
 .control-radio,
 .control-checkbox {
   display: block;
-  min-height: $baseLineHeight;
+  min-height: $base-line-height;
   padding-left: 19px;
   overflow: hidden;
   color: $gray6;
 
-  .ie8 &,
   .gt-ie8 & { padding-top: 2px; }
 
-  .control-inline & { 
-    padding-top: $formLabelTopPadding + 2px; 
+  .control-inline & {
+    padding-top: $formLabelTopPadding + 2px;
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
@@ -271,26 +258,20 @@ input[type="checkbox"]:focus {
 }
 
 .control-radio + .control-radio,
-.control-checkbox + .control-checkbox { 
-  margin-top: 2px; 
+.control-checkbox + .control-checkbox {
+  margin-top: 2px;
 
-  .ie8 &,
   .gt-ie8 & { margin-top: 0; }
 }
 
 .control-radio input[type="radio"],
 .control-checkbox input[type="checkbox"] {
   float: left;
-  margin-left: -($baseLineHeight);
+  margin-left: -($base-line-height);
   margin-right: 10px;
 
-  .ie8 &,
   .gt-ie8 & { margin-top: -1px; }
 }
-
-// Move a lista de opções para baixo para alinhar com a label.
-.controls > .control-radio:first-child,
-.controls > .control-checkbox:first-child { padding-top: $formLabelTopPadding + 2px; }
 
 // Texto preto quando o radio ou checkbox forem selecionados.
 .control-checked { color: $black; }
@@ -303,14 +284,14 @@ input[type="checkbox"]:focus {
 .control-select-date {
   .controls { overflow: hidden; }
 
-  select { 
+  select {
     float: left;
     // Mês.
     width: 115px;
 
-    // Dia. 
+    // Dia.
     &:first-child { width: 70px; }
-    
+
     // Ano.
     &:last-child { width: 85px; }
   }
@@ -324,13 +305,14 @@ input[type="checkbox"]:focus {
 
 // Tamanho alternativo para os campos.
 
-.control-big { 
+.control-big {
   input[type="text"],
   input[type="password"],
   textarea,
   select,
   .placeholder {
-    font-size: 16px; 
+    font-size: 16px;
+    font-weight: lighter;
     height: 42px;
   }
 
@@ -339,7 +321,7 @@ input[type="checkbox"]:focus {
   .form-horizontal & .control-label { padding-top: 11px; }
 }
 
-@include grid-input($gridColumnWidth, $gridGutterWidth);
+@include grid-input($grid-column-width, $grid-gutter-width);
 
 
 // Estado desativado.
@@ -353,15 +335,12 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
+  @include box-shadow(none);
   cursor: not-allowed;
   background-color: $gray1 !important;
   background-image: none !important;
 
-  .ie8 & { filter: none !important; }
-
   &:hover { border-color: $gray4; }
-
-  .boxshadow & { @include box-shadow(none); }
 }
 
 
@@ -440,16 +419,14 @@ textarea:-moz-placeholder { color: $gray4; }
 
 .control-option-list-checked {
   .control-area {
-    .boxshadow & {
-      $rightSideWidth: 28px;
-      $boxShadow: 
-        -($rightSideWidth) 0 0 $white inset
-      , 0 1px 0 $white inset;
-      @include box-shadow($boxShadow)
-    }
+    $rightSideWidth: 28px;
+    $boxShadow:
+      -($rightSideWidth) 0 0 $white inset
+    , 0 1px 0 $white inset;
+    @include box-shadow($boxShadow);
 
-    .boxshadow &:focus {
-      $boxShadow: 
+    &:focus {
+      $boxShadow:
         inset 0 0 0 rgba(0, 0, 0, 0)
       , 0 0 6px 1px $blue2;
       @include box-shadow($boxShadow);
@@ -459,8 +436,6 @@ textarea:-moz-placeholder { color: $gray4; }
   .control-append-area {
     background-color: $green2 !important;
     background-image: none !important;
-
-    .ie8 & { filter: none !important; }
   }
 }
 
@@ -490,8 +465,8 @@ textarea:-moz-placeholder { color: $gray4; }
 
 .control-autocomplete {
   // Lista mista com os itens adicionados pelo autocomplete.
-  .list-mix-inner { 
-    padding-right: 26px; 
+  .list-mix-inner {
+    padding-right: 26px;
     position: relative;
   }
 
@@ -500,7 +475,9 @@ textarea:-moz-placeholder { color: $gray4; }
 
 // Dropdown.
 .control-autocomplete-dropdown {
-  @include box-sizing(border-box);
+  @include box-sizing;
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4));
+  @include border-radius;
   position: absolute;
   z-index: 1;
   left: 0;
@@ -511,15 +488,11 @@ textarea:-moz-placeholder { color: $gray4; }
   width: 100%;
 
   .button { margin: 0 10px; }
-  
-  .borderradius & { @include border-radius(5px); }
-
-  .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.4)) }
 }
 
 // Legendas do tipo "Buscando...".
-.control-autocomplete-hint { 
-  text-align: center; 
+.control-autocomplete-hint {
+  text-align: center;
   display: block;
 }
 
@@ -540,13 +513,13 @@ textarea:-moz-placeholder { color: $gray4; }
   & + & { margin-top: 5px; }
 }
 
-.control-autocomplete-suggestion-selected { 
-  background-color: $white; 
+.control-autocomplete-suggestion-selected {
+  background-color: $white;
   color: $black;
 }
 
 .control-autocomplete-id,
-.control-autocomplete-mail { 
+.control-autocomplete-mail {
   display: none;
 }
 
@@ -554,7 +527,7 @@ textarea:-moz-placeholder { color: $gray4; }
 .control-autocomplete-thumbnail { @include square(32px); }
 
 // Ícone de remover.
-.control-autocomplete-close { 
+.control-autocomplete-close {
   position: absolute;
   right: 5px;
   top: 30%;
@@ -566,12 +539,12 @@ textarea:-moz-placeholder { color: $gray4; }
 .control-autocomplete-added-info { vertical-align: middle; }
 
 // Encapsulador de nome e e-mail.
-.control-autocomplete-added-info { 
-  display: inline-block; 
+.control-autocomplete-added-info {
+  display: inline-block;
 
   .control-autocomplete-name,
   .control-autocomplete-mail { display: block; }
-  
+
   .control-autocomplete-name { color: $blue3; }
 }
 

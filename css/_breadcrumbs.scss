@@ -37,7 +37,7 @@
 
 // Lista.
 .breadcrumb-icons {
-  @include clearfix;
+  @include clear-fix;
   list-style: none;
   margin: 0;
   padding: 2px 0;
@@ -55,21 +55,14 @@
   // Se estiver ativo, cria a borda azul.
   .breadcrumb-icon-active & {
     @include square(36px);
+    $boxShadow:
+      0 0 4px 1px $blue2,
+      0 0 0 1px $white inset,
+      inset 0 0 4px 1px $blue2;
+    @include box-shadow($boxShadow);
+    @include border-radius;
     position: relative;
     top: -1px;
-
-    .borderradius & { @include border-radius(5px); }
-
-    .boxshadow & {
-      $boxShadow:
-        0 0 4px 1px $blue2,
-        0 0 0 1px $white inset,
-        inset 0 0 4px 1px $blue2;
-      @include box-shadow($boxShadow);
-    }
-
-    // Borda azul para o IE8.
-    .ie8 & { border: 1px solid $blue3; }
   }
 }
 

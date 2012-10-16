@@ -35,23 +35,17 @@ $filterBoxShadow:
 .filter {
   @extend .button-default;
   @include filterCommon;
+  @include box-shadow($filterBoxShadow);
+  // No meio.
+  @include border-radius(0);
+  // Início.
+  &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
+  // Fim.
+  &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
+  // Sozinho.
+  &:first-child:last-child { @include border-radius($filterBorderRadius); }
 
-  .borderradius & {
-    // No meio.
-    @include border-radius(0);
-    // Início.
-    &:first-child { @include border-radius($filterBorderRadius 0 0 $filterBorderRadius); }
-    // Fim.
-    &:last-child { @include border-radius(0 $filterBorderRadius $filterBorderRadius 0); }
-    // Sozinho.
-    &:first-child:last-child { @include border-radius($filterBorderRadius); }
-  }
-
-  .boxshadow & {
-    @include box-shadow($filterBoxShadow);
-
-    &:last-child { @include box-shadow(0 1px 0 $white inset); }
-  }
+  &:last-child { @include box-shadow; }
 
   .filters & { float: left; }
 
@@ -59,43 +53,36 @@ $filterBoxShadow:
 
   .filters-general-view & {
     padding: 16px 5px 3px;
-
-    .borderradius & { @include border-radius(0); }
-
-    .boxshadow & { @include box-shadow($filterBoxShadow); }
+    @include box-shadow($filterBoxShadow);
+    @include border-radius(0);
   }
 
   .filter-group:first-child & {
+    @include border-radius($filterGroupBorderRadius 0 0 0);
     padding-right: 14px;
     padding-bottom: 16px;
 
     .filter-title { width: 111px; }
-
-    .borderradius & { @include border-radius($filterGroupBorderRadius 0 0 0); }
   }
 
   .filter-group:last-child & {
-    .boxshadow & { @include box-shadow(0 1px 0 $white inset); }
-
-    .borderradius & { @include border-radius(0 $filterGroupBorderRadius 0 0); }
+    @include box-shadow;
+    @include border-radius(0 $filterGroupBorderRadius 0 0);
   }
 }
 
 // Estado ativo.
 .filter-active {
+  @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important);
   background: $blue1 !important;
   border-color: $blue3;
   z-index: 1;
-
-  .boxshadow & { @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset !important); }
-
-  .no-boxshadow.ie8 & { filter: none; }
 }
 
 // Filtros (visão geral).
 // ==========================================================================
 
-.filters-general-view { @include clearfix; }
+.filters-general-view { @include clear-fix; }
 
 .filter-group {
   @include filterCommon;

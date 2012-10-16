@@ -11,8 +11,9 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 // Encapsulador.
 .tooltip {
   @include opacity(0);
+  @include text-shadow(none);
   position: absolute;
-  z-index: $zindexTooltip;
+  z-index: $z-index-tooltip;
   display: block;
   visibility: visible;
   padding: 5px;
@@ -25,22 +26,18 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
 
   &.right,
   &.bottom { margin-left: 2px; }
-
-  .textshadow & { text-shadow: none; }
 }
 
 // Parte de dentro.
 .tooltip-inner {
+  @include box-shadow(0 0 6px 1px rgb(85, 85, 85));
+  @include border-radius(3px);
   max-width: 200px;
   padding: 3px 8px;
   color: $white;
   text-align: center;
   text-decoration: none;
   background-color: $tooltipBackgroundAndArrowColor;
-
-  .borderradius & { @include border-radius(3px); }
-
-  .boxshadow & { @include box-shadow(0 0 6px 1px rgb(85, 85, 85)); }
 }
 
 // Seta.
@@ -48,11 +45,11 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
   @include square(0);
   position: absolute;
 
-  .tooltip.top & { @include popoverArrow-top(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.top & { @include popover-arrow-top(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.left & { @include popoverArrow-left(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.left & { @include popover-arrow-left(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.bottom & { @include popoverArrow-bottom(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.bottom & { @include popover-arrow-bottom(5px, $tooltipBackgroundAndArrowColor); }
 
-  .tooltip.right & { @include popoverArrow-right(5px, $tooltipBackgroundAndArrowColor); }
+  .tooltip.right & { @include popover-arrow-right(5px, $tooltipBackgroundAndArrowColor); }
 }

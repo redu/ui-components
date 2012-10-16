@@ -14,9 +14,16 @@
   var methods = {
     // Usado para conseguir o tamanho de um elemento com display none.
     displayHidden: function($element) {
-      $element.css({
-        'visibility': 'hidden'
-      , 'display': 'block'})
+      var wasVisible = true
+
+      if ($element.css('display') === 'none') {
+        $element.css({
+          'visibility': 'hidden'
+        , 'display': 'block'})
+        wasVisible = false
+      }
+
+      return wasVisible
     }
 
     // Retorna o elemento para display none.
@@ -26,26 +33,48 @@
       , 'display': 'none'})
     }
 
+  , fitContent: function($modal, settings) {
+    var $modalBody = $modal.find('.' + classes.modalBody)
+      , wasVisible
+      , isMaxHeight = true
+
+    wasVisible = methods.displayHidden($modal)
+
+    // O novo tamanho do corpo é: tamanho atual + (altura visível do navegador - espaçamento inferior - topo do modal - altura do modal)
+    var newHeight = $modalBody.height() + $(window).height() - (settings.verticalMargin * 2) - $modal.height() + "px"
+
+    var innerHeight = $modalBody[0].scrollHeight - (parseInt($modalBody.css('padding-top'), 10) + parseInt($modalBody.css('padding-bottom'), 10))
+
+    if (innerHeight <= parseInt(newHeight, 10)) {
+      newHeight = innerHeight
+      isMaxHeight = false
+    }
+
+    $modalBody.css('max-height', newHeight)
+    $modalBody.css('height', newHeight)
+
+    if (isMaxHeight) {
+      $modal.css('top', settings.verticalMargin)
+    }
+
+    if (!wasVisible) {
+      methods.displayVisible($modal)
+    }
+  }
+
     // Preenche verticalmente a janela modal.
   , fillHeight: function(options) {
       var settings = $.extend({
           // Margem inferior.
-          bottomMargin: 80
+          verticalMargin: 20
         }, options)
 
       return this.each(function() {
         var $modal = $(this)
-          , $modalBody = $modal.find('.' + classes.modalBody)
-          , modalTop = parseInt($modal.css('top'), 10)
-
-        methods.displayHidden($modal)
-
-        // O novo tamanho do corpo é: tamanho atual + (altura visível do navegador - espaçamento inferior - topo do modal - altura do modal)
-        var newHeight = $modalBody.height() + $(window).height() - settings.bottomMargin - modalTop - $modal.height() + "px"
-        $modalBody.css('max-height', newHeight)
-        $modalBody.css('height', newHeight)
-
-        methods.displayVisible($modal)
+        $modal.on('fitContent.redu', function(e) {
+          methods.fitContent($modal, settings)
+        })
+        $modal.trigger('fitContent.redu')
       })
     }
 
@@ -79,8 +108,8 @@
                   .html(settings.arrowDown)
             , modalBodyOffset = $modalBody.offset()
             , margin = (parseInt($modalBody.css('padding-left'), 10) - settings.arrowWidth) / 2
-            , arrowUpPosition = modalBodyOffset.top - $(window).scrollTop()
-            , arrowDownPosition = arrowUpPosition + $modalBody.height() - margin
+            , arrowUpPosition = modalBodyOffset.top - $(window).scrollTop() + 5
+            , arrowDownPosition = arrowUpPosition + $modalBody.height()
 
           $scrollArrow.css({
             'top': arrowDownPosition
@@ -119,6 +148,6 @@
 }) (window.jQuery)
 
 $(function() {
-  $('.modal-fill-height').reduModal('fillHeight')
+  $('.modal').reduModal('fillHeight')
   $('.modal-scroll').reduModal('scrollArrow')
 })
