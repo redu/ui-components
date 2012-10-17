@@ -5,7 +5,6 @@
 // Variáveis.
 // ==========================================================================
 
-$navLocalItemPadding: 7px;
 $navLocalItemBorderRadius: 5px;
 $navLocalItemActiveBorder: 1px solid $blue3;
 
@@ -21,8 +20,9 @@ $navLocalItemActiveBorder: 1px solid $blue3;
 // Item.
 .nav-local-item {
   @include border-radius($navLocalItemBorderRadius);
-  padding: $navLocalItemPadding 0 $navLocalItemPadding $navLocalItemPadding;
-  width: 170px - $navLocalItemPadding;
+  @include box-sizing(border-box);
+  padding: 7px 0 7px 7px;
+  width: 179px;
 
   & + & { margin-top: 1px; }
 
@@ -44,7 +44,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   @include border-radius($navLocalItemBorderRadius 0 0 $navLocalItemBorderRadius);
   position: relative;
   z-index: 1;
-  width: 180px - $navLocalItemPadding;
+  width: 180px;
   border-top: $navLocalItemActiveBorder;
   border-left: $navLocalItemActiveBorder;
   border-bottom: $navLocalItemActiveBorder;
