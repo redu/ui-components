@@ -12,7 +12,6 @@
 }
 
 .breadcrumb-mini-item {
-  @extend .link-secondary;
   float: left;
 
   &:after { margin-right: 5px; }
@@ -21,9 +20,9 @@
 }
 
 .breadcrumb-mini-link {
+  font-size: 11px;
+  vertical-align: middle;
   float: left;
-
-  &:before { vertical-align: middle !important; }
 
   .breadcrumb-mini-compact & {
     @include text-replacement;
