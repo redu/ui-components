@@ -440,7 +440,7 @@
     position: relative;
 
     // Remove o espaçamento do primeiro e cada ($columns+1)-ésimo item.
-    &:first-child,
+    &:first-of-type,
     &:nth-of-type(#{$columns}n+#{$columns+1}) { margin-left: 0; }
   }
 }
@@ -467,7 +467,7 @@
         width: (100% * $n) + 50;
       }
 
-      &:last-child {
+      &:last-of-type {
         margin-bottom: 0;
 
         &:after { content: none; }
