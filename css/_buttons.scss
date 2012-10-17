@@ -14,6 +14,7 @@
   border-width: 1px;
   border-style: solid;
   line-height: 16px;
+  font-weight: lighter;
 
   &:hover { text-decoration: none; }
 
@@ -30,7 +31,6 @@
 // Botão grande.
 .button-big {
   font-size: 16px;
-  font-weight: lighter;
   line-height: 20px;
   padding-top: 10px;
   padding-bottom: 10px;

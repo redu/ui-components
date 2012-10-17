@@ -110,6 +110,7 @@ select,
 textarea {
   @include font-shorthand;
   font-family: $base-font-family;
+  font-weight: lighter;
 }
 
 // Resets de tamanho e tipo compartilhados.
