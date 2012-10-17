@@ -555,7 +555,7 @@ a.icon-teacher-gray_16_18-before {
 
 // Perfil 2.
 .icon-profile-2-lightblue_16_18-before {
-  &:before { @extend .icon-profile-2-lightblue_16_18;}
+  &:before { @extend .icon-profile-2-lightblue_16_18; }
   &:hover:before { @extend .icon-profile-2-blue_16_18; }
 }
 
@@ -629,12 +629,12 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-favorite-blue_16_18; }
 }
 
-.icon-favorite-gray_32_34 {
+.icon-favorite-gray_32_34-before {
   &:before { @extend .icon-favorite-gray_32_34; }
-  &:hover:before { @extend .icon-favorite-blue_32_34; }
+  &:hover:before { @include icon-sprite(favorite-blue_32_34); }
 }
 
-.icon-favorite-blue_32_34 {
+.icon-favorite-blue_32_34-before {
   &:before { @extend .icon-favorite-blue_32_34; }
 }
 
@@ -706,10 +706,10 @@ a:hover,
 
 .button-disabled:hover .icon-close-gray_8_10 { @extend .icon-close-gray_8_10; }
 
-//video
+// Video
 .icon-video-gray_16_18-before {
   &:before { @extend .icon-video-gray_16_18; }
-  &:hover:before { @extend .icon-video-blue_16_18;}
+  &:hover:before { @extend .icon-video-blue_16_18; }
 }
 
 // Agrupamento
