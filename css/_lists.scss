@@ -17,8 +17,9 @@ hr {
   clear: both;
   margin: 10px 0;
   border-left: none;
-  border-top: solid 1px $gray3;
-  border-bottom: solid 1px $white;
+  border-right: none;
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
 }
 
 .statuses {
