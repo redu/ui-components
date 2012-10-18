@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-      
+
       <h3 id="control-structure">Estrutura dos controles</h3>
       <div class="row">
         <div class="span6">
@@ -302,6 +302,7 @@
         </div>
         <div class="span7">
           <p>Da mesma maneira, adicionando <code>.control-error</code>, o label e seu controle se tornam vermelho. Isto pode ser usado para indicar erro ou similar.</p>
+          <p>As mensagens de erros da validação podem ser colocadas em uma lista com <code>.control-errors</code>, que deve ficar abaixo do campo com erro.</p>
         </div>
       </div>
       <div class="row">
@@ -322,6 +323,10 @@
                 </div>
                 <div class="controls">
                   <input type="password" id="input-9-2" maxlength="8" placeholder="Digite sua senha">
+                  <ul class="control-errors">
+                    <li>Senha muito curta (mínimo de 6 caracteres).</li>
+                    <li>Utilize apenas letras (a-z), números (0-9), traço (-) e sublinhado (_). Não deixe espaços no início ou final.</li>
+                  </ul>
                 </div>
               </div>
               <div class="control-group control-success">
@@ -879,7 +884,7 @@
   &lt;div class="control-append-area"&gt;
     &lt;input class="control-option-list-checkbox" type="checkbox"&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>            
+&lt;/div&gt;</pre>
         </div>
       </div>
 

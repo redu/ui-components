@@ -81,6 +81,14 @@ fieldset {
   }
 }
 
+// Lista de erros do campo.
+.control-errors {
+  margin: 5px 0 0;
+  list-style: none;
+  color: rgb(255, 109, 109);
+  font-size: 11px;
+}
+
 // Encapsula o controle.
 .controls { position: relative; }
 
