@@ -759,10 +759,10 @@ hr {
 .list-environment-course-space-item { & + & { margin-top: 45px; } }
 
 // Container no cabeçalho.
-.list-environment-course-space-header {
-  @include clear-fix;
-  margin-bottom: 10px;
-}
+.list-environment-course-space-header { @include clear-fix; }
+
+.list-environment-course-space-header +
+.list-mix { margin-top: 10px; }
 
 // Link da imagem do ambiente.
 .list-environment-course-space-image-link {
