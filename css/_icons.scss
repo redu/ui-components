@@ -735,5 +735,8 @@ a:hover,
   &:hover { @extend .icon-institution-blue_32_34; }
 }
 
-
+// Estrela
+.icon-star-empty-gray_16_18-before {
+  &:before { @extend .icon-star-empty-gray_16_18; }
+}
 
