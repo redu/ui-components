@@ -858,9 +858,9 @@ hr {
 // Lista de colunas.
 // ==========================================================================
 
-.list-1-column { @include list-column("general-list-item", 1); }
+.list-1-columns { @include list-column("general-list-item", 1); }
 
-.list-1-column-separator { @include list-column-separator("general-list-item", 1); }
+.list-1-columns-separator { @include list-column-separator("general-list-item", 1); }
 
 .list-2-columns { @include list-column("general-list-item"); }
 

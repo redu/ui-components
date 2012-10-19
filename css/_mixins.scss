@@ -475,3 +475,16 @@
     }
   }
 }
+
+// Modifica o espaçamento do separador de lista em colunas.
+//  $gutter: o espaçamento total do separador.
+//  $n: o número de colunas da lista.
+@mixin list-column-separator-gutter($gutter, $n) {
+  .list-#{$n}-columns-separator > li:nth-of-type(#{$n}n+#{$n}) {
+    margin-bottom: $gutter;
+
+    &:after { bottom: (- ($gutter / 2)); }
+
+    &:last-of-type{ margin-bottom: 0; }
+  }
+}
