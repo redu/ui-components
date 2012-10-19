@@ -633,6 +633,11 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-favorite-blue_16_18; }
 }
 
+.icon-favorite-delete-lightblue_16_18-before {
+  &:before { @extend .icon-favorite-delete-lightblue_16_18; }
+  &:hover:before { @extend .icon-favorite-delete-blue_16_18; }
+}
+
 .icon-favorite-gray_32_34-before {
   &:before { @extend .icon-favorite-gray_32_34; }
   &:hover:before { @include icon-sprite(favorite-blue_32_34); }
