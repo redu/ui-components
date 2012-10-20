@@ -60,9 +60,9 @@ $base-font-size:              13px !default;
 $base-line-height:            18px !default;
 $text-color:                  $black !default;
 $base-font-family:            "Helvetica Neue", Arial, sans-serif !default;
-$museo-sans:                  museo-sans, $base-font-family;
-$museo-slab:                  museo-slab, Georgia, $base-font-family;
-$monospace-font-family:				"Lucida Console", Courier, monospace;
+$museo-sans:                  museo-sans, $base-font-family !default;
+$museo-sans-rounded:          museo-sans-rounded, $museo-sans !default;
+$monospace-font-family:				"Lucida Console", Courier, monospace !default;
 
 
 // Outros

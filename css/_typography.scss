@@ -16,57 +16,32 @@ p {
 // Cabeçalhos
 // ==========================================================================
 
-h1, h2, h3, h4, h5, h6, h7 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
   margin: 0;
   text-rendering: optimizelegibility;
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: $museo-sans; }
+h1 { @include heading(1); }
 
-h7 { font-family: $museo-slab; }
+h2 { @include heading(2); }
 
-h1 { font-weight: 100; }
+h3 { @include heading(3); }
 
-h2, h3, h4, h5, h7 { font-weight: 500; }
+h4 { @include heading(4); }
 
-h6 { font-weight: 300; }
+h5 { @include heading(5); }
 
-h1 {
-  font-size: 60px;
-  letter-spacing: -3px;
-  line-height: 56px;
-}
+h6 { @include heading(6); }
 
-h2 {
-  font-size: 36px;
-  letter-spacing: -2px;
-  line-height: 36px;
-}
+h7 { @include heading(7); }
 
-h3 {
-  font-size: 21px;
-  letter-spacing: -1px;
-  line-height: 26px;
-}
-
-h4 {
-  font-size: 18px;
-  letter-spacing: -1px;
-  line-height: 21px;
-}
-
-h5,
-h6 { font-size: 16px; }
-
-h7 {
-  display: block;
-  font-size: 14px;
-  letter-spacing: 0;
-}
-
-h5,
-h6,
-h7 { line-height: 18px; }
+h7 { display: block; }
 
 h3 strong,
 h4 strong,
