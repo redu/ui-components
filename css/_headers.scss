@@ -222,7 +222,27 @@
 // Títulos dos Portais (Ambientes, Aplicativos).
 // ==========================================================================
 
+// Normalmente um h2.
 .portal-title {
+  overflow: hidden;
+  display: inline-block;
+
+  &[class*="icon-"][class*="-before"]:before {
+    float: left;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    .portal-title-link { color: $link-color-hover; }
+  }
+}
+
+// Link.
+.portal-title-link {
+  @include heading(4);
+  margin-top: 4px;
+  width: 140px;
+
   &,
   &:visited { color: $gray5; }
 
@@ -230,10 +250,5 @@
   &:visited:hover {
     text-decoration: none;
     color: $link-color-hover;
-  }
-
-  &:before {
-    margin-right: 10px;
-    float: left;
   }
 }
