@@ -20,7 +20,7 @@ $navLocalItemActiveBorder: 1px solid $blue3;
 // Item.
 .nav-local-item {
   @include border-radius($navLocalItemBorderRadius);
-  @include box-sizing(border-box);
+  @include box-sizing;
   padding: 7px 0 7px 7px;
   width: 179px;
 

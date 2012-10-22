@@ -429,7 +429,7 @@
   margin: 0;
 
   & > li {
-    @include box-sizing(border-box);
+    @include box-sizing;
     $old-browser-value: percentage(((100 / $columns) - 1) / 100) + 1;
     // Calcula a porcentagem de largura de cada item, levando em consideração
     // também os espaçamentos esquerdos.

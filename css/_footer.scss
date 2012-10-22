@@ -29,7 +29,7 @@ body { height: 100%; }
 
 // Wrapper de tudo.
 .footer {
-  @include box-sizing(border-box);
+  @include box-sizing;
   $box-shadow:
     0 1px 0 $white inset
   , 0 -1px 0 $white inset;

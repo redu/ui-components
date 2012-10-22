@@ -27,7 +27,7 @@ a {
 }
 
 .content-body {
-  @include box-sizing(border-box);
+  @include box-sizing;
   @include border-radius(10px);
   border: 1px solid rgb(203, 203, 203);
   background-color: $white;
