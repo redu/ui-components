@@ -506,7 +506,6 @@ hr {
 
 // Posiciona o ícone de privado na esquerda.
 .list-course-private {
-  @include text-replacement;
   position: absolute;
   left: 28px;
   top: 65px;
