@@ -82,5 +82,8 @@ $grid-column-width:           40px !default;
 $grid-gutter-width:           20px !default;
 $grid-row-width:              ($grid-columns * $grid-column-width) + ($grid-gutter-width * ($grid-columns - 1));
 
+// Navegação global
+$nav-global-height:           42px !default;
+
 // Rodapé
 $footer-height:               140px !default;

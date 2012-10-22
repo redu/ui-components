@@ -22,16 +22,14 @@
 
 // Interior da barra.
 .nav-global-inner {
-  // Borda branca interna e sombra.
-  $boxShadow:
-    0 1px 0 $white inset,
-    0 -1px 0 $white inset,
-    0 1px 8px 1px rgba(0, 0, 0, 0.4);
-  @include box-shadow($boxShadow);
+  @include box-shadow(0 1px 8px 1px rgba(0, 0, 0, 0.4));
   // Quando não estiver fixa no topo, ela tem borda arredondada.
   @include border-radius(12px);
-  height: 40px;
-  padding: 1px 20px;
+  @include box-sizing(border-box);
+  height: $nav-global-height;
+  padding: 0px 20px;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
 
   // Fundo com gradiente de 3 cores.
   .cssgradients & { @include background-image(linear-gradient($gray2, $white, $gray2)); }
@@ -55,7 +53,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  .nav-global-fixed-top & { width: 940px; }
+  .nav-global-fixed-top & { width: $grid-row-width; }
 }
 
 // Interior da barra.
