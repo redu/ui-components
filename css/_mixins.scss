@@ -10,9 +10,10 @@
 @mixin text-replacement {
   border: 0;
   font: 0/0 a;
-  text-shadow: none;
   color: transparent;
   background-color: transparent;
+
+  .textshadow & { text-shadow: none; }
 }
 
 // Clearfix para limpar floats (h5bp.com/q).
