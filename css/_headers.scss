@@ -189,10 +189,7 @@
   margin-left: 8px;
 }
 
-.lecture-authoring-written-by {
-  @extend .legend;
-  display: block;
-}
+.lecture-authoring-written-by { display: block; }
 
 .lecture-stats {
   float: right;

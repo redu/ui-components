@@ -202,7 +202,6 @@ textarea {
 
 // Contador de caracteres restantes.
 .character-counter {
-  @extend .legend;
   position: absolute;
   left: 11px;
   bottom: -16px;
@@ -553,9 +552,6 @@ textarea:-moz-placeholder { color: $gray4; }
 
   .control-autocomplete-name { color: $blue3; }
 }
-
-// E-mail.
-.control-autocomplete-mail { @extend .legend; }
 
 .control-autocomplete-thumbnail + .control-autocomplete-name,
 .control-autocomplete-thumbnail + .control-autocomplete-added-info { margin-left: 5px; }

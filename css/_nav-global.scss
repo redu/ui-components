@@ -228,14 +228,10 @@
 }
 
 // Data.
-.nav-global-notify-notice-timestamp {
-  @extend .legend;
-  display: block;
-}
+.nav-global-notify-notice-timestamp { display: block; }
 
 // Ações.
 .nav-global-notify-notice-actions {
-  @extend .legend;
   display: block;
   text-align: right;
 }
