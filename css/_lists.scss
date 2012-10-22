@@ -685,7 +685,7 @@ hr {
   margin: 0;
   color: $gray5;
 
-  a {
+  .list-mix-title {
     color: $gray5;
 
     &:hover { text-decoration: none; }
@@ -730,7 +730,7 @@ hr {
 .list-mix-title {
   .list-mix-item:hover & { color: $gray6; }
 
-  &:hover { color: $blue4 !important; }
+  .list-mix-item:hover &:hover { color: $blue4; }
 }
 
 .list-mix-header { line-height: 0; }
