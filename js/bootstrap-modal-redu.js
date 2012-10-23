@@ -78,6 +78,33 @@
       })
     }
 
+    // Ajusta a largura do modal para se adequar a largura do conteúdo interno.
+    // Caso a largura do conteúdo interno seja maior que a largura visível do navegador, extende o modal horizontalmente para acomodar a máxima largura visível.
+  , fillHorizontal: function(options) {
+    var settings = $.extend({
+        // Margens laterais.
+        horizontalMargin: 20
+      }, options)
+
+    return this.each(function() {
+      var $modal = $(this)
+        , maxWidth = $(window).width() - 2 * settings.horizontalMargin
+
+      $modal.css('left', 0)
+
+      var modalWidth = $modal.outerWidth()
+
+      if (modalWidth <= maxWidth) {
+        maxWidth = modalWidth
+      }
+
+      $modal.css('marginLeft', (-1) * (maxWidth / 2))
+      $modal.css('width', maxWidth)
+
+      $modal.css('left', '50%')
+    })
+  }
+
     // Verifica se um elemento apresenta a barra de scroll vertical.
   , hasScrollBar: function($element) {
       var element = $element.get(0)
@@ -150,4 +177,5 @@
 $(function() {
   $('.modal').reduModal('fillHeight')
   $('.modal-scroll').reduModal('scrollArrow')
+  $('.modal-fill-horizontal').reduModal('fillHorizontal')
 })
