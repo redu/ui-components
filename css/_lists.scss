@@ -999,8 +999,6 @@ hr {
 
 // Ícone de fechar.
 .general-list-item-close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  float: right;
   display: none;
 }
