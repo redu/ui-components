@@ -420,16 +420,16 @@
 }
 
 // Dado uma lista, organiza seus itens em colunas de tamanhos iguais.
-//  $list-item-class: o nome da classe do item da lista.
 //  $columns: a quantidade de colunas desejada.
 //  $gutter: o espaçamento esquerdo entre cada item.
-@mixin list-column($list-item-class, $columns: 2, $gutter: 10px) {
+//  $list-item-class: o nome da classe ou elemento do item da lista.
+@mixin list-column($columns: 2, $gutter: 10px, $list-item-class: "li") {
   overflow: hidden;
   padding-bottom: 1px;
   list-style: none;
   margin: 0;
 
-  & > li {
+  & > #{$list-item-class} {
     @include box-sizing;
     $old-browser-value: percentage(((100 / $columns) - 1) / 100) + 1;
     // Calcula a porcentagem de largura de cada item, levando em consideração
@@ -441,19 +441,19 @@
     position: relative;
 
     // Remove o espaçamento do primeiro e cada ($columns+1)-ésimo item.
-    &:first-of-type,
-    &:nth-of-type(#{$columns}n+#{$columns+1}) { margin-left: 0; }
+    &:first-child,
+    &:nth-child(#{$columns}n+1) { margin-left: 0; }
   }
 }
 
 // Dado uma lista, adiciona uma linha separadora depois de cada $n-ésimo item.
-//  $list-item-class: o nome da classe do item da lista.
 //  $n: a ordem do item em que o separador será incluído.
 //  $margin-bottom: o tamanho do espaçamento entre linhas.
 //  $color: a cor do separador.
-@mixin list-column-separator($list-item-class, $n: 2, $margin-bottom: 10px, $color: $gray3) {
-  & > li {
-    &:nth-of-type(#{$n}n+#{$n}) {
+//  $list-item-class: o nome da classe ou elemento do item da lista.
+@mixin list-column-separator($n: 2, $margin-bottom: 10px, $color: $gray3, $list-item-class: "li") {
+  & > #{$list-item-class} {
+    &:nth-child(#{$n}n) {
       margin-bottom: $margin-bottom;
       position: relative;
 
@@ -468,7 +468,7 @@
         width: (100% * $n) + 50;
       }
 
-      &:last-of-type {
+      &:last-child {
         margin-bottom: 0;
 
         &:after { content: none; }
@@ -480,13 +480,14 @@
 // Modifica o espaçamento do separador de lista em colunas.
 //  $gutter: o espaçamento total do separador.
 //  $n: o número de colunas da lista.
-@mixin list-column-separator-gutter($gutter, $n) {
-  .list-#{$n}-columns-separator > li:nth-of-type(#{$n}n+#{$n}) {
+//  $list-item-class: o nome da classe ou elemento do item da lista.
+@mixin list-column-separator-gutter($gutter: 20px, $n: 2, $list-item-class: "li") {
+  .list-#{$n}-columns.list-columns-separator > #{$list-item-class}:nth-child(#{$n}n+1) {
     margin-bottom: $gutter;
 
     &:after { bottom: (- ($gutter / 2)); }
 
-    &:last-of-type{ margin-bottom: 0; }
+    &:last-child { margin-bottom: 0; }
   }
 }
 

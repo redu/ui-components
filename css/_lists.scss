@@ -857,17 +857,17 @@ hr {
 // Lista de colunas.
 // ==========================================================================
 
-.list-1-columns { @include list-column("general-list-item", 1); }
+.list-1-columns { @include list-column(1); }
 
-.list-1-columns-separator { @include list-column-separator("general-list-item", 1); }
+.list-1-columns.list-columns-separator { @include list-column-separator(1); }
 
-.list-2-columns { @include list-column("general-list-item"); }
+.list-2-columns { @include list-column; }
 
-.list-2-columns-separator { @include list-column-separator("general-list-item"); }
+.list-2-columns.list-columns-separator { @include list-column-separator; }
 
-.list-3-columns { @include list-column("general-list-item", 3); }
+.list-3-columns { @include list-column(3); }
 
-.list-3-columns-separator { @include list-column-separator("general-list-item", 3); }
+.list-3-columns.list-columns-separator { @include list-column-separator(3); }
 
 
 // Lista genérica (Ambientes que Participo, Ambientes de Aprendizado,
