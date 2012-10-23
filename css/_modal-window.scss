@@ -48,9 +48,8 @@ $modalWidth: 520px;
 
 // Botão de fechar.
 .modal-close {
-  position: absolute;
-  top: 21px;
-  right: 20px;
+  cursor: pointer;
+  float: right;
 }
 
 // Aumenta a largura para 14 grids.
