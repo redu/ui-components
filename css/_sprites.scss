@@ -16,4 +16,7 @@ $sprite-sprite-base-class: ".sprite" !default;
 
 .sprite-after:after { @include pseudo-after(5px, false); }
 
-.sprite { display: inline-block; }
+.sprite {
+  vertical-align: middle;
+  display: inline-block;
+}
