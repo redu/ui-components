@@ -384,6 +384,9 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-comment-lightblue_16_18; }
   &:hover:before { @extend .icon-comment-blue_16_18; }
 }
+.icon-comment-white_blue_32_34-before {
+  &:before { @extend .icon-comment-white_blue_32_34; }
+}
 
 // Dúvida.
 .icon-request-help-gray_16_18-before {
@@ -655,7 +658,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-specialist-gray_16_18-before {
   &:before { @extend .icon-specialist-gray_16_18; }
 }
-
+.icon-specialist-white_blue_32_34-before {
+  &:before { @extend .icon-specialist-white_blue_32_34; }
+}
 .icon-specialist-gray_32_34-before {
   &:before { @extend .icon-specialist-gray_32_34; }
 }

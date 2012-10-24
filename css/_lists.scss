@@ -22,11 +22,9 @@ hr {
   border-bottom: 1px solid $white;
 }
 
-.statuses {
+.statuses .status { margin: 20px; }
 
-  ul, li, ol { list-style: none; }
-
-  overflow: hidden;
+.statuses, .courses-lists, .responses  { list-style: none; }
 
   .target { display: block; }
 
@@ -114,7 +112,9 @@ hr {
       }
     }
   }
+
   .status-container { margin-left: 42px; }
+
   .status-content {
     @include border-radius;
     width: 100%;
@@ -201,7 +201,6 @@ hr {
         textarea {
           max-width: 1000px;
           overflow: hidden;
-          height: 18px;
         }
 
         label {
@@ -312,7 +311,6 @@ hr {
       }
     }
   }
-}
 
 .courses-lists {
   @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
@@ -379,11 +377,8 @@ hr {
     }
   }
 
-}
-
 // Comum a lista de cursos/disciplinas.
 // ==========================================================================
-
 .list-course-space {
   list-style: none;
   color: $gray5;
@@ -1001,4 +996,5 @@ hr {
 .general-list-item-close {
   float: right;
   display: none;
+}
 }
