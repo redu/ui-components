@@ -676,6 +676,12 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-magnifier-blue_16_18; }
 }
 
+// Central de Ajuda.
+.icon-help-central-gray_66-before {
+  &:before { @extend .icon-help-central-gray_66; }
+  &:hover:before { @extend .icon-help-central-blue_66; }
+}
+
 
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
