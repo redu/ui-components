@@ -22,12 +22,12 @@ $(function() {
   $(".create-status .status-buttons").hide();
 
   $(".create-status textarea").live("focus", function(e){
-    $(this).parents("form").find(".status-buttons").slideToggle();
+    $(this).parents("form").find(".status-buttons").slideToggle(150, "swing");
      $(this).parents("form").find("textarea").css("height","122");
   });
 
   $(".create-status .status-buttons .cancel").live("click", function(){
-    $(this).parents("form").find(".status-buttons").slideToggle();
+    $(this).parents("form").find(".status-buttons").slideToggle(150, "swing");
      $(this).parents("form").find("textarea").css("height","32");
   });
 })
