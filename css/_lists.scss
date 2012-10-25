@@ -2,6 +2,16 @@
 // Listas
 // ==========================================================================
 
+
+// Variáveis
+// ==========================================================================
+
+// A largura total das estrelas.
+$general-list-item-stars-width: 88px;
+// O espaçamento entre as estrelas e os contadores.
+$general-list-item-stars-n-counters-gutter: 12px;
+
+
 .icon-link {
   float: left;
   margin-right: 10px;
@@ -970,19 +980,21 @@ hr {
 .general-list-item-footer {
   @include clear-fix;
 
+  .general-list-item-counters { margin-left: $general-list-item-stars-width + $general-list-item-stars-n-counters-gutter; }
+
   .general-list-item-stars,
   .general-list-item-counters { float: left; }
 
   .general-list-item-stars +
-  .general-list-item-counters { margin-left: 12px; }
+  .general-list-item-counters { margin-left: $general-list-item-stars-n-counters-gutter; }
 }
 
 // Estrelas.
 .general-list-item-stars {
+  @include clear-fix;
+  width: $general-list-item-stars-width;
   margin: 0;
   list-style: none;
-  @include clear-fix;
-  width: 88px;
 }
 
 // Estrela.
