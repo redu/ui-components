@@ -56,6 +56,10 @@ $icon-layout: smart;
   &:before { @extend .icon-mobile-darkgray_32_34; }
 }
 
+.icon-mobile-lightblue_16_18-before {
+  &:before { @extend .icon-mobile-lightblue_16_18; }
+}
+
 // Termos de uso.
 .icon-terms-of-service-darkgray_32_34-before {
   &:before { @extend .icon-terms-of-service-darkgray_32_34; }
@@ -756,3 +760,41 @@ a:hover,
   &:before { @extend .icon-star-empty-gray_16_18; }
 }
 
+// Tópico de Guia
+.icon-guide-topic-gray_16_18-before {
+  &:before { @extend .icon-guide-topic-gray_16_18; }
+}
+
+// Tópico de Dúvida
+.icon-doubt-topic-gray_16_18-before {
+  &:before { @extend .icon-doubt-topic-gray_16_18; }
+}
+
+// Dúvidas Frequentes
+.icon-frequent-questions-lightgray_32_34-before {
+  &:before { @extend .icon-frequent-questions-lightgray_32_34; }
+}
+
+.icon-frequent-questions-lightblue_16_18-before {
+  &:before { @extend .icon-frequent-questions-lightblue_16_18; }
+}
+
+// Redes Sociais
+.icon-social-networks-lightblue_16_18-before {
+  &:before { @extend .icon-social-networks-lightblue_16_18; }
+}
+
+// Chat
+.icon-chat-lightblue_16_18-before {
+  &:before { @extend .icon-chat-lightblue_16_18; }
+}
+
+// Relatórios
+.icon-reports-lightblue_16_18-before {
+  &:before { @extend .icon-reports-lightblue_16_18; }
+}
+
+// Suporte
+.icon-support-lightblue_16_18-before {
+  &:before { @extend .icon-support-lightblue_16_18; }
+}
