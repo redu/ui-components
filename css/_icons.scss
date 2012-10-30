@@ -76,6 +76,7 @@ $icon-layout: smart;
 }
 .icon-teacher-lightblue_32_34-before {
   &:before { @extend .icon-teacher-lightblue_32_34; }
+  &:hover:before { @extend .icon-teacher-blue_32_34; }
 }
 .icon-teacher-gray_16_18-before {
   &:before { @extend .icon-teacher-gray_16_18; }
@@ -105,6 +106,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-member-lightblue_32_34-before {
   &:before { @extend .icon-member-lightblue_32_34; }
+  &:hover:before { @extend .icon-member-blue_32_34; }
 }
 .icon-member-gray_16_18-before {
   &:before { @extend .icon-member-gray_16_18; }
@@ -438,6 +440,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-file-lightblue_16_18-before {
   &:before { @extend .icon-file-lightblue_16_18; }
 }
+.icon-file-gray_16_18-before {
+  &:before { @extend .icon-file-gray_16_18; }
+}
 .icon-file-white_blue_16_18-before {
   &:before { @extend .icon-file-white_blue_16_18; }
 }
@@ -591,6 +596,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-exercise-lightblue_16_18-before {
   &:before {  @extend .icon-exercise-lightblue_16_18; }
 }
+.icon-exercise-gray_16_18-before {
+  &:before {  @extend .icon-exercise-gray_16_18; }
+}
 .list-button li:hover .icon-exercise-lightblue_16_18-before {
   &:before {  @extend .icon-exercise-blue_16_18; }
 }
@@ -657,6 +665,10 @@ a.icon-teacher-gray_16_18-before {
 .icon-list-lightblue_16_18-before {
   &:before { @extend .icon-list-lightblue_16_18; }
   &:hover:before { @extend .icon-list-blue_16_18; }
+}
+
+.icon-list-white_16_18-before {
+  &:before { @extend .icon-list-white_16_18; }
 }
 
 // Portal de Aplicativos.
@@ -827,6 +839,10 @@ a:hover,
   &:before { @extend .icon-frequent-questions-lightblue_32_34; }
 }
 
+.icon-frequent-questions-blue_32_34-before {
+  &:before { @extend .icon-frequent-questions-blue_32_34; }
+}
+
 .icon-frequent-questions-lightblue_16_18-before {
   &:before { @extend .icon-frequent-questions-lightblue_16_18; }
 }
@@ -858,16 +874,30 @@ a:hover,
 .icon-app-lightblue_16_18-before {
   &:before { @extend .icon-app-lightblue_16_18; }
 }
+.icon-app-black_16_18-before {
+  &:before { @extend .icon-app-black_16_18; }
+}
 .icon-app-lightblue_32_34-before {
   &:before { @extend .icon-app-lightblue_32_34; }
+  &:hover:before { @extend .icon-app-blue_32_34; }
 }
 
 // Guia Básico
 .icon-basic-guide-lightblue_32_34-before {
   &:before { @extend .icon-basic-guide-lightblue_32_34; }
+  &:hover:before { @extend .icon-basic-guide-blue_32_34; }
 }
 .icon-basic-guide-gray_32_34-before {
   &:before { @extend .icon-basic-guide-gray_32_34; }
+}
+.icon-basic-guide-lightblue_16_18-before {
+  &:before { @extend .icon-basic-guide-lightblue_16_18; }
+}
+.icon-basic-guide-blue_16_18-before {
+  &:before { @extend .icon-basic-guide-blue_16_18; }
+}
+.icon-basic-guide-white_16_18-before {
+  &:before { @extend .icon-basic-guide-white_16_18; }
 }
 
 // Áreas do Redu
@@ -878,7 +908,17 @@ a:hover,
 // Gestor
 .icon-manager-lightblue_32_34-before {
   &:before { @extend .icon-manager-lightblue_32_34; }
+  &:hover:before { @extend .icon-manager-blue_32_34; }
 }
 .icon-manager-blue_32_34-before {
   &:before { @extend .icon-manager-blue_32_34; }
+}
+.icon-manager-lightblue_16_18-before {
+  &:before { @extend .icon-manager-lightblue_16_18; }
+}
+.icon-manager-blue_16_18-before {
+  &:before { @extend .icon-manager-blue_16_18; }
+}
+.icon-manager-white_16_18-before {
+  &:before { @extend .icon-manager-white_16_18; }
 }
