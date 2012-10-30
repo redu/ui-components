@@ -6,7 +6,6 @@
 *.rej
 *.swo
 *.swp
-*.zip
 *.vi
 *~
 *.sass-cache
@@ -34,6 +33,7 @@ nbproject
 # Compass.
 css/bootstrap-redu*.css
 img/icon-*
+img/sprite-*
 # Grunt.
 js/bootstrap-redu*
 # Node.
