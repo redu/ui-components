@@ -922,3 +922,13 @@ a:hover,
 .icon-manager-white_16_18-before {
   &:before { @extend .icon-manager-white_16_18; }
 }
+
+// Fale conosco
+.icon-talk-to-us-green_48_50-before {
+  &:before { @extend .icon-talk-to-us-green_48_50; }
+}
+
+// Diga olá
+.icon-say-hi-green_48_50-before {
+  &:before { @extend .icon-say-hi-green_48_50; }
+}
