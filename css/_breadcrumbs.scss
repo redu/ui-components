@@ -12,7 +12,6 @@
 }
 
 .breadcrumb-mini-item {
-  @extend .link-secondary;
   float: left;
 
   &:after { margin-right: 5px; }
@@ -21,15 +20,12 @@
 }
 
 .breadcrumb-mini-link {
+  font-size: 11px;
+  vertical-align: middle;
   float: left;
 
-  &:before { vertical-align: middle !important; }
-
-  .breadcrumb-mini-compact & {
-    @include text-replacement;
-
-    &:before { margin-right: 0 !important; }
-  }
+  // Com a remoção do texto é preciso retirar a margem direita do ícone.
+  &.text-replacement:before { margin-right: 0; }
 }
 
 // Breadcrumb de ícones.
@@ -68,11 +64,10 @@
 
 // Ícone.
 .breadcrumb-icon {
-  @include text-replacement;
   display: inline-block;
   vertical-align: middle;
 
-  &:before { margin-right: 0 !important; }
+  .breadcrumb-icons &:before { margin-right: 0; }
 
   .breadcrumb-icon-active & { margin-top: 1px; }
 }

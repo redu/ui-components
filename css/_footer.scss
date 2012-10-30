@@ -21,15 +21,12 @@ body { height: 100%; }
   margin: 0 auto (- $footer-height);
 }
 
-.footer-pusher {
-  height: $footer-height;
-  margin-top: 20px;
-}
+.footer-pusher { height: $footer-height; }
 
 
 // Wrapper de tudo.
 .footer {
-  @include box-sizing(border-box);
+  @include box-sizing;
   $box-shadow:
     0 1px 0 $white inset
   , 0 -1px 0 $white inset;

@@ -99,7 +99,6 @@ $filterBoxShadow:
 }
 
 .filter-sub-title {
-  @extend .legend;
   @include size(135px, 11px);
   display: block;
   margin-top: 2px;
@@ -111,7 +110,6 @@ $filterBoxShadow:
 // Dropdown.
 
 .filter-label {
-  @extend .legend;
   display: inline;
   margin-left: 5px;
 

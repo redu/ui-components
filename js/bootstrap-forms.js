@@ -7,7 +7,7 @@
     // Adiciona um contador de caracteres.
     countChars: function(options) {
       var settings = $.extend({
-        characterCounterTemplate: $('<span class="character-counter"></span>')
+        characterCounterTemplate: $('<span class="character-counter legend"></span>')
       }, options);
 
       return this.each(function() {

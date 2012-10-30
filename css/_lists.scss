@@ -2,6 +2,16 @@
 // Listas
 // ==========================================================================
 
+
+// Variáveis
+// ==========================================================================
+
+// A largura total das estrelas.
+$general-list-item-stars-width: 88px;
+// O espaçamento entre as estrelas e os contadores.
+$general-list-item-stars-n-counters-gutter: 12px;
+
+
 .icon-link {
   float: left;
   margin-right: 10px;
@@ -17,15 +27,14 @@ hr {
   clear: both;
   margin: 10px 0;
   border-left: none;
-  border-top: solid 1px $gray3;
-  border-bottom: solid 1px $white;
+  border-right: none;
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
 }
 
-.statuses {
+.statuses .status { margin: 20px; }
 
-  ul, li, ol { list-style: none; }
-
-  overflow: hidden;
+.statuses, .courses-lists, .responses  { list-style: none; }
 
   .target { display: block; }
 
@@ -81,11 +90,11 @@ hr {
   .status-text {
     overflow: hidden;
 
+    .target { display: inline; }
+
     + .status-content {
       margin-top: 6px;
       margin-left: 42px;
-
-    .target { display: inline; }
     }
   }
 
@@ -113,7 +122,9 @@ hr {
       }
     }
   }
+
   .status-container { margin-left: 42px; }
+
   .status-content {
     @include border-radius;
     width: 100%;
@@ -200,7 +211,6 @@ hr {
         textarea {
           max-width: 1000px;
           overflow: hidden;
-          height: 18px;
         }
 
         label {
@@ -311,7 +321,6 @@ hr {
       }
     }
   }
-}
 
 .courses-lists {
   @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
@@ -377,12 +386,10 @@ hr {
       }
     }
   }
-
 }
 
 // Comum a lista de cursos/disciplinas.
 // ==========================================================================
-
 .list-course-space {
   list-style: none;
   color: $gray5;
@@ -505,7 +512,6 @@ hr {
 
 // Posiciona o ícone de privado na esquerda.
 .list-course-private {
-  @include text-replacement;
   position: absolute;
   left: 28px;
   top: 65px;
@@ -621,11 +627,11 @@ hr {
   float: right;
   line-height: 11px;
 
-  .progress-bar-mini,
+  .progress-bar-short,
   .label-news,
   .label-doubts { vertical-align: middle; }
 
-  .progress-bar-mini {
+  .progress-bar-short {
     display: inline-block;
     margin-left: 10px;
   }
@@ -684,7 +690,7 @@ hr {
   margin: 0;
   color: $gray5;
 
-  a {
+  .list-mix-title {
     color: $gray5;
 
     &:hover { text-decoration: none; }
@@ -729,7 +735,7 @@ hr {
 .list-mix-title {
   .list-mix-item:hover & { color: $gray6; }
 
-  &:hover { color: $blue4 !important; }
+  .list-mix-item:hover &:hover { color: $blue4; }
 }
 
 .list-mix-header { line-height: 0; }
@@ -758,10 +764,10 @@ hr {
 .list-environment-course-space-item { & + & { margin-top: 45px; } }
 
 // Container no cabeçalho.
-.list-environment-course-space-header {
-  @include clear-fix;
-  margin-bottom: 10px;
-}
+.list-environment-course-space-header { @include clear-fix; }
+
+.list-environment-course-space-header +
+.list-mix { margin-top: 10px; }
 
 // Link da imagem do ambiente.
 .list-environment-course-space-image-link {
@@ -857,17 +863,17 @@ hr {
 // Lista de colunas.
 // ==========================================================================
 
-.list-1-column { @include list-column("general-list-item", 1); }
+.list-1-columns { @include list-column(1); }
 
-.list-1-column-separator { @include list-column-separator("general-list-item", 1); }
+.list-1-columns.list-columns-separator { @include list-column-separator(1); }
 
-.list-2-columns { @include list-column("general-list-item"); }
+.list-2-columns { @include list-column; }
 
-.list-2-columns-separator { @include list-column-separator("general-list-item"); }
+.list-2-columns.list-columns-separator { @include list-column-separator; }
 
-.list-3-columns { @include list-column("general-list-item", 3); }
+.list-3-columns { @include list-column(3); }
 
-.list-3-columns-separator { @include list-column-separator("general-list-item", 3); }
+.list-3-columns.list-columns-separator { @include list-column-separator(3); }
 
 
 // Lista genérica (Ambientes que Participo, Ambientes de Aprendizado,
@@ -974,19 +980,21 @@ hr {
 .general-list-item-footer {
   @include clear-fix;
 
+  .general-list-item-counters { margin-left: $general-list-item-stars-width + $general-list-item-stars-n-counters-gutter; }
+
   .general-list-item-stars,
   .general-list-item-counters { float: left; }
 
   .general-list-item-stars +
-  .general-list-item-counters { margin-left: 12px; }
+  .general-list-item-counters { margin-left: $general-list-item-stars-n-counters-gutter; }
 }
 
 // Estrelas.
 .general-list-item-stars {
+  @include clear-fix;
+  width: $general-list-item-stars-width;
   margin: 0;
   list-style: none;
-  @include clear-fix;
-  width: 88px;
 }
 
 // Estrela.
@@ -999,8 +1007,6 @@ hr {
 
 // Ícone de fechar.
 .general-list-item-close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  float: right;
   display: none;
 }

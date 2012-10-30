@@ -65,7 +65,8 @@
   text-align: center;
   // Centraliza horizontalmente.
   position: fixed;
-  top: 50px;
+  z-index: $z-index-system-message;
+  top: $nav-global-height + 20px;
   left: 50%;
   $width: 580px;
   width: $width;

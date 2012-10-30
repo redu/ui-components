@@ -46,6 +46,17 @@ $modalWidth: 520px;
   border: 1px solid $gray6;
 }
 
+.modal-fill-horizontal {
+  width: auto;
+  margin: 0;
+}
+
+// Botão de fechar.
+.modal-close {
+  cursor: pointer;
+  float: right;
+}
+
 // Aumenta a largura para 14 grids.
 .modal-grids-14 {
   $width: grid-width(14);

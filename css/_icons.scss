@@ -56,6 +56,10 @@ $icon-layout: smart;
   &:before { @extend .icon-mobile-darkgray_32_34; }
 }
 
+.icon-mobile-lightblue_16_18-before {
+  &:before { @extend .icon-mobile-lightblue_16_18; }
+}
+
 // Termos de uso.
 .icon-terms-of-service-darkgray_32_34-before {
   &:before { @extend .icon-terms-of-service-darkgray_32_34; }
@@ -69,6 +73,10 @@ $icon-layout: smart;
 // Professor.
 .icon-teacher-lightblue_16_18-before {
   &:before { @extend .icon-teacher-lightblue_16_18; }
+}
+.icon-teacher-lightblue_32_34-before {
+  &:before { @extend .icon-teacher-lightblue_32_34; }
+  &:hover:before { @extend .icon-teacher-blue_32_34; }
 }
 .icon-teacher-gray_16_18-before {
   &:before { @extend .icon-teacher-gray_16_18; }
@@ -96,8 +104,13 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-member-lightblue_16_18; }
   &:hover:before { @extend .icon-member-blue_16_18; }
 }
+.icon-member-lightblue_32_34-before {
+  &:before { @extend .icon-member-lightblue_32_34; }
+  &:hover:before { @extend .icon-member-blue_32_34; }
+}
 .icon-member-gray_16_18-before {
   &:before { @extend .icon-member-gray_16_18; }
+  &:before:hover { @extend .icon-member-blue_16_18; }
 }
 
 // Início/home.
@@ -105,8 +118,17 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-home-lightblue_16_18; }
   &:hover:before { @extend .icon-home-blue_16_18; }
 }
+
 .icon-home-white_blue_16_18-before {
   &:before { @extend .icon-home-white_blue_16_18; }
+}
+
+.icon-home-gray_16_18-before {
+  &:before { @extend .icon-home-gray_16_18; }
+}
+
+.icon-home-black_16_18-before {
+  &:before { @extend .icon-home-black_16_18; }
 }
 
 // Ambiente virtual de aprendizagem.
@@ -118,6 +140,9 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-environment-gray_16_18-before {
   &:before { @extend .icon-environment-gray_16_18; }
+}
+.icon-environment-black_16_18-before {
+  &:before { @extend .icon-environment-black_16_18; }
 }
 .icon-environment-lightblue_16_18-before,
 .header-list .icon-environment-gray_16_18-before {
@@ -185,6 +210,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-space-gray_16_18-before {
   &:before { @extend .icon-space-gray_16_18; }
+  &:hover:before { @extend .icon-space-blue_16_18; }
 }
 .icon-space-lightblue_16_18-before {
   &:hover:before { @extend .icon-space-blue_16_18; }
@@ -263,10 +289,17 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-profile-blue_16_18; }
 }
 
+.icon-profile-gray_16_18-before {
+  &:before { @extend .icon-profile-gray_16_18; }
+}
+
 // Mensagens.
 .icon-message-lightblue_16_18-before {
   &:before { @extend .icon-message-lightblue_16_18; }
   &:hover:before { @extend .icon-message-blue_16_18; }
+}
+.icon-message-gray_16_18-before {
+  &:before { @extend .icon-message-gray_16_18; }
 }
 .icon-message-white_blue_16_18-before {
   &:before { @extend .icon-message-white_blue_16_18; }
@@ -277,6 +310,12 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-message-darkgray_32_34-before {
   &:before { @extend .icon-message-darkgray_32_34; }
+}
+
+// Mensagens Enviadas.
+.icon-sent-message-gray_32_34-before {
+  &:before { @extend .icon-sent-message-gray_32_34; }
+  .header-breadcrumb:hover &:before { @extend .icon-sent-message-blue_32_34; }
 }
 
 // Parceiro.
@@ -308,12 +347,17 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-wall-gray_16_18-before {
   &:before { @extend .icon-wall-gray_16_18; }
+  &:before:hover { @extend .icon-wall-blue_16_18; }
 }
 .icon-wall-lightblue_16_18-before {
   &:hover:before { @extend .icon-wall-blue_16_18; }
 }
 .wall-stats-new.icon-wall-lightblue_16_18-before {
   &:hover:before { @extend .icon-wall-blue_16_18; }
+}
+.icon-wall-gray_32_34-before {
+  &:before { @extend .icon-wall-gray_32_34; }
+  &:before:hover { @extend .icon-wall-blue_32_34; }
 }
 
 // Aula.
@@ -370,6 +414,9 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-comment-lightblue_16_18; }
   &:hover:before { @extend .icon-comment-blue_16_18; }
 }
+.icon-comment-white_blue_32_34-before {
+  &:before { @extend .icon-comment-white_blue_32_34; }
+}
 
 // Dúvida.
 .icon-request-help-gray_16_18-before {
@@ -392,6 +439,9 @@ a.icon-teacher-gray_16_18-before {
 // Arquivo de apoio.
 .icon-file-lightblue_16_18-before {
   &:before { @extend .icon-file-lightblue_16_18; }
+}
+.icon-file-gray_16_18-before {
+  &:before { @extend .icon-file-gray_16_18; }
 }
 .icon-file-white_blue_16_18-before {
   &:before { @extend .icon-file-white_blue_16_18; }
@@ -416,11 +466,18 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-account-lightblue_16_18; }
   &:hover:before { @extend .icon-account-blue_16_18; }
 }
+.icon-account-gray_16_18-before {
+  &:before { @extend .icon-account-gray_16_18; }
+}
+
 
 // Plano.
 .icon-plan-lightblue_16_18-before {
   &:before { @extend .icon-plan-lightblue_16_18; }
   &:hover:before { @extend .icon-plan-blue_16_18; }
+}
+.icon-plan-gray_16_18-before {
+  &:before { @extend .icon-plan-gray_16_18; }
 }
 
 // Biografia.
@@ -430,6 +487,9 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-biography-white_blue_16_18-before {
   &:before { @extend .icon-biography-white_blue_16_18; }
+}
+.icon-biography-gray_16_18-before {
+  &:before { @extend .icon-biography-gray_16_18; }
 }
 
 // Currículo.
@@ -442,6 +502,9 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-curriculum-darkgray_32_34-before {
   &:before { @extend .icon-curriculum-darkgray_32_34; }
+}
+.icon-curriculum-gray_16_18-before {
+  &:before { @extend .icon-curriculum-gray_16_18; }
 }
 
 // Descrição.
@@ -487,6 +550,10 @@ a.icon-teacher-gray_16_18-before {
   &:hover { @extend .icon-close-red_16_18; }
 }
 
+.icon-close-big-gray_16_18 {
+  &:hover { @extend .icon-close-big-red_16_18; }
+}
+
 // Privado.
 .icon-private-gray_16_18,
 .icon-private-lightblue_16_18 {
@@ -529,6 +596,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-exercise-lightblue_16_18-before {
   &:before {  @extend .icon-exercise-lightblue_16_18; }
 }
+.icon-exercise-gray_16_18-before {
+  &:before {  @extend .icon-exercise-gray_16_18; }
+}
 .list-button li:hover .icon-exercise-lightblue_16_18-before {
   &:before {  @extend .icon-exercise-blue_16_18; }
 }
@@ -539,9 +609,13 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-notification-blue_16_18; }
 }
 
+.icon-notification-gray_16_18-before {
+  &:before { @extend .icon-notification-gray_16_18; }
+}
+
 // Perfil 2.
 .icon-profile-2-lightblue_16_18-before {
-  &:before { @extend .icon-profile-2-lightblue_16_18;}
+  &:before { @extend .icon-profile-2-lightblue_16_18; }
   &:hover:before { @extend .icon-profile-2-blue_16_18; }
 }
 
@@ -593,6 +667,10 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-list-blue_16_18; }
 }
 
+.icon-list-white_16_18-before {
+  &:before { @extend .icon-list-white_16_18; }
+}
+
 // Portal de Aplicativos.
 .icon-apps-portal-gray_48_50-before {
   &:before { @extend .icon-apps-portal-gray_48_50; }
@@ -609,15 +687,43 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-oer-blue_16_18; }
 }
 
+.icon-oer-gray_16_18-before {
+  &:before { @extend .icon-oer-gray_16_18; }
+}
+
 // Favoritos.
 .icon-favorite-lightblue_16_18-before {
   &:before { @extend .icon-favorite-lightblue_16_18; }
   &:hover:before { @extend .icon-favorite-blue_16_18; }
 }
 
+.icon-favorite-delete-lightblue_16_18-before {
+  &:before { @extend .icon-favorite-delete-lightblue_16_18; }
+  &:hover:before { @extend .icon-favorite-delete-blue_16_18; }
+}
+
+.icon-favorite-gray_32_34-before {
+  &:before { @extend .icon-favorite-gray_32_34; }
+  &:hover:before { @include icon-sprite(favorite-blue_32_34); }
+}
+
+.icon-favorite-blue_32_34-before {
+  &:before { @extend .icon-favorite-blue_32_34; }
+}
+
+.icon-favorite-gray_16_18-before {
+  &:before { @extend .icon-favorite-gray_16_18; }
+}
+
 // Especialista.
 .icon-specialist-gray_16_18-before {
   &:before { @extend .icon-specialist-gray_16_18; }
+}
+.icon-specialist-white_blue_32_34-before {
+  &:before { @extend .icon-specialist-white_blue_32_34; }
+}
+.icon-specialist-gray_32_34-before {
+  &:before { @extend .icon-specialist-gray_32_34; }
 }
 
 // Administrador / Gestor.
@@ -631,6 +737,15 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-magnifier-blue_16_18; }
 }
 
+// Central de Ajuda.
+.icon-help-central-gray_66-before {
+  &:before { @extend .icon-help-central-gray_66; }
+  &:hover:before { @extend .icon-help-central-blue_66; }
+}
+
+.icon-help-central-empty_128-before {
+  &:before { @extend .icon-help-central-empty_128; }
+}
 
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
@@ -679,8 +794,146 @@ a:hover,
 
 .button-disabled:hover .icon-close-gray_8_10 { @extend .icon-close-gray_8_10; }
 
-//video
+// Video
 .icon-video-gray_16_18-before {
   &:before { @extend .icon-video-gray_16_18; }
-  &:hover:before { @extend .icon-video-blue_16_18;}
+  &:hover:before { @extend .icon-video-blue_16_18; }
+}
+
+// Agrupamento
+.icon-grouping-gray_16_18-before {
+  &:before { @extend .icon-grouping-gray_16_18; }
+}
+
+// Conexões
+.icon-connections-gray_32_34 {
+  &:hover { @extend .icon-connections-blue_32_34; }
+}
+
+// Instituição
+.icon-institution-gray_32_34 {
+  &:hover { @extend .icon-institution-blue_32_34; }
+}
+
+// Estrela
+.icon-star-empty-gray_16_18-before {
+  &:before { @extend .icon-star-empty-gray_16_18; }
+}
+
+// Tópico de Guia
+.icon-guide-topic-gray_16_18-before {
+  &:before { @extend .icon-guide-topic-gray_16_18; }
+}
+
+// Tópico de Dúvida
+.icon-doubt-topic-gray_16_18-before {
+  &:before { @extend .icon-doubt-topic-gray_16_18; }
+}
+
+// Dúvidas Frequentes
+.icon-frequent-questions-lightgray_32_34-before {
+  &:before { @extend .icon-frequent-questions-lightgray_32_34; }
+}
+
+.icon-frequent-questions-lightblue_32_34-before {
+  &:before { @extend .icon-frequent-questions-lightblue_32_34; }
+}
+
+.icon-frequent-questions-blue_32_34-before {
+  &:before { @extend .icon-frequent-questions-blue_32_34; }
+}
+
+.icon-frequent-questions-lightblue_16_18-before {
+  &:before { @extend .icon-frequent-questions-lightblue_16_18; }
+}
+
+// Redes Sociais
+.icon-social-networks-lightblue_16_18-before {
+  &:before { @extend .icon-social-networks-lightblue_16_18; }
+}
+
+// Chat
+.icon-chat-lightblue_16_18-before {
+  &:before { @extend .icon-chat-lightblue_16_18; }
+}
+
+// Relatórios
+.icon-reports-lightblue_16_18-before {
+  &:before { @extend .icon-reports-lightblue_16_18; }
+}
+.icon-reports-gray_16_18-before {
+  &:before { @extend .icon-reports-gray_16_18; }
+}
+
+// Suporte
+.icon-support-lightblue_16_18-before {
+  &:before { @extend .icon-support-lightblue_16_18; }
+}
+
+// Aplicativo
+.icon-app-lightblue_16_18-before {
+  &:before { @extend .icon-app-lightblue_16_18; }
+}
+.icon-app-black_16_18-before {
+  &:before { @extend .icon-app-black_16_18; }
+}
+.icon-app-lightblue_32_34-before {
+  &:before { @extend .icon-app-lightblue_32_34; }
+  &:hover:before { @extend .icon-app-blue_32_34; }
+}
+
+// Guia Básico
+.icon-basic-guide-lightblue_32_34-before {
+  &:before { @extend .icon-basic-guide-lightblue_32_34; }
+  &:hover:before { @extend .icon-basic-guide-blue_32_34; }
+}
+.icon-basic-guide-gray_32_34-before {
+  &:before { @extend .icon-basic-guide-gray_32_34; }
+}
+.icon-basic-guide-lightblue_16_18-before {
+  &:before { @extend .icon-basic-guide-lightblue_16_18; }
+}
+.icon-basic-guide-blue_16_18-before {
+  &:before { @extend .icon-basic-guide-blue_16_18; }
+}
+.icon-basic-guide-white_16_18-before {
+  &:before { @extend .icon-basic-guide-white_16_18; }
+}
+
+// Áreas do Redu
+.icon-redu-areas-gray_16_18-before {
+  &:before { @extend .icon-redu-areas-gray_16_18; }
+}
+
+// Gestor
+.icon-manager-lightblue_32_34-before {
+  &:before { @extend .icon-manager-lightblue_32_34; }
+  &:hover:before { @extend .icon-manager-blue_32_34; }
+}
+.icon-manager-blue_32_34-before {
+  &:before { @extend .icon-manager-blue_32_34; }
+}
+.icon-manager-lightblue_16_18-before {
+  &:before { @extend .icon-manager-lightblue_16_18; }
+}
+.icon-manager-blue_16_18-before {
+  &:before { @extend .icon-manager-blue_16_18; }
+}
+.icon-manager-white_16_18-before {
+  &:before { @extend .icon-manager-white_16_18; }
+}
+
+// Fale conosco
+.icon-talk-to-us-green_48_50-before {
+  &:before { @extend .icon-talk-to-us-green_48_50; }
+}
+
+// Diga olá
+.icon-say-hi-green_48_50-before {
+  &:before { @extend .icon-say-hi-green_48_50; }
+}
+
+// Sinta-se apoiado
+.icon-feel-supported-gray_32_34-before {
+  &:before { @extend .icon-feel-supported-gray_32_34; }
 }

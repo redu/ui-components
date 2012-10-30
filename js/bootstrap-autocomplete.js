@@ -8,7 +8,7 @@
   , triggerInviteByMail: 'inviteByMail.reduAutocomplete'
   , dropdown: 'control-autocomplete-dropdown'
   , name: 'control-autocomplete-name'
-  , mail: 'control-autocomplete-mail'
+  , mail: 'control-autocomplete-mail legend'
   , suggestion: 'control-autocomplete-suggestion'
   , inviteClickText: 'Clique aqui para convidar este endereço de e-mail'
   , buttonStyle: 'button-primary'

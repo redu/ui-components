@@ -81,6 +81,14 @@ fieldset {
   }
 }
 
+// Lista de erros do campo.
+.control-errors {
+  margin: 5px 0 0;
+  list-style: none;
+  color: rgb(255, 109, 109);
+  font-size: 11px;
+}
+
 // Encapsula o controle.
 .controls { position: relative; }
 
@@ -110,6 +118,7 @@ select,
 textarea {
   @include font-shorthand;
   font-family: $base-font-family;
+  font-weight: lighter;
 }
 
 // Resets de tamanho e tipo compartilhados.
@@ -193,7 +202,6 @@ textarea {
 
 // Contador de caracteres restantes.
 .character-counter {
-  @extend .legend;
   position: absolute;
   left: 11px;
   bottom: -16px;
@@ -454,10 +462,7 @@ textarea:-moz-placeholder { color: $gray4; }
   }
 }
 
-.control-search-icon {
-  @include text-replacement;
-  display: block;
-}
+.control-search-icon { display: block; }
 
 
 // Autocomplete.
@@ -547,9 +552,6 @@ textarea:-moz-placeholder { color: $gray4; }
 
   .control-autocomplete-name { color: $blue3; }
 }
-
-// E-mail.
-.control-autocomplete-mail { @extend .legend; }
 
 .control-autocomplete-thumbnail + .control-autocomplete-name,
 .control-autocomplete-thumbnail + .control-autocomplete-added-info { margin-left: 5px; }

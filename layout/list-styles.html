@@ -10,57 +10,62 @@
     <script src="../js/vendor/modernizr.js"></script>
   </head>
   <body  onload="prettyPrint()" style="width: 800px; margin: 0 auto;">
-    <div class="statuses">
       <h1>Listas</h1>
-      <ol>
-        <li class="status-content create-status status">
-          <form>
-            <fieldset>
-              <textarea class="status concave-input" cols="40" id="status_text" name="status[text]" rows="1" placeholder="Compartilhe algo com seus amigos através do seu mural"></textarea>
-            </fieldset>
-              <div class="status-buttons">
-                <input id="status_submit" name="commit" type="submit" value="Postar" class="button-primary">
-                <a href="#" class="cancel button-default" rel="nofollow">Cancelar</a>
-              </div>
-          </form>
-        </li>
-        <li class="status">
-          <h5>Post de texto (status / comentário)</h5>
-          <div class="status-text">
-            <a class="icon-link" href="#"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-            <a href="#" class="link-name">Thaís Bione</a>
-            <span class="status-info">
-              comentou no
-              <a href="#">mural</a> de
-              <a href="#">ana</a>:
-            </span>
-            <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-            <span class="date">
-              há 2 dias.
-            </span>
-          </div>
-          <div class="status-container">
-            <div class="status-content">
-              <div class="post-text">
-                <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-              </div>
+      <ol class="statuses">
+        <li>
+          <div class="status">
+            <div class="status-content create-status status">
+              <form>
+                <fieldset>
+                  <textarea cols="40" id="status_text" rows="1" placeholder="Compartilhe algo com seus amigos através do seu mural"></textarea>
+                </fieldset>
+                  <div class="status-buttons">
+                    <input id="status_submit" name="commit" type="submit" value="Postar" class="button-primary">
+                    <a href="#" class="cancel button-default" rel="nofollow">Cancelar</a>
+                  </div>
+              </form>
             </div>
           </div>
-          <ul class="actions clearfix">
-            <li>
-              <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-            </li>
-          </ul>
-          <div class="create-response">
-            <form accept-charset="UTF-8" data-remote="true" method="post">
-              <fieldset>
-              <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                <div class="status-buttons">
-                  <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                  <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+        </li>
+        <li>
+          <div class="status">
+            <h5>Post de texto (status / comentário)</h5>
+            <div class="status-text">
+              <a class="icon-link" href="#"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+              <a href="#" class="link-name">Thaís Bione</a>
+              <span class="status-info">
+                comentou no
+                <a href="#">Mural</a> de
+                <a href="#">ana</a>:
+              </span>
+              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+              <span class="date">
+                há 2 dias.
+              </span>
+            </div>
+            <div class="status-container">
+              <div class="status-content">
+                <div class="post-text">
+                  <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                 </div>
-              </fieldset>
-            </form>
+              </div>
+            </div>
+            <ul class="actions clearfix">
+              <li>
+                <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
+              </li>
+            </ul>
+            <div class="create-response">
+              <form accept-charset="UTF-8" data-remote="true" method="post">
+                <fieldset>
+                <textarea id="status_text" cols="40" rows="6"></textarea>
+                  <div class="status-buttons">
+                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </li> <!--fim classe status -->
         <pre style="margin-top: 10px;" class="prettyprint linenums">
@@ -104,77 +109,83 @@
           &lt;/div&gt;
         &lt;/li&gt;
         </pre>
-        <li class="status">
-          <div class="status-text">
-            <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-            <a href="#" class="link-name">Thaís Bione</a>
-            <span class="status-info">
-              comentou no
-              <a href="#">mural</a> de
-              <a href="#">ana</a>:
-            </span>
-            <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-            <span class="date">
-              há 2 dias.
-            </span>
-          </div>
-          <div class="status-container">
-            <div class="status-content">
-              <div class="post-text">
-                <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-              </div>
+        <li>
+          <div class="status">
+            <div class="status-text">
+              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+              <a href="#" class="link-name">Thaís Bione</a>
+              <span class="status-info">
+                comentou no
+                <a href="#">Mural</a> de
+                <a href="#">ana</a>:
+              </span>
+              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+              <span class="date">
+                há 2 dias.
+              </span>
             </div>
-            <ol class="responses status-content">
-              <li class="status-content response">
-                <span class="close icon-close-gray_16_18">Fechar</span>
-                <div class="status-text-response status-text">
-                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                  <a href="#" class="link-name">Thaís Bione</a>
-                  <span class="status-info">
-                    respondeu:
-                  </span>
-                  <span class="date">
-                    há 2 dias.
-                  </span>
-                </div>
+            <div class="status-container">
+              <div class="status-content">
                 <div class="post-text">
-                  <p class="input-user">Ooooooolá pessoal!.</p>
+                  <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                 </div>
-                <hr>
+              </div>
+              <ol class="responses status-content">
+                <li>
+                  <div class="status-content response">
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="post-text">
+                      <p class="input-user">Ooooooolá pessoal!.</p>
+                    </div>
+                    <hr>
+                  </div>
+                </li>
+                <li>
+                  <div class="status-content response">
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="post-text">
+                      <p class="input-user">lalalala</p>
+                    </div>
+                  </div>
+                </li>
+            </ol>
+            </div>
+            <ul class="actions clearfix">
+              <li>
+                <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
               </li>
-              <li class="status-content response">
-                <span class="close icon-close-gray_16_18">Fechar</span>
-                <div class="status-text-response status-text">
-                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                  <a href="#" class="link-name">Thaís Bione</a>
-                  <span class="status-info">
-                    respondeu:
-                  </span>
-                  <span class="date">
-                    há 2 dias.
-                  </span>
-                </div>
-                <div class="post-text">
-                  <p class="input-user">lalalala</p>
-                </div>
-              </li>
-          </ol>
-          </div>
-          <ul class="actions clearfix">
-            <li>
-              <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-            </li>
-          </ul>
-          <div class="create-response">
-            <form accept-charset="UTF-8" data-remote="true" method="post">
-              <fieldset>
-              <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                <div class="status-buttons">
-                  <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                  <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
-                </div>
-              </fieldset>
-            </form>
+            </ul>
+            <div class="create-response">
+              <form accept-charset="UTF-8" data-remote="true" method="post">
+                <fieldset>
+                <textarea id="status_text" cols="40" rows="6"></textarea>
+                  <div class="status-buttons">
+                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </li>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
@@ -252,103 +263,115 @@
           &lt;/div&gt;
         &lt;/li&gt;
         </pre>
-        <li class="status">
-          <div class="status-text">
-            <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-            <a href="#" class="link-name">Thaís Bione</a>
-            <span class="status-info">
-              comentou no
-              <a href="#">mural</a> de
-              <a href="#">ana</a>:
-            </span>
-            <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-            <span class="date">
-              há 2 dias.
-            </span>
-          </div>
-          <div class="status-container">
-            <div class="status-content">
-              <div class="post-text">
-                <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-              </div>
+        <li>
+          <div class="status">
+            <div class="status-text">
+              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+              <a href="#" class="link-name">Thaís Bione</a>
+              <span class="status-info">
+                comentou no
+                <a href="#">Mural</a> de
+                <a href="#">ana</a>:
+              </span>
+              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+              <span class="date">
+                há 2 dias.
+              </span>
             </div>
-            <ol class="responses status-content">
-              <li class="last-responses">
+            <div class="status-container">
+              <div class="status-content">
+                <div class="post-text">
+                  <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
+                </div>
+              </div>
+              <ol class="responses status-content">
+                <li>
+                  <div class="last-responses">
                     <p class="legend">Visualizando as últimas respostas...</p>
+                  </div>
+                </li>
+                <li>
+                  <div  class="status-content response">
                     <hr>
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="post-text">
+                      <p class="input-user">Ooooooolá pessoal!.</p>
+                    </div>
+                    <hr>
+                  </div>
+                </li>
+                <li>
+                  <div class="status-content response">
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="post-text">
+                      <p class="input-user">lalalala</p>
+                    </div>
+                    <hr>
+                  </div>
+                </li>
+                <li>
+                  <div class="all-responses">
+                    <a href="#" class="link-secondary">Visualizando todas as 22 respostas</a>
+                  </div>
+                </li>
+                <li>
+                  <div  class="status-content response" style="display: none;">
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="post-text">
+                    <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                    <p class="post-description">lalalala</p>
+                    </div>
+                    <hr>
+                  </div>
+                </li>
+            </ol>
+            </div>
+            <ul class="actions clearfix">
+              <li>
+                <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
               </li>
-              <li class="status-content response">
-                <span class="close icon-close-gray_16_18">Fechar</span>
-                <div class="status-text-response status-text">
-                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                  <a href="#" class="link-name">Thaís Bione</a>
-                  <span class="status-info">
-                    respondeu:
-                  </span>
-                  <span class="date">
-                    há 2 dias.
-                  </span>
-                </div>
-                <div class="post-text">
-                  <p class="input-user">Ooooooolá pessoal!.</p>
-                </div>
-                <hr>
-              </li>
-              <li class="status-content response">
-                <span class="close icon-close-gray_16_18">Fechar</span>
-                <div class="status-text-response status-text">
-                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                  <a href="#" class="link-name">Thaís Bione</a>
-                  <span class="status-info">
-                    respondeu:
-                  </span>
-                  <span class="date">
-                    há 2 dias.
-                  </span>
-                </div>
-                <div class="post-text">
-                  <p class="input-user">lalalala</p>
-                </div>
-              </li>
-              <li class="all-responses">
-                <hr>
-                <a href="#" class="link-secondary">Visualizando todas as 22 respostas</a>
-              </li>
-              <li class="status-content response" style="display: none;">
-                <span class="close icon-close-gray_16_18">Fechar</span>
-                <div class="status-text-response status-text">
-                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                  <a href="#" class="link-name">Thaís Bione</a>
-                  <span class="status-info">
-                    respondeu:
-                  </span>
-                  <span class="date">
-                    há 2 dias.
-                  </span>
-                </div>
-                <div class="post-text">
-                <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-                <p class="post-description">lalalala</p>
-                </div>
-                <hr>
-              </li>
-          </ol>
-          </div>
-          <ul class="actions clearfix">
-            <li>
-              <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-            </li>
-          </ul>
-          <div class="create-response">
-            <form accept-charset="UTF-8" data-remote="true" method="post">
-              <fieldset>
-              <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                <div class="status-buttons">
-                  <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                  <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
-                </div>
-              </fieldset>
-            </form>
+            </ul>
+            <div class="create-response">
+              <form accept-charset="UTF-8" data-remote="true" method="post">
+                <fieldset>
+                <textarea id="status_text" rows="6"></textarea>
+                  <div class="status-buttons">
+                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div> <!--fim classe status -->
         </li><!--Fim id Status -->
         <pre style="margin-top: 10px;" class="prettyprint linenums">
@@ -452,122 +475,131 @@
           &lt;/div&gt; &lt;!--fim classe status --&gt;
         &lt;/li&gt;
         </pre>
-        <ol>
-          <li class="status with-target">
-            <h5>Post originado de um ambiente (visualizado pela Visão Geral)</h5>
-            <a href="#" class="icon-link"><span class="icon-course-lightgray_32_34 text-replacement">Curso</span></a>
-            <span class="legend context">Universidade Federal de Pernambuco</span>
-            <a href="#" class="target">Curso Lorem Ipsum</a>
-            <div class="status-text">
-              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-              <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
-              <span class="status-info">
-                criou a disciplina
-              </span>
-              <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
-              <span class="date">
-                há 2 dias.
-              </span>
-            </div>
-          </li>
-          <li class="status with-target">
-            <hr class="list-separator">
-            <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
-            <span class="legend context">Universidade Voluptat Metus > Curso a Ipsum</span>
-            <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
-            <div class="status-text">
-              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-              <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
-              <span class="status-info">
-                comentou na aula
-              </span>
-              <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
-              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-              <span class="date">
-                há 2 dias.
-              </span>
-            </div>
-            <div class="status-container">
-              <div class="status-content">
-                <div class="post-text">
-                  <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-                </div>
+        </ol>
+        <ol class="statuses">
+          <li>
+            <div class="status with-target">
+              <h5>Post originado de um ambiente (visualizado pela Visão Geral)</h5>
+              <a href="#" class="icon-link"><span class="icon-course-lightgray_32_34 text-replacement">Curso</span></a>
+              <span class="legend context">Universidade Federal de Pernambuco</span>
+              <a href="#" class="target">Curso Lorem Ipsum</a>
+              <div class="status-text">
+                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
+                <span class="status-info">
+                  criou a disciplina
+                </span>
+                <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
+                <span class="date">
+                  há 2 dias.
+                </span>
               </div>
             </div>
-            <ul class="actions clearfix">
-              <li>
-                <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-              </li>
-            </ul>
-            <div class="create-response">
-              <form accept-charset="UTF-8" data-remote="true" method="post">
-                <fieldset>
-                  <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                  <div class="status-buttons">
-                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+          </li>
+          <li>
+            <div class="status with-target">
+              <hr class="list-separator">
+              <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
+              <span class="legend context">Universidade Voluptat Metus > Curso a Ipsum</span>
+              <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
+              <div class="status-text">
+                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
+                <span class="status-info">
+                  comentou na aula
+                </span>
+                <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
+                <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                <span class="date">
+                  há 2 dias.
+                </span>
+              </div>
+              <div class="status-container">
+                <div class="status-content">
+                  <div class="post-text">
+                    <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                   </div>
-                </fieldset>
-              </form>
-            </div>
-            <hr class="list-separator">
-          </li>
-          <li class="status with-target">
-            <h5>Post originado de um ambiente (visualizado pela Visão Geral)</h5>
-            <a href="#" class="icon-link"><span class="icon-course-lightgray_32_34 text-replacement">Curso</span></a>
-            <span class="legend context">Universidade Federal de Pernambuco</span>
-            <a href="#" class="target">Curso Lorem Ipsum</a>
-            <div class="status-text">
-              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-              <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
-              <span class="status-info">
-                criou a disciplina
-              </span>
-              <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
-              <span class="date">
-                há 2 dias.
-              </span>
-            </div>
-          </li>
-          <li class="status with-target">
-            <hr class="list-separator">
-            <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
-            <span class="legend context">Universidade Voluptat Metus > Curso Lorem Ipsum</span>
-            <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
-            <div class="status-text">
-              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-              <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
-              <span class="status-info">
-                comentou na aula
-              </span>
-              <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
-              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-              <span class="date">
-                há 2 dias.
-              </span>
-            </div>
-            <div class="status-container">
-              <div class="status-content">
-                <div class="post-text">
-                  <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                 </div>
               </div>
+              <ul class="actions clearfix">
+                <li>
+                  <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
+                </li>
+              </ul>
+              <div class="create-response">
+                <form accept-charset="UTF-8" data-remote="true" method="post">
+                  <fieldset>
+                    <textarea id="status_text" rows="6"></textarea>
+                    <div class="status-buttons">
+                      <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                      <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
             </div>
-            <ul class="actions clearfix">
-              <li>
-                <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-              </li>
-            </ul>
-            <div class="create-response">
-              <form accept-charset="UTF-8" data-remote="true" method="post">
-                <fieldset>
-                  <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                  <div class="status-buttons">
-                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+            <hr class="list-separator">
+          </li>
+          <li>
+            <div class="status with-target">
+              <h5>Post originado de um ambiente (visualizado pela Visão Geral)</h5>
+              <a href="#" class="icon-link"><span class="icon-course-lightgray_32_34 text-replacement">Curso</span></a>
+              <span class="legend context">Universidade Federal de Pernambuco</span>
+              <a href="#" class="target">Curso Lorem Ipsum</a>
+              <div class="status-text">
+                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
+                <span class="status-info">
+                  criou a disciplina
+                </span>
+                <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
+                <span class="date">
+                  há 2 dias.
+                </span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <hr class="list-separator">
+            <div class="status with-target">
+              <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
+              <span class="legend context">Universidade Voluptat Metus > Curso Lorem Ipsum</span>
+              <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
+              <div class="status-text">
+                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
+                <span class="status-info">
+                  comentou na aula
+                </span>
+                <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
+                <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                <span class="date">
+                  há 2 dias.
+                </span>
+              </div>
+              <div class="status-container">
+                <div class="status-content">
+                  <div class="post-text">
+                    <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                   </div>
-                </fieldset>
-              </form>
+                </div>
+              </div>
+              <ul class="actions clearfix">
+                <li>
+                  <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
+                </li>
+              </ul>
+              <div class="create-response">
+                <form accept-charset="UTF-8" data-remote="true" method="post">
+                  <fieldset>
+                    <textarea id="status_text" rows="6"></textarea>
+                    <div class="status-buttons">
+                      <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                      <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
             </div>
             <hr class="list-separator">
           </li>
@@ -651,58 +683,62 @@
           &lt;/li&gt;
         &lt;/ol&gt;
         </pre>
-        <ol>
-          <li class="status with-target status-text">
-            <h5>Post dentro de um ambiente</h5>
-           <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-            <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
-            <span class="status-info">
-              criou a disciplina
-            </span>
-            <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
-            <span class="date">
-              há 2 dias.
-            </span>
-          </li>
-          <li class="status with-target">
-            <hr class="list-separator">
-              <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
-              <span class="legend context">Universidade Voluptat Metus > Curso Lorem Ipsum</span>
-              <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
-              <div class="status-text">
-                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
-                <span class="status-info">
-                  comentou na aula
-                </span>
-                <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
-                <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-                <span class="date">
-                  há 2 dias.
-                </span>
-              </div>
-              <div class="status-container">
-                <div class="status-content">
-                  <div class="post-text">
-                    <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui.   Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-                  </div>
-                </div>
+        <ol class="statuses">
+          <li>
+            <div class="status with-target status-text">
+              <h5>Post dentro de um ambiente</h5>
+             <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+              <a href="#" class="icon-teacher-gray_16_18-before link-name">Nome Sobrenome</a>
+              <span class="status-info">
+                criou a disciplina
+              </span>
+              <a href="#" class="icon-space-gray_16_18-before link-name discipline-name">Dummy Text Discipline</a>
+              <span class="date">
+                há 2 dias.
+              </span>
             </div>
-              <ul class="actions clearfix">
-                <li>
-                  <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-                </li>
-              </ul>
-              <div class="create-response">
-                <form accept-charset="UTF-8" data-remote="true" method="post">
-                  <fieldset>
-                    <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6"></textarea>
-                    <div class="status-buttons">
-                      <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                      <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+          </li>
+          <li>
+            <hr class="list-separator">
+            <div class="status with-target">
+               <a href="#" class="icon-link"><span class="icon-subject-gray_32_34 text-replacement">Aula</span></a>
+                <span class="legend context">Universidade Voluptat Metus > Curso Lorem Ipsum</span>
+                <a href="#" class="target">Disciplina Vestibulum Scelerisque</a>
+                <div class="status-text">
+                  <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                  <a href="#" class="icon-teacher-gray_16_18-before link-name">Thaís Bione</a>
+                  <span class="status-info">
+                    comentou na aula
+                  </span>
+                  <a href="#" class="icon-video-gray_16_18-before link-name discipline-name">Redu para iniciantes</a>
+                  <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                  <span class="date">
+                    há 2 dias.
+                  </span>
+                </div>
+                <div class="status-container">
+                  <div class="status-content">
+                    <div class="post-text">
+                      <p class="input-user">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui.   Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
                     </div>
-                  </fieldset>
-                </form>
+                  </div>
+              </div>
+                <ul class="actions clearfix">
+                  <li>
+                    <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
+                  </li>
+                </ul>
+                <div class="create-response">
+                  <form accept-charset="UTF-8" data-remote="true" method="post">
+                    <fieldset>
+                      <textarea id="status_text" rows="6"></textarea>
+                      <div class="status-buttons">
+                        <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                        <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
               </div>
               <hr class="list-separator">
             </li>
@@ -765,29 +801,32 @@
             &lt;/li&gt;
         &lt;/ol&gt;
         </pre>
-        <li class="status">
-          <h5>Post contendo um link (pré-visualização)</h5>
-          <div class="status-container">
-            <div class="status-content">
-              <form>
-                <fieldset>
-                  <textarea id="status_text" class="status-answer-075cfdef concave-input"></textarea>
-                    <hr>
-                    <div class="post-preview">
-                      <div class="post-body">
-                        <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-                        <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
-                        <p class="source-site">http://www.google.com.br</p>
-                        <p class="post-description">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
+        <ol class="statuses">
+        <li>
+          <div class="status">
+            <h5>Post contendo um link (pré-visualização)</h5>
+            <div class="status-container">
+              <div class="status-content">
+                <form>
+                  <fieldset>
+                    <textarea id="status_text"></textarea>
+                      <hr>
+                      <div class="post-preview">
+                        <div class="post-body">
+                          <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                          <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
+                          <p class="source-site">http://www.google.com.br</p>
+                          <p class="post-description">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
+                        </div>
                       </div>
-                    </div>
-                    <hr>
-                    <div class="status-buttons">
-                      <a class="button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                      <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
-                    </div>
-                  </fieldset>
-                </form>
+                      <hr>
+                      <div class="status-buttons">
+                        <a class="button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                        <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
               </div>
             </div>
           </li>
@@ -816,12 +855,13 @@
             &lt;/div&gt;
           &lt;/li&gt;
         </pre>
-        <li class="status">
+        <li>
+          <div class="status">
             <h6>Modelo sem thumbnail</h6>
             <div class="status-content">
               <form>
                 <fieldset>
-                  <textarea id="status_text" class="status-answer-075cfdef concave-input"></textarea>
+                  <textarea id="status_text"></textarea>
                   <hr>
                   <div class="post-preview">
                     <div class="preview">
@@ -869,6 +909,7 @@
                   </div>
                 </fieldset>
               </form>
+            </div>
             </div>
             <h6>Modelo com thumbnails. Em caso de apenas um, os botões de seta desaparecem</h6>
           </li>
@@ -928,34 +969,36 @@
             &lt;h6&gt;Modelo com thumbnails. Em caso de apenas um, os botões de seta desaparecem&lt;/h6&gt;
           &lt;/li&gt;
         </pre>
-          <li class="status">
+          <li>
+            <div class="status">
             <h5>Post contendo um link (pré-visualização)</h5>
             <div class="status-container">
-              <div class="status-content">
-                <form>
-                  <fieldset>
-                    <textarea id="status_text" class="status-answer-075cfdef concave-input"></textarea>
-                    <div class="post-preview java-applet">
-                      <hr>
-                      <div class="post-preview">
-                      <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-                      <div class="preview">
-                        <a href="#" class="thumbnail">
-                          <img src="../img/java-applet.png">
-                        </a>
+                <div class="status-content">
+                  <form>
+                    <fieldset>
+                      <textarea id="status_text"></textarea>
+                      <div class="post-preview java-applet">
+                        <hr>
+                        <div class="post-preview">
+                        <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                        <div class="preview">
+                          <a href="#" class="thumbnail">
+                            <img src="../img/java-applet.png">
+                          </a>
+                        </div>
+                        <div class="post-body">
+                            <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
+                          <p class="source-site">http://www.google.com.br</p>
+                        </div>
+                        <hr>
                       </div>
-                      <div class="post-body">
-                        <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
-                        <p class="source-site">http://www.google.com.br</p>
+                      <div class="status-buttons">
+                        <a class="button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                        <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
                       </div>
-                      <hr>
-                    </div>
-                    <div class="status-buttons">
-                      <a class="button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                      <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
-                    </div>
-                  </fieldset>
-                </form>
+                    </fieldset>
+                  </form>
+                </div>
               </div>
             </div>
           </li>
@@ -989,83 +1032,85 @@
             &lt;/div&gt;
           &lt;/li&gt;
           </pre>
-                      <li class="status">
-            <div class="status-text">
-              <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-              <a href="#" class="link-name">Thaís Bione</a>
-              <span class="status-info">
-                comentou no
-                <a href="#">mural</a> de
-                <a href="#">ana</a>:
-              </span>
-              <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
-              <span class="date">
-                há 2 dias.
-              </span>
-            </div>
-            <div class ="status-container">
-              <div class="status-content">
-                <div class="post-preview">
-                  <p class="input-user">Cras id risus libero, ut condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                  <div class="preview">
-                    <a href="#" class="thumbnail">
-                      <img src="http://3.bp.blogspot.com/_9Ihh-v99GLw/TKqLogll93I/AAAAAAAAANQ/OItOvLinbik/s1600/google-lego.jpg">
-                    </a>
-                  </div>
-                  <div class="post-body">
-                    <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
-                    <p class="source-site">http://www.google.com.br</p>
-                    <p class="post-description">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
-                  </div>
-                </div>
+          <li>
+            <div class="status">
+              <div class="status-text">
+                <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                <a href="#" class="link-name">Thaís Bione</a>
+                <span class="status-info">
+                  comentou no
+                  <a href="#">Mural</a> de
+                  <a href="#">ana</a>:
+                </span>
+                <a href="#" class="close icon-close-gray_16_18 replacement">Excluir</a>
+                <span class="date">
+                  há 2 dias.
+                </span>
               </div>
-              <ol class="responses status-content">
-                <li class="status-content response">
-                  <span class="close icon-close-gray_16_18">Fechar</span>
-                  <div class="status-text-response status-text">
-                    <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
-                    <a href="#" class="link-name">Thaís Bione</a>
-                    <span class="status-info">
-                      respondeu:
-                    </span>
-                    <span class="date">
-                      há 2 dias.
-                    </span>
+              <div class ="status-container">
+                <div class="status-content">
+                  <div class="post-preview">
+                    <p class="input-user">Cras id risus libero, ut condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <div class="preview">
+                      <a href="#" class="thumbnail">
+                        <img src="http://3.bp.blogspot.com/_9Ihh-v99GLw/TKqLogll93I/AAAAAAAAANQ/OItOvLinbik/s1600/google-lego.jpg">
+                      </a>
+                    </div>
+                    <div class="post-body">
+                      <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
+                      <p class="source-site">http://www.google.com.br</p>
+                      <p class="post-description">Olá pessoal! Hoje eu vou escrever um pouco sobre as ferramentas multimídia que utilizo em sala de aula, e espero que possa ser útil também para vocês aqui. Num mundo cada vez mais interconectado pelas redes sociais, vimos nesses últimos 5 anos uma explosão de novas redes, que surgiam e desapareciam conforme ao sabor das novidades.</p>
+                    </div>
                   </div>
-                  <div class="status-content">
-                    <div class="post-preview java-applet">
-                      <p class="input-user">uouo uou iei iei iei ouou ouo ueoueiueiueiueiu ieui ueiue</p>
-                      <div class="preview">
-                        <a href="#" class="thumbnail">
-                          <img src="../img/java-applet.png">
-                        </a>
-                      </div>
-                      <div class="post-body">
-                          <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
-                          <p class="source-site">http://www.google.com.br</p>
-                      </div>
-                      </div>
-                  </div>
-                </li>
-              </ol>
-            </div>
-              <ul class="actions clearfix">
-                <li>
-                  <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
-                </li>
-              </ul>
-              <div class="create-response">
-            <form accept-charset="UTF-8" data-remote="true" method="post">
-              <fieldset>
-              <textarea id="status_text" class="status-answer-075cfdef concave-input status-answer-6bbe810c concave-input" cols="40" rows="6" style="height: 46px; overflow: hidden; word-wrap: break-word; resize: horizontal; "></textarea>
-                <div class="status-buttons">
-                  <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
-                  <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
                 </div>
-              </fieldset>
-            </form>
+                <ol class="responses status-content">
+                  <li class="status-content response">
+                    <span class="close icon-close-gray_16_18">Fechar</span>
+                    <div class="status-text-response status-text">
+                      <a href="#" class="icon-link"><img src="http://cais.portodigital.org/wordpress/wp-content/uploads/2012/04/logo_Redu.png"></a>
+                      <a href="#" class="link-name">Thaís Bione</a>
+                      <span class="status-info">
+                        respondeu:
+                      </span>
+                      <span class="date">
+                        há 2 dias.
+                      </span>
+                    </div>
+                    <div class="status-content">
+                      <div class="post-preview java-applet">
+                        <p class="input-user">uouo uou iei iei iei ouou ouo ueoueiueiueiueiu ieui ueiue</p>
+                        <div class="preview">
+                          <a href="#" class="thumbnail">
+                            <img src="../img/java-applet.png">
+                          </a>
+                        </div>
+                        <div class="post-body">
+                            <a target="_blank" rel="nofollow" class="title" href="#">Apresentando o Redu - | theoriapratica</a>
+                            <p class="source-site">http://www.google.com.br</p>
+                        </div>
+                        </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+                <ul class="actions clearfix">
+                  <li>
+                    <a class="icon-reply-gray_8_10-before reply-status" href="#">Responder</a>
+                  </li>
+                </ul>
+                <div class="create-response">
+              <form accept-charset="UTF-8" data-remote="true" method="post">
+                <fieldset>
+                <textarea id="status_text"  cols="40" rows="6"></textarea>
+                  <div class="status-buttons">
+                    <a class="cancel button-default" rel="nofollow" href="/pessoas/thaisbione/home">Cancelar</a>
+                    <button id="status_submit" class="button-primary" type="submit" name="commit">Enviar</button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
           </div>
-            </li>
+        </li>
         <pre style="margin-top: 10px;" class="prettyprint linenums">
         &lt;li class="status"&gt;
             &lt;div class="status-text"&gt;
@@ -1128,37 +1173,41 @@
       </ol>
     </div>
     <ul class="courses-lists">
-        <li class="course-item">
-          <div class="course-space">
-            <a href="#" class="icon-link name"><img src="../img/thumbnail-missing-environment-90.png"></a>
-            <h4><a href="#">Thaís Bione Ipsum</a></h4>
-            <span class="date">
-              Criado em 7 Fev, 2011, 16h25
-            </span>
-            <span class="info">
-              Ensino médio.
-            </span>
-            <ul class="stats">
-              <li class="stat"><h6 class="icon-members-gray_16_18-before">10 membros</h6></li>
-              <li class="stat"><h6 class="icon-course-gray_16_18-before">50 aulas</h6></li>
-            </ul>
+        <li>
+          <div class="course-item">
+            <div class="course-space">
+              <a href="#" class="icon-link name"><img src="../img/thumbnail-missing-environment-90.png"></a>
+              <h4><a href="#">Thaís Bione Ipsum</a></h4>
+              <span class="date">
+                Criado em 7 Fev, 2011, 16h25
+              </span>
+              <span class="info">
+                Ensino médio.
+              </span>
+              <ul class="stats">
+                <li class="stat"><h6 class="icon-members-gray_16_18-before">10 membros</h6></li>
+                <li class="stat"><h6 class="icon-course-gray_16_18-before">50 aulas</h6></li>
+              </ul>
+            </div>
           </div>
         </li>
-        <li class="course-item">
-          <hr>
-          <div class="course-space">
-            <a href="#" class="icon-link"><img src="../img/thumbnail-missing-environment-90.png"></a>
-            <h4><a href="#" class="name">Thaís Bione Ipsum</a></h4>
-            <span class="date">
-              Criado em 7 Fev, 2011, 16h25
-            </span>
-            <span class="info">
-              Ensino médio.
-            </span>
-            <ul class="stats">
-              <li class="stat"><h6 class="icon-members-gray_16_18-before">10 membros</h6></li>
-              <li class="stat"><h6 class="icon-course-gray_16_18-before">50 aulas</h6></li>
-            </ul>
+        <li>
+          <div class="course-item">
+            <hr>
+            <div class="course-space">
+              <a href="#" class="icon-link"><img src="../img/thumbnail-missing-environment-90.png"></a>
+              <h4><a href="#" class="name">Thaís Bione Ipsum</a></h4>
+              <span class="date">
+                Criado em 7 Fev, 2011, 16h25
+              </span>
+              <span class="info">
+                Ensino médio.
+              </span>
+              <ul class="stats">
+                <li class="stat"><h6 class="icon-members-gray_16_18-before">10 membros</h6></li>
+                <li class="stat"><h6 class="icon-course-gray_16_18-before">50 aulas</h6></li>
+              </ul>
+            </div>
           </div>
         </li>
     </ul>
