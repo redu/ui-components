@@ -150,7 +150,7 @@
 
 }(window.jQuery);
 /* ============================================================
- * bootstrap-dropdown.js v2.0.4
+ * bootstrap-dropdown.js v2.1.1
  * http://twitter.github.com/bootstrap/javascript.html#dropdowns
  * ============================================================
  * Copyright 2012 Twitter, Inc.
@@ -177,7 +177,7 @@
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle="dropdown"]'
+  var toggle = '[data-toggle=dropdown]'
     , Dropdown = function (element) {
         var $el = $(element).on('click.dropdown.data-api', this.toggle)
         $('html').on('click.dropdown.data-api', function () {
@@ -192,34 +192,82 @@
   , toggle: function (e) {
       var $this = $(this)
         , $parent
-        , selector
         , isActive
 
       if ($this.is('.disabled, :disabled')) return
 
-      selector = $this.attr('data-target')
-
-      if (!selector) {
-        selector = $this.attr('href')
-        selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
-      }
-
-      $parent = $(selector)
-      $parent.length || ($parent = $this.parent())
+      $parent = getParent($this)
 
       isActive = $parent.hasClass('open')
 
       clearMenus()
 
-      if (!isActive) $parent.toggleClass('open')
+      if (!isActive) {
+        $parent.toggleClass('open')
+        $this.focus()
+      }
 
       return false
+    }
+
+  , keydown: function (e) {
+      var $this
+        , $items
+        , $active
+        , $parent
+        , isActive
+        , index
+
+      if (!/(38|40|27)/.test(e.keyCode)) return
+
+      $this = $(this)
+
+      e.preventDefault()
+      e.stopPropagation()
+
+      if ($this.is('.disabled, :disabled')) return
+
+      $parent = getParent($this)
+
+      isActive = $parent.hasClass('open')
+
+      if (!isActive || (isActive && e.keyCode == 27)) return $this.click()
+
+      $items = $('[role=menu] li:not(.divider) a', $parent)
+
+      if (!$items.length) return
+
+      index = $items.index($items.filter(':focus'))
+
+      if (e.keyCode == 38 && index > 0) index--                                        // up
+      if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
+      if (!~index) index = 0
+
+      $items
+        .eq(index)
+        .focus()
     }
 
   }
 
   function clearMenus() {
-    $(toggle).parent().removeClass('open')
+    getParent($(toggle))
+      .removeClass('open')
+  }
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+      , $parent
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
+    }
+
+    $parent = $(selector)
+    $parent.length || ($parent = $this.parent())
+
+    return $parent
   }
 
 
@@ -242,13 +290,16 @@
    * =================================== */
 
   $(function () {
-    $('html').on('click.dropdown.data-api', clearMenus)
+    $('html')
+      .on('click.dropdown.data-api touchstart.dropdown.data-api', clearMenus)
     $('body')
-      .on('click.dropdown', '.dropdown form', function (e) { e.stopPropagation() })
-      .on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+      .on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+      .on('click.dropdown.data-api touchstart.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
+      .on('keydown.dropdown.data-api touchstart.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
   })
 
 }(window.jQuery);
+
 /* =========================================================
  * bootstrap-modal.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#modals
@@ -296,6 +347,7 @@
           , e = $.Event('show')
 
         this.$element.trigger(e)
+        this.$element.trigger('fitContent.redu')
 
         if (this.isShown || e.isDefaultPrevented()) return
 
@@ -467,6 +519,7 @@
   })
 
 }(window.jQuery);
+
 /* ===========================================================
  * bootstrap-tooltip.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
@@ -1038,25 +1091,6 @@ $(function() {
           e.stopPropagation()
         })
       })
-    },
-
-    // Alterna o estado de ativado dos filtros.
-    toggleState: function(options) {
-      var settings = $.extend({
-          filterActiveClass: 'filter-active'
-        }, options)
-
-      return this.each(function() {
-        var filter = $(this)
-          , otherFilters = filter.siblings()
-
-        filter.on('click', function(e) {
-          e.preventDefault()
-          // Desativa os outros filtros.
-          otherFilters.removeClass(settings.filterActiveClass)
-          filter.toggleClass(settings.filterActiveClass)
-        })
-      })
     }
   }
 
@@ -1073,11 +1107,10 @@ $(function() {
 }) (window.jQuery)
 
 $(function() {
-  // Alterna o estado de ativado nos filtros sem dropdown.
-  $('.filter:not(.dropdown-toggle)').reduFilter('toggleState')
   // Adiciona os eventos dos filtros da visão geral.
   $('.filters-general-view').reduFilter()
 })
+
 !(function($) {
 
   "use strict";
@@ -1087,7 +1120,7 @@ $(function() {
     // Adiciona um contador de caracteres.
     countChars: function(options) {
       var settings = $.extend({
-        characterCounterTemplate: $('<span class="character-counter"></span>')
+        characterCounterTemplate: $('<span class="character-counter legend"></span>')
       }, options);
 
       return this.each(function() {
@@ -1189,8 +1222,8 @@ $(function() {
       })
     },
 
-    // Adiciona/remove uma classe ao label do controle que está em foco/fora de foco.
-    focusLabel: function(options) {
+    // Adiciona/remove a classe indicativa de controle em foco.
+    toggleFocusLabel: function(options) {
       var settings = $.extend({
         // Classe adicionada quando o controle está me foco.
         controlFocusedClass: 'control-focused'
@@ -1198,15 +1231,7 @@ $(function() {
       , controlGroupClass: 'control-group'
       }, options)
 
-      return this.each(function() {
-        var control = $(this)
-          , controlGroup = control.parents('.' + settings.controlGroupClass)
-
-        control.on({
-          focus: function() { controlGroup.addClass(settings.controlFocusedClass) }
-        , blur: function() { controlGroup.removeClass(settings.controlFocusedClass) }
-        })
-      })
+      $(this).parents('.' + settings.controlGroupClass).toggleClass(settings.controlFocusedClass)
     },
 
     // Adiciona/remove uma classe ao rótulo do checkbox/radio quando está selecionado/desmarcado.
@@ -1361,10 +1386,12 @@ $(function() {
 $(function() {
   $('input[type="text"][maxlength], input[type="password"][maxlength], textarea[maxlength]').reduForm('countChars');
 
-  $('input[type="text"], input[type="password"], input[type="file"], textarea, select').reduForm('focusLabel')
+  $(document).on('focus blur', 'input[type="text"], input[type="password"], input[type="file"], textarea, select', function(e) {
+    $(this).reduForm('toggleFocusLabel')
+  })
 
   $('input[type="radio"], input[type="checkbox"]').reduForm('darkLabel')
-  
+
   $(".form-search").reduForm("search")
 
   $('.control-option-list').reduForm('optionList')
@@ -1520,11 +1547,38 @@ $(function() {
 }); 
 
  // Responder status
-$("a.reply-status, .cancel", ".statuses").live("click", function(e){
+$("a.reply-status").live("click", function(e){
     e.preventDefault();
-    $(this).parents("ul:first").next(".create-response").slideToggle(150, "swing");
-    $(this).parents("ul:first").next(".create-response").find("textarea").focus();
+
+    var $createResponse = $(this).parents("ul:first").next(".create-response");
+
+    $createResponse.slideToggle(150, "swing");
+    $createResponse.find("textarea").focus();
 });
+
+// Cancelar Publicação
+$("a.cancel").live("click", function(e){
+    e.preventDefault();
+
+    var $createResponse = $(this).parents(".create-response");
+
+    $createResponse.slideToggle(150, "swing");
+});
+
+$(function() {
+  // Expandir o form para criação de status
+  $(".create-status .status-buttons").hide();
+
+  $(".create-status textarea").live("focus", function(e){
+    $(this).parents("form").find(".status-buttons").slideToggle(150, "swing");
+     $(this).parents("form").find("textarea").css("height","122");
+  });
+
+  $(".create-status .status-buttons .cancel").live("click", function(){
+    $(this).parents("form").find(".status-buttons").slideToggle(150, "swing");
+     $(this).parents("form").find("textarea").css("height","32");
+  });
+})
 !(function($) {
 
   'use strict';
@@ -1577,7 +1631,7 @@ $(function() {
   , triggerInviteByMail: 'inviteByMail.reduAutocomplete'
   , dropdown: 'control-autocomplete-dropdown'
   , name: 'control-autocomplete-name'
-  , mail: 'control-autocomplete-mail'
+  , mail: 'control-autocomplete-mail legend'
   , suggestion: 'control-autocomplete-suggestion'
   , inviteClickText: 'Clique aqui para convidar este endereço de e-mail'
   , buttonStyle: 'button-primary'
@@ -1742,9 +1796,16 @@ $(function() {
   var methods = {
     // Usado para conseguir o tamanho de um elemento com display none.
     displayHidden: function($element) {
-      $element.css({
-        'visibility': 'hidden'
-      , 'display': 'block'})
+      var wasVisible = true
+
+      if ($element.css('display') === 'none') {
+        $element.css({
+          'visibility': 'hidden'
+        , 'display': 'block'})
+        wasVisible = false
+      }
+
+      return wasVisible
     }
 
     // Retorna o elemento para display none.
@@ -1754,28 +1815,77 @@ $(function() {
       , 'display': 'none'})
     }
 
+  , fitContent: function($modal, settings) {
+    var $modalBody = $modal.find('.' + classes.modalBody)
+      , wasVisible
+      , isMaxHeight = true
+
+    wasVisible = methods.displayHidden($modal)
+
+    // O novo tamanho do corpo é: tamanho atual + (altura visível do navegador - espaçamento inferior - topo do modal - altura do modal)
+    var newHeight = $modalBody.height() + $(window).height() - (settings.verticalMargin * 2) - $modal.height() + "px"
+
+    var innerHeight = $modalBody[0].scrollHeight - (parseInt($modalBody.css('padding-top'), 10) + parseInt($modalBody.css('padding-bottom'), 10))
+
+    if (innerHeight <= parseInt(newHeight, 10)) {
+      newHeight = innerHeight
+      isMaxHeight = false
+    }
+
+    $modalBody.css('max-height', newHeight)
+    $modalBody.css('height', newHeight)
+
+    if (isMaxHeight) {
+      $modal.css('top', settings.verticalMargin)
+    }
+
+    if (!wasVisible) {
+      methods.displayVisible($modal)
+    }
+  }
+
     // Preenche verticalmente a janela modal.
   , fillHeight: function(options) {
       var settings = $.extend({
           // Margem inferior.
-          bottomMargin: 80
+          verticalMargin: 20
         }, options)
 
       return this.each(function() {
         var $modal = $(this)
-          , $modalBody = $modal.find('.' + classes.modalBody)
-          , modalTop = parseInt($modal.css('top'), 10)
-
-        methods.displayHidden($modal)
-
-        // O novo tamanho do corpo é: tamanho atual + (altura visível do navegador - espaçamento inferior - topo do modal - altura do modal)
-        var newHeight = $modalBody.height() + $(window).height() - settings.bottomMargin - modalTop - $modal.height() + "px"
-        $modalBody.css('max-height', newHeight)
-        $modalBody.css('height', newHeight)
-
-        methods.displayVisible($modal)
+        $modal.on('fitContent.redu', function(e) {
+          methods.fitContent($modal, settings)
+        })
+        $modal.trigger('fitContent.redu')
       })
     }
+
+    // Ajusta a largura do modal para se adequar a largura do conteúdo interno.
+    // Caso a largura do conteúdo interno seja maior que a largura visível do navegador, extende o modal horizontalmente para acomodar a máxima largura visível.
+  , fillHorizontal: function(options) {
+    var settings = $.extend({
+        // Margens laterais.
+        horizontalMargin: 20
+      }, options)
+
+    return this.each(function() {
+      var $modal = $(this)
+        , maxWidth = $(window).width() - 2 * settings.horizontalMargin
+
+      $modal.css('left', 0)
+
+      var modalWidth = $modal.outerWidth()
+
+      if (modalWidth <= maxWidth) {
+        maxWidth = modalWidth
+      }
+
+      $modal.css('marginLeft', (-1) * (maxWidth / 2))
+      $modal.css('width', maxWidth)
+
+      $modal.css('left', '50%')
+    })
+  }
 
     // Verifica se um elemento apresenta a barra de scroll vertical.
   , hasScrollBar: function($element) {
@@ -1807,8 +1917,8 @@ $(function() {
                   .html(settings.arrowDown)
             , modalBodyOffset = $modalBody.offset()
             , margin = (parseInt($modalBody.css('padding-left'), 10) - settings.arrowWidth) / 2
-            , arrowUpPosition = modalBodyOffset.top - $(window).scrollTop()
-            , arrowDownPosition = arrowUpPosition + $modalBody.height() - margin
+            , arrowUpPosition = modalBodyOffset.top - $(window).scrollTop() + 5
+            , arrowDownPosition = arrowUpPosition + $modalBody.height()
 
           $scrollArrow.css({
             'top': arrowDownPosition
@@ -1847,114 +1957,144 @@ $(function() {
 }) (window.jQuery)
 
 $(function() {
-  $('.modal-fill-height').reduModal('fillHeight')
+  $('.modal').reduModal('fillHeight')
   $('.modal-scroll').reduModal('scrollArrow')
+  $('.modal-fill-horizontal').reduModal('fillHorizontal')
 })
 
 !(function($) {
 
   'use strict';
 
+  var settings = {
+    buttonDefault: 'button-default'
+  , buttonPrimary: 'button-primary'
+  , buttonDanger: 'button-danger'
+  , buttonSuccess: 'button-success'
+  , buttonDisabled: 'button-disabled'
+  , linkSecondary: 'link-secondary'
+  , spinnerHorizontalBlue: 'spinner-horizontal-blue'
+  , spinnerCircularGray: 'spinner-circular-gray'
+  , spinnerCircularBlue: 'spinner-circular-blue'
+  , imgPath: 'img/'
+  , spinnerCircularBlueGif: 'spinner-blue.gif'
+  , spinnerCircularGrayGif: 'spinner-grey.gif'
+  , spinnerCSS: {
+      'display': 'inline-block'
+    , 'vertical-align': 'middle'
+    }
+  }
+
   var methods = {
-    init: function(options) {
-      var settings = $.extend({
-        buttonDefault: 'button-default'
-      , buttonPrimary: 'button-primary'
-      , buttonDanger: 'button-danger'
-      , buttonSuccess: 'button-success'
-      , buttonDisabled: 'button-disabled'
-      , linkSecondary: 'link-secondary'
-      , spinnerHorizontalBlue: 'spinner-horizontal-blue'
-      , spinnerCircularGray: 'spinner-circular-gray'
-      , imgPath: 'img/'
-      , spinnerCircularBlueGif: 'spinner-blue.gif'
-      , spinnerCircularGrayGif: 'spinner-grey.gif'
-      , spinnerCSS: {
-          'display': 'inline-block'
-        , 'vertical-align': 'middle'
-        }
-      }, options)
-
-      return this.each(function() {
-        var $element = $(this)
-
-        // Se for um botão.
-        if ($element.hasClass(settings.buttonDefault)
+    // Verifica se o elemento tem alguma classe de botão.
+    hasButtonClass: function($element) {
+      return ($element.hasClass(settings.buttonDefault)
             || $element.hasClass(settings.buttonPrimary)
             || $element.hasClass(settings.buttonDanger)
-            || $element.hasClass(settings.buttonSuccess)) {
-          // Botão padrão usa o spinner azul e os outros cinza.
-          var spinner = settings.imgPath + settings.spinnerCircularGrayGif
-          if ($element.hasClass(settings.buttonDefault)) {
-            spinner = settings.imgPath + settings.spinnerCircularBlueGif
-          }
+            || $element.hasClass(settings.buttonSuccess))
+    }
 
-          // Retorna as outras classes, que não a do botão.
-          var otherClasses = function(classes) {
-            var otherClasses = []
-            
-            classes = classes.split(' ')
-            $.each(classes, function(index, value) {
-              if (value !== settings.buttonDefault
-                  && value !== settings.buttonPrimary
-                  && value !== settings.buttonDanger
-                  && value !== settings.buttonSuccess
-                  && value !== '') {
-                otherClasses.push(value)
-              }
-            })
+    // Chamado antes da requesição AJAX.
+  , ajaxBefore: function(options) {
+      settings = $.extend(settings, options)
 
-            return otherClasses.join(' ')
-          }
+      var $this = $(this)
 
-          $element.on({
-            ajaxSend: function(e, request, options) {
-              var button = $(this)
-                , content = button.html()
-                , width = button.outerWidth()
-                , height = button.outerHeight()
-                , classes = otherClasses(button.attr('class'))
-                , $spinner = $(document.createElement('img')).attr('src', spinner).css(settings.spinnerCSS)
+      // Se for um formulário.
+      if ($this.is('form')) {
+        var $submit = $this.find('input:submit')
+          , spinnerClass = settings.spinnerCircularGray
 
-              button
-                .addClass(settings.buttonDisabled)
-                .removeClass(classes)
-                .data('content', content)
-                .data('class', classes)
-                .html($spinner)
-                .css({'width': width, 'height': height})
-            }
-          , ajaxComplete: function(e, request, options) {
-              var button = $(this)
-                , content = button.data('content')
-                , classes = button.data('class')
-
-              button
-                .removeClass(settings.buttonDisabled)
-                .addClass(classes)
-                .html(content)
-            }
-          })
+        if ($submit.hasClass(settings.buttonDefault)) {
+          spinnerClass = settings.spinnerCircularBlue
         }
 
-        // Se for um link de texto.
-        if ($element.is('a')) {
-          // Link secundário usa o spinner horizontal azul e os outros circular cinza.
-          var spinnerClass = settings.spinnerCircularGray
-          if ($element.hasClass(settings.linkSecondary)) {
-            spinnerClass = settings.spinnerHorizontalBlue
-          }
-          
-          $element.on({
-            ajaxSend: function(e, request, options) {
-              $(this).addClass(spinnerClass)
-            }
-          , ajaxComplete: function(e, request, options) {
-              $(this).removeClass(spinnerClass)
+        $submit
+          .addClass(spinnerClass)
+          .prop('disabled', true)
+          .data('spinnerClass', spinnerClass)
+          .data('content', $submit.val())
+          .css({ 'width': $submit.outerWidth(), 'height': $submit.outerHeight() })
+          .val('')
+      }
+
+      // Se for um botão.
+      if (methods.hasButtonClass($this)) {
+        // Botão padrão usa o spinner azul e os outros cinza.
+        var spinnerImg = settings.imgPath
+        if ($this.hasClass(settings.buttonDefault)) {
+          spinnerImg += settings.spinnerCircularBlueGif
+        } else {
+          spinnerImg += settings.spinnerCircularGrayGif
+        }
+
+        // Retorna as outras classes, que não a do botão.
+        var otherClasses = function(classes) {
+          var otherClasses = []
+
+          classes = classes.split(' ')
+          $.each(classes, function(index, value) {
+            if (value !== settings.buttonDefault
+                && value !== settings.buttonPrimary
+                && value !== settings.buttonDanger
+                && value !== settings.buttonSuccess
+                && value !== '') {
+              otherClasses.push(value)
             }
           })
+
+          return otherClasses.join(' ')
         }
-      })
+
+        var content = $this.html()
+          , width = $this.outerWidth()
+          , height = $this.outerHeight()
+          , classes = otherClasses($this.attr('class'))
+          , $spinner = $(document.createElement('img')).attr('src', spinnerImg).css(settings.spinnerCSS)
+
+        $this
+          .addClass(settings.buttonDisabled)
+          .removeClass(classes)
+          .data('content', content)
+          .data('class', classes)
+          .html($spinner)
+          .css({'width': width, 'height': height})
+      } else if ($this.is('a')) {
+        // Link secundário usa o spinner horizontal azul, o normal usa o circular cinza.
+        var linkSpinnerClass = settings.spinnerCircularGray
+        if ($this.hasClass(settings.linkSecondary)) {
+          linkSpinnerClass = settings.spinnerHorizontalBlue
+        }
+
+        $this.data('spinnerClass', linkSpinnerClass)
+        $this.addClass(linkSpinnerClass)
+      }
+    }
+
+    // Chamado depois da requisição AJAX.
+  , ajaxComplete: function(options) {
+      settings = $.extend(settings, options)
+
+      var $this = $(this)
+
+      if ($this.is('form')) {
+        var $submit = $this.find('input:submit')
+
+        $submit
+          .removeClass($submit.data('spinnerClass'))
+          .prop('disabled', false)
+          .val($submit.data('content'))
+      }
+
+      // Se for um botão.
+      if (methods.hasButtonClass($this)) {
+        $this
+          .removeClass(settings.buttonDisabled)
+          .addClass($this.data('class'))
+          .html($this.data('content'))
+      } else if ($this.is('a')) {
+        $this.removeClass($this.data('spinnerClass'))
+      }
     }
   }
 
@@ -1971,5 +2111,73 @@ $(function() {
 }) (window.jQuery)
 
 $(function() {
-  $('[data-remote=true]').reduSpinners()
+  $(document)
+    .on('ajax:beforeSend', '[data-remote="true"]', function(xhr, settings) {
+      $(this).reduSpinners('ajaxBefore')
+    })
+    .on('ajax:complete', '[data-remote="true"]', function(xhr, status) {
+      $(this).reduSpinners('ajaxComplete')
+    })
 })
+
+!function ($) {
+
+  "use strict"; // jshint ;_;
+
+
+ /* DEFINIÇÃO DE CLASSE DO CAMPO DE BUSCA.
+  * ============================== */
+
+  var SearchField = function (element, options) {
+    this.$element = $(element)
+    this.options = $.extend({}, $.fn.searchField.defaults, options)
+  }
+
+  SearchField.prototype.expand = function () {
+    var $target = $(this.$element.data('toggle'))
+    this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
+    $target.css('visibility', 'hidden')
+  }
+
+  SearchField.prototype.collapse = function () {
+    var $target = $(this.$element.data('toggle'))
+    this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
+    $target.css('visibility', 'visible')
+  }
+
+
+ /* DEFINIÇÃO DO PLUGIN DO CAMPO DE BUSCA.
+  * ======================== */
+
+  $.fn.searchField = function (option) {
+    return this.each(function () {
+      var $this = $(this)
+        , data = $this.data('searchField')
+        , options = typeof option == 'object' && option
+      if (!data) $this.data('searchField', (data = new SearchField(this, options)))
+      if (option == 'expand') data.expand()
+      else if (option == 'collapse') data.collapse()
+    })
+  }
+
+  $.fn.searchField.defaults = {
+    increment: 120
+  }
+
+  $.fn.searchField.Constructor = SearchField
+
+
+ /* DATA-API DO CAMPO DE BUSCA.
+  * =============== */
+
+  $(function () {
+    $('body').on('focus', '.form-search input[data-toggle]', function ( e ) {
+      var $searchField = $(e.target)
+      $searchField.searchField('expand')
+    }).on('blur', '.form-search input[data-toggle]', function ( e ) {
+      var $searchField = $(e.target)
+      $searchField.searchField('collapse')
+    })
+  })
+
+}(window.jQuery);

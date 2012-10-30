@@ -1,5 +1,4 @@
 <!doctype html>
-<!--[if IE 8]><html class="ie8" lang="pt-br"><![endif]-->
 <!--[if gt IE 8]><html class="gt-ie8" lang="pt-br"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
   <head>
@@ -8,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="O Bootstrap Redu é a implementação dos elementos de interface gráfica descritos no documento GUI: Guidelines & Elements versão 1.3.3.">
     <meta name="author" content="Redu Educational Technologies">
-    <link rel="stylesheet" href="css/bootstrap-redu-min.css">
-    <link rel="stylesheet" href="docs/assets/css/docs-min.css">
+    <link rel="stylesheet" href="css/bootstrap-redu.min.css">
+    <link rel="stylesheet" href="css/docs.css">
     <link rel="stylesheet" href="docs/assets/css/vendor/google-code-prettify.min.css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -18,14 +17,14 @@
     <div class="nav-global nav-global-fixed-top">
       <div class="nav-global-inner">
         <div class="nav-global-container">
-          <a class="nav-global-brand logo-redu-gray_140_40" href="http://developers.redu.com.br/ui-components" title="Redu">Redu</a>
+          <a class="nav-global-brand text-replacement logo-redu-gray_140_40" href="http://developers.redu.com.br/ui-components" title="Redu">Redu</a>
           <div class="nav-global-buttons">
             <a class="nav-global-button " href="index.html" title="Início">Início</a>
           </div>
           <div class="nav-global-buttons-dropdown button-toolbar">
             <div class="button-group">
               <button class="button-default nav-global-button-dropdown dropdown-toggle icon-list-lightblue_16_18-before" data-toggle="dropdown">
-                <span class="button-dropdown-arrow icon-arrow-down-lightblue_8_10"></span>
+                <span class="button-dropdown-arrow icon-arrow-down-lightblue_8_10 text-replacement">Expandir</span>
               </button>
               <div class="dropdown-menu nav-global-profile-dropdown">
                 <div class="arrow"></div>
@@ -152,7 +151,7 @@
               </div>
               <p class="list-course-space-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis ipsum sit amet lacus tempus scelerisque. Mauris iaculis aliquam gravida. In sem eros, suscipit nec ornare in, mollis eget felis. Lorem ipsum dolor sit amet, consectetur orci aliquam.</p>
               <p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves">tags, tags, tags, tags, tags</p>
-              <span class="list-course-private icon-private-gray_16_18" rel="tooltip" title="Curso privado">Curso privado</span>
+              <span class="list-course-private icon-private-gray_16_18 text-replacement" rel="tooltip" title="Curso privado">Curso privado</span>
               <div class="list-course-space-gradient-bottom"></div>
             </li>
           </ul>
@@ -190,7 +189,7 @@
     &lt;p class="list-course-space-tags icon-tag-gray_16_18-before" title="Palavras-chaves"&gt;COURSE_TAGS_COMMA_SEPARATED&lt;/p&gt;
     &lt;!-- END --&gt;
     &lt;!-- IF COURSE_IS_PRIVATE --&gt;
-    &lt;span class="list-course-private icon-private-gray_16_18" rel="tooltip" title="Curso privado"&gt;Curso privado&lt;/span&gt;
+    &lt;span class="list-course-private text-replacement icon-private-gray_16_18" rel="tooltip" title="Curso privado"&gt;Curso privado&lt;/span&gt;
     &lt;!-- END --&gt;
     &lt;div class="list-course-space-gradient-bottom"&gt;&lt;/div&gt;
   &lt;/li&gt;
@@ -307,8 +306,8 @@
                 <div class="list-subject-header-info">
                   <span class="label-news" rel="tooltip" title="5 novos avisos">5</span><!--
                    --><span class="label-doubts" rel="tooltip" title="10 novos pedidos de ajuda">10</span><!--
-                   --><div class="progress-bar-mini progress-bar-total" rel="tooltip" title="25% cursado">
-                    <div class="progress-bar-completed" style="width: 25%;">25% cursado</div>
+                   --><div class="progress-bar-short progress-bar-thin progress-bar-total" rel="tooltip" title="25% cursado">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%;">25% cursado</span>
                   </div>
                 </div>
               </div>
@@ -350,8 +349,8 @@
               <div class="list-subject-header">
                 <h4 class="list-subject-name">L</h4>
                 <div class="list-subject-header-info">
-                  <div class="progress-bar-mini progress-bar-total" rel="tooltip" title="0% cursado">
-                    <div class="progress-bar-completed" style="width: 0%;">0% cursado</div>
+                  <div class="progress-bar-short progress-bar-thin progress-bar-total" rel="tooltip" title="0% cursado">
+                    <span class="progress-bar-completed text-replacement" style="width: 0%;">0% cursado</span>
                   </div>
                 </div>
               </div>
@@ -363,8 +362,8 @@
               <div class="list-subject-header">
                 <h4 class="list-subject-name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</h4>
                 <div class="list-subject-header-info">
-                  <div class="progress-bar-mini progress-bar-total" rel="tooltip" title="0% cursado">
-                    <div class="progress-bar-completed" style="width: 0%;">0% cursado</div>
+                  <div class="progress-bar-short progress-bar-thin progress-bar-total" rel="tooltip" title="0% cursado">
+                    <span class="progress-bar-completed text-replacement" style="width: 0%;">0% cursado</span>
                   </div>
                 </div>
               </div>
@@ -391,8 +390,8 @@
     &lt;div class="list-subject-header"&gt;
       &lt;h4 class="list-subject-name"&gt;SUBJECT_NAME&lt;/h4&gt;
       &lt;div class="list-subject-header-info"&gt;
-        &lt;!-- IF SUBJECT_HAS_ANY_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="LECTURES_NEW_NOTICES_SUM novos avisos"&gt;LECTURES_NEW_NOTICES_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="LECTURES_NEW_DOUBTS_SUM novos pedidos de ajuda"&gt;LECTURES_NEW_DOUBTS_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;div class="progress-bar-mini progress-bar-total" rel="tooltip" title="SUBJECT_COMPLETITION_PERCENTAGE% cursado"&gt;
-          &lt;div class="progress-bar-completed" style="width: SUBJECT_COMPLETITION_PERCENTAGE%;"&gt;SUBJECT_COMPLETITION_PERCENTAGE% cursado&lt;/div&gt;
+        &lt;!-- IF SUBJECT_HAS_ANY_NEW_NOTICES --&gt;&lt;span class="label-news" rel="tooltip" title="LECTURES_NEW_NOTICES_SUM novos avisos"&gt;LECTURES_NEW_NOTICES_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;!-- IF LECTURE_HAS_ANY_NEW_DOUBTS --&gt;&lt;span class="label-doubts" rel="tooltip" title="LECTURES_NEW_DOUBTS_SUM novos pedidos de ajuda"&gt;LECTURES_NEW_DOUBTS_SUM&lt;/span&gt;&lt;!-- END --&gt;&lt;div class="progress-bar-short progress-bar-thin progress-bar-total" rel="tooltip" title="SUBJECT_COMPLETITION_PERCENTAGE% cursado"&gt;
+          &lt;span class="progress-bar-completed" style="width: SUBJECT_COMPLETITION_PERCENTAGE%;"&gt;SUBJECT_COMPLETITION_PERCENTAGE% cursado&lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -436,7 +435,7 @@
                 <li class="list-mix-item icon-course-lightgray_32_34-before">
                   <div class="list-mix-inner">
                     <button class="button-default button-dropdown">
-                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                      <span class="icon-arrow-down-lightblue_8_10 show text-replacement">Expandir</span>
                     </button>
                     <div class="list-mix-content">
                       <div class="list-mix-header">
@@ -461,7 +460,7 @@
                 <li class="list-mix-item icon-course-lightgray_32_34-before">
                   <div class="list-mix-inner">
                     <button class="button-default button-dropdown">
-                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                      <span class="icon-arrow-down-lightblue_8_10 show text-replacement">Expandir</span>
                     </button>
                     <div class="list-mix-content">
                       <div class="list-mix-header">
@@ -508,7 +507,7 @@
                 <li class="list-mix-item icon-course-lightgray_32_34-before">
                   <div class="list-mix-inner">
                     <button class="button-default button-disabled button-dropdown">
-                      <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                      <span class="icon-arrow-down-lightblue_8_10 show text-replacement">Expandir</span>
                     </button>
                     <div class="list-mix-content">
                       <div class="list-mix-header">
@@ -548,7 +547,7 @@
           &lt;!-- ELSE --&gt;
           &lt;button class="button-default button-disabled button-dropdown"&gt;
           &lt;!-- END --&gt;
-            &lt;span class="icon-arrow-down-lightblue_8_10 show"&gt;&lt;/span&gt;
+            &lt;span class="icon-arrow-down-lightblue_8_10 show text-replacement"&gt;Expandir&lt;/span&gt;
           &lt;/button&gt;
           &lt;div class="list-mix-content"&gt;
             &lt;div class="list-mix-header"&gt;
@@ -619,7 +618,7 @@
             <li class="list-mix-item icon-course-lightgray_32_34-before">
               <div class="list-mix-inner">
                 <button class="button-default button-dropdown">
-                  <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                  <span class="icon-arrow-down-lightblue_8_10 show text-replacement">Expandir</span>
                 </button>
                 <div class="list-mix-content">
                   <div class="list-mix-header">
@@ -635,7 +634,7 @@
             <li class="list-mix-item icon-course-lightgray_32_34-before">
               <div class="list-mix-inner">
                 <button class="button-default button-disabled button-dropdown">
-                  <span class="icon-arrow-down-lightblue_8_10 show"></span>
+                  <span class="icon-arrow-down-lightblue_8_10 show text-replacement">Expandir</span>
                 </button>
                 <div class="list-mix-content">
                   <div class="list-mix-header">
@@ -659,7 +658,7 @@
     &lt;div class="list-mix-item"&gt;
       &lt;!-- ADD THE CLASS button-disabled TO THE BUTTON TO CANCEL THE DROPDOWN EFFECT --&gt;
       &lt;button class="button-default button-dropdown"&gt;
-        &lt;span class="icon-arrow-down-lightblue_8_10 show"&gt;&lt;/span&gt;
+        &lt;span class="icon-arrow-down-lightblue_8_10 show text-replacement"&gt;Expandir&lt;/span&gt;
       &lt;/button&gt;
       &lt;div class="list-mix-content"&gt;
         &lt;div class="list-mix-header"&gt;
@@ -680,15 +679,13 @@
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
+    <script src="js/vendor/rails.js"></script>
     <script src="docs/assets/js/vendor/google-code-prettify.min.js"></script>
     <script src="docs/assets/js/vendor/bootstrap-scrollspy.min.js"></script>
     <script src="js/vendor/jquery.tokeninput.js"></script>
     <script src="js/vendor/jquery.autosize.min.js"></script>
     <script src="js/vendor/placeholder-polyfill.min.js"></script>
-    <script src="js/bootstrap-redu-min.js"></script>
-    <!--[if (gte IE 6)&(lte IE 8)]>
-      <script src="js/vendor/selectivizr.js"></script>
-    <![endif]-->
+    <script src="js/bootstrap-redu.min.js"></script>
     <script src="http://use.typekit.com/lpo4rgu.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
   </body>
