@@ -845,6 +845,7 @@ a:hover,
 
 .icon-frequent-questions-lightblue_16_18-before {
   &:before { @extend .icon-frequent-questions-lightblue_16_18; }
+  &:hover:before { @extend .icon-frequent-questions-blue_16_18; }
 }
 
 // Redes Sociais
@@ -873,6 +874,7 @@ a:hover,
 // Aplicativo
 .icon-app-lightblue_16_18-before {
   &:before { @extend .icon-app-lightblue_16_18; }
+  &:hover:before { @extend .icon-app-blue_16_18; }
 }
 .icon-app-black_16_18-before {
   &:before { @extend .icon-app-black_16_18; }
@@ -892,6 +894,7 @@ a:hover,
 }
 .icon-basic-guide-lightblue_16_18-before {
   &:before { @extend .icon-basic-guide-lightblue_16_18; }
+  &:hover:before { @extend .icon-basic-guide-blue_16_18; }
 }
 .icon-basic-guide-blue_16_18-before {
   &:before { @extend .icon-basic-guide-blue_16_18; }
@@ -915,6 +918,7 @@ a:hover,
 }
 .icon-manager-lightblue_16_18-before {
   &:before { @extend .icon-manager-lightblue_16_18; }
+  &:hover:before { @extend .icon-manager-blue_16_18; }
 }
 .icon-manager-blue_16_18-before {
   &:before { @extend .icon-manager-blue_16_18; }
