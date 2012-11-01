@@ -1,0 +1,174 @@
+// ==========================================================================
+// Cabeçalho (usuário não logado)
+// ==========================================================================
+
+// Wrapper de tudo.
+.header {
+  $box-shadow:
+    0 -1px 0 $white inset
+  , 0  1px 0 $white inset
+  , 0  1px 0 rgb(178, 178, 178);
+  @include box-shadow($box-shadow);
+  height: 85px;
+  background-color: $gray3;
+}
+
+// Wrapper do logo.
+.header-logo-wrapper {
+  @include size(300px, 70px);
+  float: left;
+  position: relative;
+  margin-left: -112px;
+
+  &:hover { @include sprite-sprite(light-logo); }
+}
+
+// Logo.
+.header-logo {
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+}
+
+// Wrapper dos botões.
+.header-buttons {
+  float: right;
+  margin-top: 20px;
+}
+
+.header-button-sign-up +
+.header-button-sign-in { margin-left: 40px; }
+
+.header-button-sign-up,
+.header-button-sign-in {
+  display: inline-block;
+
+  & > [class*="icon-"] {
+    margin: 5px 10px 0 0;
+    float: left;
+  }
+}
+
+.header-separator {
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
+  border-left: none;
+  border-right: none;
+  margin: 0;
+}
+
+
+// Dropdown de login
+// ==========================================================================
+
+.header-button-sign-in {
+  .button-group {
+    position: relative;
+    display: inline-block;
+  }
+
+  .facebook-sign-in {
+    margin: 20px 17px;
+    font-size: 11px;
+  }
+
+  .dropdown-menu { width: 260px; }
+}
+
+.header-sign-in-form {
+  padding: 20px 10px;
+
+  .control-group +
+  .control-group { margin-top: 2px; }
+}
+
+.header-sign-in-form-submit {
+  margin-top: 10px;
+  overflow: hidden;
+
+  .legend { color: $gray6; }
+}
+
+.header-sign-in-recover {
+  padding: 10px 10px 8px;
+  text-align: center;
+}
+
+
+// Janela modal de cadastro
+// ==========================================================================
+
+// Wrapper.
+.modal-sign-up {
+  .modal-body {
+    padding: 0;
+    color: $gray6;
+  }
+
+  .header-separator { margin: 20px 0; }
+
+  .header-separator +
+  .row { margin-bottom: 25px; }
+
+  .tos .control-error label { color: rgb(109, 110, 111); }
+
+  .modal-footer {
+    .button-default +
+    .button-success { margin-left: 10px; }
+  }
+}
+
+// Título.
+.modal-sign-up-title {
+  color: $green4;
+  line-height: 22px;
+
+  // Ajusta a posição do ícone.
+  &[class*="icon-"][class*="-before"]:before {
+    position: relative;
+    top: 5px;
+    float: left;
+  }
+}
+
+.modal-sign-up-section {
+  padding: 20px 20px 10px;
+
+  p +
+  .facebook-sign-up { margin-top: 20px; }
+
+  .facebook-sign-up-button +
+  .legend {
+    margin-top: 5px;
+    display: block;
+  }
+}
+
+.list-separator +
+.modal-sign-up-section { padding: 10px 20px 20px; }
+
+// Área com o checkbox de aceitação dos termos de uso.
+.modal-sign-up-tos {
+  float: left;
+  text-align: left;
+}
+
+// Área com os botões de cancelar e cadastrar.
+.modal-sign-up-buttons { float: right; }
+
+// Explicação do login.
+.modal-sign-up-login-explaination {
+  margin-top: 20px;
+
+  .legend { color: $gray6; }
+}
+
+.modal-sign-up-success {
+  .modal-body {
+    padding: 0 20px 20px;
+    color: $black;
+
+    p +
+    p { margin-top: 20px; }
+  }
+}
