@@ -837,6 +837,7 @@ a:hover,
 
 .icon-frequent-questions-lightblue_32_34-before {
   &:before { @extend .icon-frequent-questions-lightblue_32_34; }
+  &:hover:before { @extend .icon-frequent-questions-blue_32_34; }
 }
 
 .icon-frequent-questions-blue_32_34-before {
