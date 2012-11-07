@@ -93,6 +93,9 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-teacher-gray_16_18; }
   &:hover:before { @extend .icon-teacher-blue_16_18; }
 }
+.icon-teacher-white_16_18-before {
+  &:before { @extend .icon-teacher-white_16_18; }
+}
 
 // Tutor.
 .icon-tutor-lightblue_16_18-before {
@@ -876,6 +879,10 @@ a:hover,
   &:hover:before { @extend .icon-frequent-questions-blue_16_18; }
 }
 
+.icon-frequent-questions-white_16_18-before {
+  &:before { @extend .icon-frequent-questions-white_16_18; }
+}
+
 .list-button li:hover .icon-frequent-questions-lightblue_16_18-before {
   &:before {  @extend .icon-frequent-questions-blue_16_18; }
 }
@@ -931,6 +938,9 @@ a:hover,
 }
 .icon-app-gray_16_18-before {
   &:before { @extend .icon-app-gray_16_18; }
+}
+.icon-app-white_16_18-before {
+  &:before { @extend .icon-app-white_16_18; }
 }
 .icon-app-lightblue_32_34-before {
   &:before { @extend .icon-app-lightblue_32_34; }
