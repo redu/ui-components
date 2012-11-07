@@ -343,6 +343,9 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-manage-gray_32_34; }
   .header-breadcrumb:hover &:before { @extend .icon-manage-blue_32_34; }
 }
+.list-button li:hover .icon-manage-lightblue_16_18-before {
+  &:before {  @extend .icon-manage-blue_16_18; }
+}
 
 // Mural.
 .icon-wall-lightblue_16_18-before {
@@ -978,9 +981,6 @@ a:hover,
 }
 .icon-manager-white_16_18-before {
   &:before { @extend .icon-manager-white_16_18; }
-}
-.list-button li:hover .icon-manager-lightblue_16_18-before {
-  &:before {  @extend .icon-manager-blue_16_18; }
 }
 
 // Fale conosco
