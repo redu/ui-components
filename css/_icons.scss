@@ -949,3 +949,8 @@ a:hover,
 .icon-feel-supported-gray_32_34-before {
   &:before { @extend .icon-feel-supported-gray_32_34; }
 }
+
+// Adicionar amigo
+.icon-add-friend-green_32_34-before {
+  &:before { @extend .icon-add-friend-green_32_34; }
+}
