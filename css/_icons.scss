@@ -929,6 +929,9 @@ a:hover,
 .icon-app-black_16_18-before {
   &:before { @extend .icon-app-black_16_18; }
 }
+.icon-app-gray_16_18-before {
+  &:before { @extend .icon-app-gray_16_18; }
+}
 .icon-app-lightblue_32_34-before {
   &:before { @extend .icon-app-lightblue_32_34; }
   &:hover:before { @extend .icon-app-blue_32_34; }
