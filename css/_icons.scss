@@ -747,6 +747,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-help-central-empty_128; }
 }
 
+.icon-help-central-lightgray_32_34-before {
+  &:before { @extend .icon-help-central-lightgray_32_34; }
+}
+
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
 .filter:hover,
@@ -896,6 +900,9 @@ a:hover,
 .icon-basic-guide-lightblue_16_18-before {
   &:before { @extend .icon-basic-guide-lightblue_16_18; }
   &:hover:before { @extend .icon-basic-guide-blue_16_18; }
+}
+.icon-basic-guide-green_32_34-before {
+  &:before { @extend .icon-basic-guide-green_32_34; }
 }
 .icon-basic-guide-blue_16_18-before {
   &:before { @extend .icon-basic-guide-blue_16_18; }
