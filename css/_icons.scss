@@ -96,6 +96,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-teacher-white_16_18-before {
   &:before { @extend .icon-teacher-white_16_18; }
 }
+.icon-teacher-lightblue_16_18-before.nav-local-item-active {
+  &:before { @extend .icon-teacher-white_16_18; }
+}
 
 // Tutor.
 .icon-tutor-lightblue_16_18-before {
@@ -118,6 +121,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-member-gray_16_18-before {
   &:before { @extend .icon-member-gray_16_18; }
   &:before:hover { @extend .icon-member-blue_16_18; }
+}
+.icon-member-lightblue_16_18-before.nav-local-item-active {
+  &:before { @extend .icon-member-white_blue_16_18; }
 }
 
 // Início/home.
@@ -693,6 +699,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-list-white_16_18; }
 }
 
+.icon-list-lightblue_16_18-before.nav-local-item-active {
+  &:before { @extend .icon-list-white_16_18; }
+}
+
 // Portal de Aplicativos.
 .icon-apps-portal-gray_48_50-before {
   &:before { @extend .icon-apps-portal-gray_48_50; }
@@ -886,6 +896,9 @@ a:hover,
 .list-button li:hover .icon-frequent-questions-lightblue_16_18-before {
   &:before {  @extend .icon-frequent-questions-blue_16_18; }
 }
+.icon-frequent-questions-lightblue_16_18-before.nav-local-item-active {
+  &:before { @extend .icon-frequent-questions-white_16_18; }
+}
 
 // Redes Sociais
 .icon-social-networks-lightblue_16_18-before {
@@ -949,6 +962,9 @@ a:hover,
 .list-button li:hover .icon-app-lightblue_16_18-before {
   &:before {  @extend .icon-app-blue_16_18; }
 }
+.icon-app-lightblue_16_18-before.nav-local-item-active {
+  &:before { @extend .icon-app-white_16_18; }
+}
 
 // Guia Básico
 .icon-basic-guide-lightblue_32_34-before {
@@ -969,6 +985,9 @@ a:hover,
   &:before { @extend .icon-basic-guide-blue_16_18; }
 }
 .icon-basic-guide-white_16_18-before {
+  &:before { @extend .icon-basic-guide-white_16_18; }
+}
+.icon-basic-guide-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-basic-guide-white_16_18; }
 }
 
@@ -993,6 +1012,9 @@ a:hover,
   &:before { @extend .icon-manager-blue_16_18; }
 }
 .icon-manager-white_16_18-before {
+  &:before { @extend .icon-manager-white_16_18; }
+}
+.icon-manager-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-manager-white_16_18; }
 }
 
