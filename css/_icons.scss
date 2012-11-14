@@ -875,6 +875,10 @@ a:hover,
   &:before { @extend .icon-frequent-questions-lightgray_32_34; }
 }
 
+.icon-frequent-questions-gray_32_34-before {
+  &:before { @extend .icon-frequent-questions-gray_32_34; }
+}
+
 .icon-frequent-questions-lightblue_32_34-before {
   &:before { @extend .icon-frequent-questions-lightblue_32_34; }
   &:hover:before { @extend .icon-frequent-questions-blue_32_34; }
@@ -1001,6 +1005,10 @@ a:hover,
   &:before { @extend .icon-manager-lightblue_32_34; }
   &:hover:before { @extend .icon-manager-blue_32_34; }
 }
+.icon-manager-gray_32_34-before {
+  &:before { @extend .icon-manager-gray_32_34; }
+}
+
 .icon-manager-blue_32_34-before {
   &:before { @extend .icon-manager-blue_32_34; }
 }
