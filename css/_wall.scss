@@ -1,0 +1,218 @@
+// Alinha cada div de status separadamente
+.status-list .status { margin: 20px; }
+
+.create-status { margin-bottom: 10px; }
+
+// Aba para área de status, criação de status e comentários.
+.status-tab {
+  position: relative;
+
+  &:before {
+    border-color: $gray2 $white;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    content: " ";
+    position: absolute;
+    margin-top: -20px;
+    width: 0;
+  }
+// Aba à direita
+  &.tab-right:before { right: 39px; }
+
+// Aba à esquerda
+  &.tab-left:before { left: 20px; }
+}
+
+// Estilização dos formulários para criar respostas e status
+.create-response,
+.create-status {
+  padding: 10px;
+  background-color: $gray2;
+  @include border-radius;
+  @include clear-fix;
+
+  .status-buttons {
+    float: right;
+    margin: 5px 0 0;
+
+    li { display: inline; }
+  }
+}
+
+// Alinhar status
+.subject,
+.subject-content { margin-left: 42px; }
+
+// Remove margens à esquerda quando status não tem contexto
+.status.without-context { //Adição da classe without-context para remover margens à direita de elementos sem contexto, sem a necessidade do seletor '+'
+  .subject,
+  .subject-content { margin-left: 0; }
+}
+
+// Aplica estilos gerais a todos status
+.status-list,
+.status .context,
+.status .subject,
+.status .subject-content {
+
+  li { list-style: none; }
+
+  .author-thumbnail {
+    width: 32px;
+    height: 34px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .date { display: block; }
+
+  .actions {
+    overflow: hidden;
+
+    li {
+      margin-top: 10px;
+      float: right;
+      margin-right: 20px;
+
+      &[class*="icon-"]:before { vertical-align: middle; }
+    }
+  }
+
+  .icon-close {
+    float: right;
+    cursor: pointer;
+  }
+
+  .status-content,
+  .responses {
+    margin-left: 42px;
+    background-color: $gray2;
+    @include border-radius;
+  }
+
+  .status-content {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .action { color: $gray5; }
+
+  .help { color: $orange3; }
+
+  .responses {
+    margin-top: 15px;
+
+    .response {
+      padding: 10px;
+
+      .status-content {
+        margin-left: 42px;
+        padding: 0;
+
+        &:before { display: none; }
+      }
+    }
+
+    &:before { margin-top: -10px; }
+  }
+
+// Aplica estilos aos status com log
+  .log {
+    .subject { margin-top: 5px; }
+
+// Posiciona ícone do status de pedido de ajuda
+    &[class*="icon-"]:before {
+      position: absolute;
+      margin-left: -75px;
+    }
+
+    .see-all { float: right; }
+
+// Posiciona ícone do status de agrupamento de membros
+    .action {
+      &[class*="icon-"]:before {
+        margin-left: -35px;
+        position: absolute;
+        margin-top: 5px;
+      }
+    }
+
+    .subject-content {
+      .grouping-elements {
+        margin-right: 20px;
+
+        li {
+          display: inline;
+
+          img { margin-top: 8px; }
+        }
+      }
+    }
+  }
+
+  .status .context {
+    margin-bottom: 5px;
+
+    .context-icon {
+      float: left;
+      margin-right: 8px;
+
+      &[class*="icon-"]:before { float: left; }
+    }
+
+    a {
+      display: block;
+      line-height: 11px;
+    }
+  }
+
+  .create-response {
+    margin-top: 10px;
+    margin-left: 42px;
+  }
+}
+
+.list-separator {
+  @include box-sizing;
+  height: 2px;
+  background-color: $white;
+  border-top: 1px solid $gray3;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 9px;
+    position: relative;
+    top: -10px;
+
+    .cssgradients & { @include redu-gradient($gray1, $white); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+0,f7f7f7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 9px;
+    position: relative;
+    bottom: 8px;
+
+    .cssgradients & { @include redu-gradient($white, $gray1); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,ffffff+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+}
+
+hr {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
+}

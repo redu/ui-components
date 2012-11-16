@@ -14,49 +14,47 @@
     <script src="../docs/assets/js/vendor/google-code-prettify.min.js"></script>
     <script src="../js/vendor/jquery.autosize.js"></script>
     <script src="../js/bootstrap-redu.js"></script>
-    <!--[if (gte IE 6)&(lte IE 8)]>
-      <script src="../js/vendor/selectivizr.js"></script>
-    <![endif]-->
     <script src="http://use.typekit.com/lpo4rgu.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
   </head>
-  <body style="width: 800px; margin: 0 auto;"><!-- Está com a largura fixa para que o mural fique no meio e facilite a revisão"-->
-    <div class="create-status">
+  <body style="width: 800px; margin: 50px auto;"><!-- Está com a largura fixa para que o mural fique no meio e facilite a revisão"-->
+    <div class="create-status status-tab tab-left">
       <form>
         <textarea rows="1" cols="50" placeholder="Compartilhe algo com seus amigos através de seu mural"></textarea>
         <ul class="status-buttons">
-           <li><input type="submit" class="button-primary" value="Enviar"></li>
            <li><button class="button-default">Cancelar</button></li>
+           <li><input type="submit" class="button-primary" value="Enviar"></li>
         </ul>
       </form>
     </div>
-    <ol class="wall-home"><!-- Essa margem é para alinhar o mural ao meio-->
+    <ol class="status-list"><!-- Essa margem é para alinhar o mural ao meio-->
       <li>
         <hr class="list-separator">
         <div class="status">
           <div class="context">
-            <span class="icon-subject-gray_32_34-before">Universiade Voluptat Metus > Curso Lorem Ipsum > Disciplina Vestibulum Scelerisque</span>
-            <a>Aula de vídeo lorem ipsum</a>
+            <img class="icon-subject-gray_32_34-before context-icon">
+            <span class="legend">Universiade Voluptat Metus > Curso Lorem Ipsum > Disciplina Vestibulum Scelerisque</span>
+            <a href="#">Aula de vídeo lorem ipsum</a>
           </div>
           <div class="subject">
-            <a href"#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+            <a href"#" class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="icon-teacher-gray_16_18-before author link-name">Nome Sobrenome</a>
             <span class="action">comentou na aula</span>
-            <a class="target icon-video-gray_16_18-before">Aula de vídeo lorem</a>
-            <span class="icon-close icon-close-red_16_18 text-replacement">Excluir</span>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <a href="#" class="target icon-video-gray_16_18-before">Aula de vídeo lorem</a>
+            <span class="icon-close icon-close-gray_16_18 text-replacement">Excluir</span>
+            <span class="date legend">7 fev, 2012, 16:25</span>
           </div>
           <div class="subject-content">
-            <div class="status-content">
+            <div class="status-content status-tab tab-left">
               <p>Cras id risus libero, ut condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia, perinceptus himenaeos.</p>
             </div>
-            <ul class="actions"><li class="reply-status icon-reply-gray_16_18-before"><a href="http://#">Responder</a></li></ul>
-            <div class="create-response">
+            <ul class="actions"><li class="reply-status icon-reply-gray_8_10-before"><a href="#" class="link-secondary">Responder</a></li></ul>
+            <div class="create-response status-tab tab-right">
               <form>
                 <textarea rows="6" cols="50" placeholder="Digite sua resposta ao comentário acima"></textarea>
                 <ul class="status-buttons">
-                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                    <li><button class="button-default">Cancelar</button></li>
+                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                 </ul>
               </form>
             </div>
@@ -65,31 +63,32 @@
       </li>
       <li>
         <hr class="list-separator">
-        <div class="status">
+        <div class="status log">
           <div class="context">
-            <span class="icon-subject-gray_32_34-before">Universiade Voluptat Metus > Curso Lorem Ipsum > Disciplina Vestibulum Scelerisque</span>
-            <a>Aula de vídeo lorem ipsum</a>
+            <img class="icon-subject-gray_32_34-before context-icon">
+            <span class="legend">Universiade Voluptat Metus > Curso Lorem Ipsum > Disciplina Vestibulum Scelerisque</span>
+            <a href="#">Aula de vídeo lorem ipsum</a>
           </div>
           <div class="icon-request-help-lightorange_16_18-before subject">
-            <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+            <a href="#" class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="icon-teacher-gray_16_18-before author link-name">Nome Sobrenome</a>
             <span class="action">pediu<span class="help"> ajuda </span>na aula</span>
-            <a class="target icon-video-gray_16_18-before">Aula de vídeo lorem</a>
-            <span class="icon-close icon-close-red_16_18 text-replacement">Excluir</span>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <a href="#" class="target icon-video-gray_16_18-before">Aula de vídeo lorem</a>
+            <span class="icon-close icon-close-gray_16_18 text-replacement">Excluir</span>
+            <span class="date legend">7 fev, 2012, 16:25</span>
             <!-- <span class="icon-request-help-lightorange_16_18-before text-replacement">help</span> -->
           </div>
           <div class="subject-content">
-            <div class="status-content">
+            <div class="status-content status-tab tab-left">
               <p>Cras id risus libero, ut condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia, perinceptus himenaeos.</p>
             </div>
-            <ul class="actions"><li class="reply-status icon-reply-gray_16_18-before"><a href="http://#">Responder</a></li></ul>
-            <div class="create-response">
+            <ul class="actions"><li class="reply-status icon-reply-gray_8_10-before"><a href="#" class="link-secondary">Responder</a></li></ul>
+            <div class="create-response status-tab tab-right">
               <form>
                 <textarea rows="6" cols="50" placeholder="Digite sua resposta ao comentário acima"></textarea>
                 <ul class="status-buttons">
-                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                    <li><button class="button-default">Cancelar</button></li>
+                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                 </ul>
               </form>
             </div>
@@ -98,51 +97,51 @@
       </li>
       <li>
         <hr class="list-separator">
-        <div class="status">
+        <div class="status without-context"><!--Adição da classe without-context para que não seja necessário usar o seletor "+" no css para remover margem à esquerda quanto não houver contexto no status-->
           <div class="subject">
-            <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
-            <span class="action">comentou no mural de</span>
-            <a href="http://#" class="target icon-teacher-gray_16_18-before">Nome Sobrenome</a>
-            <span class="icon-close icon-close-red_16_18 text-replacement">Excluir</span>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <a href="#" class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="link-name">Nome Sobrenome</a>
+            <span class="action">comentou no <a href="#">Mural</a> de</span>
+            <a href="http://#">Nome Sobrenome</a>
+            <span class="icon-close icon-close-gray_16_18 text-replacement">Excluir</span>
+            <span class="date legend">7 fev, 2012, 16:25</span>
           </div>
-          <div class="subject-content">
-            <div class="status-content">
+            <div class="status-content status-tab tab-left">
               <p>Cras id risus libero, ut condimentum ante. Class aptent taciti sociosqu ad litora torquent per conubia, perinceptus himenaeos.</p>
             </div>
-            <ol class="responses">
+            <ol class="responses status-tab tab-left">
               <li>
                 <div class="response">
-                  <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-                  <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+                  <a href="#" class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+                  <a href="http://#" class="link-name">Nome Sobrenome</a>
                   <span class="action">respondeu:</span>
-                  <span class="date">7 fev, 2012, 16:25</span>
-                  <div class="status-content">
+                  <span class="icon-close icon-close-gray_16_18 text-replacement">Excluir</span>
+                  <span class="date legend">7 fev, 2012, 16:25</span>
+                  <div class="status-content status-tab tab-left">
                     <p>Phasellus pretium inderdum ligula eget fringilla. Maecenas quam est.</p>
                   </div>
                 </div>
-                <hr class="list-separator">
+                <hr>
               </li>
               <li>
                 <div class="response">
-                  <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-                  <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+                  <a href="#" class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+                  <a href="http://#" class="link-name">Nome Sobrenome</a>
                   <span class="action">respondeu:</span>
-                  <span class="date">7 fev, 2012, 16:25</span>
-                  <div class="status-content">
+                  <span class="date legend">7 fev, 2012, 16:25</span>
+                  <div class="status-content status-tab tab-left">
                     <p>Phasellus pretium inderdum ligula eget fringilla. Maecenas quam est.</p>
                   </div>
                 </div>
               </li>
             </ol>
-            <ul class="actions"><li class="reply-status icon-reply-gray_16_18-before"><a href="http://#">Responder</a></li></ul>
-            <div class="create-response">
+            <ul class="actions"><li class="reply-status icon-reply-gray_8_10-before"><a href="#" class="link-secondary">Responder</a></li></ul>
+            <div class="create-response status-tab tab-right">
               <form>
                 <textarea rows="6" cols="50" placeholder="Digite sua resposta ao comentário acima"></textarea>
                 <ul class="status-buttons">
-                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                    <li><button class="button-default">Cancelar</button></li>
+                   <li><input type="submit" class="button-primary" value="Enviar"></li>
                 </ul>
               </form>
             </div>
@@ -153,80 +152,71 @@
         <hr class="list-separator">
         <div class="status">
           <div class="context">
-            <span class="icon-course-gray_32_34-before">Univerisade Voluptat Metus</span>
-            <a>Curso Lorem Ipsum</a>
+            <img class="icon-course-gray_32_34-before context-icon">
+            <span class="legend">Univerisade Voluptat Metus</span>
+            <a href="#">Curso Lorem Ipsum</a>
           </div>
           <div class="subject">
-            <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+            <a href="#"  class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="icon-teacher-gray_16_18-before author link-name">Nome Sobrenome</a>
             <span class="action">criou a disciplina</span>
-            <a class="target icon-space-gray_16_18-before">Dummy Text Discipline</a>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <a href="#" class="target icon-space-gray_16_18-before">Dummy Text Discipline</a>
+            <span class="date legend">7 fev, 2012, 16:25</span>
           </div>
         </div>
       </li>
       <li>
         <hr class="list-separator">
-        <div class="status">
+        <div class="status log">
           <div class="context">
-            <span class="icon-course-gray_32_34-before">Univerisade Voluptat Metus</span>
-            <a>Curso Lorem Ipsum</a>
-          </div>
-          <div class="icon-grouping-gray_16_18-before subject">
-            <a class="see-all">+ ver todos</a>
-            <span class="action">O curso possui 20 novos membros</span>
-            <div class="subject-content">
-              <div class="grouping-elements">
-                <ul>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                   <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                  <li>
-                    <img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <hr class="list-separator">
-        <div class="status">
-          <div class="context">
-            <span class="icon-space-gray_32_34-before">Univerisade Voluptat Metus > Curso Lorem Ipsum</span>
-            <a>Disciplina Vestibulum Scelerisque</a>
+            <img class="icon-course-gray_32_34-before context-icon text-replacement">
+            <span class="legend">Univerisade Voluptat Metus</span>
+            <a href="#">Curso Lorem Ipsum</a>
           </div>
           <div class="subject">
-            <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+            <a href="#" class="see-all link-secondary">+ ver todos</a>
+            <span class="icon-grouping-gray_16_18-before action">O curso possui 20 novos membros</span>
+          </div>
+          <div class="subject-content">
+            <ul class="grouping-elements">
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+              <li><a href="#"><img src="../img/thumbnail-missing-profile-32.png"></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <hr class="list-separator">
+        <div class="status">
+          <div class="context">
+            <img class="icon-space-gray_32_34-before context-icon">
+            <span class="legend">Univerisade Voluptat Metus > Curso Lorem Ipsum</span>
+            <a href="#">Disciplina Vestibulum Scelerisque</a>
+          </div>
+          <div class="subject">
+            <a href="#"  class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="icon-teacher-gray_16_18-before author link-name">Nome Sobrenome</a>
             <span class="action">publicou a aula</span>
-            <a class="target icon-space-gray_16_18-before">Aula de vídeo Lorem Ipsum</a>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <a href="#" class="target icon-space-gray_16_18-before">Aula de vídeo Lorem Ipsum</a>
+            <span class="date legend">7 fev, 2012, 16:25</span>
           </div>
         </div>
       </li>
@@ -234,17 +224,18 @@
         <hr class="list-separator">
         <div class="status">
           <div class="context">
-            <span class="icon-space-gray_32_34-before">Univerisade Voluptat Metus > Curso Lorem Ipsum</span>
-            <a>Disciplina Vestibulum Scelerisque</a>
+            <img class="icon-space-gray_32_34-before context-icon">
+            <span class="legend">Univerisade Voluptat Metus > Curso Lorem Ipsum</span>
+            <a href="#">Disciplina Vestibulum Scelerisque</a>
           </div>
           <div class="subject">
-            <a href="#"><img src="http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png"></a>
-            <a href="http://#" class="icon-teacher-gray_16_18-before author">Nome Sobrenome</a>
+            <a href="#"  class="author-thumbnail"><img src="../img/thumbnail-missing-profile-32.png"></a>
+            <a href="http://#" class="icon-teacher-gray_16_18-before author link-name">Nome Sobrenome</a>
             <span class="action">publicou o módulo</span>
             <a href="http://#">Lorem ipsum sit dolor amet</a>
             <span class="action">com a aula</span>
             <a href="http://#" class="icon-space-gray_16_18-before">Aula de vídeo Lorem Ipsum</a>
-            <span class="date">7 fev, 2012, 16:25</span>
+            <span class="date legend">7 fev, 2012, 16:25</span>
           </div>
         </div>
       </li>
