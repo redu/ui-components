@@ -1,5 +1,10 @@
 // Alinha cada div de status separadamente
-.status-list .status { margin: 20px; }
+.status-list .status {
+  overflow: hidden;
+  margin: 20px;
+}
+
+.subject-info { overflow: hidden; }
 
 .create-status { margin-bottom: 10px; }
 
@@ -31,6 +36,8 @@
   @include border-radius;
   @include clear-fix;
 
+  form { overflow: hidden; }
+
   .status-buttons {
     float: right;
     margin: 5px 0 0;
@@ -41,7 +48,10 @@
 
 // Alinhar status
 .subject,
-.subject-content { margin-left: 42px; }
+.subject-content {
+  height: 100%;
+  margin-left: 42px;
+}
 
 // Remove margens à esquerda quando status não tem contexto
 .status.without-context { //Adição da classe without-context para remover margens à direita de elementos sem contexto, sem a necessidade do seletor '+'
@@ -88,6 +98,8 @@
     margin-left: 42px;
     background-color: $gray2;
     @include border-radius;
+
+    .show-responses { display: none; }
   }
 
   .status-content {
@@ -102,12 +114,20 @@
   .responses {
     margin-top: 15px;
 
+    .last-responses,
+    .see-more {
+      display: block;
+      text-align: center;
+      padding: 10px;
+    }
+
     .response {
       padding: 10px;
 
       .status-content {
         margin-left: 42px;
         padding: 0;
+        margin-top: 0;
 
         &:before { display: none; }
       }
@@ -121,9 +141,10 @@
     .subject { margin-top: 5px; }
 
 // Posiciona ícone do status de pedido de ajuda
-    &[class*="icon-"]:before {
+    .icon-log[class*="icon-"]:before,
+    .action[class*="icon-"]:before {
       position: absolute;
-      margin-left: -75px;
+      margin-left: -35px;
     }
 
     .see-all { float: right; }
@@ -131,8 +152,6 @@
 // Posiciona ícone do status de agrupamento de membros
     .action {
       &[class*="icon-"]:before {
-        margin-left: -35px;
-        position: absolute;
         margin-top: 5px;
       }
     }
@@ -140,11 +159,13 @@
     .subject-content {
       .grouping-elements {
         margin-right: 20px;
+        height: 40px;
+
 
         li {
           display: inline;
 
-          img { margin-top: 8px; }
+          img { margin: 8px 3px 0 0; }
         }
       }
     }
