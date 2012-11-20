@@ -93,6 +93,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-teacher-gray_16_18; }
   &:hover:before { @extend .icon-teacher-blue_16_18; }
 }
+.icon-teacher-gray_32_34-before {
+  &:before { @extend .icon-teacher-gray_32_34; }
+  &:hover:before { @extend .icon-teacher-blue_32_34; }
+}
 .icon-teacher-white_16_18-before {
   &:before { @extend .icon-teacher-white_16_18; }
 }
@@ -127,6 +131,10 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-member-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-member-white_blue_16_18; }
+}
+.icon-member-gray_32_34-before {
+  &:before { @extend .icon-member-gray_32_34; }
+  &:hover:before { @extend .icon-member-blue_32_34; }
 }
 .guides-list-item:hover .icon-member-lightblue_32_34-before {
   &:before {  @extend .icon-member-blue_32_34; }
@@ -883,6 +891,7 @@ a:hover,
 
 .icon-frequent-questions-gray_32_34-before {
   &:before { @extend .icon-frequent-questions-gray_32_34; }
+  &:hover:before { @extend .icon-frequent-questions-blue_32_34; }
 }
 
 .icon-frequent-questions-lightblue_32_34-before {
@@ -969,6 +978,10 @@ a:hover,
   &:before { @extend .icon-app-lightblue_32_34; }
   &:hover:before { @extend .icon-app-blue_32_34; }
 }
+.icon-app-gray_32_34-before {
+  &:before { @extend .icon-app-gray_32_34; }
+  &:hover:before { @extend .icon-app-blue_32_34; }
+}
 .list-button li:hover .icon-app-lightblue_16_18-before {
   &:before {  @extend .icon-app-blue_16_18; }
 }
@@ -986,6 +999,7 @@ a:hover,
 }
 .icon-basic-guide-gray_32_34-before {
   &:before { @extend .icon-basic-guide-gray_32_34; }
+  &:hover:before { @extend .icon-basic-guide-blue_32_34; }
 }
 .icon-basic-guide-lightblue_16_18-before {
   &:before { @extend .icon-basic-guide-lightblue_16_18; }
@@ -1022,6 +1036,7 @@ a:hover,
 }
 .icon-manager-gray_32_34-before {
   &:before { @extend .icon-manager-gray_32_34; }
+  &:hover:before { @extend .icon-manager-blue_32_34; }
 }
 
 .icon-manager-blue_32_34-before {
