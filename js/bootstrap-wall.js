@@ -51,15 +51,8 @@ $(".create-status .status-buttons .cancel").live("click", function(e){
   $this.parents("form").find("textarea").css("height","30");
 })
 
-// Apagar comentário ao clicar no X
-$(".response .icon-close").live("click", function(e){
-  $(this).parent().parent().find("hr").remove();
-  $(this).parent().remove()
-})
-
 
 $(function() {
-
   // Agrupar respostas
   $('.responses').each(function() {
     var $responses = $(this).find("li:not(.show-responses)");
@@ -76,7 +69,6 @@ $(function() {
     var width = $this.width();
     var newHeight = (Math.ceil((($elements.length * 35) /  width)) *  40);
 
-
     // Exibi os elementos agrupados
     $(".log .see-all").live("click",function(e) {
       e.preventDefault()
@@ -88,16 +80,5 @@ $(function() {
   })
 });
 
-//
-// $(".log .see-all").live("click",function(e){
-//   var $this = $(this);
-
-//
-//   // Exibe todos os elementos agrupados
-//
-//   // Remove a opção de exibir todos os elementos agrupados
-//   $this.remove()
-
-// });
 
 
