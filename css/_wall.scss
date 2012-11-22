@@ -5,11 +5,15 @@
 }
 
 .subject-info {
-  margin-top: 15px;
+  margin-top: 10px;
   overflow: hidden;
 }
 
-.create-status { margin-bottom: 10px; }
+.create-status {
+  margin-bottom: 10px;
+
+  form { height: 100%; }
+}
 
 // Aba para área de status, criação de status e comentários.
 .status-tab {
@@ -41,7 +45,6 @@
 
   .status-buttons {
     float: right;
-    overflow: hidden;
     margin: 5px 0 0;
 
     li { display: inline; }
