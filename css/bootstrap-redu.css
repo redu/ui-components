@@ -1584,6 +1584,18 @@ textarea:-moz-placeholder {
 .modal-sign-up-tos {
   float: left;
   text-align: left;
+  margin-top: 20px;
+}
+.modal-sign-up-tos .control-checkbox {
+  text-align: center;
+  padding-left: 0;
+}
+.modal-sign-up-tos .control-checkbox input[type="checkbox"] {
+  float: none;
+  margin-top: 0;
+}
+.modal-sign-up-tos .control-error {
+  display: inline-block;
 }
 
 .modal-sign-up-buttons {
@@ -1604,6 +1616,41 @@ textarea:-moz-placeholder {
 .modal-sign-up-success .modal-body p +
 p {
   margin-top: 20px;
+}
+
+.modal-sign-up-humanizer {
+  text-align: center;
+  overflow: hidden;
+  clear: both;
+}
+.modal-sign-up-humanizer .control-group .control-label {
+  text-align: center;
+  width: 100%;
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+.modal-sign-up-humanizer .control-group .control-label .control-error {
+  display: inline-block;
+}
+.modal-sign-up-humanizer .control-group .control-label a {
+  font-size: 11px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.modal-sign-up-humanizer .control-input {
+  clear: both;
+  margin-top: 5px;
+}
+.modal-sign-up-humanizer .errors_on_field {
+  margin: 5px 0 0 0;
+}
+
+.controls .errors_on_field {
+  margin: 0;
+}
+.controls .errors_on_field li {
+  margin-top: 5px;
+  line-height: 14px;
 }
 
 .footer {

@@ -156,16 +156,14 @@
   .control-checkbox {
     text-align: center;
     padding-left: 0;
+
+    input[type="checkbox"] {
+      float: none;
+      margin-top: 0;
+    }
   }
 
-  .control-checkbox input[type="checkbox"] {
-    float: none;
-    margin-top: 0;
-  }
-
-  .control-error {
-    display: inline-block;
-  }
+  .control-error { display: inline-block; }
 }
 
 // Área com os botões de cancelar e cadastrar.
@@ -199,6 +197,8 @@
     margin: 0 0 0 10px;
     padding: 0;
 
+    .control-error { display: inline-block; }
+
     a {
       font-size: 11px;
       cursor: pointer;
@@ -208,11 +208,11 @@
 
   .control-input {
     clear: both;
-    margin: 5px 0;
+    margin-top: 5px;
   }
 
-  span {
-    float: left;
+  .errors_on_field {
+    margin: 5px 0 0 0;
   }
 }
 
