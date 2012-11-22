@@ -8,21 +8,6 @@
 
 // O valor da posição esquerda da logo.
 $footer-logo-left-position: 115px;
-$footer-height: 140px;
-
-// Técnica do sticky footer
-// ==========================================================================
-
-html,
-body { height: 100%; }
-
-.main-wrapper {
-  @include box-sizing;
-  min-height: 100%;
-  margin: 0 auto (- $footer-height);
-}
-
-.footer-pusher { height: $footer-height; }
 
 // Wrapper de tudo.
 .footer {
