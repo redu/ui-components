@@ -937,7 +937,9 @@ hr {
 
 // Colunas.
 .general-list-item-column {
-  float: left;
+  &:first-child { float: left; }
+
+  &:last-child { overflow: hidden; }
 
   .general-list-item-title +
   .legend { margin-top: 5px; }
@@ -954,7 +956,7 @@ hr {
   .button-default { margin-top: 5px; }
 
   & +
-  & { margin-left: 10px; }
+  & { padding-left: 10px; }
 }
 
 // Lista de contadores.
