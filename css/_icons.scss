@@ -362,6 +362,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-manage-white_blue_16_18-before {
   &:before { @extend .icon-manage-white_blue_16_18; }
 }
+.icon-manage-gray_16_18-before {
+  &:before { @extend .icon-manage-gray_16_18; }
+}
 .icon-manage-gray_32_34-before {
   &:before { @extend .icon-manage-gray_32_34; }
   .header-breadcrumb:hover &:before { @extend .icon-manage-blue_32_34; }
