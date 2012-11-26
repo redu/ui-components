@@ -206,6 +206,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-course-lightblue_32_34-before {
   &:hover:before { @extend .icon-course-blue_32_34; }
 }
+.icon-course-blue_32_34-before { @extend .icon-course-blue_32_34; }
 .list-mix .icon-course-lightgray_32_34-before:hover:before {
   @extend .icon-course-blue_32_34;
 }
@@ -241,6 +242,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-space-lightblue_32_34-before {
   &:hover:before { @extend .icon-space-blue_32_34; }
 }
+.icon-space-blue_32_34-before { @extend .icon-space-blue_32_34; }space
 .header-item:hover .icon-space-gray_16_18-before:before,
 .header-item:hover .icon-space-lightblue_16_18-before:before {
   @extend .icon-space-blue_16_18;
@@ -409,6 +411,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-subject-lightblue_32_34-before {
   &:hover:before { @extend .icon-subject-blue_32_34; }
 }
+.icon-subject-blue_32_34-before { @extend .icon-subject-blue_32_34; }
 .list-button li:hover .icon-subject-lightblue_16_18-before {
   &:before {  @extend .icon-subject-blue_16_18; }
 }

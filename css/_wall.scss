@@ -10,9 +10,9 @@
 }
 
 .create-status {
-  margin-bottom: 10px;
+  margin: 20px;
 
-  form { height: 100%; }
+  hr { border: transparent; } // Foi necessária adição deste hr na aŕea de criar status para forçar que os botões aparecessem abaixo (o bug do chrome). Tive que deixá-la sem borda para que não aparecesse para o usuário.
 }
 
 // Aba para área de status, criação de status e comentários.
@@ -106,6 +106,8 @@
   .status-content {
     margin-top: 10px;
     padding: 10px;
+
+    p { @include text-shadow(none); }
   }
 
   .action { color: $gray5; }
@@ -173,7 +175,8 @@
 
     .context-icon {
       float: left;
-      margin-right: 8px;
+      width: 32px;
+      margin-right: 10px;
 
       &[class*="icon-"]:before { float: left; }
     }
@@ -234,3 +237,9 @@ hr {
   border-top: 1px solid $gray3;
   border-bottom: 1px solid $white;
 }
+
+.context-link-hover {
+  color: rgb(21, 138, 196) !important;
+  text-decoration: underline;
+}
+
