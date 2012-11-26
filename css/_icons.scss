@@ -242,7 +242,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-space-lightblue_32_34-before {
   &:hover:before { @extend .icon-space-blue_32_34; }
 }
-.icon-space-blue_32_34-before { @extend .icon-space-blue_32_34; }space
+.icon-space-blue_32_34-before { @extend .icon-space-blue_32_34; }
 .header-item:hover .icon-space-gray_16_18-before:before,
 .header-item:hover .icon-space-lightblue_16_18-before:before {
   @extend .icon-space-blue_16_18;

@@ -1,26 +1,31 @@
 // Exibe todos os comentários
-$(".responses .see-more").live("click", function(e){
+$.fn.exibeComments = function(opts){
+  return this.each(function(){
     var $this = $(this);
-    var $responses = $this.parents(".responses");
 
-    // Esconde todas as respostas mais antigas
-    if ($responses.hasClass("open")){
-      $responses.find(".last-responses").html("Visualizando as últimas respostas...");
-      $responses.countComments();
-      $responses.find('li').animate(150);
-      $responses.groupResponses();
-      $responses.removeClass("open");
-    }
+    $this.live("click", function(e){
+      var $responses = $this.parents(".responses");
 
-    // Exibe todas as respostas
-    else {
-      $responses.find(".last-responses").html("Visualizando todas as respostas...");
-      $responses.find("li").slideDown(150, 'swing');
-      $this.html("esconder todas as respostas");
-      // Verifica se todas as respostas já estão exibidas
-      $responses.addClass("open");
-    }
-});
+      // Esconde todas as respostas mais antigas
+      if ($responses.hasClass("open")){
+        $responses.find(".last-responses").html("Visualizando as últimas respostas...");
+        $responses.countComments();
+        $responses.find('li').animate(150);
+        $responses.groupResponses();
+        $responses.removeClass("open");
+      }
+
+      // Exibe todas as respostas
+      else {
+        $responses.find(".last-responses").html("Visualizando todas as respostas...");
+        $responses.find("li").slideDown(150, 'swing');
+        $this.html("esconder todas as respostas");
+        // Adiciona a class open para informar que todas as respostas estão exibidas
+        $responses.addClass("open");
+      }
+    });
+  });
+};
 
 // Exibe área de criação de respostas
 $(".actions .reply-status span").live("click", function(e){
@@ -52,7 +57,7 @@ $(".create-status .status-buttons .cancel").live("click", function(e){
   var $this = $(this);
 
   $this.parents("form").find("textarea").animate({ height: 30 }, 150);
-  $this.parents(".status-buttons").slideToggle(150, 'swing');
+  $this.parents(".status-buttons").slideUp(150, 'swing');
 })
 
 // Agrupa respostas
@@ -102,7 +107,6 @@ $.fn.groupMembers = function(opts){
         $this.animate({ height: newHeight }, 150);
         $(this).html("- esconder todos");
       }
-      // $(this).remove();
     });
   })
 }
@@ -120,6 +124,7 @@ $(function() {
   $('.responses').groupResponses();
   $('.grouping-elements').groupMembers();
   $(".responses").countComments();
+  $(".responses .see-more").exibeComments();
 
   // Deixa ícone do contexto do estilo hover ao passar o mouse no link do mesmo, e vice-versa.
   $(".context-icon").each( function(){
