@@ -171,6 +171,10 @@ a.icon-teacher-gray_16_18-before {
 .icon-environment-black_16_18-before {
   &:before { @extend .icon-environment-black_16_18; }
 }
+.icon-environment-circle-lightblue_16_18-before {
+  &:before { @extend .icon-environment-circle-lightblue_16_18; }
+  &:hover:before { @extend .icon-environment-circle-blue_16_18; }
+}
 .icon-environment-lightblue_16_18-before,
 .header-list .icon-environment-gray_16_18-before {
   &:hover:before { @extend .icon-environment-blue_16_18; }
@@ -804,6 +808,11 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-help-central-lightgray_32_34; }
 }
 
+.icon-help-central-lightblue_16_18-before {
+  &:before { @extend .icon-help-central-lightblue_16_18; }
+  &:hover:before { @extend .icon-help-central-blue_16_18; }
+}
+
 // Regras de hover para os ícones que não usam pseudo elementos.
 a:hover,
 .filter:hover,
@@ -885,6 +894,10 @@ a:hover,
 // Tópico de Dúvida
 .icon-doubt-topic-gray_16_18-before {
   &:before { @extend .icon-doubt-topic-gray_16_18; }
+}
+.icon-doubt-topic-lightblue_16_18-before {
+  &:before { @extend .icon-doubt-topic-lightblue_16_18; }
+  &:hover:before { @extend .icon-doubt-topic-blue_16_18; }
 }
 
 // Dúvidas Frequentes
@@ -1080,4 +1093,19 @@ a:hover,
 // Adicionar amigo
 .icon-add-friend-green_32_34-before {
   &:before { @extend .icon-add-friend-green_32_34; }
+}
+
+// Convite
+.icon-invite-lightblue_16_18-before {
+  &:before { @extend .icon-invite-lightblue_16_18; }
+  &:hover:before { @extend .icon-invite-blue_16_18; }
+}
+
+// Tour
+.icon-tour-lightblue_16_18-before {
+  &:before { @extend .icon-tour-lightblue_16_18; }
+  &:hover:before { @extend .icon-tour-blue_16_18; }
+}
+.icon-tour-white_16_18-before {
+  &:before { @extend .icon-tour-white_16_18; }
 }
