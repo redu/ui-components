@@ -200,6 +200,10 @@ a.icon-teacher-gray_16_18-before {
 .header-item:hover .icon-environment-lightblue_16_18-before:before {
   @extend .icon-environment-blue_16_18;
 }
+.icon-environment-round-lightblue_16_18-before {
+  &:before { @extend .icon-environment-lightblue_16_18; }
+  &:hover:before { @extend .icon-environment-round-blue_16_18; }
+}
 
 // Curso.
 .icon-course-lightblue_16_18-before {
@@ -1108,4 +1112,10 @@ a:hover,
 }
 .icon-tour-white_16_18-before {
   &:before { @extend .icon-tour-white_16_18; }
+}
+
+// Interrogação
+.icon-ask-lightblue_16_18-before {
+  &:before { @extend .icon-ask-lightblue_16_18; }
+  &:hover:before { @extend .icon-ask-blue_16_18; }
 }
