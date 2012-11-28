@@ -180,6 +180,9 @@ $(function() {
   $('.modal-fill-horizontal').reduModal('fillHorizontal')
 
   // Abre uma modal caso seu id esteja na URL.
-  var $modal = $(/#[a-zA-Z\-_\d]*/.exec(document.URL))
-  $modal.length !== 0 && $(modal[0]).modal("show")
+  var modalId = /#[a-zA-Z\-_\d]*/.exec(document.URL)
+  if (modalId !== null) {
+    var $modal = $(modalId[0])
+    $modal.length !== 0 && $modal.hasClass("modal") && $modal.modal("show")
+  }
 })
