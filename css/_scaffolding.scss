@@ -36,6 +36,7 @@ a {
   $vertical-gradient-height: 10px;
   // Padding inferior para cobrir o gradiente :after.
   padding-bottom: $vertical-gradient-height;
+  min-height: 500px;
 
   &:before {
     @include border-radius(10px 10px 0 0);
