@@ -1119,3 +1119,49 @@ a:hover,
   &:before { @extend .icon-ask-lightblue_16_18; }
   &:hover:before { @extend .icon-ask-blue_16_18; }
 }
+
+
+// Ícones da navegação local.
+.nav-local-item:before {
+  // Visão Geral.
+  &.icon-home_16_18-before {
+    @extend .icon-home-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-home-white_blue_16_18; }
+  }
+
+  // Meu Mural.
+  &.icon-wall_16_18-before {
+    @extend .icon-wall-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-wall-white_blue_16_18; }
+  }
+
+  // Mensagens.
+  &.icon-message_16_18-before {
+    @extend .icon-message-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-message-white_blue_16_18; }
+  }
+
+  // Ambientes.
+  &.icon-environment_16_18-before {
+    @extend .icon-environment-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-environment-white_blue_16_18; }
+  }
+
+  // Configurações.
+  &.icon-manage_16_18-before {
+    @extend .icon-manage-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-manage-white_blue_16_18; }
+  }
+
+  // Meus Contatos.
+  &.icon-contacts_16_18-before {
+    @extend .icon-contacts-lightblue_16_18;
+
+    &.nav-local-item-active { @extend .icon-contacts-white_blue_16_18; }
+  }
+}
