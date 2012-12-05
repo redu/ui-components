@@ -608,7 +608,7 @@ hr {
 
   // Lista de aulas.
   .list-button {
-    @extend h6;
+    @include heading(6);
     list-style: decimal inside none;
     overflow: hidden;
 
