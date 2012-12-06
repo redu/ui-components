@@ -513,17 +513,18 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 .list-separator {
-  @include box-sizing;
+  border: none;
   height: 2px;
-  background-color: $white;
-  border-top: 1px solid $gray3;
+  margin: 0;
+  padding: 9px 0;
 
   &:before {
     content: "";
     display: block;
     height: 9px;
     position: relative;
-    top: -10px;
+    top: -8px;
+    border-bottom: 1px solid $gray3;
 
     .cssgradients & { @include redu-gradient($gray1, $white); }
 
@@ -539,6 +540,7 @@ $general-list-item-stars-n-counters-gutter: 12px;
     height: 9px;
     position: relative;
     bottom: 8px;
+    border-top: 1px solid $white;
 
     .cssgradients & { @include redu-gradient($white, $gray1) };
 
