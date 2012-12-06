@@ -25,3 +25,11 @@
 .clearfix { @include clear-fix; }
 
 .link-container { cursor: pointer; }
+
+// Trunca com "..." o texto quando chegar no limite máximo.
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
