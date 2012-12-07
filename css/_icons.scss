@@ -360,6 +360,11 @@ a.icon-teacher-gray_16_18-before {
   .header-breadcrumb:hover &:before { @extend .icon-sent-message-blue_32_34; }
 }
 
+// Nova mensagem.
+.icon-message-new-white_blue_16_18-before {
+  &:before { @extend .icon-message-new-white_blue_16_18; }
+}
+
 // Parceiro.
 .icon-partner-lightblue_16_18-before {
   &:before { @extend .icon-partner-lightblue_16_18; }
