@@ -11,7 +11,6 @@ module.exports = function(grunt) {
   , 'js/bootstrap-link.js'
   , 'js/bootstrap-list.js'
   , 'js/bootstrap-button.js'
-  , 'js/bootstrap-reply-status.js'
   , 'js/bootstrap-tables.js'
   , 'js/bootstrap-autocomplete.js'
   , 'js/bootstrap-local-nav.js'
