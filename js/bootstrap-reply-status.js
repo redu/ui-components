@@ -1,5 +1,5 @@
  // Responder status
-$("a.reply-status").live("click", function(e){
+$(".status-buttons a.reply-status").live("click", function(e){
     e.preventDefault();
 
     var $createResponse = $(this).parents("ul:first").next(".create-response");
@@ -9,7 +9,7 @@ $("a.reply-status").live("click", function(e){
 });
 
 // Cancelar Publicação
-$("a.cancel").live("click", function(e){
+$(".status-buttons a.cancel").live("click", function(e){
     e.preventDefault();
 
     var $createResponse = $(this).parents(".create-response");
