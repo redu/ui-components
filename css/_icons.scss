@@ -1136,12 +1136,16 @@ a:hover,
   &.icon-home_16_18-before {
     @extend .icon-home-lightblue_16_18;
 
+    &:hover { @extend .icon-home-blue_16_18; }
+
     &.nav-local-item-active { @extend .icon-home-white_blue_16_18; }
   }
 
   // Meu Mural.
   &.icon-wall_16_18-before {
     @extend .icon-wall-lightblue_16_18;
+
+    &:hover { @extend .icon-wall-blue_16_18; }
 
     &.nav-local-item-active { @extend .icon-wall-white_blue_16_18; }
   }
@@ -1150,12 +1154,16 @@ a:hover,
   &.icon-message_16_18-before {
     @extend .icon-message-lightblue_16_18;
 
+    &:hover { @extend .icon-message-blue_16_18; }
+
     &.nav-local-item-active { @extend .icon-message-white_blue_16_18; }
   }
 
   // Ambientes.
   &.icon-environment_16_18-before {
     @extend .icon-environment-lightblue_16_18;
+
+    &:hover { @extend .icon-environment-blue_16_18; }
 
     &.nav-local-item-active { @extend .icon-environment-white_blue_16_18; }
   }
@@ -1164,6 +1172,8 @@ a:hover,
   &.icon-manage_16_18-before {
     @extend .icon-manage-lightblue_16_18;
 
+    &:hover { @extend .icon-manage-blue_16_18; }
+
     &.nav-local-item-active { @extend .icon-manage-white_blue_16_18; }
   }
 
@@ -1171,6 +1181,20 @@ a:hover,
   &.icon-contacts_16_18-before {
     @extend .icon-contacts-lightblue_16_18;
 
+    &:hover { @extend .icon-contacts-blue_16_18; }
+
     &.nav-local-item-active { @extend .icon-contacts-white_blue_16_18; }
+  }
+}
+
+// Ícones das abas de Mensagens.
+.tabs {
+  .icon-message_16_18-before {
+    &:before { @extend .icon-message-lightblue_16_18; }
+    &:hover:before { @extend .icon-message-blue_16_18; }
+  }
+  .icon-message-sent_16_18-before {
+    &:before { @extend .icon-sent-message-lightblue_16_18; }
+    &:hover:before { @extend .icon-sent-message-blue_16_18; }
   }
 }
