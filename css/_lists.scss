@@ -512,6 +512,16 @@ $general-list-item-stars-n-counters-gutter: 12px;
   & + & { margin-top: 10px; }
 }
 
+hr {
+  @include box-shadow(none);
+  clear: both;
+  margin: 10px 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
+}
+
 .list-separator {
   border: none;
   height: 2px;
