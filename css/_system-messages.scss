@@ -78,9 +78,9 @@
   // Centraliza horizontalmente.
   position: fixed;
   z-index: $z-index-system-message;
-  top: $nav-global-height + 20px;
+  top: $nav-global-height + 15px;
   left: 50%;
-  $width: 580px;
+  $width: grid-width(10);
   width: $width;
   margin-left: -($width / 2);
 }
