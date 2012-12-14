@@ -184,6 +184,17 @@ td {
 		text-align: right;
 		margin-top: 15px;
 	}
+
+	tr:hover {
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.link-name { color: $blue2; }
+	}
+
+	.link-name { font-weight: normal; }
 }
 
 .inbox-message-base,

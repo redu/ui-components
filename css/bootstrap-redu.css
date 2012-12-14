@@ -778,6 +778,16 @@ tr:hover td {
   text-align: right;
   margin-top: 15px;
 }
+.form-checklist tr:hover a {
+  color: inherit;
+  text-decoration: none;
+}
+.form-checklist tr:hover .link-name {
+  color: #73c3e6;
+}
+.form-checklist .link-name {
+  font-weight: normal;
+}
 
 .inbox-message-base, .inbox-message-unread, .inbox-message-read,
 .inbox-message-base:hover,
