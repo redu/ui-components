@@ -81,24 +81,24 @@
       <div class="row">
         <div class="span10 offset1">
           <div class="system-message message-warning fade in">
-            <a data-dismiss="alert" class="message-close">×</a>
-            <p><strong>Ops!</strong> Quando alguma coisa não funciona bem, este aviso é mostrado...</p>
+            <span data-dismiss="alert" class="message-close">×</span>
+            <p><strong>Ops!</strong> Quando alguma coisa não funciona bem, este aviso é mostrado... Os links são mostrados <a href="#">desta cor</a> e mais escuro no hover.</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="span10 offset1">
           <div class="system-message message-success fade in">
-            <a data-dismiss="alert" class="message-close">×</a>
-            <p><strong>Muito bem!</strong> Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso.</p>
+            <span data-dismiss="alert" class="message-close">×</span>
+            <p><strong>Muito bem!</strong> Pelo visto, a ação foi bem sucedida. E o usuário precisa saber disso. Os links são mostrados <a href="#">desta cor</a> e mais escuro no hover.</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="span10 offset1">
           <div class="system-message message-info">
-            <a data-dismiss="alert" class="message-close">×</a>
-            <p><strong>Aviso.</strong> Sr. usuário, há algo que você precisa saber, porém sem urgência.</p>
+            <span data-dismiss="alert" class="message-close">×</span>
+            <p><strong>Aviso.</strong> Sr. usuário, há algo que você precisa saber, porém sem urgência. Os links são mostrados <a href="#">desta cor</a> e mais escuro no hover.</p>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
           <pre class="prettyprint linenums">
 &lt;div class="system-message message-(warning|success|info|busy) [fade in]"&gt;
   &lt;!-- IF MESSAGE SHOULD HAVE A CLOSE BUTTON --&gt;
-  &lt;a data-dismiss="alert" class="message-close"&gt;×&lt;/a&gt;
+  &lt;span data-dismiss="alert" class="message-close"&gt;×&lt;/span&gt;
   &lt;!-- END --&gt;
   &lt;p&gt;MESSAGE_CONTENT&lt;/p&gt;
 &lt;/div&gt;</pre>
@@ -136,7 +136,7 @@
       <div class="row">
         <div class="span4">
           <div class="message-block message-warning fade in">
-            <a data-dismiss="alert" class="message-close">×</a>
+            <span data-dismiss="alert" class="message-close">×</span>
             <div class="message-block-content">
               <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
             </div>
@@ -147,7 +147,7 @@
         </div>
         <div class="span4">
           <div class="message-block message-success fade in">
-            <a data-dismiss="alert" class="message-close">×</a>
+            <span data-dismiss="alert" class="message-close">×</span>
             <div class="message-block-content">
               <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
             </div>
@@ -158,7 +158,7 @@
         </div>
         <div class="span5">
           <div class="message-block message-info">
-            <a data-dismiss="alert" class="message-close">×</a>
+            <span data-dismiss="alert" class="message-close">×</span>
             <div class="message-block-content">
               <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
             </div>
@@ -171,7 +171,7 @@
       <div class="row">
         <div class="span13">
           <div class="message-block message-busy">
-            <a data-dismiss="alert" class="message-close">×</a>
+            <span data-dismiss="alert" class="message-close">×</span>
             <div class="message-block-content">
               <p><strong>Aviso.</strong> Sr. usuário, este tipo de mensagem pode surgir no próprio contexto da interface, seja no corpo principal ou nas colunas laterais. Por exemplo: pode-se anunciar uma nova funcionalidade, uma ajuda importante ou mesmo uma mensagem de boas vindas.</p>
             </div>
@@ -181,7 +181,7 @@
       <pre class="prettyprint linenums">
 &lt;div class="message-block message-[warning|success|info|busy] [fade in]"&gt;
   &lt;!-- IF MESSAGE SHOULD HAVE CLOSE BUTTON --&gt;
-  &lt;a data-dismiss="alert" class="message-close"&gt;×&lt;/a&gt;
+  &lt;span data-dismiss="alert" class="message-close"&gt;×&lt;/span&gt;
   &lt;!-- END --&gt;
   &lt;div class="message-block-content"&gt;
     MESSAGE_CONTENT

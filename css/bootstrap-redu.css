@@ -4452,8 +4452,8 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   border-width: 1px;
   border-style: solid;
 }
-.message-base p, .system-message p, .message-block p {
-  margin-bottom: 0;
+.message-base a, .system-message a, .message-block a {
+  text-decoration: underline;
 }
 
 .message-close {
@@ -4474,10 +4474,22 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   border-color: #ff6d6d;
   color: #c1272d;
 }
+.message-warning a {
+  color: #e83b3b;
+}
+.message-warning a:hover {
+  color: #e1272d;
+}
 
 .message-success {
   background-color: #e1f1e1;
   border-color: #5fc080;
+  color: #61a080;
+}
+.message-success a {
+  color: #5fc080;
+}
+.message-success a:hover {
   color: #61a080;
 }
 

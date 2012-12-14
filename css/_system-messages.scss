@@ -10,7 +10,7 @@
   border-width: 1px;
   border-style: solid;
 
-  p { margin-bottom: 0; }
+  a { text-decoration: underline; }
 }
 
 // Ícone de fechar.
@@ -33,6 +33,12 @@
   background-color: $red1;
   border-color: $red2;
   color: $red5;
+
+  a {
+    color: $red3;
+
+    &:hover { color: $red4; }
+  }
 }
 
 // Mensagem de sucesso.
@@ -40,6 +46,12 @@
   background-color: $green1;
   border-color: $green3;
   color: $green4;
+
+  a {
+    color: $green3;
+
+    &:hover { color: $green4; }
+  }
 }
 
 // Mensagem de informação.
