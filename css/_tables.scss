@@ -194,7 +194,10 @@ td {
 		.link-name { color: $blue2; }
 	}
 
-	.link-name { font-weight: normal; }
+	.link-name {
+		font-weight: normal;
+		color: $blue2;
+	}
 }
 
 .inbox-message-base,
