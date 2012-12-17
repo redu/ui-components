@@ -40,6 +40,8 @@ pre + p { margin-top: $base-line-height / 2; }
 
   p { margin-bottom: $base-line-height / 2; }
 
+  .system-message p {  margin: 0; }
+
   h3[id],
   h4[id] { padding-top: 60px; }
 

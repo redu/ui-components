@@ -43,6 +43,9 @@ pre + p {
 .content p {
   margin-bottom: 9px;
 }
+.content .system-message p {
+  margin: 0;
+}
 .content h3[id],
 .content h4[id] {
   padding-top: 60px;
@@ -275,6 +278,7 @@ pre {
   top: 0;
   left: 0;
   margin-left: 0 !important;
+  z-index: 0;
 }
 
 .row.grids {
