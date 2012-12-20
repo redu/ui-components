@@ -110,8 +110,6 @@
   .header-separator +
   .row { margin-bottom: 25px; }
 
-  .tos .control-error label { color: rgb(109, 110, 111); }
-
   .modal-footer {
     .button-default +
     .button-success { margin-left: 10px; }
@@ -183,44 +181,5 @@
 
     p +
     p { margin-top: 20px; }
-  }
-}
-
-.modal-sign-up-humanizer {
-  text-align: center;
-  overflow: hidden;
-  clear: both;
-
-  .control-group .control-label {
-    text-align: center;
-    width: 100%;
-    margin: 0 0 0 10px;
-    padding: 0;
-
-    .control-error { display: inline-block; }
-
-    a {
-      font-size: 11px;
-      cursor: pointer;
-      margin-left: 5px;
-    }
-  }
-
-  .control-input {
-    clear: both;
-    margin-top: 5px;
-  }
-
-  .errors_on_field {
-    margin: 5px 0 0 0;
-  }
-}
-
-.controls .errors_on_field {
-  margin: 0;
-
-  li {
-    margin-top: 5px;
-    line-height: 14px;
   }
 }

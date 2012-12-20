@@ -862,6 +862,10 @@ fieldset {
   color: #ff6d6d;
   font-size: 11px;
 }
+.control-errors li +
+li {
+  margin-top: 5px;
+}
 
 .controls {
   position: relative;
@@ -881,10 +885,6 @@ fieldset {
 .form-horizontal .control-group .control-label {
   text-align: right;
   padding-top: 7px;
-  margin: 0 20px 0 0;
-}
-.form-horizontal .control-group .controls {
-  margin-left: 0;
 }
 
 label,
@@ -1485,6 +1485,31 @@ textarea:-moz-placeholder {
   margin: 0;
 }
 
+.control-center.control-group .control-label,
+.control-center.control-group .controls {
+  float: none;
+  text-align: center;
+}
+.control-center.control-group .control-label +
+.controls {
+  margin-top: 5px;
+}
+.control-center.control-group .control-label {
+  padding: 0;
+}
+.control-center.control-group .control-label .control-error {
+  display: inline-block;
+}
+.control-center.control-group .control-label .link-secondary {
+  margin-left: 5px;
+}
+.control-center.control-group .controls {
+  margin: 0 auto;
+}
+.control-center.control-group .control-checkbox {
+  display: inline-block;
+}
+
 .header-not-logged-in {
   -webkit-box-shadow: 0 -1px 0 white inset, 0 1px 0 white inset, 0 1px 0 #b2b2b2;
   -moz-box-shadow: 0 -1px 0 white inset, 0 1px 0 white inset, 0 1px 0 #b2b2b2;
@@ -1584,9 +1609,6 @@ textarea:-moz-placeholder {
 .row {
   margin-bottom: 25px;
 }
-.modal-sign-up .tos .control-error label {
-  color: #6d6e6f;
-}
 .modal-sign-up .modal-footer .button-default +
 .button-success, .modal-sign-up .modal-footer .filter +
 .button-success {
@@ -1656,41 +1678,6 @@ textarea:-moz-placeholder {
 .modal-sign-up-success .modal-body p +
 p {
   margin-top: 20px;
-}
-
-.modal-sign-up-humanizer {
-  text-align: center;
-  overflow: hidden;
-  clear: both;
-}
-.modal-sign-up-humanizer .control-group .control-label {
-  text-align: center;
-  width: 100%;
-  margin: 0 0 0 10px;
-  padding: 0;
-}
-.modal-sign-up-humanizer .control-group .control-label .control-error {
-  display: inline-block;
-}
-.modal-sign-up-humanizer .control-group .control-label a {
-  font-size: 11px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-.modal-sign-up-humanizer .control-input {
-  clear: both;
-  margin-top: 5px;
-}
-.modal-sign-up-humanizer .errors_on_field {
-  margin: 5px 0 0 0;
-}
-
-.controls .errors_on_field {
-  margin: 0;
-}
-.controls .errors_on_field li {
-  margin-top: 5px;
-  line-height: 14px;
 }
 
 .footer {
