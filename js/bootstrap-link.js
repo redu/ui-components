@@ -15,7 +15,7 @@
 
           container.on('click', function(e) {
             if (!$(e.target).is('input[type="checkbox"]')) {
-              window.location = link.attr('href')
+              link.click()
             }
           })
         })

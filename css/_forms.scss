@@ -87,6 +87,9 @@ fieldset {
   list-style: none;
   color: rgb(255, 109, 109);
   font-size: 11px;
+
+  li +
+  li { margin-top: 5px; }
 }
 
 // Encapsula o controle.
@@ -103,10 +106,7 @@ fieldset {
     .control-label {
       text-align: right;
       padding-top: $formLabelTopPadding;
-      margin: 0 20px 0 0;
     }
-
-    .controls { margin-left: 0; }
   }
 }
 
@@ -118,7 +118,7 @@ select,
 textarea {
   @include font-shorthand;
   font-family: $base-font-family;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 // Resets de tamanho e tipo compartilhados.
@@ -320,7 +320,7 @@ input[type="checkbox"]:focus {
   select,
   .placeholder {
     font-size: 16px;
-    font-weight: lighter;
+    font-weight: 300;
     height: 42px;
   }
 
@@ -559,4 +559,28 @@ textarea:-moz-placeholder { color: $gray4; }
 .token-input-list {
   list-style: none;
   margin: 0;
+}
+
+// Centraliza a label e campo no eixo vertical.
+.control-center.control-group {
+  .control-label,
+  .controls {
+    float: none;
+    text-align: center
+  }
+
+  .control-label +
+  .controls { margin-top: 5px;}
+
+  .control-label {
+    padding: 0;
+
+    .control-error { display: inline-block; }
+
+    .link-secondary { margin-left: 5px; }
+  }
+
+  .controls { margin: 0 auto; }
+
+  .control-checkbox { display: inline-block; }
 }

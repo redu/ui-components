@@ -12,316 +12,6 @@ $general-list-item-stars-width: 88px;
 $general-list-item-stars-n-counters-gutter: 12px;
 
 
-.icon-link {
-  float: left;
-  margin-right: 10px;
-  width: 32px;
-}
-
-.icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
-  display: block;
-}
-
-hr {
-  @include box-shadow(none);
-  clear: both;
-  margin: 10px 0;
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid $gray3;
-  border-bottom: 1px solid $white;
-}
-
-.statuses .status { margin: 20px; }
-
-.statuses, .courses-lists, .responses  { list-style: none; }
-
-  .target { display: block; }
-
-
-  .post-description { color: $gray6; }
-
-  .input-user { @include text-shadow(none); }
-
-  .icon-link {
-    margin-right: 10px;
-    float: left;
-
-    img, .icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .date {
-    color: $gray4;
-    font-size: 11px;
-    line-height: 11px;
-    display: block;
-    overflow: hidden;
-  }
-
-  .status-info { color: $gray5; }
-
-  .close {
-    text-indent: -9999px;
-    float: right;
-  }
-
-  hr {
-    @include box-shadow(none);
-    margin: 10px 0;
-    border-top: solid 1px $gray3;
-    border-bottom: solid 1px $white;
-  }
-
-  .create-response {
-    @include border-radius;
-    float: none;
-    margin-top: 36px;
-    margin-left: 42px;
-    clear: both;
-    display: none;
-    background-color: $gray2;
-
-    form fieldset textarea { min-width: 100%; }
-  }
-
-  .status-text {
-    overflow: hidden;
-
-    .target { display: inline; }
-
-    + .status-content {
-      margin-top: 6px;
-      margin-left: 42px;
-    }
-  }
-
-  .actions {
-    clear: both;
-    display: block;
-    float: right;
-    line-height: 11px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    margin-left: 0;
-
-    li {
-      display: inline;
-      margin: 10px;
-      overflow: hidden;
-      font-size: 11px;
-
-      a:before {
-        @include pseudo-before;
-        vertical-align: baseline;
-        float: none;
-        margin-left: -12px;
-        margin-top: 4px;
-      }
-    }
-  }
-
-  .status-container { margin-left: 42px; }
-
-  .status-content {
-    @include border-radius;
-    width: 100%;
-    margin-left: 42px;
-    display: inline-block;
-    margin-left: 0;
-    margin-top: 10px;
-    background-color: $gray2;
-
-    .status-content { margin-top: 0; }
-
-    &:before {
-      border-color: #F0F0F0 white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: left;
-      margin-left: 18px;
-      margin-top: -9px;
-      width: 0;
-      position: absolute;
-    }
-
-    .post-text { padding: 10px 10px 10px 10px; }
-
-    .borderradius & { @include border-radius; }
-
-    .post-preview {
-      overflow: hidden;
-      padding: 10px 10px 10px 10px;
-
-      &.java-applet { padding: 0; }
-
-      .post-body {
-        overflow: hidden;
-        display: block;
-        margin: 0 auto;
-
-        .source-site { color: $gray5; }
-      }
-
-      .input-user { margin-bottom: 10px; }
-
-      .preview {
-        float: left;
-        max-width: 110px;
-        margin-right: 10px;
-        a.thumbnail { max-height: 60px; }
-
-        .input-user { margin-bottom: 10px; }
-
-        .thumbnail {
-          float: left;
-          max-width: 100px;
-          min-height: 34px;
-          width: 100%;
-        }
-
-        .buttons-thumbnail {
-          display: block;
-          margin-left: 0;
-          clear: both;
-          width: 100px;
-          padding-top: 10px;
-          overflow: hidden;
-
-          .button-default { float: left; }
-        }
-      }
-    }
-  }
-
-  .status-content, .create-response {
-    form {
-      margin-bottom: 0;
-
-      fieldset {
-        padding: 10px;
-        clear: both;
-
-        .post-preview { padding: 0; }
-
-        textarea {
-          max-width: 1000px;
-          overflow: hidden;
-        }
-
-        label {
-          width: 18px;
-          float: left;
-          text-indent: -999px;
-        }
-
-        .post-preview + hr { margin-bottom: 0; }
-
-        .status-buttons {
-          clear: both;
-          float: right;
-          margin-top: 10px;
-        }
-      }
-    }
-  }
-
-  .status-container {
-    .responses { margin-left: 0; }
-  }
-
-  .with-target {
-    .status-container, .create-response { margin-left: 84px; }
-
-
-    .target + .status-text {
-      margin-left: 42px;
-      margin-top: 10px;
-    }
-  }
-  .create-response {
-
-    &:before {
-      border-color: #F0F0F0 white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: right;
-      margin-right: 40px;
-      margin-top: -10px;
-      width: 0;
-    }
-
-    .status-buttons { margin-top: 10px; }
-  }
-
-  .responses {
-    overflow: hidden;
-    display: block;
-    clear: both;
-    margin-top: 10px;
-    margin-left: 42px;
-    padding: 10px 0;
-
-    .close { margin-right: 10px; }
-
-    .java-applet { margin-left: 42px; }
-
-    .last-responses { text-align: center; }
-
-    .all-responses { text-align: center; }
-
-    &:before {
-      border-color:  #F0F0F0 $white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: left;
-      margin-left: 18px;
-      margin-top: -19px;
-      width: 0;
-      position: absolute;
-    }
-
-    .status-content {
-      display: block;
-      margin-left: 0;
-
-      &:before { display: none; }
-
-      .status-text-response {
-        margin: 0 10px;
-      }
-
-      .post-text {
-        padding: 0;
-        margin: 0 10px 0 52px;
-      }
-    }
-
-    .post-preview { padding: 0; }
-  }
-
-  .create-status {
-    &.status-content { fieldset { height: 100%; } }
-
-    .status-buttons {
-      float: right;
-      margin: 0 10px 10px 0;
-
-      input {
-        float: right;
-        margin-left: 5px;
-      }
-    }
-  }
-
 .courses-lists {
   @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
   @include border-radius(7px);
@@ -608,7 +298,7 @@ hr {
 
   // Lista de aulas.
   .list-button {
-    @extend h6;
+    @include heading(6);
     list-style: decimal inside none;
     overflow: hidden;
 
@@ -822,18 +512,29 @@ hr {
   & + & { margin-top: 10px; }
 }
 
-.list-separator {
-  @include box-sizing;
-  height: 2px;
-  background-color: $white;
+hr {
+  @include box-shadow(none);
+  clear: both;
+  margin: 10px 0;
+  border-left: none;
+  border-right: none;
   border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
+}
+
+.list-separator {
+  border: none;
+  height: 2px;
+  margin: 0;
+  padding: 9px 0;
 
   &:before {
     content: "";
     display: block;
     height: 9px;
     position: relative;
-    top: -10px;
+    top: -8px;
+    border-bottom: 1px solid $gray3;
 
     .cssgradients & { @include redu-gradient($gray1, $white); }
 
@@ -849,6 +550,7 @@ hr {
     height: 9px;
     position: relative;
     bottom: 8px;
+    border-top: 1px solid $white;
 
     .cssgradients & { @include redu-gradient($white, $gray1) };
 
@@ -937,7 +639,9 @@ hr {
 
 // Colunas.
 .general-list-item-column {
-  float: left;
+  &:first-child { float: left; }
+
+  &:last-child { overflow: hidden; }
 
   .general-list-item-title +
   .legend { margin-top: 5px; }
@@ -954,7 +658,7 @@ hr {
   .button-default { margin-top: 5px; }
 
   & +
-  & { margin-left: 10px; }
+  & { padding-left: 10px; }
 }
 
 // Lista de contadores.

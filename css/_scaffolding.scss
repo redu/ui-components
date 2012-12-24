@@ -13,7 +13,8 @@ body {
 }
 
 // Links.
-a {
+a,
+.link-fake {
   display: inline-block;
   color: $link-color;
   text-decoration: none;
@@ -26,6 +27,8 @@ a {
   }
 }
 
+.link-fake { cursor: pointer; }
+
 .content-body {
   @include box-sizing;
   @include border-radius(10px);
@@ -36,6 +39,7 @@ a {
   $vertical-gradient-height: 10px;
   // Padding inferior para cobrir o gradiente :after.
   padding-bottom: $vertical-gradient-height;
+  min-height: 500px;
 
   &:before {
     @include border-radius(10px 10px 0 0);
@@ -69,3 +73,6 @@ a {
     }
   }
 }
+
+// Região comum entre separadores.
+.content-section { padding: 10px 20px; }

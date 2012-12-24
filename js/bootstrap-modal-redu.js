@@ -178,4 +178,11 @@ $(function() {
   $('.modal').reduModal('fillHeight')
   $('.modal-scroll').reduModal('scrollArrow')
   $('.modal-fill-horizontal').reduModal('fillHorizontal')
+
+  // Abre uma modal caso seu id esteja na URL.
+  var modalId = /#[a-zA-Z\-_\d]*/.exec(document.URL)
+  if (modalId !== null) {
+    var $modal = $(modalId[0])
+    $modal.length !== 0 && $modal.hasClass("modal") && $modal.modal("show")
+  }
 })

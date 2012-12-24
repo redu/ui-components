@@ -191,8 +191,8 @@
           , $controlParent = $input.parent()
 
         $wrapper.appendTo($controlParent)
-        // Ajusta a altura do pai.
-        $controlParent.height($wrapper.height())
+        // Ajusta a altura.
+        $input.height($wrapper.height())
 
         // No FF, se um arquivo for escolhido e der refresh, o input mantém o valor.
         if (inputVal !== '') {
@@ -217,40 +217,6 @@
           }
 
           $filePath.text(value)
-        })
-      })
-    },
-
-    // Abilita o submit quando pelo menos um checkbox esta marcado.
-    formChecklist: function(options) {
-      return this.each(function() {
-        var $form = $(this)
-          , $checkboxes = $form.find('input[type="checkbox"]')
-          , $submit = $form.find('input[type="submit"]')
-
-        // Desabilita o submit por padrão.
-        $submit.attr('disabled', 'disabled')
-
-        // Verifica inicialmente se existe algum checkbox marcardo.
-        // É o caso do refresh depois de marcar um checkbox.
-        if ($checkboxes.filter(':checked').length > 0) {
-          $submit.removeAttr('disabled')
-        }
-
-        $checkboxes.each(function() {
-          var $checkbox = $(this)
-
-          $checkbox.on('change', function() {
-            // Se o checkbox foi selecionado, abilita o submit.
-            if ($checkbox.is(':checked')) {
-              $submit.removeAttr('disabled')
-            } else {
-              // Se foi o último a ser desmarcado, desabilita o submit.
-              if ($checkboxes.filter(':checked').length === 0) {
-                $submit.attr('disabled', 'disabled')
-              }
-            }
-          })
         })
       })
     },
@@ -286,8 +252,6 @@ $(function() {
   $('textarea[rows]').reduForm('resizeByRows')
 
   $('input[type="file"]').reduForm('styleInputFile')
-
-  $('.form-checklist').reduForm('formChecklist')
 
   // Plugins.
 

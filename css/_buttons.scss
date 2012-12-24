@@ -14,7 +14,7 @@
   border-width: 1px;
   border-style: solid;
   line-height: 16px;
-  font-weight: lighter;
+  font-weight: 300;
 
   &:hover { text-decoration: none; }
 
@@ -32,8 +32,7 @@
 .button-big {
   font-size: 16px;
   line-height: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 12px;
 }
 
 .button-dropdown { padding: 5px 5px 5px 10px; }

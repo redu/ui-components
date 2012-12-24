@@ -24,6 +24,9 @@
 @import "tables";
 @import "forms";
 
+// Cabeçalho (usuário não logado).
+@import "header";
+
 // Rodapé.
 @import "footer";
 
@@ -75,6 +78,9 @@
 
 // Listas.
 @import "lists";
+
+// Mural.
+// @import "wall";
 
 // Classes de utilidade.
 @import "utilities";
