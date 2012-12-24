@@ -1,0 +1,258 @@
+﻿// ==========================================================================
+// Botões
+// ==========================================================================
+
+
+// Comum.
+%button {
+  @include border-radius(4px);
+  display: inline-block;
+  padding: 7px 10px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  line-height: 16px;
+  font-weight: 300;
+
+  &:hover { text-decoration: none; }
+
+  .open > &,
+  .open > &:hover,
+  &:active {
+    @include box-shadow(0 1px 4px 1px rgba(0, 0, 0, 0.5) inset);
+    background-image: none;
+
+    .cssgradients & { background-image: none; }
+  }
+}
+
+// Botão grande.
+.button-big {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 12px;
+}
+
+.button-dropdown { padding: 5px 5px 5px 10px; }
+
+// Botão padrão.
+.button-default {
+  @extend %button;
+
+  .cssgradients & {
+    @include redu-gradient($gray3, $gray1, 0.2);
+
+    &:hover { @include redu-gradient($blue1, $gray1); }
+  }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f7f7f7+60,e6e6e6+100;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+
+    &:hover {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,dbeff7+100;Custom
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+  $color: $blue3;
+  $border-color: $gray4;
+  $box-shadow-color: $white;
+  $background-color: $gray1;
+  $hover-color: $blue4;
+  $hover-border-color: $blue2;
+  $hover-background-color: $blue1;
+  $active-border-color: $blue3;
+  $active-background-color: $blue1;
+  $hover-active-color: $blue4;
+  $hover-active-border-color: $blue4;
+  $disabled-color: $gray5;
+  $disabled-border-color: $gray3;
+  $disabled-background-color: $gray2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+}
+
+// Botão primário.
+.button-primary {
+  @extend %button;
+  @include text-shadow(0 -1px 0 $blue4);
+
+  .cssgradients & {
+    @include redu-gradient($blue4, $blue2, 0.3);
+
+    &:hover { @include redu-gradient($blue4, $blue2); }
+  }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#73c3e6+1,158ac4+41;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQxJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+
+    &:hover {
+      // http://www.colorzilla.com/gradient-editor/#73c3e6+0,158ac4+50,158ac4+50;Custom
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    }
+  }
+
+
+  $color: $white;
+  $border-color: $blue2;
+  $box-shadow-color: $blue1;
+  $background-color: $blue2;
+  $hover-color: $white;
+  $hover-border-color: $blue4;
+  $hover-background-color: $blue4;
+  $active-border-color: $blue4;
+  $active-background-color: $blue4;
+  $hover-active-color: $blue1;
+  $hover-active-border-color: $blue4;
+  $disabled-color: $gray3;
+  $disabled-border-color: $blue2;
+  $disabled-background-color: $blue2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+}
+
+// Botão de sucesso.
+.button-success {
+  @extend %button;
+  @include text-shadow(0 -1px 0 $green4);
+
+  .cssgradients & {
+    @include redu-gradient($green3, $green2);
+
+    &:hover { @include redu-gradient($green4, $green2); }
+  }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#abe385+0,5fc080+100;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZmMwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+    &:hover {
+      // http://www.colorzilla.com/gradient-editor/#abe385+0,61a080+100;Custom
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MWEwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+
+  $color: $white;
+  $border-color: $green3;
+  $box-shadow-color: $green1;
+  $background-color: $green2;
+  $hover-color: $white;
+  $hover-border-color: $green4;
+  $hover-background-color: $green3;
+  $active-border-color: $green4;
+  $active-background-color: $green4;
+  $hover-active-color: $green1;
+  $hover-active-border-color: $green4;
+  $disabled-color: $gray4;
+  $disabled-border-color: $green4;
+  $disabled-background-color: $green3;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+}
+
+// Botão de perigo.
+.button-danger {
+  @extend %button;
+  @include text-shadow(0 -1px 0 $red5);
+
+  .cssgradients & {
+    @include redu-gradient($red5, $red2, 0.4);
+
+    &:hover { @include redu-gradient($red5, $red2); }
+  }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#ff6d6d+20,c1272d+100;Custom
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjZkNmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzEyNzJkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+
+    &:hover {
+      // http://www.colorzilla.com/gradient-editor/#ff6d6d+0,c1272d+100;Custom
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNmQ2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMTI3MmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+
+  $color: $white;
+  $border-color: $red3;
+  $box-shadow-color: $red1;
+  $background-color: $red2;
+  $hover-color: $white;
+  $hover-border-color: $red5;
+  $hover-background-color: $red4;
+  $active-border-color: $red5;
+  $active-background-color: $red5;
+  $hover-active-color: $red1;
+  $hover-active-border-color: $red5;
+  $disabled-color: $gray4;
+  $disabled-border-color: $red3;
+  $disabled-background-color: $red2;
+  @include redu-button($color, $border-color, $box-shadow-color, $background-color, $hover-color, $hover-border-color, $hover-background-color, $active-border-color, $active-background-color, $hover-active-color, $hover-active-border-color, $disabled-color, $disabled-border-color, $disabled-background-color);
+}
+
+
+// Botões do Facebook.
+// ==========================================================================
+
+// Sombra externa inferior dos botões.
+$facebook-button-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+// Comum.
+%facebook-button {
+  @include text-shadow(none);
+  $color: $white;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px 7px;
+  color: $color;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-weight: bold;
+  line-height: 13px;
+  cursor: pointer;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    color: $color;
+  }
+
+  &:active { @include box-shadow($facebook-button-box-shadow); }
+
+}
+
+.facebook-sign-up,
+.facebook-sign-in { text-align: center; }
+
+// Botão de cadastro.
+.facebook-sign-up-button {
+  @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(152, 192, 130) inset;
+  @include box-shadow($box-shadow);
+  border-color: rgb(59, 110, 34) rgb(59, 110, 34) rgb(44, 81, 21);
+  background-color: rgb(105, 167, 78);
+
+  &:active {
+    background: rgb(96, 153, 70);
+    border-bottom-color: rgb(59, 110, 34);
+  }
+}
+
+// Botão de login.
+.facebook-sign-in-button {
+  @extend %facebook-button;
+  $box-shadow:
+    $facebook-button-box-shadow
+  , 0 1px 0 rgb(138, 156, 194) inset;
+  @include box-shadow($box-shadow);
+  border-color: rgb(41, 68, 126) rgb(41, 68, 126) rgb(26, 53, 110);
+  background-color: rgb(95, 120, 171);
+
+  &:active {
+    background: rgb(79, 106, 163);
+    border-bottom-color: rgb(41, 68, 126);
+  }
+}

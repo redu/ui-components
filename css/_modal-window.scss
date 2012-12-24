@@ -1,0 +1,115 @@
+// ==========================================================================
+// Janela modal
+// ==========================================================================
+
+// Variáveis.
+// ==========================================================================
+
+// Tamanho da borda arredondada.
+$modalBorderRadius: 7px;
+// Largura padrão.
+$modalWidth: 520px;
+
+
+// Recalcula o z-index onde apropriado.
+.modal-open {
+  .dropdown-menu {  z-index: $z-index-dropdown + $z-index-modal; }
+
+  .popover       {  z-index: $z-index-popover  + $z-index-modal; }
+
+  .tooltip       {  z-index: $z-index-tooltip  + $z-index-modal; }
+}
+
+// Fundo.
+.modal-backdrop {
+  @include opacity(80);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal-backdrop;
+  background-color: rgb(152, 152, 152);
+}
+
+// Base modal.
+.modal {
+  @include box-shadow(0 4px 20px 1px rgba(0, 0, 0, 0.5));
+  @include border-radius($modalBorderRadius);
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  z-index: $z-index-modal;
+  width: $modalWidth;
+  margin: 0 0 0 (- ($modalWidth / 2));
+  background-color: $white;
+  border: 1px solid $gray6;
+}
+
+.modal-fill-horizontal {
+  width: auto;
+  margin: 0;
+}
+
+// Botão de fechar.
+.modal-close {
+  cursor: pointer;
+  float: right;
+}
+
+// Aumenta a largura para 14 grids.
+.modal-grids-14 {
+  $width: grid-width(14);
+  width: $width;
+  margin-left: (- ($width / 2));
+}
+
+// Cabeçalho.
+.modal-header {
+  @include border-radius($modalBorderRadius $modalBorderRadius 0 0);
+  padding: 20px 20px 10px;
+}
+
+// Estilo cinza para o cabeçalho.
+.modal-header-gray {
+  @include box-shadow(0 -1px 0 $white inset);
+  background-color: $gray2;
+  border-bottom: 1px solid $gray3;
+  padding: 20px;
+}
+
+// Título.
+.modal-title { color: $gray6; }
+
+// Sub-título.
+.modal-subtitle,
+.modal-subtitle:hover { color: $gray5; }
+
+// Conteúdo.
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+.modal-header + .modal-body {
+  padding-top: 0;
+}
+
+// A seta da barra de rolagem.
+.modal-scroll-arrow {
+  position: fixed;
+  font-size: 18px;
+  font-weight: bold;
+  color: $gray4;
+}
+
+// Rodapé.
+.modal-footer {
+  @include box-shadow(inset 0 1px 0 $white);
+  @include border-radius(0 0 $modalBorderRadius $modalBorderRadius);
+  padding: 20px;
+  background-color: $gray2;
+  border-top: 1px solid $gray3;
+  text-align: right;
+}

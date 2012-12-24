@@ -1,0 +1,280 @@
+<div class="row">
+  <div class="span3">
+    &nbsp;
+    <ul class="nav-local nav-local-fixed">
+      <li class="nav-local-item link-container nav-local-item-active icon-arrow-right-nav-local-lightblue_11_32-after">
+        <a class="nav-local-link link-target" href="#autocomplete" title="Auto complete">Auto complete</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#progress-bars" title="Barras de progresso">Barras de progresso</a>
+      </li>
+    </ul>
+  </div>
+  <div class="span13">
+    <div class="content">
+      <h2>Outros</h2>
+
+      <h3 id="autocomplete">Auto complete</h3>
+      <div class="row">
+        <div class="span8">
+          <p>A estrutura do controle de autocomplete é a mesma dos outros elementos de controle dos formulários, com algumas adições. O <code>.control-group</code> deve levar <code>.control-autocomplete</code>. O input text deve ter <code>.control-autocomplete-input</code>.</p>
+          <p>Existe um caso especial do autocomplete no Redu que é usado para convidar pessoas por e-mail. Quando este caso for usado, o <code>.control-group</code> deve levar também <code>.control-invite-by-mail</code> e depois do <code>.control-autocomplete-input</code>, deve haver um input hidden <code>.control-autocomplete-invites</code>.</p>
+        </div>
+        <div class="span5">
+          <h5>Arquivo</h5>
+          <p><code>_forms.scss</code></p>
+          <h5>Dependências</h5>
+          <ol>
+            <li>
+              <code rel="tooltip" title="Autocomplete em si.">vendor/jquery.tokeninput.js</code>
+            </li>
+            <li>
+              <code rel="tooltip" title="Parte de convidar por e-mail.">bootstrap-autocomplete.js</code>
+            </li>
+          </ol>
+          <p>A biblioteca <a href="http://loopj.com/jquery-tokeninput/" title="jQuery Tokeninput">jQuery Tokeninput</a> é utilizada para a funcão de auto completar.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <h4>Preenchimento do autocomplete</h4>
+          <p>É aconselhável dar uma lida na documentação do Tokeninput para entender como o preenchimento do autocomplete é feito. Basicamente é um JSON com o a seguinte estrutura:</p>
+          <pre class="prettyprint linenums">
+[
+  {"name": "Tiago Ferreira"
+  ,"id":9
+  ,"avatar_32":"http://s3.amazonaws.com/redu_uploads/users/avatars/9/thumb_32/ride.png"
+  ,"mail":"nomesobrenome@email.com"
+  }
+  ...
+]
+</pre>
+        <p>Os atributos <em>id</em> e <em>name</em> são obrigatórios. O atributo <em>mail</em> é obrigatório se o autocomplete de convidar por e-mail estiver sendo usado.</p>
+        <h4>Ativando o autocomplete</h4>
+        <p>Para ativar o autocomplete é preciso usar o seguinte script:</p>
+        <pre class="prettyprint linenums">
+$('.control-autocomplete-input').tokenInput($JSON-resource)
+</pre>
+        <p>Onde <code>$JSON-resource</code> aponta para o recursos JSON.</p>
+        <p>No domínio do Redu, o endereço <code>/pessoas/auto_complete.js</code> pode ser usado para procurar os usuários por nome.</p>
+        <p><span class="label-doubts">To do:</span> o endereço ainda não está retornando os e-mails dos usuários.</p>
+        <h4>Submissão autocomplete</h4>
+        <p>O input text em que o autocomplete for ativado terá como valor os ids dos itens adicionados separados por vírgula. No caso do autocomplete de convidar por e-mail, o input hidden <code>.control-autocomplete-invites</code> terá como valor os e-mails adicionados separados por vírgula.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5">
+          <code>Autocomplete genérico</code>
+          <div class="well">
+            <form>
+              <div class="control-group control-autocomplete">
+                <div class="control-label">
+                  <label for="token-input-control-autocomplete">Nome</label>
+                </div>
+                <div class="controls">
+                  <input class="control-autocomplete-input" type="text" id="control-autocomplete">
+                  <input class="control-autocomplete-invites" type="hidden">
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="span8">
+          <code>Autocomplete com convidar</code>
+          <div class="well-paddless">
+            <form class="form-horizontal">
+              <div class="control-group control-autocomplete control-invite-by-mail row">
+                <div class="control-label span3">
+                  <label for="token-input-control-autocomplete-2">Nome ou e-mail</label>
+                </div>
+                <div class="controls span5">
+                  <input class="control-autocomplete-input" type="text" id="control-autocomplete-2">
+                  <input class="control-autocomplete-invites" type="hidden">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span13">
+          <pre class="prettyprint linenums">
+&lt;script&gt;
+  $('#UNIQUE_ID').tokenInput(JSON_RESOURCE)
+&lt;/script&gt;
+
+&lt;!-- FORM --&gt;
+&lt;div class="control-group control-autocomplete [control-invite-by-mail]"&gt;
+  &lt;div class="control-label"&gt;
+    &lt;label for="token-input-UNIQUE_ID"&gt;LABEL_NAME&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="controls"&gt;
+    &lt;input class="control-autocomplete-input" type="text" id="UNIQUE_ID"&gt;
+    &lt;!-- IF IT'S INVITE BY MAIL AUTOCOMPLETE, INSERT BELOW: --&gt;
+    &lt;input class="control-autocomplete-invites" type="hidden"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <h3 id="progress-bars">Barras de progresso</h3>
+      <div class="row">
+        <div class="span9">
+          <p>As barras de progresso são elementos com a classe <code>.progress-bar-total</code>, representando a barra total, que contém a classe <code>.progress-bar-completed</code>, representando a porcentagem completada.</p>
+          <p>Existem 3 tamanhos de barra, o menor leva a classe <code>.progress-bar-mini</code>, o médio <code>.progress-bar-medium</code> e maior <code>.progress-bar-long</code>. Além disso as barras podem ficar mais grossas adicionando a classe <code>.progress-bar-thick</code>.</p>
+        </div>
+        <div class="span4">
+          <h4>Arquivo</h4>
+          <code>_progress-bars.scss</code>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span2">
+          <div class="progress-bar-short progress-bar-thin progress-bar-total">
+            <span class="progress-bar-completed text-replacement" style="width: 25%;">25%</span>
+          </div>
+          <div class="progress-bar-short progress-bar-thin progress-bar-total">
+            <span class="progress-bar-completed text-replacement" style="width: 50%;">50%</span>
+          </div>
+          <div class="progress-bar-short progress-bar-thin progress-bar-total">
+            <span class="progress-bar-completed text-replacement" style="width: 75%;">75%</span>
+          </div>
+          <div class="progress-bar-short progress-bar-thin progress-bar-total">
+            <span class="progress-bar-completed text-replacement" style="width: 100%;">100%</span>
+          </div>
+        </div>
+        <div class="span11">
+          <pre class="prettyprint linenums">
+  &lt;div class="progress-bar-short progress-bar-thin progress-bar-total"&gt;
+    &lt;span class="progress-bar-completed text-replacement" style="width: PERCENTAGE%;"&gt;PERCENTAGE%&lt;/span&gt;
+  &lt;/div&gt;</pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">25%</span>
+            <span class="progress-bar-total progress-bar-thin">
+              <span class="progress-bar-completed text-replacement" style="width: 25%;">25%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">50%</span>
+            <span class="progress-bar-total progress-bar-thin">
+              <span class="progress-bar-completed text-replacement" style="width: 50%;">50%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">75%</span>
+            <span class="progress-bar-total progress-bar-thin">
+              <span class="progress-bar-completed text-replacement" style="width: 75%;">75%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">100%</span>
+            <span class="progress-bar-total progress-bar-thin">
+              <span class="progress-bar-completed text-replacement" style="width: 100%;">100%</span>
+            </span>
+          </div>
+        </div>
+        <div class="span10">
+          <pre class="prettyprint linenums">
+  &lt;div class="progress-bar-legend progress-bar-medium"&gt;
+    &lt;span class="legend"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;span class="progress-bar-total progress-bar-thin"&gt;
+      &lt;span class="progress-bar-completed text-replacement" style="width: PERCENTAGE%;"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span3">
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">25%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 25%;">25%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">50%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 50%;">50%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">75%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 75%;">75%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-medium">
+            <span class="legend">100%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 100%;">100%</span>
+            </span>
+          </div>
+        </div>
+        <div class="span10">
+          <pre class="prettyprint linenums">
+  &lt;div class="progress-bar-legend progress-bar-medium"&gt;
+    &lt;span class="legend"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;span class="progress-bar-total progress-bar-thick"&gt;
+      &lt;span class="progress-bar-completed text-replacement" style="width: PERCENTAGE%;"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span5">
+          <div class="progress-bar-legend progress-bar-long">
+            <span class="legend">25%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 25%;">25%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-long">
+            <span class="legend">50%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 50%;">50%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-long">
+            <span class="legend">75%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 75%;">75%</span>
+            </span>
+          </div>
+          <div class="progress-bar-legend progress-bar-long">
+            <span class="legend">100%</span>
+            <span class="progress-bar-total progress-bar-thick">
+              <span class="progress-bar-completed text-replacement" style="width: 100%;">100%</span>
+            </span>
+          </div>
+        </div>
+        <div class="span8">
+          <pre class="prettyprint linenums">
+  &lt;div class="progress-bar-legend progress-bar-long"&gt;
+    &lt;span class="legend"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;span class="progress-bar-total progress-bar-thick"&gt;
+      &lt;span class="progress-bar-completed text-replacement" style="width: PERCENTAGE%;"&gt;PERCENTAGE%&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+window.onload = function () {
+  prettyPrint()
+
+  $('#control-autocomplete').tokenInput([{"name":"Tiago Ferreira","id":9},{"name":"Tiago Melo","id":23},{"name":"Cristian Rusu","id":116},{"name":"Tatiana Diniz","id":119},{"name":"Tiago Lima","id":158},{"name":"C\u00edntia Sales","id":211},{"name":"Cristiano Teti","id":231},{"name":"Tiago Ramos","id":325},{"name":"Tiago  Machado","id":411},{"name":"Cristian Reis","id":415}], { hintText: 'Digite seu nome e sobrenome'})
+
+  $('#control-autocomplete-2').tokenInput([{"name":"Tiago Ferreira","id":9,"avatar_32":"http://s3.amazonaws.com/redu_uploads/users/avatars/9/thumb_32/ride.png","mail":"nomesobrenome@email.com"},{"name":"Tiago Melo","id":23,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"},{"name":"Cristian Rusu","id":116,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"},{"name":"Tatiana Diniz","id":119,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"},{"name":"Tiago Lima","id":158,"avatar_32":"http://s3.amazonaws.com/redu_uploads/users/avatars/158/thumb_32/Tiago%203x4.jpg","mail":"nomesobrenome@email.com"},{"name":"C\u00edntia Sales","id":211,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"},{"name":"Cristiano Teti","id":231,"avatar_32":"http://s3.amazonaws.com/redu_uploads/users/avatars/231/thumb_32/DSC01845.JPG","mail":"nomesobrenome@email.com"},{"name":"Tiago Ramos","id":325,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"},{"name":"Tiago  Machado","id":411,"avatar_32":"http://s3.amazonaws.com/redu_uploads/users/avatars/411/thumb_32/profile2.jpg","mail":"nomesobrenome@email.com"},{"name":"Cristian Reis","id":415,"avatar_32":"http://redu-assets.s3.amazonaws.com/images/new/missing_users_thumb_32.png","mail":"nomesobrenome@email.com"}])
+}
+</script>

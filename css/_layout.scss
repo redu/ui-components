@@ -1,0 +1,36 @@
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+
+.container { @include container-fixed; }
+
+
+// Layout com 2 colunas
+// ==========================================================================
+
+// Usado para criar um layout de 2 colunas onde ambas têm largura flexível.
+//
+//  Exemplo de uso:
+//  <div class="two-columns-wrapper">
+//    <div class="two-columns-column">
+//      <!-- Primeira coluna -->
+//      <img src="x">
+//    </div>
+//    <div class="two-columns-column">
+//      <!-- Segunda coluna -->
+//    <a href="x">Usuário</a>
+//    <span>Data</span>
+//  </div>
+//  </div>
+
+.two-columns-wrapper { @include clear-fix; }
+
+.two-columns-column {
+  &:first-child {
+    float: left;
+    margin-right: 10px;
+  }
+
+  &:last-child { overflow: hidden; }
+}

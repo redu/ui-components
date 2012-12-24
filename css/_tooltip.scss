@@ -1,0 +1,55 @@
+// ==========================================================================
+// Tooltip
+// ==========================================================================
+
+// Variáveis.
+// ==========================================================================
+
+// Cor do fundo e da seta.
+$tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
+
+// Encapsulador.
+.tooltip {
+  @include opacity(0);
+  @include text-shadow(none);
+  position: absolute;
+  z-index: $z-index-tooltip;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+
+  &.in { @include opacity(90); }
+
+  &.top,
+  &.left { margin-top:  -2px; }
+
+  &.right,
+  &.bottom { margin-left: 2px; }
+}
+
+// Parte de dentro.
+.tooltip-inner {
+  @include box-shadow(0 0 6px 1px rgb(85, 85, 85));
+  @include border-radius(3px);
+  max-width: 200px;
+  padding: 3px 8px;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  background-color: $tooltipBackgroundAndArrowColor;
+}
+
+// Seta.
+.tooltip-arrow {
+  @include square(0);
+  position: absolute;
+
+  .tooltip.top & { @include popover-arrow-top(5px, $tooltipBackgroundAndArrowColor); }
+
+  .tooltip.left & { @include popover-arrow-left(5px, $tooltipBackgroundAndArrowColor); }
+
+  .tooltip.bottom & { @include popover-arrow-bottom(5px, $tooltipBackgroundAndArrowColor); }
+
+  .tooltip.right & { @include popover-arrow-right(5px, $tooltipBackgroundAndArrowColor); }
+}

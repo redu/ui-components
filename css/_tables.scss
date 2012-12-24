@@ -1,0 +1,218 @@
+// ==========================================================================
+// Tabelas
+// ==========================================================================
+
+// Variáveis.
+// ==========================================================================
+
+// Cor padrão da borda das tabelas em geral.
+$table-border-color: 1px solid $gray3;
+// Cor para bordas ocultas.
+$table-border-color-transparent: 1px solid transparent;
+// Tamanho padrão das bordas arredondadas da tabela.
+$table-border-radius: 7px;
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+	color: $gray4;
+	background-color: $gray2;
+	border-top: $table-border-color;
+}
+
+th,
+td {
+	border-bottom: $table-border-color;
+	border-top: $table-border-color-transparent;
+	text-align: left;
+	padding: 10px;
+
+	&:first-child { border-left: $table-border-color; }
+
+	&:last-child { border-right: $table-border-color; }
+}
+
+td {
+	tr:nth-child(even) & { background-color: $white; }
+
+  tr:nth-child(odd) & { background-color: $gray1; }
+
+	tr:hover & { background-color: $blue1; }
+}
+
+// Tabela com borda arredondada.
+// ==========================================================================
+
+.table-with-borderradius {
+	border-collapse: separate;
+
+	th {
+		color: $gray5;
+		@include box-shadow(inset 0 1px 0 $white);
+		border-top: $table-border-color;
+		border-left: $table-border-color;
+		border-bottom: 1px solid $white;
+
+		&:first-child {
+			@include border-radius($table-border-radius 0 0 0);
+			border-left: $table-border-color;
+		}
+
+		&:last-child {
+			@include border-radius(0 $table-border-radius 0 0);
+			border-right: $table-border-color;
+		}
+	}
+
+	&.table-with-link {
+		th { color: $gray4; }
+	}
+
+	td {
+		border-left: $table-border-color;
+	}
+
+	tr:last-child {
+		td {
+			&:first-child {
+				@include border-radius(0 0 0 $table-border-radius);
+				border-left: $table-border-color;
+			}
+
+			&:last-child {
+				@include border-radius(0 0 $table-border-radius 0);
+				border-right: $table-border-color;
+			}
+		}
+	}
+}
+
+// Tabela com link.
+// ==========================================================================
+
+.table-with-link {
+	th {
+		background-color: $white;
+		border-bottom: $table-border-color-transparent;
+		border-left: $table-border-color-transparent;
+	}
+
+	tr:hover {
+		td {
+			border-color: $blue2;
+			border-right: $table-border-color-transparent;
+			border-left: $table-border-color-transparent;
+
+			&:first-child { border-left: 1px solid $blue2; }
+
+			&:last-child { border-right: 1px solid $blue2; }
+
+			.cssgradients & { @include background-image(linear-gradient($white, $blue1)); }
+
+			.no-cssgradients.gt-ie8 & {
+  			// http://www.colorzilla.com/gradient-editor/#ffffff+0,dbeff7+100;Custom
+  			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			}
+		}
+
+		a {
+			color: $blue4;
+			text-decoration: underline;
+		}
+	}
+
+	td {
+		border-left: $table-border-color-transparent;
+		border-right: $table-border-color-transparent;
+
+		&:first-child { border-left: $table-border-color; }
+
+		&:last-child { border-right: $table-border-color; }
+
+		.cssgradients & { @include background-image(linear-gradient($white, $gray2)); }
+
+		.no-cssgradients.gt-ie8 & {
+			// http://www.colorzilla.com/gradient-editor/#ffffff+0,f0f0f0+100;Custom
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		}
+	}
+}
+
+// Tabela sem borda arredondada.
+// ==========================================================================
+
+.table-without-borderradius {
+	th {
+		border-top: $table-border-color-transparent;
+		border-left: $table-border-color-transparent;
+		border-right: $table-border-color-transparent;
+		background-color: $white;
+	}
+
+	td {
+		&:first-child { border-left: $table-border-color-transparent; }
+		&:last-child { border-right: $table-border-color-transparent; }
+	}
+}
+
+// Tabela com checkbox.
+// ==========================================================================
+
+.table-with-check-list {
+
+	td {
+		border-width-left: 0;
+		border-width-right: 0;
+
+		&:first-child { border-width-right: 0; }
+
+		&:last-child { border-width-left: 0; }
+	}
+}
+
+.form-checklist {
+	td {
+		input[type="checkbox"] { float: right; }
+	}
+
+	table + .button-toolbar {
+		text-align: right;
+		margin-top: 15px;
+	}
+
+	tr:hover {
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.link-name { color: $blue2; }
+	}
+
+	.link-name {
+		font-weight: normal;
+		color: $blue2;
+	}
+}
+
+.inbox-message-base,
+.inbox-message-base:hover,
+.inbox-message-base:visited { color: $black; }
+
+.inbox-message-unread {
+	@extend .inbox-message-base;
+	font-weight: bold;
+}
+
+.inbox-message-read {
+	@extend .inbox-message-base;
+	font-weight: normal;
+}
+
+.table-checkbox-selected td,
+.table-checkbox-selected:hover td { background: $red1 !important; }

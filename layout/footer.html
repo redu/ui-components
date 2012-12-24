@@ -1,0 +1,1255 @@
+<!doctype html>
+<!--[if gt IE 8]><html class="gt-ie8" lang="pt-br"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Rodapé</title>
+    <link rel="stylesheet" href="../css/bootstrap-redu.css">
+    <script src="../js/vendor/modernizr.js"></script>
+  </head>
+  <body style="background-color: rgb(246, 246, 246);">
+    <div class="main-wrapper">
+      <div class="header-not-logged-in">
+        <div class="container">
+          <a href="http://www.redu.com.br/" title="Redu" class="header-logo-wrapper">
+            <h1 class="header-logo sprite-logo text-replacement" title="Redu">Redu</h1>
+          </a>
+          <div class="header-buttons">
+            <div class="header-button-sign-up">
+              <span class="icon-add-friend-darkgray_32_34 text-replacement">Cadastrar</span>
+              <a href="#modal-sign-up" class="button-big button-success pull-right" data-toggle="modal">Não possui conta? Cadastre-se, é grátis</a>
+              <div id="modal-sign-up" class="modal hide modal-grids-14 modal-sign-up">
+                <form class="form-horizontal">
+                  <div class="modal-header modal-header-gray">
+                    <h3 class="modal-sign-up-title icon-add-friend-green_32_34-before">Cadastre-se no Redu.<br>É gratuito, rápido e fácil.</h3>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-sign-up-section">
+                      <p>Caso tenha uma conta no Facebook, você pode evitar o trabalho de preencher formulários ao associar sua conta ao Redu. Desta forma, o cadastro é feito de forma automática.</p>
+                      <div class="facebook-sign-up">
+                        <a href="/auth/facebook" class="facebook-sign-up-button" value="login-facebook">Cadastre-se no Redu usando sua conta do Facebook</a>
+                        <span class="legend"><em>Opcional</em></span>
+                      </div>
+                    </div>
+                    <hr class="list-separator">
+                    <div class="modal-sign-up-section">
+                      <p>Ou preencha os formulários abaixo e crie seu perfil no Redu.</p>
+                    </div>
+                    <div class="row">
+                      <div class="span6">
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_first_name">Nome</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_first_name" name="user[first_name]" placeholder="Seu primeiro nome" size="30" type="text">
+                          </div>
+                        </div>
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_last_name">Sobrenome</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_last_name" name="user[last_name]" placeholder="Seu último nome" size="30" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="span6">
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_email">E-mail</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_email" name="user[email]" placeholder="Seu e-mail de contato" size="30" type="text">
+                          </div>
+                        </div>
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_email_confirmation">Confirmação</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_email_confirmation" name="user[email_confirmation]" placeholder="Digite novamente o e-mail" size="30" type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="header-separator">
+                    <div class="row">
+                      <div class="span6">
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_login">Login</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_login" name="user[login]" placeholder="Como será o seu apelido?" size="30" type="text">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="span4 offset2">
+                            <div class="modal-sign-up-login-explaination">
+                              <p class="legend">O Login define como será o endereço de sua página no Redu.</p>
+                              <p class="legend">Ex.: redu.com.br/pessoas/<strong>seulogin</strong></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="span6">
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_password">Senha</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_password" name="user[password]" placeholder="Digite sua senha" size="30" type="password">
+                          </div>
+                        </div>
+                        <div class="control-group control-big">
+                          <div class="control-label span2">
+                            <label for="user_password_confirmation">Confirmação</label>
+                          </div>
+                          <div class="controls span4">
+                            <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Confirme sua senha" size="30" type="password">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer clearfix">
+                    <div class="modal-sign-up-tos">
+                      <div class="control-group">
+                        <div class="controls">
+                          <div class="control-checkbox tos">
+                            <input id="user_tos" name="user[tos]" type="checkbox" value="1">
+                            <label for="user_tos">Aceito os <a href="#modal-tos" data-toggle="modal">Termos de Uso</a> da plataforma Redu.</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-sign-up-buttons">
+                      <a href="/" class="button-big button-default" data-dismiss="modal" rel="nofollow">Cancelar</a>
+                      <input class="button-big button-success" name="commit" type="submit" value="Cadastrar sua conta">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="header-button-sign-in">
+              <span class="icon-profile-darkgray_32_34 text-replacement">Entrar</span>
+              <div class="button-group dropdown pull-right">
+                <button class="button-big button-primary dropdown-toggle" data-toggle="dropdown">Entre no Redu</button>
+                <span class="dropdown-arrow icon-arrow-up-dropdown-lightblue_20_8 text-replacement">Seta</span>
+                <div class="dropdown-menu">
+                  <form class="header-sign-in-form">
+                    <div class="control-group">
+                      <div class="control-label">
+                        <label for="login">Login</label>
+                      </div>
+                      <div class="controls">
+                        <input type="text" placeholder="Seu login ou e-mail cadastrado" id="login">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <div class="control-label">
+                        <label for="password">Senha</label>
+                      </div>
+                      <div class="controls">
+                        <input type="password" placeholder="Sua senha" id="password">
+                      </div>
+                    </div>
+                    <div class="header-sign-in-form-submit">
+                      <div class="control-group pull-left">
+                        <div class="controls">
+                          <div class="control-checkbox">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me" class="legend">Mantenha-me conectado</label>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="submit" value="Enviar" class="button-primary pull-right">
+                    </div>
+                  </form>
+                  <hr class="header-separator">
+                  <div class="facebook-sign-in">
+                    <a href="http://www.redu.com.br/auth/facebook" class="facebook-sign-in-button">Entre com sua conta do Facebook</a>
+                  </div>
+                  <hr class="header-separator">
+                  <div class="header-sign-in-recover">
+                    <a href="http://www.redu.com.br/recuperar_login_senha" class="link-secondary">Esqueceu seu login ou senha? Clique aqui</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="span16">
+            <div class="apps-portal-header clearfix">
+              <h2 class="portal-title link-container icon-apps-portal-gray_48_50-before">
+                <a class="portal-title-link link-target" href="http://localhost:3000/apps_portal/" title="Portal de Aplicativos">Portal de Aplicativos</a>
+              </h2>
+              <form class="form-search pull-right">
+                <input class="control-area" type="text" placeholder="Procure por aqui..." data-toggle="#breadcrumb">
+                <button class="control-append-area button-default" type="submit">
+                  <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement">Busca</span>
+                </button>
+              </form>
+            </div>
+            <div class="breadcrumb-mini-wrapper" style="text-align: center;">
+              <ul id="breadcrumb" class="breadcrumb-mini" style="display: inline-block;">
+                <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
+                  <a href="http://localhost:3000/apps_portal/" class="breadcrumb-mini-link icon-apps-portal-lightblue_16_18-before" title="Portal de Aplicativos (Recursos Educacionais Abertos)">Portal de Aplicativos (Recursos Educacionais Abertos)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span3">
+            <div class="content-body">
+              <div style="padding: 10px">
+                <h3>Hello, world!</h1>
+              </div>
+            </div>
+          </div>
+          <div class="span13">
+            <div class="content-body">
+              <div style="padding: 10px">
+                <h1>Hello, world!</h1>
+                <div class="statuses">
+                  <ol>
+                    <li class="status-content create-status status">
+                      <form class="control-error">
+                        <fieldset>
+                          <textarea cols="40" id="status_text" rows="1" placeholder="Compartilhe algo com seus amigos através do seu mural" style="height: 32px; overflow: hidden; word-wrap: break-word; resize: horizontal; "></textarea>
+                          <ul class="control-errors"><li>Por favor, informe seu nome.</li><li>Utilize apenas letras (a-z), números (0-9), traço (-) e sublinhado (_). Não deixe espaços no início ou final.</li></ul>
+                        </fieldset>
+                          <div class="status-buttons" style="display: block; ">
+                            <input id="status_submit" name="commit" type="submit" value="Postar" class="button-primary">
+                            <a href="#" class="cancel button-default" rel="nofollow">Cancelar</a>
+                          </div>
+                      </form>
+                    </li>
+                  </ol>
+                </div>
+                <div style="width: 300px; margin: 20px auto;">
+                  <div class="progress-bar-thin progress-bar-total">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                  </div>
+                  <br>
+                  <div class="progress-bar-thick progress-bar-total">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                  </div>
+                  <br>
+                  <div class="progress-bar-short progress-bar-thin progress-bar-total">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                  </div>
+                  <br>
+                  <div class="progress-bar-medium progress-bar-thick progress-bar-total">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                  </div>
+                  <br>
+                  <div class="progress-bar-long progress-bar-thick progress-bar-total">
+                    <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                  </div>
+                  <br>
+                  <div class="progress-bar-medium progress-bar-legend">
+                    <span class="legend">25%</span>
+                    <div class="progress-bar-thin progress-bar-total">
+                      <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="progress-bar-long progress-bar-legend">
+                    <span class="legend">25%</span>
+                    <div class="progress-bar-thick progress-bar-total">
+                      <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="progress-bar-short progress-bar-legend">
+                    <span class="legend">25%</span>
+                    <div class="progress-bar-thick progress-bar-total">
+                      <span class="progress-bar-completed text-replacement" style="width: 25%">25%</span>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <h3>Lista de Ambientes (Ambientes que Participo)</h3>
+                <div style="width: 444px; margin: 0 auto">
+                  <ul class="list-1-columns list-columns-separator">
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-environment-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a title="Universidade Voluptat Metus" href="#" class="general-list-item-title-link icon-administrator-gray_16_18-before">Universidade Voluptat Metus</a>
+                          </h4>
+                          <span class="legend">Criado em 7 Fev, 2011, 16h25</span>
+                          <span class="legend">Por: <a title="Nome Sobrenome" class="link-name" href="#">Nome Sobrenome</a></span>
+                          <span class="legend">Ensino Superior</span>
+                          <ul class="general-list-item-counters">
+                            <li class="general-list-item-counter icon-members-gray_16_18-before">300</li>
+                            <li class="general-list-item-counter icon-course-gray_16_18-before">2 Cursos Matriculados</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-environment-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a title="Universidade Voluptat Metus" href="#" class="general-list-item-title-link icon-administrator-gray_16_18-before">Universidade Voluptat Metus</a>
+                          </h4>
+                          <span class="legend">Criado em 7 Fev, 2011, 16h25</span>
+                          <span class="legend">Por: <a title="Nome Sobrenome" class="link-name" href="#">Nome Sobrenome</a></span>
+                          <span class="legend">Ensino Superior</span>
+                          <ul class="general-list-item-counters">
+                            <li class="general-list-item-counter icon-members-gray_16_18-before">300</li>
+                            <li class="general-list-item-counter icon-course-gray_16_18-before">2 Cursos Matriculados</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <h3>Lista de Ambientes (Ambientes de Aprendizado)</h3>
+                <div style="width: 444px; margin: 0 auto">
+                  <ul class="list-1-columns list-columns-separator">
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-environment-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a title="Universidade Voluptat Metus" href="#" class="general-list-item-title-link">Universidade Voluptat Metus</a>
+                          </h4>
+                          <span class="legend">Criado em 7 Fev, 2011, 16h25</span>
+                          <span class="legend">Por: <a title="Nome Sobrenome" class="link-name" href="#">Nome Sobrenome</a></span>
+                          <span class="legend">Ensino Superior</span>
+                          <ul class="general-list-item-counters">
+                            <li class="general-list-item-counter icon-members-gray_16_18-before">300 membros</li>
+                            <li class="general-list-item-counter icon-course-gray_16_18-before">10 Cursos</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-environment-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a title="Universidade Voluptat Metus" href="#" class="general-list-item-title-link">Universidade Voluptat Metus</a>
+                          </h4>
+                          <span class="legend">Criado em 7 Fev, 2011, 16h25</span>
+                          <span class="legend">Por: <a title="Nome Sobrenome" class="link-name" href="#">Nome Sobrenome</a></span>
+                          <span class="legend">Ensino Superior</span>
+                          <ul class="general-list-item-counters">
+                            <li class="general-list-item-counter icon-members-gray_16_18-before">300 membros</li>
+                            <li class="general-list-item-counter icon-course-gray_16_18-before">10 Cursos</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <h3>Lista de Recursos Educacionais Abertos (em Início)</h3>
+                <div style="width: 533px; margin: 0 auto;">
+                  <ul class="list-2-columns list-columns-separator">
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <h4 class="general-list-item-title">
+                        <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                      </h4>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Português</span>
+                          <span class="legend">Ciências Exatas: Matemática</span>
+                          <a href="#" class="button-default">Abrir</a>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <h3>Lista de Recursos Educacionais Abertos</h3>
+                <div style="width: 444px; margin: 0 auto;">
+                  <ul class="list-1-columns list-columns-separator">
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                          </h4>
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Língua: Português</span>
+                          <span class="legend">Área: Ciências Exatas: Matemática</span>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                          <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="general-list-item">
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                          </h4>
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Língua: Português</span>
+                          <span class="legend">Área: Ciências Exatas: Matemática</span>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                          <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <h3>Lista de Recursos Educacionais Abertos (Aplicativos Favoritos)</h3>
+                <div style="width: 444px; margin: 0 auto;">
+                  <ul class="list-1-columns list-columns-separator">
+                    <li class="general-list-item">
+                      <a href="#" class="general-list-item-close icon-close-gray_16_18 text-replacement">Fechar</a>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                          </h4>
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Língua: Português</span>
+                          <span class="legend">Área: Ciências Exatas: Matemática</span>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                          <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                        </ul>
+                      </div>
+                      <a href="#" class="button-default">Abrir</a>
+                    </li>
+                    <li class="general-list-item">
+                      <a href="#" class="general-list-item-close icon-close-gray_16_18 text-replacement">Fechar</a>
+                      <div class="general-list-item-body">
+                        <div class="general-list-item-column">
+                          <a href="#" title="Ambiente">
+                            <img src="../img/thumbnail-missing-oer-90.png" alt="Ambiente" title="Ambiente">
+                          </a>
+                        </div>
+                        <div class="general-list-item-column">
+                          <h4 class="general-list-item-title">
+                            <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                          </h4>
+                          <span class="legend">Autor: UNESCO</span>
+                          <span class="legend">Ensino Médio</span>
+                          <span class="legend">Língua: Português</span>
+                          <span class="legend">Área: Ciências Exatas: Matemática</span>
+                        </div>
+                      </div>
+                      <div class="general-list-item-footer">
+                        <ul class="general-list-item-stars">
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                          <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        </ul>
+                        <ul class="general-list-item-counters">
+                          <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                          <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                          <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                        </ul>
+                      </div>
+                      <a href="#" class="button-default">Abrir</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <br><br>
+
+                <div class="apps-portal-filters" style="text-align: center;">
+                  <div class="filters" data-filter="#list">
+                    <a class="filter" data-value="1" href="#">Ensino Infantil</a>
+                    <a class="filter" data-value="2" href="#">Ensino Fundamental</a>
+                    <a class="filter" data-value="3" href="#">Ensino Médio</a>
+                    <a class="filter" data-value="4" href="#">Ensino Superior</a>
+                    <a class="filter" data-value="5" href="#">Educação Profissional</a>
+                  </div>
+                </div>
+
+                <ul id="list" class="list-2-columns list-columns-separator">
+                  <li class="general-list-item" data-value="3" style="background-color: blue;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="2" style="background-color: green;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="3" style="background-color: blue;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="2" style="background-color: green;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="3" style="background-color: blue;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="1" style="background-color: red;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="3" style="background-color: blue;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="3" style="background-color: blue;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="4" style="background-color: yellow;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="5" style="background-color: pink;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="2" style="background-color: green;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="general-list-item" data-value="1" style="background-color: red;">
+                    <div class="general-list-item-body">
+                      <div class="general-list-item-column">
+                        <a href="#" title="Ambiente">
+
+                        </a>
+                      </div>
+                      <div class="general-list-item-column">
+                        <h4 class="general-list-item-title">
+                          <a class="general-list-item-title-link" href="#" title="Aplicativo Educacional">Aplicativo Educacional</a>
+                        </h4>
+                        <span class="legend">Autor: UNESCO</span>
+                        <span class="legend">Ensino Médio</span>
+                        <span class="legend">Língua: Português</span>
+                        <span class="legend">Área: Ciências Exatas: Matemática</span>
+                      </div>
+                    </div>
+                    <div class="general-list-item-footer">
+                      <ul class="general-list-item-stars">
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                        <li class="general-list-item-star"><span class="icon-star-empty-gray_16_18 show text-replacement">Estrela</span></li>
+                      </ul>
+                      <ul class="general-list-item-counters">
+                        <li class="general-list-item-counter icon-seen-gray_16_18-before">200</li>
+                        <li class="general-list-item-counter icon-comment-gray_16_18-before">10</li>
+                        <li class="general-list-item-counter icon-specialist-gray_16_18-before">1</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-pusher"></div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="footer-logo-wrapper">
+              <a class="footer-logo-link" href="http://tech.redu.com.br/">
+                <h1 class="footer-logo-img sprite-logo-redu-tech-footer text-replacement">Redu Educational Technologies</h1>
+              </a>
+              <span class="footer-cnpj">CNPJ: 12.359.885 / 0001-07</span>
+            </div>
+          </div>
+          <div class="span3">
+            <ul class="footer-navigation">
+              <li>
+                <a title="Sobre o Redu" href="/#">Sobre o Redu</a>
+              </li>
+              <li>
+                <a title="Segmentos" class="landing-scroll" href="/#segmentos">Segmentos</a>
+              </li>
+              <li>
+                <a title="Vantagens" class="landing-scroll" href="/#vantagens">Vantagens</a>
+              </li>
+              <li>
+                <a title="Funcionalidades" class="landing-scroll" href="/#funcionalidades">Funcionalidades</a>
+              </li>
+              <li>
+                <a title="Planos" class="landing-scroll" href="/#planos">Planos</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span3">
+            <ul class="footer-navigation">
+              <li>
+                <a title="Blog" href="http://blog.redu.com.br/">Blog</a>
+              </li>
+              <li>
+                <a title="Desenvolvedores" href="http://developers.redu.com.br/">Desenvolvedores</a>
+              </li>
+              <li>
+                <a title="Política de Privacidade" data-toggle="modal" href="#modal-privacy-policy">Política de Privacidade</a>
+              </li>
+              <li>
+                <a title="Termos de Uso" data-toggle="modal" href="#modal-tos">Termos de Uso</a>
+              </li>
+            </ul>
+            <!-- render :partial => "landing/modal_tos" -->
+            <!-- render :partial => "landing/modal_privacy_policy" -->
+          </div>
+          <div class="span3">
+            <div class="footer-social-networks-legend">
+              <span class="legend">Siga-nos na web</span>
+            </div>
+            <div class="footer-social-networks">
+              <a title="Facebook" class="footer-social-network sprite-social-facebook text-replacement" href="https://www.facebook.com/redesocialeducacional">Facebook</a>
+              <a title="Twitter" class="footer-social-network sprite-social-twitter text-replacement" href="http://twitter.com/redu_ead">Twitter</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="footer-contact link-container">
+              <div class="row">
+                <div class="span2">
+                  <h3>
+                    <a title="Fale Conosco" class="link-target" href="/contato">Fale Conosco</a>
+                  </h3>
+                  <p class="legend">Dúvidas? Nosso suporte online pode lhe ajudar</p>
+                </div>
+                <div class="span1 alpha-half">
+                  <span class="footer-talk-to-us-balloons sprite-talk-to-us text-replacement" title="Fale Conosco">Fale conosco</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.js"><\/script>')</script>
+    <script src="../js/vendor/jquery.tokeninput.js"></script>
+    <script src="../js/vendor/jquery.autosize.min.js"></script>
+    <script src="../js/vendor/placeholder-polyfill.min.js"></script>
+    <script src="../js/bootstrap-search-form.js"></script>
+    <script src="../js/bootstrap-redu.js"></script>
+    <script src="http://use.typekit.com/lpo4rgu.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </body>
+</html>

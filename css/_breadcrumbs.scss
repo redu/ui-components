@@ -1,0 +1,73 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
+// Breadcrumb mini.
+// ==========================================================================
+
+.breadcrumb-mini {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+.breadcrumb-mini-item {
+  float: left;
+
+  &:after { margin-right: 5px; }
+
+  &:last-child:after { display: none !important; }
+}
+
+.breadcrumb-mini-link {
+  font-size: 11px;
+  vertical-align: middle;
+  float: left;
+
+  // Com a remoção do texto é preciso retirar a margem direita do ícone.
+  &.text-replacement:before { margin-right: 0; }
+}
+
+// Breadcrumb de ícones.
+// ==========================================================================
+
+// Lista.
+.breadcrumb-icons {
+  @include clear-fix;
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+}
+
+// Item.
+.breadcrumb-icon-item {
+  float: left;
+  width: 40px;
+  text-align: center;
+}
+
+// Link.
+.breadcrumb-icon-link {
+  // Se estiver ativo, cria a borda azul.
+  .breadcrumb-icon-active & {
+    @include square(36px);
+    $boxShadow:
+      0 0 4px 1px $blue2,
+      0 0 0 1px $white inset,
+      inset 0 0 4px 1px $blue2;
+    @include box-shadow($boxShadow);
+    @include border-radius;
+    position: relative;
+    top: -1px;
+  }
+}
+
+// Ícone.
+.breadcrumb-icon {
+  display: inline-block;
+  vertical-align: middle;
+
+  .breadcrumb-icons &:before { margin-right: 0; }
+
+  .breadcrumb-icon-active & { margin-top: 1px; }
+}

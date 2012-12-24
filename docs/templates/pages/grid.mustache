@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="span16">
+    <div class="content">      
+      <h2>Grid</h2>
+      <div class="row">
+        <div class="span6">
+          <p>O sistema de grid padrão utiliza 16 colunas, cada coluna com 40px de largura e 20px de espaçamento entre elas, totalizando 940px.</p>
+          <p>Basta usar as classes <code>span1...16</code>, dentro de uma <code>.row</code>, para escolher as larguras dos blocos.</p>
+        </div>
+        <div class="span10">
+          <h5>Arquivos:</h5>
+          <ul>
+            <li><code>_variables.scss</code>: configurações de largura de coluna, quantidade e espaçamento;</li>
+            <li><code>_mixins.scss</code>: funções que geram o sistema de grid;</li>
+            <li><code>_grid.scss</code>: chamada da função.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row grids">
+        <div class="span3 color-blue2"></div>
+        <div class="span13 color-blue2 text-white">a.v.a.s, cursos, disciplinas, aulas, perfis</div>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+    &lt;div class="span13"&gt;a.v.a.s, cursos, disciplinas, aulas, perfis&lt;/div&gt;
+  &lt;/div&gt;</pre>
+      <div class="row grids">
+        <div class="span3 color-green2"></div>
+        <div class="span10 color-green2">início</div>
+        <div class="span3 color-green2"></div>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+    &lt;div class="span10"&gt;início&lt;/div&gt;
+    &lt;div class="span3"&gt;&lt;/div&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+        <span class="span1 color-gray2">1</span>
+      </div>
+      <div class="row example grids">
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+        <span class="span2 color-gray2">2</span>
+      </div>
+      <div class="row example grids">
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+        <span class="span4 color-gray2">4</span>
+      </div>
+      <div class="row example grids">
+        <span class="span8 color-gray2">8</span>
+        <span class="span8 color-gray2">8</span>
+      </div>
+      <h3>Deslocando as colunas</h3>
+      <p>Para deslocar as colunas de posição, basta usar as classes <code>offset1...15</code>.</p>
+      <div class="row example grids">
+        <span class="span4 color-gray2">4</span>
+        <span class="span6 offset6 color-gray2">6 offset 6</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span4"&gt;4&lt;/span&gt;
+    &lt;span class="span6 offset6"&gt;6 offset 6&lt;/span&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span3 offset3 color-gray2">3 offset 3</span>
+        <span class="span3 offset3 color-gray2">3 offset 3</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span3 offset3"&gt;3 offset 3&lt;/span&gt;
+    &lt;span class="span3 offset3"&gt;3 offset 3&lt;/span&gt;
+  &lt;/div&gt;</pre>
+      <div class="row example grids">
+        <span class="span13 offset3 color-gray2">13 offset 3</span>
+      </div>
+      <pre class="prettyprint linenums">
+  &lt;div class="row"&gt;
+    &lt;span class="span13 offset3"&gt;13 offset 3&lt;/span&gt;
+  &lt;/div&gt;</pre>
+    </div>
+  </div>
+</div>

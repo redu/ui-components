@@ -1,0 +1,280 @@
+// ==========================================================================
+// Navegação global
+// ==========================================================================
+
+// Barra.
+// ==========================================================================
+
+// Encapsulador da barra.
+.nav-global {
+  overflow: visible;
+  margin-bottom: $base-line-height;
+}
+
+// Fixa a barra no topo.
+.nav-global-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-fixed-navbar;
+}
+
+// Interior da barra.
+.nav-global-inner {
+  @include box-shadow(0 1px 8px 1px rgba(0, 0, 0, 0.4));
+  // Quando não estiver fixa no topo, ela tem borda arredondada.
+  @include border-radius(12px);
+  @include box-sizing;
+  height: $nav-global-height;
+  padding: 0px 20px;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+
+  // Fundo com gradiente de 3 cores.
+  .cssgradients & { @include background-image(linear-gradient($gray2, $white, $gray2)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+50,f0f0f0+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  // Se estiver fixa, remove as bordas arredondadas e o padding horizontal.
+  .nav-global-fixed-top & {
+    @include border-radius(0);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Container da barra.
+.nav-global-container {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  .nav-global-fixed-top & { width: $grid-row-width; }
+}
+
+// Interior da barra.
+// ==========================================================================
+
+// Logo.
+.nav-global-brand {
+  float: left;
+  margin-right: 40px;
+
+  &:hover { text-decoration: none; }
+}
+
+// Botões.
+// ==========================================================================
+
+.nav-global-buttons {
+  float: left;
+  overflow: hidden;
+  margin: 1px 0 0;
+}
+
+// Botão.
+.nav-global-button {
+  @include border-radius;
+  float: left;
+  padding: 10px;
+  font-family: $museo-sans;
+  font-weight: 300;
+  font-size: 16px;
+
+  & + & { margin-left: 1px; }
+
+  &:hover {
+    @include box-shadow(0 -1px 0 $gray4 inset);
+    color: $blue3;
+    text-decoration: none;
+
+    .cssgradients & { @include background-image(linear-gradient(top, $gray3, $white)); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+  &:hover:active {
+    @include box-shadow(inset 0 1px 4px 1px rgba(0, 0, 0, 0.5));
+    background: $gray3 !important;
+  }
+}
+
+// Botão ativo.
+.nav-global-button-active {
+  @include text-shadow(0 1px 0 $blue4);
+  color: $white;
+
+  &:hover,
+  &:visited { color: $white; }
+
+  &,
+  &:hover {
+    $boxShadow:
+      0 1px 0 $blue2 inset,
+      0 -1px 0 $blue3 inset;
+    @include box-shadow($boxShadow);
+  }
+
+  .cssgradients & { @include redu-gradient($blue2, $blue4, 0.7); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#158ac4+0,73c3e6+70;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1OGFjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iIzczYzNlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  }
+
+  &:hover {
+    .cssgradients & { @include redu-gradient($blue2, $blue4, 0.2); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#158ac4+60,73c3e6+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiMxNThhYzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzNjM2U2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    }
+  }
+
+  &:hover:active { background: $blue4 !important; }
+}
+
+// Botões dropdown.
+// ==========================================================================
+
+.nav-global-buttons-dropdown {
+  margin: 5px 0 0;
+  float: right;
+}
+
+// Botão dropdown.
+.nav-global-button-dropdown { padding: 5px 5px 5px 10px; }
+
+// Dropdown do avise-me.
+// ==========================================================================
+
+.nav-global-notify-dropdown {
+  color: $gray5;
+  width: 365px;
+}
+
+// Avisos não lidos.
+.nav-global-notices-unread {
+  position: absolute;
+  top: -5px;
+  right: 1px;
+}
+
+// Cabeçalho.
+.nav-global-notify-header {
+  padding: 10px;
+  overflow: hidden;
+}
+
+// Rodapé.
+.nav-global-notify-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+// Lista de avisos.
+.nav-global-notify-notices {
+  list-style: none;
+  margin: 0;
+}
+
+// Aviso.
+.nav-global-notify-notice {
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+
+  .cssgradients &:nth-child(odd) { @include background-image(linear-gradient($gray3, $gray2)); }
+
+  .no-cssgradients.gt-ie8 &:nth-child(odd) {
+    // http://www.colorzilla.com/gradient-editor/#e6e6e6+0,f0f0f0+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
+    background-color: $blue1 !important;
+    background-image: none !important;
+  }
+}
+
+// Aviso não lido.
+.nav-global-notify-notice-unread {
+  @include square(8px);
+  position: absolute;
+  padding: 0;
+  top: 6px;
+  left: 6px;
+}
+
+// Imagem.
+.nav-global-notify-notice-thumbnail {
+  @include square(32px);
+  float: left;
+}
+
+// Conteúdo.
+.nav-global-notify-notice-content {
+  float: left;
+  margin-left: 10px;
+  width: 303px;
+
+  p { margin-bottom: 0; }
+}
+
+// Data.
+.nav-global-notify-notice-timestamp { display: block; }
+
+// Ações.
+.nav-global-notify-notice-actions {
+  display: block;
+  text-align: right;
+}
+
+.nav-global-notify-notice-timestamp + .nav-global-notify-notice-actions { margin-top: 10px; }
+
+// Dropdown do perfil.
+// ==========================================================================
+
+.nav-global-profile-dropdown {
+  color: $gray5;
+  width: 205px;
+  padding-bottom: 11px;
+}
+
+// Cabeçalho.
+.nav-global-profile-header { padding: 10px 10px 9px; }
+
+// Lista.
+.nav-global-profile-items {
+  list-style: none;
+  margin: 0;
+}
+
+// Item.
+.nav-global-profile-item {
+  padding: 6px 10px 6px 17px;
+  overflow: hidden;
+
+  &:last-child {
+    // Padding esquerda + largura ícone + margin direita ícone.
+    padding-left: 17px + 16px + 5px;
+  }
+
+  &:hover {
+    @include box-shadow(0 0 0 1px $white inset);
+    background-color: $blue1;
+  }
+}
+
+.nav-global-profile-edit {
+  float: right;
+  margin-top: 4px;
+}

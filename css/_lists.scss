@@ -1,0 +1,716 @@
+// ==========================================================================
+// Listas
+// ==========================================================================
+
+
+// Variáveis
+// ==========================================================================
+
+// A largura total das estrelas.
+$general-list-item-stars-width: 88px;
+// O espaçamento entre as estrelas e os contadores.
+$general-list-item-stars-n-counters-gutter: 12px;
+
+
+.courses-lists {
+  @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
+  @include border-radius(7px);
+  padding: 26px 55px 26px 55px;
+  background-color: $gray1;
+
+  ul, li, ol { list-style: none; }
+
+ .boxshadow & { @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5)); }
+
+ .borderradius & { @include border-radius(7px); }
+
+ .course-item {
+    .icon-link {
+      width: 90px;
+      height: 90px;
+    }
+
+    hr { margin: 5px; }
+
+    .course-space {
+      @include border-radius;
+      overflow: hidden;
+      padding: 5px;
+      border-bottom: 1px solid transparent;
+
+      h4 { display: inline; }
+
+      &:hover {
+        border-bottom: 1px solid $gray3;
+
+        .no-cssgradients.gt-ie8 & {
+          // http://www.colorzilla.com/gradient-editor/#ffffff+60,e6e6e6+100;Custom
+          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTZlNmU2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+        }
+
+        .cssgradients & { @include background-image(linear-gradient($white 60%, $gray2)); }
+      }
+    }
+
+    .info, .date {
+      color: $gray5;
+      display: block;
+      margin: 4px;
+      overflow: hidden;
+      font-size: 11px;
+      line-height: 11px;
+    }
+
+    .stats {
+      margin-top: 10px;
+      overflow: hidden;
+      color: $gray5;
+
+      .stat { float: left; }
+
+      .stat + .stat { margin-left: 50px; }
+
+      h6 :before {
+        @include pseudo-before;
+        float: none;
+      }
+    }
+  }
+}
+
+// Comum a lista de cursos/disciplinas.
+// ==========================================================================
+.list-course-space {
+  list-style: none;
+  color: $gray5;
+  margin: 0;
+}
+
+.list-course-space-header,
+.list-course-space-stats,
+.list-course-space-description,
+.list-course-space-tags {
+  padding: 0 20px 0 72px;
+}
+
+// Gradientes de tamanho fixo.
+.list-course-space-gradient-top,
+.list-course-space-gradient-bottom {
+  height: 20px;
+}
+
+.list-course-space-gradient-top {
+  $boxShadow:
+    1px 0 0 $white inset,
+    0 1px 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
+  .cssgradients & { @include background-image(linear-gradient(top, $gray2, $white 90%)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+90;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  }
+
+  .list-course-space-item:hover & {
+    .cssgradients & { @include background-image(linear-gradient(top, $blue1, $white 90%)); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#dbeff7+0,ffffff+90;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZWZmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    }
+  }
+}
+
+.list-course-space-gradient-bottom {
+  $boxShadow:
+    1px 0 0 $white inset,
+    -1px 0 0 $white inset;
+  @include box-shadow($boxShadow);
+
+  .cssgradients & { @include background-image(linear-gradient(bottom, $gray2, $white 90%)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#ffffff+10,f0f0f0+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjBmMGYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  }
+
+  .list-course-space-item:hover & {
+    .cssgradients & { @include background-image(linear-gradient(bottom, $blue1, $white 90%)); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+10,dbeff7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGJlZmY3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    }
+  }
+}
+
+.list-course-space-item {
+  position: relative;
+  border: 1px solid $gray3;
+
+  & + & { margin-top: -1px; }
+
+  &:hover { color: $gray6; }
+}
+
+// Link para o curso/disciplina.
+.list-course-space-link {
+  &:hover { text-decoration: none; }
+
+  // Posiciona o ícone do curso/disciplina.
+  &:before {
+    position: absolute;
+    left: 20px;
+  }
+}
+
+// Bloco com o cabeçalho do item da lista.
+.list-course-space-header {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+// Bloco de autoração do curso/disciplina.
+.list-course-space-authoring { float: left; }
+
+// Bloco com os labels de avisos/pedidos de ajuda.
+.list-course-space-labels {
+  float: right;
+  line-height: 11px;
+}
+
+.list-course-space-description,
+.list-course-space-tags { margin-bottom: 0; }
+
+.list-course-space-stats + .list-course-space-description,
+.list-course-space-stats + .list-course-space-tags { margin-top: 20px; }
+
+// Lista de cursos.
+// ==========================================================================
+
+.list-course {
+  @extend .list-course-space;
+
+  .list-course-space-header .legend { display: block; }
+
+  .list-course-space-item:hover .list-course-hours { color: $gray5; }
+}
+
+.list-course-stat + .list-course-stat { margin-left: 20px; }
+
+// Posiciona o ícone de privado na esquerda.
+.list-course-private {
+  position: absolute;
+  left: 28px;
+  top: 65px;
+}
+
+// Lista de disciplinas.
+// ==========================================================================
+
+.list-space {
+  @extend .list-course-space;
+
+  // Desce o ícone da disciplina.
+ .list-course-space-link:before { margin-top: 44px; }
+
+  // Posiciona o ícone do curso.
+  .list-course-space-header:before {
+    position: absolute;
+    left: 20px;
+  }
+}
+
+.list-space-stat {
+  & + & { margin-left: 40px; }
+}
+
+.list-space-stats-row {
+  & + & { margin-top: 5px; }
+}
+
+.list-space-stats-blue { color: $blue3; }
+.list-space-stats-orange { color: $orange3; }
+
+// Lista botão.
+// ==========================================================================
+
+.list-button {
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+
+  a:hover { text-decoration: none; }
+}
+
+.list-button-item {
+  $boxShadow:
+    0 1px 0 $white inset,
+    0 -1px 0 $white inset;
+  @include box-shadow($boxShadow);
+  @include border-radius;
+  padding: 10px;
+  border: 1px solid $gray4;
+
+  > * { vertical-align: middle; }
+
+  .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+
+  &:hover {
+    border-color: $blue3;
+
+    a { color: $blue4; }
+
+    .cssgradients & { @include background-image(linear-gradient(bottom, $blue1 0%, mix($blue1, $gray1) 20%, $gray1 100%)); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,e9f3f7+80,dbeff7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2U5ZjNmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmVmZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+  & + & { margin-top: 5px; }
+}
+
+.list-button-link { max-width: 60%; }
+
+// Lista de módulos e aulas.
+// ==========================================================================
+
+.list-subject {
+  padding: 20px;
+  list-style: none;
+  color: $gray5;
+  margin: 0;
+}
+
+.list-subject-item {
+  & + & { margin-top: 20px; }
+
+  &:hover { color: $gray6; }
+
+  // Lista de aulas.
+  .list-button {
+    @include heading(6);
+    list-style: decimal inside none;
+    overflow: hidden;
+
+    .list-button-link { @include font-sans-serif; }
+  }
+}
+
+// Bloco com cabeçalho do módulo.
+.list-subject-header {
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+// Bloco com os avisos e barra de progresso do módulo.
+.list-subject-header-info {
+  float: right;
+  line-height: 11px;
+
+  .progress-bar-short,
+  .label-news,
+  .label-doubts { vertical-align: middle; }
+
+  .progress-bar-short {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+// Nome do módulo.
+.list-subject-name {
+  float: left;
+  max-width: 80%;
+}
+
+// Bloco com a descrição do módulo.
+.list-subject-body {
+  @include border-radius(7px);
+  border: 1px solid $gray2;
+  padding: 11px 20px 10px;
+}
+
+.list-subject-description { margin-bottom: 20px; }
+
+// Bloco de informações sobre uma aula.
+.list-lecture-info {
+  @include font-sans-serif;
+  float: right;
+
+  // Novos recados.
+  .wall-stats-new {
+    color: $blue3;
+
+    &:hover { color: $blue4; }
+  }
+
+  // Novos pedidos de ajuda.
+  .request-help-stats-new {
+    color: $orange3;
+
+    &:hover { color: $orange4; }
+  }
+
+  > span { vertical-align: middle; }
+
+  > span + span { margin-left: 10px; }
+}
+
+// Estrelas.
+.stars,
+.star { display: inline-block; }
+
+.star + .star { margin-left: 2px; }
+
+// Lista mista.
+// ==========================================================================
+
+.list-mix {
+  list-style: none;
+  margin: 0;
+  color: $gray5;
+
+  .list-mix-title {
+    color: $gray5;
+
+    &:hover { text-decoration: none; }
+  }
+}
+
+.list-mix-item {
+  &:before {
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+  }
+
+  & + & { margin-top: 5px; }
+}
+
+.list-mix-content { max-width: 80%; }
+
+.list-mix-inner {
+  @include box-shadow(0 1px 0 rgb(204, 204, 204));
+  @include border-radius(7px);
+  padding: 10px 0 10px 10px;
+  overflow: hidden;
+
+  .button-dropdown,
+  .list-mix-content { float: left; }
+
+  .button-dropdown {
+    margin-top: 3px;
+    margin-right: 10px;
+    padding: 6px 10px;
+  }
+
+  .cssgradients & { @include background-image(linear-gradient(bottom, $gray3 0%, mix($gray3, $gray1) 20%, $gray1 100%)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,eeeeee+80,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+}
+
+.list-mix-title {
+  .list-mix-item:hover & { color: $gray6; }
+
+  .list-mix-item:hover &:hover { color: $blue4; }
+}
+
+.list-mix-header { line-height: 0; }
+
+.list-mix-info {
+  float: right;
+  margin-top: 6px;
+}
+
+.list-mix-body { display: none; }
+
+// Lista de ambientes-cursos-disciplinas.
+// ==========================================================================
+
+.list-environment-course-space {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+
+  a { color: $gray5; }
+
+  .list-mix-inner { padding-right: 10px; }
+}
+
+// Espaçamento dos itens.
+.list-environment-course-space-item { & + & { margin-top: 45px; } }
+
+// Container no cabeçalho.
+.list-environment-course-space-header { @include clear-fix; }
+
+.list-environment-course-space-header +
+.list-mix { margin-top: 10px; }
+
+// Link da imagem do ambiente.
+.list-environment-course-space-image-link {
+  @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
+  float: left;
+  background-color: $white;
+  padding: 2px;
+  @include square(32px);
+}
+
+// Link do título do ambiente.
+.list-environment-course-space-link {
+  .list-environment-course-space-item:hover & {
+    color: $gray6;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue4;
+    }
+  }
+}
+
+// Título do ambiente.
+.list-environment-course-space-title {
+  float: left;
+  margin-top: 9px;
+  margin-left: 11px;
+  max-width: 90%;
+}
+
+// Lista de disciplinas.
+.list-space-mini {
+  list-style: none;
+  margin: 0;
+
+  a {
+    color: $blue3;
+    margin-right: 20px;
+    display: inline;
+
+    &:hover {
+      text-decoration: underline;
+      color: $blue4;
+    }
+  }
+
+  .inl-label + .inl-label { margin-left: 5px; }
+}
+
+// Espaçamento das disciplinas.
+.list-space-mini-item {
+  & + & { margin-top: 10px; }
+}
+
+hr {
+  @include box-shadow(none);
+  clear: both;
+  margin: 10px 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid $gray3;
+  border-bottom: 1px solid $white;
+}
+
+.list-separator {
+  border: none;
+  height: 2px;
+  margin: 0;
+  padding: 9px 0;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 9px;
+    position: relative;
+    top: -8px;
+    border-bottom: 1px solid $gray3;
+
+    .cssgradients & { @include redu-gradient($gray1, $white); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+0,f7f7f7+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 9px;
+    position: relative;
+    bottom: 8px;
+    border-top: 1px solid $white;
+
+    .cssgradients & { @include redu-gradient($white, $gray1) };
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#f7f7f7+0,ffffff+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+  }
+}
+
+
+// Lista de colunas.
+// ==========================================================================
+
+.list-1-columns { @include list-column(1); }
+
+.list-1-columns.list-columns-separator { @include list-column-separator(1); }
+
+.list-2-columns { @include list-column; }
+
+.list-2-columns.list-columns-separator { @include list-column-separator; }
+
+.list-3-columns { @include list-column(3); }
+
+.list-3-columns.list-columns-separator { @include list-column-separator(3); }
+
+
+// Lista genérica (Ambientes que Participo, Ambientes de Aprendizado,
+// REA [em início], REA, REA [aplicativos favoritos]).
+// ==========================================================================
+
+// Item da lista.
+.general-list-item {
+  padding: 5px;
+  color: $gray5;
+
+  // Botão no canto inferior direito.
+  .general-list-item-footer +
+  .button-default {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  &:hover {
+    @include border-radius;
+    @include box-shadow(0 1px 0 $gray4);
+    @include gradient($gray3, $gray1, 0.2);
+
+    &,
+    .legend { color: $gray6; }
+
+    // Mostra o ícone de fechar e o botão.
+    .general-list-item-close,
+    .general-list-item-footer +
+    .button-default { display: block; }
+  }
+}
+
+// Título.
+.general-list-item-title {
+  font: 500 18px/18px $museo-sans;
+  letter-spacing: -1px;
+}
+
+// Link (dentro do título).
+.general-list-item-title-link {
+  &,
+  &:visited { color: $black; }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+
+  &[class*="icon-"][class*="-before"]:before { margin-right: 7px; }
+}
+
+.general-list-item-title +
+.general-list-item-body { margin-top: 10px; }
+
+// Corpo.
+.general-list-item-body { @include clear-fix; }
+
+// Colunas.
+.general-list-item-column {
+  &:first-child { float: left; }
+
+  &:last-child { overflow: hidden; }
+
+  .general-list-item-title +
+  .legend { margin-top: 5px; }
+
+  .legend { display: block; }
+
+  .legend +
+  .legend { margin-top: 3px; }
+
+  .legend +
+  .general-list-item-counters { margin-top: 10px; }
+
+  .legend +
+  .button-default { margin-top: 5px; }
+
+  & +
+  & { padding-left: 10px; }
+}
+
+// Lista de contadores.
+.general-list-item-counters {
+  margin: 0;
+  list-style: none;
+  @include clear-fix;
+}
+
+// Contadores.
+.general-list-item-counter {
+  float: left;
+  font: 100 16px/18px $museo-sans;
+
+  & +
+  & { margin-left: 20px; }
+}
+
+.general-list-item-body +
+.general-list-item-footer { margin-top: 5px; }
+
+// Rodapé.
+.general-list-item-footer {
+  @include clear-fix;
+
+  .general-list-item-counters { margin-left: $general-list-item-stars-width + $general-list-item-stars-n-counters-gutter; }
+
+  .general-list-item-stars,
+  .general-list-item-counters { float: left; }
+
+  .general-list-item-stars +
+  .general-list-item-counters { margin-left: $general-list-item-stars-n-counters-gutter; }
+}
+
+// Estrelas.
+.general-list-item-stars {
+  @include clear-fix;
+  width: $general-list-item-stars-width;
+  margin: 0;
+  list-style: none;
+}
+
+// Estrela.
+.general-list-item-star {
+  float: left;
+
+  & +
+  & { margin-left: 2px; }
+}
+
+// Ícone de fechar.
+.general-list-item-close {
+  float: right;
+  display: none;
+}

@@ -1,0 +1,198 @@
+<div class="row">
+  <div class="span16">
+    <div class="content">
+      <h2>Tabelas</h2>
+      <div class="row">
+        <div class="span9">
+          <p>Basicamente, todas as tabelas seguem a mesma estrutura ao lado. Onde os títulos das colunas são encapsulados no <code>&lt;th&gt;</code>, dentro do <code>&lt;thead&gt;</code>. O conteúdo da tabela em si deve ficar encapsulado nos <code>&lt;td&gt;</code> dentro do <code>&lt;tbody&gt;</code>.</p>
+          <p>Existem 3 tipos de estilos para as tabelas, dependendo da classe que for usada. São elas: <code>.table-with-borderradius</code>, <code>.table-without-borderradius</code> e <code>.table-with-link</code>.</p>
+          <p>Segue abaixo os exemplos de uso destas classes:</p>
+          <p><code>.table-with-borderradius</code></p>
+          <div>
+            <table class="table-with-borderradius">
+            <thead>
+              <tr>
+                <th>Coluna 1</th>
+                <th>Coluna 2</th>
+                <th>Coluna 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+              </tr>
+              <tr>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+              </tr>
+              <tr>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+              </tr>
+              <tr>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+                <td>Conteúdo de uma célula.</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <p><code>.table-without-borderradius</code></p>
+          <div>
+            <table class="table-without-borderradius">
+              <thead>
+                <tr>
+                  <th>Coluna 1</th>
+                  <th>Coluna 2</th>
+                  <th>Coluna 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+                <tr>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+                <tr>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+                <tr>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="span7">
+          <h5>Arquivo</h5>
+          <p><code>_tables.scss</code></p>
+          <h5>Dependência</h5>
+          <p><code rel="tooltip" title="Comportamento da tabela dentro de um form.">bootstrap-tables.js</code></p>
+          <pre class="prettyprint linenums">
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;!-- FOR EACH COLUMN TITLE --&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;!-- END --&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;!-- FOR EACH DATA ROW --&gt;
+    &lt;tr&gt;
+      &lt;!-- FOR EACH DATA COLUMN --&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;!-- END --&gt;
+    &lt;/tr&gt;
+    &lt;!-- END --&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <p>Em tabelas com links é possível tornar toda uma linha clicável adicionando <code>.link-container</code> ao <code>&lt;tr&gt;</code> e <code>.link-target</code> ao link desejado.</p>
+          <div>
+            <table class="table-with-borderradius table-with-link">
+              <thead>
+                <tr>
+                  <th>Coluna 1</th>
+                  <th>Coluna 2</th>
+                  <th>Coluna 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="link-container">
+                  <td><a href="#" class="link-target">Conteúdo de uma célula.</a></td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+                <tr class="link-container">
+                  <td><a href="#" class="link-target">Conteúdo de uma célula.</a></td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+                <tr class="link-container">
+                  <td><a href="#" class="link-target">Conteúdo de uma célula.</a></td>
+                  <td>Conteúdo de uma célula.</td>
+                  <td>Conteúdo de uma célula.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <p>A tabela anterior pode ser usada, por exemplo, para representar uma caixa de mensagens com checkboxes. Clicando no checkbox você estaria marcando a linha para uma possível remoção.</p>
+          <p>Para adicionar o comportamento de alterar a cor da linha para vermelho quando o checkbox for clicado e o botão de submissão de formulário permanecer desativado até que pelo menos um item esteja marcado, adicione <code>.form-checklist</code> ao <code>&lt;form&gt;</code>.</p>
+          <form class="form-checklist">
+            <table class="table-with-borderradius table-with-link">
+              <thead>
+                <tr>
+                  <th>Assunto</th>
+                  <th>Enviada por</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="link-container">
+                  <td><a class="link-target inbox-message-unread" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
+                  <td>
+                    <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
+                  </td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr class="link-container">
+                  <td><a class="link-target inbox-message-read" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
+                  <td>
+                    <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
+                  </td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr class="link-container">
+                  <td><a class="link-target inbox-message-unread" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
+                  <td>
+                    <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
+                  </td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+                <tr class="link-container">
+                  <td><a class="link-target inbox-message-read" href="http://www.redu.com.br">Lorem ipsum sit dolor amet, consectetur?</a></td>
+                  <td>
+                    <a href="http://www.google.com.br" class="link-name">Nome Sobrenome</a>
+                  </td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="button-toolbar">
+              <input type="submit" class="button-danger" value="Deletar selecionados">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

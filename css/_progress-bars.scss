@@ -1,0 +1,93 @@
+// ==========================================================================
+// Barras de progresso
+// ==========================================================================
+
+
+// Variáveis
+// ==========================================================================
+
+// Espaçamento entre a legenda e a barra de progresso.
+$progress-bar-gutter: 5px;
+// Largura da legenda.
+$progress-bar-legend-width: 35px;
+// Largura do barra de progresso curta.
+$progress-bar-short-width: 50px;
+// Largura do barra de progresso média.
+$progress-bar-medium-width: 100px;
+// Largura do barra de progresso longa.
+$progress-bar-long-width: 200px;
+// Altura do barra de progresso fina.
+$progress-bar-thin-height: 5px;
+// Altura do barra de progresso grossa.
+$progress-bar-thick-height: 10px;
+
+
+// Espessura fina.
+.progress-bar-thin { height: $progress-bar-thin-height; }
+
+// Espessura grossa.
+.progress-bar-thick { height: $progress-bar-thick-height; }
+
+// Largura curta.
+.progress-bar-short { width: $progress-bar-short-width; }
+
+// Largura média.
+.progress-bar-medium { width: $progress-bar-medium-width; }
+
+// Largura longa.
+.progress-bar-long { width: $progress-bar-long-width; }
+
+// Barra total.
+.progress-bar-total {
+  overflow: hidden;
+
+  .cssgradients & { @include background-image(linear-gradient($gray4, $white, $gray4)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+50,f0f0f0+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwZjBmMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+}
+
+// Barra completada.
+.progress-bar-completed {
+  float: left;
+  height: 100%;
+
+  .cssgradients & { @include background-image(linear-gradient($green3, $green2, $green3)); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#5fc080+1,abe385+50,5fc080+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzVmYzA4MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2FiZTM4NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZmMwODAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
+}
+
+.progress-bar-completed,
+.progress-bar-total { @include border-radius(3px); }
+
+// Barra de progresso com legenda.
+.progress-bar-legend {
+  overflow: hidden;
+
+  .progress-bar-total {
+    @include calc("width", "100% - #{$progress-bar-legend-width} - #{$progress-bar-gutter}", 70%);
+    float: right;
+  }
+
+  .progress-bar-thin { margin-top: 3px; }
+
+  .legend {
+    width: $progress-bar-legend-width;
+    float: left;
+    text-align: right;
+  }
+
+  .legend +
+  .progress-bar-total { margin-left: $progress-bar-gutter; }
+
+  &.progress-bar-short { width: $progress-bar-legend-width + $progress-bar-gutter + $progress-bar-short-width; }
+
+  &.progress-bar-medium { width: $progress-bar-legend-width + $progress-bar-gutter + $progress-bar-medium-width; }
+
+  &.progress-bar-long { width: $progress-bar-legend-width + $progress-bar-gutter + $progress-bar-long-width; }
+}
