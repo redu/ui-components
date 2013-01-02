@@ -30,6 +30,7 @@ nbproject
 .idea
 .bundle
 bin
+node_modules
 
 # Arquivos gerados automaticamente pelas ferramentas:
 # Node.
