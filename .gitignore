@@ -30,7 +30,3 @@ nbproject
 .idea
 .bundle
 bin
-
-# Arquivos gerados automaticamente pelas ferramentas:
-# Node.
-/*.html
