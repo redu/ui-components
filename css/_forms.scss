@@ -258,6 +258,8 @@ input[type="checkbox"]:focus {
     margin-bottom: 0;
     vertical-align: middle;
   }
+
+  .form-horizontal &:first-child { margin-top: $formLabelTopPadding; }
 }
 
 .control-inline {

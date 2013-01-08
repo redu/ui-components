@@ -1067,6 +1067,10 @@ input[type="checkbox"]:focus {
   margin-bottom: 0;
   vertical-align: middle;
 }
+.form-horizontal .control-radio:first-child, .form-horizontal
+.control-checkbox:first-child {
+  margin-top: 7px;
+}
 
 .control-inline .control-radio + .control-radio,
 .control-inline .control-checkbox + .control-checkbox {
