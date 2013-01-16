@@ -565,6 +565,12 @@ a.icon-teacher-gray_16_18-before {
 .icon-curriculum-gray_16_18-before {
   &:before { @extend .icon-curriculum-gray_16_18; }
 }
+.icon-curriculum-academic-lightblue_32_34-before {
+  &:before { @extend .icon-curriculum-academic-lightblue_32_34; }
+}
+.icon-curriculum-professional-lightblue_32_34-before {
+  &:before { @extend .icon-curriculum-professional-lightblue_32_34; }
+}
 .list-button li:hover .icon-curriculum-lightblue_16_18-before {
   &:before {  @extend .icon-curriculum-blue_16_18; }
 }
