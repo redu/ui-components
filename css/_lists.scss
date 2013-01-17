@@ -371,7 +371,10 @@ $general-list-item-stars-n-counters-gutter: 12px;
     &:hover { color: $orange4; }
   }
 
-  > span { vertical-align: middle; }
+  > span {
+    vertical-align: middle;
+    display: inline-block;
+  }
 
   > span + span { margin-left: 10px; }
 }

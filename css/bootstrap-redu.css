@@ -6298,6 +6298,7 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 .list-lecture-info > span {
   vertical-align: middle;
+  display: inline-block;
 }
 .list-lecture-info > span + span {
   margin-left: 10px;
