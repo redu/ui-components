@@ -169,10 +169,7 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 // Bloco com o cabeçalho do item da lista.
-.list-course-space-header {
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+.list-course-space-header { margin-bottom: 20px; }
 
 // Bloco de autoração do curso/disciplina.
 .list-course-space-authoring { float: left; }
@@ -309,10 +306,7 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 // Bloco com cabeçalho do módulo.
-.list-subject-header {
-  overflow: hidden;
-  margin-bottom: 5px;
-}
+.list-subject-header { margin-bottom: 5px; }
 
 // Bloco com os avisos e barra de progresso do módulo.
 .list-subject-header-info {

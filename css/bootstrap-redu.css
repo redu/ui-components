@@ -6083,7 +6083,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .list-course-space-header {
-  overflow: hidden;
   margin-bottom: 20px;
 }
 
@@ -6231,7 +6230,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .list-subject-header {
-  overflow: hidden;
   margin-bottom: 5px;
 }
 
