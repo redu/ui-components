@@ -6260,9 +6260,9 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   border: 1px solid #f0f0f0;
   padding: 11px 20px 10px;
 }
-
-.list-subject-description {
-  margin-bottom: 20px;
+.list-subject-body .list-subject-description +
+.list-button {
+  margin-top: 20px;
 }
 
 .list-lecture-info {

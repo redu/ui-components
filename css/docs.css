@@ -40,7 +40,7 @@ pre + p {
 .content table {
   margin-bottom: 20px;
 }
-.content p {
+.content p:not(.list-subject-description) {
   margin-bottom: 9px;
 }
 .content .system-message p {

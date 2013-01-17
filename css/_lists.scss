@@ -335,9 +335,10 @@ $general-list-item-stars-n-counters-gutter: 12px;
   @include border-radius(7px);
   border: 1px solid $gray2;
   padding: 11px 20px 10px;
-}
 
-.list-subject-description { margin-bottom: 20px; }
+  .list-subject-description +
+  .list-button { margin-top: 20px; }
+}
 
 // Bloco de informações sobre uma aula.
 .list-lecture-info {

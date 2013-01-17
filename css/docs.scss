@@ -38,7 +38,7 @@ pre + p { margin-top: $base-line-height / 2; }
 
   table { margin-bottom: 20px; }
 
-  p { margin-bottom: $base-line-height / 2; }
+  p:not(.list-subject-description) { margin-bottom: $base-line-height / 2; }
 
   .system-message p {  margin: 0; }
 
