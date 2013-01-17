@@ -6264,6 +6264,17 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 .list-button {
   margin-top: 20px;
 }
+.list-subject-body .list-button {
+  list-style: none;
+  counter-reset: item;
+}
+.list-subject-body .list-button-item:before {
+  content: counter(item);
+  counter-increment: item;
+}
+.list-subject-body .list-button-link {
+  margin-left: 10px;
+}
 
 .list-lecture-info {
   font-size: 13px;

@@ -338,6 +338,18 @@ $general-list-item-stars-n-counters-gutter: 12px;
 
   .list-subject-description +
   .list-button { margin-top: 20px; }
+
+  .list-button {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .list-button-item:before {
+    content: counter(item);
+    counter-increment: item;
+  }
+
+  .list-button-link { margin-left: 10px; }
 }
 
 // Bloco de informações sobre uma aula.
