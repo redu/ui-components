@@ -223,7 +223,8 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 .list-space-stat {
-  & + & { margin-left: 40px; }
+  & +
+  & { margin-left: 20px; }
 }
 
 .list-space-stats-row {

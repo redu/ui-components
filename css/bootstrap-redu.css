@@ -6130,8 +6130,9 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   left: 20px;
 }
 
-.list-space-stat + .list-space-stat {
-  margin-left: 40px;
+.list-space-stat +
+.list-space-stat {
+  margin-left: 20px;
 }
 
 .list-space-stats-row + .list-space-stats-row {
