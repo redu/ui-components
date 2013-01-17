@@ -157,6 +157,8 @@ $general-list-item-stars-n-counters-gutter: 12px;
 
 // Link para o curso/disciplina.
 .list-course-space-link {
+  color: $black;
+
   &:hover { text-decoration: none; }
 
   // Posiciona o ícone do curso/disciplina.

@@ -6071,6 +6071,9 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   color: #6d6e6f;
 }
 
+.list-course-space-link {
+  color: black;
+}
 .list-course-space-link:hover {
   text-decoration: none;
 }
