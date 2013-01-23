@@ -46,7 +46,7 @@
 @mixin pseudo-before($marginRight: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-right: $marginRight;
 
   @if ($float) { float: left; }
@@ -58,7 +58,7 @@
 @mixin pseudo-after($marginLeft: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-left: $marginLeft;
 
   @if ($float) { float: right; }

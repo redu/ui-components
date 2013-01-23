@@ -443,14 +443,14 @@ a:hover,
 .sprite-before:before {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-right: 5px;
 }
 
 .sprite-after:after {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-left: 5px;
 }
 
@@ -3841,14 +3841,14 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 [class*="icon-"][class*="-before"]:before {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-right: 5px;
 }
 
 [class*="icon-"][class*="-after"]:after {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-left: 5px;
 }
 
@@ -5984,7 +5984,7 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 .courses-lists .course-item .stats h6 :before {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-right: 5px;
   float: left;
   float: none;
