@@ -1995,7 +1995,7 @@ $(function() {
 
       // Se for um formulário.
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit')
+        var $submit = $this.find('input:submit, button:submit')
           , spinnerClass = settings.spinnerCircularGray
 
         if ($submit.hasClass(settings.buttonDefault)) {
@@ -2020,6 +2020,12 @@ $(function() {
         } else {
           spinnerImg += settings.spinnerCircularGrayGif
         }
+        // var spinnerImg = settings.imgPath
+        // if ($this.hasClass(settings.buttonDefault)) {
+        //   spinnerImg += settings.spinnerCircularBlueGif
+        // } else {
+        //   spinnerImg += settings.spinnerCircularGrayGif
+        // }
 
         // Encontra possíveis classes de ícones.
         var findIconClasses = function(classes) {
