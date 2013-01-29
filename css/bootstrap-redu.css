@@ -6869,3 +6869,18 @@ hr {
   text-overflow: ellipsis;
   width: 100%;
 }
+
+.search-title-header {
+  position: relative;
+  overflow: hidden;
+  padding: 17px 0;
+}
+.search-title-header .breadcrumb-mini-wrapper {
+  position: absolute;
+  bottom: -11px;
+  width: 100%;
+}
+
+.tabs {
+  margin-top: 14px;
+}
