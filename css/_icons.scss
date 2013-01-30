@@ -332,6 +332,11 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-profile-gray_16_18; }
 }
 
+.icon-profile-darkgray_32_34-before {
+  &:before { @extend .icon-profile-darkgray_32_34; }
+  &:hover:before { @extend .icon-profile-darkgray_32_34; }
+}
+
 // Mensagens.
 .icon-message-lightblue_16_18-before {
   &:before { @extend .icon-message-lightblue_16_18; }
@@ -899,6 +904,11 @@ a:hover,
 .icon-institution-gray_32_34 {
   &:hover { @extend .icon-institution-blue_32_34; }
 }
+
+.icon-institution-gray_32_34 {
+  &:before { @extend .icon-institution-blue_32_34; }
+}
+
 
 // Estrela
 .icon-star-empty-gray_16_18-before {
