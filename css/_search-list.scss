@@ -13,11 +13,37 @@
     li { list-style: none; }
 
     .search-results {
-      .title-result { 
-        color: rgb(179, 179, 179);
-        font-size: 16px;
-        font-weight: 300;
-        font-family: $museo-sans;
+      .title-result {
+        padding: 20px 20px 0 20px;
+      
+        .title-result-name { 
+          color: rgb(179, 179, 179);
+          font-size: 16px;
+          font-weight: 300;
+          font-family: $museo-sans;
+        }
+      }
+
+      a.link-falso { 
+        vertical-align: middle;
+        margin: -3px 0 0 20px;
+      }
+
+      .result-found { 
+        .general-list-item { 
+          float: left;
+          overflow: hidden;
+          width: 90%; 
+          width: -webkit-calc(50% - 50px);
+          width: -moz-calc(50% - 50px);
+          width: calc(50% - 50px);
+          margin: 0 20px;
+        }
+
+        .result-separator { 
+          clear: both;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -58,3 +84,4 @@
 
 .tabs { margin-top: 14px; }
 
+.profile-results { clear: both; } //está no mal colocado em relação à hierarquia do sass porque eu vou pensar numa melhor classe.
