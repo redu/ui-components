@@ -6881,6 +6881,11 @@ hr {
 .search-title-header + .search-content li {
   list-style: none;
 }
+.search-title-header + .search-content .search-results .result-quantity {
+  padding-top: 10px;
+  text-align: center;
+  line-height: 18px;
+}
 .search-title-header + .search-content .search-results .results-group {
   margin: 10px 0;
 }

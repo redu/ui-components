@@ -13,6 +13,12 @@
     li { list-style: none; }
 
     .search-results {
+      .result-quantity {
+        padding-top: 10px;
+        text-align: center;
+        line-height: 18px;
+      }
+
       .results-group {
         margin: 10px 0;
 
