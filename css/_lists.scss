@@ -625,10 +625,11 @@ hr {
 }
 
 // Título.
-.general-list-item-title {
-  font: 500 18px/18px $museo-sans;
-  letter-spacing: -1px;
-}
+//.general-list-item-title {
+//   font: 500 18px/18px $museo-sans;
+//  letter-spacing: -1px;
+//} Esse elemento já está envolvido pelo <h4> ou seja, já tem estes valores
+
 
 // Link (dentro do título).
 .general-list-item-title-link {

@@ -6690,11 +6690,6 @@ hr {
   display: block;
 }
 
-.general-list-item-title {
-  font: 500 18px/18px museo-sans, "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: -1px;
-}
-
 .general-list-item-title-link, .general-list-item-title-link:visited {
   color: black;
 }
@@ -6886,6 +6881,26 @@ hr {
 .search-title-header + .search-content li {
   list-style: none;
 }
+.search-title-header + .search-content .search-results .results-group.results-by-environment .general-list-item-column .legend + .general-list-item-counters {
+  margin-top: 23px;
+}
+.cssgradients .search-title-header + .search-content .search-results .results-group.results-by-environment .general-list-item, .cssgradients .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item, .cssgradients .search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item {
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e6e6e6), color-stop(100%, #f7f7f7));
+  background-image: -webkit-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+  background-image: -moz-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+  background-image: -o-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+  background-image: linear-gradient(bottom, #e6e6e6, #f7f7f7);
+}
+.search-title-header + .search-content .search-results .results-group.results-by-course a img, .search-title-header + .search-content .search-results .results-group.results-by-space a img {
+  width: 36px;
+  height: 36px;
+}
+.search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item-column .general-list-item-title + .legend, .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item-column .general-list-item-title + .legend {
+  margin-top: 0;
+}
+.search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item-column .legend + .general-list-item-counters, .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item-column .legend + .general-list-item-counters {
+  margin-top: 16px;
+}
 .search-title-header + .search-content .search-results .title-result {
   padding: 20px 20px 0 20px;
 }
@@ -6907,6 +6922,15 @@ hr {
   width: -moz-calc(50% - 50px);
   width: calc(50% - 50px);
   margin: 0 20px;
+}
+.search-title-header + .search-content .search-results .result-found .button-dropdown {
+  float: right;
+  padding: 5px;
+}
+.search-title-header + .search-content .search-results .result-found .add-as-friend {
+  float: right;
+  padding: 2px 2px 2px 8px;
+  text-align: center;
 }
 .search-title-header + .search-content .search-results .result-found .result-separator {
   clear: both;
@@ -6949,6 +6973,6 @@ hr {
   margin-top: 14px;
 }
 
-.profile-results {
+.results-group {
   clear: both;
 }

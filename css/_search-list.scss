@@ -13,11 +13,45 @@
     li { list-style: none; }
 
     .search-results {
+      .results-group {
+        &.results-by-environment {
+          .general-list-item-column {
+            .legend + .general-list-item-counters { margin-top: 23px; }
+          }
+        }
+
+
+        .cssgradients &.results-by-environment,
+        .cssgradients &.results-by-space,
+        .cssgradients &.results-by-course { 
+          .general-list-item {
+            background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e6e6e6), color-stop(100%, #f7f7f7));
+            background-image: -webkit-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+            background-image: -moz-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+            background-image: -o-linear-gradient(bottom, #e6e6e6, #f7f7f7);
+            background-image: linear-gradient(bottom, #e6e6e6, #f7f7f7);
+          }
+        }
+
+        &.results-by-course,
+        &.results-by-space { 
+          a img {
+            width: 36px;
+            height: 36px;
+          }
+
+          .general-list-item-column .general-list-item-title + .legend { margin-top: 0; }
+
+          .general-list-item-column {
+            .legend + .general-list-item-counters { margin-top: 16px; }
+          }
+        }
+      }
       .title-result {
         padding: 20px 20px 0 20px;
       
         .title-result-name { 
-          color: rgb(179, 179, 179);
+          color: rgb(179, 179, 179); 
           font-size: 16px;
           font-weight: 300;
           font-family: $museo-sans;
@@ -38,6 +72,18 @@
           width: -moz-calc(50% - 50px);
           width: calc(50% - 50px);
           margin: 0 20px;
+        }
+
+        .button-dropdown { 
+          float: right;
+          padding: 5px;
+        }
+
+
+        .add-as-friend {
+          float: right;
+          padding: 2px 2px 2px 8px;
+          text-align: center;
         }
 
         .result-separator { 
@@ -84,4 +130,4 @@
 
 .tabs { margin-top: 14px; }
 
-.profile-results { clear: both; } //está no mal colocado em relação à hierarquia do sass porque eu vou pensar numa melhor classe.
+.results-group { clear: both; } //está no mal colocado em relação à hierarquia do sass porque eu vou pensar numa melhor classe.
