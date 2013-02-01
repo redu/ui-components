@@ -19,6 +19,12 @@
         line-height: 18px;
       }
 
+      .search-filter {
+        padding-top: 15px;
+        text-align: center;
+        .filters { display: inline-block; }
+      }
+
       .results-group {
         margin: 10px 0;
 

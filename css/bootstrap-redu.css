@@ -6886,6 +6886,13 @@ hr {
   text-align: center;
   line-height: 18px;
 }
+.search-title-header + .search-content .search-results .search-filter {
+  padding-top: 15px;
+  text-align: center;
+}
+.search-title-header + .search-content .search-results .search-filter .filters {
+  display: inline-block;
+}
 .search-title-header + .search-content .search-results .results-group {
   margin: 10px 0;
 }
