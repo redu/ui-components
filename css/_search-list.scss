@@ -2,11 +2,11 @@
   & > .container { padding: 17px 0 20px; }
 }
 
-.search-title-header { 
+.search-title-header {
   position: relative;
   overflow: hidden;
 
-  & + .search-content { 
+  & + .search-content {
     margin-top: 10px;
     ul,
     ol,
@@ -29,10 +29,10 @@
           }
         }
 
-        .cssgradients &.results-by-environment,
-        .cssgradients &.results-by-space,
-        .cssgradients &.results-by-course { 
+        .cssgradients &.results-by-space {
           .general-list-item {
+            @include border-radius;
+            @include box-shadow(0 1px 0 $gray4);
             background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e6e6e6), color-stop(100%, #f7f7f7));
             background-image: -webkit-linear-gradient(bottom, #e6e6e6, #f7f7f7);
             background-image: -moz-linear-gradient(bottom, #e6e6e6, #f7f7f7);
@@ -42,7 +42,7 @@
         }
 
         &.results-by-course,
-        &.results-by-space { 
+        &.results-by-space {
           a img {
             width: 36px;
             height: 36px;
@@ -57,32 +57,32 @@
       }
       .title-result {
         padding: 20px 20px 0 20px;
-      
-        .title-result-name { 
-          color: rgb(179, 179, 179); 
+
+        .title-result-name {
+          color: rgb(179, 179, 179);
           font-size: 16px;
           font-weight: 300;
           font-family: $museo-sans;
         }
       }
 
-      a.link-falso { 
+      a.link-falso {
         vertical-align: middle;
         margin: -3px 0 0 20px;
       }
 
-      .result-found { 
-        .general-list-item { 
+      .result-found {
+        .general-list-item {
           float: left;
           overflow: hidden;
-          width: 90%; 
+          width: 90%;
           width: -webkit-calc(50% - 50px);
           width: -moz-calc(50% - 50px);
           width: calc(50% - 50px);
           margin: 0 20px;
         }
 
-        .button-dropdown { 
+        .button-dropdown {
           float: right;
           padding: 5px;
         }
@@ -94,7 +94,7 @@
           text-align: center;
         }
 
-        .result-separator { 
+        .result-separator {
           clear: both;
           overflow: hidden;
         }
@@ -104,9 +104,9 @@
 
   .breadcrumb-mini { display: inline-block; }
 
-  .search-title { 
+  .search-title {
     width: 201px;
-    cursor: pointer;   
+    cursor: pointer;
   }
 
   .legend {
@@ -114,12 +114,12 @@
     float: right;
   }
 
-  .search-title-link { 
+  .search-title-link {
     text-decoration: none;
     font: 500 18px/21px museo-sans,"Helvetica Neue",Arial,sans-serif;
     letter-spacing: -1px;
     width: 140px;
-    margin-top: 4px; 
+    margin-top: 4px;
     vertical-align: middle;
 
     &, &:visited { color: rgb(179, 179, 179); }

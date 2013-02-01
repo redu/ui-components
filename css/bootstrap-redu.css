@@ -6884,7 +6884,20 @@ hr {
 .search-title-header + .search-content .search-results .results-group.results-by-environment .general-list-item-column .legend + .general-list-item-counters {
   margin-top: 23px;
 }
-.cssgradients .search-title-header + .search-content .search-results .results-group.results-by-environment .general-list-item, .cssgradients .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item, .cssgradients .search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item {
+.search-title-header + .search-content .search-results .results-group.results-by-space .space-name {
+  float: left;
+}
+.search-title-header + .search-content .search-results .results-group.results-by-space .progress-bar-short {
+  margin-top: 5px;
+  float: right;
+}
+.cssgradients .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 0 #cccccc;
+  -moz-box-shadow: 0 1px 0 #cccccc;
+  box-shadow: 0 1px 0 #cccccc;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e6e6e6), color-stop(100%, #f7f7f7));
   background-image: -webkit-linear-gradient(bottom, #e6e6e6, #f7f7f7);
   background-image: -moz-linear-gradient(bottom, #e6e6e6, #f7f7f7);
