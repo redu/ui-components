@@ -53,6 +53,11 @@
           .general-list-item-column .general-list-item-title + .legend { margin-top: 0; }
 
           .general-list-item-column {
+            img {
+              @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
+              background-color: $white;
+              padding: 2px;
+            }
             .legend + .general-list-item-counters { margin-top: 16px; }
           }
         }

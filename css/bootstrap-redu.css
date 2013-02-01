@@ -6914,6 +6914,13 @@ hr {
 .search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item-column .general-list-item-title + .legend, .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item-column .general-list-item-title + .legend {
   margin-top: 0;
 }
+.search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item-column img, .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item-column img {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  padding: 2px;
+}
 .search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item-column .legend + .general-list-item-counters, .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item-column .legend + .general-list-item-counters {
   margin-top: 16px;
 }
