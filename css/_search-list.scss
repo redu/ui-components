@@ -20,6 +20,14 @@
           }
         }
 
+        &.results-by-space {
+          .space-name { float: left; }
+
+          .progress-bar-short {
+            margin-top: 5px;
+            float: right;
+          }
+        }
 
         .cssgradients &.results-by-environment,
         .cssgradients &.results-by-space,
