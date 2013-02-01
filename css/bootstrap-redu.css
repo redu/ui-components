@@ -6881,6 +6881,9 @@ hr {
 .search-title-header + .search-content li {
   list-style: none;
 }
+.search-title-header + .search-content .search-results .results-group {
+  margin: 10px 0;
+}
 .search-title-header + .search-content .search-results .results-group.results-by-environment .general-list-item-column .legend + .general-list-item-counters {
   margin-top: 23px;
 }
@@ -6915,7 +6918,7 @@ hr {
   margin-top: 16px;
 }
 .search-title-header + .search-content .search-results .title-result {
-  padding: 20px 20px 0 20px;
+  padding: 0 20px;
 }
 .search-title-header + .search-content .search-results .title-result .title-result-name {
   color: #b3b3b3;
