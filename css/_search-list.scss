@@ -80,6 +80,10 @@
           width: -moz-calc(50% - 50px);
           width: calc(50% - 50px);
           margin: 0 20px;
+
+          .legend {
+            clear: left;
+          }
         }
 
         .button-dropdown {
