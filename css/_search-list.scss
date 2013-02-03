@@ -64,13 +64,15 @@
 
           .general-list-item-column .general-list-item-title + .legend { margin-top: 0; }
 
-          .general-list-item-column {
+          .result-found .general-list-item-column {
             img {
               @include box-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
               background-color: $white;
               padding: 2px;
             }
             .legend + .general-list-item-counters { margin-top: 16px; }
+
+            &:last-child { width: 88%; }
           }
         }
       }
@@ -93,7 +95,7 @@
       .result-found {
         .general-list-item {
           float: left;
-          overflow: hidden;
+          overflow: visible;
           width: 90%;
           width: -webkit-calc(50% - 50px);
           width: -moz-calc(50% - 50px);
@@ -103,11 +105,50 @@
           .legend {
             clear: left;
           }
+
+          .general-list-item-column {
+            overflow: visible;
+            float: left;
+
+            &:last-child {
+              width: 76%;
+            }
+          }
         }
 
         .button-dropdown {
           float: right;
           padding: 6px 10px;
+        }
+
+
+        .dropdown-menu {
+          padding: 10px;
+          margin-top: 35px;
+          right: -4px;
+
+          &:after {
+            content: ' ';
+            height: 0;
+            width: 0;
+            position: absolute;
+
+            border: 9px solid transparent;
+            border-bottom-color: $blue3;
+
+            bottom: 100%;
+            left: 93%;
+            margin-left: -9px;
+          }
+
+          span {
+            color: $gray4;
+          }
+
+          li {
+            padding: 6px 0 6px 7px;
+            width: 230px;
+          }
         }
 
 
