@@ -6963,7 +6963,7 @@ hr {
 }
 .search-title-header + .search-content .search-results .result-found .button-dropdown {
   float: right;
-  padding: 5px;
+  padding: 6px 10px;
 }
 .search-title-header + .search-content .search-results .result-found .add-as-friend {
   float: right;
