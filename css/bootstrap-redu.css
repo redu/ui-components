@@ -7056,6 +7056,7 @@ hr {
   float: right;
   padding: 2px 2px 2px 8px;
   text-align: center;
+  margin-top: -5px;
 }
 .search-title-header + .search-content .search-results .result-found .result-separator {
   clear: both;
