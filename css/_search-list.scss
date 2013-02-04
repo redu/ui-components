@@ -31,6 +31,15 @@
         .filters { display: inline-block; }
       }
 
+      &.empty {
+        text-align: center;
+        p {
+          padding-top: 20px;
+          color: $gray4;
+        }
+        img { padding-top: 80px; }
+      }
+
       .results-group {
         margin: 10px 0;
 

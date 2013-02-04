@@ -6900,6 +6900,16 @@ hr {
 .search-title-header + .search-content .search-results .search-filter .filters {
   display: inline-block;
 }
+.search-title-header + .search-content .search-results.empty {
+  text-align: center;
+}
+.search-title-header + .search-content .search-results.empty p {
+  padding-top: 20px;
+  color: #cccccc;
+}
+.search-title-header + .search-content .search-results.empty img {
+  padding-top: 80px;
+}
 .search-title-header + .search-content .search-results .results-group {
   margin: 10px 0;
 }
