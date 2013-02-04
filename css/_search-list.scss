@@ -1,6 +1,9 @@
 .main-wrapper {
   background-color: $gray1;
-  & > .container { padding: 17px 0 20px; }
+  & > .container {
+    padding: 17px 0 20px;
+    background: url("../img/icon/search-background_160.png") no-repeat 391px -49px;
+  }
 }
 
 .search-title-header {
