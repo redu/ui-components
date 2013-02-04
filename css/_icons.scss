@@ -464,6 +464,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-contacts-gray_16_18-before {
   &:before { @extend .icon-contacts-gray_16_18; }
 }
+.icon-contacts-green_16_18-before {
+  &:before { @extend .icon-contacts-green_16_18; }
+}
 
 // Colegas de classe.
 .icon-classmates-gray_16_18-before {
