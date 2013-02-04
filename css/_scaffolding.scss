@@ -12,23 +12,6 @@ body {
   background-color: $white;
 }
 
-// Links.
-a,
-.link-fake {
-  display: inline-block;
-  color: $link-color;
-  text-decoration: none;
-
-  &:visited { color: $link-color-visited; }
-
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: underline;
-  }
-}
-
-.link-fake { cursor: pointer; }
-
 .content-body {
   @include box-sizing;
   @include border-radius(10px);
