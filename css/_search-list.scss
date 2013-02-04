@@ -1,10 +1,16 @@
 .main-wrapper {
+  background-color: $gray1;
   & > .container { padding: 17px 0 20px; }
 }
 
 .search-title-header {
   position: relative;
   overflow: hidden;
+
+  .legend {
+    text-align: right;
+    line-height: 14px;
+  }
 
   & + .search-content {
     margin-top: 10px;

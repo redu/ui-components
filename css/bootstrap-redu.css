@@ -6865,6 +6865,9 @@ hr {
   width: 100%;
 }
 
+.main-wrapper {
+  background-color: #f7f7f7;
+}
 .main-wrapper > .container {
   padding: 17px 0 20px;
 }
@@ -6872,6 +6875,10 @@ hr {
 .search-title-header {
   position: relative;
   overflow: hidden;
+}
+.search-title-header .legend {
+  text-align: right;
+  line-height: 14px;
 }
 .search-title-header + .search-content {
   margin-top: 10px;
