@@ -216,7 +216,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-course-gray_16_18-before {
   &:before { @extend .icon-course-gray_16_18; }
-  &:hover:before { @extend .icon-course-gray_16_18; }
+  &:hover:before { @extend .icon-course-blue_16_18; }
 }
 .icon-course-lightblue_16_18-before,
 .header-list .icon-course-gray_16_18-before {
@@ -527,6 +527,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-members-gray_16_18-before {
   &:before { @extend .icon-members-gray_16_18; }
+  &:hover:before { @extend .icon-members-blue_16_18; }
 }
 // Conta.
 .icon-account-lightblue_16_18-before {
