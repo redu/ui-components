@@ -463,6 +463,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-contacts-gray_16_18-before {
   &:before { @extend .icon-contacts-gray_16_18; }
+  &:hover:before { @extend .icon-contacts-blue_16_18; }
 }
 .icon-contacts-green_16_18-before {
   &:before { @extend .icon-contacts-green_16_18; }
