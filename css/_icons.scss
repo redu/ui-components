@@ -555,6 +555,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-biography-gray_16_18-before {
   &:before { @extend .icon-biography-gray_16_18; }
 }
+.icon-biography-gray_8_10-before {
+  &:before { @extend .icon-biography-gray_8_10; }
+}
 
 // Currículo.
 .icon-curriculum-lightblue_16_18-before {
@@ -573,8 +576,14 @@ a.icon-teacher-gray_16_18-before {
 .icon-curriculum-academic-lightblue_32_34-before {
   &:before { @extend .icon-curriculum-academic-lightblue_32_34; }
 }
+.icon-curriculum-academic-gray_8_10-before {
+  &:before { @extend .icon-curriculum-academic-gray_8_10; }
+}
 .icon-curriculum-professional-lightblue_32_34-before {
   &:before { @extend .icon-curriculum-professional-lightblue_32_34; }
+}
+.icon-curriculum-professional-gray_8_10-before {
+  &:before { @extend .icon-curriculum-professional-gray_8_10; }
 }
 .list-button li:hover .icon-curriculum-lightblue_16_18-before {
   &:before {  @extend .icon-curriculum-blue_16_18; }
