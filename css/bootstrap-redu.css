@@ -7028,6 +7028,7 @@ hr {
 .search-title-header + .search-content .search-results .result-found .button-dropdown {
   float: right;
   padding: 6px 10px;
+  margin-top: -5px;
 }
 .search-title-header + .search-content .search-results .result-found .dropdown-menu {
   padding: 10px;
