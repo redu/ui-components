@@ -6960,7 +6960,7 @@ hr {
   margin-top: 5px;
   float: right;
 }
-.cssgradients .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item {
+.cssgradients .search-title-header + .search-content .search-results .results-group.results-by-space .general-list-item, .search-title-header + .search-content .search-results .results-group.results-by-course .general-list-item {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;

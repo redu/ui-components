@@ -61,7 +61,7 @@
           }
         }
 
-        .cssgradients &.results-by-space {
+        .cssgradients &.results-by-space, &.results-by-course {
           .general-list-item {
             @include border-radius;
             @include box-shadow(0 1px 0 $gray4);
