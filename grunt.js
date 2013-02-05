@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   var files = [
-    'js/bootstrap-transition.js'
+    'js/bootstrap-util.js'
+  , 'js/bootstrap-transition.js'
   , 'js/bootstrap-system-message.js'
   , 'js/bootstrap-dropdown.js'
   , 'js/bootstrap-modal.js'
