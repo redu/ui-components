@@ -2114,14 +2114,24 @@ $(function() {
 
   SearchField.prototype.expand = function () {
     var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
-    $target.hide()
+      , isFocused = this.$element.data('isFocused')
+
+    if (!isFocused) {
+      this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
+      $target.hide()
+      this.$element.data('isFocused', true)
+    }
   }
 
   SearchField.prototype.collapse = function () {
     var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
-    $target.show()
+      , isFocused = this.$element.data('isFocused')
+
+    if (isFocused) {
+      this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
+      $target.show()
+      this.$element.data('isFocused', false)
+    }
   }
 
 
@@ -2150,13 +2160,15 @@ $(function() {
   * =============== */
 
   $(function () {
-    $('body').on('focus', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('expand')
-    }).on('blur', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('collapse')
-    })
+    $('body')
+      .on('focusin', '.form-search input[data-toggle]', function ( e ) {
+        var $searchField = $(e.target)
+        $searchField.searchField('expand')
+      })
+      .on('focusout', '.form-search input[data-toggle]', function ( e ) {
+        var $searchField = $(e.target)
+        $searchField.searchField('collapse')
+      })
   })
 
 }(window.jQuery);
