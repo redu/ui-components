@@ -46,7 +46,7 @@
 @mixin pseudo-before($marginRight: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-right: $marginRight;
 
   @if ($float) { float: left; }
@@ -58,7 +58,7 @@
 @mixin pseudo-after($marginLeft: 5px, $float: true) {
   content: "";
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-left: $marginLeft;
 
   @if ($float) { float: right; }
@@ -78,6 +78,28 @@
   @include link-visited($color);
 
   &:hover { color: $color; }
+}
+
+// Define a largura da área prefixada e o padding esquerdo da área infixa.
+//  $area-infix-padding-left: o padding esquerdo da área infixa.
+//  $area-prefix-width: a largura da área prefixada.
+@mixin area-prefix(
+  $area-infix-padding-left,
+  $area-prefix-width) {
+  .area-prefix { width: $area-prefix-width; }
+
+  .area-infix { padding-left: $area-prefix-width + $area-infix-padding-left; }
+}
+
+// Define a largura da área sufixada e o padding direito da área infixa.
+//  $area-infix-padding-right: o padding direito da área infixa.
+//  $area-suffix-width: a largura da área sufixada.
+@mixin area-suffix(
+  $area-infix-padding-right,
+  $area-suffix-width) {
+  .area-suffix { width: $area-suffix-width; }
+
+  .area-infix { padding-right: $area-suffix-width + $area-infix-padding-right; }
 }
 
 
@@ -110,10 +132,42 @@
 
 // Border radius.
 //  $radius: o(s) raio(s) da(s) borda(s).
-@mixin border-radius($radius: 5px) {
+@mixin border-radius($radius: $border-radius-default) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
           border-radius: $radius;
+}
+
+// Border radius superior esquerda.
+//  $radius: o raio da borda.
+@mixin border-top-left-radius($radius: $border-radius-default) {
+  -webkit-border-top-left-radius: $radius;
+      -moz-border-radius-topleft: $radius;
+          border-top-left-radius: $radius;
+}
+
+// Border radius superior direito.
+//  $radius: o raio da borda.
+@mixin border-top-right-radius($radius: $border-radius-default) {
+  -webkit-border-top-right-radius: $radius;
+      -moz-border-radius-topright: $radius;
+          border-top-right-radius: $radius;
+}
+
+// Border radius inferior direito.
+//  $radius: o raio da borda.
+@mixin border-bottom-right-radius($radius: $border-radius-default) {
+  -webkit-border-bottom-right-radius: $radius;
+      -moz-border-radius-bottomright: $radius;
+          border-bottom-right-radius: $radius;
+}
+
+// Border radius inferior esquerdo.
+//  $radius: o raio da borda.
+@mixin border-bottom-left-radius($radius: $border-radius-default) {
+  -webkit-border-bottom-left-radius: $radius;
+      -moz-border-radius-bottomleft: $radius;
+          border-bottom-left-radius: $radius;
 }
 
 // Drop shadows.

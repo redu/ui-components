@@ -2,6 +2,7 @@
 // Formulários
 // ==========================================================================
 
+
 // Variáveis.
 // ==========================================================================
 
@@ -13,35 +14,6 @@ $formControlHorizontalPadding: 10px;
 $formLabelTopPadding: 7px;
 // Tamanho da borda arredondada dos controles.
 $formControlBorderRadius: 3px;
-
-
-// Mixins.
-// ==========================================================================
-
-// Usado no formulário de busca e elemento de opções de lista.
-@mixin form-control-append() {
-  position: relative;
-
-  &:hover .control-append-area,
-  &:hover .control-area { border-color: $blue2; }
-
-  // Área que fica sob o controle, do lado direito.
-  .control-append-area {
-    @include box-sizing;
-    @include border-radius(0 $formControlBorderRadius $formControlBorderRadius 0);
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    .cssgradients & { @include redu-gradient($white, $gray2); }
-
-    .no-cssgradients.gt-ie8 & {
-      // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
-      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    }
-  }
-}
 
 
 form { margin: 0; }
@@ -409,41 +381,17 @@ textarea:-moz-placeholder { color: $gray4; }
 // Lista de opções com texto.
 // ==========================================================================
 
-.control-option-list {
-  @include form-control-append;
+.control-option-list { @include area-suffix($formControlHorizontalPadding, 30px); }
 
-  .control-area {
-    // Calcula o padding direito necessário.
-    $appendAreaWidth: 28px;
-    $controlListTextareaRightPadding: $appendAreaWidth +  $formControlHorizontalPadding;
-    padding-right: $controlListTextareaRightPadding;
-  }
+.control-option-list-checkbox {
+  padding: 6px 0;
+  text-align: center;
+  border: 1px solid $gray4;
+  @include border-top-right-radius($formControlBorderRadius);
+  @include border-bottom-right-radius($formControlBorderRadius);
 
-  .control-append-area {
-    padding: 6px 7px 6px 6px;
-    border: 1px solid $gray4;
-  }
-
-  input[type="checkbox"] { margin: 0; }
-}
-
-.control-option-list-checked {
-  .control-area {
-    $rightSideWidth: 28px;
-    $boxShadow:
-      -($rightSideWidth) 0 0 $white inset
-    , 0 1px 0 $white inset;
-    @include box-shadow($boxShadow);
-
-    &:focus {
-      $boxShadow:
-        inset 0 0 0 rgba(0, 0, 0, 0)
-      , 0 0 6px 1px $blue2;
-      @include box-shadow($boxShadow);
-    }
-  }
-
-  .control-append-area {
+  &.control-checked {
+    // Importants para sobrescrever o gradiente, principalmente no IE9.
     background-color: $green2 !important;
     background-image: none !important;
   }
@@ -454,13 +402,14 @@ textarea:-moz-placeholder { color: $gray4; }
 // ==========================================================================
 
 .form-search {
-  @include form-control-append;
+  @include area-suffix($formControlHorizontalPadding, 42px);
 
-  .control-area {
-    // Calcula o padding direito necessário.
-    $searchButtonWidth: 38px;
-    $formSearchInputRightPadding: $searchButtonWidth +  $formControlHorizontalPadding;
-    padding-right: $formSearchInputRightPadding;
+  .area-suffix { padding: 6px 12px; }
+
+  &.control-big {
+    @include area-suffix($formControlHorizontalPadding, 52px);
+
+    .area-suffix { padding: 11px 17px; }
   }
 }
 

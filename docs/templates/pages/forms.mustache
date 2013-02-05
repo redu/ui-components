@@ -832,8 +832,7 @@
       <h3 id="option-list">Lista de opções com texto</h3>
       <div class="row">
         <div class="span13">
-          <p>Este controle é formado por um textarea e um checkbox. Todo o controle é encapsulado por <code>.control-option-list</code>. O textarea deve ter <code>.control-area</code> e o bloco com o checkbox <code>.control-append-area</code>, dentro dele o checkbox deve ter <code>.control-option-list-checkbox</code>.</p>
-          <p><span class="label-doubts">To do:</span> como se comportará em um POST.</p>
+          <p>Este controle é formado por uma área de texto e um checkbox. Todo o controle é encapsulado por <code>.control-option-list.area-fix</code>. A área de texto deve ter <code>.control-area.area-infix</code> e o bloco com o checkbox <code>.control-option-list-checkbox.area-suffix</code>.</p>
         </div>
       </div>
       <div class="row">
@@ -845,10 +844,10 @@
                   <label for="input-17-1">List de opções com texto</label>
                 </div>
                 <div class="controls">
-                  <div class="control-option-list">
-                    <textarea class="control-area" id="input-17-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
-                    <div class="control-append-area">
-                      <input type="checkbox" class="control-option-list-checkbox">
+                  <div class="control-option-list area-fix">
+                    <textarea class="control-area area-infix" id="input-17-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-option-list-checkbox area-suffix">
+                      <input type="checkbox">
                     </div>
                   </div>
                 </div>
@@ -864,10 +863,10 @@
                   <label for="input-18-1">List de opções com texto</label>
                 </div>
                 <div class="controls span4">
-                  <div class="control-option-list">
-                    <textarea class="control-area" id="input-18-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
-                    <div class="control-append-area">
-                      <input type="checkbox" class="control-option-list-checkbox">
+                  <div class="control-option-list area-fix">
+                    <textarea class="control-area area-infix" id="input-18-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-option-list-checkbox area-suffix">
+                      <input type="checkbox">
                     </div>
                   </div>
                 </div>
@@ -879,10 +878,10 @@
       <div class="row">
         <div class="span13">
           <pre class="prettyprint linenums">
-&lt;div class="control-option-list"&gt;
-  &lt;textarea class="control-area"&gt;&lt;/textarea&gt;
-  &lt;div class="control-append-area"&gt;
-    &lt;input class="control-option-list-checkbox" type="checkbox"&gt;
+&lt;div class="control-option-list area-fix"&gt;
+  &lt;textarea class="control-area area-infix"&gt;&lt;/textarea&gt;
+  &lt;div class="control-option-list-checkbox area-suffix"&gt;
+    &lt;input type="checkbox"&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
         </div>
@@ -891,14 +890,22 @@
       <h3 id="form-search">Busca</h3>
       <div class="row">
         <div class="span6">
-          <p>Este elemento é um formulário único com a classe <code>.form-search</code>. Dentro deve haver um input text com <code>.control-area</code> e um botão com <code>.control-append-area</code>.</p>
+          <p>Este elemento é um formulário único com a classe <code>.form-search.area-fix</code>. Dentro deve haver um campo de texto com <code>.control-area.area-infix</code> e um botão com <code>.area-suffix</code>. O ícone do botão deve levar também <code>.control-search-icon</code>.</p>
         </div>
         <div class="span7">
           <div class="well">
-            <form class="form-search">
-              <input class="control-area" type="text" placeholder="Digite sua pesquisa...">
-              <button class="control-append-area button-default" type="submit">
-                <span class="control-search-icon text-replacement icon-magnifier-gray_16_18">Busca</span>
+            <form class="form-search area-fix">
+              <input class="control-area area-infix" type="text" placeholder="Digite sua pesquisa...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement ">Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div class="well">
+            <form class="form-search area-fix control-big">
+              <input class="control-area area-infix" type="text" placeholder="Digite sua pesquisa...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement ">Buscar</span>
               </button>
             </form>
           </div>
@@ -907,15 +914,14 @@
       <div class="row">
         <div class="span13">
           <pre class="prettyprint linenums">
-&lt;form class="form-search"&gt;
-  &lt;input class="control-area" type="text" placeholder="Digite sua pesquisa..."&gt;
-  &lt;button class="control-append-area button-default" type="submit"&gt;
-    &lt;span class="control-search-icon text-replacement icon-magnifier-gray_16_18"&gt;Busca&lt;/span&gt;
+&lt;form class="form-search area-fix [control-big]"&gt;
+  &lt;input class="control-area area-infix" type="text" placeholder="Digite sua pesquisa..."&gt;
+  &lt;button class="button-default area-suffix" type="submit"&gt;
+    &lt;span class="control-search-icon icon-magnifier-gray_16_18 text-replacement "&gt;Buscar&lt;/span&gt;
   &lt;/button&gt;
 &lt;/form&gt;</pre>
         </div>
       </div>
-
     </div>
   </div>
 </div>
