@@ -107,7 +107,7 @@
 
       a.link-falso {
         vertical-align: middle;
-        margin: -3px 0 0 20px;
+        margin: -3px 0 0 201px;
       }
 
       .result-found {
@@ -218,6 +218,10 @@
     text-align: center;
     height: 18px;
   }
+}
+
+.form-search {
+  float: left;
 }
 
 .tabs { margin-top: 14px; }

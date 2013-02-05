@@ -7004,7 +7004,7 @@ hr {
 }
 .search-title-header + .search-content .search-results a.link-falso {
   vertical-align: middle;
-  margin: -3px 0 0 20px;
+  margin: -3px 0 0 201px;
 }
 .search-title-header + .search-content .search-results .result-found .general-list-item {
   float: left;
@@ -7094,6 +7094,11 @@ hr {
   width: 100%;
   text-align: center;
   height: 18px;
+}
+
+.form-search {
+  float: left;
+  margin-right: 10px;
 }
 
 .tabs {
