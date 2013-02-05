@@ -1,3 +1,18 @@
+// Retorna uma string com as classes de ícones identificadas.
+//
+// Dado uma string "classes", encontra todas as classes de ícones nela.
+var findIconClasses = function(classes) {
+  var iconClasses = [];
+
+  classes = classes.split(' ');
+  $.each(classes, function(index, value) {
+    if (value.indexOf('icon-') !== -1) {
+      iconClasses.push(value);
+    }
+  });
+
+  return iconClasses.join(' ');
+};
 /* ===================================================
  * bootstrap-transition.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -1955,6 +1970,8 @@ $(function() {
   }
 })
 
+/*global findIconClasses */
+
 !(function($) {
 
   'use strict';
@@ -2019,20 +2036,6 @@ $(function() {
           spinnerImg += settings.spinnerCircularBlueGif
         } else {
           spinnerImg += settings.spinnerCircularGrayGif
-        }
-
-        // Encontra possíveis classes de ícones.
-        var findIconClasses = function(classes) {
-          var iconClasses = []
-
-          classes = classes.split(' ')
-          $.each(classes, function(index, value) {
-            if (value.indexOf('icon-') !== -1) {
-              iconClasses.push(value)
-            }
-          })
-
-          return iconClasses.join(' ')
         }
 
         var content = $this.html()

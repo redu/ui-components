@@ -1,3 +1,5 @@
+/*global findIconClasses */
+
 !(function($) {
 
   'use strict';
@@ -62,20 +64,6 @@
           spinnerImg += settings.spinnerCircularBlueGif
         } else {
           spinnerImg += settings.spinnerCircularGrayGif
-        }
-
-        // Encontra possíveis classes de ícones.
-        var findIconClasses = function(classes) {
-          var iconClasses = []
-
-          classes = classes.split(' ')
-          $.each(classes, function(index, value) {
-            if (value.indexOf('icon-') !== -1) {
-              iconClasses.push(value)
-            }
-          })
-
-          return iconClasses.join(' ')
         }
 
         var content = $this.html()
