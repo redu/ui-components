@@ -101,13 +101,16 @@ input[type="password"] {
   @include box-sizing;
   @include box-shadow(inset 0 1px 0 $white);
   @include border-radius($formControlBorderRadius);
+  // Tamanho da borda.
+  $border-width: 1px;
   display: inline-block;
-  border: 1px solid $gray4;
+  border: $border-width solid $gray4;
   padding: $formControlVerticalPadding $formControlHorizontalPadding;
   width: 100%;
   color: $gray6;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  height: ($formControlVerticalPadding * 2) + ($border-width * 2) + $base-line-height;
 
   .csstransitions & {
     $transition:
@@ -413,8 +416,81 @@ textarea:-moz-placeholder { color: $gray4; }
   }
 }
 
+// Formulário de busca expandível.
+.form-search-expandable { width: 200px; }
+
+// Formulário de busca com filtros.
+.form-search-filters {
+  @include area-prefix($formControlHorizontalPadding, 43px);
+
+  .form-search-filters-button { padding: 6px; }
+
+  .control-search-icon +
+  .button-dropdown-arrow { margin-left: 5px; }
+
+  &.control-big {
+    @include area-prefix($formControlHorizontalPadding, 52px);
+
+    .form-search-filters-button { padding: 11px 10px; }
+  }
+
+  .form-search-filters-button {
+    @include border-top-right-radius(0);
+    @include border-bottom-right-radius(0);
+  }
+}
+
+// Dropdown com os filtros.
+.form-search-filters-dropdown {
+  width: 145px;
+  padding: 7px 0;
+
+  .nav-global-profile-item {
+    padding: 2px 9px;
+
+    &:last-child { padding-left: 9px; }
+  }
+
+  &.dropdown-menu { right: -50px; }
+
+  .control-checked .legend {
+    color: $gray6;
+    font-weight: bold;
+  }
+
+  input[type="radio"] { margin-right: 0; }
+}
+
+// Ícones dos botões.
 .control-search-icon { display: block; }
 
+// Comum ao elemento de opção com texto e o formulário de busca.
+.control-option-list,
+.form-search {
+  &:hover {
+    .form-search-filters-button,
+    .area-infix,
+    .area-suffix { border-color: $blue2; }
+  }
+
+  .form-search-filters-button,
+  .area-suffix {
+    .cssgradients & { @include redu-gradient($gray2, $white); }
+
+    .no-cssgradients.gt-ie8 & {
+      // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    }
+
+    .cssgradients .open &,
+    .no-cssgradients.gt-ie8 .open { background-image: none; }
+  }
+
+  .area-suffix {
+    @include border-top-left-radius(0);
+    @include border-bottom-left-radius(0);
+  }
+}
 
 // Autocomplete.
 // ==========================================================================

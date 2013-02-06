@@ -314,7 +314,8 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Seta baixo do botão dropdown.
-.icon-arrow-down-lightblue_8_10 {
+.icon-arrow-down-lightblue_8_10,
+.icon-arrow-down-gray_8_10  {
   .open & { @extend .icon-arrow-up-lightblue_8_10; }
 }
 .button-disabled .icon-arrow-down-lightblue_8_10,
@@ -884,12 +885,17 @@ a:hover,
   .icon-magnifier-gray_16_18,
   .icon-magnifier-lightblue_16_18 { @extend .icon-magnifier-blue_16_18; }
 
+  // Guia básico.
+  .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-blue_16_18; }
+
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
   .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
   .icon-arrow-left-lightblue_8_10 { @extend .icon-arrow-left-blue_8_10; }
   .icon-arrow-right-lightblue_8_10 { @extend .icon-arrow-right-blue_8_10; }
-  .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-down-blue_8_10; }
+  .icon-arrow-down-lightblue_8_10,
+  .icon-arrow-down-gray_8_10 { @extend .icon-arrow-down-blue_8_10; }
+  .open & .icon-arrow-down-gray_8_10,
   .open & .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-up-blue_8_10; }
 
   // Fechar
@@ -1070,6 +1076,9 @@ a:hover,
 .icon-basic-guide-dark_green_32_34-before {
   &:before { @extend .icon-basic-guide-dark_green_32_34; }
 }
+.icon-basic-guide-gray_16_18-before {
+  &:before { @include icon-sprite(basic-guide-gray_16_18); }
+}
 .icon-basic-guide-blue_16_18-before {
   &:before { @extend .icon-basic-guide-blue_16_18; }
 }
@@ -1082,6 +1091,7 @@ a:hover,
 .guides-list-item:hover .icon-basic-guide-green_32_34-before {
   &:before {  @extend .icon-basic-guide-dark_green_32_34; }
 }
+.open .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-lightblue_16_18; }
 
 // Áreas do Redu
 .icon-redu-areas-gray_16_18-before {

@@ -1311,11 +1311,11 @@ $(function() {
   // botões de cinza para azul. O inverso acontece quando deselecionado.
   var colorBlue2 = '#73C3E6'
     , selectorControlArea = '.control-area.area-infix'
-    , classesFixedArea = '.area-suffix, .area-prefix'
+    , classesFixedArea = '.area-suffix, .form-search-filters-button'
     , classIcon = "[class^='icon-'],[class*=' icon-']"
   $(document)
     .on('focusin', selectorControlArea, function(e) {
-      var $fixedAreas = $(this).siblings(classesFixedArea)
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
         , $buttonsIcons = $fixedAreas.find(classIcon)
       // Troca a cor da borda.
       $fixedAreas.css('border-color', colorBlue2);
@@ -1330,7 +1330,7 @@ $(function() {
       })
     })
     .on('focusout', selectorControlArea, function(e) {
-      var $fixedAreas = $(this).siblings(classesFixedArea)
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
         , $buttonsIcons = $fixedAreas.find(classIcon)
       // Troca a cor da borda.
       $fixedAreas.css('border-color', '');
@@ -2150,7 +2150,7 @@ $(function() {
   }
 
   $.fn.searchField.defaults = {
-    increment: 120
+    increment: 100
   }
 
   $.fn.searchField.Constructor = SearchField
@@ -2161,13 +2161,19 @@ $(function() {
 
   $(function () {
     $('body')
-      .on('focusin', '.form-search input[data-toggle]', function ( e ) {
+      .on('focusin', '.form-search-expandable', function ( e ) {
         var $searchField = $(e.target)
-        $searchField.searchField('expand')
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('expand')
+        }
       })
-      .on('focusout', '.form-search input[data-toggle]', function ( e ) {
+      .on('focusout', '.form-search-expandable', function ( e ) {
         var $searchField = $(e.target)
-        $searchField.searchField('collapse')
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('collapse')
+        }
       })
   })
 
