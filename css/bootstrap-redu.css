@@ -7098,6 +7098,7 @@ hr {
 
 .form-search {
   float: left;
+  margin-right: 10px;
 }
 
 .tabs {
