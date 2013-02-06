@@ -80,6 +80,28 @@
   &:hover { color: $color; }
 }
 
+// Define a largura da área prefixada e o padding esquerdo da área infixa.
+//  $area-infix-padding-left: o padding esquerdo da área infixa.
+//  $area-prefix-width: a largura da área prefixada.
+@mixin area-prefix(
+  $area-infix-padding-left,
+  $area-prefix-width) {
+  .area-prefix { width: $area-prefix-width; }
+
+  .area-infix { padding-left: $area-prefix-width + $area-infix-padding-left; }
+}
+
+// Define a largura da área sufixada e o padding direito da área infixa.
+//  $area-infix-padding-right: o padding direito da área infixa.
+//  $area-suffix-width: a largura da área sufixada.
+@mixin area-suffix(
+  $area-infix-padding-right,
+  $area-suffix-width) {
+  .area-suffix { width: $area-suffix-width; }
+
+  .area-infix { padding-right: $area-suffix-width + $area-infix-padding-right; }
+}
+
 
 // Fontes
 // ==========================================================================

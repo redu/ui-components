@@ -1,3 +1,5 @@
+/*global findIconClasses */
+
 !(function($) {
 
   'use strict';

@@ -1,3 +1,18 @@
+// Retorna uma string com as classes de ícones identificadas.
+//
+// Dado uma string "classes", encontra todas as classes de ícones nela.
+var findIconClasses = function(classes) {
+  var iconClasses = [];
+
+  classes = classes.split(' ');
+  $.each(classes, function(index, value) {
+    if (value.indexOf('icon-') !== -1) {
+      iconClasses.push(value);
+    }
+  });
+
+  return iconClasses.join(' ');
+};
 /* ===================================================
  * bootstrap-transition.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -1155,73 +1170,6 @@ $(function() {
       })
     },
 
-    // Adições/remoções de classes para o controle lista de opções.
-    optionList: function(options) {
-        var settings = $.extend({
-          optionListCheckedClass: 'control-option-list-checked'
-        , optionListCheckbox: 'control-option-list-checkbox'
-        , textAreaClass: 'input-area'
-        , appendAreaClass: 'control-append-area'
-        , blue2: '#73C3E6'
-        }, options)
-
-      return this.each(function() {
-        var optionList = $(this)
-          , textArea = optionList.children('.' + settings.textAreaClass)
-          , appendArea = optionList.children('.' + settings.appendAreaClass)
-          , checkbox = appendArea.children('.' + settings.optionListCheckbox)
-
-
-        // Adiciona a classe optionListCheckedClass quando o checkbox estiver marcardo.
-
-        if (checkbox.prop('checked')) {
-          optionList.addClass(settings.optionListCheckedClass)
-        }
-
-        checkbox.on('click', function() {
-          optionList.toggleClass(settings.optionListCheckedClass)
-        })
-
-        // Adiciona a borda blue2 ao botão quando o textarea está em foco.
-        textArea.on({
-          focusin: function() { appendArea.css('border-color', settings.blue2) }
-        , focusout: function() { appendArea.css('border-color', '') }
-        })
-      })
-    },
-
-    // Adições/remoções de classes para o formulário de busca.
-    search: function(options) {
-        var settings = $.extend({
-          iconMagnifierGray: 'icon-magnifier-gray_16_18'
-        , iconMagnifierLightBlue: 'icon-magnifier-lightblue_16_18'
-        , blue2: '#73C3E6'
-        , controlAreaClass: 'control-area'
-        , controlAppendAreaClass: 'control-append-area'
-        , searchIconClass: 'control-search-icon'
-        }, options)
-
-      return this.each(function() {
-        var form = $(this)
-          , control = form.children('.' + settings.controlAreaClass)
-          , button = form.children('.' + settings.controlAppendAreaClass)
-          , icon = button.children('.' + settings.searchIconClass)
-
-        control.on({
-          focusin: function() {
-            icon.removeClass(settings.iconMagnifierGray)
-            icon.addClass(settings.iconMagnifierLightBlue)
-            button.css('border-color', settings.blue2)
-          }
-        , focusout: function() {
-            icon.removeClass(settings.iconMagnifierLightBlue)
-            icon.addClass(settings.iconMagnifierGray)
-            button.css('border-color', '')
-          }
-        })
-      })
-    },
-
     // Adiciona/remove a classe indicativa de controle em foco.
     toggleFocusLabel: function(options) {
       var settings = $.extend({
@@ -1358,9 +1306,44 @@ $(function() {
 
   $('input[type="radio"], input[type="checkbox"]').reduForm('darkLabel')
 
-  $(".form-search").reduForm("search")
+  // No elemento de opção com texto e formulários de busca, quando o campo ou
+  // área de texto estiverem selecionados, mudar a cor da borda e os ícones dos
+  // botões de cinza para azul. O inverso acontece quando deselecionado.
+  var colorBlue2 = '#73C3E6'
+    , selectorControlArea = '.control-area.area-infix'
+    , classesFixedArea = '.area-suffix, .form-search-filters-button'
+    , classIcon = "[class^='icon-'],[class*=' icon-']"
+  $(document)
+    .on('focusin', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', colorBlue2);
 
-  $('.control-option-list').reduForm('optionList')
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('gray', 'lightblue'))
+      })
+    })
+    .on('focusout', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', '');
+
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('lightblue', 'gray'))
+      })
+    })
 
   $('textarea[rows]').reduForm('resizeByRows')
 
@@ -1955,6 +1938,8 @@ $(function() {
   }
 })
 
+/*global findIconClasses */
+
 !(function($) {
 
   'use strict';
@@ -2114,6 +2099,7 @@ $(function() {
       $(this).reduSpinners('ajaxComplete')
     })
 })
+
 !function ($) {
 
   "use strict"; // jshint ;_;
@@ -2129,14 +2115,24 @@ $(function() {
 
   SearchField.prototype.expand = function () {
     var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
-    $target.hide()
+      , isFocused = this.$element.data('isFocused')
+
+    if (!isFocused) {
+      this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
+      $target.hide()
+      this.$element.data('isFocused', true)
+    }
   }
 
   SearchField.prototype.collapse = function () {
     var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
-    $target.show()
+      , isFocused = this.$element.data('isFocused')
+
+    if (isFocused) {
+      this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
+      $target.show()
+      this.$element.data('isFocused', false)
+    }
   }
 
 
@@ -2155,7 +2151,7 @@ $(function() {
   }
 
   $.fn.searchField.defaults = {
-    increment: 120
+    increment: 100
   }
 
   $.fn.searchField.Constructor = SearchField
@@ -2165,13 +2161,21 @@ $(function() {
   * =============== */
 
   $(function () {
-    $('body').on('focus', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('expand')
-    }).on('blur', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('collapse')
-    })
+    $('body')
+      .on('focusin', '.form-search-expandable', function ( e ) {
+        var $searchField = $(e.target)
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('expand')
+        }
+      })
+      .on('focusout', '.form-search-expandable', function ( e ) {
+        var $searchField = $(e.target)
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('collapse')
+        }
+      })
   })
 
 }(window.jQuery);
