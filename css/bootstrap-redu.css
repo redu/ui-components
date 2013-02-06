@@ -458,6 +458,29 @@ a:hover,
   display: inline-block;
 }
 
+.header-logo-wrapper:hover {
+  background-position: 0 -98px;
+  height: 70px;
+  width: 300px;
+}
+
+.footer-logo-link:hover {
+  background-position: 0 -98px;
+  height: 70px;
+  width: 300px;
+}
+
+.footer-contact:hover {
+  background-position: 0 -258px;
+  height: 100px;
+  width: 160px;
+}
+.footer-contact:hover .footer-talk-to-us-balloons {
+  background-position: -241px 0;
+  height: 98px;
+  width: 48px;
+}
+
 p {
   margin: 0;
 }
@@ -1586,11 +1609,6 @@ textarea:-moz-placeholder {
   position: relative;
   margin-left: -112px;
 }
-.header-logo-wrapper:hover {
-  background-position: 0 -98px;
-  height: 70px;
-  width: 300px;
-}
 
 .header-logo {
   position: absolute;
@@ -1771,11 +1789,6 @@ p {
   top: 0;
   left: -115px;
 }
-.footer-logo-link:hover {
-  background-position: 0 -98px;
-  height: 70px;
-  width: 300px;
-}
 
 .footer-logo-img {
   position: absolute;
@@ -1829,9 +1842,6 @@ p {
   margin-top: 10px;
 }
 .footer-contact:hover {
-  background-position: 0 -258px;
-  height: 100px;
-  width: 160px;
   display: block;
 }
 .footer-contact:hover .legend {
@@ -1841,9 +1851,6 @@ p {
   color: #158ac4;
 }
 .footer-contact:hover .footer-talk-to-us-balloons {
-  background-position: -241px 0;
-  height: 98px;
-  width: 48px;
   display: block;
 }
 .footer-contact a:hover {
