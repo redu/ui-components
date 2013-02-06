@@ -49,7 +49,7 @@
   }
 
   $.fn.searchField.defaults = {
-    increment: 120
+    increment: 100
   }
 
   $.fn.searchField.Constructor = SearchField
@@ -60,13 +60,19 @@
 
   $(function () {
     $('body')
-      .on('focusin', '.form-search input[data-toggle]', function ( e ) {
+      .on('focusin', '.form-search-expandable', function ( e ) {
         var $searchField = $(e.target)
-        $searchField.searchField('expand')
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('expand')
+        }
       })
-      .on('focusout', '.form-search input[data-toggle]', function ( e ) {
+      .on('focusout', '.form-search-expandable', function ( e ) {
         var $searchField = $(e.target)
-        $searchField.searchField('collapse')
+
+        if ($searchField.hasClass('control-area')) {
+          $searchField.searchField('collapse')
+        }
       })
   })
 
