@@ -17,3 +17,13 @@ $sprite-sprite-base-class: ".sprite" !default;
 .sprite-after:after { @include pseudo-after(5px, false); }
 
 .sprite { display: inline-block; }
+
+.header-logo-wrapper:hover { @include sprite-sprite(light-logo); }
+
+.footer-logo-link:hover { @include sprite-sprite(light-logo); }
+
+.footer-contact:hover {
+  @include sprite-sprite(light-talk-to-us);
+
+  .footer-talk-to-us-balloons { @include sprite-sprite(talk-to-us_hover); }
+}
