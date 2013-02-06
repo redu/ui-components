@@ -7002,9 +7002,9 @@ hr {
   font-weight: 300;
   font-family: museo-sans, "Helvetica Neue", Arial, sans-serif;
 }
-.search-title-header + .search-content .search-results a.link-falso {
+.search-title-header + .search-content .search-results a.false-link {
   vertical-align: middle;
-  margin: -3px 0 0 201px;
+  margin: -3px 0 0 20px;
 }
 .search-title-header + .search-content .search-results .result-found .general-list-item {
   float: left;
@@ -7098,7 +7098,6 @@ hr {
 
 .form-search {
   float: left;
-  margin-right: 10px;
 }
 
 .tabs {
