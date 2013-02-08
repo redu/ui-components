@@ -7072,6 +7072,10 @@ hr {
   right: 0;
 }
 
+.nav-global-buttons-dropdown .form-search-filters .button-group {
+  position: absolute;
+}
+
 .main-wrapper {
   background-color: #f7f7f7;
 }
