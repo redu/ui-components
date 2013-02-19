@@ -6970,6 +6970,35 @@ hr {
   display: none;
 }
 
+.list-data {
+  height: 50px;
+}
+
+.middle-width {
+  float: left;
+  overflow: visible;
+  width: 90%;
+  width: -webkit-calc(50% - 50px);
+  width: -moz-calc(50% - 50px);
+  width: calc(50% - 50px);
+  list-style: none;
+}
+
+.member-list li.separator {
+  overflow: hidden;
+  list-style: none;
+  clear: both;
+}
+.member-list li.general-list-item {
+  float: left;
+  margin-left: 15px;
+}
+.member-list li.general-list-item .legend {
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 0;
+}
+
 .pull-right {
   float: right;
 }
