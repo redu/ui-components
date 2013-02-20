@@ -60,7 +60,7 @@
         // Classe adicionada quando o controle está marcado.
         controlCheckedClass: 'control-checked'
         // Classe que identifica um radio button.
-      , radioClass: 'radio'
+      , radioClass: 'control-radio'
       , darkenLabel: function(label) {
           label.toggleClass(settings.controlCheckedClass)
           label.siblings('.' + settings.radioClass).removeClass(settings.controlCheckedClass)
