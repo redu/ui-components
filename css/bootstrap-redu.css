@@ -4123,7 +4123,8 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .button-dropdown-arrow {
-  float: right;
+  vertical-align: middle;
+  display: inline-block;
   margin-top: 5px;
 }
 
