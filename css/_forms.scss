@@ -227,19 +227,23 @@ input[type="checkbox"]:focus {
 
   .gt-ie8 & { padding-top: 2px; }
 
+  .form-horizontal .control-inline & { padding-top: $formLabelTopPadding; }
+
   .control-inline & {
-    padding-top: $formLabelTopPadding + 2px;
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
 
-  .form-horizontal &:first-child { margin-top: $formLabelTopPadding; }
+  .form-horizontal &:first-child { padding-top: $formLabelTopPadding; }
 }
 
 .control-inline {
   .control-radio + .control-radio,
-  .control-checkbox + .control-checkbox { margin-left: 5px; }
+  .control-checkbox + .control-checkbox {
+    margin-left: 5px;
+    margin-top: 0;
+  }
 }
 
 .control-radio + .control-radio,

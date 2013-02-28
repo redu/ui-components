@@ -1079,21 +1079,25 @@ input[type="checkbox"]:focus {
 .control-checkbox {
   padding-top: 2px;
 }
+.form-horizontal .control-inline .control-radio, .form-horizontal .control-inline
+.control-checkbox {
+  padding-top: 7px;
+}
 .control-inline .control-radio, .control-inline
 .control-checkbox {
-  padding-top: 9px;
   display: inline-block;
   margin-bottom: 0;
   vertical-align: middle;
 }
 .form-horizontal .control-radio:first-child, .form-horizontal
 .control-checkbox:first-child {
-  margin-top: 7px;
+  padding-top: 7px;
 }
 
 .control-inline .control-radio + .control-radio,
 .control-inline .control-checkbox + .control-checkbox {
   margin-left: 5px;
+  margin-top: 0;
 }
 
 .control-radio + .control-radio,
