@@ -566,7 +566,7 @@ $.TokenList = function (input, url_or_data, settings) {
             }
 
             return $this_token;
-            
+
         }
     }
 
