@@ -729,33 +729,33 @@ hr {
 }
 
 // Fixar altura de contadores ex: (membros, cursos)
-.list-data { height: 50px; }  
+.list-data { height: 50px; }
 
-// Para elementos com largura igual à metade da largura total da tela 
+// Para elementos com largura igual à metade da largura total da tela
 .middle-width {
   float: left;
   overflow: visible;
   width: 90%;
   width: -webkit-calc(50% - 50px);
   width: -moz-calc(50% - 50px);
-  width: calc(50% - 50px); 
+  width: calc(50% - 50px);
 
   list-style: none;
 }
 
 // Para lista de membros
 .member-list {
-   li.separator { 
+  .separator {
     overflow: hidden;
     list-style: none;
     clear: both;
   }
 
-  li.general-list-item { 
+  .general-list-item {
     float: left;
-    margin-left: 15px; 
+    margin-left: 15px;
 
-     .legend {
+    .legend {
       font-size: 12px;
       line-height: 18px;
       margin-top: 0;

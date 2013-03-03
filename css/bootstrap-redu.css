@@ -6986,16 +6986,16 @@ hr {
   list-style: none;
 }
 
-.member-list li.separator {
+.member-list .separator {
   overflow: hidden;
   list-style: none;
   clear: both;
 }
-.member-list li.general-list-item {
+.member-list .general-list-item {
   float: left;
   margin-left: 15px;
 }
-.member-list li.general-list-item .legend {
+.member-list .general-list-item .legend {
   font-size: 12px;
   line-height: 18px;
   margin-top: 0;
