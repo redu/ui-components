@@ -6671,8 +6671,6 @@ hr {
 }
 
 .list-1-columns {
-  overflow: hidden;
-  padding-bottom: 1px;
   list-style: none;
   margin: 0;
 }
@@ -6680,7 +6678,7 @@ hr {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 100%;
+  width: 99%;
   width: -moz-calc((100% - ((1 - 1) * 10px)) / 1);
   width: -o-calc((100% - ((1 - 1) * 10px)) / 1);
   width: -webkit-calc((100% - ((1 - 1) * 10px)) / 1);
@@ -6689,34 +6687,43 @@ hr {
   float: left;
   position: relative;
 }
-.list-1-columns > li:first-child, .list-1-columns > li:nth-child(1n+1) {
+.list-1-columns > li:nth-child(1n+1) {
   margin-left: 0;
+  clear: left;
 }
 
-.list-1-columns.list-columns-separator > li:nth-child(1n) {
-  margin-bottom: 10px;
+.list-1-columns.list-columns-separator > li {
+  margin-top: 10px;
+}
+.list-1-columns.list-columns-separator > li:first-child:after {
+  display: none !important;
+}
+.list-1-columns.list-columns-separator > li:nth-child(1n+1) {
   position: relative;
 }
-.list-1-columns.list-columns-separator > li:nth-child(1n):after {
+.list-1-columns.list-columns-separator > li:nth-child(1n+1):after {
   background-color: #e6e6e6;
-  bottom: -5px;
+  bottom: 103%;
+  bottom: -moz-calc(100% + (10px / 2) - 1px);
+  bottom: -o-calc(100% + (10px / 2) - 1px);
+  bottom: -webkit-calc(100% + (10px / 2) - 1px);
+  bottom: calc(100% + (10px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;
-  right: 0;
+  left: 0;
   position: absolute;
-  width: 150%;
+  width: 100%;
+  width: -moz-calc(100% * 1 + 10px * (1 - 1));
+  width: -o-calc(100% * 1 + 10px * (1 - 1));
+  width: -webkit-calc(100% * 1 + 10px * (1 - 1));
+  width: calc(100% * 1 + 10px * (1 - 1));
 }
-.list-1-columns.list-columns-separator > li:nth-child(1n):last-child {
-  margin-bottom: 0;
-}
-.list-1-columns.list-columns-separator > li:nth-child(1n):last-child:after {
-  content: none;
+.list-1-columns.list-columns-separator > li:nth-child(1) {
+  margin-top: 0;
 }
 
 .list-2-columns {
-  overflow: hidden;
-  padding-bottom: 1px;
   list-style: none;
   margin: 0;
 }
@@ -6724,7 +6731,7 @@ hr {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 50%;
+  width: 49%;
   width: -moz-calc((100% - ((2 - 1) * 10px)) / 2);
   width: -o-calc((100% - ((2 - 1) * 10px)) / 2);
   width: -webkit-calc((100% - ((2 - 1) * 10px)) / 2);
@@ -6733,34 +6740,46 @@ hr {
   float: left;
   position: relative;
 }
-.list-2-columns > li:first-child, .list-2-columns > li:nth-child(2n+1) {
+.list-2-columns > li:nth-child(2n+1) {
   margin-left: 0;
+  clear: left;
 }
 
-.list-2-columns.list-columns-separator > li:nth-child(2n) {
-  margin-bottom: 10px;
+.list-2-columns.list-columns-separator > li {
+  margin-top: 10px;
+}
+.list-2-columns.list-columns-separator > li:first-child:after {
+  display: none !important;
+}
+.list-2-columns.list-columns-separator > li:nth-child(2n+1) {
   position: relative;
 }
-.list-2-columns.list-columns-separator > li:nth-child(2n):after {
+.list-2-columns.list-columns-separator > li:nth-child(2n+1):after {
   background-color: #e6e6e6;
-  bottom: -5px;
+  bottom: 103%;
+  bottom: -moz-calc(100% + (10px / 2) - 1px);
+  bottom: -o-calc(100% + (10px / 2) - 1px);
+  bottom: -webkit-calc(100% + (10px / 2) - 1px);
+  bottom: calc(100% + (10px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;
-  right: 0;
+  left: 0;
   position: absolute;
-  width: 250%;
+  width: 200%;
+  width: -moz-calc(100% * 2 + 10px * (2 - 1));
+  width: -o-calc(100% * 2 + 10px * (2 - 1));
+  width: -webkit-calc(100% * 2 + 10px * (2 - 1));
+  width: calc(100% * 2 + 10px * (2 - 1));
 }
-.list-2-columns.list-columns-separator > li:nth-child(2n):last-child {
-  margin-bottom: 0;
+.list-2-columns.list-columns-separator > li:nth-child(2) {
+  margin-top: 0;
 }
-.list-2-columns.list-columns-separator > li:nth-child(2n):last-child:after {
-  content: none;
+.list-2-columns.list-columns-separator > li:nth-child(1) {
+  margin-top: 0;
 }
 
 .list-3-columns {
-  overflow: hidden;
-  padding-bottom: 1px;
   list-style: none;
   margin: 0;
 }
@@ -6768,7 +6787,7 @@ hr {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 33.33333%;
+  width: 32.33333%;
   width: -moz-calc((100% - ((3 - 1) * 10px)) / 3);
   width: -o-calc((100% - ((3 - 1) * 10px)) / 3);
   width: -webkit-calc((100% - ((3 - 1) * 10px)) / 3);
@@ -6777,29 +6796,46 @@ hr {
   float: left;
   position: relative;
 }
-.list-3-columns > li:first-child, .list-3-columns > li:nth-child(3n+1) {
+.list-3-columns > li:nth-child(3n+1) {
   margin-left: 0;
+  clear: left;
 }
 
-.list-3-columns.list-columns-separator > li:nth-child(3n) {
-  margin-bottom: 10px;
+.list-3-columns.list-columns-separator > li {
+  margin-top: 10px;
+}
+.list-3-columns.list-columns-separator > li:first-child:after {
+  display: none !important;
+}
+.list-3-columns.list-columns-separator > li:nth-child(3n+1) {
   position: relative;
 }
-.list-3-columns.list-columns-separator > li:nth-child(3n):after {
+.list-3-columns.list-columns-separator > li:nth-child(3n+1):after {
   background-color: #e6e6e6;
-  bottom: -5px;
+  bottom: 103%;
+  bottom: -moz-calc(100% + (10px / 2) - 1px);
+  bottom: -o-calc(100% + (10px / 2) - 1px);
+  bottom: -webkit-calc(100% + (10px / 2) - 1px);
+  bottom: calc(100% + (10px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;
-  right: 0;
+  left: 0;
   position: absolute;
-  width: 350%;
+  width: 300%;
+  width: -moz-calc(100% * 3 + 10px * (3 - 1));
+  width: -o-calc(100% * 3 + 10px * (3 - 1));
+  width: -webkit-calc(100% * 3 + 10px * (3 - 1));
+  width: calc(100% * 3 + 10px * (3 - 1));
 }
-.list-3-columns.list-columns-separator > li:nth-child(3n):last-child {
-  margin-bottom: 0;
+.list-3-columns.list-columns-separator > li:nth-child(3) {
+  margin-top: 0;
 }
-.list-3-columns.list-columns-separator > li:nth-child(3n):last-child:after {
-  content: none;
+.list-3-columns.list-columns-separator > li:nth-child(2) {
+  margin-top: 0;
+}
+.list-3-columns.list-columns-separator > li:nth-child(1) {
+  margin-top: 0;
 }
 
 .general-list-item {
