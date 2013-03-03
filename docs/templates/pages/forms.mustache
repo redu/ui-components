@@ -570,6 +570,7 @@
       <div class="row">
         <div class="span6">
           <p>Os controles de checkbox/radio devem ser encapsulados por <code>.control-checkbox</code> e <code>.control-radio</code>, respectivamente.</p>
+          <p>Para que o comportamento de escurer o texto (dentro do <code>&lt;label&gt;</code>) quando o checkbox/radio estiver selecionado, é necessário que: o checkbox/radio esteja sendo encapsulado pelo <code>&lt;label&gt;</code> ou que caso o <code>&lt;label&gt;</code> não esteja encapsulando o checkbox/radio, que estes dois elementos estejam conectados pelo <code>input[id]</code> e <code>label[for]</code>.</p>
         </div>
         <div class="span7">
           <p>Adicionando <code>.control-inline</code> ao <code>.control-group</code>, os checkboxes/radios ficam em linha.</p>
@@ -654,19 +655,19 @@
                 </div>
                 <div class="controls">
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     1
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     2
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     3
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     4
                   </label>
                 </div>
@@ -729,19 +730,19 @@
                   </div>
                   <div class="controls span4">
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção um;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção dois;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção quarto.
                     </label>
                   </div>
@@ -752,19 +753,19 @@
                 </div>
                 <div class="controls span4">
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     1
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     2
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     3
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     4
                   </label>
                 </div>

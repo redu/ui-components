@@ -1,8 +1,3 @@
-/*
- * Redu Bootstrap v0.0.9
- *
- * Baseado no Bootstrap v2.1.1 do Twitter.
- */
 article,
 aside,
 details,
@@ -1084,21 +1079,25 @@ input[type="checkbox"]:focus {
 .control-checkbox {
   padding-top: 2px;
 }
+.form-horizontal .control-inline .control-radio, .form-horizontal .control-inline
+.control-checkbox {
+  padding-top: 7px;
+}
 .control-inline .control-radio, .control-inline
 .control-checkbox {
-  padding-top: 9px;
   display: inline-block;
   margin-bottom: 0;
   vertical-align: middle;
 }
 .form-horizontal .control-radio:first-child, .form-horizontal
 .control-checkbox:first-child {
-  margin-top: 7px;
+  padding-top: 7px;
 }
 
 .control-inline .control-radio + .control-radio,
 .control-inline .control-checkbox + .control-checkbox {
   margin-left: 5px;
+  margin-top: 0;
 }
 
 .control-radio + .control-radio,
@@ -4124,7 +4123,7 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 
 .button-dropdown-arrow {
   float: right;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .button-group .dropdown-toggle:active,
@@ -5102,12 +5101,15 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .nav-global-buttons-dropdown {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
   float: right;
 }
 
 .nav-global-button-dropdown {
-  padding: 5px 5px 5px 10px;
+  padding: 6px 5px 6px 7px;
+}
+.nav-global-button-dropdown:before {
+  float: left;
 }
 
 .nav-global-notify-dropdown {

@@ -145,12 +145,16 @@
 // ==========================================================================
 
 .nav-global-buttons-dropdown {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
   float: right;
 }
 
 // Botão dropdown.
-.nav-global-button-dropdown { padding: 5px 5px 5px 10px; }
+.nav-global-button-dropdown {
+  padding: 6px 5px 6px 7px;
+
+  &:before { float: left; }
+}
 
 // Dropdown do avise-me.
 // ==========================================================================
