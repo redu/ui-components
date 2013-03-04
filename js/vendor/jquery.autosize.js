@@ -3,7 +3,7 @@
 // license: www.opensource.org/licenses/mit-license.php
 
 (function ($, undefined) {
-	var 
+	var
 	hidden = 'hidden',
 	borderBox = 'border-box',
 	copy = '<textarea style="position:absolute; top:-9999px; left:-9999px; right:auto; bottom:auto; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box; word-wrap:break-word; height:0 !important; min-height:0 !important; overflow:hidden">',
@@ -27,7 +27,7 @@
 	if ($.isFunction(test[oninput]) || onpropertychange in test) {
 		$.fn.autosize = function (className) {
 			return this.each(function () {
-				var 
+				var
 				ta = this,
 				$ta = $(ta),
 				mirror,
@@ -52,8 +52,8 @@
 					resize = $ta.css('resize') === 'none' ? 'none' : 'horizontal';
 
 					$ta.data('mirror', $(mirror)).css({
-						overflow: hidden, 
-						overflowY: hidden, 
+						overflow: hidden,
+						overflowY: hidden,
 						wordWrap: 'break-word',
 						resize: resize
 					});
@@ -81,7 +81,7 @@
 						// Needed for IE to reliably return the correct scrollHeight
 						mirror.scrollTop = 0;
 
-						// Set a very high value for scrollTop to be sure the 
+						// Set a very high value for scrollTop to be sure the
 						// mirror is scrolled all the way to the bottom.
 						mirror.scrollTop = 9e4;
 
@@ -96,7 +96,7 @@
 						ta.style.overflowY = overflow;
 
 						ta.style.height = height + boxOffset + 'px';
-						
+
 						// This small timeout gives IE a chance to draw it's scrollbar
 						// before adjust can be run again (prevents an infinite loop).
 						setTimeout(function () {
@@ -106,7 +106,7 @@
 				}
 
 				// mirror is a duplicate textarea located off-screen that
-				// is automatically updated to contain the same text as the 
+				// is automatically updated to contain the same text as the
 				// original textarea.  mirror always has a height of 0.
 				// This gives a cross-browser supported way getting the actual
 				// height of the text, through the scrollTop property.
@@ -139,7 +139,7 @@
 				// Call adjust in case the textarea already contains text.
 				adjust();
 			});
-		}; 
+		};
 	} else {
 		// Makes no changes for older browsers (FireFox3- and Safari4-)
 		$.fn.autosize = function () {
