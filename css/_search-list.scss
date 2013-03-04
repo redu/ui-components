@@ -1,58 +1,58 @@
  .nav-global-buttons-dropdown .form-search-filters .button-group { position: absolute; }
 
-.main-wrapper {
-  background-color: $gray1;
-  & > .container {
-    padding: 17px 0 20px;
-    background: url("../img/icon/search-background_160.png") no-repeat 391px -49px;
-  }
-}
+// .main-wrapper {
+//   background-color: $gray1;
+//   & > .container {
+//     padding: 17px 0 20px;
+//     background: url("../img/icon/search-background_160.png") no-repeat 391px -49px;
+//   }
+// }
 
 .search-title-header {
-  position: relative;
-  overflow: hidden;
+  // position: relative;
+  // overflow: hidden;
 
-  .legend {
-    text-align: right;
-    line-height: 14px;
-  }
+  // .legend {
+  //   text-align: right;
+  //   line-height: 14px;
+  // }
 
   & + .search-content {
-    margin-top: 10px;
+    // margin-top: 10px;
     ul,
     ol,
     li { list-style: none; }
 
     .search-results {
-      .result-quantity {
-        padding-top: 10px;
-        text-align: center;
-        line-height: 18px;
-      }
+      // .result-quantity {
+      //   padding-top: 10px;
+      //   text-align: center;
+      //   line-height: 18px;
+      // }
 
-      .search-filter {
-        padding-top: 15px;
-        text-align: center;
-        .filters { display: inline-block; }
-      }
+      // .search-filter {
+        // padding-top: 15px;
+      //   text-align: center;
+      //   .filters { display: inline-block; }
+      // }
 
-      &.empty {
-        text-align: center;
-        p {
-          padding-top: 20px;
-          color: $gray4;
-        }
-        img { padding-top: 80px; }
-      }
+      // &.empty {
+      //   text-align: center;
+      //   p {
+      //     padding-top: 20px;
+      //     color: $gray4;
+      //   }
+      //   img { padding-top: 80px; }
+      // }
 
       .results-group {
-        margin: 10px 0;
+        margin: 0;
 
-        &.results-by-environment {
-          .general-list-item-column {
-            .legend + .general-list-item-counters { margin-top: 23px; }
-          }
-        }
+        // &.results-by-environment {
+        //   .general-list-item-column {
+        //     .legend + .general-list-item-counters { margin-top: 23px; }
+        //   }
+        // }
 
         &.results-by-space {
           .space-name { float: left; }
@@ -77,10 +77,10 @@
 
         &.results-by-course,
         &.results-by-space {
-          a img {
-            width: 36px;
-            height: 36px;
-          }
+          // a img {
+          //   width: 36px;
+          //   height: 36px;
+          // }
 
           .general-list-item-column .general-list-item-title + .legend { margin-top: 0; }
 
@@ -96,21 +96,21 @@
           }
         }
       }
-      .title-result {
-        padding: 0 20px;
+      // .title-result {
+      //   padding: 0 20px;
 
-        .title-result-name {
-          color: rgb(179, 179, 179);
-          font-size: 16px;
-          font-weight: 300;
-          font-family: $museo-sans;
-        }
-      }
+      //   .title-result-name {
+      //     color: rgb(179, 179, 179);
+      //     font-size: 16px;
+      //     font-weight: 300;
+      //     font-family: $museo-sans;
+      //   }
+      // }
 
-      a.false-link {
-        vertical-align: middle;
-        margin: -3px 0 0 20px;
-      }
+      // a.false-link {
+      //   vertical-align: middle;
+      //   margin: -3px 0 0 20px;
+      // }
 
       .result-found {
         .general-list-item {
@@ -188,45 +188,45 @@
     }
   }
 
-  .breadcrumb-mini { display: inline-block; }
+  // .breadcrumb-mini { display: inline-block; }
 
-  .search-title {
-    width: 201px;
-    cursor: pointer;
-  }
+  // .search-title {
+  //   width: 201px;
+  //   cursor: pointer;
+  // }
 
-  .legend {
-    width: 240px;
-    float: right;
-  }
+  // .legend {
+  //   width: 240px;
+  //   float: right;
+  // }
 
-  .search-title-link {
-    text-decoration: none;
-    font: 500 18px/21px museo-sans,"Helvetica Neue",Arial,sans-serif;
-    letter-spacing: -1px;
-    width: 140px;
-    margin-top: 4px;
-    vertical-align: middle;
+  // .search-title-link {
+  //   text-decoration: none;
+  //   font: 500 18px/21px museo-sans,"Helvetica Neue",Arial,sans-serif;
+  //   letter-spacing: -1px;
+  //   width: 140px;
+  //   margin-top: 4px;
+  //   vertical-align: middle;
 
-    &, &:visited { color: rgb(179, 179, 179); }
+  //   &, &:visited { color: rgb(179, 179, 179); }
 
-    &:hover, &:visited:hover { color: rgb(21, 138, 196); }
-  }
+  //   &:hover, &:visited:hover { color: rgb(21, 138, 196); }
+  // }
 
-  .breadcrumb-mini-wrapper {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    height: 18px;
-  }
+  // .breadcrumb-mini-wrapper {
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 100%;
+  //   text-align: center;
+  //   height: 18px;
+  // }
 }
 
-.form-search {
-  float: left;
-  margin-right: 10px;
-}
+// .form-search {
+//   float: left;
+//   margin-right: 10px;
+// }
 
-.tabs { margin-top: 14px; }
+// .tabs { margin-top: 14px; }
 
 .results-group { clear: both; } //está no mal colocado em relação à hierarquia do sass porque eu vou pensar numa melhor classe.

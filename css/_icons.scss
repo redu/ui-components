@@ -166,7 +166,7 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-environment-white_blue_16_18; }
 }
 .icon-environment-gray_16_18-before {
-  &:before { @extend .icon-environment-gray_16_18; }
+  &:before { @include icon-sprite(environment-gray_16_18); }
 }
 .icon-environment-black_16_18-before {
   &:before { @extend .icon-environment-black_16_18; }
@@ -192,6 +192,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-environment-gray_32_34-before {
   &:hover:before { @extend .icon-environment-blue_32_34; }
 }
+.open .icon-environment-gray_16_18 { @extend .icon-environment-lightblue_16_18; }
 
 .list-mix li.icon-environment-gray_32_34-before:hover {
   &:before { @extend .icon-environment-lightblue_32_34; }
@@ -328,9 +329,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-profile-lightblue_16_18; }
   &:hover:before { @extend .icon-profile-blue_16_18; }
 }
+.open .icon-profile-gray_16_18 { @extend .icon-profile-lightblue_16_18; }
 
 .icon-profile-gray_16_18-before {
-  &:before { @extend .icon-profile-gray_16_18; }
+  &:before { @include icon-sprite(profile-gray_16_18); }
 }
 
 .icon-profile-darkgray_32_34-before {
@@ -832,6 +834,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-magnifier-lightblue_16_18; }
   &:hover:before { @extend .icon-magnifier-blue_16_18; }
 }
+.icon-search-gray_48_50-before {
+  &:before { @extend .icon-search-gray_48_50; }
+  &:hover:before { @extend .icon-search-blue_48_50; }
+}
 
 // Central de Ajuda.
 .icon-help-central-gray_66-before {
@@ -887,6 +893,12 @@ a:hover,
 
   // Guia básico.
   .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-blue_16_18; }
+
+  // Ambiente.
+  .icon-environment-gray_16_18 { @extend .icon-environment-blue_16_18; }
+
+  // Perfil.
+  .icon-profile-gray_16_18 { @extend .icon-profile-blue_16_18; }
 
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
@@ -1152,6 +1164,12 @@ a:hover,
 .icon-invite-lightblue_16_18-before {
   &:before { @extend .icon-invite-lightblue_16_18; }
   &:hover:before { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-lightblue_16_18 {
+  &:hover { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-white_green_16_18-before {
+  &:before { @extend .icon-invite-white_green_16_18; }
 }
 
 // Tour

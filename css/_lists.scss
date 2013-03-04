@@ -10,6 +10,10 @@
 $general-list-item-stars-width: 88px;
 // O espaçamento entre as estrelas e os contadores.
 $general-list-item-stars-n-counters-gutter: 12px;
+// O espaçamento lateral externo da lista de resultados da busca.
+$search-results-list-external-horizontal-padding: 20px;
+// O espaçamento interno entre os resultados da lista de busca.
+$search-results-list-results-spacing: 20px;
 
 
 .courses-lists {
@@ -762,4 +766,51 @@ hr {
       margin-top: 0;
     }
   }
+}
+
+.user-n-environment-search-list-item {
+  .general-list-item-column +
+  .general-list-item-column {
+    height: 90px;
+    position: relative;
+    overflow: visible;
+    float: left;
+    $old-browser-value: 76%;
+    $expression: "100% - 100px";
+    @include calc("width", $expression, $old-browser-value);
+  }
+
+  .general-list-item-counters {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .general-list-item-title-link {
+    $old-browser-value: 90%;
+    // Para truncar o texto (100% - 10px espaçamento - 16px largura do ícone).
+    $expression: "100% - 10px - 16px";
+    @include calc("width", $expression, $old-browser-value);
+  }
+
+  .button-default,
+  .button-success { padding: 2px 6px; }
+
+  .button-dropdown { padding: 6px 10px; }
+
+  .nav-global-profile-item {
+    &,
+    &:last-child { padding: 0; }
+
+    a {
+      @include box-sizing;
+      width: 100%;
+      padding: 6px 10px 6px 17px;
+    }
+  }
+}
+
+.user-n-environment-search-list-item-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
