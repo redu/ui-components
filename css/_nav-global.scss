@@ -141,13 +141,19 @@
   &:hover:active { background: $blue4 !important; }
 }
 
+
+// Área a direita com o formulário de busca e dropdowns.
+// ==========================================================================
+.nav-global-right-area {
+  float: right;
+  padding-top: 4px;
+
+  .form-search +
+  .button-toolbar { margin-left: 10px; }
+}
+
 // Botões dropdown.
 // ==========================================================================
-
-.nav-global-buttons-dropdown {
-  margin: 4px 0 0;
-  float: right;
-}
 
 // Botão dropdown.
 .nav-global-button-dropdown {
