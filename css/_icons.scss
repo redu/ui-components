@@ -166,7 +166,7 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-environment-white_blue_16_18; }
 }
 .icon-environment-gray_16_18-before {
-  &:before { @extend .icon-environment-gray_16_18; }
+  &:before { @include icon-sprite(environment-gray_16_18); }
 }
 .icon-environment-black_16_18-before {
   &:before { @extend .icon-environment-black_16_18; }
@@ -192,6 +192,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-environment-gray_32_34-before {
   &:hover:before { @extend .icon-environment-blue_32_34; }
 }
+.open .icon-environment-gray_16_18 { @extend .icon-environment-lightblue_16_18; }
 
 .list-mix li.icon-environment-gray_32_34-before:hover {
   &:before { @extend .icon-environment-lightblue_32_34; }
@@ -216,7 +217,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-course-gray_16_18-before {
   &:before { @extend .icon-course-gray_16_18; }
-  &:hover:before { @extend .icon-course-gray_16_18; }
+  &:hover:before { @extend .icon-course-blue_16_18; }
 }
 .icon-course-lightblue_16_18-before,
 .header-list .icon-course-gray_16_18-before {
@@ -328,9 +329,15 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-profile-lightblue_16_18; }
   &:hover:before { @extend .icon-profile-blue_16_18; }
 }
+.open .icon-profile-gray_16_18 { @extend .icon-profile-lightblue_16_18; }
 
 .icon-profile-gray_16_18-before {
-  &:before { @extend .icon-profile-gray_16_18; }
+  &:before { @include icon-sprite(profile-gray_16_18); }
+}
+
+.icon-profile-darkgray_32_34-before {
+  &:before { @extend .icon-profile-darkgray_32_34; }
+  &:hover:before { @extend .icon-profile-darkgray_32_34; }
 }
 
 // Mensagens.
@@ -459,6 +466,10 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-contacts-gray_16_18-before {
   &:before { @extend .icon-contacts-gray_16_18; }
+  &:hover:before { @extend .icon-contacts-blue_16_18; }
+}
+.icon-contacts-green_16_18-before {
+  &:before { @extend .icon-contacts-green_16_18; }
 }
 
 // Colegas de classe.
@@ -520,6 +531,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-members-gray_16_18-before {
   &:before { @extend .icon-members-gray_16_18; }
+  &:hover:before { @extend .icon-members-blue_16_18; }
 }
 // Conta.
 .icon-account-lightblue_16_18-before {
@@ -551,6 +563,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-biography-gray_16_18-before {
   &:before { @extend .icon-biography-gray_16_18; }
 }
+.icon-biography-gray_8_10-before {
+  &:before { @extend .icon-biography-gray_8_10; }
+}
 
 // Currículo.
 .icon-curriculum-lightblue_16_18-before {
@@ -569,8 +584,14 @@ a.icon-teacher-gray_16_18-before {
 .icon-curriculum-academic-lightblue_32_34-before {
   &:before { @extend .icon-curriculum-academic-lightblue_32_34; }
 }
+.icon-curriculum-academic-gray_8_10-before {
+  &:before { @extend .icon-curriculum-academic-gray_8_10; }
+}
 .icon-curriculum-professional-lightblue_32_34-before {
   &:before { @extend .icon-curriculum-professional-lightblue_32_34; }
+}
+.icon-curriculum-professional-gray_8_10-before {
+  &:before { @extend .icon-curriculum-professional-gray_8_10; }
 }
 .list-button li:hover .icon-curriculum-lightblue_16_18-before {
   &:before {  @extend .icon-curriculum-blue_16_18; }
@@ -813,6 +834,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-magnifier-lightblue_16_18; }
   &:hover:before { @extend .icon-magnifier-blue_16_18; }
 }
+.icon-search-gray_48_50-before {
+  &:before { @extend .icon-search-gray_48_50; }
+  &:hover:before { @extend .icon-search-blue_48_50; }
+}
 
 // Central de Ajuda.
 .icon-help-central-gray_66-before {
@@ -869,6 +894,12 @@ a:hover,
   // Guia básico.
   .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-blue_16_18; }
 
+  // Ambiente.
+  .icon-environment-gray_16_18 { @extend .icon-environment-blue_16_18; }
+
+  // Perfil.
+  .icon-profile-gray_16_18 { @extend .icon-profile-blue_16_18; }
+
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
   .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
@@ -905,6 +936,11 @@ a:hover,
 .icon-institution-gray_32_34 {
   &:hover { @extend .icon-institution-blue_32_34; }
 }
+
+.icon-institution-gray_32_34 {
+  &:before { @extend .icon-institution-blue_32_34; }
+}
+
 
 // Estrela
 .icon-star-empty-gray_16_18-before {
@@ -1128,6 +1164,12 @@ a:hover,
 .icon-invite-lightblue_16_18-before {
   &:before { @extend .icon-invite-lightblue_16_18; }
   &:hover:before { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-lightblue_16_18 {
+  &:hover { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-white_green_16_18-before {
+  &:before { @extend .icon-invite-white_green_16_18; }
 }
 
 // Tour

@@ -518,8 +518,6 @@
   & > #{$list-item-class} {
     margin-top: $margin-top;
 
-    &:first-child:after { display: none !important; }
-
     &:nth-child(#{$n}n+1) {
       position: relative;
 
