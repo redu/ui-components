@@ -2138,6 +2138,7 @@ $(function() {
       $(this).reduSpinners('ajaxComplete')
     })
 })
+
 !function ($) {
 
   "use strict"; // jshint ;_;
