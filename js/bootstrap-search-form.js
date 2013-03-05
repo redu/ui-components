@@ -74,6 +74,13 @@
           $searchField.searchField('collapse')
         }
       })
+      .on("keypress", ".form-search-filters .control-area", function(e) {
+        // Submete o formulário quando o Enter é pressionado ao invés de abrir o dropdown.
+        if (e.which == 13) {
+          $(this).closest('.form-search-filters').submit();
+          return false;
+        }
+      })
   })
 
 }(window.jQuery);
