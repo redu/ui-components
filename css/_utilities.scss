@@ -1,5 +1,5 @@
 // ==========================================================================
-// Utilitários
+// Classes utilitárias
 // ==========================================================================
 
 
@@ -17,9 +17,6 @@
 
 // Visibilidade.
 .invisible { visibility: hidden; }
-
-// Substituição de texto.
-.text-replacement { @include text-replacement; }
 
 // Limpeza de floats.
 .clearfix { @include clear-fix; }

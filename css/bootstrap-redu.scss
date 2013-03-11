@@ -13,7 +13,7 @@
 @import "variables";
 @import "mixins";
 
-// Classes de utilidade.
+// Classes utilitárias.
 @import "utilities";
 
 // Sistema de grids e estrutura da página.
@@ -84,3 +84,6 @@
 
 // Mural.
 // @import "wall";
+
+// Classes utilitárias que precisam ficar no final.
+@import "utilities-last";
