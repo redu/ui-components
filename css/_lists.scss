@@ -6,14 +6,23 @@
 // Variáveis
 // ==========================================================================
 
+// Padding do item da lista geral.
+$general-list-item-padding: 5px;
 // A largura total das estrelas.
 $general-list-item-stars-width: 88px;
 // O espaçamento entre as estrelas e os contadores.
 $general-list-item-stars-n-counters-gutter: 12px;
-// O espaçamento lateral externo da lista de resultados da busca.
-$search-results-list-external-horizontal-padding: 20px;
-// O espaçamento interno entre os resultados da lista de busca.
-$search-results-list-results-spacing: 20px;
+// Padding comum a lista de resultados da busca por cursos e disciplinas.
+$course-n-space-search-list-item-padding: 10px;
+
+// Mixins
+// ==========================================================================
+
+// Estilos do estado hover de um item da lista geral.
+@mixin general-list-item-hover-style {
+  @include gradient($gray3, $gray1, 0.2);
+  @include box-shadow(0 1px 0 $gray4);
+}
 
 
 .courses-lists {
@@ -535,7 +544,7 @@ hr {
   margin: 10px 0;
   border-left: none;
   border-right: none;
-  border-top: 1px solid $gray3;
+  border-top: 1px solid $gray4;
   border-bottom: 1px solid $white;
 }
 
@@ -601,8 +610,10 @@ hr {
 
 // Item da lista.
 .general-list-item {
-  padding: 5px;
+  @include border-radius;
+  padding: $general-list-item-padding;
   color: $gray5;
+  position: relative;
 
   // Botão no canto inferior direito.
   .general-list-item-footer +
@@ -614,9 +625,7 @@ hr {
   }
 
   &:hover {
-    @include border-radius;
-    @include box-shadow(0 1px 0 $gray4);
-    @include gradient($gray3, $gray1, 0.2);
+    @include general-list-item-hover-style;
 
     &,
     .legend { color: $gray6; }
@@ -626,14 +635,11 @@ hr {
     .general-list-item-footer +
     .button-default { display: block; }
   }
+
+  .button-dropdown { padding: 6px 10px; }
+
+  .nav-global-profile-dropdown { width: 250px; }
 }
-
-// Título.
-//.general-list-item-title {
-//   font: 500 18px/18px $museo-sans;
-//  letter-spacing: -1px;
-//} Esse elemento já está envolvido pelo <h4> ou seja, já tem estes valores
-
 
 // Link (dentro do título).
 .general-list-item-title-link {
@@ -657,6 +663,8 @@ hr {
 
 // Colunas.
 .general-list-item-column {
+  position: relative;
+
   &:first-child { float: left; }
 
   &:last-child { overflow: hidden; }
@@ -733,6 +741,13 @@ hr {
   display: none;
 }
 
+// Botão localizado no canto inferior direito.
+.general-list-item-bottom-right-button {
+  position: absolute;
+  bottom: $general-list-item-padding;
+  right: $general-list-item-padding;
+}
+
 // Fixar altura de contadores ex: (membros, cursos)
 .list-data { height: 50px; }
 
@@ -768,16 +783,26 @@ hr {
   }
 }
 
+
+// Itens da lista de busca.
+// ==========================================================================
+
+
+// Limita a largura do texto para que não alcance o ícone superior direito. Para ser usado com .text-truncate.
+.general-list-item-text-overlap-icon {
+  $old-browser-value: 90%;
+  $icon-width: 16px;
+  $icon-margin-left: 10px;
+  $expression: "100% - (#{$icon-width} + #{$icon-margin-left})";
+  @include calc("width", $expression, $old-browser-value);
+}
+
+// Comum a lista de resultados da busca por perfils e ambientes.
 .user-n-environment-search-list-item {
-  .general-list-item-column +
-  .general-list-item-column {
-    height: 90px;
-    position: relative;
-    overflow: visible;
-    float: left;
-    $old-browser-value: 76%;
-    $expression: "100% - 100px";
-    @include calc("width", $expression, $old-browser-value);
+  .general-list-item-column:last-child {
+    // Fixa a altura porque algumas informações são opcionais.
+    $thumbnail-height: 90px;
+    height: $thumbnail-height;
   }
 
   .general-list-item-counters {
@@ -785,32 +810,41 @@ hr {
     bottom: 0;
   }
 
-  .general-list-item-title-link {
-    $old-browser-value: 90%;
-    // Para truncar o texto (100% - 10px espaçamento - 16px largura do ícone).
-    $expression: "100% - 10px - 16px";
-    @include calc("width", $expression, $old-browser-value);
-  }
+  .general-list-item-title { line-height: $base-line-height; }
+}
 
+// Lista de resultados da busca por perfils.
+.user-search-list-item {
   .button-default,
   .button-success { padding: 2px 6px; }
+}
 
-  .button-dropdown { padding: 6px 10px; }
+// Comum a lista de resultados da busca por cursos e disciplinas.
+.course-n-space-search-list-item {
+  @include general-list-item-hover-style;
 
-  .nav-global-profile-item {
-    &,
-    &:last-child { padding: 0; }
+  .general-list-item-title +
+  .legend { margin-top: 3px; }
 
-    a {
-      @include box-sizing;
-      width: 100%;
-      padding: 6px 10px 6px 17px;
-    }
+  .legend +
+  .general-list-item-counters { margin-top: 16px; }
+}
+
+// Lista de resultados da busca por cursos.
+.course-search-list-item {
+  padding: $course-n-space-search-list-item-padding;
+
+  .general-list-item-bottom-right-button {
+    bottom: $course-n-space-search-list-item-padding;
+    right: $course-n-space-search-list-item-padding;
   }
 }
 
-.user-n-environment-search-list-item-button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+// Lista de resultados da busca por disciplina.
+.space-search-list-item {
+  padding: 0;
+
+  .general-list-item-body { padding: $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding 0; }
+
+  .general-list-item-footer { padding: 0 $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding; }
 }
