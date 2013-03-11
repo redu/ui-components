@@ -2,6 +2,18 @@
 // Navegação global
 // ==========================================================================
 
+
+// Variáveis
+// ==========================================================================
+
+// Padding vertical dos links do dropdown da navegação global.
+$nav-global-profile-item-link-padding-vertical: 6px;
+// Padding horizontal dos links do dropdown da navegação global.
+$nav-global-profile-item-link-padding-horizontal: 10px;
+// Padding horizontal extra dos links do dropdown da navegação global.
+$nav-global-profile-item-link-padding-horizontal-extra: 7px;
+
+
 // Barra.
 // ==========================================================================
 
@@ -272,14 +284,13 @@
 }
 
 // Item.
-.nav-global-profile-item {
-  padding: 6px 10px 6px 17px;
-  overflow: hidden;
+.nav-global-profile-item { position: relative; }
 
-  &:last-child {
-    // Padding esquerda + largura ícone + margin direita ícone.
-    padding-left: 17px + 16px + 5px;
-  }
+// Link.
+.nav-global-profile-item-link {
+  @include box-sizing;
+  width: 100%;
+  padding: $nav-global-profile-item-link-padding-vertical $nav-global-profile-item-link-padding-horizontal $nav-global-profile-item-link-padding-vertical ($nav-global-profile-item-link-padding-horizontal + $nav-global-profile-item-link-padding-horizontal-extra);
 
   &:hover {
     @include box-shadow(0 0 0 1px $white inset);
@@ -287,7 +298,16 @@
   }
 }
 
-.nav-global-profile-edit {
-  float: right;
-  margin-top: 4px;
+// Link sem ícone.
+.nav-global-profile-item-link-iconless {
+  $icon-width: 16px;
+  $icon-margin-right: 5px;
+  padding-left: ($nav-global-profile-item-link-padding-horizontal + $nav-global-profile-item-link-padding-horizontal-extra) + $icon-width + $icon-margin-right;
+}
+
+// Link secundário.
+.nav-global-profile-item-link-secondary {
+  position: absolute;
+  top: $nav-global-profile-item-link-padding-vertical + 4px;
+  right: $nav-global-profile-item-link-padding-horizontal;
 }
