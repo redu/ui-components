@@ -117,7 +117,7 @@
       var $this = $(this)
 
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit, button[type="text"]')
+        var $submit = $this.find('input:submit, button[type="submit"]')
 
         $submit
           .removeClass($submit.data('spinnerClass'))
