@@ -6793,7 +6793,7 @@ hr {
 }
 
 .list-1-columns.list-columns-separator > li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .list-1-columns.list-columns-separator > li:nth-child(1n+1) {
   position: relative;
@@ -6801,10 +6801,10 @@ hr {
 .list-1-columns.list-columns-separator > li:nth-child(1n+1):after {
   background-color: #e6e6e6;
   bottom: 103%;
-  bottom: -moz-calc(100% + (10px / 2) - 1px);
-  bottom: -o-calc(100% + (10px / 2) - 1px);
-  bottom: -webkit-calc(100% + (10px / 2) - 1px);
-  bottom: calc(100% + (10px / 2) - 1px);
+  bottom: -moz-calc(100% + (20px / 2) - 1px);
+  bottom: -o-calc(100% + (20px / 2) - 1px);
+  bottom: -webkit-calc(100% + (20px / 2) - 1px);
+  bottom: calc(100% + (20px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;
@@ -6843,7 +6843,7 @@ hr {
 }
 
 .list-2-columns.list-columns-separator > li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .list-2-columns.list-columns-separator > li:nth-child(2n+1) {
   position: relative;
@@ -6851,10 +6851,10 @@ hr {
 .list-2-columns.list-columns-separator > li:nth-child(2n+1):after {
   background-color: #e6e6e6;
   bottom: 103%;
-  bottom: -moz-calc(100% + (10px / 2) - 1px);
-  bottom: -o-calc(100% + (10px / 2) - 1px);
-  bottom: -webkit-calc(100% + (10px / 2) - 1px);
-  bottom: calc(100% + (10px / 2) - 1px);
+  bottom: -moz-calc(100% + (20px / 2) - 1px);
+  bottom: -o-calc(100% + (20px / 2) - 1px);
+  bottom: -webkit-calc(100% + (20px / 2) - 1px);
+  bottom: calc(100% + (20px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;
@@ -6896,7 +6896,7 @@ hr {
 }
 
 .list-3-columns.list-columns-separator > li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .list-3-columns.list-columns-separator > li:nth-child(3n+1) {
   position: relative;
@@ -6904,10 +6904,10 @@ hr {
 .list-3-columns.list-columns-separator > li:nth-child(3n+1):after {
   background-color: #e6e6e6;
   bottom: 103%;
-  bottom: -moz-calc(100% + (10px / 2) - 1px);
-  bottom: -o-calc(100% + (10px / 2) - 1px);
-  bottom: -webkit-calc(100% + (10px / 2) - 1px);
-  bottom: calc(100% + (10px / 2) - 1px);
+  bottom: -moz-calc(100% + (20px / 2) - 1px);
+  bottom: -o-calc(100% + (20px / 2) - 1px);
+  bottom: -webkit-calc(100% + (20px / 2) - 1px);
+  bottom: calc(100% + (20px / 2) - 1px);
   content: "";
   display: block;
   height: 1px;

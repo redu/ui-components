@@ -483,26 +483,26 @@
 }
 
 // Dado uma lista, organiza seus itens em colunas de tamanhos iguais.
-//  $columns: a quantidade de colunas desejada.
+//  $n: a quantidade de colunas desejada.
 //  $gutter: o espaçamento esquerdo entre cada item.
 //  $list-item-class: o nome da classe ou elemento do item da lista.
-@mixin list-column($columns: 2, $gutter: 10px, $list-item-class: "li") {
+@mixin list-column($n: 2, $gutter: 10px, $list-item-class: "li") {
   list-style: none;
   margin: 0;
 
   & > #{$list-item-class} {
     @include box-sizing;
-    $old-browser-value: percentage(((100 / $columns) - 1) / 100);
+    $old-browser-value: percentage(((100 / $n) - 1) / 100);
     // Calcula a porcentagem de largura de cada item, levando em consideração
     // também os espaçamentos esquerdos.
-    $expression: "(100% - ((#{$columns} - 1) * #{$gutter})) / #{$columns}";
+    $expression: "(100% - ((#{$n} - 1) * #{$gutter})) / #{$n}";
     @include calc("width", $expression, $old-browser-value);
     margin-left: $gutter;
     float: left;
     position: relative;
 
-    // Remove o espaçamento de cada ($columns+1)-ésimo item.
-    &:nth-child(#{$columns}n+1) {
+    // Remove o espaçamento de cada ($n+1)-ésimo item.
+    &:nth-child(#{$n}n+1) {
       margin-left: 0;
       clear: left;
     }
@@ -511,10 +511,12 @@
 
 // Dado uma lista, adiciona uma linha separadora depois de cada $n-ésimo item.
 //  $n: a ordem do item em que o separador será incluído.
+//  $gutter: o espaçamento esquerdo entre cada item.
 //  $margin-top: o tamanho do espaçamento entre linhas.
 //  $color: a cor do separador.
 //  $list-item-class: o nome da classe ou elemento do item da lista.
-@mixin list-column-separator($n: 2, $margin-top: 10px, $color: $gray3, $list-item-class: "li") {
+@mixin list-column-separator($n: 2, $gutter: 10px, $margin-top: 20px,
+  $color: $gray3, $list-item-class: "li") {
   & > #{$list-item-class} {
     margin-top: $margin-top;
 
@@ -532,7 +534,7 @@
         left: 0;
         position: absolute;
         $old-browser-value: percentage((100 * $n) / 100);
-        $expression: "100% * #{$n} + #{$margin-top} * (#{$n} - 1)";
+        $expression: "100% * #{$n} + #{$gutter} * (#{$n} - 1)";
         @include calc("width", $expression, $old-browser-value);
       }
     }
