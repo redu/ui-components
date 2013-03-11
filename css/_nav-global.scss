@@ -260,7 +260,10 @@
 }
 
 // Cabeçalho.
-.nav-global-profile-header { padding: 10px 10px 9px; }
+.nav-global-profile-header {
+  display: block;
+  padding: 10px 10px 9px;
+}
 
 // Lista.
 .nav-global-profile-items {
