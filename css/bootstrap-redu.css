@@ -7263,6 +7263,186 @@ hr {
   padding: 0 10px 10px;
 }
 
+.invitation-token {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 #e6e6e6;
+  -moz-box-shadow: 0 1px 0 #e6e6e6;
+  box-shadow: 0 1px 0 #e6e6e6;
+  border: 1px solid white;
+}
+.invitation-token +
+.invitation-token {
+  margin-top: 5px;
+}
+
+.invitation-token-thumbnail {
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+  float: left;
+}
+
+.invitation-token-inner {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 7px 10px;
+  background-color: #e1f1e1;
+}
+.invitation-token-thumbnail +
+.invitation-token-inner {
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 91%;
+  width: -moz-calc(100% - 32px);
+  width: -o-calc(100% - 32px);
+  width: -webkit-calc(100% - 32px);
+  width: calc(100% - 32px);
+  float: left;
+  padding-left: 5px;
+  background-color: #e6e6e6;
+}
+
+.invitation-token-email +
+.invitation-token-legend {
+  margin-left: 10px;
+}
+
+.invitation-token-title {
+  width: 96%;
+  width: -moz-calc(100% - (10px + 16px));
+  width: -o-calc(100% - (10px + 16px));
+  width: -webkit-calc(100% - (10px + 16px));
+  width: calc(100% - (10px + 16px));
+  display: block;
+}
+
+.invitation-token-email {
+  max-width: 74%;
+  max-width: -moz-calc(100% - (10px + 115px));
+  max-width: -o-calc(100% - (10px + 115px));
+  max-width: -webkit-calc(100% - (10px + 115px));
+  max-width: calc(100% - (10px + 115px));
+  width: auto;
+  display: inline-block;
+}
+
+.invitation-token-legend {
+  width: 115px;
+}
+
+.invitation {
+  padding: 0;
+}
+.invitation +
+.invitation {
+  margin-top: 5px;
+}
+
+.invitation-thumbnail {
+  -webkit-border-top-left-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  border-top-left-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.invitation-inner {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  padding: 9px 10px 10px;
+}
+.invitation-thumbnail-link +
+.invitation-inner {
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 91%;
+  width: -moz-calc(100% - 48px);
+  width: -o-calc(100% - 48px);
+  width: -webkit-calc(100% - 48px);
+  width: calc(100% - 48px);
+  float: left;
+}
+.invitation-inner .invitation-link-remove {
+  margin-top: 6px;
+}
+
+.invitation-thumbnail-link {
+  float: left;
+}
+
+.invitation-title {
+  width: 83%;
+  width: -moz-calc(100% - (10px + 50px + 10px + 16px));
+  width: -o-calc(100% - (10px + 50px + 10px + 16px));
+  width: -webkit-calc(100% - (10px + 50px + 10px + 16px));
+  width: calc(100% - (10px + 50px + 10px + 16px));
+  display: block;
+  color: #4dadd6;
+}
+
+.invitation-legend {
+  display: block;
+}
+
+.invitation-link-remove +
+.invitation-link-resend {
+  margin-right: 10px;
+}
+
+.invitation-link-resend {
+  width: 50px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.invitation-link-remove,
+.invitation-link-resend {
+  float: right;
+}
+
+.invitation-title-link {
+  max-width: 78%;
+  max-width: -moz-calc(100% - (10px + 75px));
+  max-width: -o-calc(100% - (10px + 75px));
+  max-width: -webkit-calc(100% - (10px + 75px));
+  max-width: calc(100% - (10px + 75px));
+  width: auto;
+}
+.invitation-title-link[class*="icon-"][class*="-before"]:before {
+  vertical-align: bottom;
+}
+
+.invitation-title-link +
+.invitation-title-role {
+  margin-left: 10px;
+}
+
+.invitation-title-role {
+  width: 75px;
+}
+
 .text-replacement {
   border: 0;
   font: 0/0 a;
