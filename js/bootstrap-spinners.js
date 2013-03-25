@@ -38,20 +38,6 @@
 
       var $this = $(this)
 
-      // Encontra possíveis classes de ícones.
-      var findIconClasses = function(classes) {
-        var iconClasses = []
-
-        classes = classes.split(' ')
-        $.each(classes, function(index, value) {
-          if (value.indexOf('icon-') !== -1) {
-            iconClasses.push(value)
-          }
-        })
-
-        return iconClasses.join(' ')
-      }
-
       // Se for um formulário.
       if ($this.is('form')) {
         var $submit = $this.find('input:submit, button[type="submit"]')
