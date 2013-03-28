@@ -768,7 +768,7 @@ a.icon-teacher-gray_16_18-before {
 // Portal de Aplicativos.
 .icon-apps-portal-gray_48_50-before {
   &:before { @extend .icon-apps-portal-gray_48_50; }
-  &:hover:before { @extend .icon-apps-portal-halfgray_halfblue_48_50; }
+  &:hover:before { @extend .icon-apps-portal-blue_48_50; }
 }
 .icon-apps-portal-lightblue_16_18-before {
   &:before { @extend .icon-apps-portal-lightblue_16_18; }
