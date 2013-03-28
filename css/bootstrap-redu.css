@@ -1987,7 +1987,7 @@ a:hover .button-disabled:hover .icon-arrow-down-lightblue_8_10,
 .button-default:hover .icon-comment-lightblue_16_18-before:before, .icon-comment-gray_16_18, .icon-comment-gray_16_18-before:before, .icon-comment-lightblue_16_18, .icon-comment-lightblue_16_18-before:before, .icon-comment-white_blue_32_34, .icon-comment-white_blue_32_34-before:before, .icon-connections-blue_32_34, .icon-connections-gray_32_34:hover, .icon-connections-gray_32_34-before:hover:before, .icon-connections-gray_32_34, .icon-connections-gray_32_34-before:before, .icon-contacts-blue_16_18, .icon-contacts-lightblue_16_18-before:hover:before, .filter:hover .icon-contacts-lightblue_16_18-before:before, .icon-contacts-gray_16_18-before:hover:before, .nav-local-item.icon-contacts_16_18-before:hover:before, .icon-contacts-gray_16_18, .icon-contacts-gray_16_18-before:before, .icon-contacts-green_16_18, .icon-contacts-green_16_18-before:before, .icon-contacts-lightblue_16_18, .icon-contacts-lightblue_16_18-before:before, .nav-local-item.icon-contacts_16_18-before:before, .icon-contacts-white_blue_16_18, .icon-contacts-white_blue_16_18-before:before, .nav-local-item.icon-contacts_16_18-before.nav-local-item-active:before, .icon-contacts-white_green_16_18, .icon-content-blue_16_18, .icon-content-lightblue_16_18-before:hover:before, .icon-content-gray_16_18, .icon-content-gray_16_18-before:before, .icon-content-lightblue_16_18, .icon-content-lightblue_16_18-before:before, .icon-correct-gray_16_18, .icon-correct-gray_16_18-before:before, .icon-correct-green_16_18, .icon-correct-green_16_18-after:after, .icon-correct-green_8_10, .icon-course-blue_16_18, .filter:hover .icon-course-lightblue_16_18-before:before, .icon-course-gray_16_18-before:hover:before, .icon-course-lightblue_16_18-before:hover:before,
 .header-list .icon-course-gray_16_18-before:hover:before, .header-item:hover .icon-course-gray_16_18-before:before,
 .header-item:hover .icon-course-lightblue_16_18-before:before, .icon-course-blue_32_34, .icon-course-gray_32_34-before:hover:before,
-.icon-course-lightblue_32_34-before:hover:before, .list-mix .icon-course-lightgray_32_34-before:hover:before, a:hover .icon-course-gray_32_34, a:hover .icon-course-gray_32_34-before:before,
+.icon-course-lightblue_32_34-before:hover:before, .icon-course-blue_32_34-before, .list-mix .icon-course-lightgray_32_34-before:hover:before, a:hover .icon-course-gray_32_34, a:hover .icon-course-gray_32_34-before:before,
 a:hover .icon-course-lightblue_32_34,
 a:hover .icon-course-lightblue_32_34-before:before,
 .filter:hover .icon-course-gray_32_34,
@@ -2024,7 +2024,7 @@ a:hover .icon-magnifier-lightblue_16_18-before:before,
 .button-default:hover .icon-request-help-lightblue_16_18,
 .button-default:hover .icon-request-help-lightblue_16_18-before:before, .icon-request-help-gray_16_18, .icon-request-help-gray_16_18-before:before, .icon-request-help-lightblue_16_18, .icon-request-help-lightblue_16_18-before:before, .icon-request-help-lightorange_16_18, .icon-request-help-lightorange_16_18-before:before, .icon-request-help-orange_16_18, .icon-request-help-orange_16_18-before:before, .request-help-stats-new.icon-request-help-lightorange_16_18-before:hover:before, .icon-say-hi-green_48_50, .icon-say-hi-green_48_50-before:before, .icon-search-background_160, .icon-search-blue_48_50, .icon-search-gray_48_50-before:hover:before, .icon-search-empty_128_130, .icon-search-gray_48_50, .icon-search-gray_48_50-before:before, .icon-seen-gray_16_18, .icon-seen-gray_16_18-before:before, .icon-sent-message-blue_16_18, .tabs .icon-message-sent_16_18-before:hover:before, .icon-sent-message-blue_32_34, .header-breadcrumb:hover .icon-sent-message-gray_32_34-before:before, .icon-sent-message-gray_32_34, .icon-sent-message-gray_32_34-before:before, .icon-sent-message-lightblue_16_18, .tabs .icon-message-sent_16_18-before:before, .icon-social-networks-blue_16_18, .icon-social-networks-lightblue_16_18-before:hover:before, .list-button li:hover .icon-social-networks-lightblue_16_18-before:before, .icon-social-networks-lightblue_16_18, .icon-social-networks-lightblue_16_18-before:before, .icon-space-blue_16_18, .icon-space-gray_16_18-before:hover:before, .icon-space-lightblue_16_18-before:hover:before, .header-item:hover .icon-space-gray_16_18-before:before,
 .header-item:hover .icon-space-lightblue_16_18-before:before, .icon-space-blue_32_34, .icon-space-gray_32_34-before:hover:before,
-.icon-space-lightblue_32_34-before:hover:before, a:hover .icon-space-gray_32_34, a:hover .icon-space-gray_32_34-before:before,
+.icon-space-lightblue_32_34-before:hover:before, .icon-space-blue_32_34-before, a:hover .icon-space-gray_32_34, a:hover .icon-space-gray_32_34-before:before,
 a:hover .icon-space-lightblue_32_34,
 a:hover .icon-space-lightblue_32_34-before:before,
 .filter:hover .icon-space-gray_32_34,
@@ -2035,7 +2035,7 @@ a:hover .icon-space-lightblue_32_34-before:before,
 .button-default:hover .icon-space-gray_32_34-before:before,
 .button-default:hover .icon-space-lightblue_32_34,
 .button-default:hover .icon-space-lightblue_32_34-before:before, .icon-space-gray_16_18, .icon-space-gray_16_18-before:before, .icon-space-gray_32_34, .icon-space-gray_32_34-before:before, .icon-space-lightblue_16_18, .icon-space-lightblue_16_18-before:before, .icon-space-lightblue_32_34, .icon-space-lightblue_32_34-before:before, .icon-space-lightgray_32_34, .icon-space-lightgray_32_34-before:before, .icon-specialist-gray_16_18, .icon-specialist-gray_16_18-before:before, .icon-specialist-gray_32_34, .icon-specialist-gray_32_34-before:before, .icon-specialist-white_blue_32_34, .icon-specialist-white_blue_32_34-before:before, .icon-star-empty-gray_16_18, .icon-star-empty-gray_16_18-before:before, .icon-star-empty-gray_8_10, .icon-star-full-blue_16_18, .icon-star-full-gray_16_18, .icon-star-full-gray_8_10, .icon-star-full-lightblue_16_18, .icon-star-full-lightgray_16_18, .icon-subject-blue_16_18, .filter:hover .icon-subject-lightblue_16_18-before:before, .icon-subject-lightblue_16_18-before:hover:before, .list-button li:hover .icon-subject-lightblue_16_18-before:before, .icon-subject-blue_32_34, .icon-subject-gray_32_34-before:hover:before,
-.icon-subject-lightblue_32_34-before:hover:before, a:hover .icon-subject-gray_32_34, a:hover .icon-subject-gray_32_34-before:before,
+.icon-subject-lightblue_32_34-before:hover:before, .icon-subject-blue_32_34-before, a:hover .icon-subject-gray_32_34, a:hover .icon-subject-gray_32_34-before:before,
 a:hover .icon-subject-lightblue_32_34,
 a:hover .icon-subject-lightblue_32_34-before:before,
 .filter:hover .icon-subject-gray_32_34,
@@ -2048,7 +2048,7 @@ a:hover .icon-subject-lightblue_32_34-before:before,
 .button-default:hover .icon-subject-lightblue_32_34-before:before, .icon-subject-gray_16_18, .icon-subject-gray_16_18-before:before, .icon-subject-gray_32_34, .icon-subject-gray_32_34-before:before, .icon-subject-lightblue_16_18, .icon-subject-lightblue_16_18-before:before, .icon-subject-lightblue_32_34, .icon-subject-lightblue_32_34-before:before, .icon-subject-lightgray_32_34, .icon-subject-lightgray_32_34-before:before, .icon-subject-white_blue_16_18, .icon-subject-white_blue_16_18-before:before, .icon-support-blue_16_18, .icon-support-lightblue_16_18-before:hover:before, .list-button li:hover .icon-support-lightblue_16_18-before:before, .icon-support-lightblue_16_18, .icon-support-lightblue_16_18-before:before, .icon-tag-blue_16_18, .icon-tag-gray_16_18:hover,
 .icon-tag-lightblue_16_18:hover, .icon-tag-gray_16_18, .icon-tag-lightblue_16_18, .icon-talk-to-us-green_48_50, .icon-talk-to-us-green_48_50-before:before, .icon-teacher-blue_16_18, .icon-teacher-lightblue_16_18-before:hover:before,
 a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:hover:before, .icon-teacher-blue_32_34, .icon-teacher-lightblue_32_34-before:hover:before, .icon-teacher-gray_32_34-before:hover:before, .guides-list-item:hover .icon-teacher-lightblue_32_34-before:before, .icon-teacher-gray_16_18, .icon-teacher-gray_16_18-before:before, .icon-teacher-gray_32_34, .icon-teacher-gray_32_34-before:before, .icon-teacher-lightblue_16_18, .icon-teacher-lightblue_16_18-before:before, .icon-teacher-lightblue_32_34, .icon-teacher-lightblue_32_34-before:before, .icon-teacher-white_16_18, .icon-teacher-white_16_18-before:before, .icon-teacher-lightblue_16_18-before.nav-local-item-active:before, .icon-terms-of-service-darkgray_32_34, .icon-terms-of-service-darkgray_32_34-before:before, .icon-text-page-blue_16_18, .list-button li:hover .icon-text-page-lightblue_16_18-before:before, .icon-text-page-lightblue_16_18, .icon-text-page-lightblue_16_18-before:before, .icon-tour-blue_16_18, .icon-tour-lightblue_16_18-before:hover:before, .icon-tour-lightblue_16_18, .icon-tour-lightblue_16_18-before:before, .icon-tour-white_16_18, .icon-tour-white_16_18-before:before, .icon-tutor-blue_16_18, .icon-tutor-lightblue_16_18-before:hover:before, .icon-tutor-gray_16_18, .icon-tutor-gray_16_18-before:before, .icon-tutor-lightblue_16_18, .icon-tutor-lightblue_16_18-before:before, .icon-video-blue_16_18, .list-button li:hover .icon-video-lightblue_16_18-before:before, .icon-video-gray_16_18-before:hover:before, .icon-video-gray_16_18, .icon-video-gray_16_18-before:before, .icon-video-lightblue_16_18, .icon-video-lightblue_16_18-before:before, .icon-wall-blue_16_18, .filter:hover .icon-wall-lightblue_16_18-before:before, .icon-wall-gray_16_18-before:hover:before, .icon-wall-lightblue_16_18-before:hover:before, .wall-stats-new.icon-wall-lightblue_16_18-before:hover:before, .list-button li:hover .icon-wall-lightblue_16_18-before:before, .nav-local-item.icon-wall_16_18-before:hover:before, .icon-wall-blue_32_34, .icon-wall-gray_32_34-before:hover:before, .icon-wall-gray_16_18, .icon-wall-gray_16_18-before:before, .icon-wall-gray_32_34, .icon-wall-gray_32_34-before:before, .icon-wall-lightblue_16_18, .icon-wall-lightblue_16_18-before:before, .nav-local-item.icon-wall_16_18-before:before, .icon-wall-white_blue_16_18, .icon-wall-white_blue_16_18-before:before, .nav-local-item.icon-wall_16_18-before.nav-local-item-active:before, .icon-wiki-blue_16_18, .icon-wiki-lightblue_16_18-before:hover:before, .icon-wiki-lightblue_16_18, .icon-wiki-lightblue_16_18-before:before, .icon-wiki-white_blue_16_18, .icon-wiki-white_blue_16_18-before:before, .icon-environment-gray_16_18-before:before, .icon-profile-gray_16_18-before:before, .icon-description-gray_16_18-before:before, .icon-tag-gray_16_18-before:before, .button-disabled .icon-close-gray_8_10:hover, .button-disabled .icon-close-gray_8_10-before:hover:before, .icon-favorite-gray_32_34-before:hover:before, .icon-basic-guide-gray_16_18-before:before {
-  background: url('../img/icon-s4f9e1f3808.png') no-repeat;
+  background: url('../img/icon-s1e1937a143.png') no-repeat;
 }
 
 .icon-account-blue_16_18, .icon-account-lightblue_16_18-before:hover:before, .tabs .icon-account_16_18-before:hover:before {
@@ -2651,7 +2651,7 @@ a:hover .button-disabled:hover .icon-arrow-down-lightblue_8_10,
 }
 
 .icon-course-blue_32_34, .icon-course-gray_32_34-before:hover:before,
-.icon-course-lightblue_32_34-before:hover:before, .list-mix .icon-course-lightgray_32_34-before:hover:before, a:hover .icon-course-gray_32_34, a:hover .icon-course-gray_32_34-before:before,
+.icon-course-lightblue_32_34-before:hover:before, .icon-course-blue_32_34-before, .list-mix .icon-course-lightgray_32_34-before:hover:before, a:hover .icon-course-gray_32_34, a:hover .icon-course-gray_32_34-before:before,
 a:hover .icon-course-lightblue_32_34,
 a:hover .icon-course-lightblue_32_34-before:before,
 .filter:hover .icon-course-gray_32_34,
@@ -3738,7 +3738,7 @@ a:hover .icon-magnifier-lightblue_16_18-before:before,
 }
 
 .icon-space-blue_32_34, .icon-space-gray_32_34-before:hover:before,
-.icon-space-lightblue_32_34-before:hover:before, a:hover .icon-space-gray_32_34, a:hover .icon-space-gray_32_34-before:before,
+.icon-space-lightblue_32_34-before:hover:before, .icon-space-blue_32_34-before, a:hover .icon-space-gray_32_34, a:hover .icon-space-gray_32_34-before:before,
 a:hover .icon-space-lightblue_32_34,
 a:hover .icon-space-lightblue_32_34-before:before,
 .filter:hover .icon-space-gray_32_34,
@@ -3851,7 +3851,7 @@ a:hover .icon-space-lightblue_32_34-before:before,
 }
 
 .icon-subject-blue_32_34, .icon-subject-gray_32_34-before:hover:before,
-.icon-subject-lightblue_32_34-before:hover:before, a:hover .icon-subject-gray_32_34, a:hover .icon-subject-gray_32_34-before:before,
+.icon-subject-lightblue_32_34-before:hover:before, .icon-subject-blue_32_34-before, a:hover .icon-subject-gray_32_34, a:hover .icon-subject-gray_32_34-before:before,
 a:hover .icon-subject-lightblue_32_34,
 a:hover .icon-subject-lightblue_32_34-before:before,
 .filter:hover .icon-subject-gray_32_34,
@@ -7453,6 +7453,204 @@ hr {
 
 .invitation-title-role {
   width: 75px;
+}
+
+.status-list .status {
+  overflow: hidden;
+  margin: 20px;
+}
+
+.subject-info {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.create-status {
+  margin: 20px;
+}
+.create-status hr {
+  border: transparent;
+}
+
+.status-tab {
+  position: relative;
+}
+.status-tab:before {
+  border-color: #f0f0f0 white;
+  border-style: solid;
+  border-width: 0 10px 10px;
+  content: " ";
+  position: absolute;
+  top: -10px;
+  width: 0;
+}
+.status-tab.tab-right:before {
+  right: 39px;
+}
+.status-tab.tab-left:before {
+  left: 20px;
+}
+
+.create-response,
+.create-status {
+  padding: 10px;
+  background-color: #f0f0f0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.create-response:before, .create-response:after,
+.create-status:before,
+.create-status:after {
+  display: table;
+  content: "";
+}
+.create-response:after,
+.create-status:after {
+  clear: both;
+}
+.create-response .status-buttons,
+.create-status .status-buttons {
+  float: right;
+  margin: 5px 0 0;
+}
+.create-response .status-buttons li,
+.create-status .status-buttons li {
+  display: inline;
+}
+
+.subject,
+.subject-content {
+  margin-left: 42px;
+}
+
+.status.without-context .subject,
+.status.without-context .subject-content {
+  margin-left: 0;
+}
+.status.without-context .subject-info {
+  margin-top: 0;
+}
+
+.status-list li {
+  list-style: none;
+}
+.status-list .author-thumbnail {
+  width: 32px;
+  height: 34px;
+  float: left;
+  margin-right: 10px;
+}
+.status-list .date {
+  display: block;
+}
+.status-list .actions {
+  overflow: hidden;
+}
+.status-list .actions li {
+  margin-top: 10px;
+  float: right;
+  margin-right: 20px;
+}
+.status-list .actions li[class*="icon-"]:before {
+  vertical-align: middle;
+}
+.status-list .icon-close {
+  float: right;
+  cursor: pointer;
+}
+.status-list .status-content,
+.status-list .responses {
+  margin-left: 42px;
+  background-color: #f0f0f0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.status-list .status-content .show-responses,
+.status-list .responses .show-responses {
+  display: none;
+}
+.status-list .status-content {
+  margin-top: 10px;
+  padding: 10px;
+}
+.textshadow .status-list .status-content p {
+  text-shadow: none;
+}
+.status-list .action {
+  color: #b3b3b3;
+}
+.status-list .help {
+  color: #ffa935;
+}
+.status-list .responses {
+  margin-top: 15px;
+}
+.status-list .responses .last-responses,
+.status-list .responses .see-more {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+.status-list .responses .response {
+  padding: 10px;
+}
+.status-list .responses .response .status-content {
+  margin-left: 42px;
+  padding: 0;
+  margin-top: 0;
+}
+.status-list .log .subject {
+  margin-top: 5px;
+}
+.status-list .log .subject-info[class*="icon-"]:before {
+  position: absolute;
+  margin-left: -75px;
+}
+.status-list .log .see-all {
+  float: right;
+}
+.status-list .log .subject-info .action[class*="icon-"]:before {
+  position: absolute;
+  margin-left: -35px;
+}
+.status-list .log .subject-content .status-content {
+  margin-top: 5px;
+}
+.status-list .log .subject-content .grouping-elements {
+  margin-right: 20px;
+  height: 40px;
+}
+.status-list .log .subject-content .grouping-elements li {
+  display: inline;
+}
+.status-list .log .subject-content .grouping-elements li img {
+  margin: 8px 3px 0 0;
+}
+.status-list .status .context {
+  margin-bottom: 5px;
+}
+.status-list .status .context .context-icon {
+  float: left;
+  width: 32px;
+  margin-right: 10px;
+}
+.status-list .status .context .context-icon[class*="icon-"]:before {
+  float: left;
+}
+.status-list .status .context a {
+  display: block;
+  line-height: 11px;
+}
+.status-list .create-response {
+  margin-top: 10px;
+  margin-left: 42px;
+}
+
+.context-link-hover {
+  color: #158ac4 !important;
+  text-decoration: underline;
 }
 
 .text-replacement {
