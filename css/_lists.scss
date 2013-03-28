@@ -6,321 +6,24 @@
 // Variáveis
 // ==========================================================================
 
+// Padding do item da lista geral.
+$general-list-item-padding: 5px;
 // A largura total das estrelas.
 $general-list-item-stars-width: 88px;
 // O espaçamento entre as estrelas e os contadores.
 $general-list-item-stars-n-counters-gutter: 12px;
+// Padding comum a lista de resultados da busca por cursos e disciplinas.
+$course-n-space-search-list-item-padding: 10px;
 
+// Mixins
+// ==========================================================================
 
-.icon-link {
-  float: left;
-  margin-right: 10px;
-  width: 32px;
+// Estilos do estado hover de um item da lista geral.
+@mixin general-list-item-hover-style {
+  @include gradient($gray3, $gray1, 0.2);
+  @include box-shadow(0 1px 0 $gray4);
 }
 
-.icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
-  display: block;
-}
-
-hr {
-  @include box-shadow(none);
-  clear: both;
-  margin: 10px 0;
-  border-left: none;
-  border-right: none;
-  border-top: 1px solid $gray3;
-  border-bottom: 1px solid $white;
-}
-
-.statuses .status { margin: 20px; }
-
-.statuses, .courses-lists, .responses  { list-style: none; }
-
-  .target { display: block; }
-
-
-  .post-description { color: $gray6; }
-
-  .input-user { @include text-shadow(none); }
-
-  .icon-link {
-    margin-right: 10px;
-    float: left;
-
-    img, .icon-subject-gray_32_34, .icon-course-lightgray_32_34 {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .date {
-    color: $gray4;
-    font-size: 11px;
-    line-height: 11px;
-    display: block;
-    overflow: hidden;
-  }
-
-  .status-info { color: $gray5; }
-
-  .close {
-    text-indent: -9999px;
-    float: right;
-  }
-
-  hr {
-    @include box-shadow(none);
-    margin: 10px 0;
-    border-top: solid 1px $gray3;
-    border-bottom: solid 1px $white;
-  }
-
-  .create-response {
-    @include border-radius;
-    float: none;
-    margin-top: 36px;
-    margin-left: 42px;
-    clear: both;
-    display: none;
-    background-color: $gray2;
-
-    form fieldset textarea { min-width: 100%; }
-  }
-
-  .status-text {
-    overflow: hidden;
-
-    .target { display: inline; }
-
-    + .status-content {
-      margin-top: 6px;
-      margin-left: 42px;
-    }
-  }
-
-  .actions {
-    clear: both;
-    display: block;
-    float: right;
-    line-height: 11px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    margin-left: 0;
-
-    li {
-      display: inline;
-      margin: 10px;
-      overflow: hidden;
-      font-size: 11px;
-
-      a:before {
-        @include pseudo-before;
-        vertical-align: baseline;
-        float: none;
-        margin-left: -12px;
-        margin-top: 4px;
-      }
-    }
-  }
-
-  .status-container { margin-left: 42px; }
-
-  .status-content {
-    @include border-radius;
-    width: 100%;
-    margin-left: 42px;
-    display: inline-block;
-    margin-left: 0;
-    margin-top: 10px;
-    background-color: $gray2;
-
-    .status-content { margin-top: 0; }
-
-    &:before {
-      border-color: #F0F0F0 white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: left;
-      margin-left: 18px;
-      margin-top: -9px;
-      width: 0;
-      position: absolute;
-    }
-
-    .post-text { padding: 10px 10px 10px 10px; }
-
-    .borderradius & { @include border-radius; }
-
-    .post-preview {
-      overflow: hidden;
-      padding: 10px 10px 10px 10px;
-
-      &.java-applet { padding: 0; }
-
-      .post-body {
-        overflow: hidden;
-        display: block;
-        margin: 0 auto;
-
-        .source-site { color: $gray5; }
-      }
-
-      .input-user { margin-bottom: 10px; }
-
-      .preview {
-        float: left;
-        max-width: 110px;
-        margin-right: 10px;
-        a.thumbnail { max-height: 60px; }
-
-        .input-user { margin-bottom: 10px; }
-
-        .thumbnail {
-          float: left;
-          max-width: 100px;
-          min-height: 34px;
-          width: 100%;
-        }
-
-        .buttons-thumbnail {
-          display: block;
-          margin-left: 0;
-          clear: both;
-          width: 100px;
-          padding-top: 10px;
-          overflow: hidden;
-
-          .button-default { float: left; }
-        }
-      }
-    }
-  }
-
-  .status-content, .create-response {
-    form {
-      margin-bottom: 0;
-
-      fieldset {
-        padding: 10px;
-        clear: both;
-
-        .post-preview { padding: 0; }
-
-        textarea {
-          max-width: 1000px;
-          overflow: hidden;
-        }
-
-        label {
-          width: 18px;
-          float: left;
-          text-indent: -999px;
-        }
-
-        .post-preview + hr { margin-bottom: 0; }
-
-        .status-buttons {
-          clear: both;
-          float: right;
-          margin-top: 10px;
-        }
-      }
-    }
-  }
-
-  .status-container {
-    .responses { margin-left: 0; }
-  }
-
-  .with-target {
-    .status-container, .create-response { margin-left: 84px; }
-
-
-    .target + .status-text {
-      margin-left: 42px;
-      margin-top: 10px;
-    }
-  }
-  .create-response {
-
-    &:before {
-      border-color: #F0F0F0 white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: right;
-      margin-right: 40px;
-      margin-top: -10px;
-      width: 0;
-    }
-
-    .status-buttons { margin-top: 10px; }
-  }
-
-  .responses {
-    overflow: hidden;
-    display: block;
-    clear: both;
-    margin-top: 10px;
-    margin-left: 42px;
-    padding: 10px 0;
-
-    .close { margin-right: 10px; }
-
-    .java-applet { margin-left: 42px; }
-
-    .last-responses { text-align: center; }
-
-    .all-responses { text-align: center; }
-
-    &:before {
-      border-color:  #F0F0F0 $white;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      content: " ";
-      display: block;
-      float: left;
-      margin-left: 18px;
-      margin-top: -19px;
-      width: 0;
-      position: absolute;
-    }
-
-    .status-content {
-      display: block;
-      margin-left: 0;
-
-      &:before { display: none; }
-
-      .status-text-response {
-        margin: 0 10px;
-      }
-
-      .post-text {
-        padding: 0;
-        margin: 0 10px 0 52px;
-      }
-    }
-
-    .post-preview { padding: 0; }
-  }
-
-  .create-status {
-    &.status-content { fieldset { height: 100%; } }
-
-    .status-buttons {
-      float: right;
-      margin: 0 10px 10px 0;
-
-      input {
-        float: right;
-        margin-left: 5px;
-      }
-    }
-  }
 
 .courses-lists {
   @include box-shadow(0 1px 10px rgba(0, 0, 0, 0.5));
@@ -467,6 +170,8 @@ hr {
 
 // Link para o curso/disciplina.
 .list-course-space-link {
+  color: $black;
+
   &:hover { text-decoration: none; }
 
   // Posiciona o ícone do curso/disciplina.
@@ -477,10 +182,7 @@ hr {
 }
 
 // Bloco com o cabeçalho do item da lista.
-.list-course-space-header {
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+.list-course-space-header { margin-bottom: 20px; }
 
 // Bloco de autoração do curso/disciplina.
 .list-course-space-authoring { float: left; }
@@ -534,7 +236,8 @@ hr {
 }
 
 .list-space-stat {
-  & + & { margin-left: 40px; }
+  & +
+  & { margin-left: 20px; }
 }
 
 .list-space-stats-row {
@@ -608,7 +311,7 @@ hr {
 
   // Lista de aulas.
   .list-button {
-    @extend h6;
+    @include heading(6);
     list-style: decimal inside none;
     overflow: hidden;
 
@@ -617,10 +320,7 @@ hr {
 }
 
 // Bloco com cabeçalho do módulo.
-.list-subject-header {
-  overflow: hidden;
-  margin-bottom: 5px;
-}
+.list-subject-header { margin-bottom: 5px; }
 
 // Bloco com os avisos e barra de progresso do módulo.
 .list-subject-header-info {
@@ -648,9 +348,22 @@ hr {
   @include border-radius(7px);
   border: 1px solid $gray2;
   padding: 11px 20px 10px;
-}
 
-.list-subject-description { margin-bottom: 20px; }
+  .list-subject-description +
+  .list-button { margin-top: 20px; }
+
+  .list-button {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .list-button-item:before {
+    content: counter(item);
+    counter-increment: item;
+  }
+
+  .list-button-link { margin-left: 10px; }
+}
 
 // Bloco de informações sobre uma aula.
 .list-lecture-info {
@@ -671,7 +384,10 @@ hr {
     &:hover { color: $orange4; }
   }
 
-  > span { vertical-align: middle; }
+  > span {
+    vertical-align: middle;
+    display: inline-block;
+  }
 
   > span + span { margin-left: 10px; }
 }
@@ -822,18 +538,29 @@ hr {
   & + & { margin-top: 10px; }
 }
 
+hr {
+  @include box-shadow(none);
+  clear: both;
+  margin: 10px 0;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid $gray4;
+  border-bottom: 1px solid $white;
+}
+
 .list-separator {
-  @include box-sizing;
+  border: none;
   height: 2px;
-  background-color: $white;
-  border-top: 1px solid $gray3;
+  margin: 0;
+  padding: 9px 0;
 
   &:before {
     content: "";
     display: block;
     height: 9px;
     position: relative;
-    top: -10px;
+    top: -8px;
+    border-bottom: 1px solid $gray3;
 
     .cssgradients & { @include redu-gradient($gray1, $white); }
 
@@ -849,6 +576,7 @@ hr {
     height: 9px;
     position: relative;
     bottom: 8px;
+    border-top: 1px solid $white;
 
     .cssgradients & { @include redu-gradient($white, $gray1) };
 
@@ -882,8 +610,10 @@ hr {
 
 // Item da lista.
 .general-list-item {
-  padding: 5px;
+  @include border-radius;
+  padding: $general-list-item-padding;
   color: $gray5;
+  position: relative;
 
   // Botão no canto inferior direito.
   .general-list-item-footer +
@@ -895,9 +625,7 @@ hr {
   }
 
   &:hover {
-    @include border-radius;
-    @include box-shadow(0 1px 0 $gray4);
-    @include gradient($gray3, $gray1, 0.2);
+    @include general-list-item-hover-style;
 
     &,
     .legend { color: $gray6; }
@@ -907,12 +635,10 @@ hr {
     .general-list-item-footer +
     .button-default { display: block; }
   }
-}
 
-// Título.
-.general-list-item-title {
-  font: 500 18px/18px $museo-sans;
-  letter-spacing: -1px;
+  .button-dropdown { padding: 6px 10px; }
+
+  .nav-global-profile-dropdown { width: 250px; }
 }
 
 // Link (dentro do título).
@@ -937,7 +663,11 @@ hr {
 
 // Colunas.
 .general-list-item-column {
-  float: left;
+  position: relative;
+
+  &:first-child { float: left; }
+
+  &:last-child { overflow: hidden; }
 
   .general-list-item-title +
   .legend { margin-top: 5px; }
@@ -954,7 +684,7 @@ hr {
   .button-default { margin-top: 5px; }
 
   & +
-  & { margin-left: 10px; }
+  & { padding-left: 10px; }
 }
 
 // Lista de contadores.
@@ -1009,4 +739,112 @@ hr {
 .general-list-item-close {
   float: right;
   display: none;
+}
+
+// Botão localizado no canto inferior direito.
+.general-list-item-bottom-right-button {
+  position: absolute;
+  bottom: $general-list-item-padding;
+  right: $general-list-item-padding;
+}
+
+// Fixar altura de contadores ex: (membros, cursos)
+.list-data { height: 50px; }
+
+// Para elementos com largura igual à metade da largura total da tela
+.middle-width {
+  float: left;
+  overflow: visible;
+  width: 90%;
+  width: -webkit-calc(50% - 50px);
+  width: -moz-calc(50% - 50px);
+  width: calc(50% - 50px);
+
+  list-style: none;
+}
+
+// Para lista de membros
+.member-list {
+  .separator {
+    overflow: hidden;
+    list-style: none;
+    clear: both;
+  }
+
+  .general-list-item {
+    float: left;
+    margin-left: 15px;
+
+    .legend {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 0;
+    }
+  }
+}
+
+
+// Itens da lista de busca.
+// ==========================================================================
+
+
+// Limita a largura do texto para que não alcance o ícone superior direito. Para ser usado com .text-truncate.
+.general-list-item-text-overlap-icon {
+  $old-browser-value: 90%;
+  $icon-width: 16px;
+  $icon-margin-left: 10px;
+  $expression: "100% - (#{$icon-width} + #{$icon-margin-left})";
+  @include calc("width", $expression, $old-browser-value);
+}
+
+// Comum a lista de resultados da busca por perfils e ambientes.
+.user-n-environment-search-list-item {
+  .general-list-item-column:last-child {
+    // Fixa a altura porque algumas informações são opcionais.
+    $thumbnail-height: 90px;
+    height: $thumbnail-height;
+  }
+
+  .general-list-item-counters {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .general-list-item-title { line-height: $base-line-height; }
+}
+
+// Lista de resultados da busca por perfils.
+.user-search-list-item {
+  .button-default,
+  .button-success { padding: 2px 6px; }
+}
+
+// Comum a lista de resultados da busca por cursos e disciplinas.
+.course-n-space-search-list-item {
+  @include general-list-item-hover-style;
+
+  .general-list-item-title +
+  .legend { margin-top: 3px; }
+
+  .legend +
+  .general-list-item-counters { margin-top: 16px; }
+}
+
+// Lista de resultados da busca por cursos.
+.course-search-list-item {
+  padding: $course-n-space-search-list-item-padding;
+
+  .general-list-item-bottom-right-button {
+    bottom: $course-n-space-search-list-item-padding;
+    right: $course-n-space-search-list-item-padding;
+  }
+}
+
+// Lista de resultados da busca por disciplina.
+.space-search-list-item {
+  padding: 0;
+
+  .general-list-item-body { padding: $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding 0; }
+
+  .general-list-item-footer { padding: 0 $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding; }
 }

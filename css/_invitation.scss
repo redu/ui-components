@@ -1,0 +1,146 @@
+// ==========================================================================
+// Convite
+// ==========================================================================
+
+
+// Variáveis.
+// ==========================================================================
+
+// Largura do link de remover.
+$invitation-default-link-remove-width: 16px;
+// Espaçamento horizontal padrão entre elementos.
+$invitation-default-horizontal-margin: 10px;
+
+// Valor da borda arredondada do token de convite.
+$invitation-token-border-radius: 3px;
+// Largura do thumbnail do token de convite.
+$invitation-token-thumbnail-width: 32px;
+// Largura do legenda "(Convidar para o Redu)" do token de convite.
+$invitation-token-legend-width: 115px;
+
+// Valor da borda arredondada do convite.
+$invitation-border-radius: 7px;
+// Largura do thumbnail do convite.
+$invitation-thumbnail-width: 48px;
+// Largura do link "Reenviar convite" do convite.
+$invitation-link-resend-width: 50px;
+// Largura máxima da legenda do papel do usuário no convite.
+$invitation-title-role-max-width: 75px;
+
+
+// Tokens de convite.
+// ==========================================================================
+
+.invitation-token {
+  @include border-radius($invitation-token-border-radius);
+  @include box-shadow(0 1px 0 $gray3);
+  border: 1px solid $white;
+
+  & +
+  & { margin-top: 5px; }
+}
+
+.invitation-token-thumbnail {
+  @include border-top-left-radius($invitation-token-border-radius);
+  @include border-bottom-left-radius($invitation-token-border-radius);
+  float: left;
+}
+
+.invitation-token-inner {
+  @include border-radius($invitation-token-border-radius);
+  padding: 7px 10px;
+  background-color: $green1;
+
+  .invitation-token-thumbnail +
+  & {
+    @include border-top-left-radius(0);
+    @include border-bottom-left-radius(0);
+    @include box-sizing;
+    @include calc("width", "100% - #{$invitation-token-thumbnail-width}", 91%);
+    float: left;
+    padding-left: 5px;
+    background-color: $gray3;
+  }
+}
+
+.invitation-token-email +
+.invitation-token-legend { margin-left: 10px; }
+
+.invitation-token-title {
+  @include calc("width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 96%);
+  display: block;
+}
+
+.invitation-token-email {
+  @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-token-legend-width})", 74%);
+  width: auto;
+  display: inline-block;
+}
+
+.invitation-token-legend { width: $invitation-token-legend-width; }
+
+
+// Convites.
+// ==========================================================================
+
+.invitation {
+  padding: 0;
+
+  & +
+  & { margin-top: 5px; }
+}
+
+.invitation-thumbnail {
+  @include border-top-left-radius($invitation-border-radius);
+  @include border-bottom-left-radius($invitation-border-radius);
+}
+
+.invitation-inner {
+  @include border-radius($invitation-border-radius);
+  padding: 9px 10px 10px;
+
+  .invitation-thumbnail-link +
+  & {
+    @include border-top-left-radius(0);
+    @include border-bottom-left-radius(0);
+    @include box-sizing;
+    @include calc("width", "100% - #{$invitation-thumbnail-width}", 91%);
+    float: left;
+  }
+
+  .invitation-link-remove { margin-top: 6px; }
+}
+
+.invitation-thumbnail-link { float: left; }
+
+.invitation-title {
+  @include calc("width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-link-resend-width} + #{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 83%);
+  display: block;
+  color: $link-color;
+}
+
+.invitation-legend { display: block; }
+
+.invitation-link-remove +
+.invitation-link-resend { margin-right: $invitation-default-horizontal-margin; }
+
+.invitation-link-resend {
+  width: $invitation-link-resend-width;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.invitation-link-remove,
+.invitation-link-resend { float: right; }
+
+.invitation-title-link {
+  @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-title-role-max-width})", 78%);
+  width: auto;
+
+  &[class*="icon-"][class*="-before"]:before { vertical-align: bottom; }
+}
+
+.invitation-title-link +
+.invitation-title-role { margin-left: $invitation-default-horizontal-margin; }
+
+.invitation-title-role { width: $invitation-title-role-max-width; }

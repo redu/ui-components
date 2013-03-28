@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="span16">
+    <div class="content-body">
+      <div class="content-section">
+        <h2>Convites</h2>
+        <h3>Tokens</h3>
+        <p>Os tokens de convite são usados quando o usuário está buscando por outros usuários (dentro ou fora do Redu) para enviar um convite de amizade. Existem dois tipos de tokens, um representando um usuário existente no Redu e outro representando um usuário fora do Redu.</p>
+        <h4>Usuário cadastrato no Redu</h4>
+        <p>Quando o usuário está buscando por outros usuários e digita o nome ou e-mail de algum outro usuário que está cadastrado na base de dados do Redu, este token é utilizado.</p>
+        <h5>Exemplo:</h5>
+        <div class="invitation-token clearfix">
+          <img class="invitation-token-thumbnail" src="../img/thumbnail-missing-profile-32.png" alt="Filipe W. Lima" title="Filipe W. Lima" width="32" height="32">
+          <div class="invitation-token-inner">
+            <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
+            <span class="invitation-token-title text-truncate" title="Filipe W. Lima">Filipe W. Lima</span>
+          </div>
+        </div>
+        <pre class="prettyprint linenums">
+&lt;!--
+  Variáveis:
+    THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 32x32.
+    USER_FULL_NAME: nome completo do usuário.
+--&gt;
+&lt;div class="invitation-token clearfix"&gt;
+  &lt;img class="invitation-token-thumbnail" src="THUMBNAIL_URL" alt="USER_FULL_NAME" title="USER_FULL_NAME" width="32" height="32"&gt;
+  &lt;div class="invitation-token-inner"&gt;
+    &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
+    &lt;span class="invitation-token-title text-truncate" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h4>Usuário não cadastrato no Redu</h4>
+        <p>Quando o usuário está buscando por outros usuários e digita um e-mail que não está cadastrado na base de dados do Redu, este token é utilizado.</p>
+        <h5>Exemplo:</h5>
+        <div class="invitation-token">
+          <div class="invitation-token-inner">
+            <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
+            <div class="invitation-token-title">
+              <span class="invitation-token-email text-truncate" title="filipewl@hotmail.com">filipewl@hotmail.com</span><span class="invitation-token-legend legend">(Convidar para o Redu)</span>
+            </div>
+          </div>
+        </div>
+        <pre class="prettyprint linenums">
+&lt;!--
+  Variáveis:
+    EMAIL: e-mail do usuário a ser convidado para o Redu.
+--&gt;
+&lt;div class="invitation-token"&gt;
+  &lt;div class="invitation-token-inner"&gt;
+    &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
+    &lt;div class="invitation-token-title"&gt;
+      &lt;span class="invitation-token-email text-truncate" title="EMAIL"&gt;EMAIL&lt;/span&gt;&lt;span class="invitation-token-legend legend"&gt;(Convidar para o Redu)&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h3>Convites enviados</h3>
+        <p>Os convites que foram enviados podem ser representados de duas maneiras: para os usuários cadastrados ou não no Redu.</p>
+        <h4>Usuários cadastrados no Redu</h4>
+        <h5>Exemplo:</h5>
+        <div class="invitation list-mix-inner clearfix">
+          <a class="invitation-thumbnail-link" href="#" title="Filipe W. Lima">
+            <img class="invitation-thumbnail" src="../img/thumbnail-missing-profile-48.png" alt="Filipe W. Lima" title="Filipe W. Lima" width="48" height="48">
+          </a>
+          <div class="invitation-inner">
+            <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
+            <a class="invitation-link-resend link-secondary" href="#">Reenviar convite</a>
+            <a class="invitation-title text-truncate" href="#" title="Filipe W. Lima">Filipe W. Lima</a>
+            <span class="invitation-legend legend">Convite enviado em 17 Fev, 2012, 16h00</span>
+          </div>
+        </div>
+        <pre class="prettyprint linenums">
+&lt;!--
+  Variáveis:
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_FULL_NAME: o nome completo do usuário.
+    USER_THUMBNAIL_URL: o thumbnail do usuário tamanho 48x48.
+    INVITATION_RESEND_URL: a URL para reenviar o convite.
+    INVITATION_SENT_TIMESTAMP: a data de quando o convite foi enviado.
+--&gt;
+&lt;div class="invitation list-mix-inner clearfix"&gt;
+  &lt;a class="invitation-thumbnail-link" href="USER_PROFILE_URL" title="USER_FULL_NAME"&gt;
+    &lt;img class="invitation-thumbnail" src="USER_THUMBNAIL_URL" alt="USER_FULL_NAME" title="USER_FULL_NAME" width="48" height="48"&gt;
+  &lt;/a&gt;
+  &lt;div class="invitation-inner"&gt;
+    &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
+    &lt;a class="invitation-link-resend link-secondary" href="INVITATION_RESEND_URL"&gt;Reenviar convite&lt;/a&gt;
+    &lt;a class="invitation-title text-truncate" href="USER_PROFILE_URL" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;
+    &lt;span class="invitation-legend legend"&gt;Convite enviado em INVITATION_SENT_TIMESTAMP&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h4>Usuários não cadastrados no Redu</h4>
+        <h5>Exemplo:</h5>
+        <div class="invitation list-mix-inner">
+          <div class="invitation-inner">
+            <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
+            <a class="invitation-link-resend link-secondary" href="#">Reenviar convite</a>
+            <span class="invitation-title text-truncate" title="filipewl@hotmail.com">filipewl@hotmail.com</span>
+            <span class="invitation-legend legend">Convite enviado em 17 Fev, 2012, 16h00</span>
+          </div>
+        </div>
+        <pre class="prettyprint linenums">
+&lt;!--
+  Variáveis:
+    EMAIL: o e-mail usado no convite.
+    INVITATION_RESEND_URL: a URL para reenviar o convite.
+    INVITATION_SENT_TIMESTAMP: a data de quando o convite foi enviado.
+--&gt;
+&lt;div class="invitation list-mix-inner"&gt;
+  &lt;div class="invitation-inner"&gt;
+    &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
+    &lt;a class="invitation-link-resend link-secondary" href="INVITATION_RESEND_URL"&gt;Reenviar convite&lt;/a&gt;
+    &lt;span class="invitation-title text-truncate" title="EMAIL"&gt;EMAIL&lt;/span&gt;
+    &lt;span class="invitation-legend legend"&gt;Convite enviado em INVITATION_SENT_TIMESTAMP&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h4>Usuários cadastrados no Redu com escolha de papel</h4>
+        <h5>Exemplo:</h5>
+        <div class="invitation list-mix-inner clearfix">
+          <a class="invitation-thumbnail-link" href="#" title="Filipe W. Lima">
+            <img class="invitation-thumbnail" src="../img/thumbnail-missing-profile-48.png" alt="Filipe W. Lima" title="Filipe W. Lima" width="48" height="48">
+          </a>
+          <div class="invitation-inner">
+            <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
+            <a class="invitation-link-resend link-secondary" href="#">Reenviar convite</a>
+            <div class="invitation-title">
+              <a class="invitation-title-link text-truncate icon-member-gray_16_18-before" href="#" title="Filipe W. Lima">Filipe W. Lima</a><span class="invitation-title-role legend">(Aluno)</span>
+            </div>
+            <span class="invitation-legend legend">Convite enviado em 17 Fev, 2012, 16h00</span>
+          </div>
+        </div>
+        <pre class="prettyprint linenums">
+&lt;!--
+  Variáveis:
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_FULL_NAME: o nome completo do usuário.
+    USER_THUMBNAIL_URL: o thumbnail do usuário tamanho 48x48.
+    INVITATION_ROLE: papel em que o usuário foi convidado.
+      Valores: Aluno, Professor, Tutor ou Administrador.
+    INVITATION_RESEND_URL: a URL para reenviar o convite.
+    INVITATION_SENT_TIMESTAMP: a data de quando o convite foi enviado.
+--&gt;
+&lt;div class="invitation list-mix-inner clearfix"&gt;
+  &lt;a class="invitation-thumbnail-link" href="USER_PROFILE_URL" title="USER_FULL_NAME"&gt;
+    &lt;img class="invitation-thumbnail" src="USER_THUMBNAIL_URL" alt="USER_FULL_NAME" title="USER_FULL_NAME" width="48" height="48"&gt;
+  &lt;/a&gt;
+  &lt;div class="invitation-inner"&gt;
+    &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
+    &lt;a class="invitation-link-resend link-secondary" href="INVITATION_RESEND_URL"&gt;Reenviar convite&lt;/a&gt;
+    &lt;div class="invitation-title"&gt;
+      &lt;a class="invitation-title-link text-truncate icon-[member|teacher|tutor|manager]-gray_16_18-before" href="USER_PROFILE_URL" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;&lt;span class="invitation-title-role legend"&gt;(INVITATION_ROLE)&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;span class="invitation-legend legend"&gt;Convite enviado em INVITATION_SENT_TIMESTAMP&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+  </div>
+</div>

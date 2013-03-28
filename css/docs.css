@@ -40,8 +40,11 @@ pre + p {
 .content table {
   margin-bottom: 20px;
 }
-.content p {
+.content p:not(.list-subject-description) {
   margin-bottom: 9px;
+}
+.content .system-message p {
+  margin: 0;
 }
 .content h3[id],
 .content h4[id] {
@@ -138,7 +141,7 @@ pre {
 }
 
 .colors-box {
-  width: 480px;
+  width: 900px;
   margin-left: auto;
   margin-right: auto;
   text-shadow: none;
@@ -151,11 +154,12 @@ pre {
 }
 
 .color-box {
+  width: 150px;
+  height: 150px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  width: 80px;
-  height: 73px;
+  font-size: 12px;
 }
 
 .text-white {
@@ -275,6 +279,7 @@ pre {
   top: 0;
   left: 0;
   margin-left: 0 !important;
+  z-index: 0;
 }
 
 .row.grids {

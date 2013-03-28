@@ -1,5 +1,5 @@
 // ==========================================================================
-// Utilitários
+// Classes utilitárias
 // ==========================================================================
 
 
@@ -18,10 +18,48 @@
 // Visibilidade.
 .invisible { visibility: hidden; }
 
-// Substituição de texto.
-.text-replacement { @include text-replacement; }
-
 // Limpeza de floats.
 .clearfix { @include clear-fix; }
 
 .link-container { cursor: pointer; }
+
+// Trunca com "..." o texto quando chegar no limite máximo.
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+
+// Cria áreas que podem ser prefixadas ou sufixadas a outra (infixa).
+//
+// Exemplo de uso:
+// <div class="area-fix">
+//   <div class="area-prefix">Área prefixada (esquerda)</div>
+//   <div class="area-infix">Área infixada (meio)</div>
+//   <div class="area-suffix">Área sufixada (direita)</div>
+// </div>
+//
+// Para ser usada com auxílio dos mixins area-prefix e area-sufix para ajustar o
+// começo de conteúdo da .area-infix. Alguns exemplos de elementos que utilizam
+// estas classes são o formulário de busca, formulário de busca com filtro e
+// opções com texto.
+// ==========================================================================
+
+// Wrapper.
+.area-fix { position: relative; }
+
+.area-prefix,
+.area-suffix {
+  @include box-sizing;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// Área prefixada a esquerda.
+.area-prefix { left: 0; }
+
+// Área sufixada a direita.
+.area-suffix { right: 0; }

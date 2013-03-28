@@ -38,7 +38,9 @@ pre + p { margin-top: $base-line-height / 2; }
 
   table { margin-bottom: 20px; }
 
-  p { margin-bottom: $base-line-height / 2; }
+  p:not(.list-subject-description) { margin-bottom: $base-line-height / 2; }
+
+  .system-message p {  margin: 0; }
 
   h3[id],
   h4[id] { padding-top: 60px; }
@@ -120,8 +122,11 @@ pre {
   white-space: pre-wrap;
 }
 
+$color-box-width: 150px;
+$max-color-box: 6;
+
 .colors-box {
-  width: 480px;
+  width: $color-box-width * $max-color-box;
   margin-left: auto;
   margin-right: auto;
   text-shadow: none;
@@ -134,11 +139,11 @@ pre {
 }
 
 .color-box {
+  @include square($color-box-width);
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  width: 80px;
-  height: 73px;
+  font-size: 12px;
 }
 
 .text-white { color: $white; }
@@ -181,6 +186,7 @@ pre {
   top: 0;
   left: 0;
   margin-left: 0 !important;
+  z-index: 0;
 }
 
 .row.grids { text-shadow: none; }

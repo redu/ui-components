@@ -93,11 +93,18 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-teacher-gray_16_18; }
   &:hover:before { @extend .icon-teacher-blue_16_18; }
 }
+.icon-teacher-gray_32_34-before {
+  &:before { @extend .icon-teacher-gray_32_34; }
+  &:hover:before { @extend .icon-teacher-blue_32_34; }
+}
 .icon-teacher-white_16_18-before {
   &:before { @extend .icon-teacher-white_16_18; }
 }
 .icon-teacher-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-teacher-white_16_18; }
+}
+.guides-list-item:hover .icon-teacher-lightblue_32_34-before {
+  &:before {  @extend .icon-teacher-blue_32_34; }
 }
 
 // Tutor.
@@ -124,6 +131,13 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-member-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-member-white_blue_16_18; }
+}
+.icon-member-gray_32_34-before {
+  &:before { @extend .icon-member-gray_32_34; }
+  &:hover:before { @extend .icon-member-blue_32_34; }
+}
+.guides-list-item:hover .icon-member-lightblue_32_34-before {
+  &:before {  @extend .icon-member-blue_32_34; }
 }
 
 // Início/home.
@@ -152,10 +166,14 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-environment-white_blue_16_18; }
 }
 .icon-environment-gray_16_18-before {
-  &:before { @extend .icon-environment-gray_16_18; }
+  &:before { @include icon-sprite(environment-gray_16_18); }
 }
 .icon-environment-black_16_18-before {
   &:before { @extend .icon-environment-black_16_18; }
+}
+.icon-environment-circle-lightblue_16_18-before {
+  &:before { @extend .icon-environment-circle-lightblue_16_18; }
+  &:hover:before { @extend .icon-environment-circle-blue_16_18; }
 }
 .icon-environment-lightblue_16_18-before,
 .header-list .icon-environment-gray_16_18-before {
@@ -174,6 +192,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-environment-gray_32_34-before {
   &:hover:before { @extend .icon-environment-blue_32_34; }
 }
+.open .icon-environment-gray_16_18 { @extend .icon-environment-lightblue_16_18; }
 
 .list-mix li.icon-environment-gray_32_34-before:hover {
   &:before { @extend .icon-environment-lightblue_32_34; }
@@ -181,6 +200,14 @@ a.icon-teacher-gray_16_18-before {
 .header-item:hover .icon-environment-gray_16_18-before:before,
 .header-item:hover .icon-environment-lightblue_16_18-before:before {
   @extend .icon-environment-blue_16_18;
+}
+.icon-environment-round-lightblue_16_18-before {
+  &:before { @extend .icon-environment-lightblue_16_18; }
+  &:hover:before { @extend .icon-environment-round-blue_16_18; }
+}
+.icon-environment-round-gray_32_34-before {
+  &:before { @extend .icon-environment-round-gray_32_34; }
+  &:hover:before { @extend .icon-environment-round-blue_32_34; }
 }
 
 // Curso.
@@ -190,7 +217,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-course-gray_16_18-before {
   &:before { @extend .icon-course-gray_16_18; }
-  &:hover:before { @extend .icon-course-gray_16_18; }
+  &:hover:before { @extend .icon-course-blue_16_18; }
 }
 .icon-course-lightblue_16_18-before,
 .header-list .icon-course-gray_16_18-before {
@@ -290,7 +317,8 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Seta baixo do botão dropdown.
-.icon-arrow-down-lightblue_8_10 {
+.icon-arrow-down-lightblue_8_10,
+.icon-arrow-down-gray_8_10  {
   .open & { @extend .icon-arrow-up-lightblue_8_10; }
 }
 .button-disabled .icon-arrow-down-lightblue_8_10,
@@ -303,9 +331,15 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-profile-lightblue_16_18; }
   &:hover:before { @extend .icon-profile-blue_16_18; }
 }
+.open .icon-profile-gray_16_18 { @extend .icon-profile-lightblue_16_18; }
 
 .icon-profile-gray_16_18-before {
-  &:before { @extend .icon-profile-gray_16_18; }
+  &:before { @include icon-sprite(profile-gray_16_18); }
+}
+
+.icon-profile-darkgray_32_34-before {
+  &:before { @extend .icon-profile-darkgray_32_34; }
+  &:hover:before { @extend .icon-profile-darkgray_32_34; }
 }
 
 // Mensagens.
@@ -336,6 +370,11 @@ a.icon-teacher-gray_16_18-before {
   .header-breadcrumb:hover &:before { @extend .icon-sent-message-blue_32_34; }
 }
 
+// Nova mensagem.
+.icon-message-new-white_blue_16_18-before {
+  &:before { @extend .icon-message-new-white_blue_16_18; }
+}
+
 // Parceiro.
 .icon-partner-lightblue_16_18-before {
   &:before { @extend .icon-partner-lightblue_16_18; }
@@ -349,6 +388,9 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-manage-white_blue_16_18-before {
   &:before { @extend .icon-manage-white_blue_16_18; }
+}
+.icon-manage-gray_16_18-before {
+  &:before { @extend .icon-manage-gray_16_18; }
 }
 .icon-manage-gray_32_34-before {
   &:before { @extend .icon-manage-gray_32_34; }
@@ -427,6 +469,10 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-contacts-gray_16_18-before {
   &:before { @extend .icon-contacts-gray_16_18; }
+  &:hover:before { @extend .icon-contacts-blue_16_18; }
+}
+.icon-contacts-green_16_18-before {
+  &:before { @extend .icon-contacts-green_16_18; }
 }
 
 // Colegas de classe.
@@ -488,6 +534,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-members-gray_16_18-before {
   &:before { @extend .icon-members-gray_16_18; }
+  &:hover:before { @extend .icon-members-blue_16_18; }
 }
 // Conta.
 .icon-account-lightblue_16_18-before {
@@ -519,6 +566,9 @@ a.icon-teacher-gray_16_18-before {
 .icon-biography-gray_16_18-before {
   &:before { @extend .icon-biography-gray_16_18; }
 }
+.icon-biography-gray_8_10-before {
+  &:before { @extend .icon-biography-gray_8_10; }
+}
 
 // Currículo.
 .icon-curriculum-lightblue_16_18-before {
@@ -533,6 +583,18 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-curriculum-gray_16_18-before {
   &:before { @extend .icon-curriculum-gray_16_18; }
+}
+.icon-curriculum-academic-lightblue_32_34-before {
+  &:before { @extend .icon-curriculum-academic-lightblue_32_34; }
+}
+.icon-curriculum-academic-gray_8_10-before {
+  &:before { @extend .icon-curriculum-academic-gray_8_10; }
+}
+.icon-curriculum-professional-lightblue_32_34-before {
+  &:before { @extend .icon-curriculum-professional-lightblue_32_34; }
+}
+.icon-curriculum-professional-gray_8_10-before {
+  &:before { @extend .icon-curriculum-professional-gray_8_10; }
 }
 .list-button li:hover .icon-curriculum-lightblue_16_18-before {
   &:before {  @extend .icon-curriculum-blue_16_18; }
@@ -709,7 +771,7 @@ a.icon-teacher-gray_16_18-before {
 // Portal de Aplicativos.
 .icon-apps-portal-gray_48_50-before {
   &:before { @extend .icon-apps-portal-gray_48_50; }
-  &:hover:before { @extend .icon-apps-portal-halfgray_halfblue_48_50; }
+  &:hover:before { @extend .icon-apps-portal-blue_48_50; }
 }
 .icon-apps-portal-lightblue_16_18-before {
   &:before { @extend .icon-apps-portal-lightblue_16_18; }
@@ -775,6 +837,10 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-magnifier-lightblue_16_18; }
   &:hover:before { @extend .icon-magnifier-blue_16_18; }
 }
+.icon-search-gray_48_50-before {
+  &:before { @extend .icon-search-gray_48_50; }
+  &:hover:before { @extend .icon-search-blue_48_50; }
+}
 
 // Central de Ajuda.
 .icon-help-central-gray_66-before {
@@ -788,6 +854,11 @@ a.icon-teacher-gray_16_18-before {
 
 .icon-help-central-lightgray_32_34-before {
   &:before { @extend .icon-help-central-lightgray_32_34; }
+}
+
+.icon-help-central-lightblue_16_18-before {
+  &:before { @extend .icon-help-central-lightblue_16_18; }
+  &:hover:before { @extend .icon-help-central-blue_16_18; }
 }
 
 // Regras de hover para os ícones que não usam pseudo elementos.
@@ -823,12 +894,23 @@ a:hover,
   .icon-magnifier-gray_16_18,
   .icon-magnifier-lightblue_16_18 { @extend .icon-magnifier-blue_16_18; }
 
+  // Guia básico.
+  .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-blue_16_18; }
+
+  // Ambiente.
+  .icon-environment-gray_16_18 { @extend .icon-environment-blue_16_18; }
+
+  // Perfil.
+  .icon-profile-gray_16_18 { @extend .icon-profile-blue_16_18; }
+
   // Setas.
   .icon-arrow-left-lightblue_16_18 { @extend .icon-arrow-left-blue_16_18; }
   .icon-arrow-right-lightblue_16_18 { @extend .icon-arrow-right-blue_16_18; }
   .icon-arrow-left-lightblue_8_10 { @extend .icon-arrow-left-blue_8_10; }
   .icon-arrow-right-lightblue_8_10 { @extend .icon-arrow-right-blue_8_10; }
-  .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-down-blue_8_10; }
+  .icon-arrow-down-lightblue_8_10,
+  .icon-arrow-down-gray_8_10 { @extend .icon-arrow-down-blue_8_10; }
+  .open & .icon-arrow-down-gray_8_10,
   .open & .icon-arrow-down-lightblue_8_10 { @extend .icon-arrow-up-blue_8_10; }
 
   // Fechar
@@ -853,10 +935,20 @@ a:hover,
   &:hover { @extend .icon-connections-blue_32_34; }
 }
 
+.icon-connections-gray_32_34-before {
+  &:before { @extend .icon-connections-gray_32_34; }
+  &:hover:before { @extend .icon-connections-blue_32_34; }
+}
+
 // Instituição
 .icon-institution-gray_32_34 {
   &:hover { @extend .icon-institution-blue_32_34; }
 }
+
+.icon-institution-gray_32_34 {
+  &:before { @extend .icon-institution-blue_32_34; }
+}
+
 
 // Estrela
 .icon-star-empty-gray_16_18-before {
@@ -872,6 +964,10 @@ a:hover,
 .icon-doubt-topic-gray_16_18-before {
   &:before { @extend .icon-doubt-topic-gray_16_18; }
 }
+.icon-doubt-topic-lightblue_16_18-before {
+  &:before { @extend .icon-doubt-topic-lightblue_16_18; }
+  &:hover:before { @extend .icon-doubt-topic-blue_16_18; }
+}
 
 // Dúvidas Frequentes
 .icon-frequent-questions-lightgray_32_34-before {
@@ -880,6 +976,7 @@ a:hover,
 
 .icon-frequent-questions-gray_32_34-before {
   &:before { @extend .icon-frequent-questions-gray_32_34; }
+  &:hover:before { @extend .icon-frequent-questions-blue_32_34; }
 }
 
 .icon-frequent-questions-lightblue_32_34-before {
@@ -966,11 +1063,18 @@ a:hover,
   &:before { @extend .icon-app-lightblue_32_34; }
   &:hover:before { @extend .icon-app-blue_32_34; }
 }
+.icon-app-gray_32_34-before {
+  &:before { @extend .icon-app-gray_32_34; }
+  &:hover:before { @extend .icon-app-blue_32_34; }
+}
 .list-button li:hover .icon-app-lightblue_16_18-before {
   &:before {  @extend .icon-app-blue_16_18; }
 }
 .icon-app-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-app-white_16_18; }
+}
+.guides-list-item:hover .icon-app-lightblue_32_34-before {
+  &:before {  @extend .icon-app-blue_32_34; }
 }
 
 // Guia Básico
@@ -980,6 +1084,7 @@ a:hover,
 }
 .icon-basic-guide-gray_32_34-before {
   &:before { @extend .icon-basic-guide-gray_32_34; }
+  &:hover:before { @extend .icon-basic-guide-blue_32_34; }
 }
 .icon-basic-guide-lightblue_16_18-before {
   &:before { @extend .icon-basic-guide-lightblue_16_18; }
@@ -987,6 +1092,12 @@ a:hover,
 }
 .icon-basic-guide-green_32_34-before {
   &:before { @extend .icon-basic-guide-green_32_34; }
+}
+.icon-basic-guide-dark_green_32_34-before {
+  &:before { @extend .icon-basic-guide-dark_green_32_34; }
+}
+.icon-basic-guide-gray_16_18-before {
+  &:before { @include icon-sprite(basic-guide-gray_16_18); }
 }
 .icon-basic-guide-blue_16_18-before {
   &:before { @extend .icon-basic-guide-blue_16_18; }
@@ -997,6 +1108,10 @@ a:hover,
 .icon-basic-guide-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-basic-guide-white_16_18; }
 }
+.guides-list-item:hover .icon-basic-guide-green_32_34-before {
+  &:before {  @extend .icon-basic-guide-dark_green_32_34; }
+}
+.open .icon-basic-guide-gray_16_18 { @extend .icon-basic-guide-lightblue_16_18; }
 
 // Áreas do Redu
 .icon-redu-areas-gray_16_18-before {
@@ -1010,6 +1125,7 @@ a:hover,
 }
 .icon-manager-gray_32_34-before {
   &:before { @extend .icon-manager-gray_32_34; }
+  &:hover:before { @extend .icon-manager-blue_32_34; }
 }
 
 .icon-manager-blue_32_34-before {
@@ -1027,6 +1143,9 @@ a:hover,
 }
 .icon-manager-lightblue_16_18-before.nav-local-item-active {
   &:before { @extend .icon-manager-white_16_18; }
+}
+.guides-list-item:hover .icon-manager-lightblue_32_34-before {
+  &:before {  @extend .icon-manager-blue_32_34; }
 }
 
 // Fale conosco
@@ -1047,4 +1166,142 @@ a:hover,
 // Adicionar amigo
 .icon-add-friend-green_32_34-before {
   &:before { @extend .icon-add-friend-green_32_34; }
+}
+
+// Convite
+.icon-invite-lightblue_16_18-before {
+  &:before { @extend .icon-invite-lightblue_16_18; }
+  &:hover:before { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-lightblue_16_18 {
+  &:hover { @extend .icon-invite-blue_16_18; }
+}
+.icon-invite-white_green_16_18-before {
+  &:before { @extend .icon-invite-white_green_16_18; }
+}
+.icon-invite-white_blue_16_18-before {
+  &:before { @extend .icon-invite-white_blue_16_18; }
+}
+
+// Tour
+.icon-tour-lightblue_16_18-before {
+  &:before { @extend .icon-tour-lightblue_16_18; }
+  &:hover:before { @extend .icon-tour-blue_16_18; }
+}
+.icon-tour-white_16_18-before {
+  &:before { @extend .icon-tour-white_16_18; }
+}
+
+// Interrogação
+.icon-ask-lightblue_16_18-before {
+  &:before { @extend .icon-ask-lightblue_16_18; }
+  &:hover:before { @extend .icon-ask-blue_16_18; }
+}
+
+
+// Ícones da navegação local.
+.nav-local-item:before {
+  // Visão Geral.
+  &.icon-home_16_18-before {
+    @extend .icon-home-lightblue_16_18;
+
+    &:hover { @extend .icon-home-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-home-white_blue_16_18; }
+  }
+
+  // Meu Mural.
+  &.icon-wall_16_18-before {
+    @extend .icon-wall-lightblue_16_18;
+
+    &:hover { @extend .icon-wall-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-wall-white_blue_16_18; }
+  }
+
+  // Mensagens.
+  &.icon-message_16_18-before {
+    @extend .icon-message-lightblue_16_18;
+
+    &:hover { @extend .icon-message-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-message-white_blue_16_18; }
+  }
+
+  // Ambientes.
+  &.icon-environment_16_18-before {
+    @extend .icon-environment-lightblue_16_18;
+
+    &:hover { @extend .icon-environment-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-environment-white_blue_16_18; }
+  }
+
+  // Configurações.
+  &.icon-manage_16_18-before {
+    @extend .icon-manage-lightblue_16_18;
+
+    &:hover { @extend .icon-manage-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-manage-white_blue_16_18; }
+  }
+
+  // Meus Contatos.
+  &.icon-contacts_16_18-before {
+    @extend .icon-contacts-lightblue_16_18;
+
+    &:hover { @extend .icon-contacts-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-contacts-white_blue_16_18; }
+  }
+}
+
+// Ícones das abas.
+.tabs {
+  // Mensagens.
+  .icon-message_16_18-before {
+    &:before { @extend .icon-message-lightblue_16_18; }
+    &:hover:before { @extend .icon-message-blue_16_18; }
+  }
+  .icon-message-sent_16_18-before {
+    &:before { @extend .icon-sent-message-lightblue_16_18; }
+    &:hover:before { @extend .icon-sent-message-blue_16_18; }
+  }
+
+  // Configurações.
+  .icon-profile_16_18-before {
+    &:before { @extend .icon-profile-lightblue_16_18; }
+    &:hover:before { @extend .icon-profile-blue_16_18; }
+  }
+  .icon-account_16_18-before {
+    &:before { @extend .icon-account-lightblue_16_18; }
+    &:hover:before { @extend .icon-account-blue_16_18; }
+  }
+  .icon-plan_16_18-before {
+    &:before { @extend .icon-plan-lightblue_16_18; }
+    &:hover:before { @extend .icon-plan-blue_16_18; }
+  }
+}
+
+// Ícones dos botões das sub-abas.
+.tab-buttons {
+  // Configurações - Perfil.
+  .icon-biography_16_18-before {
+    &:before { @extend .icon-biography-lightblue_16_18; }
+    &:hover:before { @extend .icon-biography-blue_16_18; }
+
+    &.tab-button-active {
+      &:before,
+      &:hover:before { @extend .icon-biography-white_blue_16_18; }
+    }
+  }
+  .icon-curriculum_16_18-before {
+    &:before { @extend .icon-curriculum-lightblue_16_18; }
+    &:hover:before { @extend .icon-curriculum-blue_16_18; }
+
+    &.tab-button-active {
+      &:before,
+      &:hover:before { @extend .icon-curriculum-white_blue_16_18; }
+    }
+  }
 }

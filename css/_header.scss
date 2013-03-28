@@ -19,8 +19,6 @@
   float: left;
   position: relative;
   margin-left: -112px;
-
-  &:hover { @include sprite-sprite(light-logo); }
 }
 
 // Logo.
@@ -110,8 +108,6 @@
   .header-separator +
   .row { margin-bottom: 25px; }
 
-  .tos .control-error label { color: rgb(109, 110, 111); }
-
   .modal-footer {
     .button-default +
     .button-success { margin-left: 10px; }
@@ -151,6 +147,19 @@
 .modal-sign-up-tos {
   float: left;
   text-align: left;
+  margin-top: 20px;
+
+  .control-checkbox {
+    text-align: center;
+    padding-left: 0;
+
+    input[type="checkbox"] {
+      float: none;
+      margin-top: 0;
+    }
+  }
+
+  .control-error { display: inline-block; }
 }
 
 // Área com os botões de cancelar e cadastrar.

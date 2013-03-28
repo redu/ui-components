@@ -1,3 +1,5 @@
+/*global findIconClasses */
+
 !(function($) {
 
   'use strict';
@@ -38,8 +40,11 @@
 
       // Se for um formulário.
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit')
+        var $submit = $this.find('input:submit, button[type="submit"]')
           , spinnerClass = settings.spinnerCircularGray
+          , submitIconClasses = findIconClasses($submit.attr('class'))
+          , submitWidth = $submit.outerWidth()
+          , submitHeight = $submit.outerHeight()
 
         if ($submit.hasClass(settings.buttonDefault)) {
           spinnerClass = settings.spinnerCircularBlue
@@ -50,7 +55,9 @@
           .prop('disabled', true)
           .data('spinnerClass', spinnerClass)
           .data('content', $submit.val())
-          .css({ 'width': $submit.outerWidth(), 'height': $submit.outerHeight() })
+          .data('class', submitIconClasses)
+          .removeClass(submitIconClasses)
+          .css({ 'width': submitWidth, 'height': submitHeight })
           .val('')
       }
 
@@ -64,35 +71,17 @@
           spinnerImg += settings.spinnerCircularGrayGif
         }
 
-        // Retorna as outras classes, que não a do botão.
-        var otherClasses = function(classes) {
-          var otherClasses = []
-
-          classes = classes.split(' ')
-          $.each(classes, function(index, value) {
-            if (value !== settings.buttonDefault
-                && value !== settings.buttonPrimary
-                && value !== settings.buttonDanger
-                && value !== settings.buttonSuccess
-                && value !== '') {
-              otherClasses.push(value)
-            }
-          })
-
-          return otherClasses.join(' ')
-        }
-
         var content = $this.html()
-          , width = $this.outerWidth()
-          , height = $this.outerHeight()
-          , classes = otherClasses($this.attr('class'))
+          , width = $this.width()
+          , height = $this.height()
+          , iconClasses = findIconClasses($this.attr('class'))
           , $spinner = $(document.createElement('img')).attr('src', spinnerImg).css(settings.spinnerCSS)
 
         $this
           .addClass(settings.buttonDisabled)
-          .removeClass(classes)
+          .removeClass(iconClasses)
           .data('content', content)
-          .data('class', classes)
+          .data('class', iconClasses)
           .html($spinner)
           .css({'width': width, 'height': height})
       } else if ($this.is('a')) {
@@ -114,10 +103,11 @@
       var $this = $(this)
 
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit')
+        var $submit = $this.find('input:submit, button[type="submit"]')
 
         $submit
           .removeClass($submit.data('spinnerClass'))
+          .addClass($submit.data('class'))
           .prop('disabled', false)
           .val($submit.data('content'))
       }

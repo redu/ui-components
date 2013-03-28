@@ -1,8 +1,8 @@
-/*!
- * Redu Bootstrap v0.0.9
- *
- * Baseado no Bootstrap v2.1.1 do Twitter.
- */
+//
+// Redu Bootstrap v0.0.9
+//
+// Baseado no Bootstrap v2.1.1 do Twitter.
+//
 
 @import "compass/css3/images";
 
@@ -12,6 +12,9 @@
 // Variáveis e mixins.
 @import "variables";
 @import "mixins";
+
+// Classes utilitárias.
+@import "utilities";
 
 // Sistema de grids e estrutura da página.
 @import "scaffolding";
@@ -77,7 +80,13 @@
 @import "headers";
 
 // Listas.
+@import "lists";
+
+// Convite.
+@import "invitation";
+
+// Mural.
 @import "wall";
 
-// Classes de utilidade.
-@import "utilities";
+// Classes utilitárias que precisam ficar no final.
+@import "utilities-last";

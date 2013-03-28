@@ -2,6 +2,16 @@
 // Cabeçalhos
 // ==========================================================================
 
+
+// Variáveis
+// ==========================================================================
+
+// O espaçamento de correção do ícone.
+$header-breadcrumb-icon-margin: 7px;
+// A altura dos itens.
+$header-breadcrumb-height: 21px;
+
+
 .header {
   list-style: none;
   margin: 0 0 20px;
@@ -72,40 +82,48 @@
   @include clear-fix;
   list-style: none;
   margin: 0;
+  padding: $header-breadcrumb-icon-margin 0 6px;
+  display: inline-block;
 }
 
 .header-breadcrumb-item {
-  @extend h3;
+  height: $header-breadcrumb-height;
+  font: 500 #{$header-breadcrumb-height}/#{$header-breadcrumb-height} $museo-sans;
+  letter-spacing: -1px;
   float: left;
-  margin-top: 7px;
 
   // Separador.
-  & + &:before {
-    margin-right: 7px !important;
+  & +
+  &:before {
+    float: left;
+    margin: 0 7px;
     font-weight: 300;
     color: $gray3;
-    margin-left: 6px;
     // Caracter "/".
     content: "\002F";
   }
 }
 
-.header-breadcrumb-item-light { font-weight: 100; }
+.header-breadcrumb-item-light {
+  font-weight: 100;
+  display: inherit;
+}
 
 .header-bradcrumb-link {
   font-weight: 300;
+  height: inherit;
 
   // Links em cinza.
   .header-breadcrumb & { color: $gray5; }
 
   // O último link em azul3.
-  .header-breadcrumb-item:last-child & { color: $blue3; }
+  .header-breadcrumb-item:last-child & { color: $link-color; }
 
   // Ajusta o ícone que está no primeiro link.
   .header-breadcrumb-item:first-child &:before {
     float: left;
-    margin-right: 10px !important;
-    margin-top: -7px;
+    margin-right: 10px;
+    margin-top: -$header-breadcrumb-icon-margin;
   }
 
   // Engrossa a fonte no último link e no hover.
@@ -115,7 +133,7 @@
   // Hover.
   .header-breadcrumb-item:last-child &:hover,
   &:hover {
-    color: $blue4;
+    color: $link-color-hover;
     text-decoration: none;
   }
 }
@@ -130,7 +148,7 @@
 }
 
 .header-breadcrumb-big-item {
-  @extend h2;
+  @include heading(2);
   font-weight: 100;
   float: left;
 

@@ -139,3 +139,20 @@ code {
 
 // Link de nome
 .link-name { font-weight: bold; }
+
+// Links.
+a,
+.link-fake {
+  display: inline-block;
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited { color: $link-color-visited; }
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+.link-fake { cursor: pointer; }
