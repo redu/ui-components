@@ -19,6 +19,7 @@ module.exports = function(grunt) {
   , 'js/bootstrap-spinners.js'
   , 'js/bootstrap-search-form.js'
   , 'js/bootstrap-wall.js'
+  , 'js/bootstrap-header.js'
   ];
 
   grunt.initConfig({
