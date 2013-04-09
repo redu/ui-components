@@ -42,8 +42,8 @@
       })
     },
 
-    // Adiciona/remove a classe indicativa de controle em foco.
-    toggleFocusLabel: function(options) {
+    // Adiciona a classe indicativa de controle em foco.
+    focusLabel: function(options) {
       var settings = $.extend({
         // Classe adicionada quando o controle está me foco.
         controlFocusedClass: 'control-focused'
@@ -51,7 +51,19 @@
       , controlGroupClass: 'control-group'
       }, options)
 
-      $(this).parents('.' + settings.controlGroupClass).toggleClass(settings.controlFocusedClass)
+      $(this).parents('.' + settings.controlGroupClass).addClass(settings.controlFocusedClass)
+    },
+
+    // Remove a classe indicativa de controle em foco.
+    removeFocusLabel: function(options) {
+      var settings = $.extend({
+        // Classe adicionada quando o controle está me foco.
+        controlFocusedClass: 'control-focused'
+        // Classe que identifica o container do controle.
+      , controlGroupClass: 'control-group'
+      }, options)
+
+      $(this).parents('.' + settings.controlGroupClass).removeClass(settings.controlFocusedClass)
     },
 
     // Ajusta a altura do textarea de acordo com seu atributo rows.
@@ -167,10 +179,14 @@
 $(function() {
   $('input[type="text"][maxlength], input[type="password"][maxlength], textarea[maxlength]').reduForm('countChars');
 
-  $(document).on('focus blur', 'input[type="text"], input[type="password"], input[type="file"], textarea, select', function(e) {
-    $(this).reduForm('toggleFocusLabel')
-  })
-
+  var focusInputSelectors = 'input[type="text"], input[type="password"], input[type="file"], textarea, select';
+  $(document)
+    .on('focus', focusInputSelectors, function(e) {
+      $(this).reduForm('focusLabel')
+    })
+    .on('blur', focusInputSelectors, function(e) {
+      $(this).reduForm('removeFocusLabel')
+    })
 
   // Comportamento de escurer texto do checkbox/radio selecionado.
 
