@@ -39,7 +39,7 @@ var findIconClasses = function(classes) {
 
   $(function () {
 
-    "use strict"; // jshint ;_;
+    "use strict";
 
 
     /* CSS TRANSITION SUPPORT (http://www.modernizr.com/)
@@ -98,7 +98,7 @@ var findIconClasses = function(classes) {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* ALERT CLASS DEFINITION
@@ -188,7 +188,7 @@ var findIconClasses = function(classes) {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* DROPDOWN CLASS DEFINITION
@@ -338,7 +338,7 @@ var findIconClasses = function(classes) {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* MODAL CLASS DEFINITION
@@ -558,7 +558,7 @@ var findIconClasses = function(classes) {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* TOOLTIP PUBLIC CLASS DEFINITION
@@ -841,7 +841,7 @@ $(function() {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* POPOVER PUBLIC CLASS DEFINITION
@@ -2129,7 +2129,7 @@ $(function() {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* DEFINIÇÃO DE CLASSE DO CAMPO DE BUSCA.

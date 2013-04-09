@@ -25,10 +25,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    lint: {
-      files: files
-    },
-
     jshint: {
       options: {
         validthis: true,
@@ -39,7 +35,8 @@ module.exports = function(grunt) {
         boss: true,
         expr: true,
         asi: true
-      }
+      },
+      files: files
     },
 
     concat: {
@@ -58,7 +55,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: files,
-      tasks: 'lint concat'
+      tasks: ['jshint', 'concat']
     }
   });
 

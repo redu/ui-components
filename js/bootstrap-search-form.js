@@ -1,6 +1,6 @@
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* DEFINIÇÃO DE CLASSE DO CAMPO DE BUSCA.
