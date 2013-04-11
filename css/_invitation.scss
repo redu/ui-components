@@ -66,7 +66,6 @@ $invitation-title-role-max-width: 75px;
 .invitation-token-legend { margin-left: 10px; }
 
 .invitation-token-title {
-  width: auto;
   @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 96%);
 
   &,
@@ -78,7 +77,6 @@ $invitation-title-role-max-width: 75px;
 
 .invitation-token-email {
   @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-token-legend-width})", 74%);
-  width: auto;
   display: inline-block;
 }
 
@@ -119,8 +117,7 @@ $invitation-title-role-max-width: 75px;
 .invitation-thumbnail-link { float: left; }
 
 .invitation-title {
-  @include calc("width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-link-resend-width} + #{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 83%);
-  display: block;
+  @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-link-resend-width} + #{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 83%);
   color: $link-color;
 }
 
@@ -140,7 +137,6 @@ $invitation-title-role-max-width: 75px;
 
 .invitation-title-link {
   @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-title-role-max-width})", 78%);
-  width: auto;
 
   &[class*="icon-"][class*="-before"]:before { vertical-align: bottom; }
 }

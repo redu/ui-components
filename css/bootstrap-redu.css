@@ -153,7 +153,7 @@ textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
+  max-width: 100%;
 }
 
 .area-fix {
@@ -7368,7 +7368,6 @@ hr {
 }
 
 .invitation-token-title {
-  width: auto;
   max-width: 96%;
   max-width: -moz-calc(100% - (10px + 16px));
   max-width: -o-calc(100% - (10px + 16px));
@@ -7388,7 +7387,6 @@ hr {
   max-width: -o-calc(100% - (10px + 115px));
   max-width: -webkit-calc(100% - (10px + 115px));
   max-width: calc(100% - (10px + 115px));
-  width: auto;
   display: inline-block;
 }
 
@@ -7446,12 +7444,11 @@ hr {
 }
 
 .invitation-title {
-  width: 83%;
-  width: -moz-calc(100% - (10px + 50px + 10px + 16px));
-  width: -o-calc(100% - (10px + 50px + 10px + 16px));
-  width: -webkit-calc(100% - (10px + 50px + 10px + 16px));
-  width: calc(100% - (10px + 50px + 10px + 16px));
-  display: block;
+  max-width: 83%;
+  max-width: -moz-calc(100% - (10px + 50px + 10px + 16px));
+  max-width: -o-calc(100% - (10px + 50px + 10px + 16px));
+  max-width: -webkit-calc(100% - (10px + 50px + 10px + 16px));
+  max-width: calc(100% - (10px + 50px + 10px + 16px));
   color: #4dadd6;
 }
 
@@ -7481,7 +7478,6 @@ hr {
   max-width: -o-calc(100% - (10px + 75px));
   max-width: -webkit-calc(100% - (10px + 75px));
   max-width: calc(100% - (10px + 75px));
-  width: auto;
 }
 .invitation-title-link[class*="icon-"][class*="-before"]:before {
   vertical-align: bottom;
