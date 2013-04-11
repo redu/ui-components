@@ -43,7 +43,6 @@ $invitation-title-role-max-width: 75px;
 .invitation-token-thumbnail {
   @include border-top-left-radius($invitation-token-border-radius);
   @include border-bottom-left-radius($invitation-token-border-radius);
-  float: left;
 }
 
 .invitation-token-inner {
@@ -51,7 +50,7 @@ $invitation-title-role-max-width: 75px;
   padding: 7px 10px;
   background-color: $green1;
 
-  .invitation-token-thumbnail +
+  .invitation-token-thumbnail-link +
   & {
     @include border-top-left-radius(0);
     @include border-bottom-left-radius(0);
@@ -67,8 +66,14 @@ $invitation-title-role-max-width: 75px;
 .invitation-token-legend { margin-left: 10px; }
 
 .invitation-token-title {
-  @include calc("width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 96%);
-  display: block;
+  width: auto;
+  @include calc("max-width", "100% - (#{$invitation-default-horizontal-margin} + #{$invitation-default-link-remove-width})", 96%);
+
+  &,
+  &:hover,
+  &:visited { color: $black; }
+
+  &:hover { text-decoration: none; }
 }
 
 .invitation-token-email {

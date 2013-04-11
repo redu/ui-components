@@ -9,23 +9,28 @@
         <p>Quando o usuário está buscando por outros usuários e digita o nome ou e-mail de algum outro usuário que está cadastrado na base de dados do Redu, este token é utilizado.</p>
         <h5>Exemplo:</h5>
         <div class="invitation-token clearfix">
-          <img class="invitation-token-thumbnail" src="../img/thumbnail-missing-profile-32.png" alt="Filipe W. Lima" title="Filipe W. Lima" width="32" height="32">
+          <a class="invitation-token-thumbnail-link pull-left" href="#">
+            <img class="invitation-token-thumbnail" src="../img/thumbnail-missing-profile-32.png" alt="Filipe W. Lima" title="Filipe W. Lima" width="32" height="32">
+          </a>
           <div class="invitation-token-inner">
             <span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake">Remover</span>
-            <span class="invitation-token-title text-truncate" title="Filipe W. Lima">Filipe W. Lima</span>
+            <a class="invitation-token-title text-truncate" href="#" title="Filipe W. Lima">Filipe W. Lima</a>
           </div>
         </div>
         <pre class="prettyprint linenums">
 &lt;!--
   Variáveis:
-    THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 32x32.
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 32x32.
     USER_FULL_NAME: nome completo do usuário.
 --&gt;
 &lt;div class="invitation-token clearfix"&gt;
-  &lt;img class="invitation-token-thumbnail" src="THUMBNAIL_URL" alt="USER_FULL_NAME" title="USER_FULL_NAME" width="32" height="32"&gt;
+  &lt;a class="invitation-token-thumbnail-link pull-left" href="USER_PROFILE_URL"&gt;
+    &lt;img class="invitation-token-thumbnail" src="USER_THUMBNAIL_URL" alt="USER_FULL_NAME" title="USER_FULL_NAME" width="32" height="32"&gt;
+  &lt;/a&gt;
   &lt;div class="invitation-token-inner"&gt;
     &lt;span class="invitation-link-remove icon-close-gray_16_18 text-replacement link-fake"&gt;Remover&lt;/span&gt;
-    &lt;span class="invitation-token-title text-truncate" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/span&gt;
+    &lt;a class="invitation-token-title text-truncate" href="USER_PROFILE_URL" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
         <h4>Usuário não cadastrato no Redu</h4>

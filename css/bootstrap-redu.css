@@ -7332,7 +7332,6 @@ hr {
   -webkit-border-bottom-left-radius: 3px;
   -moz-border-radius-bottomleft: 3px;
   border-bottom-left-radius: 3px;
-  float: left;
 }
 
 .invitation-token-inner {
@@ -7342,7 +7341,7 @@ hr {
   padding: 7px 10px;
   background-color: #e1f1e1;
 }
-.invitation-token-thumbnail +
+.invitation-token-thumbnail-link +
 .invitation-token-inner {
   -webkit-border-top-left-radius: 0;
   -moz-border-radius-topleft: 0;
@@ -7369,12 +7368,18 @@ hr {
 }
 
 .invitation-token-title {
-  width: 96%;
-  width: -moz-calc(100% - (10px + 16px));
-  width: -o-calc(100% - (10px + 16px));
-  width: -webkit-calc(100% - (10px + 16px));
-  width: calc(100% - (10px + 16px));
-  display: block;
+  width: auto;
+  max-width: 96%;
+  max-width: -moz-calc(100% - (10px + 16px));
+  max-width: -o-calc(100% - (10px + 16px));
+  max-width: -webkit-calc(100% - (10px + 16px));
+  max-width: calc(100% - (10px + 16px));
+}
+.invitation-token-title, .invitation-token-title:hover, .invitation-token-title:visited {
+  color: black;
+}
+.invitation-token-title:hover {
+  text-decoration: none;
 }
 
 .invitation-token-email {
