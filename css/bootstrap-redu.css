@@ -6894,7 +6894,6 @@ hr {
   width: calc((100% - ((1 - 1) * 10px)) / 1);
   margin-left: 10px;
   float: left;
-  position: relative;
 }
 .list-1-columns > li:nth-child(1n+1) {
   margin-left: 0;
@@ -6928,6 +6927,9 @@ hr {
 .list-1-columns.list-columns-separator > li:nth-child(1) {
   margin-top: 0;
 }
+.list-1-columns.list-columns-separator > li:first-child:after {
+  background: none;
+}
 
 .list-2-columns {
   list-style: none;
@@ -6944,7 +6946,6 @@ hr {
   width: calc((100% - ((2 - 1) * 10px)) / 2);
   margin-left: 10px;
   float: left;
-  position: relative;
 }
 .list-2-columns > li:nth-child(2n+1) {
   margin-left: 0;
@@ -6981,6 +6982,9 @@ hr {
 .list-2-columns.list-columns-separator > li:nth-child(1) {
   margin-top: 0;
 }
+.list-2-columns.list-columns-separator > li:first-child:after {
+  background: none;
+}
 
 .list-3-columns {
   list-style: none;
@@ -6997,7 +7001,6 @@ hr {
   width: calc((100% - ((3 - 1) * 10px)) / 3);
   margin-left: 10px;
   float: left;
-  position: relative;
 }
 .list-3-columns > li:nth-child(3n+1) {
   margin-left: 0;
@@ -7036,6 +7039,9 @@ hr {
 }
 .list-3-columns.list-columns-separator > li:nth-child(1) {
   margin-top: 0;
+}
+.list-3-columns.list-columns-separator > li:first-child:after {
+  background: none;
 }
 
 .general-list-item {
