@@ -19,14 +19,21 @@
       </li>
       <li class="nav-local-item link-container">
         <a class="nav-local-link link-target" href="#list-mix">Mista</a>
-      </li> <li class="nav-local-item link-container">
+      </li>
+      <li class="nav-local-item link-container">
         <a class="nav-local-link link-target" href="#list-environments">Ambientes que participo</a>
       </li>
-       <li class="nav-local-item link-container">
-        <a class="nav-local-link link-target" href="#list-rea">Lista de REA</a>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target text-truncate" href="#list-rea" title="Recursos Educacionais Abertos (REA)">Recursos Educacionais Abertos (REA)</a>
       </li>
-       <li class="nav-local-item link-container">
-        <a class="nav-local-link link-target" href="#list-members">Lista de Membros</a>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-members">Membros</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-members-contacts">Contatos</a>
+      </li>
+      <li class="nav-local-item link-container">
+        <a class="nav-local-link link-target" href="#list-members-colleagues">Colegas de Curso</a>
       </li>
     </ul>
   </div>
@@ -758,331 +765,110 @@
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-    <h3 id="list-members">Listas de Membros</h3>
-    <p>Para que a quantidade de elemento seja de duas por linha, dizemos que a sua largura é igual à metade da largura total do elemento que o envolve. Para isso, utilizaremos a classe <code>.middle-width</code></p>
-    <div class="row">
-      <div class="span13">
-        <ul class="member-list">
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="separator"><hr></li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+    <h3 id="list-members">Lista de Membros</h3>
+    <p>A lista de membros é usada para listar os membros de um determinado ambiente/curso/disciplina com informações do tipo: seu papel naquele contexto e quantidade de amigos em comum com o usuário da sessão. A estrutura de um item da lista é a seguinte:</p>
+    <div class="general-list-item member-list-item">
+      <div class="general-list-item-body">
+        <a href="http://www.redu.com.br/pessoas/julianalucena" class="general-list-item-column">
+          <img alt="Juliana Lucena" height="64" src="img/thumbnail-missing-profile-64.png" title="Juliana Lucena" width="64">
+        </a>
+        <div class="general-list-item-column">
+          <a href="http://www.redu.com.br/pessoas/julianalucena" class="link-name text-truncate" title="Juliana Lucena">Juliana Lucena</a>
+          <span class="legend icon-teacher-gray_16_18-before">Professor</span>
+          <span class="legend">17 contatos em comum</span>
+        </div>
       </div>
     </div>
     <pre class="prettyprint linenums">
-&lt;ul class="member-list"&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
+&lt;!--
+  Variáveis:
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 64x64.
+    USER_FULL_NAME: nome completo do usuário.
+    USER_ROLE: papel do usuário no contexto.
+    USER_FRIENDS_IN_COMMOM: quantidade de amigos em comum com o usuário da sessão.
+--&gt;
+&lt;li class="general-list-item member-list-item"&gt;
+  &lt;div class="general-list-item-body"&gt;
+    &lt;a href="USER_PROFILE_URL" class="general-list-item-column"&gt;
+      &lt;img src="USER_THUMBNAIL_URL" title="USER_FULL_NAME" alt="USER_FULL_NAME" width="64" height="64"&gt;
+    &lt;/a&gt;
+    &lt;div class="general-list-item-column"&gt;
+      &lt;a href="USER_PROFILE_URL" class="link-name text-truncate" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;
+      &lt;span class="legend" class="icon-[member|tutor|teacher|administrator]-gray_16_18-before"&gt;USER_ROLE&lt;/span&gt;
+      &lt;span class="legend"&gt;USER_FRIENDS_IN_COMMOM contato(s) em comum&lt;/span&gt;
     &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="separator"&gt;&lt;hr&gt;&lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>
-    <h3 id="list-members-contacts">Listas de Contatos</h3>
-    <div class="row">
-      <div class="span13">
-        <ul class="member-list">
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend">Profissão</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend">Profissão</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="separator"><hr></li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend">Profissão</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend">Profissão</span>
-                <span class="legend">22 amigos em comum</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+  &lt;/div&gt;
+&lt;/li&gt;</pre>
+    <h3 id="list-members-contacts">Lista de Contatos</h3>
+    <p>A lista de contatos é usada para listar os contatos de um determinado usuário com informações do tipo: seu papel naquele contexto e quantidade de amigos em comum com o usuário da sessão. A estrutura de um item da lista é a seguinte:</p>
+    <div class="general-list-item member-list-item">
+      <div class="general-list-item-body">
+        <a href="http://www.redu.com.br/pessoas/julianalucena" class="general-list-item-column">
+          <img alt="Juliana Lucena" height="64" src="img/thumbnail-missing-profile-64.png" title="Juliana Lucena" width="64">
+        </a>
+        <div class="general-list-item-column">
+          <a href="http://www.redu.com.br/pessoas/julianalucena" class="link-name text-truncate" title="Juliana Lucena">Juliana Lucena</a>
+          <span class="legend text-truncate" title="Engenheira de Software">Engenheira de Software</span>
+          <span class="legend">17 contatos em comum</span>
+        </div>
       </div>
     </div>
     <pre class="prettyprint linenums">
-&lt;ul class="member-list"&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend"&gt;Profissão&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
+&lt;!--
+  Variáveis:
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 64x64.
+    USER_FULL_NAME: nome completo do usuário.
+    USER_CURRENT_EXPERIENCES: os cargos das experiências profissionais do usuário, separadas por vírgula caso mais de uma.
+    USER_FRIENDS_IN_COMMOM: quantidade de amigos em comum com o usuário da sessão.
+--&gt;
+&lt;li class="general-list-item member-list-item"&gt;
+  &lt;div class="general-list-item-body"&gt;
+    &lt;a href="USER_PROFILE_URL" class="general-list-item-column"&gt;
+      &lt;img src="USER_THUMBNAIL_URL" title="USER_FULL_NAME" alt="USER_FULL_NAME" width="64" height="64"&gt;
+    &lt;/a&gt;
+    &lt;div class="general-list-item-column"&gt;
+      &lt;a href="USER_PROFILE_URL" class="link-name text-truncate" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;
+      &lt;span class="legend text-truncate" title="USER_CURRENT_EXPERIENCES"&gt;USER_CURRENT_EXPERIENCES&lt;/span&gt;
+      &lt;span class="legend"&gt;USER_FRIENDS_IN_COMMOM contato(s) em comum&lt;/span&gt;
     &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend"&gt;Profissão&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="separator"&gt;&lt;hr&gt;&lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend"&gt;Profissão&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend"&gt;Profissão&lt;/span&gt;
-        &lt;span class="legend"&gt;22 amigos em comum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>
-    <h3 id="list-members-colleagues">Listas de Colegas de Curso</h3>
-    <div class="row">
-      <div class="span13">
-        <ul class="member-list">
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">Curso Lorem Ipsum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">Curso Lorem Ipsum</span>
-              </div>
-            </div>
-          </li>
-          <li class="separator"><hr></li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">Curso Lorem Ipsum</span>
-              </div>
-            </div>
-          </li>
-          <li class="general-list-item middle-width">
-            <div class="general-list-item-body">
-              <div class="general-list-item-column">
-                <a href="http://#"><img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"></a>
-              </div>
-              <div class="general-list-item-column">
-                <a href="/aplicativos/559" class="link-name">Nome Sobrenome</a>
-                <span class="legend icon-teacher-gray_16_18-before">Professor</span>
-                <span class="legend">Curso Lorem Ipsum</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+  &lt;/div&gt;
+&lt;/li&gt;</pre>
+    <h3 id="list-members-colleagues">Lista de Colegas de Curso</h3>
+    <p>A lista de colegas de curso é usada para listar os colegas de curso com informações do tipo: seu papel naquele curso e nome do curso. A estrutura de um item da lista é a seguinte:</p>
+    <div class="general-list-item member-list-item">
+      <div class="general-list-item-body">
+        <a href="http://www.redu.com.br/pessoas/julianalucena" class="general-list-item-column">
+          <img alt="Juliana Lucena" height="64" src="img/thumbnail-missing-profile-64.png" title="Juliana Lucena" width="64">
+        </a>
+        <div class="general-list-item-column">
+          <a href="http://www.redu.com.br/pessoas/julianalucena" class="link-name text-truncate" title="Juliana Lucena">Juliana Lucena</a>
+          <span class="legend icon-teacher-gray_16_18-before">Professor</span>
+          <span class="legend text-truncate">Curso Lorem Ipsum</span>
+        </div>
       </div>
     </div>
     <pre class="prettyprint linenums">
-&lt;ul class="member-list"&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;Curso Lorem Ipsum&lt;/span&gt;
-      &lt;/div&gt;
+&lt;!--
+  Variáveis:
+    USER_PROFILE_URL: a URL do perfil do usuário.
+    USER_THUMBNAIL_URL: endereço do thumbnail do usuário tamanho 64x64.
+    USER_FULL_NAME: nome completo do usuário.
+    USER_ROLE: papel do usuário no curso.
+    USER_COURSE: o curso que o usuário faz parte.
+--&gt;
+&lt;li class="general-list-item member-list-item"&gt;
+  &lt;div class="general-list-item-body"&gt;
+    &lt;a href="USER_PROFILE_URL" class="general-list-item-column"&gt;
+      &lt;img src="USER_THUMBNAIL_URL" title="USER_FULL_NAME" alt="USER_FULL_NAME" width="64" height="64"&gt;
+    &lt;/a&gt;
+    &lt;div class="general-list-item-column"&gt;
+      &lt;a href="USER_PROFILE_URL" class="link-name text-truncate" title="USER_FULL_NAME"&gt;USER_FULL_NAME&lt;/a&gt;
+      &lt;span class="legend" class="icon-[member|tutor|teacher|administrator]-gray_16_18-before"&gt;USER_ROLE&lt;/span&gt;
+      &lt;span class="legend text-truncate" title="USER_COURSE"&gt;USER_COURSE&lt;/span&gt;
     &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;Curso Lorem Ipsum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="separator"&gt;&lt;hr&gt;&lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;Curso Lorem Ipsum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="general-list-item middle-width"&gt;
-    &lt;div class="general-list-item-body"&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="http://#"&gt;&lt;img alt="Movimento das Plantas" height="64" src="img/thumbnail-missing-profile-64.png" title="Movimento das Plantas" width="64"&gt;&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div class="general-list-item-column"&gt;
-        &lt;a href="/aplicativos/559" class="link-name"&gt;Nome Sobrenome&lt;/a&gt;
-        &lt;span class="legend icon-teacher-gray_16_18-before"&gt;Professor&lt;/span&gt;
-        &lt;span class="legend"&gt;Curso Lorem Ipsum&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-    </pre>
+  &lt;/div&gt;
+&lt;/li&gt;</pre>
   </div>
 </div>

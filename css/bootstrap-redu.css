@@ -7223,28 +7223,12 @@ hr {
   height: 50px;
 }
 
-.middle-width {
-  float: left;
-  overflow: visible;
-  width: 90%;
-  width: -webkit-calc(50% - 50px);
-  width: -moz-calc(50% - 50px);
-  width: calc(50% - 50px);
-  list-style: none;
-}
-
-.member-list .separator {
-  overflow: hidden;
-  list-style: none;
-  clear: both;
-}
-.member-list .general-list-item {
-  float: left;
-  margin-left: 15px;
-}
-.member-list .general-list-item .legend {
+.member-list-item .legend {
   font-size: 12px;
   line-height: 18px;
+}
+.member-list-item .legend +
+.legend {
   margin-top: 0;
 }
 

@@ -751,36 +751,18 @@ hr {
 // Fixar altura de contadores ex: (membros, cursos)
 .list-data { height: 50px; }
 
-// Para elementos com largura igual à metade da largura total da tela
-.middle-width {
-  float: left;
-  overflow: visible;
-  width: 90%;
-  width: -webkit-calc(50% - 50px);
-  width: -moz-calc(50% - 50px);
-  width: calc(50% - 50px);
 
-  list-style: none;
-}
+// Lista de membros / contatos / colegas de curso.
+// ==========================================================================
 
-// Para lista de membros
-.member-list {
-  .separator {
-    overflow: hidden;
-    list-style: none;
-    clear: both;
+.member-list-item {
+  .legend {
+    font-size: 12px;
+    line-height: $base-line-height;
   }
 
-  .general-list-item {
-    float: left;
-    margin-left: 15px;
-
-    .legend {
-      font-size: 12px;
-      line-height: 18px;
-      margin-top: 0;
-    }
-  }
+  .legend +
+  .legend { margin-top: 0; }
 }
 
 
