@@ -6050,11 +6050,11 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .header-item {
-  -webkit-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 0 -1px white;
+  -moz-box-shadow: inset 0 0 -1px white;
+  box-shadow: inset 0 0 -1px white;
   display: block;
-  border: 1px solid white;
+  border: 1px solid #cccccc;
   padding: 6px 18px 6px 20px;
   position: relative;
   z-index: 2;
@@ -6072,13 +6072,10 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
-  z-index: 3;
-}
-.header-item:last-child {
-  z-index: 1;
 }
 .header-item:hover {
   border-color: #73c3e6;
+  z-index: 1000;
 }
 .cssgradients .header-item {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #e6e6e6), color-stop(100%, #ffffff));
