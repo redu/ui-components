@@ -1,3 +1,20 @@
+// Retorna uma string com as classes de ícones identificadas.
+//
+// Dado uma string "classes", encontra todas as classes de ícones nela.
+var findIconClasses = function(classes) {
+  var iconClasses = [];
+
+  if (classes) {
+    classes = classes.split(' ');
+    $.each(classes, function(index, value) {
+      if (value.indexOf('icon-') !== -1) {
+        iconClasses.push(value);
+      }
+    });
+  }
+
+  return iconClasses.join(' ');
+};
 /* ===================================================
  * bootstrap-transition.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -22,7 +39,7 @@
 
   $(function () {
 
-    "use strict"; // jshint ;_;
+    "use strict";
 
 
     /* CSS TRANSITION SUPPORT (http://www.modernizr.com/)
@@ -81,7 +98,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* ALERT CLASS DEFINITION
@@ -171,7 +188,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* DROPDOWN CLASS DEFINITION
@@ -291,15 +308,14 @@
 
   $(function () {
     $('html')
-      .on('click.dropdown.data-api touchstart.dropdown.data-api', clearMenus)
+      .on('click.dropdown.data-api', clearMenus)
     $('body')
-      .on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
-      .on('click.dropdown.data-api touchstart.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
-      .on('keydown.dropdown.data-api touchstart.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
+      .on('click.dropdown', '.dropdown form', function (e) { e.stopPropagation() })
+      .on('click.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
+      .on('keydown.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
   })
 
 }(window.jQuery);
-
 /* =========================================================
  * bootstrap-modal.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#modals
@@ -322,7 +338,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* MODAL CLASS DEFINITION
@@ -519,7 +535,6 @@
   })
 
 }(window.jQuery);
-
 /* ===========================================================
  * bootstrap-tooltip.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
@@ -543,7 +558,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* TOOLTIP PUBLIC CLASS DEFINITION
@@ -826,7 +841,7 @@ $(function() {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* POPOVER PUBLIC CLASS DEFINITION
@@ -1110,7 +1125,6 @@ $(function() {
   // Adiciona os eventos dos filtros da visão geral.
   $('.filters-general-view').reduFilter()
 })
-
 !(function($) {
 
   "use strict";
@@ -1155,75 +1169,8 @@ $(function() {
       })
     },
 
-    // Adições/remoções de classes para o controle lista de opções.
-    optionList: function(options) {
-        var settings = $.extend({
-          optionListCheckedClass: 'control-option-list-checked'
-        , optionListCheckbox: 'control-option-list-checkbox'
-        , textAreaClass: 'input-area'
-        , appendAreaClass: 'control-append-area'
-        , blue2: '#73C3E6'
-        }, options)
-
-      return this.each(function() {
-        var optionList = $(this)
-          , textArea = optionList.children('.' + settings.textAreaClass)
-          , appendArea = optionList.children('.' + settings.appendAreaClass)
-          , checkbox = appendArea.children('.' + settings.optionListCheckbox)
-
-
-        // Adiciona a classe optionListCheckedClass quando o checkbox estiver marcardo.
-
-        if (checkbox.prop('checked')) {
-          optionList.addClass(settings.optionListCheckedClass)
-        }
-
-        checkbox.on('click', function() {
-          optionList.toggleClass(settings.optionListCheckedClass)
-        })
-
-        // Adiciona a borda blue2 ao botão quando o textarea está em foco.
-        textArea.on({
-          focusin: function() { appendArea.css('border-color', settings.blue2) }
-        , focusout: function() { appendArea.css('border-color', '') }
-        })
-      })
-    },
-
-    // Adições/remoções de classes para o formulário de busca.
-    search: function(options) {
-        var settings = $.extend({
-          iconMagnifierGray: 'icon-magnifier-gray_16_18'
-        , iconMagnifierLightBlue: 'icon-magnifier-lightblue_16_18'
-        , blue2: '#73C3E6'
-        , controlAreaClass: 'control-area'
-        , controlAppendAreaClass: 'control-append-area'
-        , searchIconClass: 'control-search-icon'
-        }, options)
-
-      return this.each(function() {
-        var form = $(this)
-          , control = form.children('.' + settings.controlAreaClass)
-          , button = form.children('.' + settings.controlAppendAreaClass)
-          , icon = button.children('.' + settings.searchIconClass)
-
-        control.on({
-          focusin: function() {
-            icon.removeClass(settings.iconMagnifierGray)
-            icon.addClass(settings.iconMagnifierLightBlue)
-            button.css('border-color', settings.blue2)
-          }
-        , focusout: function() {
-            icon.removeClass(settings.iconMagnifierLightBlue)
-            icon.addClass(settings.iconMagnifierGray)
-            button.css('border-color', '')
-          }
-        })
-      })
-    },
-
-    // Adiciona/remove a classe indicativa de controle em foco.
-    toggleFocusLabel: function(options) {
+    // Adiciona a classe indicativa de controle em foco.
+    focusLabel: function(options) {
       var settings = $.extend({
         // Classe adicionada quando o controle está me foco.
         controlFocusedClass: 'control-focused'
@@ -1231,30 +1178,19 @@ $(function() {
       , controlGroupClass: 'control-group'
       }, options)
 
-      $(this).parents('.' + settings.controlGroupClass).toggleClass(settings.controlFocusedClass)
+      $(this).parents('.' + settings.controlGroupClass).addClass(settings.controlFocusedClass)
     },
 
-    // Adiciona/remove uma classe ao rótulo do checkbox/radio quando está selecionado/desmarcado.
-    darkLabel: function(options) {
+    // Remove a classe indicativa de controle em foco.
+    removeFocusLabel: function(options) {
       var settings = $.extend({
-        // Classe adicionada quando o controle está marcado.
-        controlCheckedClass: 'control-checked'
-        // Classe que identifica um radio button.
-      , radioClass: 'radio'
-      , darkenLabel: function(label) {
-          label.toggleClass(settings.controlCheckedClass)
-          label.siblings('.' + settings.radioClass).removeClass(settings.controlCheckedClass)
-        }
+        // Classe adicionada quando o controle está me foco.
+        controlFocusedClass: 'control-focused'
+        // Classe que identifica o container do controle.
+      , controlGroupClass: 'control-group'
       }, options)
 
-      return this.each(function() {
-        var control = $(this)
-          , label = control.parent()
-
-        if (control.prop('checked')) { label.addClass(settings.controlCheckedClass) }
-
-        control.on('change', function() { settings.darkenLabel(label) })
-      })
+      $(this).parents('.' + settings.controlGroupClass).removeClass(settings.controlFocusedClass)
     },
 
     // Ajusta a altura do textarea de acordo com seu atributo rows.
@@ -1299,7 +1235,7 @@ $(function() {
         var $input = $(this).css('opacity', 0)
           , inputVal = $input.val()
           , $button = $(document.createElement('a')).addClass(settings.buttonDefault).text(settings.buttonText)
-          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text(settings.filePathText)
+          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text($input.data('legend') || settings.filePathText)
           , $wrapper = $(document.createElement('div')).addClass(settings.wrapper).append($button).append($filePath)
           , $controlParent = $input.parent()
 
@@ -1334,6 +1270,24 @@ $(function() {
       })
     },
 
+    // Encontra o label correspondente de um checkbox/radio.
+    findLabel: function($control) {
+      // Primeiro tenta o label que encapsula o controle.
+      var $label = $control.closest('label')
+        , controlId = $control.attr('id')
+
+      // Depois tenta achar o label se ele estiver ligado por controle[id] e label[for].
+      if (typeof controlId !== 'undefined') {
+        var $possibleLabel = $('label[for="' + controlId + '"]')
+
+        if ($possibleLabel.length === 1) {
+          $label = $possibleLabel
+        }
+      }
+
+      return $label
+    },
+
     init: function() {}
   }
 
@@ -1352,15 +1306,106 @@ $(function() {
 $(function() {
   $('input[type="text"][maxlength], input[type="password"][maxlength], textarea[maxlength]').reduForm('countChars');
 
-  $(document).on('focus blur', 'input[type="text"], input[type="password"], input[type="file"], textarea, select', function(e) {
-    $(this).reduForm('toggleFocusLabel')
+  var focusInputSelectors = 'input[type="text"], input[type="password"], input[type="file"], textarea, select';
+  $(document)
+    .on('focus', focusInputSelectors, function(e) {
+      $(this).reduForm('focusLabel')
+    })
+    .on('blur', focusInputSelectors, function(e) {
+      $(this).reduForm('removeFocusLabel')
+    })
+
+  // Comportamento de escurer texto do checkbox/radio selecionado.
+
+  var reduFormRadioCheckboxSettings = {
+    // Classe adicionada quando o controle está marcado.
+    controlCheckedClass: 'control-checked'
+  }
+
+  $(document).on('change', 'input:radio, input:checkbox', function(e) {
+    var $control = $(this)
+      , $label = $.fn.reduForm('findLabel', $control)
+
+    if ($label.length > 0) {
+      $label.toggleClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+
+      // Se for um radio.
+      if ($control.is('input:radio')) {
+        // Procura o label dos outros radios para remover a classe.
+        var $form = $control.closest('form')
+          , controlName = $control.attr('name')
+          , $otherControls = $form.find('[name="' + controlName + '"]:radio').filter(function(index) {
+              return this !== $control[0]
+            })
+
+        $otherControls.each(function() {
+          var $control = $(this)
+            , $label = $.fn.reduForm('findLabel', $control)
+
+          $label.removeClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+        })
+      }
+    }
   })
 
-  $('input[type="radio"], input[type="checkbox"]').reduForm('darkLabel')
+  // Caso de refresh da página o checkbox/radio marcado.
+  $('input:radio, input:checkbox').each(function() {
+    var $control = $(this)
+      , $label = $.fn.reduForm('findLabel', $control)
 
-  $(".form-search").reduForm("search")
+    if ($control.prop('checked')) {
+      $label.addClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+    }
+  })
 
-  $('.control-option-list').reduForm('optionList')
+
+  // No elemento de opção com texto e formulários de busca, quando o campo ou
+  // área de texto estiverem selecionados, mudar a cor da borda e os ícones dos
+  // botões de cinza para azul. O inverso acontece quando deselecionado.
+  var colorBlue2 = '#73C3E6'
+    , selectorControlArea = '.control-area.area-infix'
+    , classesFixedArea = '.area-suffix, .form-search-filters-button'
+    , classIcon = "[class^='icon-'],[class*=' icon-']"
+  $(document)
+    .on('focusin', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', colorBlue2);
+
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('gray', 'lightblue'))
+      })
+    })
+    .on('focusout', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', '');
+
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('lightblue', 'gray'))
+      })
+    })
+    .on('change', '.form-search-filters input:radio', function(e) {
+      var $radio = $(this)
+        , $legendIcon = $radio.siblings('.legend')
+        , newIconClass = findIconClasses($legendIcon.attr('class'))
+        , $buttonIcon = $radio.closest('.form-search-filters').find('.form-search-filters-button .control-search-icon')
+        , currentIconClass = findIconClasses($buttonIcon.attr('class'))
+
+      $buttonIcon.removeClass(currentIconClass).addClass(newIconClass.replace('-before', ''))
+    })
 
   $('textarea[rows]').reduForm('resizeByRows')
 
@@ -1393,7 +1438,6 @@ $(function() {
   , autoInit : true
   }
 })
-
 !(function($) {
 
   'use strict';
@@ -1434,7 +1478,6 @@ $(function() {
 $(function() {
   $('.link-container').reduLinks()
 })
-
 !(function($) {
 
   "use strict";
@@ -1501,13 +1544,12 @@ $(function() {
   })
 
 }) (window.jQuery)
-$(function() { 
+$(function() {
   //Desabilita href dos links com estilo de botão, quando no estado desabilidado.
   $(".button-disabled").live("click", function(e) {
     e.preventDefault()
-  });  
-}); 
-
+  });
+});
 !(function($) {
 
   "use strict";
@@ -1716,7 +1758,6 @@ $(function() {
 $(function() {
   $('.control-invite-by-mail').reduAutocomplete('inviteByMail')
 })
-
 !(function($) {
 
   "use strict";
@@ -1954,6 +1995,7 @@ $(function() {
     $modal.length !== 0 && $modal.hasClass("modal") && $modal.modal("show")
   }
 })
+/*global findIconClasses */
 
 !(function($) {
 
@@ -1995,8 +2037,11 @@ $(function() {
 
       // Se for um formulário.
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit')
+        var $submit = $this.find('input:submit, button[type="submit"]')
           , spinnerClass = settings.spinnerCircularGray
+          , submitIconClasses = findIconClasses($submit.attr('class'))
+          , submitWidth = $submit.outerWidth()
+          , submitHeight = $submit.outerHeight()
 
         if ($submit.hasClass(settings.buttonDefault)) {
           spinnerClass = settings.spinnerCircularBlue
@@ -2007,7 +2052,9 @@ $(function() {
           .prop('disabled', true)
           .data('spinnerClass', spinnerClass)
           .data('content', $submit.val())
-          .css({ 'width': $submit.outerWidth(), 'height': $submit.outerHeight() })
+          .data('class', submitIconClasses)
+          .removeClass(submitIconClasses)
+          .css({ 'width': submitWidth, 'height': submitHeight })
           .val('')
       }
 
@@ -2019,20 +2066,6 @@ $(function() {
           spinnerImg += settings.spinnerCircularBlueGif
         } else {
           spinnerImg += settings.spinnerCircularGrayGif
-        }
-
-        // Encontra possíveis classes de ícones.
-        var findIconClasses = function(classes) {
-          var iconClasses = []
-
-          classes = classes.split(' ')
-          $.each(classes, function(index, value) {
-            if (value.indexOf('icon-') !== -1) {
-              iconClasses.push(value)
-            }
-          })
-
-          return iconClasses.join(' ')
         }
 
         var content = $this.html()
@@ -2067,10 +2100,11 @@ $(function() {
       var $this = $(this)
 
       if ($this.is('form')) {
-        var $submit = $this.find('input:submit')
+        var $submit = $this.find('input:submit, button[type="submit"]')
 
         $submit
           .removeClass($submit.data('spinnerClass'))
+          .addClass($submit.data('class'))
           .prop('disabled', false)
           .val($submit.data('content'))
       }
@@ -2111,7 +2145,7 @@ $(function() {
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* DEFINIÇÃO DE CLASSE DO CAMPO DE BUSCA.
@@ -2123,15 +2157,31 @@ $(function() {
   }
 
   SearchField.prototype.expand = function () {
-    var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '+=' + this.options.increment }, 'fast');
-    $target.hide()
+    var $target = $(this.$element.data("toggle"))
+      , isFocused = this.$element.data("isFocused")
+
+    if (!isFocused) {
+      $target.hide()
+
+      this.$element
+        .data("isFocused", true)
+        .closest("." + this.options.classes.formSearchExpandable)
+        .animate({ width: "+=" + this.options.increment }, 150)
+    }
   }
 
   SearchField.prototype.collapse = function () {
-    var $target = $(this.$element.data('toggle'))
-    this.$element.parent().animate({ width: '-=' + this.options.increment }, 'fast');
-    $target.show()
+    var $target = $(this.$element.data("toggle"))
+      , isFocused = this.$element.data("isFocused")
+
+    if (isFocused) {
+      $target.show()
+
+      this.$element
+        .data("isFocused", false)
+        .closest("." + this.options.classes.formSearchExpandable)
+        .animate({ width: "-=" + this.options.increment }, 150)
+    }
   }
 
 
@@ -2141,16 +2191,26 @@ $(function() {
   $.fn.searchField = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('searchField')
-        , options = typeof option == 'object' && option
-      if (!data) $this.data('searchField', (data = new SearchField(this, options)))
-      if (option == 'expand') data.expand()
-      else if (option == 'collapse') data.collapse()
+        , data = $this.data("searchField")
+        , options = typeof option == "object" && option
+      if (!data) $this.data("searchField", (data = new SearchField(this, options)))
+      if (option == "expand") data.expand()
+      else if (option == "collapse") data.collapse()
     })
   }
 
   $.fn.searchField.defaults = {
-    increment: 120
+    increment: 100
+  , classes: {
+      // Padrão a todo formulário de busca.
+      formSearch: "form-search"
+      // Formulário de busca que expande/contrai.
+    , formSearchExpandable: "form-search-expandable"
+      // Formulário de busca com dropdown de filtros.
+    , formSearchFilters: "form-search-filters"
+      // Campo de texto onde o termo de busca é digitado.
+    , inputField: "control-area"
+    }
   }
 
   $.fn.searchField.Constructor = SearchField
@@ -2160,13 +2220,323 @@ $(function() {
   * =============== */
 
   $(function () {
-    $('body').on('focus', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('expand')
-    }).on('blur', '.form-search input[data-toggle]', function ( e ) {
-      var $searchField = $(e.target)
-      $searchField.searchField('collapse')
+    var formSearchExpandableInputSelector = "." + $.fn.searchField.defaults.classes.formSearchExpandable + " ." + $.fn.searchField.defaults.classes.inputField
+      , formSearchFiltersInputSelector = "." + $.fn.searchField.defaults.classes.formSearchFilters + " ." + $.fn.searchField.defaults.classes.inputField
+
+    $(document)
+      .on("focusin", formSearchExpandableInputSelector, function (e) {
+        $(this).searchField("expand")
+      })
+      .on("focusout", formSearchExpandableInputSelector, function (e) {
+        $(this).searchField("collapse")
+      })
+      .on("keypress", formSearchFiltersInputSelector, function(e) {
+        // Submete o formulário quando o Enter é pressionado ao invés de abrir o dropdown.
+        if (e.which == 13) {
+          $(this).closest("." + $.fn.searchField.defaults.classes.formSearch).submit()
+          return false
+        }
+      })
+  })
+
+}(window.jQuery);
+// Exibe todos os comentários
+$.fn.exibeComments = function(opts){
+  return this.each(function(){
+    var $this = $(this);
+
+    $this.live("click", function(e){
+      var $responses = $this.parents(".responses");
+
+      // Esconde todas as respostas mais antigas
+      if ($responses.hasClass("open")){
+        $responses.find(".last-responses").html("Visualizando as últimas respostas...");
+        $responses.countComments();
+        $responses.find('li').animate(150);
+        $responses.groupResponses();
+        $responses.removeClass("open");
+      }
+
+      // Exibe todas as respostas
+      else {
+        $responses.find(".last-responses").html("Visualizando todas as respostas...");
+        $responses.find("li").slideDown(150, 'swing');
+        $this.html("esconder todas as respostas");
+        // Adiciona a class open para informar que todas as respostas estão exibidas
+        $responses.addClass("open");
+      }
+    });
+  });
+};
+
+// Exibe área de criação de respostas
+$(".actions .reply-status span").live("click", function(e){
+  var $this = $(this);
+
+  $this.parents(".subject-content").find(".create-response").slideToggle(150, 'swing');
+});
+
+// Esconde formulário para criação de respostas
+$(".create-response .status-buttons .cancel").live("click",function(e){
+  var $this = $(this);
+
+  $this.parents(".create-response").slideUp(150, 'swing');
+});
+
+// Expande o text-area para a criação de status
+$(".create-status textarea").live("click",function(e){
+  var $textArea = $(this);
+  var $button = $textArea.parent().find(".status-buttons");
+
+  $textArea.animate({ height: 136 }, 150);
+  $button.slideDown(150, "swing");
+  e.preventDefault();
+})
+
+// Cancelar a criação de status
+$(".create-status .status-buttons .cancel").live("click", function(e){
+  e.preventDefault()
+  var $this = $(this);
+
+  $this.parents("form").find("textarea").animate({ height: 30 }, 150);
+  $this.parents(".status-buttons").slideUp(150, 'swing');
+})
+
+// Agrupa respostas
+$.fn.groupResponses = function(opts){
+  return this.each(function(){
+    var $this = $(this);
+    var options = {
+      maxResponses : 3
+    }
+    $.extend(options, opts)
+
+    var $responses = $this.find("li:not(.show-responses)");
+    if ($responses.length > options.maxResponses) {
+      $responses.filter(":lt(" + ($responses.length - options.maxResponses) + ")").slideUp(150, "swing");
+      $(this).find(".show-responses").show();
+    }
+  });
+}
+
+// Agrupa membros
+$.fn.groupMembers = function(opts){
+  return this.each(function(){
+    var $this = $(this);
+    var options = {
+      elementWidth : 34,
+      elementHeight : 40
+    }
+    $.extend(options, opts)
+
+    var $elements = $this.find("li");
+    var width = $this.width();
+    var newHeight = (Math.ceil((($elements.length * options.elementWidth) /  width)) *  options.elementHeight);
+
+    // Exibe os elementos agrupados
+    $(".log .see-all").live("click",function(e) {
+
+      // Exibe todos os elementos
+      if ($this.hasClass("open")) {
+        $this.animate({ height: options.elementHeight }, 150);
+        $this.removeClass("open");
+        $(this).html("+ ver todos");
+      }
+
+      // Esconde elementos para agrupar
+      else {
+        $this.addClass("open");
+        $this.animate({ height: newHeight }, 150);
+        $(this).html("- esconder todos");
+      }
+    });
+  })
+}
+
+//Conta a quantidade de respostas de um post
+$.fn.countComments = function(){
+  return this.each(function(){
+    var $this = $(this);
+    var quantity = $this.find(".response").length;
+    $this.find(".see-more").html("Mostrar todas as " + quantity + " respostas");
+  });
+};
+
+$(function() {
+  $('.responses').groupResponses();
+  $('.grouping-elements').groupMembers();
+  $(".responses").countComments();
+  $(".responses .see-more").exibeComments();
+
+  // Deixa ícone do contexto do estilo hover ao passar o mouse no link do mesmo, e vice-versa.
+  $(".context-icon").each( function(){
+    var $this = $(this);
+    var $link = $this.parent().find(".context-link");
+    var findIconClass = function (classes) {
+      for (i = 0; classes.length; i++) {
+        if (classes[i].indexOf("icon") !== -1) {
+          return classes[i];
+        }
+      }
+    };
+
+    var iconClass = findIconClass($this.attr("class").split(" "));
+
+    // Troca ícone de estado normal para estado hover alterando sua cor
+    var iconHoverClass = iconClass.replace("gray", "blue");
+
+    $this.mouseover(function() {
+      $link.addClass("context-link");
+    });
+
+    $this.mouseout(function() {
+      $link.removeClass("context-link");
+    });
+
+    $link.mouseover(function() {
+      $this.removeClass(iconClass);
+      $this.addClass(iconHoverClass);
+    });
+
+    $link.mouseout(function() {
+      $this.removeClass(iconHoverClass);
+      $this.addClass(iconClass);
+    });
+
+  })
+
+});
+$(function() {
+  var settings = {
+    // Engloba todo o botão dropdown e formulário de login.
+    buttonSignInWrapper: ".header-button-sign-in"
+    // O botão dropdown.
+  , buttonDropdown: ".dropdown-toggle"
+    // O campo de login (logicamente deve ser o primeiro).
+  , inputLogin: "input:text:first"
+  }
+
+  // Foca no primeiro campo (de login) quando o botão dropdown "Entrar no Redu" é aberto.
+  $("body").on("click", settings.buttonSignInWrapper + " " + settings.buttonDropdown, function() {
+    setTimeout(function() {
+      $(settings.buttonSignInWrapper).find(settings.inputLogin).focus()
+    }, 100)
+  })
+})
+/* ==========================================================
+ * bootstrap-affix.js v2.3.1
+ * http://twitter.github.com/bootstrap/javascript.html#affix
+ * ==========================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================== */
+
+
+!function ($) {
+
+  "use strict";
+
+
+ /* AFFIX CLASS DEFINITION
+  * ====================== */
+
+  var Affix = function (element, options) {
+    this.options = $.extend({}, $.fn.affix.defaults, options)
+    this.$window = $(window)
+      .on('scroll.affix.data-api', $.proxy(this.checkPosition, this))
+      .on('click.affix.data-api',  $.proxy(function () { setTimeout($.proxy(this.checkPosition, this), 1) }, this))
+    this.$element = $(element)
+    this.checkPosition()
+  }
+
+  Affix.prototype.checkPosition = function () {
+    if (!this.$element.is(':visible')) return
+
+    var scrollHeight = $(document).height()
+      , scrollTop = this.$window.scrollTop()
+      , position = this.$element.offset()
+      , offset = this.options.offset
+      , offsetBottom = offset.bottom
+      , offsetTop = offset.top
+      , reset = 'affix affix-top affix-bottom'
+      , affix
+
+    if (typeof offset != 'object') offsetBottom = offsetTop = offset
+    if (typeof offsetTop == 'function') offsetTop = offset.top()
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom()
+
+    affix = this.unpin !== null && (scrollTop + this.unpin <= position.top) ?
+      false    : offsetBottom !== null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ?
+      'bottom' : offsetTop !== null && scrollTop <= offsetTop ?
+      'top'    : false
+
+    if (this.affixed === affix) return
+
+    this.affixed = affix
+    this.unpin = affix == 'bottom' ? position.top - scrollTop : null
+
+    this.$element.removeClass(reset).addClass('affix' + (affix ? '-' + affix : ''))
+  }
+
+
+ /* AFFIX PLUGIN DEFINITION
+  * ======================= */
+
+  var old = $.fn.affix
+
+  $.fn.affix = function (option) {
+    return this.each(function () {
+      var $this = $(this)
+        , data = $this.data('affix')
+        , options = typeof option == 'object' && option
+      if (!data) $this.data('affix', (data = new Affix(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.affix.Constructor = Affix
+
+  $.fn.affix.defaults = {
+    offset: 0
+  }
+
+
+ /* AFFIX NO CONFLICT
+  * ================= */
+
+  $.fn.affix.noConflict = function () {
+    $.fn.affix = old
+    return this
+  }
+
+
+ /* AFFIX DATA-API
+  * ============== */
+
+  $(window).on('load', function () {
+    $('[data-spy="affix"]').each(function () {
+      var $spy = $(this)
+        , data = $spy.data()
+
+      data.offset = data.offset || {}
+
+      data.offsetBottom && (data.offset.bottom = data.offsetBottom)
+      data.offsetTop && (data.offset.top = data.offsetTop)
+
+      $spy.affix(data)
     })
   })
+
 
 }(window.jQuery);

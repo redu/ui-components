@@ -88,14 +88,14 @@
 
 .tab-buttons {
   text-align: center;
-  margin: 19px auto 20px;
+  padding: 10px 0;
 }
 
 .tab-button {
   @include border-radius(11px);
   border: 1px solid $gray3;
   padding: 2px 15px 2px 9px;
-
+  background-color: $gray1;
   & + & { margin-left: 5px; }
 
   &:hover {

@@ -30,3 +30,4 @@ nbproject
 .idea
 .bundle
 bin
+node_modules

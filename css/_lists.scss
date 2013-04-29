@@ -6,10 +6,23 @@
 // Variáveis
 // ==========================================================================
 
+// Padding do item da lista geral.
+$general-list-item-padding: 5px;
 // A largura total das estrelas.
 $general-list-item-stars-width: 88px;
 // O espaçamento entre as estrelas e os contadores.
 $general-list-item-stars-n-counters-gutter: 12px;
+// Padding comum a lista de resultados da busca por cursos e disciplinas.
+$course-n-space-search-list-item-padding: 10px;
+
+// Mixins
+// ==========================================================================
+
+// Estilos do estado hover de um item da lista geral.
+@mixin general-list-item-hover-style {
+  @include gradient($gray3, $gray1, 0.2);
+  @include box-shadow(0 1px 0 $gray4);
+}
 
 
 .courses-lists {
@@ -157,6 +170,8 @@ $general-list-item-stars-n-counters-gutter: 12px;
 
 // Link para o curso/disciplina.
 .list-course-space-link {
+  color: $black;
+
   &:hover { text-decoration: none; }
 
   // Posiciona o ícone do curso/disciplina.
@@ -167,10 +182,7 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 // Bloco com o cabeçalho do item da lista.
-.list-course-space-header {
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+.list-course-space-header { margin-bottom: 20px; }
 
 // Bloco de autoração do curso/disciplina.
 .list-course-space-authoring { float: left; }
@@ -224,7 +236,8 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 .list-space-stat {
-  & + & { margin-left: 40px; }
+  & +
+  & { margin-left: 20px; }
 }
 
 .list-space-stats-row {
@@ -307,10 +320,7 @@ $general-list-item-stars-n-counters-gutter: 12px;
 }
 
 // Bloco com cabeçalho do módulo.
-.list-subject-header {
-  overflow: hidden;
-  margin-bottom: 5px;
-}
+.list-subject-header { margin-bottom: 5px; }
 
 // Bloco com os avisos e barra de progresso do módulo.
 .list-subject-header-info {
@@ -338,9 +348,22 @@ $general-list-item-stars-n-counters-gutter: 12px;
   @include border-radius(7px);
   border: 1px solid $gray2;
   padding: 11px 20px 10px;
-}
 
-.list-subject-description { margin-bottom: 20px; }
+  .list-subject-description +
+  .list-button { margin-top: 20px; }
+
+  .list-button {
+    list-style: none;
+    counter-reset: item;
+  }
+
+  .list-button-item:before {
+    content: counter(item);
+    counter-increment: item;
+  }
+
+  .list-button-link { margin-left: 10px; }
+}
 
 // Bloco de informações sobre uma aula.
 .list-lecture-info {
@@ -361,7 +384,10 @@ $general-list-item-stars-n-counters-gutter: 12px;
     &:hover { color: $orange4; }
   }
 
-  > span { vertical-align: middle; }
+  > span {
+    vertical-align: middle;
+    display: inline-block;
+  }
 
   > span + span { margin-left: 10px; }
 }
@@ -518,7 +544,7 @@ hr {
   margin: 10px 0;
   border-left: none;
   border-right: none;
-  border-top: 1px solid $gray3;
+  border-top: 1px solid $gray4;
   border-bottom: 1px solid $white;
 }
 
@@ -584,8 +610,10 @@ hr {
 
 // Item da lista.
 .general-list-item {
-  padding: 5px;
+  @include border-radius;
+  padding: $general-list-item-padding;
   color: $gray5;
+  position: relative;
 
   // Botão no canto inferior direito.
   .general-list-item-footer +
@@ -597,9 +625,7 @@ hr {
   }
 
   &:hover {
-    @include border-radius;
-    @include box-shadow(0 1px 0 $gray4);
-    @include gradient($gray3, $gray1, 0.2);
+    @include general-list-item-hover-style;
 
     &,
     .legend { color: $gray6; }
@@ -609,12 +635,10 @@ hr {
     .general-list-item-footer +
     .button-default { display: block; }
   }
-}
 
-// Título.
-.general-list-item-title {
-  font: 500 18px/18px $museo-sans;
-  letter-spacing: -1px;
+  .button-dropdown { padding: 6px 10px; }
+
+  .nav-global-profile-dropdown { width: 250px; }
 }
 
 // Link (dentro do título).
@@ -639,6 +663,8 @@ hr {
 
 // Colunas.
 .general-list-item-column {
+  position: relative;
+
   &:first-child { float: left; }
 
   &:last-child { overflow: hidden; }
@@ -713,4 +739,94 @@ hr {
 .general-list-item-close {
   float: right;
   display: none;
+}
+
+// Botão localizado no canto inferior direito.
+.general-list-item-bottom-right-button {
+  position: absolute;
+  bottom: $general-list-item-padding;
+  right: $general-list-item-padding;
+}
+
+// Fixar altura de contadores ex: (membros, cursos)
+.list-data { height: 50px; }
+
+
+// Lista de membros / contatos / colegas de curso.
+// ==========================================================================
+
+.member-list-item {
+  .legend {
+    font-size: 12px;
+    line-height: $base-line-height;
+  }
+
+  .legend +
+  .legend { margin-top: 0; }
+}
+
+
+// Itens da lista de busca.
+// ==========================================================================
+
+
+// Limita a largura do texto para que não alcance o ícone superior direito. Para ser usado com .text-truncate.
+.general-list-item-text-overlap-icon {
+  $old-browser-value: 90%;
+  $icon-width: 16px;
+  $icon-margin-left: 10px;
+  $expression: "100% - (#{$icon-width} + #{$icon-margin-left})";
+  @include calc("width", $expression, $old-browser-value);
+}
+
+// Comum a lista de resultados da busca por perfils e ambientes.
+.user-n-environment-search-list-item {
+  .general-list-item-column:last-child {
+    // Fixa a altura porque algumas informações são opcionais.
+    $thumbnail-height: 90px;
+    height: $thumbnail-height;
+  }
+
+  .general-list-item-counters {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .general-list-item-title { line-height: $base-line-height; }
+}
+
+// Lista de resultados da busca por perfils.
+.user-search-list-item {
+  .button-default,
+  .button-success { padding: 2px 6px; }
+}
+
+// Comum a lista de resultados da busca por cursos e disciplinas.
+.course-n-space-search-list-item {
+  @include general-list-item-hover-style;
+
+  .general-list-item-title +
+  .legend { margin-top: 3px; }
+
+  .legend +
+  .general-list-item-counters { margin-top: 16px; }
+}
+
+// Lista de resultados da busca por cursos.
+.course-search-list-item {
+  padding: $course-n-space-search-list-item-padding;
+
+  .general-list-item-bottom-right-button {
+    bottom: $course-n-space-search-list-item-padding;
+    right: $course-n-space-search-list-item-padding;
+  }
+}
+
+// Lista de resultados da busca por disciplina.
+.space-search-list-item {
+  padding: 0;
+
+  .general-list-item-body { padding: $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding 0; }
+
+  .general-list-item-footer { padding: 0 $course-n-space-search-list-item-padding $course-n-space-search-list-item-padding; }
 }

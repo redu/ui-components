@@ -41,8 +41,6 @@ $footer-logo-left-position: 115px;
   position: absolute;
   top: 0;
   left: (- $footer-logo-left-position);
-
-  &:hover { @include sprite-sprite(light-logo); }
 }
 
 // Imagem do logo.
@@ -106,17 +104,13 @@ $footer-logo-left-position: 115px;
   h3 + .legend { margin-top: 10px; }
 
   &:hover {
-    @include sprite-sprite(light-talk-to-us);
     display: block;
 
     .legend { color: $gray6; }
 
     a { color: $blue4; }
 
-    .footer-talk-to-us-balloons {
-      @include sprite-sprite(talk-to-us_hover);
-      display: block;
-    }
+    .footer-talk-to-us-balloons { display: block; }
   }
 
   a:hover { text-decoration: none; }

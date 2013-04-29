@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   var files = [
-    'js/bootstrap-transition.js'
+    'js/bootstrap-util.js'
+  , 'js/bootstrap-transition.js'
   , 'js/bootstrap-system-message.js'
   , 'js/bootstrap-dropdown.js'
   , 'js/bootstrap-modal.js'
@@ -17,13 +18,13 @@ module.exports = function(grunt) {
   , 'js/bootstrap-modal-redu.js'
   , 'js/bootstrap-spinners.js'
   , 'js/bootstrap-search-form.js'
+  , 'js/bootstrap-wall.js'
+  , 'js/bootstrap-header.js'
+  , 'js/bootstrap-affix.js'
   ];
 
   grunt.initConfig({
-
-    lint: {
-      files: files
-    },
+    pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
       options: {
@@ -35,7 +36,8 @@ module.exports = function(grunt) {
         boss: true,
         expr: true,
         asi: true
-      }
+      },
+      files: files
     },
 
     concat: {
@@ -54,9 +56,15 @@ module.exports = function(grunt) {
 
     watch: {
       files: files,
-      tasks: 'lint concat'
+      tasks: ['jshint', 'concat']
     }
   });
 
-  grunt.registerTask('default', 'watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  grunt.registerTask('default', ['watch']);
+
 };

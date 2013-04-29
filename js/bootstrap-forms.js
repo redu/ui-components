@@ -42,75 +42,8 @@
       })
     },
 
-    // Adições/remoções de classes para o controle lista de opções.
-    optionList: function(options) {
-        var settings = $.extend({
-          optionListCheckedClass: 'control-option-list-checked'
-        , optionListCheckbox: 'control-option-list-checkbox'
-        , textAreaClass: 'input-area'
-        , appendAreaClass: 'control-append-area'
-        , blue2: '#73C3E6'
-        }, options)
-
-      return this.each(function() {
-        var optionList = $(this)
-          , textArea = optionList.children('.' + settings.textAreaClass)
-          , appendArea = optionList.children('.' + settings.appendAreaClass)
-          , checkbox = appendArea.children('.' + settings.optionListCheckbox)
-
-
-        // Adiciona a classe optionListCheckedClass quando o checkbox estiver marcardo.
-
-        if (checkbox.prop('checked')) {
-          optionList.addClass(settings.optionListCheckedClass)
-        }
-
-        checkbox.on('click', function() {
-          optionList.toggleClass(settings.optionListCheckedClass)
-        })
-
-        // Adiciona a borda blue2 ao botão quando o textarea está em foco.
-        textArea.on({
-          focusin: function() { appendArea.css('border-color', settings.blue2) }
-        , focusout: function() { appendArea.css('border-color', '') }
-        })
-      })
-    },
-
-    // Adições/remoções de classes para o formulário de busca.
-    search: function(options) {
-        var settings = $.extend({
-          iconMagnifierGray: 'icon-magnifier-gray_16_18'
-        , iconMagnifierLightBlue: 'icon-magnifier-lightblue_16_18'
-        , blue2: '#73C3E6'
-        , controlAreaClass: 'control-area'
-        , controlAppendAreaClass: 'control-append-area'
-        , searchIconClass: 'control-search-icon'
-        }, options)
-
-      return this.each(function() {
-        var form = $(this)
-          , control = form.children('.' + settings.controlAreaClass)
-          , button = form.children('.' + settings.controlAppendAreaClass)
-          , icon = button.children('.' + settings.searchIconClass)
-
-        control.on({
-          focusin: function() {
-            icon.removeClass(settings.iconMagnifierGray)
-            icon.addClass(settings.iconMagnifierLightBlue)
-            button.css('border-color', settings.blue2)
-          }
-        , focusout: function() {
-            icon.removeClass(settings.iconMagnifierLightBlue)
-            icon.addClass(settings.iconMagnifierGray)
-            button.css('border-color', '')
-          }
-        })
-      })
-    },
-
-    // Adiciona/remove a classe indicativa de controle em foco.
-    toggleFocusLabel: function(options) {
+    // Adiciona a classe indicativa de controle em foco.
+    focusLabel: function(options) {
       var settings = $.extend({
         // Classe adicionada quando o controle está me foco.
         controlFocusedClass: 'control-focused'
@@ -118,30 +51,19 @@
       , controlGroupClass: 'control-group'
       }, options)
 
-      $(this).parents('.' + settings.controlGroupClass).toggleClass(settings.controlFocusedClass)
+      $(this).parents('.' + settings.controlGroupClass).addClass(settings.controlFocusedClass)
     },
 
-    // Adiciona/remove uma classe ao rótulo do checkbox/radio quando está selecionado/desmarcado.
-    darkLabel: function(options) {
+    // Remove a classe indicativa de controle em foco.
+    removeFocusLabel: function(options) {
       var settings = $.extend({
-        // Classe adicionada quando o controle está marcado.
-        controlCheckedClass: 'control-checked'
-        // Classe que identifica um radio button.
-      , radioClass: 'radio'
-      , darkenLabel: function(label) {
-          label.toggleClass(settings.controlCheckedClass)
-          label.siblings('.' + settings.radioClass).removeClass(settings.controlCheckedClass)
-        }
+        // Classe adicionada quando o controle está me foco.
+        controlFocusedClass: 'control-focused'
+        // Classe que identifica o container do controle.
+      , controlGroupClass: 'control-group'
       }, options)
 
-      return this.each(function() {
-        var control = $(this)
-          , label = control.parent()
-
-        if (control.prop('checked')) { label.addClass(settings.controlCheckedClass) }
-
-        control.on('change', function() { settings.darkenLabel(label) })
-      })
+      $(this).parents('.' + settings.controlGroupClass).removeClass(settings.controlFocusedClass)
     },
 
     // Ajusta a altura do textarea de acordo com seu atributo rows.
@@ -186,7 +108,7 @@
         var $input = $(this).css('opacity', 0)
           , inputVal = $input.val()
           , $button = $(document.createElement('a')).addClass(settings.buttonDefault).text(settings.buttonText)
-          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text(settings.filePathText)
+          , $filePath = $(document.createElement('span')).addClass(settings.filePath).text($input.data('legend') || settings.filePathText)
           , $wrapper = $(document.createElement('div')).addClass(settings.wrapper).append($button).append($filePath)
           , $controlParent = $input.parent()
 
@@ -221,6 +143,24 @@
       })
     },
 
+    // Encontra o label correspondente de um checkbox/radio.
+    findLabel: function($control) {
+      // Primeiro tenta o label que encapsula o controle.
+      var $label = $control.closest('label')
+        , controlId = $control.attr('id')
+
+      // Depois tenta achar o label se ele estiver ligado por controle[id] e label[for].
+      if (typeof controlId !== 'undefined') {
+        var $possibleLabel = $('label[for="' + controlId + '"]')
+
+        if ($possibleLabel.length === 1) {
+          $label = $possibleLabel
+        }
+      }
+
+      return $label
+    },
+
     init: function() {}
   }
 
@@ -239,15 +179,106 @@
 $(function() {
   $('input[type="text"][maxlength], input[type="password"][maxlength], textarea[maxlength]').reduForm('countChars');
 
-  $(document).on('focus blur', 'input[type="text"], input[type="password"], input[type="file"], textarea, select', function(e) {
-    $(this).reduForm('toggleFocusLabel')
+  var focusInputSelectors = 'input[type="text"], input[type="password"], input[type="file"], textarea, select';
+  $(document)
+    .on('focus', focusInputSelectors, function(e) {
+      $(this).reduForm('focusLabel')
+    })
+    .on('blur', focusInputSelectors, function(e) {
+      $(this).reduForm('removeFocusLabel')
+    })
+
+  // Comportamento de escurer texto do checkbox/radio selecionado.
+
+  var reduFormRadioCheckboxSettings = {
+    // Classe adicionada quando o controle está marcado.
+    controlCheckedClass: 'control-checked'
+  }
+
+  $(document).on('change', 'input:radio, input:checkbox', function(e) {
+    var $control = $(this)
+      , $label = $.fn.reduForm('findLabel', $control)
+
+    if ($label.length > 0) {
+      $label.toggleClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+
+      // Se for um radio.
+      if ($control.is('input:radio')) {
+        // Procura o label dos outros radios para remover a classe.
+        var $form = $control.closest('form')
+          , controlName = $control.attr('name')
+          , $otherControls = $form.find('[name="' + controlName + '"]:radio').filter(function(index) {
+              return this !== $control[0]
+            })
+
+        $otherControls.each(function() {
+          var $control = $(this)
+            , $label = $.fn.reduForm('findLabel', $control)
+
+          $label.removeClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+        })
+      }
+    }
   })
 
-  $('input[type="radio"], input[type="checkbox"]').reduForm('darkLabel')
+  // Caso de refresh da página o checkbox/radio marcado.
+  $('input:radio, input:checkbox').each(function() {
+    var $control = $(this)
+      , $label = $.fn.reduForm('findLabel', $control)
 
-  $(".form-search").reduForm("search")
+    if ($control.prop('checked')) {
+      $label.addClass(reduFormRadioCheckboxSettings.controlCheckedClass)
+    }
+  })
 
-  $('.control-option-list').reduForm('optionList')
+
+  // No elemento de opção com texto e formulários de busca, quando o campo ou
+  // área de texto estiverem selecionados, mudar a cor da borda e os ícones dos
+  // botões de cinza para azul. O inverso acontece quando deselecionado.
+  var colorBlue2 = '#73C3E6'
+    , selectorControlArea = '.control-area.area-infix'
+    , classesFixedArea = '.area-suffix, .form-search-filters-button'
+    , classIcon = "[class^='icon-'],[class*=' icon-']"
+  $(document)
+    .on('focusin', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', colorBlue2);
+
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('gray', 'lightblue'))
+      })
+    })
+    .on('focusout', selectorControlArea, function(e) {
+      var $fixedAreas = $(this).parent().find(classesFixedArea)
+        , $buttonsIcons = $fixedAreas.find(classIcon)
+      // Troca a cor da borda.
+      $fixedAreas.css('border-color', '');
+
+      // Troca a cor do ícone.
+      $buttonsIcons.each(function() {
+        var $button = $(this)
+          , iconClasses = findIconClasses($button.attr('class'))
+        $button
+          .removeClass(iconClasses)
+          .addClass(iconClasses.replace('lightblue', 'gray'))
+      })
+    })
+    .on('change', '.form-search-filters input:radio', function(e) {
+      var $radio = $(this)
+        , $legendIcon = $radio.siblings('.legend')
+        , newIconClass = findIconClasses($legendIcon.attr('class'))
+        , $buttonIcon = $radio.closest('.form-search-filters').find('.form-search-filters-button .control-search-icon')
+        , currentIconClass = findIconClasses($buttonIcon.attr('class'))
+
+      $buttonIcon.removeClass(currentIconClass).addClass(newIconClass.replace('-before', ''))
+    })
 
   $('textarea[rows]').reduForm('resizeByRows')
 

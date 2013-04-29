@@ -1,7 +1,7 @@
 /**
 * HTML5 placeholder polyfill
 * @requires jQuery - tested with 1.6.2 but might as well work with older versions
-* 
+*
 * code: https://github.com/ginader/HTML5-placeholder-polyfill
 * please report issues at: https://github.com/ginader/HTML5-placeholder-polyfill/issues
 *
@@ -11,7 +11,7 @@
 * http://www.gnu.org/licenses/gpl.html
 *
 * Version: 2.0
-* 
+*
 * History:
 * * 1.0 initial release
 * * 1.1 added support for multiline placeholders in textareas
@@ -116,7 +116,7 @@
                 log('the input element with the placeholder needs a label!');
                 return;
             }
-            
+
             if($(label).hasClass(o.options.removeLabelClass)){
                 $(label).removeClass(o.options.removeLabelClass)
                         .addClass(o.options.hiddenOverrideClass);
@@ -185,7 +185,7 @@
             }
         });
 
-    
+
 
     };
     $(function(){

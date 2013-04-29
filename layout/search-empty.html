@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if IE 8]><html class="ie8" lang="pt-br"><![endif]-->
+<!--[if gt IE 8]><html class="gt-ie8" lang="pt-br"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="pt-br"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Search-list</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-redu.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-redu.css">
+    <link rel="stylesheet" href="../docs/assets/css/vendor/google-code-prettify.min.css" >
+    <script src="../js/vendor/modernizr.js"></script>
+    <script src="http://use.typekit.com/lpo4rgu.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="nav-global nav-global-fixed-top">
+        <style>
+          .main-wrapper { padding-top: 42px; }
+        </style>
+        <div class="nav-global-inner">
+          <div class="nav-global-container">
+            <h1>
+              <a href="http://www.redu.com.br/" class="nav-global-brand logo-redu-gray_140_40 text-replacement" title="Redu">Redu</a>
+            </h1>
+            <div class="nav-global-buttons">
+              <a href="http://www.redu.com.br/" class="nav-global-button" title="Início">Início</a>
+              <a href="http://www.redu.com.br/ensine" class="nav-global-button" title="Ensine">Ensine</a>
+              <a href="http://www.redu.com.br/cursos" class="nav-global-button" title="Cursos">Cursos</a>
+              <a href="/" class="nav-global-button" title="Aplicativos">Aplicativos</a>
+            </div>
+            <div class="nav-global-buttons-dropdown button-toolbar">
+              <div class="button-group">
+                <button class="button-default nav-global-button-dropdown dropdown-toggle icon-profile-2-lightblue_16_18-before" data-toggle="dropdown">
+                  <span class="button-dropdown-arrow icon-arrow-down-lightblue_8_10"></span>
+                </button>
+                <div class="dropdown-menu nav-global-profile-dropdown">
+                  <div class="arrow"></div>
+                  <div class="nav-global-profile-header">
+                    Thaís Bione
+                  </div>
+                  <ul class="nav-global-profile-items">
+                    <li class="nav-global-profile-item link-container">
+                      <a href="http://www.redu.com.br/pessoas/thaisbione/" class="link-target icon-profile-lightblue_16_18-before" title="Meu Perfil">Meu Perfil</a>
+                      <a href="http://www.redu.com.br/pessoas/thaisbione/editar" class="nav-global-profile-edit link-secondary" title="Editar perfil">editar</a>
+                    </li>
+                    <li class="nav-global-profile-item link-container">
+                      <a href="http://www.redu.com.br/pessoas/thaisbione/messages" class="link-target icon-message-lightblue_16_18-before" title="Mensagens">Mensagens</a>
+                    </li>
+                    <li class="nav-global-profile-item link-container">
+                      <a href="http://www.redu.com.br/pessoas/thaisbione/editar" class="link-target icon-manage-lightblue_16_18-before" title="Configurações">Configurações</a>
+                    </li>
+                    <!-- Se o usuário for parceiro:
+                      <li class="nav-global-profile-item link-container">
+                        <a href="#" title="Parceiro" class="link-target icon-partner-lightblue_16_18-before">Parceiro</a>
+                      </li>
+                    -->
+                    <li class="nav-global-profile-item link-container">
+                      <a href="/sair" class="link-target" data-method="delete" data-remote="true" rel="nofollow" title="Sair">Sair</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="span16">
+            <div class="search-title-header">
+                <h2 class="search-title icon-apps-portal-gray_48_50-before link-container pull-left">
+                  <a href="/" class="search-title-link link-target" title="Busca por Ambientes e Perfis">Busca por Ambientes e Perfis</a>
+                </h2>
+              <div id="search-breadcrumb" class="breadcrumb-mini-wrapper">
+                <ul class="breadcrumb-mini" id="search-breadcrumb">
+                  <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
+                    <a class="breadcrumb-mini-link icon-magnifier-lightblue_16_18-before selected simple-navigation-active-leaf text-replacement" href="/">Busca</a>
+                  </li>
+                  <li class="breadcrumb-mini-item">
+                    <a class="breadcrumb-mini-link icon-environment-lightblue_16_18-before selected simple-navigation-active-leaf" href="/">Ambientes de Aprendizagem</a>
+                  </li>
+                </ul>
+              </div>
+              <span class="legend">Busque pelos Ambientes de Aprendizagem e seus Cursos e Disciplinas. Você também pode buscar pelos Perfis que fazem parte do Redu.
+              </span>
+            </div>
+            <div class="content-body search-content">
+              <ul class="tabs tabs-big">
+                <li class="tab">
+                  <a href="#" class="tab-title icon-basic-guide-lightblue_16_18-before" title="Geral">Geral (10)</a>
+                </li>
+                <li class="tab tab-active">
+                  <a href="#" class="tab-title icon-environment-lightblue_16_18-before" title="Ambientes">Ambientes</a>
+                </li>
+                <li class="tab">
+                  <a href="#" class="tab-title icon-profile-lightblue_16_18-before" title="Perfil">Perfil (6)</a>
+                </li>
+              </ul>
+              <div class="search-results empty">
+                <img src="../img/icon/search-empty_128_130.png">
+                <p>Sentimos muito, mas não achamos resultado para <b>“Metus”</b>. Tente outro termo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

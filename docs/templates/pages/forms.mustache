@@ -570,6 +570,7 @@
       <div class="row">
         <div class="span6">
           <p>Os controles de checkbox/radio devem ser encapsulados por <code>.control-checkbox</code> e <code>.control-radio</code>, respectivamente.</p>
+          <p>Para que o comportamento de escurer o texto (dentro do <code>&lt;label&gt;</code>) quando o checkbox/radio estiver selecionado, é necessário que: o checkbox/radio esteja sendo encapsulado pelo <code>&lt;label&gt;</code> ou que caso o <code>&lt;label&gt;</code> não esteja encapsulando o checkbox/radio, que estes dois elementos estejam conectados pelo <code>input[id]</code> e <code>label[for]</code>.</p>
         </div>
         <div class="span7">
           <p>Adicionando <code>.control-inline</code> ao <code>.control-group</code>, os checkboxes/radios ficam em linha.</p>
@@ -654,19 +655,19 @@
                 </div>
                 <div class="controls">
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     1
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     2
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     3
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-2">
                     4
                   </label>
                 </div>
@@ -729,19 +730,19 @@
                   </div>
                   <div class="controls span4">
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção um;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção dois;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção três: o comportamento de mais de uma linha é exemplificado nesta opção;
                     </label>
                     <label class="control-radio">
-                      <input type="radio" name="radio">
+                      <input type="radio" name="radio-3">
                       Opção quarto.
                     </label>
                   </div>
@@ -752,19 +753,19 @@
                 </div>
                 <div class="controls span4">
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     1
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     2
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     3
                   </label>
                   <label class="control-radio">
-                    <input type="radio">
+                    <input type="radio" name="radio-4">
                     4
                   </label>
                 </div>
@@ -832,8 +833,7 @@
       <h3 id="option-list">Lista de opções com texto</h3>
       <div class="row">
         <div class="span13">
-          <p>Este controle é formado por um textarea e um checkbox. Todo o controle é encapsulado por <code>.control-option-list</code>. O textarea deve ter <code>.control-area</code> e o bloco com o checkbox <code>.control-append-area</code>, dentro dele o checkbox deve ter <code>.control-option-list-checkbox</code>.</p>
-          <p><span class="label-doubts">To do:</span> como se comportará em um POST.</p>
+          <p>Este controle é formado por uma área de texto e um checkbox. Todo o controle é encapsulado por <code>.control-option-list.area-fix</code>. A área de texto deve ter <code>.control-area.area-infix</code> e o bloco com o checkbox <code>.control-option-list-checkbox.area-suffix</code>.</p>
         </div>
       </div>
       <div class="row">
@@ -845,10 +845,10 @@
                   <label for="input-17-1">List de opções com texto</label>
                 </div>
                 <div class="controls">
-                  <div class="control-option-list">
-                    <textarea class="control-area" id="input-17-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
-                    <div class="control-append-area">
-                      <input type="checkbox" class="control-option-list-checkbox">
+                  <div class="control-option-list area-fix">
+                    <textarea class="control-area area-infix" id="input-17-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-option-list-checkbox area-suffix">
+                      <input type="checkbox">
                     </div>
                   </div>
                 </div>
@@ -864,10 +864,10 @@
                   <label for="input-18-1">List de opções com texto</label>
                 </div>
                 <div class="controls span4">
-                  <div class="control-option-list">
-                    <textarea class="control-area" id="input-18-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
-                    <div class="control-append-area">
-                      <input type="checkbox" class="control-option-list-checkbox">
+                  <div class="control-option-list area-fix">
+                    <textarea class="control-area area-infix" id="input-18-1" placeholder="Descrição" rows="5" maxlength="170"></textarea>
+                    <div class="control-option-list-checkbox area-suffix">
+                      <input type="checkbox">
                     </div>
                   </div>
                 </div>
@@ -879,10 +879,10 @@
       <div class="row">
         <div class="span13">
           <pre class="prettyprint linenums">
-&lt;div class="control-option-list"&gt;
-  &lt;textarea class="control-area"&gt;&lt;/textarea&gt;
-  &lt;div class="control-append-area"&gt;
-    &lt;input class="control-option-list-checkbox" type="checkbox"&gt;
+&lt;div class="control-option-list area-fix"&gt;
+  &lt;textarea class="control-area area-infix"&gt;&lt;/textarea&gt;
+  &lt;div class="control-option-list-checkbox area-suffix"&gt;
+    &lt;input type="checkbox"&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
         </div>
@@ -891,14 +891,65 @@
       <h3 id="form-search">Busca</h3>
       <div class="row">
         <div class="span6">
-          <p>Este elemento é um formulário único com a classe <code>.form-search</code>. Dentro deve haver um input text com <code>.control-area</code> e um botão com <code>.control-append-area</code>.</p>
+          <p>Este elemento é um formulário único com a classe <code>.form-search.area-fix</code>. Dentro deve haver um campo de texto com <code>.control-area.area-infix</code> e um botão com <code>.area-suffix</code>. O ícone do botão deve levar também <code>.control-search-icon</code>.</p>
+          <p>Para ter o formulário no estilo grande, basta adicionar <code>.control-big</code> ao <code>.form-search</code>.</p>
+          <p>Adicionando <code>.form-search-expandable</code> o campo de texto expandirá 100px a mais quando estiver em foco.</p>
+          <p>O formulário de busca com filtros deve levar <code>.form-search-filters</code>, além de uma markup extra demonstrada abaixo.</p>
         </div>
         <div class="span7">
           <div class="well">
-            <form class="form-search">
-              <input class="control-area" type="text" placeholder="Digite sua pesquisa...">
-              <button class="control-append-area button-default" type="submit">
-                <span class="control-search-icon text-replacement icon-magnifier-gray_16_18">Busca</span>
+            <form class="form-search area-fix">
+              <input class="control-area area-infix" type="text" placeholder="Pesquise...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement ">Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div class="well">
+            <form class="form-search area-fix control-big">
+              <input class="control-area area-infix" type="text" placeholder="Pesquise...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement ">Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div class="well clearfix">
+            <form class="form-search form-search-expandable pull-right area-fix">
+              <input class="control-area area-infix" type="text" placeholder="Pesquise...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement">Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div class="well clearfix">
+            <form class="form-search form-search-filters form-search-expandable pull-right area-fix">
+              <div class="button-group area-prefix">
+                <button class="form-search-filters-button button-default clearfix dropdown-toggle" data-toggle="dropdown">
+                  <span class="control-search-icon icon-basic-guide-gray_16_18 text-replacement pull-left">Filtrar</span>
+                  <span class="button-dropdown-arrow icon-arrow-down-gray_8_10 text-replacement">Expandir</span>
+                </button>
+                <span class="dropdown-arrow icon-arrow-up-dropdown-lightblue_20_8 text-replacement">Seta</span>
+                <ul class="nav-global-profile-items dropdown-menu form-search-filters-dropdown">
+                  <li class="nav-global-profile-item">
+                    <label class="control-radio">
+                      <input type="radio" name="radio"><span class="legend icon-basic-guide-gray_16_18-before">Busca Geral</span>
+                    </label>
+                  </li>
+                  <li class="nav-global-profile-item">
+                    <label class="control-radio">
+                      <input type="radio" name="radio"><span class="legend icon-environment-gray_16_18-before">Ambientes</span>
+                    </label>
+                  </li>
+                  <li class="nav-global-profile-item">
+                    <label class="control-radio">
+                      <input type="radio" name="radio"><span class="legend icon-profile-gray_16_18-before">Perfil</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <input class="control-area area-infix" type="text" placeholder="Pesquise...">
+              <button class="button-default area-suffix" type="submit">
+                <span class="control-search-icon icon-magnifier-gray_16_18 text-replacement ">Buscar</span>
               </button>
             </form>
           </div>
@@ -907,15 +958,32 @@
       <div class="row">
         <div class="span13">
           <pre class="prettyprint linenums">
-&lt;form class="form-search"&gt;
-  &lt;input class="control-area" type="text" placeholder="Digite sua pesquisa..."&gt;
-  &lt;button class="control-append-area button-default" type="submit"&gt;
-    &lt;span class="control-search-icon text-replacement icon-magnifier-gray_16_18"&gt;Busca&lt;/span&gt;
+&lt;form class="form-search area-fix [form-search-expandable] [form-search-filters] [control-big]"&gt;
+  &lt;!-- IF IT'S A SEARCH FORM WITH FILTERS --&gt;
+  &lt;div class="button-group area-prefix"&gt;
+    &lt;button class="form-search-filters-button button-default clearfix dropdown-toggle" data-toggle="dropdown"&gt;
+      &lt;span class="control-search-icon icon-basic-guide-gray_16_18 text-replacement pull-left"&gt;Filtrar&lt;/span&gt;
+      &lt;span class="button-dropdown-arrow icon-arrow-down-gray_8_10 text-replacement"&gt;Expandir&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;span class="dropdown-arrow icon-arrow-up-dropdown-lightblue_20_8 text-replacement"&gt;Seta&lt;/span&gt;
+    &lt;ul class="nav-global-profile-items dropdown-menu form-search-filters-dropdown"&gt;
+      &lt;!-- FOR EACH FILTER OPTION --&gt;
+      &lt;li class="nav-global-profile-item"&gt;
+        &lt;label class="control-radio"&gt;
+          &lt;input type="radio" name="radio"&gt;&lt;span class="legend icon-X-gray_16_18-before"&gt;FILTER_TEXT&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+      &lt;!-- END --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;!-- END --&gt;
+  &lt;input class="control-area area-infix" type="text" placeholder="Pesquise..."&gt;
+  &lt;button class="button-default area-suffix" type="submit"&gt;
+    &lt;span class="control-search-icon icon-magnifier-gray_16_18 text-replacement"&gt;Buscar&lt;/span&gt;
   &lt;/button&gt;
 &lt;/form&gt;</pre>
         </div>
       </div>
-
     </div>
   </div>
 </div>
