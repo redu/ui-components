@@ -4,6 +4,8 @@
   margin: 20px;
 }
 
+.status-list .subject a .author-thumbnail { float: left; }
+
 .subject-info {
   margin-top: 10px;
   overflow: hidden;
@@ -53,14 +55,28 @@
 
 // Alinhar status
 .subject,
-.subject-content { margin-left: 42px; }
+.subject-content {
+  margin-left: 42px;
+
+  .see-all { float: right; }
+}
 
 // Remove margens à esquerda quando status não tem contexto
 .status.without-context { //Adição da classe without-context para remover margens à direita de elementos sem contexto, sem a necessidade do seletor '+'
-  .subject,
-  .subject-content { margin-left: 0; }
+  .subject {
+    margin-left: 0;
+    overflow: hidden;
+  }
+
+  .subject-content {
+    margin: 5px 0 0 42px;
+  }
 
   .subject-info { margin-top: 0; }
+
+  .status-content,
+  .responses,
+  .create-response { margin-left: 0; }
 }
 
 // Aplica estilos gerais a todos status
@@ -135,17 +151,60 @@
     }
   }
 
-  // Aplica estilos aos status com log
-  .log {
-    .subject { margin-top: 5px; }
 
-    // Posiciona ícone do status de pedido de ajuda
-    .subject-info[class*="icon-"]:before {
-      position: absolute;
-      margin-left: -75px;
+
+  .subject-content {
+    .thumbnail-separator { margin: 0; }
+
+    .thumbnail {
+      overflow: hidden;
+      padding: 10px 0;
+
+      .preview { float: left; }
+
+      .buttons {
+        margin-top: 10px;
+
+        .button-default {
+          padding: 0;
+
+          & > [class*="icon-"] {
+            margin: 6px 10px;
+          }
+
+          &.button-disabled {
+            border-color: rgb(204, 204, 204);
+          }
+        }
+      }
+
+      img {
+        max-width: 100px;
+        width: 100%;
+        min-height: 34px;
+        margin-right: 10px;
+      }
+
+      .thumbnail-info {
+        p { @include text-shadow(0 1px 0 $white); }
+
+        .post-description { color: $gray6 }
+
+        .source-site { color: $gray4; }
+      }
     }
 
-    .see-all { float: right; }
+    // Estilizar Agrupamento
+    .grouping-elements {
+      margin-right: 20px;
+      height: 40px;
+
+      li {
+        display: inline;
+
+        img { margin: 8px 3px 0 0; }
+      }
+    }
 
     // Posiciona ícone do status de agrupamento de membros
     .subject-info .action {
@@ -154,21 +213,16 @@
         margin-left: -35px;
       }
     }
+ }
 
-    .subject-content {
-      .status-content { margin-top: 5px; }
+  // Aplica estilos aos status com log
+  .log {
+    .subject { margin-top: 5px; }
 
-      .grouping-elements {
-        margin-right: 20px;
-        height: 40px;
-
-
-        li {
-          display: inline;
-
-          img { margin: 8px 3px 0 0; }
-        }
-      }
+    // Posiciona ícone do status de pedido de ajuda
+    .subject-info[class*="icon-"]:before {
+      position: absolute;
+      margin-left: -75px;
     }
   }
 

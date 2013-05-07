@@ -74,6 +74,19 @@ $.fn.groupResponses = function(opts){
       $responses.filter(":lt(" + ($responses.length - options.maxResponses) + ")").slideUp(150, "swing");
       $(this).find(".show-responses").show();
     }
+
+    // Exibe Respostas caso haja
+    if ($responses.length > 0 ) {
+      $responses.parent().show();
+    }
+
+    // Remove hr da primeira resposta
+    if ($responses.length > options.maxResponses) {
+      $responses.filter(":lt(" + ($responses.length - options.maxResponses) + ")").slideUp(150, "swing");
+      $(this).find(".show-responses").show();
+    } else {
+      $responses.first().find('hr').hide();
+    }
   });
 }
 
@@ -83,16 +96,17 @@ $.fn.groupMembers = function(opts){
     var $this = $(this);
     var options = {
       elementWidth : 34,
-      elementHeight : 40
+      elementHeight : 40,
+      widthMax : 408
     }
     $.extend(options, opts)
 
     var $elements = $this.find("li");
     var width = $this.width();
-    var newHeight = (Math.ceil((($elements.length * options.elementWidth) /  width)) *  options.elementHeight);
+    var newHeight = (Math.ceil((($elements.length * options.elementWidth) /  options.widthMax)) *  options.elementHeight);
 
     // Exibe os elementos agrupados
-    $(".log .see-all").live("click",function(e) {
+    $this.closest(".status").find(".link-fake.see-all").click(function(e) {
 
       // Exibe todos os elementos
       if ($this.hasClass("open")) {
