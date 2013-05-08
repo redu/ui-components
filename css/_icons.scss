@@ -189,7 +189,7 @@ a.icon-teacher-gray_16_18-before {
   &:before { @extend .icon-environment-lightblue_32_34; }
 }
 .icon-environment-lightblue_32_34-before,
-.icon-environment-gray_32_34-before {
+.breadcrumb-icon-link .icon-environment-gray_32_34-before {
   &:hover:before { @extend .icon-environment-blue_32_34; }
 }
 .open .icon-environment-gray_16_18 { @extend .icon-environment-lightblue_16_18; }
@@ -237,7 +237,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-course-lightgray_32_34-before {
   &:before { @extend .icon-course-lightgray_32_34; }
 }
-.icon-course-gray_32_34-before,
+.breadcrumb-icon-link .icon-course-gray_32_34-before,
 .icon-course-lightblue_32_34-before {
   &:hover:before { @extend .icon-course-blue_32_34; }
 }
@@ -273,7 +273,7 @@ a.icon-teacher-gray_16_18-before {
 .icon-space-gray_32_34-before {
   &:before { @extend .icon-space-gray_32_34; }
 }
-.icon-space-gray_32_34-before,
+.breadcrumb-icon-link .icon-space-gray_32_34-before,
 .icon-space-lightblue_32_34-before {
   &:hover:before { @extend .icon-space-blue_32_34; }
 }
