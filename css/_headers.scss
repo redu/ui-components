@@ -108,7 +108,7 @@ $header-breadcrumb-height: 21px;
   display: inherit;
 }
 
-.header-bradcrumb-link {
+.header-breadcrumb-link {
   font-weight: 300;
   height: inherit;
 
@@ -161,7 +161,7 @@ $header-breadcrumb-height: 21px;
   }
 }
 
-.header-bradcrumb-big-link {
+.header-breadcrumb-big-link {
   @include link-visited($gray5);
 
   &:hover {
