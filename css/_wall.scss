@@ -11,11 +11,7 @@
   overflow: hidden;
 }
 
-.create-status {
-  margin: 20px;
-
-  hr { border: transparent; } // Foi necessária adição deste hr na aŕea de criar status para forçar que os botões aparecessem abaixo (o bug do chrome). Tive que deixá-la sem borda para que não aparecesse para o usuário.
-}
+.create-status { margin: 20px; }
 
 // Aba para área de status, criação de status e comentários.
 .status-tab {
@@ -151,49 +147,7 @@
     }
   }
 
-
-
   .subject-content {
-    .thumbnail-separator { margin: 0; }
-
-    .thumbnail {
-      overflow: hidden;
-      padding: 10px 0;
-
-      .preview { float: left; }
-
-      .buttons {
-        margin-top: 10px;
-
-        .button-default {
-          padding: 0;
-
-          & > [class*="icon-"] {
-            margin: 6px 10px;
-          }
-
-          &.button-disabled {
-            border-color: rgb(204, 204, 204);
-          }
-        }
-      }
-
-      img {
-        max-width: 100px;
-        width: 100%;
-        min-height: 34px;
-        margin-right: 10px;
-      }
-
-      .thumbnail-info {
-        p { @include text-shadow(0 1px 0 $white); }
-
-        .post-description { color: $gray6 }
-
-        .source-site { color: $gray4; }
-      }
-    }
-
     // Estilizar Agrupamento
     .grouping-elements {
       margin-right: 20px;
@@ -252,4 +206,56 @@
 .context-link-hover {
   color: rgb(21, 138, 196) !important;
   text-decoration: underline;
+}
+
+.thumbnail-separator { margin: 0; }
+
+.post-resource { margin-top: 10px; }
+
+.thumbnail {
+  overflow: hidden;
+  padding: 10px 0;
+
+  .preview { float: left; }
+
+  .buttons {
+    margin-top: 10px;
+
+    .button-default {
+      padding: 0;
+
+      & > [class*="icon-"] {
+        margin: 6px 10px;
+      }
+
+      &.button-disabled {
+        border-color: rgb(204, 204, 204);
+      }
+    }
+  }
+
+  img {
+    max-width: 100px;
+    width: 100%;
+    min-height: 34px;
+    margin-right: 10px;
+  }
+
+  .thumbnail-info {
+    p { @include text-shadow(0 1px 0 $white); }
+
+    .post-description { color: $gray6 }
+
+    .source-site { color: $gray4; }
+  }
+}
+
+.status-tab {
+  .character-counter {
+    position: static;
+    margin-top: 5px;
+    float: left;
+  }
+
+  .status-buttons { display: none; }
 }
