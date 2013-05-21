@@ -654,7 +654,23 @@ strong {
   font-weight: bold;
 }
 
-blockquote, q, .legend {
+blockquote {
+  -webkit-box-shadow: 1px 0 white inset;
+  -moz-box-shadow: 1px 0 white inset;
+  box-shadow: 1px 0 white inset;
+  border-left: 4px solid #cccccc;
+  padding: 10px;
+  margin: 0 0 18px;
+}
+
+.quote-source {
+  color: #b3b3b3;
+}
+.quote-source:before {
+  content: '\2014 \00A0';
+}
+
+.legend {
   color: #b3b3b3;
 }
 

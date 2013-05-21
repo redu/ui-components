@@ -122,9 +122,22 @@ dl dd { margin-left: 18px; }
 strong { font-weight: bold; }
 
 // Citações
-blockquote, q, .legend { color: $gray5; }
+blockquote {
+  @include box-shadow(1px 0 $white inset);
+  border-left: 4px solid $gray4;
+  padding: 10px;
+  margin: 0 0 $base-line-height;
+}
+
+.quote-source {
+  color: $gray5;
+
+  &:before { content: '\2014 \00A0'; }
+}
 
 // Legenda e link secundário
+.legend { color: $gray5; }
+
 .legend,
 .link-secondary {
   font-size: 11px;
