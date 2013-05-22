@@ -11,8 +11,6 @@
   overflow: hidden;
 }
 
-.create-status { margin: 20px; }
-
 // Aba para área de status, criação de status e comentários.
 .status-tab {
   position: relative;
@@ -77,6 +75,7 @@
 
 // Aplica estilos gerais a todos status
 .status-list {
+  margin: 0;
 
   li { list-style: none; }
 
@@ -85,6 +84,12 @@
     height: 34px;
     float: left;
     margin-right: 10px;
+  }
+
+  .grouping-elements .author-thumbnail {
+    @include square(auto);
+    float: none;
+    margin-right: 0;
   }
 
   .date { display: block; }
@@ -122,7 +127,7 @@
     p { @include text-shadow(none); }
   }
 
-  .action { color: $gray5; }
+  .action { color: $gray6; }
 
   .help { color: $orange3; }
 
@@ -145,6 +150,8 @@
         margin-top: 0;
       }
     }
+
+    hr { margin: 0; }
   }
 
   .subject-content {
@@ -200,6 +207,7 @@
   .create-response {
     margin-top: 10px;
     margin-left: 42px;
+    display: none;
   }
 }
 
