@@ -18,8 +18,6 @@ $sprite-sprite-base-class: ".sprite" !default;
 
 .sprite { display: inline-block; }
 
-.header-logo-wrapper:hover { @include sprite-sprite(light-logo); }
-
 .footer-logo-link:hover { @include sprite-sprite(light-logo); }
 
 .footer-contact:hover {

@@ -7,42 +7,64 @@
   $box-shadow:
     0 -1px 0 $white inset
   , 0  1px 0 $white inset
-  , 0  1px 0 rgb(178, 178, 178);
+  , 0  2px 4px rgba(0, 0, 0, 0.5);
   @include box-shadow($box-shadow);
   height: 85px;
   background-color: $gray3;
-}
-
-// Wrapper do logo.
-.header-logo-wrapper {
-  @include size(300px, 70px);
-  float: left;
   position: relative;
-  margin-left: -112px;
+  border-bottom: 1px solid $gray6;
+
+  .cssgradients & { @include redu-gradient($gray3, $white); }
+
+  .no-cssgradients.gt-ie8 & {
+    // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  }
 }
 
-// Logo.
-.header-logo {
-  position: absolute;
-  right: -3px;
-  bottom: 0;
+.header-logo-wrapper {
+  float: left;
+  padding-top: 11px;
 }
+
+.header-logo { float: left; }
+
+.header-logo-title-wrapper {
+  float: left;
+
+  .header-logo +
+  & { margin: 10px 0 0 10px; }
+}
+
+.header-logo-title {
+  font: 500 18px/18px $museo-sans;
+  letter-spacing: -1px;
+  max-width: 215px;
+}
+
+.header-logo-legend { color: $gray6; }
+
 
 // Wrapper dos botões.
 .header-buttons {
   float: right;
   margin-top: 20px;
+
+  .button-big {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
 
 .header-button-sign-up +
-.header-button-sign-in { margin-left: 40px; }
+.header-button-sign-in { margin-left: 20px; }
 
 .header-button-sign-up,
 .header-button-sign-in {
   display: inline-block;
 
   & > [class*="icon-"] {
-    margin: 5px 10px 0 0;
+    margin: 5px 5px 0 0;
     float: left;
   }
 }
