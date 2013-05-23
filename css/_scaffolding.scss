@@ -14,14 +14,12 @@ body {
 
 .content-body {
   @include box-sizing;
-  @include border-radius(10px);
+  @include border-radius($content-body-border-radius);
   border: 1px solid rgb(203, 203, 203);
   background-color: $white;
   position: relative;
-  // Altura dos pseudo elementos de gradientes.
-  $vertical-gradient-height: 10px;
   // Padding inferior para cobrir o gradiente :after.
-  padding-bottom: $vertical-gradient-height;
+  padding-bottom: $content-body-border-radius;
   min-height: 500px;
 
   &:before {
@@ -30,7 +28,7 @@ body {
     @include box-shadow(0 1px 0 $white inset);
     content: "";
     display: block;
-    height: $vertical-gradient-height;
+    height: $content-body-border-radius;
 
     .no-cssgradients.gt-ie8 & {
       // http://www.colorzilla.com/gradient-editor/#f6f6f6+0,ffffff+100;Custom
@@ -44,7 +42,7 @@ body {
     @include box-shadow(0 -1px 0 $white inset);
     content: "";
     display: block;
-    height: $vertical-gradient-height;
+    height: $content-body-border-radius;
     // Preciso posicionar com o absolute para o caso altura do container ser maior que a altura do seu conteúdo.
     position: absolute;
     width: 100%;

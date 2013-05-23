@@ -62,7 +62,7 @@ $text-color:                  $black !default;
 $base-font-family:            "Helvetica Neue", Arial, sans-serif !default;
 $museo-sans:                  museo-sans, $base-font-family !default;
 $museo-sans-rounded:          museo-sans-rounded, $museo-sans !default;
-$monospace-font-family:				"Lucida Console", Courier, monospace !default;
+$monospace-font-family:       "Lucida Console", Courier, monospace !default;
 
 
 // Outros
@@ -91,3 +91,6 @@ $footer-height:               180px !default;
 
 // Valor padrão do raio da borda arredondada.
 $border-radius-default:       5px !default;
+
+// Borda arredondada.
+$content-body-border-radius:    10px !default;
