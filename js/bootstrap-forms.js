@@ -12,7 +12,6 @@
 
       return this.each(function() {
         var control = $(this)
-          , controls = control.parent()
           , maxLength = control.attr('maxlength')
           , remainingCharsText = function(charCount) {
             var charDifference = maxLength - charCount
@@ -34,7 +33,7 @@
         control.on({
           focusin: function() {
             settings.characterCounterTemplate.text(remainingCharsText(control.val().length))
-            settings.characterCounterTemplate.appendTo(controls)
+            settings.characterCounterTemplate.insertAfter(control)
           }
         , focusout: function() { settings.characterCounterTemplate.remove() }
         , keyup: function() { settings.characterCounterTemplate.text(remainingCharsText(control.val().length)) }
