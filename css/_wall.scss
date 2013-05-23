@@ -218,7 +218,7 @@
 
 .thumbnail-separator { margin: 0; }
 
-.post-resource { margin-top: 10px; }
+.post-resource { margin-top: 20px; }
 
 .thumbnail {
   overflow: hidden;
@@ -226,8 +226,13 @@
 
   .preview { float: left; }
 
+  .preview-link {
+    max-width: 100px;
+    max-height: 75px;
+  }
+
   .buttons {
-    margin-top: 10px;
+    margin: 10px 0 0;
 
     .button-default {
       padding: 0;
