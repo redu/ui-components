@@ -351,6 +351,10 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Mensagens.
+.icon-message-new-lightblue_16_18-before {
+  &:before { @extend .icon-message-new-lightblue_16_18; }
+  &:hover:before { @extend .icon-message-new-blue_16_18; }
+}
 .icon-message-lightblue_16_18-before {
   &:before { @extend .icon-message-lightblue_16_18; }
   &:hover:before { @extend .icon-message-blue_16_18; }
@@ -649,6 +653,11 @@ a.icon-teacher-gray_16_18-before {
 
 .icon-close-gray_16_18 {
   &:hover { @extend .icon-close-red_16_18; }
+}
+
+.icon-close-lightblue_16_18-before {
+  &:before { @extend .icon-close-lightblue_16_18; }
+  &:hover:before { @extend .icon-close-red_16_18; }
 }
 
 .icon-close-big-gray_16_18 {
@@ -1177,6 +1186,9 @@ a:hover,
 }
 
 // Convite
+.icon-invite-gray_16_18-before {
+  &:before { @extend .icon-invite-gray_16_18; }
+}
 .icon-invite-lightblue_16_18-before {
   &:before { @extend .icon-invite-lightblue_16_18; }
   &:hover:before { @extend .icon-invite-blue_16_18; }
@@ -1209,6 +1221,15 @@ a:hover,
 
 // Ícones da navegação local.
 .nav-local-item:before {
+  // Perfil.
+  &.icon-profile_16_18-before {
+    @extend .icon-profile-lightblue_16_18;
+
+    &:hover { @extend .icon-profile-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-profile-white_blue_16_18; }
+  }
+
   // Visão Geral.
   &.icon-home_16_18-before {
     @extend .icon-home-lightblue_16_18;
