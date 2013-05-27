@@ -92,7 +92,12 @@
     margin-right: 0;
   }
 
-  .date { display: block; }
+  .date {
+    display: block;
+
+    &:visited,
+    &:hover { color: $gray5; }
+  }
 
   .actions {
     overflow: hidden;
