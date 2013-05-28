@@ -14,7 +14,7 @@
   position: relative;
   border-bottom: 1px solid $gray6;
 
-  .cssgradients & { @include redu-gradient($gray3, $white); }
+  .cssgradients & { @include redu-gradient($gray3, $white, 0.33); }
 
   .no-cssgradients.gt-ie8 & {
     // http://www.colorzilla.com/gradient-editor/#ffffff+0,e6e6e6+100;Custom
