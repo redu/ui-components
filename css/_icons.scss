@@ -509,6 +509,9 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Dúvida.
+.icon-request-help-white_blue_32_34-before {
+  &:before { @extend .icon-request-help-white_blue_32_34; }
+}
 .icon-request-help-gray_16_18-before {
   &:before { @extend .icon-request-help-gray_16_18; }
 }
