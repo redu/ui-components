@@ -1,3 +1,3 @@
 source 'http://rubygems.org'
 
-gem 'compass'
+gem 'compass', git: 'git://github.com/chriseppstein/compass.git', branch: 'master'
