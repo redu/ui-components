@@ -55,5 +55,8 @@ body {
   }
 }
 
+// Fixa um bloco no topo.
+.content-body-fix-top { margin: -($content-body-border-radius + 1) -1px 0; }
+
 // Região comum entre separadores.
 .content-section { padding: 10px 20px; }
