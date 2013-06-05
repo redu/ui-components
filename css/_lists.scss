@@ -161,7 +161,9 @@ $course-n-space-search-list-item-padding: 10px;
 
 .list-course-space-item {
   position: relative;
-  border: 1px solid $gray3;
+  $border-color: $gray3;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 
   & + & { margin-top: -1px; }
 
@@ -208,6 +210,11 @@ $course-n-space-search-list-item-padding: 10px;
   .list-course-space-header .legend { display: block; }
 
   .list-course-space-item:hover .list-course-hours { color: $gray5; }
+}
+
+.list-course-privacy {
+  color: $gray5;
+  display: block;
 }
 
 .list-course-stat + .list-course-stat { margin-left: 20px; }
