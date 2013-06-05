@@ -160,8 +160,6 @@ a,
   color: $link-color;
   text-decoration: none;
 
-  &:visited { color: $link-color-visited; }
-
   &:hover {
     color: $link-color-hover;
     text-decoration: underline;
