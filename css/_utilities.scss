@@ -31,6 +31,13 @@
   max-width: 100%;
 }
 
+// Centraliza um bloco.
+.centralize {
+  text-align: center;
+
+  > * { display: inline-block; }
+}
+
 
 // Cria áreas que podem ser prefixadas ou sufixadas a outra (infixa).
 //
