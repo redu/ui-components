@@ -5674,6 +5674,10 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   margin-top: 5px;
 }
 
+.nav-local-general-stat-link, .nav-local-general-stat-link:hover {
+  color: #b3b3b3;
+}
+
 .nav-local-separator {
   height: 1px;
   background: #e6e6e6;

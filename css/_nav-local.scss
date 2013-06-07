@@ -103,6 +103,11 @@ $navLocalItemActiveBorder: 1px solid $blue3;
   & + & { margin-top: 5px; }
 }
 
+.nav-local-general-stat-link {
+  &,
+  &:hover { color: $gray5; }
+}
+
 .nav-local-separator {
   height: 1px;
   background: $gray3;
