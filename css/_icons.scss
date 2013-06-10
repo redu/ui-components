@@ -1290,6 +1290,33 @@ a:hover,
 
     &.nav-local-item-active { @extend .icon-contacts-white_blue_16_18; }
   }
+
+  // Aulas.
+  &.icon-subject_16_18-before {
+    @extend .icon-subject-lightblue_16_18;
+
+    &:hover { @extend .icon-subject-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-subject-white_blue_16_18; }
+  }
+
+  // Arquivos de Apoio.
+  &.icon-file_16_18-before {
+    @extend .icon-file-lightblue_16_18;
+
+    &:hover { @extend .icon-file-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-file-white_blue_16_18; }
+  }
+
+  // Membros.
+  &.icon-members_16_18-before {
+    @extend .icon-members-lightblue_16_18;
+
+    &:hover { @extend .icon-members-blue_16_18; }
+
+    &.nav-local-item-active { @extend .icon-members-white_blue_16_18; }
+  }
 }
 
 // Ícones das abas.
