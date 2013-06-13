@@ -47,11 +47,8 @@ module.exports = function(grunt) {
       }
     },
 
-    min: {
-      dist: {
-        src: ['js/bootstrap-redu.js'],
-        dest: 'js/bootstrap-redu.min.js'
-      }
+    uglify: {
+      'js/bootstrap-redu.min.js': files
     },
 
     watch: {

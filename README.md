@@ -33,7 +33,7 @@ Todas as contribuições, como pedidos de pull requests, devem ser feitas na bra
 
 Para desenvolver dentro do projeto, se faz necessário a instalação das seguintes ferramentas:
 
- * [Ruby 1.8.7 ou maior](http://www.ruby-lang.org/en/downloads/): para executar as gems;
+ * [Ruby 1.9.3 ou maior](http://www.ruby-lang.org/en/downloads/): para executar as gems;
  * [Bundler](http://gembundler.com/): para o gerenciamento de gems;
  * **[Compass](http://compass-style.org/)**: instalado através do Bundler. É um framework para Sass, usado principalmente para compilar os arquivos Sass em CSS;
  * [Node.js](http://nodejs.org/download/) e [npm](https://npmjs.org/): gerenciador de módulos feitos para o Node.js, necessário para a instalação do Grunt;
@@ -51,7 +51,7 @@ Para executar o Grunt no modo `watch`, digite o seguinte no terminal:
 
     grunt watch
 
-Os arquivos JavaScript observados pelo Grunt estão definidos no arquivo de configuração `/grunt.js`, basta modificá-lo para adicionar novos arquivos.
+Os arquivos JavaScript observados pelo Grunt estão definidos no arquivo de configuração [`/Gruntfile.js`](https://github.com/redu/ui-components/blob/master/Gruntfile.js#L2), basta modificá-lo para adicionar novos arquivos.
 
 ## Compilando para produção
 
@@ -68,7 +68,7 @@ Para gerar a versão minificada do CSS final, digite o seguinte no terminal:
 
 Para gerar a versão minificada do JavaScript final, digite o seguinte no terminal:
 
-    grunt min
+    grunt uglify
 
 Para alguns outros requisitos, como por exemplo, suporte específico ao IE9+, suporte de CSS3 através do [Modernizr](http://modernizr.com/) e suporte as fontes usadas através do [Typekit](https://typekit.com/colophons/lpo4rgu), leia rapidamente as instruções da [documentação](http://developers.redu.com.br/ui-components/).
 
