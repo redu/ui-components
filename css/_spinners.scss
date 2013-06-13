@@ -15,19 +15,19 @@
 .spinner-horizontal-blue:hover,
 .spinner-horizontal-blue:visited {
 	@extend %spinner-base;
-  background-image: url('../img/spinner-blue-horiz.gif') !important;
+  background-image: image-url('spinner-blue-horiz.gif') !important;
 }
 
 .spinner-circular-gray,
 .spinner-circular-gray:hover,
 .spinner-circular-gray:visited {
   @extend %spinner-base;
-  background-image: url('../img/spinner-grey.gif') !important;
+  background-image: image-url('spinner-grey.gif') !important;
 }
 
 .spinner-circular-blue,
 .spinner-circular-blue:hover,
 .spinner-circular-blue:visited {
   @extend %spinner-base;
-  background-image: url('../img/spinner-blue.gif') !important;
+  background-image: image-url('spinner-blue.gif') !important;
 }

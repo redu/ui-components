@@ -72,6 +72,12 @@ Para gerar a versão minificada do JavaScript final, digite o seguinte no termin
 
 Para alguns outros requisitos, como por exemplo, suporte específico ao IE9+, suporte de CSS3 através do [Modernizr](http://modernizr.com/) e suporte as fontes usadas através do [Typekit](https://typekit.com/colophons/lpo4rgu), leia rapidamente as instruções da [documentação](http://developers.redu.com.br/ui-components/).
 
+### Compilando para aplicação Rails
+
+Para facilitar a integração com uma aplicação Rails, onde todos os assets do CSS final ficarão em `/assets/`, utilize o seguinte comando:
+
+    bundle exec compass compile -c config_rails.rb --force
+
 ## O que precisa ser feito
 
  * Definir um guia para formatação dos arquivos CSS/Scss que deverá ser seguida por todo o projeto.

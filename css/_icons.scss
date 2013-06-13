@@ -8,7 +8,7 @@ $icon-layout: smart;
 @include all-icon-sprites;
 
 .logo-redu-color_140_40,
-.logo-redu-gray_140_40 { background: url('../img/logos.png') no-repeat; }
+.logo-redu-gray_140_40 { background: image-url('logos.png') no-repeat; }
 
 .logo-redu-color_140_40 {
   background-position: 0 0;
