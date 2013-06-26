@@ -9,7 +9,7 @@
         <a class="nav-local-link link-target" href="#list-space">Disciplinas</a>
       </li>
       <li class="nav-local-item link-container">
-        <a class="nav-local-link link-target" href="#list-subject">Módulos & disciplina</a>
+        <a class="nav-local-link link-target" href="#list-subject">Módulos & aulas</a>
       </li>
       <li class="nav-local-item link-container">
         <a class="nav-local-link link-target" href="#list-environment-course-space">AVA-cursos-disciplinas</a>
@@ -249,7 +249,11 @@
                 </div>
               </div>
               <div class="list-subject-body">
-                <p class="list-subject-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</p>
+                <div class="list-subject-info clearfix">
+                  <a href="#" class="list-subject-edit link-secondary icon-manage-lightblue_8_10-before">Editar</a>
+                  <span class="list-subject-visibility icon-invisible-lightgray_16_18 text-replacement" rel="tooltip" data-original-title="Módulo invisível para os alunos">Módulo invisível para os alunos</span>
+                  <p class="list-subject-description icon-description-gray_16_18-before" title="Descrição">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</p>
+                </div>
                 <ol class="list-button">
                   <li class="list-button-item link-container">
                     <a class="list-button-link link-target icon-text-page-lightblue_16_18-before" href="#list-course" title="Aula com página de texto">Aula com página de texto</a>
@@ -292,7 +296,9 @@
                 </div>
               </div>
               <div class="list-subject-body">
-
+                <div class="list-subject-info clearfix">
+                  <span class="list-subject-visibility icon-visible-lightgray_16_18 text-replacement" rel="tooltip" data-original-title="Módulo invisível para os alunos">Módulo visível para os alunos</span>
+                </div>
               </div>
             </li>
             <li class="list-subject-item" rel="tooltip" title="Módulo recém-criado com nome gigante, sem descrição, com aula recém-criada de nome gigante">
@@ -305,6 +311,9 @@
                 </div>
               </div>
               <div class="list-subject-body">
+                <div class="list-subject-info clearfix">
+                  <a href="#" class="list-subject-edit link-secondary icon-manage-lightblue_8_10-before">Editar</a>
+                </div>
                 <ol class="list-button">
                   <li class="list-button-item link-container">
                     <a class="list-button-link link-target icon-text-page-lightblue_16_18-before" href="#1" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum bibendum gravida. Phasellus vitae erat vel odio tincidunt blandit ac nec justo. Praesent sit amet vulputate nisi. Quisque eget sodales tortor. Mauris quis dolor at metus metus.</a>
@@ -333,9 +342,19 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="list-subject-body"&gt;
-      &lt;!-- IF SUBJECT_HAS_DESCRIPTION --&gt;
-      &lt;p class="list-subject-description icon-description-gray_16_18-before" title="Descrição"&gt;SUBJECT_DESCRIPTION&lt;/p&gt;
-      &lt;!-- END --&gt;
+      &lt;div class="list-subject-info clearfix"&gt;
+        &lt;!-- IF CAN MANAGE SUBJECT --&gt;
+          &lt;a href="MANAGE_SUBJECT_LINK" class="list-subject-edit link-secondary icon-manage-lightblue_8_10-before"&gt;Editar&lt;/a&gt;
+          &lt;!-- IF SUBJECT IS VISIBLE --&gt;
+          &lt;span class="list-subject-visibility icon-visible-lightgray_16_18 text-replacement" rel="tooltip" data-original-title="Módulo invisível para os alunos"&gt;Módulo visível para os alunos&lt;/span&gt;
+          &lt;!-- ELSE --&gt;
+          &lt;span class="list-subject-visibility icon-invisible-lightgray_16_18 text-replacement" rel="tooltip" data-original-title="Módulo invisível para os alunos"&gt;Módulo invisível para os alunos&lt;/span&gt;
+          &lt;!-- END --&gt;
+        &lt;!-- END --&gt;
+        &lt;!-- IF SUBJECT_HAS_DESCRIPTION --&gt;
+        &lt;p class="list-subject-description icon-description-gray_16_18-before" title="Descrição"&gt;SUBJECT_DESCRIPTION&lt;/p&gt;
+        &lt;!-- END --&gt;
+      &lt;/div&gt;
       &lt;!-- IF SUBJECT_HAS_LECTURES --&gt;
       &lt;ol class="list-button"&gt;
         &lt;!-- FOR EACH LECTURE --&gt;

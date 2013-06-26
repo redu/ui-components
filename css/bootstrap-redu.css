@@ -6777,10 +6777,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   border: 1px solid #f0f0f0;
   padding: 11px 20px 10px;
 }
-.list-subject-body .list-subject-description +
-.list-button {
-  margin-top: 20px;
-}
 .list-subject-body .list-button {
   list-style: none;
   counter-reset: item;
@@ -6791,6 +6787,29 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 .list-subject-body .list-button-link {
   margin-left: 10px;
+}
+
+.list-subject-visibility {
+  float: right;
+}
+
+.list-subject-edit {
+  float: right;
+  margin-top: 3px;
+}
+
+.list-subject-edit +
+.list-subject-visibility {
+  margin-right: 5px;
+}
+
+.list-subject-description {
+  max-width: 90%;
+}
+
+.list-subject-info +
+.list-button {
+  margin-top: 20px;
 }
 
 .list-lecture-info {
