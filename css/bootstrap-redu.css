@@ -599,7 +599,6 @@ h5 strong {
   font-size: 11px;
   line-height: 11px;
   padding: 3px 5px 2px 5px;
-  text-transform: uppercase;
 }
 .inl-label + .inl-label, .label-news + .inl-label, .label-notify-me + .inl-label, .label-online + .inl-label, .label-doubts + .inl-label, .inl-label + .label-news, .label-news + .label-news, .label-notify-me + .label-news, .label-online + .label-news, .label-doubts + .label-news, .inl-label + .label-notify-me, .label-news + .label-notify-me, .label-notify-me + .label-notify-me, .label-online + .label-notify-me, .label-doubts + .label-notify-me, .inl-label + .label-online, .label-news + .label-online, .label-notify-me + .label-online, .label-online + .label-online, .label-doubts + .label-online, .inl-label + .label-doubts, .label-news + .label-doubts, .label-notify-me + .label-doubts, .label-online + .label-doubts, .label-doubts + .label-doubts {
   margin-left: 5px;
