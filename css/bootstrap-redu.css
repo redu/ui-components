@@ -6291,50 +6291,13 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   text-decoration: none;
 }
 
-.header +
 .header-breadcrumb-big {
-  padding: 20px;
-}
-
-.header-breadcrumb-big {
-  list-style: none;
-  margin: 0 0 20px 0;
-}
-.header-breadcrumb-big:before, .header-breadcrumb-big:after {
-  display: table;
-  content: "";
-}
-.header-breadcrumb-big:after {
-  clear: both;
-}
-
-.header-breadcrumb-big-item {
-  font: 500 36px/36px museo-sans, "Helvetica Neue", Arial, sans-serif;
+  font: 100 36px/34px museo-sans, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: -2px;
-  font-weight: 100;
-  float: left;
-}
-.header-breadcrumb-big-item + .header-breadcrumb-big-item:before {
-  margin-right: 11px !important;
-  color: #e6e6e6;
-  margin-left: 11px;
-  content: "\002F";
-}
-
-.header-breadcrumb-big-link {
   color: #b3b3b3;
 }
-.header-breadcrumb-big-link:visited {
-  color: #b3b3b3;
-}
-.header-breadcrumb-big-link:hover {
-  text-decoration: none;
-  color: #158ac4;
-}
-.header-breadcrumb-item:first-child .header-breadcrumb-big-link:before {
-  float: left;
-  margin-right: 10px !important;
-  margin-top: -7px;
+.header-breadcrumb-big[class*="icon-"][class*="-before"]:before {
+  margin-right: 10px;
 }
 
 .content-spacer {

@@ -140,45 +140,14 @@ $header-breadcrumb-height: 21px;
 // Cabeçalhos de início grande.
 // ==========================================================================
 
-.header +
-.header-breadcrumb-big { padding: 20px; }
-
 .header-breadcrumb-big {
-  @include clear-fix;
-  list-style: none;
-  margin: 0 0 20px 0;
+  font: 100 36px/34px $museo-sans;
+  letter-spacing: -2px;
+  color: $gray5;
+
+  &[class*="icon-"][class*="-before"]:before { margin-right: 10px; }
 }
 
-.header-breadcrumb-big-item {
-  @include heading(2);
-  font-weight: 100;
-  float: left;
-
-  // Separador.
-  & + &:before {
-    margin-right: 11px !important;
-    color: $gray3;
-    margin-left: 11px;
-    // Caracter "/".
-    content: "\002F";
-  }
-}
-
-.header-breadcrumb-big-link {
-  @include link-visited($gray5);
-
-  &:hover {
-    text-decoration: none;
-    color: $link-color-hover;
-  }
-
-  // Ajusta o ícone que está no primeiro link.
-  .header-breadcrumb-item:first-child &:before {
-    float: left;
-    margin-right: 10px !important;
-    margin-top: -7px;
-  }
-}
 
 // Cabeçalho de uma aula.
 // ==========================================================================
