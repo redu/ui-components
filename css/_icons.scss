@@ -758,6 +758,18 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-lights-blue_16_18; }
 }
 
+// Seta para baixo.
+.icon-arrow-down-lightblue_8_10-after {
+  &:after { @extend .icon-arrow-down-lightblue_8_10; }
+  &:hover:after { @extend .icon-arrow-down-blue_8_10; }
+}
+
+// Seta para cima.
+.icon-arrow-up-lightblue_8_10-after {
+  &:after { @extend .icon-arrow-up-lightblue_8_10; }
+  &:hover:after { @extend .icon-arrow-up-blue_8_10; }
+}
+
 // Seta para esquerda.
 .icon-arrow-left-lightblue_16_18-before {
   &:before { @extend .icon-arrow-left-lightblue_16_18; }
