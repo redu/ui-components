@@ -138,7 +138,7 @@
 
 $(function() {
   $(document)
-    .on('ajax:beforeSend', '[data-remote="true"]', function(xhr, settings) {
+    .on('ajax:before', '[data-remote="true"]', function(xhr, settings) {
       $(this).reduSpinners('ajaxBefore')
     })
     .on('ajax:complete', '[data-remote="true"]', function(xhr, status) {
