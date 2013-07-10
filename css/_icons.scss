@@ -197,7 +197,6 @@ a.icon-teacher-gray_16_18-before {
 .list-mix li.icon-environment-gray_32_34-before:hover {
   &:before { @extend .icon-environment-lightblue_32_34; }
 }
-.header-item:hover .icon-environment-gray_16_18-before:before,
 .header-item:hover .icon-environment-lightblue_16_18-before:before {
   @extend .icon-environment-blue_16_18;
 }
@@ -248,7 +247,6 @@ a.icon-teacher-gray_16_18-before {
 .icon-course-gray_32_34-before {
   &:before { @extend .icon-course-gray_32_34; }
 }
-.header-item:hover .icon-course-gray_16_18-before:before,
 .header-item:hover .icon-course-lightblue_16_18-before:before {
   @extend .icon-course-blue_16_18;
 }
@@ -278,7 +276,6 @@ a.icon-teacher-gray_16_18-before {
   &:hover:before { @extend .icon-space-blue_32_34; }
 }
 .icon-space-blue_32_34-before { @extend .icon-space-blue_32_34; }
-.header-item:hover .icon-space-gray_16_18-before:before,
 .header-item:hover .icon-space-lightblue_16_18-before:before {
   @extend .icon-space-blue_16_18;
 }

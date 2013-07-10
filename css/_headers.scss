@@ -19,18 +19,11 @@ $header-breadcrumb-height: 21px;
 
 // Link.
 .header-link {
-  @include link-visited($gray5);
   font-weight: bold;
 
   &:hover { text-decoration: none; }
 
-  .header-item:last-child & { color: $blue3; }
-
-  .header-item:hover &,
-  .header-item:last-child &:hover,
-  .header-item-subject.header-item:last-child:hover & { color: $blue4; }
-
-  .header-item-subject.header-item:last-child & { color: $gray5; }
+  .header-item:hover & { color: $link-color-hover; }
 }
 
 // Pequenos avisos.
