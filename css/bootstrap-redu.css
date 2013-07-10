@@ -538,8 +538,8 @@ h7 {
 }
 
 h1 {
-  font: 300 60px/56px museo-sans-rounded, museo-sans, "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: -3px;
+  font: 100 60px/56px museo-sans-rounded, museo-sans, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -4px;
 }
 
 h2 {
@@ -998,7 +998,6 @@ textarea {
   font-weight: normal;
   line-height: 18px;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 300;
 }
 
 select,
@@ -1230,7 +1229,6 @@ input[type="checkbox"]:focus {
 .control-big select,
 .control-big .placeholder {
   font-size: 16px;
-  font-weight: 300;
   height: 42px;
 }
 .control-big .placeholder {
@@ -4530,7 +4528,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   border-width: 1px;
   border-style: solid;
   line-height: 16px;
-  font-weight: 300;
 }
 .button-default:hover, .filter:hover, .button-primary:hover, .button-success:hover, .button-danger:hover {
   text-decoration: none;
@@ -5893,7 +5890,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 .tabs-big .tab-title {
   font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
   padding: 10px 20px 12px 7px;
 }
 .tabs-big .tab-title:before {
