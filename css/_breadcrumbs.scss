@@ -26,6 +26,8 @@
 
   // Com a remoção do texto é preciso retirar a margem direita do ícone.
   &.text-replacement:before { margin-right: 0; }
+
+  .breadcrumb-mini-item:last-child & { color: $gray5; }
 }
 
 // Breadcrumb de ícones.

@@ -5291,6 +5291,9 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 .breadcrumb-mini-link.text-replacement:before {
   margin-right: 0;
 }
+.breadcrumb-mini-item:last-child .breadcrumb-mini-link {
+  color: #b3b3b3;
+}
 
 .breadcrumb-icons {
   list-style: none;

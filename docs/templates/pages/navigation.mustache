@@ -259,7 +259,10 @@
       <h4>Breadcrumb (mini)</h4>
       <div class="row">
         <div class="span10">
-          <p>Este breadcrumb é formado por links <code>.breadcrumb-mini-link</code>, dentro de <code>.breadcrumb-mini-item</code>, dentro de <code>.breadcrumb-mini</code>. Para remover o texto do breadcrumb, deixando somente o ícone, basta adicionar <code>.text-replacement</code>. Cada item do breadcrumb, com exceção do último, deve utilizar o ícone do separador <code>.icon-arrow-right-separator-gray_16_18-after</code>. Cada link deve utilizar o ícone <code>icon-xxx-lightblue_16_18-before</code>.</p>
+          <p>Este breadcrumb é formado por links com <code>.breadcrumb-mini-link</code>, dentro de um item de lista com <code>.breadcrumb-mini-item</code>, dentro de uma lista não ordenada com <code>.breadcrumb-mini</code>.</p>
+          <p>Para remover o texto do breadcrumb, deixando somente o ícone, basta adicionar <code>.text-replacement</code> ao link.</p>
+          <p>Cada item do breadcrumb deve utilizar o ícone do separador <code>.icon-arrow-right-separator-gray_16_18-after</code>.</p>
+          <p>Os links devem utilizar a versão azul dos ícones, exceto último item do breadcrumb, que representa o estado atual. Este, além de não ser um link, deve utilizar a versão cinza do ícone.</p>
         </div>
         <div class="span3">
           <h5>Arquivo</h5>
@@ -270,7 +273,7 @@
         <div class="span13">
           <div class="well">
             <ul class="breadcrumb-mini">
-              <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after ">
+              <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
                 <a href="#home" class="breadcrumb-mini-link icon-home-lightblue_16_18-before text-replacement" title="Visão Geral">Visão Geral</a>
               </li>
               <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
@@ -282,8 +285,8 @@
               <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
                 <a href="#space" class="breadcrumb-mini-link icon-space-lightblue_16_18-before text-replacement" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a>
               </li>
-              <li class="breadcrumb-mini-item">
-                <a href="#subject" class="breadcrumb-mini-link icon-subject-lightblue_16_18-before text-replacement" title="Módulo Lorem">Módulo Lorem</a>
+              <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
+                <span class="breadcrumb-mini-link icon-subject-gray_16_18-before text-replacement" title="Módulo Lorem">Módulo Lorem</span>
               </li>
             </ul>
           </div>
@@ -305,8 +308,8 @@
               <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
                 <a href="#space" class="breadcrumb-mini-link icon-space-lightblue_16_18-before" title="Disciplina Vestibulum Scelerisque">Disciplina Vestibulum Scelerisque</a>
               </li>
-              <li class="breadcrumb-mini-item">
-                <a href="#subject" class="breadcrumb-mini-link icon-subject-lightblue_16_18-before" title="Módulo Lorem">Módulo Lorem</a>
+              <li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after">
+                <span class="breadcrumb-mini-link icon-subject-gray_16_18-before" title="Módulo Lorem">Módulo Lorem</span>
               </li>
             </ul>
           </div>
@@ -316,9 +319,13 @@
         <div class="span13">
           <pre class="prettyprint linenums">
 &lt;ul class="breadcrumb-mini"&gt;
-  &lt;!-- FOR EACH BREADCRUMB ITEM. THE LAST ITEM SHOULD NOT HAVE THE arrow icon class. --&gt;
-  &lt;li class="breadcrumb-mini-item [icon-arrow-right-separator-gray_16_18-after]"&gt;
-    &lt;a href="BREADCRUMB_LINK" class="breadcrumb-mini-link [icon-xxx-lightblue_16_18-before] [text-replacement]" title="BREADCRUMB_TEXT"&gt;BREADCRUMB_TEXT&lt;/a&gt;
+  &lt;!-- FOR EACH BREADCRUMB ITEM. --&gt;
+  &lt;li class="breadcrumb-mini-item icon-arrow-right-separator-gray_16_18-after"&gt;
+    &lt;!-- IF ITEM IS THE LAST ONE. --&gt;
+      &lt;span class="breadcrumb-mini-link [icon-xxx-gray_16_18-before] [text-replacement]" title="BREADCRUMB_TEXT"&gt;BREADCRUMB_TEXT&lt;/span&gt;
+    &lt;!-- ELSE --&gt;
+      &lt;a href="BREADCRUMB_LINK" class="breadcrumb-mini-link [icon-xxx-lightblue_16_18-before] [text-replacement]" title="BREADCRUMB_TEXT"&gt;BREADCRUMB_TEXT&lt;/a&gt;
+    &lt;!-- END --&gt;
   &lt;/li&gt;
   &lt;!-- END --&gt;
 &lt;/ul&gt;</pre>
