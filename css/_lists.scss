@@ -378,10 +378,10 @@ $course-n-space-search-list-item-padding: 10px;
 .list-subject-edit +
 .list-subject-visibility { margin-right: 5px; }
 
-.list-subject-description { max-width: 90%; }
+.list-subject-description { max-width: 87%; }
 
 .list-subject-info +
-.list-button { margin-top: 20px; }
+.list-button { margin-top: 10px; }
 
 // Bloco de informações sobre uma aula.
 .list-lecture-info {
@@ -411,10 +411,18 @@ $course-n-space-search-list-item-padding: 10px;
 }
 
 // Estrelas.
-.stars,
-.star { display: inline-block; }
+.stars {
+  display: inline-block;
+  overflow: hidden;
+}
 
-.star + .star { margin-left: 2px; }
+.star {
+  float: left;
+
+  & +
+  & { margin-left: 2px; }
+}
+
 
 // Lista mista.
 // ==========================================================================

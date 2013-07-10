@@ -6768,12 +6768,12 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .list-subject-description {
-  max-width: 90%;
+  max-width: 87%;
 }
 
 .list-subject-info +
 .list-button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .list-lecture-info {
@@ -6804,12 +6804,16 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   margin-left: 10px;
 }
 
-.stars,
-.star {
+.stars {
   display: inline-block;
+  overflow: hidden;
 }
 
-.star + .star {
+.star {
+  float: left;
+}
+.star +
+.star {
   margin-left: 2px;
 }
 
