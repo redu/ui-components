@@ -20,7 +20,7 @@ body {
   position: relative;
   // Padding inferior para cobrir o gradiente :after.
   padding-bottom: $content-body-border-radius;
-  min-height: 500px;
+  min-height: 600px;
 
   &:before {
     @include border-radius(10px 10px 0 0);
