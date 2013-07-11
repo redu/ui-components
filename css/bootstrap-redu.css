@@ -6063,11 +6063,11 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 
 .progress-bar-medium {
-  width: 100px;
+  width: 105px;
 }
 
 .progress-bar-long {
-  width: 200px;
+  width: 205px;
 }
 
 .progress-bar-total {
@@ -6109,17 +6109,17 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 }
 .progress-bar-legend .progress-bar-total {
   width: 70%;
-  width: -moz-calc(100% - 35px - 5px);
-  width: -o-calc(100% - 35px - 5px);
-  width: -webkit-calc(100% - 35px - 5px);
-  width: calc(100% - 35px - 5px);
+  width: -moz-calc(100% - 30px - 5px);
+  width: -o-calc(100% - 30px - 5px);
+  width: -webkit-calc(100% - 30px - 5px);
+  width: calc(100% - 30px - 5px);
   float: right;
 }
 .progress-bar-legend .progress-bar-thin {
   margin-top: 3px;
 }
 .progress-bar-legend .legend {
-  width: 35px;
+  width: 30px;
   float: left;
   text-align: right;
 }
@@ -6128,7 +6128,7 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   margin-left: 5px;
 }
 .progress-bar-legend.progress-bar-short {
-  width: 90px;
+  width: 85px;
 }
 .progress-bar-legend.progress-bar-medium {
   width: 140px;
@@ -6717,14 +6717,14 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 
 .list-subject-header-info {
   float: right;
-  line-height: 11px;
+  line-height: 21px;
 }
-.list-subject-header-info .progress-bar-short,
+.list-subject-header-info .progress-bar-total,
 .list-subject-header-info .label-news,
 .list-subject-header-info .label-doubts {
   vertical-align: middle;
 }
-.list-subject-header-info .progress-bar-short {
+.list-subject-header-info .progress-bar-total {
   display: inline-block;
   margin-left: 10px;
 }

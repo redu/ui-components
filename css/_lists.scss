@@ -331,13 +331,13 @@ $course-n-space-search-list-item-padding: 10px;
 // Bloco com os avisos e barra de progresso do módulo.
 .list-subject-header-info {
   float: right;
-  line-height: 11px;
+  line-height: 21px;
 
-  .progress-bar-short,
+  .progress-bar-total,
   .label-news,
   .label-doubts { vertical-align: middle; }
 
-  .progress-bar-short {
+  .progress-bar-total {
     display: inline-block;
     margin-left: 10px;
   }
