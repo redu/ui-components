@@ -686,27 +686,27 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Vídeo.
-.icon-video-lightblue_16_18-before {
-  &:before {  @extend .icon-video-lightblue_16_18; }
+.icon-seminar-lightblue_16_18-before {
+  &:before {  @extend .icon-seminar-lightblue_16_18; }
 }
-.list-button li:hover .icon-video-lightblue_16_18-before {
-  &:before {  @extend .icon-video-blue_16_18; }
+.list-subject .list-button-item:hover .icon-seminar-lightblue_16_18-before {
+  &:before {  @extend .icon-seminar-blue_16_18; }
 }
 
 // Página de texto.
-.icon-text-page-lightblue_16_18-before {
-  &:before {  @extend .icon-text-page-lightblue_16_18; }
+.icon-page-lightblue_16_18-before {
+  &:before {  @extend .icon-page-lightblue_16_18; }
 }
-.list-button li:hover .icon-text-page-lightblue_16_18-before {
-  &:before {  @extend .icon-text-page-blue_16_18; }
+.list-subject .list-button-item:hover .icon-page-lightblue_16_18-before {
+  &:before {  @extend .icon-page-blue_16_18; }
 }
 
 // Apresentação.
-.icon-presentation-lightblue_16_18-before {
-  &:before {  @extend .icon-presentation-lightblue_16_18; }
+.icon-document-lightblue_16_18-before {
+  &:before {  @extend .icon-document-lightblue_16_18; }
 }
-.list-button li:hover .icon-presentation-lightblue_16_18-before {
-  &:before {  @extend .icon-presentation-blue_16_18; }
+.list-subject .list-button-item:hover .icon-document-lightblue_16_18-before {
+  &:before {  @extend .icon-document-blue_16_18; }
 }
 
 // Exercício.
@@ -716,8 +716,11 @@ a.icon-teacher-gray_16_18-before {
 .icon-exercise-gray_16_18-before {
   &:before {  @extend .icon-exercise-gray_16_18; }
 }
-.list-button li:hover .icon-exercise-lightblue_16_18-before {
+.list-subject .list-button-item:hover .icon-exercise-lightblue_16_18-before {
   &:before {  @extend .icon-exercise-blue_16_18; }
+}
+.icon-exercise-white_blue_16_18-before {
+  &:before { @extend .icon-exercise-white_blue_16_18; }
 }
 
 // Avise-me.
@@ -949,9 +952,9 @@ a:hover,
 .button-disabled:hover .icon-close-gray_8_10 { @extend .icon-close-gray_8_10; }
 
 // Video
-.icon-video-gray_16_18-before {
-  &:before { @extend .icon-video-gray_16_18; }
-  &:hover:before { @extend .icon-video-blue_16_18; }
+.icon-seminar-gray_16_18-before {
+  &:before { @extend .icon-seminar-gray_16_18; }
+  &:hover:before { @extend .icon-seminar-blue_16_18; }
 }
 
 // Agrupamento
@@ -1096,7 +1099,7 @@ a:hover,
   &:before { @extend .icon-app-gray_32_34; }
   &:hover:before { @extend .icon-app-blue_32_34; }
 }
-.list-button li:hover .icon-app-lightblue_16_18-before {
+.list-subject .list-button-item:hover .icon-app-lightblue_16_18-before {
   &:before {  @extend .icon-app-blue_16_18; }
 }
 .icon-app-lightblue_16_18-before.nav-local-item-active {
