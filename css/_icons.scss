@@ -188,9 +188,8 @@ a.icon-teacher-gray_16_18-before {
 .icon-environment-lightblue_32_34-before {
   &:before { @extend .icon-environment-lightblue_32_34; }
 }
-.icon-environment-lightblue_32_34-before,
-.breadcrumb-icon-link .icon-environment-gray_32_34-before {
-  &:hover:before { @extend .icon-environment-blue_32_34; }
+.breadcrumb-icon-link .icon-environment-gray_32_34 {
+  &:hover { @extend .icon-environment-blue_32_34; }
 }
 .open .icon-environment-gray_16_18 { @extend .icon-environment-lightblue_16_18; }
 
@@ -232,20 +231,17 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-course-lightblue_32_34-before {
   &:before { @extend .icon-course-lightblue_32_34; }
+  &:hover:before { @extend .icon-course-blue_32_34; }
 }
 .icon-course-lightgray_32_34-before {
   &:before { @extend .icon-course-lightgray_32_34; }
 }
-.breadcrumb-icon-link .icon-course-gray_32_34-before,
-.icon-course-lightblue_32_34-before {
-  &:hover:before { @extend .icon-course-blue_32_34; }
+.breadcrumb-icon-link .icon-course-gray_32_34 {
+  &:hover { @extend .icon-course-blue_32_34; }
 }
 .icon-course-blue_32_34-before { @extend .icon-course-blue_32_34; }
 .list-mix .icon-course-lightgray_32_34-before:hover:before {
   @extend .icon-course-blue_32_34;
-}
-.icon-course-gray_32_34-before {
-  &:before { @extend .icon-course-gray_32_34; }
 }
 .header-item:hover .icon-course-lightblue_16_18-before:before {
   @extend .icon-course-blue_16_18;
@@ -264,6 +260,7 @@ a.icon-teacher-gray_16_18-before {
 }
 .icon-space-lightblue_32_34-before {
   &:before { @extend .icon-space-lightblue_32_34; }
+  &:hover:before { @extend .icon-space-blue_32_34; }
 }
 .icon-space-lightgray_32_34-before {
   &:before { @extend .icon-space-lightgray_32_34; }
@@ -271,9 +268,8 @@ a.icon-teacher-gray_16_18-before {
 .icon-space-gray_32_34-before {
   &:before { @extend .icon-space-gray_32_34; }
 }
-.breadcrumb-icon-link .icon-space-gray_32_34-before,
-.icon-space-lightblue_32_34-before {
-  &:hover:before { @extend .icon-space-blue_32_34; }
+.breadcrumb-icon-link .icon-space-gray_32_34 {
+  &:hover { @extend .icon-space-blue_32_34; }
 }
 .icon-space-blue_32_34-before { @extend .icon-space-blue_32_34; }
 .header-item:hover .icon-space-lightblue_16_18-before:before {
@@ -281,12 +277,12 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Módulo.
-.icon-content-lightblue_16_18-before {
-  &:before { @extend .icon-content-lightblue_16_18; }
-  &:hover:before { @extend .icon-content-blue_16_18; }
+.icon-subject-lightblue_16_18-before {
+  &:before { @extend .icon-subject-lightblue_16_18; }
+  &:hover:before { @extend .icon-subject-blue_16_18; }
 }
-.icon-content-gray_16_18-before {
-  &:before { @extend .icon-content-gray_16_18; }
+.icon-subject-gray_16_18-before {
+  &:before { @extend .icon-subject-gray_16_18; }
 }
 
 // Setas.
@@ -440,35 +436,35 @@ a.icon-teacher-gray_16_18-before {
 }
 
 // Aula.
-.icon-subject-lightblue_16_18-before {
-  &:before { @extend .icon-subject-lightblue_16_18; }
-  .filter:hover &:before { @extend .icon-subject-blue_16_18; }
+.icon-lecture-lightblue_16_18-before {
+  &:before { @extend .icon-lecture-lightblue_16_18; }
+  .filter:hover &:before { @extend .icon-lecture-blue_16_18; }
 }
-.icon-subject-white_blue_16_18-before {
-  &:before { @extend .icon-subject-white_blue_16_18; }
+.icon-lecture-white_blue_16_18-before {
+  &:before { @extend .icon-lecture-white_blue_16_18; }
 }
-.icon-subject-gray_16_18-before {
-  &:before { @extend .icon-subject-gray_16_18; }
+.icon-lecture-gray_16_18-before {
+  &:before { @extend .icon-lecture-gray_16_18; }
 }
-.icon-subject-lightblue_16_18-before {
-  &:hover:before { @extend .icon-subject-blue_16_18; }
+.icon-lecture-lightblue_16_18-before {
+  &:hover:before { @extend .icon-lecture-blue_16_18; }
 }
-.icon-subject-lightblue_32_34-before {
-  &:before { @extend .icon-subject-lightblue_32_34; }
+.icon-lecture-lightblue_32_34-before {
+  &:before { @extend .icon-lecture-lightblue_32_34; }
 }
-.icon-subject-lightgray_32_34-before {
-  &:before { @extend .icon-subject-lightgray_32_34; }
+.icon-lecture-lightgray_32_34-before {
+  &:before { @extend .icon-lecture-lightgray_32_34; }
 }
-.icon-subject-gray_32_34-before {
-  &:before { @extend .icon-subject-gray_32_34; }
+.icon-lecture-gray_32_34-before {
+  &:before { @extend .icon-lecture-gray_32_34; }
 }
-.icon-subject-gray_32_34-before,
-.icon-subject-lightblue_32_34-before {
-  &:hover:before { @extend .icon-subject-blue_32_34; }
+.icon-lecture-gray_32_34-before,
+.icon-lecture-lightblue_32_34-before {
+  &:hover:before { @extend .icon-lecture-blue_32_34; }
 }
-.icon-subject-blue_32_34-before { @extend .icon-subject-blue_32_34; }
-.list-button li:hover .icon-subject-lightblue_16_18-before {
-  &:before {  @extend .icon-subject-blue_16_18; }
+.icon-lecture-blue_32_34-before { @extend .icon-lecture-blue_32_34; }
+.list-button li:hover .icon-lecture-lightblue_16_18-before {
+  &:before {  @extend .icon-lecture-blue_16_18; }
 }
 
 // Contatos.
@@ -905,16 +901,13 @@ a:hover,
   // .icon-environment-lightblue_32_34 { @extend .icon-environment-blue_32_34; }
 
   // Curso.
-  .icon-course-gray_32_34,
   .icon-course-lightblue_32_34 { @extend .icon-course-blue_32_34; }
 
   // Disciplina.
-  .icon-space-gray_32_34,
   .icon-space-lightblue_32_34 { @extend .icon-space-blue_32_34; }
 
   // Aula
-  .icon-subject-gray_32_34,
-  .icon-subject-lightblue_32_34 { @extend .icon-subject-blue_32_34; }
+  .icon-lecture-lightblue_32_34 { @extend .icon-lecture-blue_32_34; }
 
   // Comentário.
   .icon-comment-lightblue_16_18 { @extend .icon-comment-blue_16_18; }
@@ -1309,11 +1302,11 @@ a:hover,
 
   // Aulas.
   &.icon-subject_16_18-before {
-    @extend .icon-subject-lightblue_16_18;
+    @extend .icon-lecture-lightblue_16_18;
 
-    &:hover { @extend .icon-subject-blue_16_18; }
+    &:hover { @extend .icon-lecture-blue_16_18; }
 
-    &.nav-local-item-active { @extend .icon-subject-white_blue_16_18; }
+    &.nav-local-item-active { @extend .icon-lecture-white_blue_16_18; }
   }
 
   // Arquivos de Apoio.
