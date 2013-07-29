@@ -6184,9 +6184,6 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   margin: 0;
 }
 
-.header-link {
-  font-weight: bold;
-}
 .header-link:hover {
   text-decoration: none;
 }
@@ -6316,8 +6313,8 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
 
 .lecture-data {
   overflow: hidden;
-  margin: 0 20px;
-  padding-bottom: 10px;
+  margin: 0;
+  padding: 20px 20px 10px;
 }
 
 .lecture-authoring {

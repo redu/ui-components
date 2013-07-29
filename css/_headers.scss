@@ -19,8 +19,6 @@ $header-breadcrumb-height: 21px;
 
 // Link.
 .header-link {
-  font-weight: bold;
-
   &:hover { text-decoration: none; }
 
   .header-item:hover & { color: $link-color-hover; }
@@ -152,8 +150,8 @@ $header-breadcrumb-height: 21px;
 
 .lecture-data {
   overflow: hidden;
-  margin: 0 20px;
-  padding-bottom: 10px;
+  margin: 0;
+  padding: 20px 20px 10px;
 }
 
 .lecture-authoring {
