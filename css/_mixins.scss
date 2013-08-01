@@ -502,8 +502,8 @@
 
     // Remove o espaçamento de cada ($n+1)-ésimo item.
     &:nth-child(#{$n}n+1) {
-      margin-left: 0;
       clear: left;
+      margin-left: -1px; // Necessário ao invés de 0 para evitar quebra no IE9+.
     }
   }
 }
