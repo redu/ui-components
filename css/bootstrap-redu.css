@@ -5123,6 +5123,7 @@ a.icon-teacher-gray_16_18-before:hover:before, .icon-teacher-gray_16_18-before:h
   visibility: visible;
   padding: 5px;
   font-size: 11px;
+  line-height: 14px;
 }
 .textshadow .tooltip {
   text-shadow: none;

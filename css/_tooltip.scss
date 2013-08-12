@@ -18,6 +18,7 @@ $tooltipBackgroundAndArrowColor: rgb(25, 25, 25);
   visibility: visible;
   padding: 5px;
   font-size: 11px;
+  line-height: 14px;
 
   &.in { @include opacity(90); }
 
