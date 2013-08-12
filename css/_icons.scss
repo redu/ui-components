@@ -1237,6 +1237,25 @@ a:hover,
   &:hover:before { @extend .icon-ask-blue_16_18; }
 }
 
+// Privacidade.
+.icon-privacy-open-green_16_18-before {
+  &:before { @extend .icon-privacy-open-green_16_18; }
+}
+.icon-privacy-open-gray_16_18-before {
+  &:before { @extend .icon-privacy-open-gray_16_18; }
+
+  .control-checked &:before { @extend .icon-privacy-open-green_16_18; }
+}
+
+.icon-privacy-closed-red_16_18-before {
+  &:before { @extend .icon-privacy-closed-red_16_18; }
+}
+.icon-privacy-closed-gray_16_18-before {
+  &:before { @extend .icon-privacy-closed-gray_16_18; }
+
+  .control-checked &:before { @extend .icon-privacy-closed-red_16_18; }
+}
+
 
 // Ícones da navegação local.
 .nav-local-item:before {
